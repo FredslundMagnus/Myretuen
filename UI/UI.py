@@ -2,7 +2,6 @@ import pygame
 from PIL import Image, ImageFilter
 import os
 
-
 scale = 2
 
 colors = {'blueFade': (179, 180, 208), 'redFade': (
