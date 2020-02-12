@@ -14,13 +14,13 @@ class Field():
         factor = 2 if field.special == 'Base' else 1
 
         self.rect = pygame.Rect(
-            field.x*scale, field.y*scale, 19*scale*factor, 19*scale*factor)
+            field.x*scale, field.y*scale, 19*scale*factor+factor-1, 19*scale*factor+factor-1)
         self.border = pygame.Rect(
-            (field.x-1*factor)*scale, (field.y-1*factor)*scale, 21*scale*factor, 21*scale*factor)
+            (field.x-1*factor)*scale, (field.y-1*factor)*scale, 21*scale*factor+factor-1, 21*scale*factor+factor-1)
         self.shadow1 = pygame.Rect(
-            (field.x-10*factor)*scale, (field.y-10*factor)*scale, 39*scale*factor, 39*scale*factor)
+            (field.x-10*factor)*scale, (field.y-10*factor)*scale, 39*scale*factor+factor-1, 39*scale*factor+factor-1)
         self.shadow2 = pygame.Rect(
-            (field.x-3*factor)*scale, (field.y-3*factor)*scale, 25*scale*factor, 25*scale*factor)
+            (field.x-3*factor)*scale, (field.y-3*factor)*scale, 25*scale*factor+factor-1, 25*scale*factor+factor-1)
 
         self.win = win
         self.color = field.color
