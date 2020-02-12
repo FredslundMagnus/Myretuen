@@ -98,7 +98,7 @@ for field in fields:
 
 pygame.display.update()
 pygame.image.save(win, "temp.jpeg")
-img = Image.open('temp.jpeg').filter(ImageFilter.GaussianBlur(radius=10))
+img = Image.open('temp.jpeg').filter(ImageFilter.GaussianBlur(radius=5*scale))
 img.save('temp2.jpeg')
 background = pygame.image.load('temp2.jpeg')
 [os.remove(file) for file in ["temp.jpeg", 'temp2.jpeg']]
