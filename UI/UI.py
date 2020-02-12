@@ -33,7 +33,7 @@ class Field():
     def draw(self):
         pygame.draw.rect(self.win, (0, 0, 0), self.border)
         pygame.draw.rect(self.win, colors[self.color], self.rect)
-        if self.special != None:
+        if self.special == 'Flag':
             img = pygame.image.load('UI/flag.png').convert_alpha()
             self.win.blit(pygame.transform.rotate(pygame.transform.scale(
                 img, (15*self.scale, 15*self.scale)), self.rotation), ((self.x+2)*self.scale, (self.y+2)*self.scale))
