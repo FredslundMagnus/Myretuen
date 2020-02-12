@@ -87,7 +87,7 @@ class Field():
 def draw(fields):
 
     pygame.init()
-    size = (400*scale, 400*scale)
+    size = (390*scale, 390*scale)
     win = pygame.display.set_mode(size)
     pygame.display.set_caption("Myretuen")
     run = True
