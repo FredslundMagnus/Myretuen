@@ -3,7 +3,7 @@ from UI.UI import draw
 from ant import generateAnts
 from lines import generateLines
 
-fields = {'base1': Field(20,310, color='red', special='Base'),
+fields = {'base1': Field(20, 310, color='red', special='Base'),
           'D1': Field(60, 320, color='yellowFade'),
           'D2': Field(80, 320, color='yellowFade'),
           'D3': Field(100, 310, color='yellowFade'),
