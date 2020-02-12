@@ -5,5 +5,11 @@ class Field():
         self.rotation = rotation
         self.x = x
         self.y = y
+        self.id = None
         self.ants = []
         self.neighbors = []
+
+
+def giveFieldsID(fields):
+    for field in fields:
+        fields[field].id = field
