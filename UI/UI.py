@@ -11,6 +11,8 @@ colors = {'blueFade': (179, 180, 208), 'redFade': (
 
 class Field():
     def __init__(self, x: int, y: int, scale: int, win, color=(255, 255, 255), special=None, rotation=0):
+        if special = 'base':
+            scale *= 2
         self.rect = pygame.Rect(x*scale, y*scale, 19*scale, 19*scale)
         self.border = pygame.Rect((x-1)*scale, (y-1)*scale, 21*scale, 21*scale)
         self.shadow1 = pygame.Rect(
