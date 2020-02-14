@@ -1,6 +1,10 @@
+import random
+
+
 class Field():
-    def __init__(self, x: int, y: int, color=(255, 255, 255), special=None, rotation=0):
-        self.color = color
+    def __init__(self, x: int, y: int, color=None, special=None, rotation=0):
+        self.color = color if color != None else random.choice(
+            ['yellowFade', 'greenFade', 'blueFade', 'redFade'])
         self.special = special
         self.rotation = rotation
         self.x = x

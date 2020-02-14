@@ -2,6 +2,7 @@ import pygame
 from PIL import Image, ImageFilter
 import os
 
+
 scale = 2
 
 colors = {'blueFade': (179, 180, 208), 'redFade': (
@@ -11,17 +12,17 @@ colors = {'blueFade': (179, 180, 208), 'redFade': (
 
 class Field():
     def __init__(self, field, scale: int, win):
-        factor = 2 if field.special == 'Base' else 1
-        factor = 3 if field.special == 'DiceHolder' else factor
+        c = 20 if field.special == 'Base' else 0
+        c = 40 if field.special == 'DiceHolder' else c
 
         self.rect = pygame.Rect(
-            field.x*scale, field.y*scale, 19*scale*factor+factor-1, 19*scale*factor+factor-1)
+            field.x*scale, field.y*scale, (c+19)*scale, (c+19)*scale)
         self.border = pygame.Rect(
-            (field.x-1*factor)*scale, (field.y-1*factor)*scale, 21*scale*factor+factor-1, 21*scale*factor+factor-1)
+            (field.x-1)*scale, (field.y-1)*scale, (c+21)*scale, (c+21)*scale)
         self.shadow1 = pygame.Rect(
-            (field.x-10*factor)*scale, (field.y-10*factor)*scale, 39*scale*factor+factor-1, 39*scale*factor+factor-1)
+            (field.x-10)*scale, (field.y-10)*scale, (c+39)*scale, (c+39)*scale)
         self.shadow2 = pygame.Rect(
-            (field.x-3*factor)*scale, (field.y-3*factor)*scale, 25*scale*factor+factor-1, 25*scale*factor+factor-1)
+            (field.x-3)*scale, (field.y-3)*scale, (c+25)*scale, (c+25)*scale)
 
         self.win = win
         self.color = field.color
