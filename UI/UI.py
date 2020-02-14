@@ -12,6 +12,7 @@ colors = {'blueFade': (179, 180, 208), 'redFade': (
 class Field():
     def __init__(self, field, scale: int, win):
         factor = 2 if field.special == 'Base' else 1
+        factor = 3 if field.special == 'DiceHolder' else factor
 
         self.rect = pygame.Rect(
             field.x*scale, field.y*scale, 19*scale*factor+factor-1, 19*scale*factor+factor-1)
