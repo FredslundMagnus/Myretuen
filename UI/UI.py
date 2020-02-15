@@ -178,7 +178,7 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
 
 def updateScreen(background, win, fields):
     run = True
-    isHoveringOn = False
+    isHovering = False
     while run:
         for event in pygame.event.get():
             if (event.type == 4):
