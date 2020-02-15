@@ -111,6 +111,7 @@ class Field():
         self.y = field.y
         self.scale = scale
         self.id = field.id
+        field.rect = self.rect
 
     def draw(self, borderColor=(0, 0, 0)):
         pygame.draw.rect(self.win, borderColor, self.border)
@@ -132,7 +133,7 @@ class Field():
         pygame.draw.rect(self.win, (43, 22, 17), self.shadow2)
 
 
-def drawBackground(fields=[], diceHolder=[], bases=[]):
+def drawBackground(fields=[], diceHolder=None, bases=[]):
 
     pygame.init()
     size = (390*scale, 390*scale)
@@ -141,7 +142,8 @@ def drawBackground(fields=[], diceHolder=[], bases=[]):
 
     fieldsUI = [Field(field, scale, win) for key, field in fields.items()]
     basesUI = [Base(base, scale, win) for key, base in bases.items()]
-    diceHolderUI = [DiceHolder(holder, scale, win) for holder in diceHolder]
+    diceHolderUI = [DiceHolder(diceHolder, scale, win)
+                    ] if diceHolder != None else []
 
     objects = fieldsUI + basesUI + diceHolderUI
 
@@ -171,7 +173,7 @@ def drawBackground(fields=[], diceHolder=[], bases=[]):
     [os.remove(file)
      for file in ["temp.jpeg", 'temp2.jpeg', 'background.jpeg']]
 
-    return background, win, fieldsUI
+    return background, win
 
 
 def updateScreen(background, win, fields):
@@ -180,13 +182,13 @@ def updateScreen(background, win, fields):
         for event in pygame.event.get():
             if (event.type == 4):
                 isHovering = False
-                for field in fields:
+                for name, field in fields.items():
                     if (field.rect.collidepoint(event.pos)):
                         isHovering = True
                         x, y = event.pos
                         pos = (x + 10*scale, y - 10*scale)
                         idd = field.id
-                        isHoveringOn = field
+                        isHoveringOn = Field(field, scale, win)
                         break
 
             if event.type == pygame.QUIT:
@@ -195,7 +197,7 @@ def updateScreen(background, win, fields):
         win.blit(background, (0, 0))
 
         if isHovering:
-            field.draw(borderColor=(0, 0, 255))
+            isHoveringOn.draw(borderColor=(255, 255, 255))
             centerText(12*scale, idd, (0, 0, 0),
                        pos, 0, win)
 

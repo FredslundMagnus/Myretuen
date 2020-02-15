@@ -1,7 +1,6 @@
 class Base():
     def __init__(self, x: int, y: int, homePos, homeChange):
         self.color = None
-        self.rect = None
         self.x = x
         self.y = y
         self.id = None

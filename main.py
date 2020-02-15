@@ -84,8 +84,8 @@ cleanBases(bases)
 
 placeAntsOnBoard(ants, bases)
 
-background, win, fields = drawBackground(
-    fields=fields, diceHolder=[Field(165, 165)], bases=bases)
+background, win = drawBackground(
+    fields=fields, diceHolder=Field(165, 165), bases=bases)
 
 updateScreen(background, win, fields)
 #
