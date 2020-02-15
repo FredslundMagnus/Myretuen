@@ -7,6 +7,6 @@ class Dice():
 
     def roll(self):
         self.number = random.choice(list(range(1, 7)))
-        self.x = random.choice(list(range(175, 215)))
-        self.y = random.choice(list(range(175, 215)))
+        self.x = random.choice(list(range(170, 200)))
+        self.y = random.choice(list(range(170, 200)))
         self.rotation = random.choice(list(range(180)))

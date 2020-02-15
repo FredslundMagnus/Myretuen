@@ -29,6 +29,21 @@ def square(x, y, size, scale):
     return (rect, border, shadow1, shadow2)
 
 
+class Dice():
+    def __init__(self, dice, scale: int, win):
+        self.win = win
+        self.x, self.y = dice.x, dice.y
+        self.scale = scale
+        self.rotation = dice.rotation
+        self.number = dice.number
+
+    def draw(self):
+        img = pygame.image.load(
+            f'UI/Terninger/Terning{self.number}.png').convert_alpha()
+        self.win.blit(pygame.transform.rotate(pygame.transform.scale(
+            img, (15*self.scale, 15*self.scale)), self.rotation), ((self.x+2)*self.scale, (self.y+2)*self.scale))
+
+
 class Base():
     def __init__(self, base, scale: int, win):
         self.rect, self.border, self.shadow1, self.shadow2 = square(
@@ -176,9 +191,10 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     return background, win
 
 
-def updateScreen(background, win, fields):
+def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
     run = True
     isHovering = False
+    TEMPP = 0
     while run:
         for event in pygame.event.get():
             if (event.type == 4):
@@ -201,6 +217,15 @@ def updateScreen(background, win, fields):
             isHoveringOn.draw(borderColor=(255, 255, 255))
             centerText(12*scale, idd, (0, 0, 0),
                        pos, 0, win)
+
+        for dice in diceHolder.dices:
+            Dice(dice, scale, win).draw()
+
+        if TEMPP == 0:
+            TEMPP = 60
+            diceHolder.roll()
+
+        TEMPP -= 1
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))

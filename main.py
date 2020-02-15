@@ -89,4 +89,5 @@ diceHolder = DiceHolder(165, 165)
 background, win = drawBackground(
     fields=fields, diceHolder=diceHolder, bases=bases)
 
-updateScreen(background, win, fields)
+updateScreen(background, win, fields=fields,
+             diceHolder=diceHolder, bases=bases)
