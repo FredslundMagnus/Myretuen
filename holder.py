@@ -12,10 +12,15 @@ class DiceHolder():
 
         for _ in range(2):
             self.dices.append(Dice())
+        self.roll()
 
     def roll(self):
-        li = []
-        for dice in self.dices:
-            dice.roll()
-            li.append(dice.number)
+        seperated = False
+        while not seperated:
+            li = []
+            for dice in self.dices:
+                dice.roll()
+                li.append(dice.number)
+            seperated = (self.dices[0].x - self.dices[1].x)**2 + \
+                (self.dices[0].y - self.dices[1].y)**2 >= 350
         return li
