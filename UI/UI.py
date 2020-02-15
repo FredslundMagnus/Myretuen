@@ -10,11 +10,11 @@ colors = {'blueFade': (179, 180, 208), 'redFade': (
     'yellow': (204, 174, 2), 'blue': (70, 126, 183), 'red': (231, 67, 58), 'green': (49, 115, 53)}
 
 
-def drawAntInRect(ant, rect, win):
+def drawAntAtPos(ant, pos, win):
     img = pygame.image.load(
         f'UI/Ants/Ant{ant.color}.png').convert_alpha()
     win.blit(pygame.transform.scale(
-        pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*scale, 15*scale)), ((rect.x+2*scale), (rect.y+2*scale)))
+        pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*scale, 15*scale)), ((pos[0]+2*scale), (pos[1]+2*scale)))
 
 
 def centerText(size, text, color, position, rotation, win):
@@ -241,7 +241,13 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
                        (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
 
             for i, ant in enumerate(base.home):
-                drawAntInRect(ant, base.homeSquares[i][0], win)
+                drawAntAtPos(
+                    ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
+
+        for _, field in fields.items():
+            for i, ant in enumerate(field.ants):
+                drawAntAtPos(ant, (field.rect.x + i*scale,
+                                   field.rect.y - i*scale), win)
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))

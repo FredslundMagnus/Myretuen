@@ -84,6 +84,8 @@ ants = generateAnts(10)
 
 placeAntsOnBoard(ants, bases)
 
+fields['E10'].ants = ants[:5]  # Just to test
+
 diceHolder = DiceHolder(165, 165)
 
 background, win = drawBackground(
