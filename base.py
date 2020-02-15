@@ -4,6 +4,7 @@ class Base():
         self.x = x
         self.y = y
         self.id = None
+        self.rect = None
         self.home = []
         self.captured = []
         self.starts = []

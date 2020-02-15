@@ -57,6 +57,7 @@ class Base():
         self.homePos = base.homePos
         self.homeChange = base.homeChange
         self.antsN = len(base.home)
+        base.rect = self.rect
 
         self.homSquares = []
         for i in range(self.antsN):
@@ -226,6 +227,9 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
             diceHolder.roll()
 
         TEMPP -= 1
+        for _, base in bases.items():
+            centerText(22*scale, str(len(base.captured)),
+                       (255, 255, 255), base.rect.center, 0, win)
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))
