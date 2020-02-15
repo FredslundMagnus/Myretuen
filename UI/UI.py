@@ -224,7 +224,11 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
 
         if TEMPP == 0:
             TEMPP = 60
-            diceHolder.roll()
+            seperated = False
+            while not seperated:
+                diceHolder.roll()
+                seperated = (diceHolder.dices[0].x - diceHolder.dices[1].x)**2 + (
+                    diceHolder.dices[0].y - diceHolder.dices[1].y)**2 >= 350
 
         TEMPP -= 1
         for _, base in bases.items():
