@@ -7,6 +7,7 @@ class Field():
             ['yellowFade', 'greenFade', 'blueFade', 'redFade'])
         self.special = special
         self.rotation = rotation
+        self.rect = None
         self.x = x
         self.y = y
         self.id = None
