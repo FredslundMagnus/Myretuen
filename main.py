@@ -88,4 +88,3 @@ background, win = drawBackground(
     fields=fields, diceHolder=Field(165, 165), bases=bases)
 
 updateScreen(background, win, fields)
-#
