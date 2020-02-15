@@ -233,7 +233,7 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
         TEMPP -= 1
         for _, base in bases.items():
             centerText(22*scale, str(len(base.captured)),
-                       (255, 255, 255), base.rect.center, 0, win)
+                       (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))
