@@ -10,6 +10,13 @@ colors = {'blueFade': (179, 180, 208), 'redFade': (
     'yellow': (204, 174, 2), 'blue': (70, 126, 183), 'red': (231, 67, 58), 'green': (49, 115, 53)}
 
 
+def drawAntInRect(ant, rect, win):
+    img = pygame.image.load(
+        f'UI/Ants/Ant{ant.color}.png').convert_alpha()
+    win.blit(pygame.transform.scale(
+        pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*scale, 15*scale)), ((rect.x+2*scale), (rect.y+2*scale)))
+
+
 def centerText(size, text, color, position, rotation, win):
     font = pygame.font.Font('freesansbold.ttf', size)
     text = pygame.transform.rotate(font.render(text, True, color), rotation)
@@ -59,7 +66,7 @@ class Base():
         self.antsN = len(base.home)
         base.rect = self.rect
 
-        self.homSquares = []
+        self.homeSquares = []
         for i in range(self.antsN):
             x, y = self.homePos
             xadd, yadd = self.homeChange
@@ -69,25 +76,26 @@ class Base():
                 adder = 5 if xadd > 0 else -5
             else:
                 adder = 0
-            self.homSquares.append(square(
+            self.homeSquares.append(square(
                 x + xadd*i, y + yadd*i + adder, 19, scale))
+        base.homeSquares = self.homeSquares
 
     def draw(self):
         pygame.draw.rect(self.win, (0, 0, 0), self.border)
         pygame.draw.rect(self.win, self.color, self.rect)
 
-        for rect, border, _, _ in self.homSquares:
+        for rect, border, _, _ in self.homeSquares:
             pygame.draw.rect(self.win, (0, 0, 0), border)
             pygame.draw.rect(self.win, self.color, rect)
 
     def shadowDraw1(self):
         pygame.draw.rect(self.win, (160, 64, 24), self.shadow1)
-        for _, _, shadow1, _ in self.homSquares:
+        for _, _, shadow1, _ in self.homeSquares:
             pygame.draw.rect(self.win, (160, 64, 24), shadow1)
 
     def shadowDraw2(self):
         pygame.draw.rect(self.win, (43, 22, 17), self.shadow2)
-        for _, _, _, shadow2 in self.homSquares:
+        for _, _, _, shadow2 in self.homeSquares:
             pygame.draw.rect(self.win, (43, 22, 17), shadow2)
 
 
@@ -231,9 +239,14 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
                     diceHolder.dices[0].y - diceHolder.dices[1].y)**2 >= 350
 
         TEMPP -= 1
+
         for _, base in bases.items():
+
             centerText(22*scale, str(len(base.captured)),
                        (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
+
+            for i, ant in enumerate(base.home):
+                drawAntInRect(ant, base.homeSquares[i][0], win)
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))
