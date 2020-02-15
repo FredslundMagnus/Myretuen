@@ -39,16 +39,40 @@ class Base():
         self.x = base.x
         self.y = base.y
         self.scale = scale
+        self.homePos = base.homePos
+        self.homeChange = base.homeChange
+        self.antsN = len(base.home)
+
+        self.homSquares = []
+        for i in range(self.antsN):
+            x, y = self.homePos
+            xadd, yadd = self.homeChange
+            if i % 4 == 0:
+                adder = -5 if xadd > 0 else 5
+            elif i % 4 == 2:
+                adder = 5 if xadd > 0 else -5
+            else:
+                adder = 0
+            self.homSquares.append(square(
+                x + xadd*i, y + yadd*i + adder, 19, scale))
 
     def draw(self):
         pygame.draw.rect(self.win, (0, 0, 0), self.border)
         pygame.draw.rect(self.win, self.color, self.rect)
 
+        for rect, border, _, _ in self.homSquares:
+            pygame.draw.rect(self.win, (0, 0, 0), border)
+            pygame.draw.rect(self.win, self.color, rect)
+
     def shadowDraw1(self):
         pygame.draw.rect(self.win, (160, 64, 24), self.shadow1)
+        for _, _, shadow1, _ in self.homSquares:
+            pygame.draw.rect(self.win, (160, 64, 24), shadow1)
 
     def shadowDraw2(self):
         pygame.draw.rect(self.win, (43, 22, 17), self.shadow2)
+        for _, _, _, shadow2 in self.homSquares:
+            pygame.draw.rect(self.win, (43, 22, 17), shadow2)
 
 
 class DiceHolder():
@@ -115,11 +139,11 @@ def drawBackground(fields=[], diceHolder=[], bases=[]):
     win = pygame.display.set_mode(size)
     pygame.display.set_caption("Myretuen")
 
-    fields = [Field(field, scale, win) for key, field in fields.items()]
-    bases = [Base(base, scale, win) for key, base in bases.items()]
-    diceHolder = [DiceHolder(holder, scale, win) for holder in diceHolder]
+    fieldsUI = [Field(field, scale, win) for key, field in fields.items()]
+    basesUI = [Base(base, scale, win) for key, base in bases.items()]
+    diceHolderUI = [DiceHolder(holder, scale, win) for holder in diceHolder]
 
-    objects = fields + bases + diceHolder
+    objects = fieldsUI + basesUI + diceHolderUI
 
     win.fill((190, 161, 43))
 
@@ -147,7 +171,7 @@ def drawBackground(fields=[], diceHolder=[], bases=[]):
     [os.remove(file)
      for file in ["temp.jpeg", 'temp2.jpeg', 'background.jpeg']]
 
-    return background, win, fields
+    return background, win, fieldsUI
 
 
 def updateScreen(background, win, fields):

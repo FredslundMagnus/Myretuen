@@ -8,6 +8,7 @@ class Field():
         self.special = special
         self.rotation = rotation
         self.rect = None
+        self.border = None
         self.x = x
         self.y = y
         self.id = None

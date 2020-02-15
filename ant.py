@@ -3,18 +3,18 @@ import numpy as np
 
 
 class Ant():
-    def __init__(self, color: str):
-        self.color = color
+    def __init__(self):
+        self.color = None
         self.rotation = random.choice([0, 90, 180, 270])
         self.magnet = 'S'
 
 
-def generateAnts(N, colors=["blue", "red"]):
+def generateAnts(N):
     ants1, ants2 = [], []
 
     for _ in range(N):
-        ants1.append(Ant(colors[0]))
-        ants2.append(Ant(colors[1]))
+        ants1.append(Ant())
+        ants2.append(Ant())
 
     arr = np.arange(N)
     np.random.shuffle(arr)
@@ -28,3 +28,13 @@ def generateAnts(N, colors=["blue", "red"]):
         ants2[i].magnet = 'N'
 
     return ants1+ants2
+
+
+def placeAntsOnBoard(ants, bases):
+    m = len(ants) // 2
+    i = 0
+    for name, base in bases.items():
+        base.home = ants[i*m: (i+1)*m]
+        for ant in base.home:
+            ant.color = name
+        i += 1
