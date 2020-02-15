@@ -41,7 +41,7 @@ class Dice():
         img = pygame.image.load(
             f'UI/Terninger/Terning{self.number}.png').convert_alpha()
         self.win.blit(pygame.transform.rotate(pygame.transform.scale(
-            img, (15*self.scale, 15*self.scale)), self.rotation), ((self.x+2)*self.scale, (self.y+2)*self.scale))
+            pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*self.scale, 15*self.scale)), self.rotation), ((self.x+2)*self.scale, (self.y+2)*self.scale))
 
 
 class Base():
