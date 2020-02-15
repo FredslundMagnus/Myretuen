@@ -2,8 +2,8 @@ from field import Field, giveFieldsID
 from UI.UI import drawBackground, updateScreen
 from ant import generateAnts, placeAntsOnBoard
 from lines import generateLines
-from dice import Dice
 from base import Base, cleanBases
+from holder import DiceHolder
 
 fields = {
     'D1': Field(60, 320, special='Flag', rotation=90),
@@ -73,8 +73,6 @@ giveFieldsID(fields)
 
 generateLines(fields)
 
-ants = generateAnts(10)
-
 bases = {
     'red': Base(20, 310, (30, 360), (20, 0)),
     'blue': Base(330, 40, (340, 10), (-20, 0)),
@@ -82,9 +80,13 @@ bases = {
 
 cleanBases(bases)
 
+ants = generateAnts(10)
+
 placeAntsOnBoard(ants, bases)
 
+diceHolder = DiceHolder(165, 165)
+
 background, win = drawBackground(
-    fields=fields, diceHolder=Field(165, 165), bases=bases)
+    fields=fields, diceHolder=diceHolder, bases=bases)
 
 updateScreen(background, win, fields)
