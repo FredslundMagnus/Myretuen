@@ -7,6 +7,7 @@ class Ant():
         self.color = None
         self.rotation = random.choice([0, 90, 180, 270])
         self.magnet = 'S'
+        self.position = None
 
 
 def generateAnts(N):
@@ -37,4 +38,5 @@ def placeAntsOnBoard(ants, bases):
         base.home = ants[i*m: (i+1)*m]
         for ant in base.home:
             ant.color = name
+            ant.position = name
         i += 1

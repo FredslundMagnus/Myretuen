@@ -4,8 +4,11 @@ from ant import generateAnts, placeAntsOnBoard
 from lines import generateLines
 from base import Base, cleanBases
 from holder import DiceHolder
+from game import Game
 import threading
 import time
+
+
 fields = {
     'D1': Field(60, 320, special='Flag', rotation=90),
     'D2': Field(80, 320, special='Start', rotation=270),
@@ -91,6 +94,14 @@ background, win = drawBackground(
     fields=fields, diceHolder=diceHolder, bases=bases)
 
 
+game = Game(fields=fields, ants=ants,
+            diceHolder=diceHolder, bases=bases)
+
+print(game.player1)
+print(game.player2)
+game.actions()
+game.roll()
+
 # Just to test
 fields['E10'].ants = ants[:20]
 fields['B8'].ants = ants[:20]
@@ -109,7 +120,7 @@ def other():
         fields['D10'].ants = ants[:max(0, min(20, i + 5))]
         fields['D5'].ants = ants[:max(0, min(20, i + 5))]
         time.sleep(1)
-        diceHolder.roll()
+        game.roll()
 
 
 x = threading.Thread(target=other)
