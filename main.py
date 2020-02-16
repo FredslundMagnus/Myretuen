@@ -4,7 +4,8 @@ from ant import generateAnts, placeAntsOnBoard
 from lines import generateLines
 from base import Base, cleanBases
 from holder import DiceHolder
-
+import threading
+import time
 fields = {
     'D1': Field(60, 320, special='Flag', rotation=90),
     'D2': Field(80, 320, special='Start', rotation=270),
@@ -84,12 +85,34 @@ ants = generateAnts(10)
 
 placeAntsOnBoard(ants, bases)
 
-fields['E10'].ants = ants[:5]  # Just to test
-
 diceHolder = DiceHolder(165, 165)
 
 background, win = drawBackground(
     fields=fields, diceHolder=diceHolder, bases=bases)
+
+
+# Just to test
+fields['E10'].ants = ants[:20]
+fields['B8'].ants = ants[:20]
+fields['H2'].ants = ants[:20]
+
+
+def other():
+    i = 1
+    while True:
+        print(i)
+        i += 1
+        time.sleep(1)
+        fields['A4'].ants = ants[:min(20, i)]
+        fields['A7'].ants = ants[:max(0, min(20, i - 5))]
+        fields['D10'].ants = ants[:max(0, min(20, i + 5))]
+        fields['D5'].ants = ants[:max(0, min(20, i + 5))]
+        time.sleep(1)
+        diceHolder.roll()
+
+
+x = threading.Thread(target=other)
+x.start()
 
 updateScreen(background, win, fields=fields,
              diceHolder=diceHolder, bases=bases)

@@ -203,7 +203,6 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
 def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
     run = True
     isHovering = False
-    TEMPP = 0
     while run:
         for event in pygame.event.get():
             if (event.type == 4):
@@ -230,11 +229,6 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
         for dice in diceHolder.dices:
             Dice(dice, scale, win).draw()
 
-        if TEMPP == 0:
-            TEMPP = 60
-            diceHolder.roll()
-        TEMPP -= 1
-
         for _, base in bases.items():
 
             centerText(22*scale, str(len(base.captured)),
@@ -246,8 +240,8 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
 
         for _, field in fields.items():
             for i, ant in enumerate(field.ants):
-                drawAntAtPos(ant, (field.rect.x + i*scale,
-                                   field.rect.y - i*scale), win)
+                drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390-scale/2)),
+                                   int(field.rect.y + 3 * i * (field.rect.center[1] / 390-scale/2))), win)
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))
