@@ -99,7 +99,8 @@ fields['H2'].ants = ants[:20]
 
 def other():
     i = 1
-    while True:
+    t = threading.currentThread()
+    while getattr(t, "do_run", True):
         print(i)
         i += 1
         time.sleep(1)
@@ -116,3 +117,5 @@ x.start()
 
 updateScreen(background, win, fields=fields,
              diceHolder=diceHolder, bases=bases)
+
+x.do_run = False
