@@ -13,7 +13,27 @@ class Game():
         self.rolled = self.diceHolder.roll()
 
     def actions(self):
-        li = [ant for ant in self.ants if ant.color ==
-              self.currentPlayer and ant.position != self.currentPlayer] + self.bases[self.currentPlayer].home[:min(2, len(self.bases[self.currentPlayer].home))]
+        print(self.ants)
+        moves = [[], [], []]
 
-        print(li)
+        for ant in self.ants:
+            if ant.color != self.currentPlayer:
+                break
+
+            if ant.position == self.currentPlayer:
+                starts = self.bases[self.currentPlayer]  # .startpositions
+            else:
+                starts = [self.fields[ant.position]]
+
+            for start in starts:
+                for group, diceChoice in enumerate([self.rolled[:1], self.rolled[1:], self.rolled]):
+                    move = [start]
+                    for dice in diceChoice:
+                        print('Use', move[-1])
+                        print('Use', dice)
+                        print('Make a move')
+                        move.append('newMove')
+
+                        moves[group].append(move)
+
+        return moves
