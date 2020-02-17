@@ -162,7 +162,9 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     pygame.init()
     size = (390*scale, 390*scale)
     win = pygame.display.set_mode(size)
-    pygame.display.set_caption("Myretuen")
+    pygame.display.set_caption(" Myretuen")
+    programIcon = pygame.image.load('UI/Ants/Antgreen.png')
+    pygame.display.set_icon(programIcon)
 
     fieldsUI = [Field(field, scale, win) for key, field in fields.items()]
     basesUI = [Base(base, scale, win) for key, base in bases.items()]

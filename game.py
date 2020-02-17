@@ -16,24 +16,24 @@ class Game():
         print(self.ants)
         moves = [[], [], []]
 
-        for ant in self.ants:
-            if ant.color != self.currentPlayer:
-                break
+        # for ant in self.ants:
+        #     if ant.color != self.currentPlayer:
+        #         break
 
-            if ant.position == self.currentPlayer:
-                starts = self.bases[self.currentPlayer]  # .startpositions
-            else:
-                starts = [self.fields[ant.position]]
+        #     if ant.position == self.currentPlayer:
+        #         starts = self.bases[self.currentPlayer]  # .startpositions
+        #     else:
+        #         starts = [self.fields[ant.position]]
 
-            for start in starts:
-                for group, diceChoice in enumerate([self.rolled[:1], self.rolled[1:], self.rolled]):
-                    move = [start]
-                    for dice in diceChoice:
-                        print('Use', move[-1])
-                        print('Use', dice)
-                        print('Make a move')
-                        move.append('newMove')
+        #     for start in starts:
+        #         for group, diceChoice in enumerate([self.rolled[:1], self.rolled[1:], self.rolled]):
+        #             move = [start]
+        #             for dice in diceChoice:
+        #                 print('Use', move[-1])
+        #                 print('Use', dice)
+        #                 print('Make a move')
+        #                 move.append('newMove')
 
-                        moves[group].append(move)
+        #                 moves[group].append(move)
 
-        return moves
+        # return moves
