@@ -8,6 +8,16 @@ class Ant():
         self.rotation = random.choice([0, 90, 180, 270])
         self.magnet = 'S'
         self.position = None
+        self.id = None
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.id == other.id
+        else:
+            return False
+
+    def __str__(self):
+        return f'Ant({self.id})'
 
 
 def generateAnts(N):
@@ -36,7 +46,8 @@ def placeAntsOnBoard(ants, bases):
     i = 0
     for name, base in bases.items():
         base.home = ants[i*m: (i+1)*m]
-        for ant in base.home:
+        for k, ant in enumerate(base.home):
             ant.color = name
             ant.position = name
+            ant.id = f'{name.capitalize()} {k}'
         i += 1

@@ -13,27 +13,15 @@ class Game():
         self.rolled = self.diceHolder.roll()
 
     def actions(self):
-        moves = [[], [], []]
+        for ant, start, dice in self.getAllStartConfigurations():
+            for end in self.getAllPositionsAtDistance(start, dice):
+                yield (ant, start, dice, end)
 
-        for ant, start, group, diceChoice in self.getAllConfigurations():
-            move = [start]
-            for dice in diceChoice:
-                # print('Use', move[-1])
-                # print('Use', dice)
-                # print(move[-1])
-                # print(start)
-                # print('Make a move')
-                move.append('newMove')
-
-            moves[group].append(move)
-
-        return moves
-
-    def getAllConfigurations(self):
+    def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
             for start in self.getAllStartPositions(ant):
-                for group, diceChoice in self.dicechoices():
-                    yield (ant, start, group, diceChoice)
+                for dice in self.rolled:
+                    yield (ant, start, dice)
 
     def getAllCurrentPlayersAnts(self):
         for ant in self.ants:
@@ -42,16 +30,9 @@ class Game():
 
     def getAllStartPositions(self, ant):
         if ant.position == self.currentPlayer:
-            starts = self.bases[self.currentPlayer].goals
+            return self.bases[self.currentPlayer].goals
         else:
-            starts = [self.fields[ant.position]]
-        return starts
-
-    def dicechoices(self):
-        if len(self.rolled) == 1:
-            return enumerate([self.rolled])
-        else:
-            return enumerate([self.rolled[:1], self.rolled[1:], self.rolled])
+            return [self.fields[ant.position]]
 
     def getAllPositionsAtDistance(self, position, distance):
         for step1 in self.goOneStep(position, None):

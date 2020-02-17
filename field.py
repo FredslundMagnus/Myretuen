@@ -21,7 +21,7 @@ class Field():
             return False
 
     def __str__(self):
-        return self.id
+        return f'Field({self.id})'
 
 
 def giveFieldsID(fields):

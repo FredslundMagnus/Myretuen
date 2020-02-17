@@ -103,7 +103,6 @@ game.actions()
 game.roll()
 
 # Just to test
-game.rolled = [1]
 fields['E10'].ants = ants[:20]
 fields['B8'].ants = ants[:20]
 fields['H2'].ants = ants[:20]
@@ -117,6 +116,9 @@ for endField in game.getAllPositionsAtDistance(fields['E7'], 6):
 print('E2 distance 4')
 for endField in game.getAllPositionsAtDistance(fields['E2'], 4):
     print(endField)
+
+for move in game.actions():
+    print(*move)
 
 
 def other():
