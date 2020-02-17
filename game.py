@@ -81,5 +81,7 @@ class Game():
 
     def goOneStep(self, current, previous):
         for field in current.neighbors:
-            if field != previous:
+            if current.special == 'Flag':
+                yield field
+            elif field != previous:
                 yield field
