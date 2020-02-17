@@ -13,7 +13,16 @@ class Base():
         self.homeChange = homeChange
 
 
-def cleanBases(bases):
+def cleanBases(bases, fields):
     for name, base in bases.items():
         base.id = name
         base.color = name
+        goals, starts = [], []
+        for name, field in fields.items():
+            if field.special == 'Flag':
+                goals.append(field)
+            if field.special == 'Start':
+                starts.append(field)
+
+        base.starts = sorted(starts, key=lambda field: abs(field.x - base.x) + abs(field.y - base.y))[:2]
+        base.goals = sorted(goals, key=lambda field: abs(field.x - base.x) + abs(field.y - base.y))[:2]

@@ -14,6 +14,15 @@ class Field():
         self.ants = []
         self.neighbors = []
 
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.id == other.id
+        else:
+            return False
+
+    def __str__(self):
+        return self.id
+
 
 def giveFieldsID(fields):
     for field in fields:
