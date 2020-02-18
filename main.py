@@ -85,7 +85,7 @@ bases = {
 
 cleanBases(bases, fields)
 
-ants = generateAnts(10)
+ants = generateAnts(17)
 
 placeAntsOnBoard(ants, bases)
 
@@ -94,18 +94,18 @@ diceHolder = DiceHolder(165, 165)
 background, win = drawBackground(
     fields=fields, diceHolder=diceHolder, bases=bases)
 
-
 game = Game(fields=fields, ants=ants,
             diceHolder=diceHolder, bases=bases)
 
 
 def other():
     t = threading.currentThread()
-    timer = 0.1
+    timer = 0.02
+    game.currentPlayer = game.player2
     while getattr(t, "do_run", True):
         time.sleep(timer)
         game.roll()
-        changeThisPlayer = len(set(game.rolled)) == 2
+        changeThisPlayer = len(set(game.rolled)) == 2  # and False
         time.sleep(timer)
         random.choice(list(game.actions())).execute()
         time.sleep(timer)

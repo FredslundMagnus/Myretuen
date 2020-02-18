@@ -16,27 +16,23 @@ class Move():
 
     def execute(self):
         print(self)
+        self.removeDice()
+        moving = self.liftAnts()
+        self.placeOnBoard(moving)
+        self.cleanAnts()
 
+    def removeDice(self):
         self.game.rolled.remove(self.dice)
 
-        moving = self.liftAnts()
+    def cleanAnts(self):
+        for ant in self.end.ants:
+            ant.position = self.end
 
-        if len(moving) == 0:
-            print(moving)
-
+    def placeOnBoard(self, moving):
         if self.end.ants == []:
             self.moveToEmpty(moving)
         else:
-            if self.end.ants[-1].magnet == moving[-1].magnet:
-                for ant in self.end.ants:
-                    ant.isAlive = False
-                self.end.ants = self.end.ants + moving
-            else:
-                for ant in moving:
-                    ant.isAlive = False
-                    ant.flipped = not ant.flipped
-                moving.reverse()
-                self.end.ants = moving + self.end.ants
+            self.moveToOpponent(moving)
 
     def transforCaputuredToBase(self):
         if self.end.special == 'Flag':
@@ -53,6 +49,17 @@ class Move():
 
     def moveToEmpty(self, moving):
         self.end.ants = moving
-        for ant in self.end.ants:
-            ant.position = self.end
         self.transforCaputuredToBase()
+
+    def moveToOpponent(self, moving):
+        if self.end.ants[-1].magnet == moving[-1].magnet:
+            for ant in self.end.ants:
+                ant.isAlive = False
+            self.end.ants = self.end.ants + moving
+            self.transforCaputuredToBase()
+        else:
+            for ant in moving:
+                ant.isAlive = False
+                ant.flipped = not ant.flipped
+            moving.reverse()
+            self.end.ants = moving + self.end.ants

@@ -30,7 +30,7 @@ class Game():
     def getAllCurrentPlayersAnts(self):
         hasSeenOneFromBase = False
         for ant in self.ants:
-            if ant.color == self.currentPlayer and not hasSeenOneFromBase and ant.isAlive:
+            if ant.color == self.currentPlayer and ant.isAlive and not hasSeenOneFromBase:
                 hasSeenOneFromBase = ant.position.type == 'Base'
                 yield ant
 
