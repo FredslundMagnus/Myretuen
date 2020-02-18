@@ -12,6 +12,9 @@ class Base():
         self.homePos = homePos
         self.homeChange = homeChange
 
+    def __str__(self):
+        return f"Base({self.color.capitalize()})"
+
 
 def cleanBases(bases, fields):
     for name, base in bases.items():

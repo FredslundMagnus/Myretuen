@@ -19,6 +19,13 @@ class Ant():
     def __str__(self):
         return f'Ant({self.id})'
 
+    def startPositions(self):
+        if self.position.__class__.__name__ == 'Base':
+            for start in self.position.goals:
+                yield start
+        else:
+            yield self.position
+
 
 def generateAnts(N):
     ants1, ants2 = [], []
@@ -48,6 +55,6 @@ def placeAntsOnBoard(ants, bases):
         base.home = ants[i*m: (i+1)*m]
         for k, ant in enumerate(base.home):
             ant.color = name
-            ant.position = name
+            ant.position = base
             ant.id = f'{name.capitalize()} {k}'
         i += 1

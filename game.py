@@ -4,8 +4,8 @@ class Game():
         self.ants = ants
         self.diceHolder = diceHolder
         self.bases = bases
-        self.player1 = ants[0].position
-        self.player2 = ants[-1].position
+        self.player1 = ants[0].color
+        self.player2 = ants[-1].color
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
 
@@ -15,11 +15,11 @@ class Game():
     def actions(self):
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):
-                yield (ant, start, dice, end)
+                yield (ant, ant.position, dice, end)
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
-            for start in self.getAllStartPositions(ant):
+            for start in ant.startPositions():
                 for dice in self.rolled:
                     yield (ant, start, dice)
 
@@ -28,41 +28,15 @@ class Game():
             if ant.color == self.currentPlayer:
                 yield ant
 
-    def getAllStartPositions(self, ant):
-        if ant.position == self.currentPlayer:
-            return self.bases[self.currentPlayer].goals
-        else:
-            return [self.fields[ant.position]]
-
-    def getAllPositionsAtDistance(self, position, distance):
-        for step1 in self.goOneStep(position, None):
+    def getAllPositionsAtDistance(self, position, distance, previous=None):
+        for step1 in self.goOneStep(position, previous):
             if distance == 1:
                 yield step1
                 continue
-            for step2 in self.goOneStep(step1, position):
-                if distance == 2:
-                    yield step2
-                    continue
-                for step3 in self.goOneStep(step2, step1):
-                    if distance == 3:
-                        yield step3
-                        continue
-                    for step4 in self.goOneStep(step3, step2):
-                        if distance == 4:
-                            yield step4
-                            continue
-                        for step5 in self.goOneStep(step4, step3):
-                            if distance == 5:
-                                yield step5
-                                continue
-                            for step6 in self.goOneStep(step5, step4):
-                                if distance == 6:
-                                    yield step6
-                                    continue
+            for step2 in self.getAllPositionsAtDistance(step1, distance-1, previous=position):
+                yield step2
 
     def goOneStep(self, current, previous):
         for field in current.neighbors:
-            if current.special == 'Flag':
-                yield field
-            elif field != previous:
+            if current.special == 'Flag' or field != previous:
                 yield field

@@ -103,9 +103,9 @@ game.actions()
 game.roll()
 
 # Just to test
-fields['E10'].ants = ants[:20]
-fields['B8'].ants = ants[:20]
-fields['H2'].ants = ants[:20]
+# fields['E10'].ants = ants[:20]
+# fields['B8'].ants = ants[:20]
+# fields['H2'].ants = ants[:20]
 
 
 print('E7 distance 6')
@@ -127,10 +127,10 @@ def other():
     while getattr(t, "do_run", True):
         i += 1
         time.sleep(1)
-        fields['A4'].ants = ants[:min(20, i)]
-        fields['A7'].ants = ants[:max(0, min(20, i - 5))]
-        fields['D10'].ants = ants[:max(0, min(20, i + 5))]
-        fields['D5'].ants = ants[:max(0, min(20, i + 5))]
+        # fields['A4'].ants = ants[:min(20, i)]
+        # fields['A7'].ants = ants[:max(0, min(20, i - 5))]
+        # fields['D10'].ants = ants[:max(0, min(20, i + 5))]
+        # fields['D5'].ants = ants[:max(0, min(20, i + 5))]
         time.sleep(1)
         game.roll()
 
