@@ -28,6 +28,10 @@ class Ant():
         else:
             yield self.position
 
+    def reset(self):
+        self.isAlive = True
+        self.flipped = False
+
 
 def generateAnts(N):
     ants1, ants2 = [], []

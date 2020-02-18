@@ -107,9 +107,13 @@ def other():
         game.roll()
         changeThisPlayer = len(set(game.rolled)) == 2  # and False
         time.sleep(timer)
-        random.choice(list(game.actions())).execute()
+        actions = list(game.actions())
+        if len(actions) != 0:
+            random.choice(actions).execute()
         time.sleep(timer)
-        random.choice(list(game.actions())).execute()
+        actions = list(game.actions())
+        if len(actions) != 0:
+            random.choice(actions).execute()
         if changeThisPlayer:
             game.currentPlayer = game.player2 if game.currentPlayer == game.player1 else game.player1
 

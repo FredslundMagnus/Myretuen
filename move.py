@@ -15,10 +15,10 @@ class Move():
         return f"Move {self.ant} using Dice({self.dice}) from {self.start} to {self.end}."
 
     def execute(self):
-        print(self)
         self.removeDice()
         moving = self.liftAnts()
         self.placeOnBoard(moving)
+        self.transforCaputuredToBase()
         self.cleanAnts()
 
     def removeDice(self):
@@ -35,8 +35,18 @@ class Move():
             self.moveToOpponent(moving)
 
     def transforCaputuredToBase(self):
-        if self.end.special == 'Flag':
-            print('Maybe put in base needs and is your own base')
+        color = self.end.ants[-1].color
+        if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.bases[color].goals:
+            for ant in self.end.ants:
+                if ant.color == color:
+                    ant.position = self.bases[color]
+                    ant.reset()
+                    self.bases[color].home.append(ant)
+                else:
+                    ant.position = self.bases[color]
+                    ant.flipped = False
+                    self.bases[color].captured.append(ant)
+            self.end.ants = []
 
     def liftAnts(self):
         if self.start.type == 'Base':
@@ -49,14 +59,12 @@ class Move():
 
     def moveToEmpty(self, moving):
         self.end.ants = moving
-        self.transforCaputuredToBase()
 
     def moveToOpponent(self, moving):
         if self.end.ants[-1].magnet == moving[-1].magnet:
             for ant in self.end.ants:
                 ant.isAlive = False
             self.end.ants = self.end.ants + moving
-            self.transforCaputuredToBase()
         else:
             for ant in moving:
                 ant.isAlive = False
