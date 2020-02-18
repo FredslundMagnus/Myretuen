@@ -6,6 +6,7 @@ from base import Base, cleanBases
 from holder import DiceHolder
 from game import Game
 import threading
+import random
 import time
 
 
@@ -97,10 +98,11 @@ background, win = drawBackground(
 game = Game(fields=fields, ants=ants,
             diceHolder=diceHolder, bases=bases)
 
-print(game.player1)
-print(game.player2)
-game.actions()
-game.roll()
+
+# print(game.player1)
+# print(game.player2)
+# game.actions()
+# game.roll()
 
 # Just to test
 # fields['E10'].ants = ants[:20]
@@ -108,17 +110,25 @@ game.roll()
 # fields['H2'].ants = ants[:20]
 
 
-print('E7 distance 6')
-for endField in game.getAllPositionsAtDistance(fields['E7'], 6):
-    print(endField)
+# print('E7 distance 6')
+# for endField in game.getAllPositionsAtDistance(fields['E7'], 6):
+#     print(endField)
 
 
-print('E2 distance 4')
-for endField in game.getAllPositionsAtDistance(fields['E2'], 4):
-    print(endField)
+# print('E2 distance 4')
+# for endField in game.getAllPositionsAtDistance(fields['E2'], 4):
+#     print(endField)
 
-for move in game.actions():
-    print(*move)
+
+# start = time.time()
+# for i in range(100000):
+#     for move in game.actions():
+#         a = move
+# end = time.time()
+# print(end - start)
+# simpleReturn = [16.80853009223938, 16.888732194900513, 13.605386972427368, 13.815026044845581, 15.19202208518982]
+# classReturn = [14.21831202507019, 21.000648021697998, 11.294211387634277, 17.68838405609131, 11.17383337020874]
+# fullClassReturn = [11.357255458831787, 13.010324478149414, 16.21596670150757, 17.673794269561768, 9.742201089859009]
 
 
 def other():
@@ -127,12 +137,13 @@ def other():
     while getattr(t, "do_run", True):
         i += 1
         time.sleep(1)
-        # fields['A4'].ants = ants[:min(20, i)]
-        # fields['A7'].ants = ants[:max(0, min(20, i - 5))]
-        # fields['D10'].ants = ants[:max(0, min(20, i + 5))]
-        # fields['D5'].ants = ants[:max(0, min(20, i + 5))]
-        time.sleep(1)
-        game.roll()
+        random.choice(list(game.actions())).execute()
+        # # fields['A4'].ants = ants[:min(20, i)]
+        # # fields['A7'].ants = ants[:max(0, min(20, i - 5))]
+        # # fields['D10'].ants = ants[:max(0, min(20, i + 5))]
+        # # fields['D5'].ants = ants[:max(0, min(20, i + 5))]
+        # time.sleep(1)
+        # game.roll()
 
 
 x = threading.Thread(target=other)

@@ -11,6 +11,7 @@ class Base():
         self.goals = []
         self.homePos = homePos
         self.homeChange = homeChange
+        self.type = 'Base'
 
     def __str__(self):
         return f"Base({self.color.capitalize()})"

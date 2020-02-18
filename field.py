@@ -12,6 +12,7 @@ class Field():
         self.id = None
         self.ants = []
         self.neighbors = []
+        self.type = 'Field'
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):

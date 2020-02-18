@@ -1,3 +1,6 @@
+from move import Move
+
+
 class Game():
     def __init__(self, fields=None, ants=None, diceHolder=None, bases=None):
         self.fields = fields
@@ -15,7 +18,7 @@ class Game():
     def actions(self):
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):
-                yield (ant, ant.position, dice, end)
+                yield Move(ant=ant, start=ant.position, dice=dice, end=end, fields=self.fields, bases=self.bases)
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
@@ -24,8 +27,10 @@ class Game():
                     yield (ant, start, dice)
 
     def getAllCurrentPlayersAnts(self):
+        hasSeenOneFromBase = False
         for ant in self.ants:
-            if ant.color == self.currentPlayer:
+            if ant.color == self.currentPlayer and not hasSeenOneFromBase and ant.isAlive:
+                hasSeenOneFromBase = ant.position.type == 'Base'
                 yield ant
 
     def getAllPositionsAtDistance(self, position, distance, previous=None):

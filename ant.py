@@ -9,6 +9,7 @@ class Ant():
         self.magnet = 'S'
         self.position = None
         self.id = None
+        self.isAlive = True
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -20,7 +21,7 @@ class Ant():
         return f'Ant({self.id})'
 
     def startPositions(self):
-        if self.position.__class__.__name__ == 'Base':
+        if self.position.type == 'Base':
             for start in self.position.goals:
                 yield start
         else:
