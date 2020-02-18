@@ -18,12 +18,13 @@ class Game():
     def actions(self):
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):
-                yield Move(ant=ant, start=ant.position, dice=dice, end=end, fields=self.fields, bases=self.bases)
+                if self.isLegalMove(ant, end):
+                    yield Move(ant=ant, start=ant.position, dice=dice, end=end, fields=self.fields, bases=self.bases, game=self)
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
             for start in ant.startPositions():
-                for dice in self.rolled:
+                for dice in set(self.rolled):
                     yield (ant, start, dice)
 
     def getAllCurrentPlayersAnts(self):
@@ -45,3 +46,8 @@ class Game():
         for field in current.neighbors:
             if current.special == 'Flag' or field != previous:
                 yield field
+
+    def isLegalMove(self, ant, end):
+        if end.ants == [] or end.ants[-1].color != ant.color:
+            return True
+        return False

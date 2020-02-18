@@ -10,6 +10,7 @@ class Ant():
         self.position = None
         self.id = None
         self.isAlive = True
+        self.flipped = False
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
