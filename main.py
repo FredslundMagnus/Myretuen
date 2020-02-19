@@ -8,6 +8,8 @@ from game import Game
 import threading
 import random
 import time
+from gamecontroller import Gamecontroller
+from Agents.randomAgent import RandomAgent
 
 
 fields = {
@@ -79,7 +81,7 @@ giveFieldsID(fields)
 generateLines(fields)
 
 bases = {
-    'red': Base(20, 310, (30, 360), (20, 0)),
+    'green': Base(20, 310, (30, 360), (20, 0)),
     'blue': Base(330, 40, (340, 10), (-20, 0)),
 }
 
@@ -97,28 +99,10 @@ background, win = drawBackground(
 game = Game(fields=fields, ants=ants,
             diceHolder=diceHolder, bases=bases)
 
-
-def other():
-    t = threading.currentThread()
-    timer = 0.02
-    game.currentPlayer = game.player2
-    while getattr(t, "do_run", True):
-        time.sleep(timer)
-        game.roll()
-        changeThisPlayer = len(set(game.rolled)) == 2  # and False
-        time.sleep(timer)
-        actions = list(game.actions())
-        if len(actions) != 0:
-            random.choice(actions).execute()
-        time.sleep(timer)
-        actions = list(game.actions())
-        if len(actions) != 0:
-            random.choice(actions).execute()
-        if changeThisPlayer:
-            game.currentPlayer = game.player2 if game.currentPlayer == game.player1 else game.player1
+controller = Gamecontroller(game=game, timeDelay=0.02, agent1=RandomAgent(), agent2=RandomAgent())
 
 
-x = threading.Thread(target=other)
+x = threading.Thread(target=controller.run)
 x.start()
 
 updateScreen(background, win, fields=fields,
