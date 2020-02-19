@@ -4,7 +4,7 @@ import random
 
 
 class Gamecontroller():
-    def __init__(self, game=None, agent1=None, agent2=None, timeDelay=0):
+    def __init__(self, game=None, timeDelay=0, agent1=None, agent2=None):
         self.timeDelay = timeDelay
         self.game = game
         self.agents = [agent1, agent2]
