@@ -10,6 +10,7 @@ import random
 import time
 from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
+from Agents.playerAgent import KeyboardAgent
 
 
 fields = {
@@ -99,7 +100,7 @@ background, win = drawBackground(
 game = Game(fields=fields, ants=ants,
             diceHolder=diceHolder, bases=bases)
 
-controller = Gamecontroller(game=game, timeDelay=0.02, agent1=RandomAgent(), agent2=RandomAgent())
+controller = Gamecontroller(game=game, timeDelay=0.02, agent1=RandomAgent(), agent2=KeyboardAgent())
 
 
 x = threading.Thread(target=controller.run)
