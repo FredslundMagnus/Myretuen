@@ -1,5 +1,8 @@
-class KeyboardAgent():
-    def choose(self, actions):
+from Agents.agent import Agent
+
+
+class KeyboardAgent(Agent):
+    def choose(self, actions, game):
         [print(action) for action in actions]
         start = input('Choose your starting position: ').capitalize()
         if start == 'Base':
