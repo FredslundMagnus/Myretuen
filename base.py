@@ -1,3 +1,6 @@
+from field import Field
+
+
 class Base():
     def __init__(self, x: int, y: int, homePos, homeChange):
         self.color = None
@@ -12,6 +15,7 @@ class Base():
         self.homePos = homePos
         self.homeChange = homeChange
         self.type = 'Base'
+        self.startPoint = [Field(0, 0)]
 
     def __str__(self):
         return f"Base({self.color.capitalize()})"
@@ -30,3 +34,4 @@ def cleanBases(bases, fields):
 
         base.starts = sorted(starts, key=lambda field: abs(field.x - base.x) + abs(field.y - base.y))[:2]
         base.goals = sorted(goals, key=lambda field: abs(field.x - base.x) + abs(field.y - base.y))[:2]
+        base.startPoint[0].neighbors = base.starts

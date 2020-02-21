@@ -23,7 +23,7 @@ class Ant():
 
     def startPositions(self):
         if self.position.type == 'Base':
-            for start in self.position.goals:
+            for start in self.position.startPoint:
                 yield start
         else:
             yield self.position

@@ -11,6 +11,7 @@ import time
 from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import KeyboardAgent
+from Agents.linearAprox import LinearAprox
 
 
 fields = {
@@ -88,7 +89,7 @@ bases = {
 
 cleanBases(bases, fields)
 
-ants = generateAnts(17)
+ants = generateAnts(2)
 
 placeAntsOnBoard(ants, bases)
 
@@ -100,7 +101,7 @@ background, win = drawBackground(
 game = Game(fields=fields, ants=ants,
             diceHolder=diceHolder, bases=bases)
 
-controller = Gamecontroller(game=game, timeDelay=0.02, agent1=RandomAgent(), agent2=KeyboardAgent())
+controller = Gamecontroller(game=game, timeDelay=0.22, agent1=RandomAgent(), agent2=LinearAprox())
 
 
 x = threading.Thread(target=controller.run)

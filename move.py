@@ -2,22 +2,19 @@ import time
 
 
 class Move():
-    def __init__(self, ant=None, start=None, dice=None, end=None, fields=None, bases=None, game=None):
-        self.ant = ant
+    def __init__(self, start=None, dice=None, end=None, game=None):
         self.start = start
         self.dice = dice
         self.end = end
-        self.fields = fields
-        self.bases = bases
         self.game = game
 
     def __str__(self):
-        return f"Move {self.ant} using Dice({self.dice}) from {self.start} to {self.end}."
+        return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
 
-    def execute(self):
+    def execute(self, oppesite=False):
         self.removeDice()
         moving = self.liftAnts()
-        self.placeOnBoard(moving)
+        self.placeOnBoard(moving, oppesite)
         self.transforCaputuredToBase()
         self.cleanAnts()
 
@@ -28,30 +25,31 @@ class Move():
         for ant in self.end.ants:
             ant.position = self.end
 
-    def placeOnBoard(self, moving):
+    def placeOnBoard(self, moving, oppesite):
         if self.end.ants == []:
             self.moveToEmpty(moving)
         else:
-            self.moveToOpponent(moving)
+            self.moveToOpponent(moving, oppesite)
 
     def transforCaputuredToBase(self):
         color = self.end.ants[-1].color
-        if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.bases[color].goals:
+        if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.game.bases[color].goals:
             for ant in self.end.ants:
                 if ant.color == color:
-                    ant.position = self.bases[color]
+                    ant.position = self.game.bases[color]
                     ant.reset()
-                    self.bases[color].home.append(ant)
+                    self.game.bases[color].home.append(ant)
                 else:
-                    ant.position = self.bases[color]
+                    ant.position = self.game.bases[color]
                     ant.flipped = False
-                    self.bases[color].captured.append(ant)
+                    self.game.bases[color].captured.append(ant)
             self.end.ants = []
 
     def liftAnts(self):
         if self.start.type == 'Base':
-            self.start.home.remove(self.ant)
-            return [self.ant]
+            ant = self.start.home[0]
+            self.start.home.remove(ant)
+            return [ant]
         else:
             moving = self.start.ants
             self.start.ants = []
@@ -60,8 +58,8 @@ class Move():
     def moveToEmpty(self, moving):
         self.end.ants = moving
 
-    def moveToOpponent(self, moving):
-        if self.end.ants[-1].magnet == moving[-1].magnet:
+    def moveToOpponent(self, moving, oppesite):
+        if (self.end.ants[-1].magnet == moving[-1].magnet and not oppesite) or (self.end.ants[-1].magnet != moving[-1].magnet and oppesite):
             for ant in self.end.ants:
                 ant.isAlive = False
             self.end.ants = self.end.ants + moving

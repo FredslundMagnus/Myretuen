@@ -18,10 +18,10 @@ class Gamecontroller():
             changeThisPlayer = len(set(self.game.rolled)) == 2  # and False
             time.sleep(self.timeDelay)
             actions = list(self.game.actions())
-            self.agents[currentAgent].choose(actions)
+            self.agents[currentAgent].choose(actions, self.game)
             time.sleep(self.timeDelay)
             actions = list(self.game.actions())
-            self.agents[currentAgent].choose(actions)
+            self.agents[currentAgent].choose(actions, self.game)
             if changeThisPlayer:
                 self.game.currentPlayer = self.game.player2 if self.game.currentPlayer == self.game.player1 else self.game.player1
                 currentAgent = 1 if currentAgent == 0 else 0

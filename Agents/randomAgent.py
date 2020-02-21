@@ -2,6 +2,6 @@ import random
 
 
 class RandomAgent():
-    def choose(self, actions):
+    def choose(self, actions, game):
         if len(actions) != 0:
             random.choice(actions).execute()

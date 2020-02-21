@@ -19,7 +19,7 @@ class Game():
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):
                 if self.isLegalMove(ant, end):
-                    yield Move(ant=ant, start=ant.position, dice=dice, end=end, fields=self.fields, bases=self.bases, game=self)
+                    yield Move(start=ant.position, dice=dice, end=end, game=self)
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
