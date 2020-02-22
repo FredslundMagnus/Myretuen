@@ -49,7 +49,7 @@ class Move():
                     ant.position = self.game.bases[color]
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
-                    reward += 10 * factor
+                    reward += 1000 * factor
             self.end.ants = []
         return reward
 
@@ -71,13 +71,13 @@ class Move():
         if (self.end.ants[-1].magnet == moving[-1].magnet and not oppesite) or (self.end.ants[-1].magnet != moving[-1].magnet and oppesite):
             for ant in self.end.ants:
                 ant.isAlive = False
-                reward += 1
+                reward += 100
             self.end.ants = self.end.ants + moving
         else:
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
-                reward -= 1
+                reward -= 100
             moving.reverse()
             self.end.ants = moving + self.end.ants
         return reward

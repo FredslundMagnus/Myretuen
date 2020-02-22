@@ -75,8 +75,8 @@ def setup():
     generateLines(fields)
 
     bases = {
-        'green': Base(20, 310, (30, 360), (20, 0)),
-        'blue': Base(330, 40, (340, 10), (-20, 0)),
+        'red': Base(20, 310, (30, 360), (20, 0)),
+        'green': Base(330, 40, (340, 10), (-20, 0)),
     }
 
     cleanBases(bases, fields)

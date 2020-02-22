@@ -109,7 +109,7 @@ class Agent():
     def choose(self, actions, game):
         pass
 
-    def train(self, game, oppesiteReward):
+    def train(self, cost, action):
         pass
 
     def antsDistanse(self, ant, maxi=12):
