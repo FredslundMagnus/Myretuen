@@ -36,11 +36,11 @@ def Nointersection(lst1, lst2):
     return lst3
 
 
-def Give_dist_to_bases(Bases, fields):
+def Give_dist_to_bases(bases, fields):
     colors = []
-    [colors.append(x.color) for x in Bases.values()]
+    [colors.append(x.color) for x in bases.values()]
     flags = []
-    [flags.append(x.goals) for x in Bases.values()]
+    [flags.append(x.goals) for x in bases.values()]
     for l in range(len(colors)):
         ToFlags = []
         for k in range(len(flags[l])):
@@ -72,6 +72,15 @@ def Give_dist_to_bases(Bases, fields):
                 else:
                     if ToFlags[2*h+1][g].distBases[str(colors[l])] > ToFlags[2*h][g]:
                         ToFlags[2*h+1][g].distBases.update({str(colors[l]): ToFlags[2*h][g]})
+    for a_field in fields.values():
+        New_value = []
+        for value in a_field.distBases.values():
+            New_value.append(value)
+        for key in a_field.distBases:
+            if colors[0] == key:
+                a_field.distBases[key] = New_value
+            else:
+                a_field.distBases[key] = New_value[::-1]
 
 
 def Give_dist_to_target(fields, targets):
@@ -103,3 +112,22 @@ def Give_dist_to_target(fields, targets):
         for g in range(len(ToFlags[0])):
             #print(ToFlags[1][g], ToFlags[0][g])
             ToFlags[1][g].dist_to_targets.append(ToFlags[0][g])
+
+
+def Give_bases_dists(bases):
+    for values in bases.values():
+        values.dist_to_targets = [x+1 for x in values.starts[0].dist_to_targets]
+        for i in range(1, len(values.starts)):
+            for j in range(len(values.starts[i].dist_to_targets)):
+                if values.starts[i].dist_to_targets[j]+1 < values.dist_to_targets[j]:
+                    values.dist_to_targets[j] = values.starts[i].dist_to_targets[j] + 1
+
+    for values in bases.values():
+        values.distBases = values.starts[0].distBases
+        for key1 in values.distBases:
+            if key1 == values.color:
+                values.distBases[key1][0] += -1
+                values.distBases[key1][1] += 1
+            else:
+                values.distBases[key1][0] += 1
+                values.distBases[key1][1] += -1

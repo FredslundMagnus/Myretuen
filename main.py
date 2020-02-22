@@ -1,4 +1,4 @@
-from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target
+from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, Give_bases_dists
 from UI.UI import drawBackground, updateScreen
 from ant import generateAnts, placeAntsOnBoard
 from lines import generateLines
@@ -93,6 +93,8 @@ cleanBases(bases, fields)
 Give_dist_to_bases(bases, fields)
 
 Give_dist_to_target(fields, ['A8', 'B8', 'D8', 'E8'])
+
+Give_bases_dists(bases)
 
 ants = generateAnts(10)
 

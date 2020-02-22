@@ -143,22 +143,10 @@ class Agent():
         return 0 if ant.position.type == 'Base' else sum(int(ant2.color == ant.color) for ant2 in ant.position.ants[:-1])
 
     def distanceToSplits(self, ant):
-        if ant.position.type == 'Base':
-            return [0, 0, 0, 0]
-        else:
-            return list(sorted(ant.position.dist_to_targets))
+        return list(sorted(ant.position.dist_to_targets))
 
     def distanceToBases(self, ant):
-        if ant.position.type == 'Base':
-            return [0, 21]
-        else:
-            li = [0, 0]
-            for color, distance in ant.position.distBases.items():
-                if color == ant.color:
-                    li[0] = distance
-                else:
-                    li[1] = distance
-            return li
+        return ant.position.distBases[ant.color]
 
     def boolHot(self, bo):
         return [int(bo), int(not bo)]
