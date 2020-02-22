@@ -106,6 +106,9 @@ import numpy as np
 
 
 class Agent():
+    def choose(self, actions, game):
+        pass
+
     def antsDistanse(self, ant, maxi=12):
         mine = [set() for i in range(maxi)]
         dine = [set() for i in range(maxi)]
@@ -130,7 +133,7 @@ class Agent():
 
     def goOneStep(self, current, previous):
         for field in current.neighbors:
-            if current.special == 'Flag' or field != previous:
+            if field != previous or current.special == 'Flag':
                 yield field
 
     def carrying_number_of_enemy_ants(self, ant):
@@ -138,6 +141,24 @@ class Agent():
 
     def carrying_number_of_ally_ants(self, ant):
         return 0 if ant.position.type == 'Base' else sum(int(ant2.color == ant.color) for ant2 in ant.position.ants[:-1])
+
+    def distanceToSplits(self, ant):
+        if ant.position.type == 'Base':
+            return [0, 0, 0, 0]
+        else:
+            return list(sorted(ant.position.dist_to_targets))
+
+    def distanceToBases(self, ant):
+        if ant.position.type == 'Base':
+            return [0, 21]
+        else:
+            li = [0, 0]
+            for color, distance in ant.position.distBases.items():
+                if color == ant.color:
+                    li[0] = distance
+                else:
+                    li[1] = distance
+            return li
 
     def boolHot(self, bo):
         return [int(bo), int(not bo)]
@@ -148,7 +169,9 @@ class Agent():
         (mine, dine) = self.antsDistanse(ant)
         carryEnimy = self.carrying_number_of_enemy_ants(ant)
         carryAlly = self.carrying_number_of_ally_ants(ant)
-        return isBase + isAlive + [sum(mine[:6]), sum(mine[6:])] + [sum(dine[:6]), sum(dine[6:])] + [carryEnimy, carryAlly]
+        splitDistance = self.distanceToSplits(ant)
+        baseDistance = self.distanceToBases(ant)
+        return isBase + isAlive + [sum(mine[:6]), sum(mine[6:])] + [sum(dine[:6]), sum(dine[6:])] + [carryEnimy, carryAlly] + splitDistance + baseDistance
 
     def state(self, game, action=None):
         game1 = self.simulateAction(action) if action != None else deepcopy(game)

@@ -1,4 +1,4 @@
-from field import Field, giveFieldsID
+from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target
 from UI.UI import drawBackground, updateScreen
 from ant import generateAnts, placeAntsOnBoard
 from lines import generateLines
@@ -12,6 +12,7 @@ from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import KeyboardAgent
 from Agents.linearAprox import LinearAprox
+import cProfile
 
 
 fields = {
@@ -89,7 +90,11 @@ bases = {
 
 cleanBases(bases, fields)
 
-ants = generateAnts(2)
+Give_dist_to_bases(bases, fields)
+
+Give_dist_to_target(fields, ['A8', 'B8', 'D8', 'E8'])
+
+ants = generateAnts(10)
 
 placeAntsOnBoard(ants, bases)
 
@@ -101,9 +106,10 @@ background, win = drawBackground(
 game = Game(fields=fields, ants=ants,
             diceHolder=diceHolder, bases=bases)
 
-controller = Gamecontroller(game=game, timeDelay=0.22, agent1=RandomAgent(), agent2=LinearAprox())
+controller = Gamecontroller(game=game, timeDelay=0, agent1=RandomAgent(), agent2=LinearAprox())
 
 
+# cProfile.run('controller.run()')
 x = threading.Thread(target=controller.run)
 x.start()
 

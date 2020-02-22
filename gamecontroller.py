@@ -12,7 +12,9 @@ class Gamecontroller():
     def run(self):
         thread = threading.currentThread()
         currentAgent = 0
-        while getattr(thread, "do_run", True):
+        # i = 100
+        while getattr(thread, "do_run", True):  # and i > 0:
+            #i = i-1
             time.sleep(self.timeDelay)
             self.game.roll()
             changeThisPlayer = len(set(self.game.rolled)) == 2  # and False
