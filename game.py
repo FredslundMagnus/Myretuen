@@ -1,18 +1,26 @@
 from move import Move
+from copy import deepcopy
+from setups import setup
+from UI.UI import addRect
 
 
 class Game():
-    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None):
-        self.fields = fields
-        self.ants = ants
-        self.diceHolder = diceHolder
-        self.bases = bases
-        self.player1 = ants[0].color
-        self.player2 = ants[-1].color
+    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=500):
+        # self.fields = fields
+        # self.ants = ants
+        # self.diceHolder = diceHolder
+        # self.bases = bases
+        self.fields, self.bases, self.ants, self.diceHolder = setup()
+        self.player1 = self.ants[0].color
+        self.player2 = self.ants[-1].color
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
+        self.winNumber = min(winNumber, len(self.ants)//2)
+        self.maxRolls = maxRolls
+        self.dicesThatHaveBeenRolled = 0
 
     def roll(self):
+        self.dicesThatHaveBeenRolled += 1
         self.rolled = self.diceHolder.roll()
 
     def actions(self):
@@ -51,3 +59,18 @@ class Game():
         if end.ants == [] or end.ants[-1].color != ant.color:
             return True
         return False
+
+    def gameHasEnded(self):
+        for name, base in self.bases.items():
+            if len(base.captured) >= self.winNumber:
+                return True
+        if self.maxRolls <= self.dicesThatHaveBeenRolled:
+            return True
+        return False
+
+    def reset(self):
+        self.fields, self.bases, self.ants, self.diceHolder = setup()
+        addRect(self)
+        self.currentPlayer = self.player1
+        self.rolled = self.diceHolder.roll()
+        self.dicesThatHaveBeenRolled = 0

@@ -12,11 +12,14 @@ class Move():
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
 
     def execute(self, oppesite=False):
+        reward = 0
         self.removeDice()
         moving = self.liftAnts()
-        self.placeOnBoard(moving, oppesite)
-        self.transforCaputuredToBase()
+        myAnt = moving[-1]
+        reward += self.placeOnBoard(moving, oppesite)
+        reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
+        return reward
 
     def removeDice(self):
         self.game.rolled.remove(self.dice)
@@ -28,11 +31,14 @@ class Move():
     def placeOnBoard(self, moving, oppesite):
         if self.end.ants == []:
             self.moveToEmpty(moving)
+            return 0
         else:
-            self.moveToOpponent(moving, oppesite)
+            return self.moveToOpponent(moving, oppesite)
 
-    def transforCaputuredToBase(self):
+    def transforCaputuredToBase(self, ant):
+        reward = 0
         color = self.end.ants[-1].color
+        factor = 1 if color == ant.color else -1
         if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.game.bases[color].goals:
             for ant in self.end.ants:
                 if ant.color == color:
@@ -43,7 +49,9 @@ class Move():
                     ant.position = self.game.bases[color]
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
+                    reward += 10 * factor
             self.end.ants = []
+        return reward
 
     def liftAnts(self):
         if self.start.type == 'Base':
@@ -59,13 +67,17 @@ class Move():
         self.end.ants = moving
 
     def moveToOpponent(self, moving, oppesite):
+        reward = 0
         if (self.end.ants[-1].magnet == moving[-1].magnet and not oppesite) or (self.end.ants[-1].magnet != moving[-1].magnet and oppesite):
             for ant in self.end.ants:
                 ant.isAlive = False
+                reward += 1
             self.end.ants = self.end.ants + moving
         else:
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
+                reward -= 1
             moving.reverse()
             self.end.ants = moving + self.end.ants
+        return reward

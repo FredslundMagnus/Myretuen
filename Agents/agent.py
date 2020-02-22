@@ -109,6 +109,9 @@ class Agent():
     def choose(self, actions, game):
         pass
 
+    def train(self, game, oppesiteReward):
+        pass
+
     def antsDistanse(self, ant, maxi=12):
         mine = [set() for i in range(maxi)]
         dine = [set() for i in range(maxi)]

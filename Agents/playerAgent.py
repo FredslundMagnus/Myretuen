@@ -12,4 +12,4 @@ class KeyboardAgent(Agent):
         print([str(action).split(' ')[-1][6:-2] for action in actionsEnd])
         end = input('Choose your landing position: ').capitalize()
         action = [action for action in actionsEnd if f'to Field({end})' in str(action)]
-        action[0].execute()
+        return action[0].execute()

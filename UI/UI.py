@@ -53,8 +53,7 @@ class Dice():
 
 class Base():
     def __init__(self, base, scale: int, win):
-        self.rect, self.border, self.shadow1, self.shadow2 = square(
-            base.x, base.y, 39, scale)
+        self.rect, self.border, self.shadow1, self.shadow2 = square(base.x, base.y, 39, scale)
 
         self.win = win
         self.color = colors[base.color]
@@ -124,8 +123,7 @@ class DiceHolder():
 class Field():
     def __init__(self, field, scale: int, win):
 
-        self.rect, self.border, self.shadow1, self.shadow2 = square(
-            field.x, field.y, 19, scale)
+        self.rect, self.border, self.shadow1, self.shadow2 = square(field.x, field.y, 19, scale)
 
         self.win = win
         self.color = field.color
@@ -155,6 +153,26 @@ class Field():
 
     def shadowDraw2(self):
         pygame.draw.rect(self.win, (43, 22, 17), self.shadow2)
+
+
+def addRect(game):
+    for key, field in game.fields.items():
+        field.rect = square(field.x, field.y, 19, scale)[0]
+    for key, base in game.bases.items():
+        base.rect = square(base.x, base.y, 39, scale)[0]
+        homeSquares = []
+        for i in range(len(base.home)):
+            x, y = base.homePos
+            xadd, yadd = base.homeChange
+            if i % 4 == 0:
+                adder = -5 if xadd > 0 else 5
+            elif i % 4 == 2:
+                adder = 5 if xadd > 0 else -5
+            else:
+                adder = 0
+            homeSquares.append(square(
+                x + xadd*i, y + yadd*i + adder, 19, scale))
+        base.homeSquares = homeSquares
 
 
 def drawBackground(fields=[], diceHolder=None, bases=[]):
@@ -202,14 +220,14 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     return background, win
 
 
-def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
+def updateScreen(background, win, game=None):
     run = True
     isHovering = False
     while run:
         for event in pygame.event.get():
             if (event.type == 4):
                 isHovering = False
-                for _, field in fields.items():
+                for _, field in game.fields.items():
                     if (field.rect.collidepoint(event.pos)):
                         isHovering = True
                         x, y = event.pos
@@ -228,10 +246,10 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
             centerText(12*scale, idd, (0, 0, 0),
                        pos, 0, win)
 
-        for dice in diceHolder.dices:
+        for dice in game.diceHolder.dices:
             Dice(dice, scale, win).draw()
 
-        for _, base in bases.items():
+        for _, base in game.bases.items():
 
             centerText(22*scale, str(len(base.captured)),
                        (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
@@ -240,7 +258,7 @@ def updateScreen(background, win, fields=None, diceHolder=None, bases=None):
                 drawAntAtPos(
                     ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
 
-        for _, field in fields.items():
+        for _, field in game.fields.items():
             for i, ant in enumerate(field.ants):
                 drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390-scale/2)),
                                    int(field.rect.y + 3 * i * (field.rect.center[1] / 390-scale/2))), win)
