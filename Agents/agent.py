@@ -166,24 +166,23 @@ class Agent():
 
     def state(self, game, action=None):
         game1, needResim = self.simulateAction(action) if action != None else (deepcopy(game), False)
-        ants = game1.ants + self.simulateAction(action, oppesite=True)[0].ants if needResim else game1.ants
+        ants1 = game1.ants
+        ants2 = self.simulateAction(action, oppesite=True)[0].ants if needResim else [None] * len(game1.ants)
 
-        random.shuffle(ants)
         mines = []
         dines = []
-        for ant in ants:
-            if ant.color == game.currentPlayer:
-                mines.append(self.antState(ant))
+        for ant1, ant2 in zip(ants1, ants2):
+            ant1State = self.antState(ant1)
+            antState = [ant1State, ant1State] if ant2 == None else [ant1State, self.antState(ant2)]
+            random.shuffle(antState)
+            if ant1.color == game.currentPlayer:
+                mines.append(np.array(antState).reshape(-1))
             else:
-                dines.append(self.antState(ant))
+                dines.append(np.array(antState).reshape(-1))
 
-        if not needResim:
-            mines = mines + mines
-            dines = dines + dines
-            random.shuffle(mines)
-            random.shuffle(dines)
-
-        state = np.array(mines + dines).reshape(-1)
+        random.shuffle(mines)
+        random.shuffle(dines)
+        state = [mines, dines]
         return state
 
     def simulateAction(self, action, oppesite=False):

@@ -29,8 +29,8 @@ class LinearAprox(Agent):
 
     def value(self, state):
         if len(self.phi) == 0:
-            self.phi = np.random.rand(len(state))
-        return state.T @ self.phi
+            self.phi = np.random.rand(len(np.array(state).reshape(-1)))
+        return np.array(state).reshape(-1).T @ self.phi
 
     def train(self, cost, action, alpha=0.0001):
         if len(self.previousState) == 0:
@@ -38,7 +38,7 @@ class LinearAprox(Agent):
         reward = self.reward - cost
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.actionState)
-        update = alpha * (reward + Vstnext - Vst) * self.actionState
+        update = alpha * (reward + Vstnext - Vst) * np.array(self.actionState).reshape(-1)
         self.phi += update
         self.previousState = []
         # print(reward, '   ', sum(abs(update)))
