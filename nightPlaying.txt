@@ -1,0 +1,310 @@
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 4}      
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 381
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 2}
+dicesThatHaveBeenRolled: 364
+{'red': 3, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 381
+{'red': 1, 'green': 8}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 5}
+dicesThatHaveBeenRolled: 402
+{'red': 7, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 0}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 4, 'green': 1}
+dicesThatHaveBeenRolled: 340
+{'red': 4, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 2}
+dicesThatHaveBeenRolled: 307
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 2}
+dicesThatHaveBeenRolled: 373
+{'red': 0, 'green': 10}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 308
+{'red': 1, 'green': 8}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 367
+{'red': 10, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 3}
+dicesThatHaveBeenRolled: 326
+{'red': 1, 'green': 7}
+dicesThatHaveBeenRolled: 421
+{'red': 9, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 4, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 493
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 361
+{'red': 8, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 5}
+dicesThatHaveBeenRolled: 238
+{'red': 7, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 4, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 405
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 347
+{'red': 7, 'green': 1}
+dicesThatHaveBeenRolled: 290
+{'red': 1, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 216
+{'red': 7, 'green': 0}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 488
+{'red': 0, 'green': 10}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 376
+{'red': 10, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 0}
+dicesThatHaveBeenRolled: 328
+{'red': 0, 'green': 8}
+dicesThatHaveBeenRolled: 400
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 260
+{'red': 1, 'green': 8}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 3}
+dicesThatHaveBeenRolled: 252
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 3}
+dicesThatHaveBeenRolled: 397
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 6}
+dicesThatHaveBeenRolled: 444
+{'red': 2, 'green': 8}
+dicesThatHaveBeenRolled: 275
+{'red': 7, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 3}
+dicesThatHaveBeenRolled: 382
+{'red': 10, 'green': 4}
+dicesThatHaveBeenRolled: 321
+{'red': 9, 'green': 3}
+dicesThatHaveBeenRolled: 444
+{'red': 1, 'green': 8}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 0}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 1}
+dicesThatHaveBeenRolled: 492
+{'red': 9, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 1}
+dicesThatHaveBeenRolled: 387
+{'red': 3, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 2}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 3}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 5}
+dicesThatHaveBeenRolled: 503
+{'red': 5, 'green': 6}
+dicesThatHaveBeenRolled: 432
+{'red': 9, 'green': 1}
+dicesThatHaveBeenRolled: 321
+{'red': 7, 'green': 4}
+dicesThatHaveBeenRolled: 406
+{'red': 8, 'green': 4}
+dicesThatHaveBeenRolled: 503
+{'red': 2, 'green': 4}
+dicesThatHaveBeenRolled: 309
+{'red': 10, 'green': 2}
+dicesThatHaveBeenRolled: 420
+{'red': 3, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 1, 'green': 4}
+dicesThatHaveBeenRolled: 462
+{'red': 0, 'green': 7}
+dicesThatHaveBeenRolled: 503
+{'red': 4, 'green': 0}
+dicesThatHaveBeenRolled: 503
+{'red': 3, 'green': 6}
+dicesThatHaveBeenRolled: 503
+{'red': 0, 'green': 1}

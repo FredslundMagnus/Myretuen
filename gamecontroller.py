@@ -11,6 +11,8 @@ class Gamecontroller():
 
     def run(self):
         thread = threading.currentThread()
+        totalScore = None
+        i = 0
         while getattr(thread, "do_run", True):
             currentAgent = 0
             cost = 0
@@ -41,8 +43,23 @@ class Gamecontroller():
 
             # Final train
 
+            i += 1
             for agent in self.agents:
                 agent.previousState = []
-            print('dicesThatHaveBeenRolled:', self.game.dicesThatHaveBeenRolled)
-            print({name: len(base.captured) for name, base in self.game.bases.items()})
+            currentScore = {name: len(base.captured) for name, base in self.game.bases.items()}
+            if totalScore == None:
+                totalScore = {}
+                li = [name for name in self.game.bases]
+                totalScore[li[0]] = 0
+                totalScore['Tie'] = 0
+                totalScore[li[1]] = 0
+            scores = [score for name, score in currentScore.items()]
+            names = [name for name, score in currentScore.items()]
+            if scores[0] > scores[1]:
+                totalScore[names[0]] += 1
+            elif scores[1] > scores[0]:
+                totalScore[names[1]] += 1
+            else:
+                totalScore['Tie'] += 1
+            print(f'Game {i:03}, Length: {self.game.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {totalScore}')
             self.game.reset()

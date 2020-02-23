@@ -22,7 +22,7 @@ class LinearAprox(Agent):
                 self.actionState = state
         # print({'old': self.value(self.state(game)), 'new': valueMax})
         if len(actions) != 0:
-            self.reward = bestAction.execute()
+            self.reward, _ = bestAction.execute()
             return self.reward, bestAction
         self.previousState = []
         return 0, None
@@ -38,7 +38,7 @@ class LinearAprox(Agent):
         reward = self.reward - cost
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.actionState)
-        update = alpha * (reward + Vstnext - Vst) * self.previousState
+        update = alpha * (reward + Vstnext - Vst) * self.actionState
         self.phi += update
         self.previousState = []
         # print(reward, '   ', sum(abs(update)))

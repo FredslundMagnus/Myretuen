@@ -16,10 +16,11 @@ class Move():
         self.removeDice()
         moving = self.liftAnts()
         myAnt = moving[-1]
-        reward += self.placeOnBoard(moving, oppesite)
+        rewardAdded, needsTwoSims = self.placeOnBoard(moving, oppesite)
+        reward += rewardAdded
         reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
-        return reward
+        return reward, needsTwoSims
 
     def removeDice(self):
         self.game.rolled.remove(self.dice)
@@ -31,9 +32,9 @@ class Move():
     def placeOnBoard(self, moving, oppesite):
         if self.end.ants == []:
             self.moveToEmpty(moving)
-            return 0
+            return 0, False
         else:
-            return self.moveToOpponent(moving, oppesite)
+            return self.moveToOpponent(moving, oppesite), True
 
     def transforCaputuredToBase(self, ant):
         reward = 0
