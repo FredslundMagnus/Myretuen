@@ -176,9 +176,9 @@ class Agent():
             antState = [ant1State, ant1State] if ant2 == None else [ant1State, self.antState(ant2)]
             random.shuffle(antState)
             if ant1.color == game.currentPlayer:
-                mines.append(np.array(antState).reshape(-1))
+                mines.append(antState)
             else:
-                dines.append(np.array(antState).reshape(-1))
+                dines.append(antState)
 
         random.shuffle(mines)
         random.shuffle(dines)
