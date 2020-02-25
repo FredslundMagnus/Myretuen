@@ -38,7 +38,7 @@ class LinearAprox(Agent):
         reward = self.reward - cost
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.actionState)
-        update = alpha * (reward + Vstnext - Vst) * np.array(self.actionState).reshape(-1)
+        update = alpha * (reward + Vstnext - Vst - 1) * np.array(self.actionState).reshape(-1)
         self.phi += update
         self.previousState = []
         # print(reward, '   ', sum(abs(update)))
