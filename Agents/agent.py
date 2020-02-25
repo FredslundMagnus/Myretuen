@@ -123,7 +123,7 @@ class Agent():
                     dine[distance].add(ant2.id)
         mine = [len(index) for index in mine]
         dine = [len(index) for index in dine]
-        return (mine, dine)
+        return (mine[1:], dine[1:])
 
     def getAllDistancesToAnts(self, position, searched=1, previous=None, maxi=None):
         for step1 in self.goOneStep(position, previous):
@@ -163,7 +163,7 @@ class Agent():
         carryAlly = self.carrying_number_of_ally_ants(ant)
         splitDistance = self.distanceToSplits(ant)
         baseDistance = self.distanceToBases(ant)
-        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:])] + [sum(dine[:6]), sum(dine[6:])] + [carryEnimy, carryAlly] + splitDistance + baseDistance
+        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:])] + [sum(dine[:6]), sum(dine[6:])] + splitDistance + baseDistance + [carryEnimy, carryAlly]
 
     def state(self, game, action=None):
         game1, needResim = self.simulateAction(action) if action != None else (deepcopy(game), False)
