@@ -38,7 +38,12 @@ class Myretuen(gym.Env):
         observation = self
         reward = action.execute()
         done = self.gameHasEnded()
-        info = {}
+        info = {'PlayerSwapped': False}
+        if len(self.rolled) == 0:
+            if not self.rolledSameDice:
+                self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
+                info['PlayerSwapped'] = True
+            self.roll()
         return observation, reward, done, info
 
     def getAllStartConfigurations(self):

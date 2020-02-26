@@ -11,30 +11,24 @@ class Gamecontroller():
 
     def run(self):
         thread = threading.currentThread()
+        env = self.env
         while getattr(thread, "do_run", True):
-            cost = 0
-            while getattr(thread, "do_run", True) and not self.env.gameHasEnded():
-                time.sleep(self.timeDelay)
-                self.env.roll()
-                changeThisPlayer = len(set(self.env.rolled)) == 2
-                time.sleep(self.timeDelay)
-                actions = self.env.action_space()
-                action = self.agents[self.env.currentPlayer].choose(actions, self.env)
-                observation, reward, done, info = self.env.step(action)
-                cost += reward
-                self.agents[self.env.currentPlayer].train(0, action)
-                time.sleep(self.timeDelay)
-                actions = self.env.action_space()
-                action = self.agents[self.env.currentPlayer].choose(actions, self.env)
-                observation, reward, done, info = self.env.step(action)
-                cost += reward
+            opponentReward = 0
+            DONE = False
+            agent = self.agents[self.env.currentPlayer]
+            while getattr(thread, "do_run", True) and not DONE:
 
-                if changeThisPlayer:
-                    self.env.currentPlayer = self.env.player2 if self.env.currentPlayer == self.env.player1 else self.env.player1
-                    self.agents[self.env.currentPlayer].train(cost, action)
-                    cost = 0
+                actions = env.action_space()
+                action = agent.choose(actions, env)
+                observation, reward, DONE, info = env.step(action)
+                opponentReward -= reward
+
+                agent = self.agents[self.env.currentPlayer]
+                if info['PlayerSwapped']:
+                    agent.train(opponentReward, action)
+                    opponentReward = reward
                 else:
-                    self.agents[self.env.currentPlayer].train(0, action)
+                    agent.train(reward, action)
 
             # Final train
 
@@ -43,3 +37,6 @@ class Gamecontroller():
 
             print(self.env.gameStatus())
             self.env.reset()
+
+    def sleep(self):
+        time.sleep(self.timeDelay)

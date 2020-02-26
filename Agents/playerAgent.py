@@ -13,5 +13,5 @@ class KeyboardAgent(Agent):
         end = input('Choose your landing position: ').capitalize()
         action = [action for action in actionsEnd if f'to Field({end})' in str(action)]
         if len(action) != 0:
-            return action[0].execute()[0], action[0]
-        return 0, None
+            return action
+        return None
