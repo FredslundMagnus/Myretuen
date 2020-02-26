@@ -20,11 +20,8 @@ class LinearAprox(Agent):
                 valueMax = value
                 bestAction = action
                 self.actionState = state
-        # print({'old': self.value(self.state(game)), 'new': valueMax})
-        if len(actions) != 0:
-            return bestAction
-        self.previousState = []
-        return None
+
+        return bestAction
 
     def resetGame(self):
         self.previousState = []
@@ -35,9 +32,7 @@ class LinearAprox(Agent):
         return np.array(state).reshape(-1).T @ self.phi
 
     def train(self, reward, action, alpha=0.0001):
-        if len(self.previousState) == 0:
-            return
-        if action == None:
+        if len(self.previousState) == 0 or action == None:
             return
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.actionState)
