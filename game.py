@@ -38,6 +38,7 @@ class Myretuen(gym.Env):
         observation = self
         if action == None:
             reward = 0
+            self.rolled = []
         else:
             reward = action.execute()
         done = self.gameHasEnded()
