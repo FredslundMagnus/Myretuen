@@ -10,18 +10,23 @@ from Agents.playerAgent import KeyboardAgent
 from Agents.linearAprox import LinearAprox
 import cProfile
 
+showUI = True
 
 env = Myretuen()
 
-background, win = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
+if showUI:
+    background, win = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
 controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=LinearAprox())
 
 
-# cProfile.run('controller.run()')
-x = threading.Thread(target=controller.run)
-x.start()
+cProfile.run('controller.run(onlyOneGame=True)', 'cumtime')  # ncalls  tottime  percall  cumtime  percall
+# if showUI:
+#     x = threading.Thread(target=controller.run)
+#     x.start()
 
-updateScreen(background, win, game=env)
+#     updateScreen(background, win, game=env)
 
-x.do_run = False
+#     x.do_run = False
+# else:
+#     controller.run()

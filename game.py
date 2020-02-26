@@ -7,7 +7,7 @@ from gym import spaces
 
 
 class Myretuen(gym.Env):
-    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=50):
+    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=500):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
@@ -36,7 +36,10 @@ class Myretuen(gym.Env):
 
     def step(self, action):
         observation = self
-        reward = action.execute()
+        if action == None:
+            reward = 0
+        else:
+            reward = action.execute()
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if len(self.rolled) == 0:

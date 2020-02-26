@@ -37,6 +37,8 @@ class LinearAprox(Agent):
     def train(self, reward, action, alpha=0.0001):
         if len(self.previousState) == 0:
             return
+        if action == None:
+            return
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.actionState)
         x = np.array(self.actionState).reshape(-1)

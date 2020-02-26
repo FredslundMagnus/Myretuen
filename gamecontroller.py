@@ -11,7 +11,7 @@ class Gamecontroller():
         agent1.env = env
         agent2.env = env
 
-    def run(self):
+    def run(self, onlyOneGame=False):
         thread = threading.currentThread()
         env = self.env
         while getattr(thread, "do_run", True):
@@ -40,6 +40,9 @@ class Gamecontroller():
 
             print(self.env.gameStatus())
             self.env.reset()
+
+            if onlyOneGame:
+                break
 
     def sleep(self):
         time.sleep(self.timeDelay)
