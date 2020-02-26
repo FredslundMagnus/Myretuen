@@ -112,6 +112,9 @@ class Agent():
     def train(self, cost, action):
         pass
 
+    def resetGame(self):
+        pass
+
     def antsDistanse(self, ant, maxi=12):
         mine = [set() for i in range(maxi)]
         dine = [set() for i in range(maxi)]

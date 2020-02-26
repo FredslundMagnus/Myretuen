@@ -27,6 +27,9 @@ class LinearAprox(Agent):
         self.previousState = []
         return 0, None
 
+    def resetGame(self):
+        self.previousState = []
+
     def value(self, state):
         if len(self.phi) == 0:
             self.phi = np.random.rand(len(np.array(state).reshape(-1)))

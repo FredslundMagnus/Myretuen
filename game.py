@@ -7,23 +7,23 @@ from gym import spaces
 
 
 class Myretuen(gym.Env):
-    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=500):
-        # self.fields = fields
-        # self.ants = ants
-        # self.diceHolder = diceHolder
-        # self.bases = bases
+    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=100):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
         self.winNumber = min(winNumber, len(self.ants)//2)
-        self.maxRolls = maxRolls
+        self.maxRolls = maxRolls - 3
         self.dicesThatHaveBeenRolled = 0
+        self.rolledSameDice = False
+        self.nGamePlay = 1
+        self.totalScore = {self.player1: 0, 'Tie': 0, self.player2: 0}
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1
         self.rolled = self.diceHolder.roll()
+        self.rolledSameDice = len(set(self.rolled)) == 1
 
     def actions(self):
         for ant, start, dice in self.getAllStartConfigurations():
@@ -70,9 +70,25 @@ class Myretuen(gym.Env):
             return True
         return False
 
+    def gameStatus(self):
+        currentScore = {name: len(base.captured) for name, base in self.bases.items()}
+
+        scores = [score for name, score in currentScore.items()]
+        names = [name for name, score in currentScore.items()]
+        if scores[0] > scores[1]:
+            self.totalScore[names[0]] += 1
+        elif scores[1] > scores[0]:
+            self.totalScore[names[1]] += 1
+        else:
+            self.totalScore['Tie'] += 1
+
+        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore}'
+
     def reset(self):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         addRect(self)
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
         self.dicesThatHaveBeenRolled = 0
+        self.rolledSameDice = False
+        self.nGamePlay += 1

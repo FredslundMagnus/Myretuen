@@ -15,7 +15,7 @@ env = Myretuen()
 
 background, win = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, timeDelay=0, agent1=RandomAgent(), agent2=LinearAprox())
+controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=LinearAprox())
 
 
 # cProfile.run('controller.run()')
