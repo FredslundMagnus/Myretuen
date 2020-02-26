@@ -35,7 +35,7 @@ class LinearAprox(Agent):
         if len(self.previousState) == 0 or action == None:
             return
         Vst = self.value(self.previousState)
-        Vstnext = self.value(self.actionState)
+        Vstnext = self.value(self.state(observation))
         x = np.array(self.actionState).reshape(-1)
         self.phi += alpha * (reward + Vstnext - Vst - 2) * x / (x @ x)**0.5
         self.phi = self.phi / (self.phi @ self.phi)**0.5
