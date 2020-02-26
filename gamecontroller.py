@@ -8,6 +8,8 @@ class Gamecontroller():
         self.timeDelay = timeDelay
         self.env = env
         self.agents = {env.player1: agent1, env.player2: agent2}
+        agent1.env = env
+        agent2.env = env
 
     def run(self):
         thread = threading.currentThread()
@@ -18,8 +20,9 @@ class Gamecontroller():
             agent = self.agents[self.env.currentPlayer]
             while getattr(thread, "do_run", True) and not DONE:
 
+                self.sleep()
                 actions = env.action_space()
-                action = agent.choose(actions, env)
+                action = agent.choose(actions)
                 observation, reward, DONE, info = env.step(action)
                 opponentReward -= reward
 

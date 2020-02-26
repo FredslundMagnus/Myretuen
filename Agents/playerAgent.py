@@ -2,7 +2,7 @@ from Agents.agent import Agent
 
 
 class KeyboardAgent(Agent):
-    def choose(self, actions, game):
+    def choose(self, actions):
         [print(action) for action in actions]
         start = input('Choose your starting position: ').capitalize()
         if start == 'Base':

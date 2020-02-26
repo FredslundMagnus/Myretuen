@@ -9,12 +9,12 @@ class LinearAprox(Agent):
         self.previousState = []
         self.actionState = None
 
-    def choose(self, actions, game):
-        self.previousState = self.state(game)
+    def choose(self, actions):
+        self.previousState = self.state(self.env)
         valueMax = -float('inf')
         bestAction = None
         for action in actions:
-            state = self.state(game, action)
+            state = self.state(self.env, action)
             value = self.value(state)
             if value > valueMax:
                 valueMax = value
