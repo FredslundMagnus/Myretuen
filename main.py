@@ -9,6 +9,7 @@ from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import KeyboardAgent
 from Agents.linearAprox import LinearAprox
 import cProfile
+import pstats
 
 showUI = True
 
@@ -20,13 +21,16 @@ if showUI:
 controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=LinearAprox())
 
 
-cProfile.run('controller.run(onlyOneGame=True)', 'cumtime')  # ncalls  tottime  percall  cumtime  percall
-# if showUI:
-#     x = threading.Thread(target=controller.run)
-#     x.start()
+if showUI:
+    x = threading.Thread(target=controller.run)
+    x.start()
 
-#     updateScreen(background, win, game=env)
+    updateScreen(background, win, game=env)
 
-#     x.do_run = False
-# else:
-#     controller.run()
+    x.do_run = False
+else:
+    controller.run()
+
+# cProfile.run('controller.run(onlyOneGame=True)', 'stats')
+# p = pstats.Stats('stats')
+# p.strip_dirs().sort_stats('cumulative').print_stats()
