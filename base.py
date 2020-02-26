@@ -18,6 +18,7 @@ class Base():
         self.startPoint = [Field(0, 0)]
         self.distBases = {}
         self.dist_to_targets = []
+        self.dist_to_all = {}
 
     def __str__(self):
         return f"Base({self.color.capitalize()})"

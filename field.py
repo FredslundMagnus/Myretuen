@@ -15,6 +15,7 @@ class Field():
         self.type = 'Field'
         self.distBases = {}
         self.dist_to_targets = []
+        self.dist_to_all = {}
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -110,9 +111,36 @@ def Give_dist_to_target(fields, targets):
                 ToFlags.append(Seen)
                 break
         for g in range(len(ToFlags[0])):
-            #print(ToFlags[1][g], ToFlags[0][g])
             ToFlags[1][g].dist_to_targets.append(ToFlags[0][g])
 
+def Give_dist_to_all(fields):
+    flags = [fields[x] for x in fields]
+
+    for k in range(len(flags)):
+        ToFlags = []
+        Values = []
+        Now = [flags[k]]
+        Seen = Now
+        i = 0
+        values = [0]
+        while True:
+            i += 1
+            Now = [x.neighbors for x in Now]
+            items = len(Now)
+            for j in range(items):
+                [Now.append(x) for x in Now[j]]
+            Now = Now[items:]
+            Now = (Nointersection(Now, Seen))
+            Now = [fields[x] for x in list(set([x.id for x in Now]))]
+            for j in range(len(Now)):
+                Seen.append(Now[j])
+                values.append(i)
+            if len(Now) == 0:
+                ToFlags.append(values)
+                ToFlags.append(Seen)
+                break
+        for g in range(len(ToFlags[0])):
+            flags[k].dist_to_all[ToFlags[1][g].id] = ToFlags[0][g]
 
 def Give_bases_dists(bases):
     for values in bases.values():
@@ -131,3 +159,13 @@ def Give_bases_dists(bases):
             else:
                 values.distBases[key1][0] += 1
                 values.distBases[key1][1] += -1
+
+
+    for base1 in bases.values():
+        base1.dist_to_all = base1.goals[0].dist_to_all
+        for i in range(1, len(base1.goals)):
+            for key, value in base1.goals[i].dist_to_all.items():
+                if base1.dist_to_all[key] > value:
+                    base1.dist_to_all[key] = value
+                if base1.dist_to_all[key] == 0:
+                    base1.dist_to_all[key] = 2

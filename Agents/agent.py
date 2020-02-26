@@ -106,10 +106,10 @@ import numpy as np
 
 
 class Agent():
-    def choose(self, actions, game):
+    def choose(self, actions):
         pass
 
-    def train(self, cost, action):
+    def train(self, reward, observation, action):
         pass
 
     def resetGame(self):
@@ -161,7 +161,7 @@ class Agent():
         isBase = self.boolHot(ant.position.id == ant.color)
         isCaptured = self.boolHot(ant.position.type == 'Base' and ant.position.id != ant.color)
         isAlive = self.boolHot(ant.isAlive)
-        (mine, dine) = self.antsDistanse(ant)
+        (mine, dine) = self.getDistancesToAnts(ant)
         carryEnimy = self.carrying_number_of_enemy_ants(ant)
         carryAlly = self.carrying_number_of_ally_ants(ant)
         splitDistance = self.distanceToSplits(ant)
@@ -179,7 +179,9 @@ class Agent():
         mines = []
         dines = []
         for ant1, ant2 in zip(ants1, ants2):
+            self.currentAnts = ants1
             ant1State = self.antState(ant1)
+            self.currentAnts = ants2
             antState = [ant1State, ant1State] if ant2 == None else [ant1State, self.antState(ant2)]
             random.shuffle(antState)
             if ant1.color == game.currentPlayer:
@@ -196,3 +198,17 @@ class Agent():
         action = deepcopy(action)
         action.execute(oppesite=oppesite)
         return action.game
+
+    def getDistancesToAnts(self, ant):
+        mine = [0]*30
+        dine = [0]*30
+        for i in range(len(self.currentAnts)):
+            if self.currentAnts[i].position.type != 'Base':
+                #print(mine,dine)
+                #print(self.currentAnts[i].position.type, ant.position.type)
+                if ant.color == self.currentAnts[i].color:
+                    mine[ant.position.dist_to_all[self.currentAnts[i].position.id]] = 1
+                else:
+                    dine[ant.position.dist_to_all[self.currentAnts[i].position.id]] = 1
+        return (mine[1:], dine[1:])
+

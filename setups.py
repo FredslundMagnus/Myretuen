@@ -2,7 +2,8 @@ from ant import generateAnts, placeAntsOnBoard
 from lines import generateLines
 from base import Base, cleanBases
 from holder import DiceHolder
-from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, Give_bases_dists
+from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, Give_bases_dists, Give_dist_to_all
+import numpy as np
 
 
 def setup():
@@ -84,6 +85,8 @@ def setup():
     Give_dist_to_bases(bases, fields)
 
     Give_dist_to_target(fields, ['A8', 'B8', 'D8', 'E8'])
+
+    Give_dist_to_all(fields)
 
     Give_bases_dists(bases)
 

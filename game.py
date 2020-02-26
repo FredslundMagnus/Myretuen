@@ -7,7 +7,7 @@ from gym import spaces
 
 
 class Myretuen(gym.Env):
-    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=500):
+    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=100):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
