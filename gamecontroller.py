@@ -8,8 +8,7 @@ class Gamecontroller():
         self.timeDelay = timeDelay
         self.env = env
         self.agents = {env.player1: agent1, env.player2: agent2}
-        agent1.env = env
-        agent2.env = env
+        agent1.env, agent2.env = env, env
 
     def run(self, onlyOneGame=False):
         thread = threading.currentThread()
@@ -19,7 +18,6 @@ class Gamecontroller():
             DONE = False
             agent = self.agents[self.env.currentPlayer]
             while getattr(thread, "do_run", True) and not DONE:
-
                 self.sleep()
                 actions = env.action_space()
                 action = agent.choose(actions)
@@ -34,13 +32,11 @@ class Gamecontroller():
                     agent.train(reward, action, observation)
 
             # Final train
-
             for color, agent in self.agents.items():
                 agent.resetGame()
 
             print(self.env.gameStatus())
             self.env.reset()
-
             if onlyOneGame:
                 break
 
