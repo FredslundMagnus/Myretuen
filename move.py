@@ -7,6 +7,7 @@ class Move():
         self.dice = dice
         self.end = end
         self.game = game
+        self.needResim = False
 
     def __str__(self):
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
@@ -16,11 +17,11 @@ class Move():
         self.removeDice()
         moving = self.liftAnts()
         myAnt = moving[-1]
-        rewardAdded, needsTwoSims = self.placeOnBoard(moving, oppesite)
+        rewardAdded = self.placeOnBoard(moving, oppesite)
         reward += rewardAdded
         reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
-        return reward, needsTwoSims
+        return reward
 
     def removeDice(self):
         self.game.rolled.remove(self.dice)
@@ -32,9 +33,10 @@ class Move():
     def placeOnBoard(self, moving, oppesite):
         if self.end.ants == []:
             self.moveToEmpty(moving)
-            return 0, False
+            return 0
         else:
-            return self.moveToOpponent(moving, oppesite), True
+            self.needResim = True
+            return self.moveToOpponent(moving, oppesite)
 
     def transforCaputuredToBase(self, ant):
         reward = 0

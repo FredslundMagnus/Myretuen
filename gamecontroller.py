@@ -13,29 +13,28 @@ class Gamecontroller():
         thread = threading.currentThread()
         while getattr(thread, "do_run", True):
             cost = 0
-            extraRounds = 4
-            while getattr(thread, "do_run", True) and extraRounds != 0:
+            while getattr(thread, "do_run", True) and not self.env.gameHasEnded():
                 time.sleep(self.timeDelay)
                 self.env.roll()
                 changeThisPlayer = len(set(self.env.rolled)) == 2
                 time.sleep(self.timeDelay)
-                actions = list(self.env.actions())
-                costAdder, action = self.agents[self.env.currentPlayer].choose(actions, self.env)
-                cost = cost + costAdder
+                actions = self.env.action_space()
+                action = self.agents[self.env.currentPlayer].choose(actions, self.env)
+                observation, reward, done, info = self.env.step(action)
+                cost += reward
                 self.agents[self.env.currentPlayer].train(0, action)
                 time.sleep(self.timeDelay)
-                actions = list(self.env.actions())
-                costAdder, action = self.agents[self.env.currentPlayer].choose(actions, self.env)
-                cost = cost + costAdder
-                if not self.env.gameHasEnded():
-                    if changeThisPlayer:
-                        self.env.currentPlayer = self.env.player2 if self.env.currentPlayer == self.env.player1 else self.env.player1
-                        self.agents[self.env.currentPlayer].train(cost, action)
-                        cost = 0
-                    else:
-                        self.agents[self.env.currentPlayer].train(0, action)
+                actions = self.env.action_space()
+                action = self.agents[self.env.currentPlayer].choose(actions, self.env)
+                observation, reward, done, info = self.env.step(action)
+                cost += reward
+
+                if changeThisPlayer:
+                    self.env.currentPlayer = self.env.player2 if self.env.currentPlayer == self.env.player1 else self.env.player1
+                    self.agents[self.env.currentPlayer].train(cost, action)
+                    cost = 0
                 else:
-                    extraRounds -= 1
+                    self.agents[self.env.currentPlayer].train(0, action)
 
             # Final train
 

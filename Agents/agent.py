@@ -169,9 +169,12 @@ class Agent():
         return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:])] + [sum(dine[:6]), sum(dine[6:])] + splitDistance + baseDistance + [carryEnimy, carryAlly]
 
     def state(self, game, action=None):
-        game1, needResim = self.simulateAction(action) if action != None else (deepcopy(game), False)
-        ants1 = game1.ants
-        ants2 = self.simulateAction(action, oppesite=True)[0].ants if needResim else [None] * len(game1.ants)
+        if action == None:
+            ants1, ants2 = deepcopy(game).ants, [None] * len(game.ants)
+        elif action.needResim:
+            ants1, ants2 = self.simulateAction(action).ants, self.simulateAction(action, oppesite=True).ants
+        else:
+            ants1, ants2 = self.simulateAction(action).ants, [None] * len(game.ants)
 
         mines = []
         dines = []
@@ -191,5 +194,5 @@ class Agent():
 
     def simulateAction(self, action, oppesite=False):
         action = deepcopy(action)
-        needResim = action.execute(oppesite=oppesite)[1]
-        return action.game, needResim
+        action.execute(oppesite=oppesite)
+        return action.game

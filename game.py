@@ -7,14 +7,14 @@ from gym import spaces
 
 
 class Myretuen(gym.Env):
-    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=100):
+    def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=50):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
         self.winNumber = min(winNumber, len(self.ants)//2)
-        self.maxRolls = maxRolls - 3
+        self.maxRolls = maxRolls
         self.dicesThatHaveBeenRolled = 0
         self.rolledSameDice = False
         self.nGamePlay = 1
@@ -30,6 +30,16 @@ class Myretuen(gym.Env):
             for end in self.getAllPositionsAtDistance(start, dice):
                 if self.isLegalMove(ant, end):
                     yield Move(start=ant.position, dice=dice, end=end, game=self)
+
+    def action_space(self):
+        return list(self.actions())
+
+    def step(self, action):
+        observation = self
+        reward = action.execute()
+        done = self.gameHasEnded()
+        info = {}
+        return observation, reward, done, info
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
