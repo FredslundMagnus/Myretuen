@@ -1,5 +1,5 @@
 from UI.UI import drawBackground, updateScreen
-from game import Game
+from game import Myretuen
 import threading
 import random
 import time
@@ -11,17 +11,17 @@ from Agents.linearAprox import LinearAprox
 import cProfile
 
 
-game = Game()
+env = Myretuen()
 
-background, win = drawBackground(fields=game.fields, diceHolder=game.diceHolder, bases=game.bases)
+background, win = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(game=game, timeDelay=0, agent1=RandomAgent(), agent2=LinearAprox())
+controller = Gamecontroller(env=env, timeDelay=0, agent1=RandomAgent(), agent2=LinearAprox())
 
 
 # cProfile.run('controller.run()')
 x = threading.Thread(target=controller.run)
 x.start()
 
-updateScreen(background, win, game=game)
+updateScreen(background, win, game=env)
 
 x.do_run = False

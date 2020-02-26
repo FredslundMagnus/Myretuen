@@ -2,9 +2,11 @@ from move import Move
 from copy import deepcopy
 from setups import setup
 from UI.UI import addRect
+import gym
+from gym import spaces
 
 
-class Game():
+class Myretuen(gym.Env):
     def __init__(self, fields=None, ants=None, diceHolder=None, bases=None, winNumber=7, maxRolls=500):
         # self.fields = fields
         # self.ants = ants

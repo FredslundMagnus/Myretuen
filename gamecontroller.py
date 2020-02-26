@@ -4,9 +4,9 @@ import random
 
 
 class Gamecontroller():
-    def __init__(self, game=None, timeDelay=0, agent1=None, agent2=None):
+    def __init__(self, env=None, timeDelay=0, agent1=None, agent2=None):
         self.timeDelay = timeDelay
-        self.game = game
+        self.env = env
         self.agents = [agent1, agent2]
 
     def run(self):
@@ -19,20 +19,20 @@ class Gamecontroller():
             extraRounds = 4
             while getattr(thread, "do_run", True) and extraRounds != 0:
                 time.sleep(self.timeDelay)
-                self.game.roll()
-                changeThisPlayer = len(set(self.game.rolled)) == 2
+                self.env.roll()
+                changeThisPlayer = len(set(self.env.rolled)) == 2
                 time.sleep(self.timeDelay)
-                actions = list(self.game.actions())
-                costAdder, action = self.agents[currentAgent].choose(actions, self.game)
+                actions = list(self.env.actions())
+                costAdder, action = self.agents[currentAgent].choose(actions, self.env)
                 cost = cost + costAdder
                 self.agents[currentAgent].train(0, action)
                 time.sleep(self.timeDelay)
-                actions = list(self.game.actions())
-                costAdder, action = self.agents[currentAgent].choose(actions, self.game)
+                actions = list(self.env.actions())
+                costAdder, action = self.agents[currentAgent].choose(actions, self.env)
                 cost = cost + costAdder
-                if not self.game.gameHasEnded():
+                if not self.env.gameHasEnded():
                     if changeThisPlayer:
-                        self.game.currentPlayer = self.game.player2 if self.game.currentPlayer == self.game.player1 else self.game.player1
+                        self.env.currentPlayer = self.env.player2 if self.env.currentPlayer == self.env.player1 else self.env.player1
                         currentAgent = 1 if currentAgent == 0 else 0
                         self.agents[currentAgent].train(cost, action)
                         cost = 0
@@ -46,10 +46,10 @@ class Gamecontroller():
             i += 1
             for agent in self.agents:
                 agent.previousState = []
-            currentScore = {name: len(base.captured) for name, base in self.game.bases.items()}
+            currentScore = {name: len(base.captured) for name, base in self.env.bases.items()}
             if totalScore == None:
                 totalScore = {}
-                li = [name for name in self.game.bases]
+                li = [name for name in self.env.bases]
                 totalScore[li[0]] = 0
                 totalScore['Tie'] = 0
                 totalScore[li[1]] = 0
@@ -61,5 +61,5 @@ class Gamecontroller():
                 totalScore[names[1]] += 1
             else:
                 totalScore['Tie'] += 1
-            print(f'Game {i:03}, Length: {self.game.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {totalScore}')
-            self.game.reset()
+            print(f'Game {i:03}, Length: {self.env.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {totalScore}')
+            self.env.reset()
