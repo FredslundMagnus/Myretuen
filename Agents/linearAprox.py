@@ -31,7 +31,7 @@ class LinearAprox(Agent):
             self.phi = np.random.rand(len(np.array(state).reshape(-1)))
         return np.array(state).reshape(-1).T @ self.phi
 
-    def train(self, reward, action, alpha=0.0001):
+    def train(self, reward, action, observation, alpha=0.0001):
         if len(self.previousState) == 0 or action == None:
             return
         Vst = self.value(self.previousState)
