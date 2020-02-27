@@ -115,28 +115,6 @@ class Agent():
     def resetGame(self):
         pass
 
-    def antsDistanse(self, ant, maxi=12):
-        mine = [set() for i in range(maxi)]
-        dine = [set() for i in range(maxi)]
-        for start in ant.startPositions():
-            for ant2, distance in self.getAllDistancesToAnts(start, maxi=maxi):
-                if ant.color == ant2.color:
-                    mine[distance].add(ant2.id)
-                else:
-                    dine[distance].add(ant2.id)
-        mine = [len(index) for index in mine]
-        dine = [len(index) for index in dine]
-        return (mine[1:], dine[1:])
-
-    def getAllDistancesToAnts(self, position, searched=1, previous=None, maxi=None):
-        for step1 in self.goOneStep(position, previous):
-            if searched == maxi:
-                continue
-            if step1.ants != []:
-                yield step1.ants[-1], searched
-            for ant2, distance in self.getAllDistancesToAnts(step1, searched=searched+1, previous=position, maxi=maxi):
-                yield ant2, distance
-
     def goOneStep(self, current, previous):
         for field in current.neighbors:
             if field != previous or current.special == 'Flag':
@@ -200,12 +178,10 @@ class Agent():
         return action.game
 
     def getDistancesToAnts(self, ant):
-        mine = [0]*30
-        dine = [0]*30
+        mine = [0]*28
+        dine = [0]*28
         for i in range(len(self.currentAnts)):
             if self.currentAnts[i].position.type != 'Base':
-                #print(mine,dine)
-                #print(self.currentAnts[i].position.type, ant.position.type)
                 if ant.color == self.currentAnts[i].color:
                     mine[ant.position.dist_to_all[self.currentAnts[i].position.id]] = 1
                 else:
