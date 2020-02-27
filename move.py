@@ -7,7 +7,7 @@ class Move():
         self.dice = dice
         self.end = end
         self.game = game
-        self.needResim = False
+        self.needResim = self.end.ants != []
 
     def __str__(self):
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
@@ -35,7 +35,6 @@ class Move():
             self.moveToEmpty(moving)
             return 0
         else:
-            self.needResim = True
             return self.moveToOpponent(moving, oppesite)
 
     def transforCaputuredToBase(self, ant):
@@ -84,3 +83,21 @@ class Move():
             moving.reverse()
             self.end.ants = moving + self.end.ants
         return reward
+
+    def simulateSimple(self, ants):
+        if self.start.type == 'Base':
+            for ant in ants:
+                if ant.id == self.start.home[0].id:
+                    ant.position = self.end
+                    return ants
+        else:
+            ids = {ant.id for ant in self.start.ants}
+            for ant in ants:
+                if ant.id in ids:
+                    ant.position = self.end
+            return ants
+
+        #     self.end.ants = moving
+
+        # reward += self.transforCaputuredToBase(myAnt)
+        # self.cleanAnts()
