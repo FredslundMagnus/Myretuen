@@ -59,6 +59,7 @@ class Base():
         self.color = colors[base.color]
         self.x = base.x
         self.y = base.y
+        self.id = base.id
         self.scale = scale
         self.homePos = base.homePos
         self.homeChange = base.homeChange
@@ -160,18 +161,25 @@ class Connection():
         self.win = win
         self.hasSelected = None
         self.validOptions = []
+        self.goalState = False
 
     def draw(self):
         if self.hasSelected is not None:
             self.hasSelected.draw(borderColor=(0, 0, 255))
         for field in self.validOptions:
-            self.validOptions.draw(borderColor=(0, 255, 0))
+            field.draw(borderColor=(0, 255, 0))
 
     def setSelected(self, field):
-        if field.type == 'Field':
-            self.hasSelected = Field(field, scale, self.win)
+        self.goalState = None
+        if self.getSelected() is None:
+            if field.type == 'Field':
+                self.hasSelected = Field(field, scale, self.win)
+            else:
+                self.hasSelected = Base(field, scale, self.win)
+        elif field.id in [field.id for field in self.validOptions]:
+            self.goalState = field.id
         else:
-            self.hasSelected = Base(field, scale, self.win)
+            self.reset()
 
     def getSelected(self):
         if self.hasSelected is not None:
@@ -183,6 +191,7 @@ class Connection():
     def reset(self):
         self.hasSelected = None
         self.validOptions = []
+        self.goalState = False
 
 
 def addRect(game):
@@ -275,14 +284,19 @@ def updateScreen(background, win, game=None, connection=None):
                         break
 
             if (event.type == 5):
+                clicked = False
                 for _, field in game.fields.items():
                     if (field.rect.collidepoint(event.pos)):
                         connection.setSelected(field)
+                        clicked = True
                         break
                 for _, field in game.bases.items():
                     if (field.rect.collidepoint(event.pos)):
                         connection.setSelected(field)
+                        clicked = True
                         break
+                if not clicked:
+                    connection.reset()
 
             if event.type == pygame.QUIT:
                 run = False

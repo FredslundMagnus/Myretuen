@@ -6,7 +6,7 @@ import time
 from setups import setup
 from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
-from Agents.playerAgent import KeyboardAgent, UIAgent
+from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
 import cProfile
 import pstats
@@ -19,7 +19,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=UIAgent(connection), agent2=LinearAprox())
+controller = Gamecontroller(env=env, agent1=PlayerAgent(connection), agent2=LinearAprox())
 
 
 if showUI:

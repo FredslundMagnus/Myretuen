@@ -1,38 +1,31 @@
 from Agents.agent import Agent
+import time
 
 
-class KeyboardAgent(Agent):
-    def choose(self, actions):
-        [print(action) for action in actions]
-        start = input('Choose your starting position: ').capitalize()
-        if start == 'Base':
-            actionsEnd = [action for action in actions if 'Base' in str(action)]
-        else:
-            actionsEnd = [action for action in actions if f'Field({start}) to' in str(action)]
-        print([str(action).split(' ')[-1][6:-2] for action in actionsEnd])
-        end = input('Choose your landing position: ').capitalize()
-        action = [action for action in actionsEnd if f'to Field({end})' in str(action)]
-        if len(action) != 0:
-            return action
-        return None
-
-
-class UIAgent(Agent):
+class PlayerAgent(Agent):
     def __init__(self, connection):
         self.connection = connection
 
     def choose(self, actions):
-        while self.connection is None:
-            pass
-        [print(action) for action in actions]
-        start = input('Choose your starting position: ').capitalize()
-        if start == 'Base':
-            actionsEnd = [action for action in actions if 'Base' in str(action)]
-        else:
-            actionsEnd = [action for action in actions if f'Field({start}) to' in str(action)]
-        print([str(action).split(' ')[-1][6:-2] for action in actionsEnd])
-        end = input('Choose your landing position: ').capitalize()
-        action = [action for action in actionsEnd if f'to Field({end})' in str(action)]
-        if len(action) != 0:
-            return action
+        while len(actions) != 0:
+            while self.connection.getSelected() is None:
+                time.sleep(1/60)
+            start = self.connection.getSelected()
+            posibles = [action for action in actions if action.start.id == start]
+            if not posibles:
+                self.connection.reset()
+                continue
+
+            self.connection.setValidOptions([posible.end for posible in posibles])
+
+            while self.connection.goalState is None:
+                time.sleep(1/60)
+            end = self.connection.goalState
+
+            theAction = [action for action in posibles if action.end.id == end]
+            self.connection.reset()
+            if len(theAction) == 0:
+                continue
+            return theAction[0]
+
         return None
