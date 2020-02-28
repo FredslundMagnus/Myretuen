@@ -79,13 +79,13 @@ class Base():
                 x + xadd*i, y + yadd*i + adder, 19, scale))
         base.homeSquares = self.homeSquares
 
-    def draw(self):
-        pygame.draw.rect(self.win, (0, 0, 0), self.border)
+    def draw(self, borderColor=(0, 0, 0)):
+        pygame.draw.rect(self.win, borderColor, self.border)
         pygame.draw.rect(self.win, self.color, self.rect)
-
-        for rect, border, _, _ in self.homeSquares:
-            pygame.draw.rect(self.win, (0, 0, 0), border)
-            pygame.draw.rect(self.win, self.color, rect)
+        if borderColor == (0, 0, 0):
+            for rect, border, _, _ in self.homeSquares:
+                pygame.draw.rect(self.win, (0, 0, 0), border)
+                pygame.draw.rect(self.win, self.color, rect)
 
     def shadowDraw1(self):
         pygame.draw.rect(self.win, (160, 64, 24), self.shadow1)
@@ -155,6 +155,36 @@ class Field():
         pygame.draw.rect(self.win, (43, 22, 17), self.shadow2)
 
 
+class Connection():
+    def __init__(self, win):
+        self.win = win
+        self.hasSelected = None
+        self.validOptions = []
+
+    def draw(self):
+        if self.hasSelected is not None:
+            self.hasSelected.draw(borderColor=(0, 0, 255))
+        for field in self.validOptions:
+            self.validOptions.draw(borderColor=(0, 255, 0))
+
+    def setSelected(self, field):
+        if field.type == 'Field':
+            self.hasSelected = Field(field, scale, self.win)
+        else:
+            self.hasSelected = Base(field, scale, self.win)
+
+    def getSelected(self):
+        if self.hasSelected is not None:
+            return self.hasSelected.id
+
+    def setValidOptions(self, options):
+        self.validOptions = [Field(field, scale, self.win) for field in options]
+
+    def reset(self):
+        self.hasSelected = None
+        self.validOptions = []
+
+
 def addRect(game):
     for key, field in game.fields.items():
         field.rect = square(field.x, field.y, 19, scale)[0]
@@ -216,11 +246,11 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     background = pygame.image.load('background.jpeg')
     [os.remove(file)
      for file in ["temp.jpeg", 'temp2.jpeg', 'background.jpeg']]
+    connection = Connection(win)
+    return background, win, connection
 
-    return background, win
 
-
-def updateScreen(background, win, game=None):
+def updateScreen(background, win, game=None, connection=None):
     run = True
     isHovering = False
     while run:
@@ -235,6 +265,24 @@ def updateScreen(background, win, game=None):
                         idd = field.id
                         isHoveringOn = Field(field, scale, win)
                         break
+                for _, field in game.bases.items():
+                    if (field.rect.collidepoint(event.pos)):
+                        isHovering = True
+                        x, y = event.pos
+                        pos = (x + 10*scale, y - 10*scale)
+                        idd = field.id
+                        isHoveringOn = Base(field, scale, win)
+                        break
+
+            if (event.type == 5):
+                for _, field in game.fields.items():
+                    if (field.rect.collidepoint(event.pos)):
+                        connection.setSelected(field)
+                        break
+                for _, field in game.bases.items():
+                    if (field.rect.collidepoint(event.pos)):
+                        connection.setSelected(field)
+                        break
 
             if event.type == pygame.QUIT:
                 run = False
@@ -243,8 +291,8 @@ def updateScreen(background, win, game=None):
 
         if isHovering:
             isHoveringOn.draw(borderColor=(255, 255, 255))
-            centerText(12*scale, idd, (0, 0, 0),
-                       pos, 0, win)
+
+        connection.draw()
 
         for dice in game.diceHolder.dices:
             Dice(dice, scale, win).draw()
@@ -262,6 +310,9 @@ def updateScreen(background, win, game=None):
             for i, ant in enumerate(field.ants):
                 drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390-scale/2)),
                                    int(field.rect.y + 3 * i * (field.rect.center[1] / 390-scale/2))), win)
+
+        if isHovering:
+            centerText(12*scale, idd, (0, 0, 0), pos, 0, win)
 
         pygame.display.update()
         pygame.time.delay(round(1000/60))
