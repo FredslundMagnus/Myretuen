@@ -8,23 +8,6 @@ class LinearAprox(Agent):
         self.previousState = []
         self.actionState = None
 
-    def choose(self, actions):
-        self.previousState = self.state(self.env)
-        valueMax = -float('inf')
-        bestAction = None
-        for action in actions:
-            state = self.state(self.env, action)
-            value = self.value(state)
-            if value > valueMax:
-                valueMax = value
-                bestAction = action
-                self.actionState = state
-
-        return bestAction
-
-    def resetGame(self):
-        self.previousState = []
-
     def value(self, state):
         if len(self.phi) == 0:
             self.phi = np.random.rand(len(np.array(state).reshape(-1)))

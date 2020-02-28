@@ -5,13 +5,24 @@ import time
 
 class Agent():
     def choose(self, actions):
-        pass
+        self.previousState = self.state(self.env)
+        valueMax = -float('inf')
+        bestAction = None
+        for action in actions:
+            state = self.state(self.env, action)
+            value = self.value(state)
+            if value > valueMax:
+                valueMax = value
+                bestAction = action
+                self.actionState = state
+
+        return bestAction
 
     def train(self, reward, observation, action):
         pass
 
     def resetGame(self):
-        pass
+        self.previousState = []
 
     def goOneStep(self, current, previous):
         for field in current.neighbors:
