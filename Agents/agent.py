@@ -101,7 +101,6 @@
 #     return experiment_name, stats, done
 
 import random
-from copy import deepcopy
 import numpy as np
 import time
 
@@ -171,11 +170,6 @@ class Agent():
         random.shuffle(dines)
         state = [mines, dines]
         return state
-
-    def simulateAction(self, action, oppesite=False):
-        action = deepcopy(action)
-        action.execute(oppesite=oppesite)
-        return action.game
 
     def getDistancesToAnts(self, ant):
         mine = [0]*35

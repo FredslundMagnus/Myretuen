@@ -1,6 +1,5 @@
 import numpy as np
 from Agents.agent import Agent
-from copy import deepcopy
 
 
 class LinearAprox(Agent):
