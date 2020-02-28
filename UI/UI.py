@@ -263,72 +263,76 @@ def updateScreen(background, win, game=None, connection=None):
     run = True
     isHovering = False
     while run:
-        for event in pygame.event.get():
-            if (event.type == 4):
-                isHovering = False
-                for _, field in game.fields.items():
-                    if (field.rect.collidepoint(event.pos)):
-                        isHovering = True
-                        x, y = event.pos
-                        pos = (x + 10*scale, y - 10*scale)
-                        idd = field.id
-                        isHoveringOn = Field(field, scale, win)
-                        break
-                for _, field in game.bases.items():
-                    if (field.rect.collidepoint(event.pos)):
-                        isHovering = True
-                        x, y = event.pos
-                        pos = (x + 10*scale, y - 10*scale)
-                        idd = field.id
-                        isHoveringOn = Base(field, scale, win)
-                        break
+        try:
+            for event in pygame.event.get():
+                if (event.type == 4):
+                    isHovering = False
+                    for _, field in game.fields.items():
+                        if (field.rect.collidepoint(event.pos)):
+                            isHovering = True
+                            x, y = event.pos
+                            pos = (x + 10*scale, y - 10*scale)
+                            idd = field.id
+                            isHoveringOn = Field(field, scale, win)
+                            break
+                    for _, field in game.bases.items():
+                        if (field.rect.collidepoint(event.pos)):
+                            isHovering = True
+                            x, y = event.pos
+                            pos = (x + 10*scale, y - 10*scale)
+                            idd = field.id
+                            isHoveringOn = Base(field, scale, win)
+                            break
 
-            if (event.type == 5):
-                clicked = False
-                for _, field in game.fields.items():
-                    if (field.rect.collidepoint(event.pos)):
-                        connection.setSelected(field)
-                        clicked = True
-                        break
-                for _, field in game.bases.items():
-                    if (field.rect.collidepoint(event.pos)):
-                        connection.setSelected(field)
-                        clicked = True
-                        break
-                if not clicked:
-                    connection.reset()
+                if (event.type == 5):
+                    clicked = False
+                    for _, field in game.fields.items():
+                        if (field.rect.collidepoint(event.pos)):
+                            connection.setSelected(field)
+                            clicked = True
+                            break
+                    for _, field in game.bases.items():
+                        if (field.rect.collidepoint(event.pos)):
+                            connection.setSelected(field)
+                            clicked = True
+                            break
+                    if not clicked:
+                        connection.reset()
 
-            if event.type == pygame.QUIT:
-                run = False
+                if event.type == pygame.QUIT:
+                    run = False
 
-        win.blit(background, (0, 0))
+            win.blit(background, (0, 0))
 
-        if isHovering:
-            isHoveringOn.draw(borderColor=(255, 255, 255))
+            if isHovering:
+                isHoveringOn.draw(borderColor=(255, 255, 255))
 
-        connection.draw()
+            connection.draw()
 
-        for dice in game.diceHolder.dices:
-            Dice(dice, scale, win).draw()
+            for dice in game.diceHolder.dices:
+                Dice(dice, scale, win).draw()
 
-        for _, base in game.bases.items():
+            for _, base in game.bases.items():
 
-            centerText(22*scale, str(len(base.captured)),
-                       (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
+                centerText(22*scale, str(len(base.captured)),
+                           (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
 
-            for i, ant in enumerate(base.home):
-                drawAntAtPos(
-                    ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
+                for i, ant in enumerate(base.home):
+                    drawAntAtPos(
+                        ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
 
-        for _, field in game.fields.items():
-            for i, ant in enumerate(field.ants):
-                drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390-scale/2)),
-                                   int(field.rect.y + 3 * i * (field.rect.center[1] / 390-scale/2))), win)
+            for _, field in game.fields.items():
+                for i, ant in enumerate(field.ants):
+                    drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390-scale/2)),
+                                       int(field.rect.y + 3 * i * (field.rect.center[1] / 390-scale/2))), win)
 
-        if isHovering:
-            centerText(12*scale, idd, (0, 0, 0), pos, 0, win)
+            if isHovering:
+                centerText(12*scale, idd, (0, 0, 0), pos, 0, win)
 
-        pygame.display.update()
-        pygame.time.delay(round(1000/60))
+            pygame.display.update()
+            pygame.time.delay(round(1000/60))
+
+        except:
+            pass
 
     pygame.quit()
