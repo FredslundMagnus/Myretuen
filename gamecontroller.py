@@ -29,7 +29,7 @@ class Gamecontroller():
                     agent.train(opponentReward, action, observation)
                     opponentReward = reward
                 else:
-                    agent.train(reward, action, observation)
+                    agent.train(reward-1, action, observation)
 
             # Final train
             for color, agent in self.agents.items():

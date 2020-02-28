@@ -145,7 +145,7 @@ class Agent():
         carryAlly = self.carrying_number_of_ally_ants(ant)
         splitDistance = self.distanceToSplits(ant)
         baseDistance = self.distanceToBases(ant)
-        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:])] + [sum(dine[:6]), sum(dine[6:])] + splitDistance + baseDistance + [carryEnimy, carryAlly]
+        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + splitDistance + baseDistance + [carryEnimy, carryAlly]
 
     def state(self, game, action=None):
         if action == None:
@@ -220,8 +220,8 @@ class Agent():
         return action.game
 
     def getDistancesToAnts(self, ant):
-        mine = [0]*28
-        dine = [0]*28
+        mine = [0]*35
+        dine = [0]*35
         for i in range(len(self.currentAnts)):
             if self.currentAnts[i].position.type != 'Base':
                 if ant.color == self.currentAnts[i].color:

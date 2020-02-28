@@ -31,6 +31,9 @@ if showUI:
 else:
     controller.run()
 
+weights = controller.agents['green'].phi
+print([ '%.2f' % elem for elem in weights ], len(weights))
+
 # cProfile.run('controller.run(onlyOneGame=True)', 'stats')
 # p = pstats.Stats('stats')
 # p.strip_dirs().sort_stats('cumulative').print_stats()
