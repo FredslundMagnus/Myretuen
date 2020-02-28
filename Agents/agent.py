@@ -145,56 +145,48 @@ class Agent():
         carryAlly = self.carrying_number_of_ally_ants(ant)
         splitDistance = self.distanceToSplits(ant)
         baseDistance = self.distanceToBases(ant)
-        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + splitDistance + baseDistance + [carryEnimy, carryAlly]
+        # + [carryEnimy, carryAlly]
+        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + splitDistance + baseDistance
 
     def state(self, game, action=None):
         if action == None:
             ants1, ants2 = game.ants, [None] * len(game.ants)
-        elif action.needResim:
-            ants1, ants2 = self.simulateAction(action).ants, self.simulateAction(action, oppesite=True).ants
         else:
+            ants1, ants2 = action.simulate()
+        # elif action.needResim:
+            # ants1, ants2 = self.simulateAction(action).ants, self.simulateAction(action, oppesite=True).ants
+            # ants1, ants2 = action.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants]), action.simulateComplex([
+            #     SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants], oppesite=True)
+
+            # self.currentAnts = self.simulateAction(action).ants
+            # a = [self.antState(ant) for ant in self.currentAnts]
+            # self.currentAnts = action.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants])
+            # b = [self.antState(ant) for ant in self.currentAnts]
+            # if a != b:
+            #     print(a)
+            #     print(b)
+
+            # self.currentAnts = self.simulateAction(action, oppesite=True).ants
+            # a = [ant.color + ant.magnet + ant.position.id + str(ant.isAlive)[0] + str(ant.flipped)[0] for ant in self.currentAnts]
+            # self.currentAnts = action.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants], oppesite=True)
+            # b = [ant.color + ant.magnet + ant.position.id + str(ant.isAlive)[0] + str(ant.flipped)[0] for ant in self.currentAnts]
+            # if a != b:
+            #     print(a)
+            #     print(b)
+            #     print(action)
+            #     print(3)
+
+        # else:
             # ants1, ants2 = self.simulateAction(action).ants, [None] * len(game.ants)
-            # ants1, ants2 = action.simulateSimple(deepcopy(game.ants)), [None] * len(game.ants)
-            ants1, ants2 = action.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants]), [None] * len(game.ants)
+            # ants1, ants2 = action.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants]), [None] * len(game.ants)
 
-            # print('\n\n\n')
-            # start = time.time()
-            # for i in range(1000):
-            #     [SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants]
-            # end = time.time()
-            # print(end - start)
-
-            # start = time.time()
-            # for i in range(1000):
-            #     action.simulateSimple(deepcopy(game.ants)), [None] * len(game.ants)
-            # end = time.time()
-            # print(end - start)
-
-            # start = time.time()
-            # for i in range(1000):
-            #     self.simulateAction(action).ants, [None] * len(game.ants)
-            # end = time.time()
-            # print(end - start)
-
-            # start = time.time()
-            # for i in range(1000):
-            #     deepcopy(game.ants)
-            # end = time.time()
-            # print(end - start)
-
-            # start = time.time()
-            # for i in range(1000):
-            #     deepcopy(game)
-            # end = time.time()
-            # print(end - start)
-            # print('\n\n\n')
-            # ants1, ants2 = self.simulateAction(action).ants, [None] * len(game.ants)
-            # self.currentAnts = ants1
+            # self.currentAnts = self.simulateAction(action).ants
             # a = [self.antState(ant) for ant in self.currentAnts]
             # self.currentAnts = action.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in game.ants])
             # b = [self.antState(ant) for ant in self.currentAnts]
             # if a != b:
-            #     print('Arghh!!!')
+            #     print(a)
+            #     print(b)
 
         mines = []
         dines = []
@@ -229,13 +221,3 @@ class Agent():
                 else:
                     dine[ant.position.dist_to_all[self.currentAnts[i].position.id]] = 1
         return (mine[1:], dine[1:])
-
-
-class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped):
-        self.color = color
-        self.magnet = magnet
-        self.position = position
-        self.id = idd
-        self.isAlive = isAlive
-        self.flipped = flipped

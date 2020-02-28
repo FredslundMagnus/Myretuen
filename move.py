@@ -89,15 +89,84 @@ class Move():
             for ant in ants:
                 if ant.id == self.start.home[0].id:
                     ant.position = self.end
-                    return ants
+                    break
         else:
             ids = {ant.id for ant in self.start.ants}
             for ant in ants:
                 if ant.id in ids:
                     ant.position = self.end
-            return ants
 
-        #     self.end.ants = moving
+        self.simulateClean(ants)
 
-        # reward += self.transforCaputuredToBase(myAnt)
-        # self.cleanAnts()
+        return ants
+
+    def simulateComplex(self, ants, oppesite=False):
+        if self.start.type == 'Base':
+            for ant in ants:
+                if ant.id == self.start.home[0].id:
+                    ant.position = self.end
+                    moving = [ant]
+                    theAnt = ant
+                    break
+        else:
+            moving = []
+            ids = {ant.id for ant in self.start.ants}
+            theAnt = self.start.ants[-1]
+            for ant in ants:
+                if ant.id in ids:
+                    ant.position = self.end
+                    moving.append(ant)
+
+        if (self.end.ants[-1].magnet == theAnt.magnet and not oppesite) or (self.end.ants[-1].magnet != theAnt.magnet and oppesite):
+            ids = {ant.id for ant in self.end.ants}
+            for ant in ants:
+                if ant.id in ids:
+                    ant.isAlive = False
+        else:
+            for ant in moving:
+                ant.isAlive = False
+                ant.flipped = not ant.flipped
+
+        self.simulateClean(ants)
+
+        return ants
+
+    def simulateClean(self, ants):
+        if self.end.special == 'Flag':
+            antsAtFlag = [ant for ant in ants if ant.position == self.end]
+            if len(antsAtFlag) > 1:
+                self.simulateTransfor(antsAtFlag)
+
+    def simulateTransfor(self, antsAtFlag):
+        alives = [ant for ant in antsAtFlag if ant.isAlive]
+        if len(alives) != 1:
+            raise RuntimeError(
+                'There is more than one ant alive on the flag, this is not possible!')
+
+        color = alives[0].color
+        if self.end in self.game.bases[color].goals:
+            for ant in antsAtFlag:
+                if ant.color == color:
+                    ant.position = self.game.bases[color]
+                    ant.isAlive = True
+                    ant.flipped = False
+                else:
+                    ant.position = self.game.bases[color]
+                    ant.flipped = False
+
+    def simulate(self):
+        if self.needResim:
+            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in self.game.ants], oppesite=True)
+        else:
+            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in self.game.ants]), [None] * len(self.game.ants)
+        return ants1, ants2
+
+
+class SimpleAnt():
+    def __init__(self, color, magnet, position, idd, isAlive, flipped):
+        self.color = color
+        self.magnet = magnet
+        self.position = position
+        self.id = idd
+        self.isAlive = isAlive
+        self.flipped = flipped
