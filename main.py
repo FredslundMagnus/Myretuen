@@ -8,7 +8,7 @@ from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
-from Agents.simpleLinear import SimpleLinear
+from Agents.SimpleLinearaprox import SimpleLinearAprox
 import cProfile
 import pstats
 from matplotlib import pyplot as plt
@@ -21,7 +21,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=LinearAprox())
+controller = Gamecontroller(env=env, agent1=SimpleLinearAprox(), agent2=LinearAprox())
 
 
 if showUI:
@@ -36,7 +36,7 @@ else:
 
 weights = controller.agents['green'].phi
 print(['%.2f' % elem for elem in weights], len(weights))
-# print(controller.winrate)
+#print(controller.winrate)
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()
