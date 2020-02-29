@@ -34,8 +34,8 @@ else:
     controller.run()
 
 weights = controller.agents['green'].phi
-#print(['%.2f' % elem for elem in weights], len(weights))
-print(controller.winrate)
+print(['%.2f' % elem for elem in weights], len(weights))
+#print(controller.winrate)
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()

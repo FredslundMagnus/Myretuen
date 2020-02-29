@@ -37,7 +37,7 @@ class Gamecontroller():
                 agent.resetGame()
 
             print(self.env.gameStatus())
-            self.winrate.append(self.env.winrate)
+            self.winrate.append(self.env.Runningwinrate)
 
             self.env.reset()
             if onlyOneGame:
