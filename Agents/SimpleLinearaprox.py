@@ -1,8 +1,8 @@
 import numpy as np
-from Agents.agent import Agent
+from agent import Agent
 
 
-class LinearAprox(Agent):
+class SimpleLinearAprox(Agent):
     def __init__(self):
         self.phi = []
         self.previousState = []
@@ -11,7 +11,6 @@ class LinearAprox(Agent):
     def value(self, state):
         if len(self.phi) == 0:
             self.phi = np.random.rand(len(np.array(state).reshape(-1)))
-        #print(np.array(state).reshape(-1).T)
         return np.array(state).reshape(-1).T @ self.phi
 
     def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
@@ -19,7 +18,9 @@ class LinearAprox(Agent):
             return
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.state(observation))
-        x = np.array(self.state(observation)).reshape(-1)
-        self.phi += alpha * (reward + discount * Vstnext - Vst) * x
+        x = np.array(self.actionState).reshape(-1)
+        self.phi += alpha * (reward + discount * Vstnext - Vst)
         self.previousState = []
-        #print(self.phi @ np.array(self.actionState).reshape(-1))
+        print(self.phi @ np.array(self.actionState).reshape(-1))
+
+print(SimpleLinearAprox.phi)

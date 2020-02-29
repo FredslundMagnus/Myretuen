@@ -18,6 +18,8 @@ class Myretuen(gym.Env):
         self.rolledSameDice = False
         self.nGamePlay = 1
         self.totalScore = {self.player1: 0, 'Tie': 0, self.player2: 0}
+        self.wins = []
+        self.Runningwinrate = None
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1
@@ -95,12 +97,15 @@ class Myretuen(gym.Env):
         names = [name for name, score in currentScore.items()]
         if scores[0] > scores[1]:
             self.totalScore[names[0]] += 1
+            self.wins.append(0)
         elif scores[1] > scores[0]:
             self.totalScore[names[1]] += 1
+            self.wins.append(1)
         else:
             self.totalScore['Tie'] += 1
-
-        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore}'
+            self.wins.append(0.5)
+        self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
+        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
     def reset(self):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
