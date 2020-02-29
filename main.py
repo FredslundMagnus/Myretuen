@@ -8,6 +8,7 @@ from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
+from Agents.simpleLinear import SimpleLinear
 import cProfile
 import pstats
 from matplotlib import pyplot as plt
@@ -35,7 +36,7 @@ else:
 
 weights = controller.agents['green'].phi
 print(['%.2f' % elem for elem in weights], len(weights))
-#print(controller.winrate)
+# print(controller.winrate)
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()
