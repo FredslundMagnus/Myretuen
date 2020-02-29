@@ -1,6 +1,5 @@
 import numpy as np
-from agent import Agent
-
+from Agents.agent import Agent
 
 class SimpleLinearAprox(Agent):
     def __init__(self):
@@ -22,5 +21,3 @@ class SimpleLinearAprox(Agent):
         self.phi += alpha * (reward + discount * Vstnext - Vst)
         self.previousState = []
         print(self.phi @ np.array(self.actionState).reshape(-1))
-
-print(SimpleLinearAprox.phi)
