@@ -9,6 +9,7 @@ class Gamecontroller():
         self.env = env
         self.agents = {env.player1: agent1, env.player2: agent2}
         agent1.env, agent2.env = env, env
+        self.winrate = []
 
     def run(self, onlyOneGame=False):
         thread = threading.currentThread()
@@ -36,6 +37,8 @@ class Gamecontroller():
                 agent.resetGame()
 
             print(self.env.gameStatus())
+            self.winrate.append(self.env.winrate)
+
             self.env.reset()
             if onlyOneGame:
                 break
