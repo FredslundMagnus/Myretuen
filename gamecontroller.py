@@ -11,10 +11,12 @@ class Gamecontroller():
         agent1.env, agent2.env = env, env
         self.winrate = []
 
-    def run(self, onlyOneGame=False):
+    def run(self, NGames=float('inf')):
         thread = threading.currentThread()
         env = self.env
+        gameN = 0
         while getattr(thread, "do_run", True):
+            gameN += 1
             opponentReward = 0
             DONE = False
             agent = self.agents[self.env.currentPlayer]
@@ -40,7 +42,7 @@ class Gamecontroller():
             self.winrate.append(self.env.Runningwinrate)
 
             self.env.reset()
-            if onlyOneGame:
+            if gameN >= NGames:
                 break
 
     def sleep(self):

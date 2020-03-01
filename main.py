@@ -24,7 +24,6 @@ if showUI:
 controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=SimpleLinear())
 
 
-
 if showUI:
     x = threading.Thread(target=controller.run)
     x.start()
@@ -42,6 +41,6 @@ plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()
 
-# cProfile.run('controller.run(onlyOneGame=True)', 'stats')
+# cProfile.run('controller.run(NGames=5)', 'stats')
 # p = pstats.Stats('stats')
 # p.strip_dirs().sort_stats('cumulative').print_stats()
