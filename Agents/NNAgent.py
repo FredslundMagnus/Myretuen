@@ -12,6 +12,7 @@ class NNAgent(Agent):
         self.previousState = []
         self.actionState = None
         self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
+        self.explore = False
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
