@@ -16,12 +16,8 @@ class NNAgent(Agent):
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
         x = np.array(state).reshape(-1, Nfeature)
-        # value = 0
         factor = torch.FloatTensor(np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
         value = torch.dot(torch.flatten(self.phi(torch.FloatTensor(x))), factor)
-        # for i in range(len(x)//2):
-        #     value += self.phi(torch.FloatTensor(x[i]))
-        #     value -= self.phi(torch.FloatTensor(x[i+len(x)//2]))
 
         return value.item() if return_float else value
 
@@ -37,7 +33,7 @@ class NNAgent(Agent):
 
         label = torch.FloatTensor([reward + discount * Vstnext - Vst])
         criterion = nn.MSELoss()
-        loss = criterion(Vst, label)
+        loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
         print(Vst.item())
