@@ -10,27 +10,31 @@ class NNAgent(Agent):
         self.previousState = []
         self.actionState = None
 
-    def value(self, state):
+    def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
         x = np.array(state).reshape(-1, Nfeature)
         value = 0
         for i in range(len(x)//2):
-            value += self.phi(torch.FloatTensor(x[i])).item()
-            value -= self.phi(torch.FloatTensor(x[i+len(x)//2])).item()
-        return value
+            value += self.phi(torch.FloatTensor(x[i]))
+            value -= self.phi(torch.FloatTensor(x[i+len(x)//2]))
+        
+        if return_float == True:
+            return value.item()
+        else:
+            return value
 
     def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
         self.phi.zero_grad()
         if len(self.previousState) == 0 or action == None:
             return
 
-        Vst = self.value(self.previousState)
+        Vst = self.value(self.previousState, return_float=False)
         state = self.state(observation)
-        Vstnext = self.value(state)
+        Vstnext = self.value(state, return_float=False)
 
-        label = torch.FloatTensor(reward + discount * Vstnext - Vst)
+        label = torch.FloatTensor([reward + discount * Vstnext - Vst])
         criterion = nn.MSELoss()
-        loss = criterion(guess, label)
+        loss = criterion(Vst, label)
         loss.backward()
 
 class Net(nn.Module):
