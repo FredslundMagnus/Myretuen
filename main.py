@@ -17,7 +17,6 @@ import os
 connection = None
 
 showUI = True
-
 env = Myretuen()
 
 if showUI:
@@ -42,7 +41,7 @@ print(['%.2f' % elem for elem in weights], len(weights))
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()
-
+controller.agents['green'].saveModel()
 # cProfile.run('controller.run(NGames=10)', 'stats')
 # p = pstats.Stats('stats')
 # p.strip_dirs().sort_stats('cumulative').print_stats()
