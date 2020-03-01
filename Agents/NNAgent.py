@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
+import torch.optim as optim
 
 class NNAgent(Agent):
     def __init__(self):
@@ -23,10 +24,11 @@ class NNAgent(Agent):
         else:
             return value
 
-    def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
-        self.phi.zero_grad()
+    def train(self, reward, action, observation, lr=0.0001, discount=0.8):
         if len(self.previousState) == 0 or action == None:
             return
+        optimizer = optim.SGD(self.phi.parameters(), lr=lr)
+        optimizer.zero_grad()
 
         Vst = self.value(self.previousState, return_float=False)
         state = self.state(observation)
@@ -36,6 +38,7 @@ class NNAgent(Agent):
         criterion = nn.MSELoss()
         loss = criterion(Vst, label)
         loss.backward()
+        optimizer.step()
 
 class Net(nn.Module):
 
