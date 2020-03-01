@@ -1,6 +1,7 @@
 import random
 import numpy as np
 import time
+import pickle
 
 
 class Agent():
@@ -21,8 +22,21 @@ class Agent():
     def train(self, reward, observation, action):
         pass
 
+    def value(self, state):
+        pass
+
     def resetGame(self):
         self.previousState = []
+
+    def saveModel(self, extention=''):
+        filename = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'wb')
+        pickle.dump(self.phi, filename)
+        return self
+
+    def loadModel(self, extention=''):
+        filehandler = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'rb')
+        self.phi = pickle.load(filehandler)
+        return self
 
     def goOneStep(self, current, previous):
         for field in current.neighbors:
@@ -90,12 +104,10 @@ class Agent():
 
     def ant_situation(self, ant):
         if ant.position.id == ant.color:
-            return [1,0,0,0]
+            return [1, 0, 0, 0]
         elif ant.isAlive == True:
-            return [0,1,0,0]
+            return [0, 1, 0, 0]
         elif ant.position.type == 'Base':
-            return [0,0,1,0]
+            return [0, 0, 1, 0]
         else:
-            return [0,0,0,1]
-
-
+            return [0, 0, 0, 1]
