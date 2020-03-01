@@ -39,6 +39,44 @@ class NNAgent(Agent):
         print(Vst.item())
 
 
+# class NNAgent(Agent):
+#     def __init__(self):
+#         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#         torch.set_default_tensor_type('torch.cuda.FloatTensor')
+#         self.phi = Net()
+#         self.phi.cuda()
+#         self.phi.to(self.device)
+#         self.previousState = []
+#         self.actionState = None
+#         self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
+
+#     def value(self, state, return_float=True):
+#         Nfeature = np.array(state).shape[-1]
+#         x = np.array(state).reshape(-1, Nfeature)
+#         factor = torch.cuda.FloatTensor(np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
+#         torch.flatten(self.phi(torch.cuda.FloatTensor(x)))
+#         value = torch.dot(torch.flatten(self.phi(torch.cuda.FloatTensor(x))), factor)
+
+#         return value.item() if return_float else value
+
+#     def train(self, reward, action, observation, discount=0.8):
+
+#         if len(self.previousState) == 0 or action == None:
+#             return
+#         self.optimizer.zero_grad()
+
+#         Vst = self.value(self.previousState, return_float=False)
+#         state = self.state(observation)
+#         Vstnext = self.value(state, return_float=False)
+
+#         label = torch.cuda.FloatTensor([reward + discount * Vstnext - Vst])
+#         criterion = nn.MSELoss()
+#         loss = criterion(Vstnext, label)
+#         loss.backward()
+#         self.optimizer.step()
+#         print(Vst.item())
+
+
 class Net(nn.Module):
 
     def __init__(self):
