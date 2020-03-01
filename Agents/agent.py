@@ -74,18 +74,18 @@ class Agent():
             else:
                 dines.append(antState)
 
-        random.shuffle(mines)
-        random.shuffle(dines)
+        # random.shuffle(mines)
+        # random.shuffle(dines)
         state = [mines, dines]
         return state
 
     def getDistancesToAnts(self, ant):
         mine = [0]*35
         dine = [0]*35
-        for i in range(len(self.currentAnts)):
-            if self.currentAnts[i].position.type != 'Base':
-                if ant.color == self.currentAnts[i].color:
-                    mine[ant.position.dist_to_all[self.currentAnts[i].position.id]] = 1
+        for ant2 in self.currentAnts:
+            if ant2.position.type != 'Base':
+                if ant.color == ant2.color:
+                    mine[ant.position.dist_to_all[ant2.position.id]] += 1
                 else:
-                    dine[ant.position.dist_to_all[self.currentAnts[i].position.id]] = 1
+                    dine[ant.position.dist_to_all[ant2.position.id]] += 1
         return (mine[1:], dine[1:])
