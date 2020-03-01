@@ -41,6 +41,6 @@ plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()
 
-# cProfile.run('controller.run(NGames=5)', 'stats')
+# cProfile.run('controller.run(NGames=10)', 'stats')
 # p = pstats.Stats('stats')
 # p.strip_dirs().sort_stats('cumulative').print_stats()
