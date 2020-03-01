@@ -9,6 +9,7 @@ from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
 from Agents.simpleLinear import SimpleLinear
+from Agents.NNAgent import NNAgent, Net
 import cProfile
 import pstats
 from matplotlib import pyplot as plt
@@ -21,7 +22,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=SimpleLinear().loadModel())
+controller = Gamecontroller(env=env, agent1=SimpleLinear(), agent2=NNAgent())
 
 
 if showUI:
