@@ -2,20 +2,32 @@ import random
 import numpy as np
 import time
 import pickle
+import numpy as np
 
 
 class Agent():
     def choose(self, actions):
         self.previousState = self.state(self.env)
-        valueMax = -float('inf')
-        bestAction = None
-        for action in actions:
-            state = self.state(self.env, action)
-            value = self.value(state)
-            if value > valueMax:
-                valueMax = value
-                bestAction = action
-                self.actionState = state
+        if self.explore:
+            states = []
+            values = []
+            for action in actions:
+                states.append(self.state(self.env, action))
+                values.append(self.value(states[-1]))
+            chances = self.softmax(values)
+            index = np.random.choice(len(chances), 1, p=chances)[0]
+            self.actionState = states[index]
+            bestAction = actions[index]
+        else:
+            valueMax = -float('inf')
+            bestAction = None
+            for action in actions:
+                state = self.state(self.env, action)
+                value = self.value(state)
+                if value > valueMax:
+                    valueMax = value
+                    bestAction = action
+                    self.actionState = state
 
         return bestAction
 
@@ -40,6 +52,10 @@ class Agent():
         except:
             pass
         return self
+
+    def softmax(self, x):
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum()
 
     def goOneStep(self, current, previous):
         for field in current.neighbors:
