@@ -62,7 +62,8 @@ def placeAntsOnBoard(ants, bases):
         base.home = ants[i*m: (i+1)*m]
         for k, ant in enumerate(base.home):
             ant.color = name
-            ant.antsUnderMe[name] = 0
             ant.position = base
             ant.id = f'{name.capitalize()} {k}'
+        for ant in ants:
+            ant.antsUnderMe[name] = 0
         i += 1

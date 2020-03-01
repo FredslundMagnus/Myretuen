@@ -30,10 +30,10 @@ class Agent():
                 yield field
 
     def carrying_number_of_enemy_ants(self, ant):
-        return 0 if ant.position.type == 'Base' else sum(int(ant2.color != ant.color) for ant2 in ant.position.ants[:-1])
+        return [val for color, val in ant.antsUnderMe.items() if color != ant.color][0]
 
     def carrying_number_of_ally_ants(self, ant):
-        return 0 if ant.position.type == 'Base' else sum(int(ant2.color == ant.color) for ant2 in ant.position.ants[:-1])
+        return ant.antsUnderMe[ant.color]
 
     def distanceToSplits(self, ant):
         return list(sorted(ant.position.dist_to_targets))
@@ -53,8 +53,8 @@ class Agent():
         carryAlly = self.carrying_number_of_ally_ants(ant)
         splitDistance = self.distanceToSplits(ant)
         baseDistance = self.distanceToBases(ant)
-        # + [carryEnimy, carryAlly]
-        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + splitDistance + baseDistance
+        return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + splitDistance + baseDistance + [carryEnimy, carryAlly]
+
     def state(self, game, action=None):
         if action == None:
             ants1, ants2 = game.ants, [None] * len(game.ants)

@@ -29,6 +29,10 @@ class Move():
     def cleanAnts(self):
         for ant in self.end.ants:
             ant.position = self.end
+            for color in ant.antsUnderMe:
+                ant.antsUnderMe[color] = 0
+        for ant in self.end.ants[:-1]:
+            self.end.ants[-1].antsUnderMe[ant.color] += 1
 
     def placeOnBoard(self, moving, oppesite):
         if self.end.ants == []:
@@ -43,6 +47,8 @@ class Move():
         factor = 1 if color == ant.color else -1
         if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.game.bases[color].goals:
             for ant in self.end.ants:
+                for Acolor in ant.antsUnderMe:
+                    ant.antsUnderMe[Acolor] = 0
                 if ant.color == color:
                     ant.position = self.game.bases[color]
                     ant.reset()
@@ -111,21 +117,32 @@ class Move():
         else:
             moving = []
             ids = {ant.id for ant in self.start.ants}
-            theAnt = self.start.ants[-1]
             for ant in ants:
                 if ant.id in ids:
                     ant.position = self.end
                     moving.append(ant)
+                if ant.id == self.start.ants[-1].id:
+                    theAnt = ant
 
         if (self.end.ants[-1].magnet == theAnt.magnet and not oppesite) or (self.end.ants[-1].magnet != theAnt.magnet and oppesite):
             ids = {ant.id for ant in self.end.ants}
             for ant in ants:
                 if ant.id in ids:
                     ant.isAlive = False
+                    for Acolor in ant.antsUnderMe:
+                        ant.antsUnderMe[Acolor] = 0
+                    theAnt.antsUnderMe[ant.color] += 1
+
         else:
+            for ant in ants:
+                if ant.id == self.end.ants[-1].id:
+                    theAnt = ant
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
+                for Acolor in ant.antsUnderMe:
+                    ant.antsUnderMe[Acolor] = 0
+                theAnt.antsUnderMe[ant.color] += 1
 
         self.simulateClean(ants)
 
