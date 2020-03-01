@@ -156,17 +156,18 @@ class Move():
 
     def simulate(self):
         if self.needResim:
-            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in self.game.ants], oppesite=True)
+            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe) for ant in self.game.ants], oppesite=True)
         else:
-            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped) for ant in self.game.ants]), [None] * len(self.game.ants)
+            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe) for ant in self.game.ants]), [None] * len(self.game.ants)
         return ants1, ants2
 
 
 class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped):
+    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe):
         self.color = color
         self.magnet = magnet
         self.position = position
         self.id = idd
         self.isAlive = isAlive
         self.flipped = flipped
+        self.antsUnderMe = antsUnderMe

@@ -11,6 +11,7 @@ class Ant():
         self.id = None
         self.isAlive = True
         self.flipped = False
+        self.antsUnderMe = {}
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -61,6 +62,7 @@ def placeAntsOnBoard(ants, bases):
         base.home = ants[i*m: (i+1)*m]
         for k, ant in enumerate(base.home):
             ant.color = name
+            ant.antsUnderMe[name] = 0
             ant.position = base
             ant.id = f'{name.capitalize()} {k}'
         i += 1
