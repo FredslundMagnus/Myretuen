@@ -5,6 +5,7 @@ import torch.nn.functional as F
 import numpy as np
 import torch.optim as optim
 
+
 class NNAgent(Agent):
     def __init__(self):
         self.phi = Net()
@@ -14,17 +15,16 @@ class NNAgent(Agent):
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
         x = np.array(state).reshape(-1, Nfeature)
-        value = 0
-        for i in range(len(x)//2):
-            value += self.phi(torch.FloatTensor(x[i]))
-            value -= self.phi(torch.FloatTensor(x[i+len(x)//2]))
-        
-        if return_float == True:
-            return value.item()
-        else:
-            return value
+        # value = 0
+        factor = torch.FloatTensor(np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
+        value = torch.dot(torch.flatten(self.phi(torch.FloatTensor(x))), factor)
+        # for i in range(len(x)//2):
+        #     value += self.phi(torch.FloatTensor(x[i]))
+        #     value -= self.phi(torch.FloatTensor(x[i+len(x)//2]))
 
-    def train(self, reward, action, observation, lr=0.0001, discount=0.8):
+        return value.item() if return_float else value
+
+    def train(self, reward, action, observation, lr=0.00001, discount=0.8):
         if len(self.previousState) == 0 or action == None:
             return
         optimizer = optim.SGD(self.phi.parameters(), lr=lr)
@@ -39,6 +39,7 @@ class NNAgent(Agent):
         loss = criterion(Vst, label)
         loss.backward()
         optimizer.step()
+
 
 class Net(nn.Module):
 
