@@ -10,6 +10,7 @@ class NNAgent(Agent):
         self.phi = Net()
         self.previousState = []
         self.actionState = None
+        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
@@ -24,11 +25,10 @@ class NNAgent(Agent):
         else:
             return value
 
-    def train(self, reward, action, observation, lr=0.0001, discount=0.8):
+    def train(self, reward, action, observation, discount=0.8):
         if len(self.previousState) == 0 or action == None:
             return
-        optimizer = optim.SGD(self.phi.parameters(), lr=lr)
-        optimizer.zero_grad()
+        self.optimizer.zero_grad()
 
         Vst = self.value(self.previousState, return_float=False)
         state = self.state(observation)
@@ -38,15 +38,16 @@ class NNAgent(Agent):
         criterion = nn.MSELoss()
         loss = criterion(Vst, label)
         loss.backward()
-        optimizer.step()
+        self.optimizer.step()
+        print(Vst.item())
 
 class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
         self.fc1 = nn.Linear(16, 32)
-        self.fc2 = nn.Linear(32, 64)
-        self.fc3 = nn.Linear(64, 10)
+        self.fc2 = nn.Linear(32, 32)
+        self.fc3 = nn.Linear(32, 10)
         self.fc4 = nn.Linear(10, 1)
 
     def forward(self, x):
