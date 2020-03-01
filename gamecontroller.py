@@ -4,14 +4,15 @@ import random
 
 
 class Gamecontroller():
-    def __init__(self, env=None, agent1=None, agent2=None, timeDelay=0):
-        self.timeDelay = timeDelay
+    def __init__(self, env=None, agent1=None, agent2=None):
+
         self.env = env
         self.agents = {env.player1: agent1, env.player2: agent2}
         agent1.env, agent2.env = env, env
         self.winrate = []
 
-    def run(self, NGames=float('inf')):
+    def run(self, NGames=float('inf'), timeDelay=0, train=True):
+        self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
         gameN = 0
@@ -28,11 +29,12 @@ class Gamecontroller():
                 opponentReward -= reward
 
                 agent = self.agents[self.env.currentPlayer]
-                if info['PlayerSwapped']:
-                    agent.train(opponentReward, action, observation)
-                    opponentReward = reward
-                else:
-                    agent.train(reward-1, action, observation)
+                if train:
+                    if info['PlayerSwapped']:
+                        agent.train(opponentReward, action, observation)
+                        opponentReward = reward
+                    else:
+                        agent.train(reward-1, action, observation)
 
             # Final train
             for color, agent in self.agents.items():
