@@ -8,7 +8,7 @@ import numpy as np
 class Agent():
     def choose(self, actions):
         self.previousState = self.state(self.env)
-        if self.explore:
+        if self.explore and actions != []:
             states = []
             values = []
             for action in actions:
