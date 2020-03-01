@@ -8,7 +8,6 @@ from gamecontroller import Gamecontroller
 from Agents.randomAgent import RandomAgent
 from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
-from Agents.SimpleLinearaprox import SimpleLinearAprox
 from Agents.simpleLinear import SimpleLinear
 import cProfile
 import pstats
@@ -22,7 +21,8 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=SimpleLinearAprox(), agent2=LinearAprox())
+controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=SimpleLinear())
+
 
 
 if showUI:

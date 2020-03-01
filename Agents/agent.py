@@ -55,7 +55,6 @@ class Agent():
         baseDistance = self.distanceToBases(ant)
         # + [carryEnimy, carryAlly]
         return isBase + isCaptured + isAlive + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + splitDistance + baseDistance
-
     def state(self, game, action=None):
         if action == None:
             ants1, ants2 = game.ants, [None] * len(game.ants)
