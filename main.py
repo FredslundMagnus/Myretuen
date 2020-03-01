@@ -22,7 +22,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=NNAgent(), agent2=SimpleLinear())
+controller = Gamecontroller(env=env, agent1=SimpleLinear(), agent2=NNAgent().loadModel())
 
 
 if showUI:
@@ -36,7 +36,10 @@ else:
     controller.run()
 
 weights = controller.agents['green'].phi
-print(['%.2f' % elem for elem in weights], len(weights))
+try:
+    print(['%.2f' % elem for elem in weights], len(weights))
+except:
+    pass
 # print(controller.winrate)
 plt.plot(controller.winrate)
 plt.ylim((0, 1))

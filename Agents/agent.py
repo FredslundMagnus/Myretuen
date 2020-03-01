@@ -34,8 +34,11 @@ class Agent():
         return self
 
     def loadModel(self, extention=''):
-        filehandler = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'rb')
-        self.phi = pickle.load(filehandler)
+        try:
+            filehandler = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'rb')
+            self.phi = pickle.load(filehandler)
+        except:
+            pass
         return self
 
     def goOneStep(self, current, previous):
