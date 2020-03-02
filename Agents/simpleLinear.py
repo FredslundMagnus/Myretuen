@@ -3,11 +3,11 @@ from Agents.agent import Agent
 
 
 class SimpleLinear(Agent):
-    def __init__(self):
+    def __init__(self, explore=False, doTrain=True):
+        self.explore, self.doTrain = explore, doTrain
         self.phi = []
         self.previousState = []
         self.actionState = None
-        self.explore = False
 
     def value(self, state):
         Nfeature = np.array(state).shape[-1]
@@ -18,8 +18,6 @@ class SimpleLinear(Agent):
         return x @ self.phi @ factor
 
     def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
-        if len(self.previousState) == 0 or action == None:
-            return
         Vst = self.value(self.previousState)
         state = self.state(observation)
         Vstnext = self.value(state)

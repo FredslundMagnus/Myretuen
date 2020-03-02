@@ -3,11 +3,11 @@ from Agents.agent import Agent
 
 
 class LinearAprox(Agent):
-    def __init__(self):
+    def __init__(self, explore=False, doTrain=True):
+        self.explore, self.doTrain = explore, doTrain
         self.phi = []
         self.previousState = []
         self.actionState = None
-        self.explore = False
 
     def value(self, state):
         if len(self.phi) == 0:
@@ -16,8 +16,6 @@ class LinearAprox(Agent):
         return np.array(state).reshape(-1).T @ self.phi
 
     def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
-        if len(self.previousState) == 0 or action == None:
-            return
         Vst = self.value(self.previousState)
         Vstnext = self.value(self.state(observation))
         x = np.array(self.state(observation)).reshape(-1)

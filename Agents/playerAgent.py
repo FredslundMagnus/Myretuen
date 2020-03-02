@@ -3,12 +3,12 @@ import time
 
 
 class PlayerAgent(Agent):
-    def __init__(self, connection):
+    def __init__(self, connection, explore=False, doTrain=False):
+        self.explore, self.doTrain = explore, doTrain
         self.connection = connection
         self.phi = []
         self.previousState = []
         self.actionState = None
-        self.explore = False
 
     def choose(self, actions):
         while len(actions) != 0:

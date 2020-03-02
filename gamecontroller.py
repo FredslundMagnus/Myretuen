@@ -11,7 +11,7 @@ class Gamecontroller():
         agent1.env, agent2.env = env, env
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=0, train=True):
+    def run(self, NGames=float('inf'), timeDelay=0):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
@@ -29,12 +29,11 @@ class Gamecontroller():
                 opponentReward -= reward
 
                 agent = self.agents[self.env.currentPlayer]
-                if train:
-                    if info['PlayerSwapped']:
-                        agent.train(opponentReward, action, observation)
-                        opponentReward = reward
-                    else:
-                        agent.train(reward-1, action, observation)
+                if info['PlayerSwapped']:
+                    agent.trainAgent(opponentReward, action, observation)
+                    opponentReward = reward
+                else:
+                    agent.trainAgent(reward-1, action, observation)
 
             # Final train
             for color, agent in self.agents.items():

@@ -31,6 +31,11 @@ class Agent():
 
         return bestAction
 
+    def trainAgent(self, reward, observation, action):
+        if len(self.previousState) == 0 or action == None or not self.doTrain:
+            return
+        self.train(reward, observation, action)
+
     def train(self, reward, observation, action):
         pass
 
