@@ -44,6 +44,9 @@ class Agent():
     def value(self, state):
         pass
 
+    def setup(self, explore, doTrain):
+        self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = explore, doTrain, [], None, [], []
+
     def resetGame(self):
         self.previousState = []
 

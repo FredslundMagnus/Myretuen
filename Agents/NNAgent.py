@@ -8,10 +8,8 @@ import torch.optim as optim
 
 class NNAgent(Agent):
     def __init__(self, explore=False, doTrain=True):
-        self.explore, self.doTrain = explore, doTrain
+        self.setup(explore, doTrain)
         self.phi = Net()
-        self.previousState = []
-        self.actionState = None
         self.optimizer = optim.SGD(self.phi.parameters(), lr=0.0001)
 
     def value(self, state, return_float=True):

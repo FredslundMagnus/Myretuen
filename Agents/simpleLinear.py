@@ -4,10 +4,7 @@ from Agents.agent import Agent
 
 class SimpleLinear(Agent):
     def __init__(self, explore=False, doTrain=True):
-        self.explore, self.doTrain = explore, doTrain
-        self.phi = []
-        self.previousState = []
-        self.actionState = None
+        self.setup(explore, doTrain)
 
     def value(self, state):
         if len(self.phi) == 0:
