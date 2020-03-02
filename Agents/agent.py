@@ -48,7 +48,14 @@ class Agent():
         self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = explore, doTrain, [], None, [], []
 
     def resetGame(self):
-        self.parameters.append(np.array(self.phi))
+        try:
+            li = []
+            for item in [list(p.data.numpy().reshape(-1)) for p in self.phi.parameters()]:
+                li = li + item
+            self.parameters.append(np.array(li).reshape(-1))
+        except:
+            self.parameters.append(np.array(self.phi))
+
         self.previousState = []
 
     def saveModel(self, extention=''):
