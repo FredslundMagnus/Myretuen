@@ -12,39 +12,36 @@ class NNAgent(Agent):
         self.phi = Net()
         self.previousState = []
         self.actionState = None
-        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
+        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.0001)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
         value = torch.dot(torch.flatten(self.phi(torch.FloatTensor(x))), factor)
-
+        value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, observation, discount=0.9):
+    def train(self, reward, action, observation, discount=0.8):
         self.optimizer.zero_grad()
 
         Vst = self.value(self.previousState, return_float=False)
         state = self.state(observation)
         Vstnext = self.value(state, return_float=False)
-        if reward != 0:
-            reward = reward/(abs(reward**(1/2)))
         label = torch.FloatTensor([reward + discount * Vstnext - Vst])
         criterion = nn.MSELoss()
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
-        print(Vstnext)
 
 
 class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(16, 32)
-        self.fc2 = nn.Linear(32, 32)
-        self.fc3 = nn.Linear(32, 10)
+        self.fc1 = nn.Linear(17, 34)
+        self.fc2 = nn.Linear(34, 34)
+        self.fc3 = nn.Linear(34, 10)
         self.fc4 = nn.Linear(10, 1)
 
     def forward(self, x):

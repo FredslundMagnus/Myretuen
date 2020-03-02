@@ -29,11 +29,12 @@ class Gamecontroller():
                 opponentReward -= reward
 
                 agent = self.agents[self.env.currentPlayer]
+
                 if info['PlayerSwapped']:
                     agent.trainAgent(opponentReward, action, observation)
                     opponentReward = reward
                 else:
-                    agent.trainAgent(reward-1, action, observation)
+                    agent.trainAgent(reward-0.5, action, observation)
 
             # Final train
             for color, agent in self.agents.items():
