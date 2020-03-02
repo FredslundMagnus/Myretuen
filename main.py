@@ -10,6 +10,7 @@ from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
 from Agents.simpleLinear import SimpleLinear
 from Agents.NNAgent import NNAgent, Net
+import numpy as np
 import cProfile
 import pstats
 from matplotlib import pyplot as plt
@@ -44,6 +45,15 @@ except:
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plt.show()
+try:
+    parameters = np.array(controller.agents['green'].parameters).T
+    print(parameters)
+    plt.imshow(parameters, cmap='hot', interpolation='nearest', aspect=parameters.shape[1]/(parameters.shape[0]*3))
+    plt.show()
+except:
+    pass
+
+
 controller.agents['green'].saveModel()
 # cProfile.run('controller.run(NGames=10)', 'stats')
 # p = pstats.Stats('stats')
