@@ -67,3 +67,4 @@ def placeAntsOnBoard(ants, bases):
         for ant in ants:
             ant.antsUnderMe[name] = 0
         i += 1
+
