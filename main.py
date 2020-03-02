@@ -23,7 +23,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=NNAgent(), agent2=RandomAgent())
+controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=SimpleLinear())
 
 
 if showUI:
@@ -47,12 +47,10 @@ plt.ylim((0, 1))
 plt.show()
 try:
     parameters = np.array(controller.agents['green'].parameters).T
-    print(parameters)
-    plt.imshow(parameters, cmap='hot', interpolation='nearest', aspect=parameters.shape[1]/(parameters.shape[0]*3))
+    plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1]/(parameters.shape[0]*3))
     plt.show()
 except:
     pass
-
 
 controller.agents['green'].saveModel()
 # cProfile.run('controller.run(NGames=10)', 'stats')
