@@ -7,6 +7,7 @@ class SimpleLinear(Agent):
         self.phi = []
         self.previousState = []
         self.actionState = None
+        self.explore = False
 
     def value(self, state):
         Nfeature = np.array(state).shape[-1]

@@ -5,6 +5,10 @@ import time
 class PlayerAgent(Agent):
     def __init__(self, connection):
         self.connection = connection
+        self.phi = []
+        self.previousState = []
+        self.actionState = None
+        self.explore = False
 
     def choose(self, actions):
         while len(actions) != 0:

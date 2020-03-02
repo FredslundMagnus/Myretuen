@@ -7,6 +7,8 @@ class RandomAgent(Agent):
         self.phi = []
         self.previousState = []
         self.actionState = None
+        self.explore = False
+
     def choose(self, actions):
         if len(actions) != 0:
             action = random.choice(actions)

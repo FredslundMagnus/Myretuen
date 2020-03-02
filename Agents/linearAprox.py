@@ -7,11 +7,12 @@ class LinearAprox(Agent):
         self.phi = []
         self.previousState = []
         self.actionState = None
+        self.explore = False
 
     def value(self, state):
         if len(self.phi) == 0:
             self.phi = np.random.rand(len(np.array(state).reshape(-1)))
-        #print(np.array(state).reshape(-1).T)
+        # print(np.array(state).reshape(-1).T)
         return np.array(state).reshape(-1).T @ self.phi
 
     def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
