@@ -35,6 +35,7 @@ class Agent():
         if len(self.previousState) == 0 or action == None or not self.doTrain:
             return
         self.train(reward, observation, action)
+        self.previousState = []
 
     def train(self, reward, observation, action):
         pass
@@ -140,4 +141,3 @@ class Agent():
             return [0, 0, 1, 0]
         else:
             return [0, 0, 0, 1]
-

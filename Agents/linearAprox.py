@@ -20,5 +20,4 @@ class LinearAprox(Agent):
         Vstnext = self.value(self.state(observation))
         x = np.array(self.state(observation)).reshape(-1)
         self.phi += alpha * (reward + discount * Vstnext - Vst) * x
-        self.previousState = []
         #print(self.phi @ np.array(self.actionState).reshape(-1))
