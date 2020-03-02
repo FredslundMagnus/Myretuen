@@ -27,3 +27,4 @@ class SimpleLinear(Agent):
         factor = np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0)
         self.phi += alpha * (reward + discount * Vstnext - Vst) * (factor @ x)
         self.previousState = []
+        print(Vstnext)

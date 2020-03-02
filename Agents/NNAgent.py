@@ -11,7 +11,7 @@ class NNAgent(Agent):
         self.phi = Net()
         self.previousState = []
         self.actionState = None
-        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
+        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00005)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
@@ -21,8 +21,7 @@ class NNAgent(Agent):
 
         return value.item() if return_float else value
 
-    def train(self, reward, action, observation, discount=0.8):
-
+    def train(self, reward, action, observation, discount=0.9):
         if len(self.previousState) == 0 or action == None:
             return
         self.optimizer.zero_grad()
@@ -30,13 +29,14 @@ class NNAgent(Agent):
         Vst = self.value(self.previousState, return_float=False)
         state = self.state(observation)
         Vstnext = self.value(state, return_float=False)
-
+        if reward != 0:
+            reward = reward/(abs(reward**(1/2)))
         label = torch.FloatTensor([reward + discount * Vstnext - Vst])
         criterion = nn.MSELoss()
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
-        print(Vst.item())
+        print(Vstnext)
 
 
 # class NNAgent(Agent):
