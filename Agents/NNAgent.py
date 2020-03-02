@@ -22,12 +22,10 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, observation, discount=0.8):
+    def train(self, reward, action, newState, discount=0.8):
         self.optimizer.zero_grad()
-
         Vst = self.value(self.previousState, return_float=False)
-        state = self.state(observation)
-        Vstnext = self.value(state, return_float=False)
+        Vstnext = self.value(newState, return_float=False)
         label = torch.FloatTensor([reward + discount * Vstnext - Vst])
         criterion = nn.MSELoss()
         loss = criterion(Vstnext, label)

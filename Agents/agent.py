@@ -31,13 +31,14 @@ class Agent():
 
         return bestAction
 
-    def trainAgent(self, reward, observation, action):
+    def trainAgent(self, reward, action, observation):
         if len(self.previousState) == 0 or action == None or not self.doTrain:
             return
-        self.train(reward, observation, action)
+        newState = self.state(observation)
+        self.train(reward, action, newState)
         self.previousState = []
 
-    def train(self, reward, observation, action):
+    def train(self, reward, action, newState):
         pass
 
     def value(self, state):

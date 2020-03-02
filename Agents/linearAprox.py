@@ -15,9 +15,9 @@ class LinearAprox(Agent):
         # print(np.array(state).reshape(-1).T)
         return np.array(state).reshape(-1).T @ self.phi
 
-    def train(self, reward, action, observation, alpha=0.000001, discount=0.8):
+    def train(self, reward, action, newState, alpha=0.000001, discount=0.8):
         Vst = self.value(self.previousState)
-        Vstnext = self.value(self.state(observation))
-        x = np.array(self.state(observation)).reshape(-1)
+        Vstnext = self.value(newState)
+        x = np.array(newState).reshape(-1)
         self.phi += alpha * (reward + discount * Vstnext - Vst) * x
         #print(self.phi @ np.array(self.actionState).reshape(-1))

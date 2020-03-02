@@ -17,11 +17,10 @@ class SimpleLinear(Agent):
         factor = np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0)
         return x @ self.phi @ factor
 
-    def train(self, reward, action, observation, alpha=0.00001, discount=0.7):
+    def train(self, reward, action, newState, alpha=0.00001, discount=0.7):
         Vst = self.value(self.previousState)
-        state = self.state(observation)
-        Vstnext = self.value(state)
-        Nfeature = np.array(state).shape[-1]
-        x = np.array(state).reshape(-1, Nfeature)
+        Vstnext = self.value(newState)
+        Nfeature = np.array(newState).shape[-1]
+        x = np.array(newState).reshape(-1, Nfeature)
         factor = np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0)
         self.phi += alpha * (reward + discount * Vstnext - Vst) * (factor @ x)
