@@ -57,7 +57,7 @@ class Move():
                     ant.position = self.game.bases[color]
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
-                reward += 10 * factor
+                reward += 5 * factor
             self.end.ants = []
         return reward
 

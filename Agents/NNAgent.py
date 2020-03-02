@@ -10,7 +10,7 @@ class NNAgent(Agent):
     def __init__(self, explore=False, doTrain=True):
         self.setup(explore, doTrain)
         self.phi = Net()
-        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.0001)
+        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
@@ -29,20 +29,17 @@ class NNAgent(Agent):
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
+        print(Vstnext.item(), label.item())
 
 
 class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(17, 34)
-        self.fc2 = nn.Linear(34, 34)
-        self.fc3 = nn.Linear(34, 10)
-        self.fc4 = nn.Linear(10, 1)
+        self.fc1 = nn.Linear(17,8)
+        self.fc2 = nn.Linear(8, 1)
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = F.relu(self.fc3(x))
-        x = self.fc4(x)
+        x = self.fc2(x)
         return x

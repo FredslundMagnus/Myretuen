@@ -23,7 +23,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 
-controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=SimpleLinear())
+controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=NNAgent())
 
 
 if showUI:
