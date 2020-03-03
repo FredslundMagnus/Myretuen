@@ -46,7 +46,7 @@ class Move():
         color = self.end.ants[-1].color
         factor = 1 if color == ant.color else -1
         if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.game.bases[color].goals:
-            ant.Moved_to_base = True # Jakob
+            ant.Moved_to_base = len(self.end.ants)-1 # Jakob
             for ant in self.end.ants:
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
@@ -59,6 +59,7 @@ class Move():
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
                 reward += 5 * factor
+            reward -= 5 * factor
             self.end.ants = []
         return reward
 
@@ -157,12 +158,17 @@ class Move():
 
     def simulateTransfor(self, antsAtFlag):
         alives = [ant for ant in antsAtFlag if ant.isAlive]
+        for value in alives[-1].antsUnderMe.values(): # Jakob
+            if alives[-1].position in self.game.bases[alives[-1].color].goals: # Jakob
+                alives[-1].Moved_to_base += value # Jakob
+        print(alives[-1].Moved_to_base)
         if len(alives) != 1:
             raise RuntimeError(
                 'There is more than one ant alive on the flag, this is not possible!')
 
         color = alives[0].color
         if self.end in self.game.bases[color].goals:
+            #antsAtFlag[-1]
             for ant in antsAtFlag:
                 if ant.color == color:
                     ant.position = self.game.bases[color]
@@ -189,4 +195,4 @@ class SimpleAnt():
         self.isAlive = isAlive
         self.flipped = flipped
         self.antsUnderMe = antsUnderMe
-        self.Moved_to_base = False # Jakob
+        self.Moved_to_base = 0 # Jakob

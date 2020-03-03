@@ -11,7 +11,7 @@ class Gamecontroller():
         agent1.env, agent2.env = env, env
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=0):
+    def run(self, NGames=float('inf'), timeDelay=0.2):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
@@ -34,9 +34,9 @@ class Gamecontroller():
                     agent.trainAgent(opponentReward, action, observation)
                     opponentReward = reward
                 else:
-                    agent.trainAgent(reward, action, observation)
+                    agent.trainAgent(reward-0.3, action, observation)
                 for i in range(len(self.env.ants)): # Jakob
-                    self.env.ants[i].Moved_to_base = False # Jakob
+                    self.env.ants[i].Moved_to_base = 0 # Jakob
             # Final train
             for color, agent in self.agents.items():
                 agent.resetGame()

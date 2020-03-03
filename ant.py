@@ -12,7 +12,7 @@ class Ant():
         self.isAlive = True
         self.flipped = False
         self.antsUnderMe = {}
-        self.Moved_to_base = False # Jakob
+        self.Moved_to_base = 0 # Jakob
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):

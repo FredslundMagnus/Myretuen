@@ -7,7 +7,7 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=False, doTrain=True):
+    def __init__(self, explore=True, doTrain=True):
         self.setup(explore, doTrain)
         self.phi = Net()
         self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
