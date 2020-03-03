@@ -6,7 +6,8 @@ def randomChooser(obj):
 
 
 def incrementalChooser(obj):
-    return random.choice(obj.agents)
+    obj.i = (obj.i + 1) % len(obj.agents)
+    return obj.agents[obj.i]
 
 
 class Opponent():
@@ -15,6 +16,7 @@ class Opponent():
             agents = [agents]
         self.agents = agents
         self.chooseAgent = chooser
+        self.i = -1
         self.currentAgent = self.chooseAgent(self)
 
     def choose(self, actions):

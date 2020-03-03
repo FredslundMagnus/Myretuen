@@ -10,7 +10,7 @@ from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
 from Agents.simpleLinear import SimpleLinear
 from Agents.NNAgent import NNAgent, Net
-from Agents.opponent import Opponent
+from Agents.opponent import Opponent, randomChooser, incrementalChooser
 import numpy as np
 import cProfile
 import pstats
