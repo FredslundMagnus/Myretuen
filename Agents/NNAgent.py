@@ -10,7 +10,7 @@ class NNAgent(Agent):
     def __init__(self, explore=True, doTrain=True):
         self.setup(explore, doTrain)
         self.phi = Net()
-        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00001)
+        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00002)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]

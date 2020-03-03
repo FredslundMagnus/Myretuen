@@ -161,7 +161,6 @@ class Move():
         for value in alives[-1].antsUnderMe.values(): # Jakob
             if alives[-1].position in self.game.bases[alives[-1].color].goals: # Jakob
                 alives[-1].Moved_to_base += value # Jakob
-        print(alives[-1].Moved_to_base)
         if len(alives) != 1:
             raise RuntimeError(
                 'There is more than one ant alive on the flag, this is not possible!')

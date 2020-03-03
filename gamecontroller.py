@@ -11,7 +11,7 @@ class Gamecontroller():
         agent1.env, agent2.env = env, env
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=0.2):
+    def run(self, NGames=float('inf'), timeDelay=0):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
