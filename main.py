@@ -10,6 +10,7 @@ from Agents.playerAgent import PlayerAgent
 from Agents.linearAprox import LinearAprox
 from Agents.simpleLinear import SimpleLinear
 from Agents.NNAgent import NNAgent, Net
+from Agents.opponent import Opponent
 import numpy as np
 import cProfile
 import pstats
@@ -22,10 +23,10 @@ env = Myretuen()
 
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
+opponent = Opponent(RandomAgent())
+controller = Gamecontroller(env=env, agent1=opponent, agent2=NNAgent())
 
-controller = Gamecontroller(env=env, agent1=RandomAgent(), agent2=NNAgent())
-
-
+print(opponent)
 if showUI:
     x = threading.Thread(target=controller.run)
     x.start()
