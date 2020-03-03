@@ -46,6 +46,7 @@ class Move():
         color = self.end.ants[-1].color
         factor = 1 if color == ant.color else -1
         if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.game.bases[color].goals:
+            ant.Moved_to_base = True # Jakob
             for ant in self.end.ants:
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
@@ -173,14 +174,14 @@ class Move():
 
     def simulate(self):
         if self.needResim:
-            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe) for ant in self.game.ants], oppesite=True)
+            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base) for ant in self.game.ants], oppesite=True) # Jakob
         else:
-            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe) for ant in self.game.ants]), [None] * len(self.game.ants)
+            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base) for ant in self.game.ants]), [None] * len(self.game.ants) # Jakob
         return ants1, ants2
 
 
 class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe):
+    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, Moved_to_base): # Jakob
         self.color = color
         self.magnet = magnet
         self.position = position
@@ -188,3 +189,4 @@ class SimpleAnt():
         self.isAlive = isAlive
         self.flipped = flipped
         self.antsUnderMe = antsUnderMe
+        self.Moved_to_base = False # Jakob

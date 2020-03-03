@@ -29,14 +29,13 @@ class NNAgent(Agent):
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
-        print(Vstnext.item(), label.item())
 
 
 class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(17,8)
+        self.fc1 = nn.Linear(18,8) # Jakob
         self.fc2 = nn.Linear(8, 1)
 
     def forward(self, x):
