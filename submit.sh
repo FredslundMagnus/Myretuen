@@ -11,4 +11,5 @@
 module load python3
 source ../myretuen-env/bin/activate
 
-python main.py $1 $2
+python main.py $LSB_PROJECT_NAME
+
