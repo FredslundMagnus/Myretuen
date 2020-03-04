@@ -11,7 +11,7 @@ class NNAgent(Agent):
         self.setup(explore, doTrain)
         self.phi = Net()
         self.optimizer = optim.Adam(
-            self.phi.parameters(), lr=0.000005, amsgrad=True)
+            self.phi.parameters(), lr=0.0001, amsgrad=True)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
@@ -23,25 +23,18 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train2(self, reward, action, newState, discount=0.8):
-        self.optimizer.zero_grad()
+    def train(self, reward, action, newState, lambd = 0.7, discount=0.7):
+        if abs(reward) > 30:
+            reward = 30*reward/abs(reward)
         Vst = self.value(self.previousState, return_float=False)
         Vstnext = self.value(newState, return_float=False)
-        label = torch.FloatTensor([reward + discount * Vstnext - Vst])
+        label = torch.FloatTensor([reward + discount * Vstnext])
         criterion = nn.MSELoss()
-        loss = criterion(Vstnext, label)
+        loss = criterion(Vst, label)
         loss.backward()
         self.optimizer.step()
-
-    def train(self, reward, action, newState, lr=0.0001, lambd = 0.5):
-        Vst = self.value(self.previousState, return_float=False)
-        Vstnext = self.value(newState, return_float=False)
-        #label = torch.FloatTensor([reward + discount * Vstnext - Vst])
         for f in self.phi.parameters():
-            print(f.grad)
             f.grad *= lambd
-            f += lr * (Vstnext - Vst) * f.grad
-        #self.optimizer.step()
 
 
 class Net(nn.Module):
