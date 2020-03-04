@@ -1,4 +1,4 @@
 #!/bin/sh
 git pull
-chmod +x run_experiments.sh
-./run_experiments.sh
+chmod +x experiments.sh
+./experiments.sh
