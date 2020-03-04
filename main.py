@@ -68,7 +68,8 @@ plot('Weights')
 
 print(parameters[:, -1])
 
-controller.agents['green'].saveModel(nameOfRun)
+if not debuggerMode:
+    controller.agents['green'].saveModel()
 
 
 # cProfile.run('controller.run(NGames=10)', 'stats')
