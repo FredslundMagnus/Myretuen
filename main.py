@@ -18,7 +18,7 @@ from matplotlib import pyplot as plt
 import os
 connection = None
 
-showUI = True
+showUI = False
 env = Myretuen()
 
 if showUI:
@@ -35,7 +35,7 @@ if showUI:
 
     x.do_run = False
 else:
-    controller.run()
+    controller.run(NGames=2)
 
 weights = controller.agents['green'].phi
 try:

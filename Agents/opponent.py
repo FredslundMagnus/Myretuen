@@ -1,4 +1,5 @@
 import random
+from copy import deepcopy
 
 
 def randomChooser(obj):
@@ -38,7 +39,10 @@ class Opponent():
             agent.loadModel(extention + str(i))
 
     def append(self, agent):
-        self.agents.append(agent)
+        adder = deepcopy(agent)
+        adder.train = False
+        adder.env = self.env
+        self.agents.append(adder)
 
     def __getitem__(self, indices):
         return self.agents[indices]
@@ -48,3 +52,7 @@ class Opponent():
 
     def __str__(self):
         return str([agent.__class__.__name__ for agent in self.agents])
+
+    def start(self):
+        for agent in self.agents:
+            agent.env = self.env
