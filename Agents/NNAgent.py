@@ -35,7 +35,7 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(18, 8)  # Jakob
+        self.fc1 = nn.Linear(19, 8)  # Jakob
         self.fc2 = nn.Linear(8, 1)
 
     def forward(self, x):

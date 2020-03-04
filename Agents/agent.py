@@ -103,7 +103,8 @@ class Agent():
         splitDistance = self.distanceToSplits(ant)
         baseDistance = self.distanceToBases(ant)
         Just_moved_base = self.Just_Moved_base(ant) # Jakob
-        return Just_moved_base + antSituation + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + GameOver + splitDistance + baseDistance + [carryEnimy, carryAlly] # Jakob
+        Just_ate_ants = self.Just_ate_ants(ant)
+        return Just_ate_ants + Just_moved_base + antSituation + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + GameOver + splitDistance + baseDistance + [carryEnimy, carryAlly] # Jakob
 
     def state(self, game, action=None):
         if action == None:
@@ -157,3 +158,5 @@ class Agent():
 
     def Just_Moved_base(self, ant):
         return [ant.Moved_to_base]
+    def Just_ate_ants(self, ant):
+        return [ant.Just_ate_ants]

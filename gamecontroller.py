@@ -34,9 +34,10 @@ class Gamecontroller():
                     agent.trainAgent(opponentReward, action, observation)
                     opponentReward = reward
                 else:
-                    agent.trainAgent(reward-0.3, action, observation)
+                    agent.trainAgent(reward-1, action, observation)
                 for i in range(len(self.env.ants)): # Jakob
                     self.env.ants[i].Moved_to_base = 0 # Jakob
+                    self.env.ants[i].Just_ate_ants = 0 # Jakob
             # Final train
             for color, agent in self.agents.items():
                 agent.resetGame()

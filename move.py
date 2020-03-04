@@ -58,8 +58,7 @@ class Move():
                     ant.position = self.game.bases[color]
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
-                reward += 5 * factor
-            reward -= 5 * factor
+                reward += 10 * factor
             self.end.ants = []
         return reward
 
@@ -90,6 +89,7 @@ class Move():
                 reward -= 3
             moving.reverse()
             self.end.ants = moving + self.end.ants
+        self.end.ants[-1].Just_ate_ants = len(self.end.ants)-1
         return reward
 
     def simulateSimple(self, ants):
@@ -134,6 +134,7 @@ class Move():
                     for Acolor in ant.antsUnderMe:
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
+                    theAnt.Just_ate_ants += 1
 
         else:
             for ant in ants:
@@ -145,6 +146,7 @@ class Move():
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
                 theAnt.antsUnderMe[ant.color] += 1
+                theAnt.Just_ate_ants += 1
 
         self.simulateClean(ants)
 
@@ -179,14 +181,14 @@ class Move():
 
     def simulate(self):
         if self.needResim:
-            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base) for ant in self.game.ants], oppesite=True) # Jakob
+            ants1, ants2 = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants) for ant in self.game.ants]), self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants) for ant in self.game.ants], oppesite=True) # Jakob
         else:
-            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base) for ant in self.game.ants]), [None] * len(self.game.ants) # Jakob
+            ants1, ants2 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants) for ant in self.game.ants]), [None] * len(self.game.ants) # Jakob
         return ants1, ants2
 
 
 class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, Moved_to_base): # Jakob
+    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, Moved_to_base, Just_ate_ants): # Jakob
         self.color = color
         self.magnet = magnet
         self.position = position
@@ -195,3 +197,4 @@ class SimpleAnt():
         self.flipped = flipped
         self.antsUnderMe = antsUnderMe
         self.Moved_to_base = 0 # Jakob
+        self.Just_ate_ants = 0
