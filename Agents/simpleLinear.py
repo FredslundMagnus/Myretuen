@@ -18,5 +18,5 @@ class SimpleLinear(Agent):
     def train(self, reward, action, newState, alpha=0.00001, discount=0.7):
         Vst = self.value(self.previousState)
         Vstnext = self.value(newState)
-        x = np.array(newState).reshape(-1, self.Nfeature)
+        x = np.array(self.previousState).reshape(-1, self.Nfeature)
         self.phi += alpha * (reward + discount * Vstnext - Vst) * (self.factor @ x)
