@@ -1,0 +1,101 @@
+Loaded module: python3/3.6.2
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Game 001, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 0, 'Tie': 0, 'green': 1},  Winrate: 1.0
+Game 002, Length: 354,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 1, 'Tie': 0, 'green': 1},  Winrate: 0.5
+Game 003, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 1, 'Tie': 0, 'green': 2},  Winrate: 0.67
+Game 004, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 2, 'Tie': 0, 'green': 2},  Winrate: 0.5
+Game 005, Length: 227,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 3, 'Tie': 0, 'green': 2},  Winrate: 0.4
+Game 006, Length: 212,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 4, 'Tie': 0, 'green': 2},  Winrate: 0.33
+Game 007, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 4, 'Tie': 0, 'green': 3},  Winrate: 0.43
+Game 008, Length: 448,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 5, 'Tie': 0, 'green': 3},  Winrate: 0.38
+Game 009, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 6, 'Tie': 0, 'green': 3},  Winrate: 0.33
+Game 010, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 7, 'Tie': 0, 'green': 3},  Winrate: 0.3
+[-0.14625324  0.01256382 -0.09277172 -0.10532618 -0.17575154 -0.14294493
+  0.09238824 -0.0788426   0.20875202  0.07977357 -0.10153694 -0.04162084
+ -0.16001287 -0.01268586  0.05175794  0.17645723  0.10180432 -0.08475641
+  0.14150925 -0.18453611 -0.21650948  0.02899971  0.20157132 -0.03228521
+ -0.17174082  0.07057291  0.11075065  0.19695817  0.12405445 -0.04738307
+ -0.11428001  0.1372026   0.07006429  0.14068832 -0.01872825  0.12441649
+  0.06407948  0.02479129 -0.03474669 -0.1490161   0.18689403 -0.08534399
+  0.06976201 -0.02683199 -0.1535151   0.09771342 -0.18603514  0.07285487
+ -0.0606141   0.1131025  -0.00900002  0.16568631  0.01419231 -0.06993374
+  0.11979652  0.18592907  0.0726352   0.14561252  0.13514678  0.03374312
+ -0.21756147  0.09743328 -0.20643306 -0.1528161   0.1330715   0.22594729
+  0.08557913  0.16167924  0.110629    0.19423357 -0.07570034 -0.07345697
+  0.2141713   0.21152931  0.21913186 -0.07029159  0.22051388 -0.0115722
+ -0.16058753  0.0393142  -0.17711447  0.06136378 -0.1331745   0.21073267
+  0.08649164 -0.17725554 -0.06305338  0.20051116  0.05517776  0.02321373
+ -0.01707636  0.00711478  0.08674721 -0.20983931  0.07775126 -0.12831677
+ -0.13525514 -0.22626272 -0.06481463  0.20753193 -0.19659086  0.07392059
+  0.18263291 -0.19904652 -0.02012517  0.15144557 -0.20565994 -0.0101785
+ -0.12506689 -0.20096508  0.04251104  0.01830876 -0.22207464 -0.14095567
+  0.15958244 -0.07689819  0.07653257 -0.22219846 -0.00193993 -0.08280166
+ -0.03921945  0.18201679  0.15015616 -0.04329619  0.15007412 -0.03716201
+ -0.11894811  0.1484485  -0.11479135 -0.19210345 -0.17787234 -0.07352592
+ -0.05236208  0.17551206 -0.01152419  0.02538587  0.17787272  0.05701667
+  0.08998425  0.16530208 -0.11384296 -0.1948347   0.19540109  0.05501704
+ -0.22158316 -0.13461863 -0.11487678  0.08617413 -0.01448742 -0.14815933
+ -0.20801975  0.11613879  0.15483315  0.15795565 -0.16309164 -0.20423774
+  0.03903304  0.00295797  0.00699972  0.00920101  0.17136538 -0.06834879
+ -0.00868799 -0.13492411  0.19704787  0.07538945 -0.01788092  0.17076498
+ -0.1286566   0.04111965  0.11262823  0.10486463  0.03612068 -0.19556835
+ -0.02986032  0.1815534   0.22562063 -0.03414144  0.03467938 -0.04764047
+ -0.04688138 -0.08290888  0.20239836  0.05585105  0.01805181 -0.21348318
+ -0.14301486 -0.05737973 -0.16458246 -0.10506292  0.10064467  0.03809637
+ -0.00188267  0.02295546 -0.17180486  0.20439962  0.00528732 -0.14754745
+ -0.22151354 -0.11378744  0.03875721  0.2864852  -0.29305035 -0.19214585
+ -0.12564017 -0.11572237  0.28469345 -0.02159156  0.18556665  0.0717487
+ -0.20244059]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-23-25>
+Subject: Job 5762555: <test> in cluster <dcc> Done
+
+Job <test> was submitted from host <n-62-30-3> by user <s183905> in cluster <dcc> at Wed Mar  4 16:37:41 2020
+Job was executed on host(s) <n-62-23-25>, in queue <hpc>, as user <s183905> in cluster <dcc> at Wed Mar  4 16:37:43 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Wed Mar  4 16:37:43 2020
+Terminated at Wed Mar  4 16:38:29 2020
+Results reported at Wed Mar  4 16:38:29 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J test
+#BSUB -o outputs/test_%J.out
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=1G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 10
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   45.80 sec.
+    Max Memory :                                 77 MB
+    Average Memory :                             76.75 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               947.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   69 sec.
+    Turnaround time :                            48 sec.
+
+The output (if any) is above this job summary.
+
