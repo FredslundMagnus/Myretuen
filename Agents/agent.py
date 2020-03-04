@@ -28,7 +28,8 @@ class Agent():
                     valueMax = value
                     bestAction = action
                     self.actionState = state
-
+        if len(actions) == 0:
+            self.previousState = []
         return bestAction
 
     def trainAgent(self, reward, action, observation):
