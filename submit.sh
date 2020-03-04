@@ -5,7 +5,7 @@
 #BSUB -n 1
 #BSUB -R "rusage[mem=1G]"
 #BSUB -R "span[hosts=1]"
-#BSUB -W 10
+#BSUB -W 100
 # end of BSUB options
 
 module load python3
