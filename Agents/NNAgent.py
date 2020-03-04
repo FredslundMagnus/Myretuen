@@ -10,13 +10,16 @@ class NNAgent(Agent):
     def __init__(self, explore=True, doTrain=True):
         self.setup(explore, doTrain)
         self.phi = Net()
-        self.optimizer = optim.Adam(self.phi.parameters(), lr=0.000002)
+        self.optimizer = optim.Adam(
+            self.phi.parameters(), lr=0.000002, amsgrad=True)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
         x = np.array(state).reshape(-1, Nfeature)
-        factor = torch.FloatTensor(np.concatenate((np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
-        value = torch.dot(torch.flatten(self.phi(torch.FloatTensor(x))), factor)
+        factor = torch.FloatTensor(np.concatenate(
+            (np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
+        value = torch.dot(torch.flatten(
+            self.phi(torch.FloatTensor(x))), factor)
         value = value.view(-1)
         return value.item() if return_float else value
 
