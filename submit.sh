@@ -3,9 +3,9 @@
 #BSUB -o outputs/test_%J.out
 #BSUB -q hpc
 #BSUB -n 1
-#BSUB -R "rusage[mem=1G]"
+#BSUB -R "rusage[mem=8G]"
 #BSUB -R "span[hosts=1]"
-#BSUB -W 100
+#BSUB -W 1000
 # end of BSUB options
 
 module load python3
