@@ -43,16 +43,17 @@ class NNAgent(Agent):
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
-        print(Vstnext.item(), label.item())
+        #print(Vstnext.item(), label.item())
 
 
 class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(19, 1)  # Jakob
+        self.fc1 = nn.Linear(19, 10)  # Jakob
+        self.fc2 = nn.Linear(10, 1)
 
     def forward(self, x):
-        #x = F.relu(self.fc1(x))
-        x = self.fc1(x)
+        x = torch.sigmoid(self.fc1(x))
+        x = self.fc2(x)
         return x

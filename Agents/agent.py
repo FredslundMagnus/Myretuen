@@ -6,6 +6,7 @@ import numpy as np
 
 
 class Agent():
+
     def choose(self, actions):
         self.previousState = self.state(self.env)
         if self.explore and actions != []:
@@ -36,6 +37,8 @@ class Agent():
         if len(self.previousState) == 0 or action == None or not self.doTrain:
             return
         newState = self.state(observation)
+        self.all_state.append(newState)
+        self.all_reward.append(reward)
         self.train(reward, action, newState)
         self.previousState = []
 
@@ -46,7 +49,7 @@ class Agent():
         pass
 
     def setup(self, explore, doTrain):
-        self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = explore, doTrain, [], None, [], []
+        self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = [], [], explore, doTrain, [], None, [], []
 
     def resetGame(self):
         try:

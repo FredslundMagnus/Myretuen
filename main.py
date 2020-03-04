@@ -18,7 +18,7 @@ from matplotlib import pyplot as plt
 import os
 connection = None
 
-showUI = False
+showUI = True
 env = Myretuen()
 
 if showUI:
