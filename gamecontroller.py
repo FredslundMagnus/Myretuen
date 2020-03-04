@@ -42,8 +42,6 @@ class Gamecontroller():
             # Final train
             for color, agent in self.agents.items():
                 agent.resetGame()
-                # if color == "green":
-                #print(agent.all_reward, len(agent.all_reward), len(agent.all_state), agent.all_state[0])
 
             print(self.env.gameStatus())
             self.winrate.append(self.env.Runningwinrate)

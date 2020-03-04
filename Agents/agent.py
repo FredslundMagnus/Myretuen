@@ -37,8 +37,6 @@ class Agent():
         if len(self.previousState) == 0 or action == None or not self.doTrain:
             return
         newState = self.state(observation)
-        self.all_state.append(newState)
-        self.all_reward.append(reward)
         self.train(reward, action, newState)
         self.previousState = []
 

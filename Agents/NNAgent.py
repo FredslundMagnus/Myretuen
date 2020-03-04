@@ -23,7 +23,7 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, newState, discount=0.8):
+    def train2(self, reward, action, newState, discount=0.8):
         self.optimizer.zero_grad()
         Vst = self.value(self.previousState, return_float=False)
         Vstnext = self.value(newState, return_float=False)
@@ -32,18 +32,16 @@ class NNAgent(Agent):
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
-        # print(Vstnext.item(), label.item())
 
-    def train2(self, reward, action, newState, lambd=0.8):
-        self.optimizer.zero_grad()
+    def train(self, reward, action, newState, lr=0.0001, lambd = 0.5):
         Vst = self.value(self.previousState, return_float=False)
         Vstnext = self.value(newState, return_float=False)
-        label = torch.FloatTensor([reward + discount * Vstnext - Vst])
-        criterion = nn.MSELoss()
-        loss = criterion(Vstnext, label)
-        loss.backward()
-        self.optimizer.step()
-        #print(Vstnext.item(), label.item())
+        #label = torch.FloatTensor([reward + discount * Vstnext - Vst])
+        for f in self.phi.parameters():
+            print(f.grad)
+            f.grad *= lambd
+            f += lr * (Vstnext - Vst) * f.grad
+        #self.optimizer.step()
 
 
 class Net(nn.Module):
