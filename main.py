@@ -24,7 +24,7 @@ env = Myretuen()
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
 opponent = Opponent(RandomAgent())
-controller = Gamecontroller(env=env, agent1=opponent, agent2=SimpleLinear())
+controller = Gamecontroller(env=env, agent1=opponent, agent2=NNAgent())
 
 print(opponent)
 if showUI:
