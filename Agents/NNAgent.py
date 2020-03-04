@@ -32,7 +32,7 @@ class NNAgent(Agent):
         loss = criterion(Vstnext, label)
         loss.backward()
         self.optimizer.step()
-        print(Vstnext.item(), label.item())
+        # print(Vstnext.item(), label.item())
 
     def train2(self, reward, action, newState, lambd=0.8):
         self.optimizer.zero_grad()
