@@ -10,7 +10,7 @@ class NNAgent(Agent):
     def __init__(self, explore=True, doTrain=True):
         self.setup(explore, doTrain)
         self.phi = Net()
-        self.optimizer = optim.SGD(self.phi.parameters(), lr=0.00002)
+        self.optimizer = optim.Adam(self.phi.parameters(), lr=0.000002)
 
     def value(self, state, return_float=True):
         Nfeature = np.array(state).shape[-1]
@@ -35,7 +35,7 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(18,8) # Jakob
+        self.fc1 = nn.Linear(18, 8)  # Jakob
         self.fc2 = nn.Linear(8, 1)
 
     def forward(self, x):
