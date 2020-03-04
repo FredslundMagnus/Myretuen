@@ -16,17 +16,37 @@ import cProfile
 import pstats
 from matplotlib import pyplot as plt
 import os
-connection = None
+import sys
 
-showUI = True
+connection = None
+if len(sys.argv) == 1:
+    showUI = True
+    debuggerMode = False
+    nameOfRun = ''
+else:
+    showUI = False
+    debuggerMode = True
+    nameOfRun = sys.argv[1]
+    nGames = int(sys.argv[2])
+
+
+def plot(name):
+    if debuggerMode:
+        plt.savefig('outputs/' + name + nameOfRun + '.png')
+    else:
+        plt.show()
+
+
+showUI = False
 env = Myretuen()
 
 if showUI:
     background, win, connection = drawBackground(fields=env.fields, diceHolder=env.diceHolder, bases=env.bases)
+
+
 opponent = Opponent(RandomAgent())
 controller = Gamecontroller(env=env, agent1=opponent, agent2=NNAgent())
 
-print(opponent)
 if showUI:
     x = threading.Thread(target=controller.run)
     x.start()
@@ -35,25 +55,23 @@ if showUI:
 
     x.do_run = False
 else:
-    controller.run(NGames=2)
+    controller.run(NGames=nGames)
 
-weights = controller.agents['green'].phi
-try:
-    print(['%.2f' % elem for elem in weights], len(weights))
-except:
-    pass
-# print(controller.winrate)
+
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
-plt.show()
-try:
-    parameters = np.array(controller.agents['green'].parameters).T
-    plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1]/(parameters.shape[0]*3))
-    plt.show()
-except:
-    pass
+plot('TrainingCurve')
 
-controller.agents['green'].saveModel()
+
+parameters = np.array(controller.agents['green'].parameters).T
+plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1]/(parameters.shape[0]*3))
+plot('Weights')
+
+print(parameters[:, -1])
+
+controller.agents['green'].saveModel(nameOfRun)
+
+
 # cProfile.run('controller.run(NGames=10)', 'stats')
 # p = pstats.Stats('stats')
 # p.strip_dirs().sort_stats('cumulative').print_stats()
