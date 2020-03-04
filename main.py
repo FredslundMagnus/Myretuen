@@ -37,7 +37,6 @@ def plot(name):
         plt.show()
 
 
-showUI = False
 env = Myretuen()
 
 if showUI:
