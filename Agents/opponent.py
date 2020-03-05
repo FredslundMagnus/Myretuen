@@ -40,7 +40,8 @@ class Opponent():
 
     def append(self, agent):
         adder = deepcopy(agent)
-        adder.train = False
+        adder.doTrain = False
+        adder.explore = False
         adder.env = self.env
         self.agents.append(adder)
 

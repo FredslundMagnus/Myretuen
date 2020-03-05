@@ -12,7 +12,7 @@ class Gamecontroller():
         agent1.start()
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=0):
+    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=1000000):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
@@ -40,8 +40,13 @@ class Gamecontroller():
                     self.env.ants[i].Moved_to_base = 0  # Jakob
                     self.env.ants[i].Just_ate_ants = 0  # Jakob
             # Final train
+
             for color, agent in self.agents.items():
                 agent.resetGame()
+
+            if gameN % AddAgent == 0:
+                self.agents[self.env.player1].append(self.agents[self.env.player2])
+                print(self.agents[self.env.player1])
 
             print(self.env.gameStatus())
             self.winrate.append(self.env.Runningwinrate)

@@ -28,6 +28,7 @@ else:
     debuggerMode = True
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
+    AddAgent = int(sys.argv[3])
 
 
 def plot(name):
@@ -54,7 +55,7 @@ if showUI:
 
     x.do_run = False
 else:
-    controller.run(NGames=nGames)
+    controller.run(NGames=nGames, AddAgent=addAgent)
 
 
 plt.plot(controller.winrate)
