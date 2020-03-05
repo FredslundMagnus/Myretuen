@@ -23,7 +23,7 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, newState, lambd = 0.7, discount=0.7):
+    def train(self, reward, action, newState, lambd = 0.9, discount=0.995):
         if abs(reward) > 30:
             reward = 30*reward/abs(reward)
         Vst = self.value(self.previousState, return_float=False)
@@ -41,10 +41,12 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(19, 10)  # Jakob
-        self.fc2 = nn.Linear(10, 1)
+        self.fc1 = nn.Linear(17, 10)
+        self.fc2 = nn.Linear(10, 10)
+        self.fc3 = nn.Linear(10, 1)
 
     def forward(self, x):
         x = torch.sigmoid(self.fc1(x))
-        x = self.fc2(x)
+        x = torch.sigmoid(self.fc2(x))
+        x = self.fc3(x)
         return x
