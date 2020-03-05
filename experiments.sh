@@ -1,11 +1,11 @@
 #!/bin/sh
-bsub -P "ny0dis99 1000 300" < submit.sh
-bsub -P "ny1dis99 1000 300" < submit.sh
-bsub -P "ny2dis99 1000 300" < submit.sh
-bsub -P "ny3dis99 1000 300" < submit.sh
-bsub -P "ny4dis99 1000 300" < submit.sh
-bsub -P "ny5dis99 1000 300" < submit.sh
-bsub -P "ny6dis99 1000 300" < submit.sh
-bsub -P "ny7dis99 1000 300" < submit.sh
-bsub -P "ny8dis99 1000 300" < submit.sh
-bsub -P "ny9dis99 1000 300" < submit.sh
+bsub -P "often0 3000 10" < submit.sh
+bsub -P "often1 3000 10" < submit.sh
+bsub -P "often2 3000 10" < submit.sh
+bsub -P "often3 3000 10" < submit.sh
+bsub -P "often4 3000 10" < submit.sh
+bsub -P "often5 3000 10" < submit.sh
+bsub -P "often6 3000 10" < submit.sh
+bsub -P "often7 3000 10" < submit.sh
+bsub -P "often8 3000 10" < submit.sh
+bsub -P "often9 3000 10" < submit.sh

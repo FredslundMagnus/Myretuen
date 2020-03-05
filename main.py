@@ -34,6 +34,7 @@ else:
 def plot(name):
     if debuggerMode:
         plt.savefig('outputs/' + name + nameOfRun + '.png')
+        plt.clf()
     else:
         plt.show()
 
