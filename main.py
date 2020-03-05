@@ -28,7 +28,7 @@ else:
     debuggerMode = True
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
-    AddAgent = int(sys.argv[3])
+    addAgent = int(sys.argv[3])
 
 
 def plot(name):
