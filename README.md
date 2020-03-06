@@ -3,6 +3,24 @@
 Project of creating the board game Myretuen and create an AI to play the game.
 Welcome
 
+# Requirements
+
+```bash
+python -m pip install torch torchvision
+```
+
+```bash
+python -m pip install pygame
+```
+
+```bash
+python -m pip install gym
+```
+
+```bash
+python -m pip install matplotlib
+```
+
 # version-0.2
 
 - Speed improvements
