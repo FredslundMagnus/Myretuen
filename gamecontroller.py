@@ -12,7 +12,7 @@ class Gamecontroller():
         agent1.start()
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10):
+    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env

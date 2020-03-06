@@ -37,8 +37,9 @@ class Agent():
         if len(self.previousState) == 0 or action == None or not self.doTrain:
             return
         newState = self.state(observation)
-        self.train(reward, action, newState)
+        self.train(self.newreward, action, newState)
         self.previousState = []
+        self.newreward = reward
 
     def train(self, reward, action, newState):
         pass
@@ -47,7 +48,7 @@ class Agent():
         pass
 
     def setup(self, explore, doTrain):
-        self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = [], [], explore, doTrain, [], None, [], []
+        self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = 0, [], [], explore, doTrain, [], None, [], []
 
     def resetGame(self):
         try:
