@@ -21,6 +21,12 @@ python -m pip install gym
 python -m pip install matplotlib
 ```
 
+# version-0.3
+
+- Added esplorer mode
+- Added TD(lambda)
+- Added self play option
+
 # version-0.2
 
 - Speed improvements
