@@ -15,6 +15,7 @@ class Ant():
         self.Moved_to_base = 0 # Jakob
         self.Just_ate_ants = 0
         self.fights = []
+        self.switch = None
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
