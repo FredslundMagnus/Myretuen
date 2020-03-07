@@ -1,5 +1,5 @@
 import time
-
+from Probability_function import Probability_calculator
 
 class Move():
     def __init__(self, start=None, dice=None, end=None, game=None):
@@ -76,13 +76,19 @@ class Move():
         self.end.ants = moving
 
     def moveToOpponent(self, moving, oppesite):
+        #prob = Probability_calculator()
+        #print(Probability_calculator().Check_for_guarenteed_win(moving[-1], self.end.ants[-1])) # JAkob
         reward = 0
         if (self.end.ants[-1].magnet == moving[-1].magnet and not oppesite) or (self.end.ants[-1].magnet != moving[-1].magnet and oppesite):
+            self.end.ants[-1].fights.append([moving[-1], 1])
+            moving[-1].fights.append([self.end.ants[-1], 1])
             for ant in self.end.ants:
                 ant.isAlive = False
                 reward += 3
             self.end.ants = self.end.ants + moving
         else:
+            self.end.ants[-1].fights.append([moving[-1], -1])
+            moving[-1].fights.append([self.end.ants[-1], -1])
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
