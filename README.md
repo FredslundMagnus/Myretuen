@@ -21,6 +21,14 @@ python -m pip install gym
 python -m pip install matplotlib
 ```
 
+# Using the enviroment
+
+```python
+from game import Myretuen
+
+env = Myretuen()
+```
+
 # version-0.3
 
 - Added esplorer mode
