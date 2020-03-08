@@ -7,6 +7,9 @@ from holder import DiceHolder
 from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, Give_bases_dists, Give_dist_to_all
 import numpy as np
 import random
+from collections import Counter
+import math
+
 
 def setup():
     fields = {
@@ -104,41 +107,106 @@ fields, bases, ants, diceHolder = setup()
 
 
 class Probability_calculator():
-    def __init__(self):
-        self.seen = []
-        self.final = 0
+    def __init__(self, bases, ants):
+        self.clusters = []
+        self.history = [[[x.id],[], [], []] if x.color == bases[ants[0].color].color else [[],[x.id], [], []] for x in ants]
+        self.finalcount = 0
+        self.ants = ants
+        self.bases = bases
+    
+    def combinelists(self, li1, li2):
+        return li1 + li2
+    def Nointersection(self, lst1, lst2):
+        for i in range(len(lst1)):
+            if lst1[i] == lst2:
+                lst1.pop(i)
+                break
+        return lst1
 
-    def Check_for_guarenteed_win(self, ant1, ant2, whowon=1):
-        if self.final != 0 or ant1 in self.seen:
+    def fight(self, ant1, ant2, winner=True):
+        for i in range(len(self.history)):
+            for j in range(len(self.history[i])):
+                for k in range(len(self.history[i][j])):
+                    if self.history[i][j][k] == ant1.id:
+                        ant1cluster = [self.history[i], j]
+                    if self.history[i][j][k] == ant2.id:
+                        ant2cluster = [self.history[i], j]
+        if ant1cluster[0] != ant2cluster[0]:
+            if (winner == False and abs(ant2cluster[1]-ant1cluster[1]) == 2) or (winner == True and abs(ant2cluster[1]-ant1cluster[1]) == 1):
+                newcluster = list(map(self.combinelists, ant1cluster[0], ant2cluster[0]))
+            else:
+                newcluster = list(map(self.combinelists, ant1cluster[0][::-1], ant2cluster[0]))
+            self.history = [e for e in self.history if e not in (ant1cluster[0], ant2cluster[0])]
+            self.history.append(newcluster)
+
+
+        foundy = 0
+        done = -1
+        for i in range(len(self.history)):
+            if done != -1:
+                break
+            foundy = 0
+            for j in range(len(self.history[i])):
+                if len(self.history[i][j]) > 0:
+                    foundy += 1
+                if foundy > 1:
+                    done = i
+                    break
+        newhistory = self.history[(done):]
+
+        self.clusters = []
+        for i in range(len(newhistory)):
+            cluster = [0,]*len(newhistory[i])
+            for j in range(len(newhistory[i])):
+                cluster[j] = len(newhistory[i][j])
+            self.clusters.append(cluster)
+
+    def Combinations(self, antsleft, layer, clustersleft):
+        layer += 1
+        if any(antsleft < 0):
             return
-        ant1.switch = whowon
-        self.seen.append(ant1)
+        if layer != len(clustersleft)+1 and clustersleft != []:
+            self.Combinations(antsleft - clustersleft[-layer], layer, clustersleft)
+            self.Combinations(antsleft - clustersleft[-layer][::-1], layer, clustersleft)
+        else:
+            self.finalcount += (math.factorial(antsleft[0]+antsleft[3]))/(math.factorial(antsleft[0])*math.factorial(antsleft[3]))*(math.factorial(antsleft[2]+antsleft[1])/(math.factorial(antsleft[2])*math.factorial(antsleft[1])))
 
-        if ant1.id == ant2.id:
-            self.final = ant1.switch
-            ant2.switch = ant1.switch
-        for i in range(len(ant1.fights)):
-            self.Check_for_guarenteed_win(ant1.fights[i][0], ant2, ant1.fights[i][1]*ant1.switch)
-        self.final = 0
-        return ant2.switch
+    def CalculateWinChance(self, ant1, ant2):
+        for i in range(len(self.history)):
+            for j in range(len(self.history[i])):
+                for k in range(len(self.history[i][j])):
+                    if self.history[i][j][k] == ant1.id:
+                        cluster1 = [self.history[i].copy(), j]
+                    if self.history[i][j][k] == ant2.id:
+                        cluster2 = [self.history[i].copy(), j]
+        if cluster2[0] == cluster1[0]:
+            return 2-abs(cluster2[1] - cluster1[1])
 
-    #def Probability_for_rest(self):
+        for i in range(len(cluster1[0])):
+            cluster1[0][i] = len(cluster1[0][i])
+        for i in range(len(cluster2[0])):
+            cluster2[0][i] = len(cluster2[0][i])
+        clustersleft = self.clusters
+        clustersleft = self.Nointersection(clustersleft, cluster1[0])
+        clustersleft = self.Nointersection(clustersleft, cluster2[0])
 
-ants[3].fights.append([ants[4], 1])
-ants[1].fights.append([ants[5], -1])  
-ants[0].fights.append([ants[1], 1])
-ants[1].fights.append([ants[0], 1])
-#ants[2].fights.append([ants[3], -1])
-#ants[3].fights.append([ants[2], -1])
-#ants[0].fights.append([ants[2], -1])
-#ants[2].fights.append([ants[0], -1])
-ants[5].fights.append([ants[4], -1])
-ants[5].fights.append([ants[1], -1])
-ants[4].fights.append([ants[3], 1])
-ants[4].fights.append([ants[5], -1])
-ants[5].fights.append([ants[6], -1])
-ants[6].fights.append([ants[5], -1])
+        start = np.ones(4)*len(self.ants)//4
 
+        if abs(cluster1[1]-cluster2[1]) == 1:
+            State_if_win = start - np.array(cluster1[0]) - np.array(cluster2[0])
+        else:
+            State_if_win = start - np.array(cluster1[0][::-1]) - np.array(cluster2[0])
 
-prob = Probability_calculator()
-print(prob.Check_for_guarenteed_win(ants[6],ants[1]))
+        if abs(cluster1[1]-cluster2[1]) == 2:
+            State_if_lose = start - np.array(cluster1[0]) - np.array(cluster2[0])
+        else:
+            State_if_lose = start - np.array(cluster1[0][::-1]) - np.array(cluster2[0])
+
+        self.Combinations(State_if_win, 0, clustersleft)
+
+        winnings = self.finalcount
+        self.finalcount = 0
+        self.Combinations(State_if_lose, 0, clustersleft)
+        losings = self.finalcount
+        self.finalcount = 0
+        return winnings/(winnings+losings)

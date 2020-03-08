@@ -3,6 +3,7 @@ from setups import setup
 from UI.UI import addRect
 import gym
 from gym import spaces
+from Probability_function import Probability_calculator
 
 
 class Myretuen(gym.Env):
@@ -20,6 +21,7 @@ class Myretuen(gym.Env):
         self.totalScore = {self.player1: 0, 'Tie': 0, self.player2: 0}
         self.wins = []
         self.Runningwinrate = None
+        self.prob = Probability_calculator(self.bases, self.ants)
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1
@@ -115,3 +117,4 @@ class Myretuen(gym.Env):
         self.dicesThatHaveBeenRolled = 0
         self.rolledSameDice = False
         self.nGamePlay += 1
+        self.prob = Probability_calculator(self.bases, self.ants)
