@@ -143,4 +143,4 @@ class Controller():
 
             x.do_run = False
         else:
-            self.gameController.run(NGames=float('inf'), timeDelay=0, AddAgent=10000)
+            self.gameController.run(NGames=NGames, timeDelay=timeDelay, AddAgent=AddAgent)
