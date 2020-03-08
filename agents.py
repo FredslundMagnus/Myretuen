@@ -10,8 +10,8 @@ def RandomAgent(*args, **kwargs):
     return _RandomAgent(*args, **kwargs)
 
 
-def PlayerAgent(connection, *args, **kwargs):
-    return _PlayerAgent(connection, *args, **kwargs)
+def PlayerAgent(*args, **kwargs):
+    return _PlayerAgent(*args, **kwargs)
 
 
 def LinearAprox(*args, **kwargs):
@@ -26,8 +26,8 @@ def NNAgent(*args, **kwargs):
     return _NNAgent(*args, **kwargs)
 
 
-def Opponent(agents, *args, **kwargs):
-    return _Opponent(agents, *args, **kwargs)
+def Opponent(*args, **kwargs):
+    return _Opponent(*args, **kwargs)
 
 
 def randomChooser(obj, *args, **kwargs):
