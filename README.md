@@ -23,10 +23,30 @@ python -m pip install matplotlib
 
 # Using the enviroment
 
+## Initialize
+
 ```python
 from game import Myretuen
 
 env = Myretuen()
+```
+
+## Get the agents
+
+```python
+from agents import *
+
+agent1 = Opponent(RandomAgent())
+agent2 = NNAgent()
+```
+
+## Start the controller
+
+```python
+from gamecontroller import Gamecontroller
+
+controller = Gamecontroller(env=env, agent1=agent1, agent2=agent2)
+controller.run()
 ```
 
 # version-0.3
