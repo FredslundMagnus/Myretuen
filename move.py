@@ -11,12 +11,12 @@ class Move():
     def __str__(self):
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
 
-    def execute(self, oppesite=False):
+    def execute(self, CalculateProb, oppesite=False):
         reward = 0
         self.removeDice()
         moving = self.liftAnts()
         myAnt = moving[-1]
-        rewardAdded = self.placeOnBoard(moving, oppesite)
+        rewardAdded = self.placeOnBoard(moving, oppesite, CalculateProb)
         reward += rewardAdded
         reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
@@ -33,12 +33,12 @@ class Move():
         for ant in self.end.ants[:-1]:
             self.end.ants[-1].antsUnderMe[ant.color] += 1
 
-    def placeOnBoard(self, moving, oppesite):
+    def placeOnBoard(self, moving, oppesite, CalculateProb):
         if self.end.ants == []:
             self.moveToEmpty(moving)
             return 0
         else:
-            return self.moveToOpponent(moving, oppesite)
+            return self.moveToOpponent(moving, oppesite, CalculateProb)
 
     def transforCaputuredToBase(self, ant):
         reward = 0
@@ -74,18 +74,20 @@ class Move():
     def moveToEmpty(self, moving):
         self.end.ants = moving
 
-    def moveToOpponent(self, moving, oppesite):
+    def moveToOpponent(self, moving, oppesite, CalculateProb):
         reward = 0
         if (self.end.ants[-1].magnet == moving[-1].magnet and not oppesite) or (self.end.ants[-1].magnet != moving[-1].magnet and oppesite):
-            #print("{0:.2f}".format(self.game.prob.CalculateWinChance(moving[-1], self.end.ants[-1])))
-            #self.game.prob.fight(moving[-1], self.end.ants[-1], winner=True)
+            if CalculateProb == True:
+                self.game.prob.fight(moving[-1], self.end.ants[-1], winner=True)
+                self.game.prob.CalculateWinChance()
             for ant in self.end.ants:
                 ant.isAlive = False
                 reward += 3
             self.end.ants = self.end.ants + moving
         else:
-            #print("{0:.2f}".format(self.game.prob.CalculateWinChance(moving[-1], self.end.ants[-1])))
-            #self.game.prob.fight(moving[-1], self.end.ants[-1], winner=False)
+            if CalculateProb == True:
+                self.game.prob.fight(moving[-1], self.end.ants[-1], winner=False)
+                self.game.prob.CalculateWinChance()
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped

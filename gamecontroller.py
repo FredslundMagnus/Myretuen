@@ -12,7 +12,7 @@ class Gamecontroller():
         agent1.start()
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000):
+    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, CalculateProbs=True):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
@@ -26,7 +26,7 @@ class Gamecontroller():
                 self.sleep()
                 actions = env.action_space()
                 action = agent.choose(actions)
-                observation, reward, DONE, info = env.step(action)
+                observation, reward, DONE, info = env.step(action, CalculateProbs)
                 opponentReward -= reward
 
                 agent = self.agents[self.env.currentPlayer]
