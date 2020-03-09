@@ -1,24 +1,18 @@
-
 from game import Myretuen, Controller
 from agents import *
 import numpy as np
 from matplotlib import pyplot as plt
 import sys
 
-if len(sys.argv) == 1:
-    debuggerMode = False
-    nameOfRun = ''
-else:
-    debuggerMode = True
+debuggerMode = len(sys.argv) != 1
+
+env = Myretuen()
+controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
+
+if debuggerMode:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
-
-
-env = Myretuen()
-controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=PlayerAgent())
-
-if debuggerMode:
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
 else:
     controller.run()
