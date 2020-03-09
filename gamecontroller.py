@@ -50,8 +50,6 @@ class Gamecontroller():
 
             print(self.env.gameStatus())
             self.winrate.append(self.env.Runningwinrate)
-            agent.all_reward = []
-            agent.all_state = []
             self.env.reset()
             if gameN >= NGames:
                 break

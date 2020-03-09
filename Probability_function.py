@@ -153,10 +153,10 @@ class Probability_calculator():
                 for k in range(len(newcluster[2])):
                     self.probmatrix[int(newcluster[0][t][-1]), int(newcluster[2][k][-1])] = 0
             for t in range(len(newcluster[3])):
-                for k in range(len(newcluster[1])):
-                    self.probmatrix[int(newcluster[3][t][-1]), int(newcluster[1][k][-1])] = 1
                 for k in range(len(newcluster[2])):
-                    self.probmatrix[int(newcluster[3][t][-1]), int(newcluster[2][k][-1])] = 0
+                    self.probmatrix[int(newcluster[3][t][-1]), int(newcluster[2][k][-1])] = 1
+                for k in range(len(newcluster[1])):
+                    self.probmatrix[int(newcluster[3][t][-1]), int(newcluster[1][k][-1])] = 0
 
 
 

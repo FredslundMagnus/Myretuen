@@ -14,7 +14,10 @@ class Agent():
             values = []
             for action in actions:
                 states.append(self.state(self.env, action))
-                values.append(self.value(states[-1]))
+                if len(states[-1][0]) == 1:
+                    values.append(self.value(states[-1][0]))
+                else:
+                    values.append(self.value(states[-1][0][0]) * (1 - states[-1][1]) + self.value(states[-1][0][1]) * states[-1][1])
             chances = self.softmax(values)
             index = np.random.choice(len(chances), 1, p=chances)[0]
             self.actionState = states[index]
@@ -24,7 +27,10 @@ class Agent():
             bestAction = None
             for action in actions:
                 state = self.state(self.env, action)
-                value = self.value(state)
+                if len(state[0]) == 1:
+                    value = self.value(state[0])
+                else:
+                    value = self.value(state[0][0]) * (1 - state[1]) + self.value(state[0][1]) * state[1]                
                 if value > valueMax:
                     valueMax = value
                     bestAction = action
@@ -111,27 +117,33 @@ class Agent():
 
     def state(self, game, action=None):
         if action == None:
-            ants1, ants2 = game.ants, [None] * len(game.ants)
+            ants1 = game.ants
         else:
-            ants1, ants2 = action.simulate()
-
-        mines = []
-        dines = []
-        for ant1, ant2 in zip(ants1, ants2):
+            ants1, ants2, ProbOfState = action.simulate()
+        mines1, dines1, mines2, dines2 = [], [], [], []
+        for ant1 in ants1:
             self.currentAnts = ants1
             ant1State = self.antState(ant1)
-            self.currentAnts = ants2
-            antState = [ant1State, ant1State] if ant2 == None else [ant1State, self.antState(ant2)]
-            random.shuffle(antState)
             if ant1.color == game.currentPlayer:
-                mines.append(antState)
+                mines1.append(ant1State)
             else:
-                dines.append(antState)
+                dines1.append(ant1State)
+        Antstate1 = mines1 + dines1
 
-        # random.shuffle(mines)
-        # random.shuffle(dines)
-        state = [mines, dines]
-        return state
+        if action == None:
+            return Antstate1
+
+        if ants2 != [None]:
+            for ant2 in ants2:
+                self.currentAnts = ants2
+                ant2State = self.antState(ant2)
+                if ant2.color == game.currentPlayer:
+                    mines2.append(ant2State)
+                else:
+                    dines2.append(ant2State)
+        Antstate2 = mines2 + dines2
+
+        return [[Antstate1], ProbOfState] if ants2 == [None] else [[Antstate1, Antstate2], ProbOfState]
 
     def getDistancesToAnts(self, ant):
         mine = [0]*35
