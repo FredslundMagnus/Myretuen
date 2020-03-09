@@ -127,16 +127,22 @@ class Controller():
     def __init__(self, env=None, agent1=None, agent2=None):
         self.gameController = Gamecontroller(env=env, agent1=agent1, agent2=agent2)
 
-    def __getattribute__(self, name):
+    def __getattr__(self, name):
+        if name == 'gameController':
+            return self.gameController
         return self.gameController.__getattribute__(name)
 
     def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, UI=True):
         if UI:
             background, win, connection = drawBackground(fields=self.env.fields, diceHolder=self.env.diceHolder, bases=self.env.bases)
             for _, agent in self.gameController.agents.items():
-                agent.connection = connection
+                if agent.__class__.__name__ == 'Opponent':
+                    for a in agent:
+                        a.connection = connection
+                else:
+                    agent.connection = connection
 
-            x = threading.Thread(target=self.gameController.run, kwargs={NGames: NGames, timeDelay: timeDelay, AddAgent: AddAgent})
+            x = threading.Thread(target=self.gameController.run, kwargs={'NGames': NGames, 'timeDelay': timeDelay, 'AddAgent': AddAgent})
             x.start()
 
             updateScreen(background, win, game=self.env, connection=connection)
