@@ -16,7 +16,7 @@ else:
 
 
 env = Myretuen()
-controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
+controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=PlayerAgent())
 
 if debuggerMode:
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)

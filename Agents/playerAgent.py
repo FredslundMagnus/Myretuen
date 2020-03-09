@@ -3,7 +3,7 @@ import time
 
 
 class PlayerAgent(Agent):
-    def __init__(self, connection, explore=False, doTrain=False):
+    def __init__(self, connection=None, explore=False, doTrain=False):
         self.setup(explore, doTrain)
         self.connection = connection
 
