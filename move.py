@@ -120,7 +120,7 @@ class Move():
         self.game.prob.True_clusters = self.game.prob.clusters
         self.game.prob.True_history = self.game.prob.history
         self.game.prob.True_Ant_clusters = self.game.prob.Ant_clusters
-        self.game.prob.True_probmatrix = self.game.prob.probmatrix
+        self.game.prob.True_probmatrix = self.game.prob.probmatrix.copy()
 
         if self.start.type == 'Base':
             for ant in ants:
@@ -167,13 +167,14 @@ class Move():
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
                 theAnt.antsUnderMe[ant.color] += 1
+
         self.game.prob.CalculateWinChance()
         self.giveantsprobabilities(self.game.prob.probmatrix, ants)
 
         self.game.prob.clusters = self.game.prob.True_clusters
         self.game.prob.history = self.game.prob.True_history
-        self.game.prob.Ant_clusters = self.game.prob.True_Ant_clusters 
-        self.game.prob.probmatrix = self.game.prob.True_probmatrix
+        self.game.prob.Ant_clusters = self.game.prob.True_Ant_clusters
+        self.game.prob.probmatrix = self.game.prob.True_probmatrix.copy()
 
 
         self.simulateClean(ants)
@@ -218,7 +219,7 @@ class Move():
 
     def giveantsprobabilities(self, Pmatrix, ants):
         for ant in ants:
-            if ant.color != self.game.player1:
+            if ant.color == self.game.player1:
                 ant.probcapture = list(Pmatrix[int(ant.id[-1]),:])
             else:
                 ant.probcapture = list(Pmatrix[:,int(ant.id[-1])])

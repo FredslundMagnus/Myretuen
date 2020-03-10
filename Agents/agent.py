@@ -121,6 +121,7 @@ class Agent():
             # disttoantsGlobal = self.getDistancesToAnts(ant)
             # ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
             GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
+            # print(GetProbabilityOfEat)
             # kval = list(np.array([ratio*disttoantsGlobal*np.array(self.GetProbabilityOfEat(ant)), (3-np.array(disttoantsGlobal))/ratio*(1-np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat
 
