@@ -45,7 +45,7 @@ class Gamecontroller():
                 self.agents[self.env.player1].append(self.agents[self.env.player2])
                 print(self.agents[self.env.player1])
 
-            print(self.env.gameStatus())
+            print(self.env.gameStatus(self.agents))
             self.winrate.append(self.env.Runningwinrate)
             self.env.reset()
             if gameN >= NGames:

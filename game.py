@@ -98,20 +98,23 @@ class Myretuen(gym.Env):
     def getCurrentScore(self):
         return {name: len(base.captured) for name, base in self.bases.items()}
 
-    def gameStatus(self):
+    def gameStatus(self, agents):
         currentScore = self.getCurrentScore()
 
         scores = [score for name, score in currentScore.items()]
         names = [name for name, score in currentScore.items()]
         if scores[0] > scores[1]:
             self.totalScore[names[0]] += 1
-            self.wins.append(0)
+            if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
+                self.wins.append(0)
         elif scores[1] > scores[0]:
             self.totalScore[names[1]] += 1
-            self.wins.append(1)
+            if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
+                self.wins.append(1)
         else:
             self.totalScore['Tie'] += 1
-            self.wins.append(0.5)
+            if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
+                self.wins.append(0.5)
         self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
         return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
