@@ -109,7 +109,7 @@ class Agent():
 
     def antState(self, ant):
         antSituation = self.ant_situation(ant)
-        if sum(antSituation) != 0:
+        if sum(antSituation) != 'Her burde stå 0':
             (mine, dine) = self.getDistances(ant)
             carryEnimy = self.carrying_number_of_enemy_ants(ant)
             carryAlly = self.carrying_number_of_ally_ants(ant)
