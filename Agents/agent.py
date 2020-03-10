@@ -125,8 +125,8 @@ class Agent():
         else:
             ants1, ants2, ProbOfState = action.simulate()
         mines1, dines1, mines2, dines2 = [], [], [], []
+        self.currentAnts = ants1
         for ant1 in ants1:
-            self.currentAnts = ants1
             for ant1State in self.antState(ant1):
                 if ant1.color == game.currentPlayer:
                     mines1.append(ant1State)
@@ -138,8 +138,8 @@ class Agent():
             return Antstate1
 
         if ants2 != [None]:
+            self.currentAnts = ants2
             for ant2 in ants2:
-                self.currentAnts = ants2
                 for ant2State in self.antState(ant2):
                     if ant2.color == game.currentPlayer:
                         mines2.append(ant2State)
