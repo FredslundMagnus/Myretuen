@@ -121,7 +121,6 @@ class Agent():
             disttoantsGlobal = self.getDistancesToAnts(ant)
             ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
             kval = list(np.array([ratio*disttoantsGlobal, (3-np.array(disttoantsGlobal))/ratio]).max(axis=0))
-            print(kval)
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score
 
     def state(self, game, action=None):
