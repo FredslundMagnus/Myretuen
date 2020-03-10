@@ -117,10 +117,10 @@ class Agent():
             baseDistance = self.distanceToBases(ant)
             dice = self.dicer(ant)
             score = self.currentScore(ant)
-            antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
-            disttoantsGlobal = self.getDistancesToAnts(ant)
-            ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
-            kval = list(np.array([ratio*disttoantsGlobal, (3-np.array(disttoantsGlobal))/ratio]).max(axis=0))
+            # antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
+            # disttoantsGlobal = self.getDistancesToAnts(ant)
+            # ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
+            # kval = list(np.array([ratio*disttoantsGlobal, (3-np.array(disttoantsGlobal))/ratio]).max(axis=0))
             GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat
 

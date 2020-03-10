@@ -26,7 +26,7 @@ python -m pip install matplotlib
 ## Initialize
 
 ```python
-from game import Myretuen
+from game import Myretuen, Controller
 
 env = Myretuen()
 ```
@@ -43,25 +43,25 @@ agent2 = NNAgent()
 ## Start the controller
 
 ```python
-from gamecontroller import Gamecontroller
-
-controller = Gamecontroller(env=env, agent1=agent1, agent2=agent2)
+controller = Controller(env=env, agent1=agent1, agent2=agent2)
 controller.run()
 ```
 
-# version-0.3
+# Versions
+
+## version-0.3
 
 - Added esplorer mode
 - Added TD(lambda)
 - Added self play option
 
-# version-0.2
+## version-0.2
 
 - Speed improvements
 - Simple Lionear model added
 - Neural Network model added
 
-# version-0.1
+## version-0.1
 
 - One linear model
 - Most basic feateres implemented
