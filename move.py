@@ -131,10 +131,10 @@ class Move():
                 if ant.id == self.start.ants[-1].id:
                     theAnt = ant
 
-        if theAnt.color == self.game.bases[self.game.player1]:
-            probofstate = self.game.prob.probmatrix[int(moving[-1].id[-1]), int(theAnt.id[-1])]
+        if theAnt.color != self.game.player1:
+            probofstate = self.game.prob.probmatrix[int(self.end.ants[-1].id[-1]), int(theAnt.id[-1])]
         else:
-            probofstate = self.game.prob.probmatrix[int(theAnt.id[-1]), int(moving[-1].id[-1])]
+            probofstate = self.game.prob.probmatrix[int(theAnt.id[-1]), int(self.end.ants[-1].id[-1])]
 
         if (self.end.ants[-1].magnet == theAnt.magnet and not oppesite) or (self.end.ants[-1].magnet != theAnt.magnet and oppesite):
             win = True

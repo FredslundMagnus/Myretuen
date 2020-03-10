@@ -17,8 +17,8 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent)
     controller.run(NGames=nGames, AddAgent=addAgent, CalculateProbs=False, UI=False)
 else:
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
-    controller.run()
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=SimpleLinear())
+    controller.run(CalculateProbs=False)
 
 
 def plot(name):
