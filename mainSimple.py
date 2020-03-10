@@ -7,14 +7,17 @@ import sys
 debuggerMode = len(sys.argv) != 1
 
 env = Myretuen()
-controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
 
 if debuggerMode:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
+    agentsDic = {'LinearAprox': LinearAprox(), 'SimpleLinear': SimpleLinear(), 'NNAgent': NNAgent()}
+    ourAgent = agentsDic[sys.argv[4]]
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent)
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
 else:
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run()
 
 

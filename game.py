@@ -135,7 +135,7 @@ class Controller():
             return self.gameController
         return self.gameController.__getattribute__(name)
 
-    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, UI=True):
+    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, CalculateProbs=True, UI=True):
         if UI:
             background, win, connection = drawBackground(fields=self.env.fields, diceHolder=self.env.diceHolder, bases=self.env.bases)
             for _, agent in self.gameController.agents.items():
@@ -145,11 +145,11 @@ class Controller():
                 else:
                     agent.connection = connection
 
-            x = threading.Thread(target=self.gameController.run, kwargs={'NGames': NGames, 'timeDelay': timeDelay, 'AddAgent': AddAgent})
+            x = threading.Thread(target=self.gameController.run, kwargs={'NGames': NGames, 'timeDelay': timeDelay, 'AddAgent': AddAgent, 'CalculateProbs': CalculateProbs})
             x.start()
 
             updateScreen(background, win, game=self.env, connection=connection)
 
             x.do_run = False
         else:
-            self.gameController.run(NGames=NGames, timeDelay=timeDelay, AddAgent=AddAgent)
+            self.gameController.run(NGames=NGames, timeDelay=timeDelay, AddAgent=AddAgent, CalculateProbs=CalculateProbs)
