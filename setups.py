@@ -90,10 +90,13 @@ def setup():
 
     Give_bases_dists(bases)
 
-    ants = generateAnts(10)
+    ants = generateAnts(4)
 
     placeAntsOnBoard(ants, bases)
 
     diceHolder = DiceHolder(165, 165)
+
+    for ant in ants:
+        ant.probcapture = np.ones(len(ants)//2)/2
 
     return fields, bases, ants, diceHolder

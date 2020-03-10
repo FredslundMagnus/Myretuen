@@ -13,7 +13,7 @@ class Ant():
         self.flipped = False
         self.antsUnderMe = {}
         self.dieJustUsedInSimulation = 0
-        self.probcapture = np.ones(10)/2
+        self.probcapture = None
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
