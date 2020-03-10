@@ -48,7 +48,7 @@ if showUI:
 
 
 opponent = Opponent(RandomAgent())
-controller = Gamecontroller(env=env, agent1=opponent, agent2=NNAgent())
+controller = Gamecontroller(env=env, agent1=opponent, agent2=ourAgent)
 
 if showUI:
     x = threading.Thread(target=controller.run)
