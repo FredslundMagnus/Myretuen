@@ -12,10 +12,7 @@ class Ant():
         self.isAlive = True
         self.flipped = False
         self.antsUnderMe = {}
-        self.Moved_to_base = 0 # Jakob
-        self.Just_ate_ants = 0
-        self.OtherDie = [0,None]
-        self.Turnsleft = 0
+        self.dieJustUsedInSimulation = 0
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -71,4 +68,3 @@ def placeAntsOnBoard(ants, bases):
         for ant in ants:
             ant.antsUnderMe[name] = 0
         i += 1
-

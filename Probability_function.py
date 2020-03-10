@@ -8,120 +8,123 @@ from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, 
 import numpy as np
 import random
 import math
-# from ant import generateAnts, placeAntsOnBoard
-# from lines import generateLines
-# from base import Base, cleanBases
-# from holder import DiceHolder
-# from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, Give_bases_dists, Give_dist_to_all
-# import numpy as np
+from ant import generateAnts, placeAntsOnBoard
+from lines import generateLines
+from base import Base, cleanBases
+from holder import DiceHolder
+from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, Give_bases_dists, Give_dist_to_all
+import numpy as np
 
 
-# def setup():
-#     fields = {
-#         'D1': Field(60, 320, special='Flag', rotation=90),
-#         'D2': Field(80, 320, special='Start', rotation=270),
-#         'D3': Field(100, 310),
-#         'D4': Field(120, 320),
-#         'D5': Field(140, 320),
-#         'D6': Field(160, 310),
-#         'D7': Field(170, 290),
-#         'D8': Field(170, 270),
-#         'D9': Field(160, 250),
-#         'D10': Field(140, 240),
+def setup():
+    fields = {
+        'D1': Field(60, 320, special='Flag', rotation=90),
+        'D2': Field(80, 320, special='Start', rotation=270),
+        'D3': Field(100, 310),
+        'D4': Field(120, 320),
+        'D5': Field(140, 320),
+        'D6': Field(160, 310),
+        'D7': Field(170, 290),
+        'D8': Field(170, 270),
+        'D9': Field(160, 250),
+        'D10': Field(140, 240),
 
-#         'F1': Field(190, 260),
-#         'F2': Field(210, 255),
-#         'F3': Field(230, 260),
+        'F1': Field(190, 260),
+        'F2': Field(210, 255),
+        'F3': Field(230, 260),
 
-#         'G1': Field(100, 160),
-#         'G2': Field(110, 140),
-#         'G3': Field(120, 120),
+        'G1': Field(100, 160),
+        'G2': Field(110, 140),
+        'G3': Field(120, 120),
 
-#         'A1': Field(30, 290, special='Flag', rotation=180),
-#         'A2': Field(30, 270, special='Start', rotation=0),
-#         'A3': Field(40, 250),
-#         'A4': Field(30, 230),
-#         'A5': Field(30, 210),
-#         'A6': Field(40, 190),
-#         'A7': Field(60, 180),
-#         'A8': Field(80, 175),
-#         'A9': Field(100, 190),
-#         'A10': Field(110, 210),
-#         'A11': Field(120, 230),
+        'A1': Field(30, 290, special='Flag', rotation=180),
+        'A2': Field(30, 270, special='Start', rotation=0),
+        'A3': Field(40, 250),
+        'A4': Field(30, 230),
+        'A5': Field(30, 210),
+        'A6': Field(40, 190),
+        'A7': Field(60, 180),
+        'A8': Field(80, 175),
+        'A9': Field(100, 190),
+        'A10': Field(110, 210),
+        'A11': Field(120, 230),
 
-#         'B1': Field(370-60, 370-320, special='Flag', rotation=270),
-#         'B2': Field(370-80, 370-320, special='Start', rotation=90),
-#         'B3': Field(370-100, 370-310),
-#         'B4': Field(370-120, 370-320),
-#         'B5': Field(370-140, 370-320),
-#         'B6': Field(370-160, 370-310),
-#         'B7': Field(370-170, 370-290),
-#         'B8': Field(370-170, 370-270),
-#         'B9': Field(370-160, 370-250),
-#         'B10': Field(370-140, 370-240),
+        'B1': Field(370-60, 370-320, special='Flag', rotation=270),
+        'B2': Field(370-80, 370-320, special='Start', rotation=90),
+        'B3': Field(370-100, 370-310),
+        'B4': Field(370-120, 370-320),
+        'B5': Field(370-140, 370-320),
+        'B6': Field(370-160, 370-310),
+        'B7': Field(370-170, 370-290),
+        'B8': Field(370-170, 370-270),
+        'B9': Field(370-160, 370-250),
+        'B10': Field(370-140, 370-240),
 
-#         'E1': Field(370-30, 370-290, special='Flag', rotation=0),
-#         'E2': Field(370-30, 370-270, special='Start', rotation=180),
-#         'E3': Field(370-40, 370-250),
-#         'E4': Field(370-30, 370-230),
-#         'E5': Field(370-30, 370-210),
-#         'E6': Field(370-40, 370-190),
-#         'E7': Field(370-60, 370-180),
-#         'E8': Field(370-80, 370-175),
-#         'E9': Field(370-100, 370-190),
-#         'E10': Field(370-110, 370-210),
-#         'E11': Field(370-120, 370-230),
+        'E1': Field(370-30, 370-290, special='Flag', rotation=0),
+        'E2': Field(370-30, 370-270, special='Start', rotation=180),
+        'E3': Field(370-40, 370-250),
+        'E4': Field(370-30, 370-230),
+        'E5': Field(370-30, 370-210),
+        'E6': Field(370-40, 370-190),
+        'E7': Field(370-60, 370-180),
+        'E8': Field(370-80, 370-175),
+        'E9': Field(370-100, 370-190),
+        'E10': Field(370-110, 370-210),
+        'E11': Field(370-120, 370-230),
 
-#         'H1': Field(370-190, 370-260),
-#         'H2': Field(370-210, 370-255),
-#         'H3': Field(370-230, 370-260),
+        'H1': Field(370-190, 370-260),
+        'H2': Field(370-210, 370-255),
+        'H3': Field(370-230, 370-260),
 
-#         'I1': Field(370-100, 370-160),
-#         'I2': Field(370-110, 370-140),
-#         'I3': Field(370-120, 370-120),
-#     }
+        'I1': Field(370-100, 370-160),
+        'I2': Field(370-110, 370-140),
+        'I3': Field(370-120, 370-120),
+    }
 
-#     giveFieldsID(fields)
+    giveFieldsID(fields)
 
-#     generateLines(fields)
+    generateLines(fields)
 
-#     bases = {
-#         'red': Base(20, 310, (30, 360), (20, 0)),
-#         'green': Base(330, 40, (340, 10), (-20, 0)),
-#     }
+    bases = {
+        'red': Base(20, 310, (30, 360), (20, 0)),
+        'green': Base(330, 40, (340, 10), (-20, 0)),
+    }
 
-#     cleanBases(bases, fields)
+    cleanBases(bases, fields)
 
-#     Give_dist_to_bases(bases, fields)
+    Give_dist_to_bases(bases, fields)
 
-#     Give_dist_to_target(fields, ['A8', 'B8', 'D8', 'E8'])
+    Give_dist_to_target(fields, ['A8', 'B8', 'D8', 'E8'])
 
-#     Give_dist_to_all(fields)
+    Give_dist_to_all(fields)
 
-#     Give_bases_dists(bases)
+    Give_bases_dists(bases)
 
-#     ants = generateAnts(6)
+    ants = generateAnts(6)
 
-#     placeAntsOnBoard(ants, bases)
+    placeAntsOnBoard(ants, bases)
 
-#     diceHolder = DiceHolder(165, 165)
+    diceHolder = DiceHolder(165, 165)
 
-#     return fields, bases, ants, diceHolder
+    return fields, bases, ants, diceHolder
 
-# fields, bases, ants, diceHolder = setup()
+
+fields, bases, ants, diceHolder = setup()
+
 
 class Probability_calculator():
     def __init__(self, bases, ants):
         self.clusters = []
-        self.history = [[[x.id],[], [], []] if x.color == bases[ants[0].color].color else [[],[x.id], [], []] for x in ants]
+        self.history = [[[x.id], [], [], []] if x.color == bases[ants[0].color].color else [[], [x.id], [], []] for x in ants]
         self.finalcount = 0
         self.ants = ants
         self.bases = bases
-        self.probmatrix = np.ones((len(ants)//2,len(ants)//2))/2
+        self.probmatrix = np.ones((len(ants)//2, len(ants)//2))/2
         self.Ant_clusters = {}
-    
+
     def combinelists(self, li1, li2):
         return li1 + li2
+
     def Nointersection(self, lst1, lst2):
         for i in range(len(lst1)):
             if lst1[i] == lst2:
@@ -158,9 +161,6 @@ class Probability_calculator():
                 for k in range(len(newcluster[1])):
                     self.probmatrix[int(newcluster[3][t][-1]), int(newcluster[1][k][-1])] = 0
 
-
-
-
             done = False
             for i in range(len(self.history)):
                 foundy = 0
@@ -173,7 +173,7 @@ class Probability_calculator():
 
             clusting = []
             for i in range(len(self.history)):
-                cluster = [0,]*len(self.history[i])
+                cluster = [0, ]*len(self.history[i])
                 for j in range(len(self.history[i])):
                     cluster[j] = len(self.history[i][j])
                 clusting.append(cluster)
@@ -220,15 +220,15 @@ class Probability_calculator():
         for r in range(len(self.clusters)):
             noobfix += self.clusters[r][0] + self.clusters[r][3]
         if noobfix < len(self.ants)//2:
-            unique_clusters.append([1,0,0,0])
+            unique_clusters.append([1, 0, 0, 0])
         noobfix = 0
         for r in range(len(self.clusters)):
             noobfix += self.clusters[r][1] + self.clusters[r][2]
         if noobfix < len(self.ants)//2:
-            unique_clusters.append([0,1,0,0])
+            unique_clusters.append([0, 1, 0, 0])
 
         for i in range(len(unique_clusters)):
-            for k in range(i+1,len(unique_clusters)):
+            for k in range(i+1, len(unique_clusters)):
                 clustersleft = self.clusters.copy()
                 clustersleft = self.Nointersection(clustersleft, unique_clusters[i])
                 clustersleft = self.Nointersection(clustersleft, unique_clusters[k])
@@ -260,10 +260,12 @@ class Probability_calculator():
                                 self.probmatrix[antsincluster2[j][0], antsincluster1[l][0]] = 1 - EatChance
 
 
-# prob = Probability_calculator(bases, ants)
-# prob.fight(ants[0], ants[6], winner=False)
-# prob.fight(ants[0], ants[7], winner=True)
-# prob.fight(ants[1], ants[8], winner=True)
+prob = Probability_calculator(bases, ants)
+prob.fight(ants[0], ants[6], winner=False)
+prob.fight(ants[0], ants[7], winner=True)
+prob.fight(ants[1], ants[8], winner=True)
 
-# prob.CalculateWinChance()
-# #print(prob.probmatrix)
+prob.CalculateWinChance()
+print(prob.probmatrix)
+print(prob.clusters)
+print(prob.Ant_clusters)

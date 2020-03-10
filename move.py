@@ -1,5 +1,6 @@
 import time
 
+
 class Move():
     def __init__(self, start=None, dice=None, end=None, game=None):
         self.start = start
@@ -45,7 +46,6 @@ class Move():
         color = self.end.ants[-1].color
         factor = 1 if color == ant.color else -1
         if self.end.special == 'Flag' and len(self.end.ants) != 1 and self.end in self.game.bases[color].goals:
-            ant.Moved_to_base = len(self.end.ants)-1 # Jakob
             for ant in self.end.ants:
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
@@ -94,7 +94,6 @@ class Move():
                 reward -= 3
             moving.reverse()
             self.end.ants = moving + self.end.ants
-        self.end.ants[-1].Just_ate_ants = len(self.end.ants)-1
         return reward
 
     def simulateSimple(self, ants):
@@ -144,7 +143,6 @@ class Move():
                     for Acolor in ant.antsUnderMe:
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
-                    theAnt.Just_ate_ants += 1
         else:
             probofstate = 1 - probofstate
             for ant in ants:
@@ -156,7 +154,6 @@ class Move():
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
                 theAnt.antsUnderMe[ant.color] += 1
-                theAnt.Just_ate_ants += 1
 
         self.simulateClean(ants)
 
@@ -170,16 +167,13 @@ class Move():
 
     def simulateTransfor(self, antsAtFlag):
         alives = [ant for ant in antsAtFlag if ant.isAlive]
-        for value in alives[-1].antsUnderMe.values(): # Jakob
-            if alives[-1].position in self.game.bases[alives[-1].color].goals: # Jakob
-                alives[-1].Moved_to_base += value # Jakob
         if len(alives) != 1:
             raise RuntimeError(
                 'There is more than one ant alive on the flag, this is not possible!')
 
         color = alives[0].color
         if self.end in self.game.bases[color].goals:
-            #antsAtFlag[-1]
+            # antsAtFlag[-1]
             for ant in antsAtFlag:
                 if ant.color == color:
                     ant.position = self.game.bases[color]
@@ -191,17 +185,17 @@ class Move():
 
     def simulate(self):
         if self.needResim:
-            ants1, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants])
-            ants2, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants], oppesite=True) # Jakob
+            ants1, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.dieJustUsedInSimulation) for ant in self.game.ants])
+            ants2, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.dieJustUsedInSimulation) for ant in self.game.ants], oppesite=True)  # Jakob
         else:
             probofstate = 1
             ants2 = [None]
-            ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants]) # Jakob
+            ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.dieJustUsedInSimulation) for ant in self.game.ants])  # Jakob
         return ants1, ants2, probofstate
 
 
 class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, Moved_to_base, Just_ate_ants, OtherDie, Turnsleft): # Jakob
+    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, dieJustUsedInSimulation):  # Jakob
         self.color = color
         self.magnet = magnet
         self.position = position
@@ -209,7 +203,4 @@ class SimpleAnt():
         self.isAlive = isAlive
         self.flipped = flipped
         self.antsUnderMe = antsUnderMe
-        self.Moved_to_base = Moved_to_base # Jakob
-        self.Just_ate_ants = Just_ate_ants
-        self.OtherDie = OtherDie
-        self.Turnsleft = Turnsleft
+        self.dieJustUsedInSimulation = dieJustUsedInSimulation
