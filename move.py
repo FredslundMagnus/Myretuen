@@ -113,6 +113,7 @@ class Move():
         return ants
 
     def simulateComplex(self, ants, oppesite=False):
+        win = False
         if self.start.type == 'Base':
             for ant in ants:
                 if ant.id == self.start.home[0].id:
@@ -136,6 +137,7 @@ class Move():
             probofstate = self.game.prob.probmatrix[int(theAnt.id[-1]), int(moving[-1].id[-1])]
 
         if (self.end.ants[-1].magnet == theAnt.magnet and not oppesite) or (self.end.ants[-1].magnet != theAnt.magnet and oppesite):
+            win = True
             ids = {ant.id for ant in self.end.ants}
             for ant in ants:
                 if ant.id in ids:
@@ -144,7 +146,6 @@ class Move():
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
         else:
-            probofstate = 1 - probofstate
             for ant in ants:
                 if ant.id == self.end.ants[-1].id:
                     theAnt = ant
@@ -157,7 +158,7 @@ class Move():
 
         self.simulateClean(ants)
 
-        return ants, probofstate
+        return ants, probofstate, win
 
     def simulateClean(self, ants):
         if self.end.special == 'Flag':
@@ -185,10 +186,12 @@ class Move():
 
     def simulate(self):
         if self.needResim:
-            ants1, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants])
-            ants2, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants], oppesite=True)  # Jakob
+            ants1, probofstate, _ = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants])
+            ants2, probofstate, ants2win = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants], oppesite=True)  # Jakob
+            if ants2win == True:
+                return ants2, ants1, probofstate
         else:
-            probofstate = 1
+            probofstate = 0
             ants2 = [None]
             ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants])  # Jakob
         return ants1, ants2, probofstate
