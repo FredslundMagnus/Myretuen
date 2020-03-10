@@ -190,11 +190,11 @@ class Move():
                     ant.flipped = False
 
     def simulate(self):
-        probofstate = 1
         if self.needResim:
             ants1, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants])
             ants2, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants], oppesite=True) # Jakob
         else:
+            probofstate = 1
             ants2 = [None]
             ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants]) # Jakob
         return ants1, ants2, probofstate

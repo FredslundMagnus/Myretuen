@@ -166,22 +166,18 @@ class Agent():
 
     def ant_situation(self, ant):
         if ant.position.id == ant.color:
-            return [1, 0, 0, 0, 0, 0, 0, 0]
+            return [1, 0, 0, 0, 0, 0]
         elif ant.isAlive == True:
             if ant.position.id in ['E1', 'B1']:
-                return [0, 1, 0, 0, 0, 0, 0, 0]
-            if ant.position.id in ['E2', 'B2']:
-                return [0, 0, 1, 0, 0, 0, 0, 0]
+                return [0, 1, 0, 0, 0, 0]
             if ant.position.id in ['A1', 'D1']:
-                return [0, 0, 0, 1, 0, 0, 0, 0]
-            if ant.position.id in ['A2', 'D2']:
-                return [0, 0, 0, 0, 1, 0, 0, 0]
+                return [0, 0, 1, 0, 0, 0]
             else:
-                return [0, 0, 0, 0, 0, 1, 0, 0]
+                return [0, 0, 0, 1, 0, 0]
         elif ant.position.type == 'Base':
-            return [0, 0, 0, 0, 0, 0, 1, 0]
+            return [0, 0, 0, 0, 1, 0]
         else:
-            return [0, 0, 0, 0, 0, 0, 0, 1]
+            return [0, 0, 0, 0, 0, 1]
 
     def Just_Moved_base(self, ant):
         return [ant.Moved_to_base]
