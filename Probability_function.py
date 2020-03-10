@@ -121,6 +121,10 @@ class Probability_calculator():
         self.bases = bases
         self.probmatrix = np.ones((len(ants)//2, len(ants)//2))/2
         self.Ant_clusters = {}
+        self.True_clusters = None
+        self.True_history = None
+        self.True_Ant_clusters = None   
+        self.True_probmatrix = None
 
     def combinelists(self, li1, li2):
         return li1 + li2
