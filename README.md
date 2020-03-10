@@ -26,7 +26,7 @@ python -m pip install matplotlib
 ## Initialize
 
 ```python
-from game import Myretuen
+from game import Myretuen, Controller
 
 env = Myretuen()
 ```
@@ -43,9 +43,7 @@ agent2 = NNAgent()
 ## Start the controller
 
 ```python
-from gamecontroller import Gamecontroller
-
-controller = Gamecontroller(env=env, agent1=agent1, agent2=agent2)
+controller = Controller(env=env, agent1=agent1, agent2=agent2)
 controller.run()
 ```
 
