@@ -57,7 +57,7 @@ class Move():
                     ant.position = self.game.bases[color]
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
-                reward += 10 * factor
+                reward += 6 * factor
             self.end.ants = []
         return reward
 
@@ -82,7 +82,7 @@ class Move():
                 self.game.prob.CalculateWinChance()
             for ant in self.end.ants:
                 ant.isAlive = False
-                reward += 3
+                reward += 5
             self.end.ants = self.end.ants + moving
         else:
             if CalculateProb == True:
@@ -91,7 +91,7 @@ class Move():
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
-                reward -= 3
+                reward -= 4
             moving.reverse()
             self.end.ants = moving + self.end.ants
 

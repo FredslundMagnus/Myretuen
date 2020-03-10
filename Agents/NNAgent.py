@@ -15,7 +15,7 @@ class NNAgent(Agent):
         Nfeature = np.array(state).shape[-1]
         if self.phi == []:
             self.phi = Net(Nfeature)
-            self.optimizer = optim.Adam(self.phi.parameters(), lr=0.0001, amsgrad=True)
+            self.optimizer = optim.Adam(self.phi.parameters(), lr=0.00005, amsgrad=True)
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
             (np.ones(n), -np.ones(x.shape[0]-n)), axis=0))
