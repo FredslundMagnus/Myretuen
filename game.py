@@ -31,6 +31,7 @@ class Myretuen(gym.Env):
         self.rolled = self.diceHolder.roll()
         self.rolledSameDice = len(set(self.rolled)) == 1
 
+
     def actions(self):
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):

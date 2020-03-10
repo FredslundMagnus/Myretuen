@@ -103,6 +103,8 @@ class Agent():
 
     def boolHot(self, bo):
         return [int(bo), int(not bo)]
+    def SameDice(self):
+        self.ga
 
     def antState(self, ant):
         antSituation = self.ant_situation(ant)
@@ -111,9 +113,10 @@ class Agent():
         carryAlly = self.carrying_number_of_ally_ants(ant)
         splitDistance = self.distanceToSplits(ant)
         baseDistance = self.distanceToBases(ant)
+        #dicestuff = ant.OtherDie + [ant.Turnsleft]
         #Just_moved_base = self.Just_Moved_base(ant) # Jakob
         #Just_ate_ants = self.Just_ate_ants(ant)
-        return antSituation + [sum(mine[:6]), sum(mine[6:12])] + [sum(dine[:6]), sum(dine[6:12])] + GameOver + splitDistance + baseDistance + [carryEnimy, carryAlly] # Jakob
+        return antSituation + mine[:12] + dine[:12] + GameOver + splitDistance + baseDistance + [carryEnimy, carryAlly] # Jakob
 
     def state(self, game, action=None):
         if action == None:
@@ -163,15 +166,33 @@ class Agent():
 
     def ant_situation(self, ant):
         if ant.position.id == ant.color:
-            return [1, 0, 0, 0]
+            return [1, 0, 0, 0, 0, 0, 0, 0]
         elif ant.isAlive == True:
-            return [0, 1, 0, 0]
+            if ant.position.id in ['E1', 'B1']:
+                return [0, 1, 0, 0, 0, 0, 0, 0]
+            if ant.position.id in ['E2', 'B2']:
+                return [0, 0, 1, 0, 0, 0, 0, 0]
+            if ant.position.id in ['A1', 'D1']:
+                return [0, 0, 0, 1, 0, 0, 0, 0]
+            if ant.position.id in ['A2', 'D2']:
+                return [0, 0, 0, 0, 1, 0, 0, 0]
+            else:
+                return [0, 0, 0, 0, 0, 1, 0, 0]
         elif ant.position.type == 'Base':
-            return [0, 0, 1, 0]
+            return [0, 0, 0, 0, 0, 0, 1, 0]
         else:
-            return [0, 0, 0, 1]
+            return [0, 0, 0, 0, 0, 0, 0, 1]
 
     def Just_Moved_base(self, ant):
         return [ant.Moved_to_base]
     def Just_ate_ants(self, ant):
         return [ant.Just_ate_ants]
+
+    def Dicer(self, game, ants):
+        for ant in ants:
+            if len(game.rolled) == 2 or game.rolledSameDice:
+                ant.OtherDie = [0, game.rolled[0]]
+            else:
+                ant.OtherDie = [1, 0]
+            ant.Turnsleft = len(game.rolled) - 1 + 2 * game.rolledSameDice
+        

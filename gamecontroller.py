@@ -23,6 +23,7 @@ class Gamecontroller():
             DONE = False
             agent = self.agents[self.env.currentPlayer]
             while getattr(thread, "do_run", True) and not DONE:
+                self.agents["green"].Dicer(self.env, self.env.ants) # Skal cleanes, repræsenteres ikke rigtigt.
                 self.sleep()
                 actions = env.action_space()
                 action = agent.choose(actions)

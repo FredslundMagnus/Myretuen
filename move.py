@@ -192,16 +192,16 @@ class Move():
     def simulate(self):
         probofstate = 1
         if self.needResim:
-            ants1, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants) for ant in self.game.ants])
-            ants2, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants) for ant in self.game.ants], oppesite=True) # Jakob
+            ants1, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants])
+            ants2, probofstate = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants], oppesite=True) # Jakob
         else:
             ants2 = [None]
-            ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants) for ant in self.game.ants]) # Jakob
+            ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, ant.Moved_to_base, ant.Just_ate_ants, ant.OtherDie, ant.Turnsleft) for ant in self.game.ants]) # Jakob
         return ants1, ants2, probofstate
 
 
 class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, Moved_to_base, Just_ate_ants): # Jakob
+    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, Moved_to_base, Just_ate_ants, OtherDie, Turnsleft): # Jakob
         self.color = color
         self.magnet = magnet
         self.position = position
@@ -209,5 +209,7 @@ class SimpleAnt():
         self.isAlive = isAlive
         self.flipped = flipped
         self.antsUnderMe = antsUnderMe
-        self.Moved_to_base = 0 # Jakob
-        self.Just_ate_ants = 0
+        self.Moved_to_base = Moved_to_base # Jakob
+        self.Just_ate_ants = Just_ate_ants
+        self.OtherDie = OtherDie
+        self.Turnsleft = Turnsleft

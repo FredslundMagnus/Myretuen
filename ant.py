@@ -14,6 +14,8 @@ class Ant():
         self.antsUnderMe = {}
         self.Moved_to_base = 0 # Jakob
         self.Just_ate_ants = 0
+        self.OtherDie = [0,None]
+        self.Turnsleft = 0
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
