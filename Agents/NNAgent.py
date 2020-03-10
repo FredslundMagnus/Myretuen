@@ -9,13 +9,13 @@ import torch.optim as optim
 class NNAgent(Agent):
     def __init__(self, explore=True, doTrain=True):
         self.setup(explore, doTrain)
-        self.phi = Net()
-        self.optimizer = optim.Adam(
-            self.phi.parameters(), lr=0.0001, amsgrad=True)
 
     def value(self, infostate, return_float=True):
         state, n = infostate[0] if type(infostate) == type([1]) else infostate
         Nfeature = np.array(state).shape[-1]
+        if self.phi == []:
+            self.phi = Net(Nfeature)
+            self.optimizer = optim.Adam(self.phi.parameters(), lr=0.0001, amsgrad=True)
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
             (np.ones(n), -np.ones(x.shape[0]-n)), axis=0))
@@ -40,9 +40,9 @@ class NNAgent(Agent):
 
 class Net(nn.Module):
 
-    def __init__(self):
+    def __init__(self, inputN):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(45, 20)
+        self.fc1 = nn.Linear(inputN, 20)
         self.fc2 = nn.Linear(20, 10)
         self.fc3 = nn.Linear(10, 10)
         self.fc4 = nn.Linear(10, 1)
