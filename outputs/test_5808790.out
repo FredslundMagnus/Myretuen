@@ -1,0 +1,1279 @@
+Loaded module: python3/3.6.2
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Game 001, Length: 500,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 1, 'Tie': 0, 'green': 0},  Winrate: 0.0
+Game 002, Length: 500,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 1, 'Tie': 0, 'green': 1},  Winrate: 0.5
+Game 003, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 2, 'Tie': 0, 'green': 1},  Winrate: 0.33
+Game 004, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 2, 'Tie': 0, 'green': 2},  Winrate: 0.5
+Game 005, Length: 198,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 2, 'Tie': 0, 'green': 3},  Winrate: 0.6
+Game 006, Length: 370,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 3, 'Tie': 0, 'green': 3},  Winrate: 0.5
+Game 007, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 3, 'Tie': 1, 'green': 3},  Winrate: 0.5
+Game 008, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 4, 'Tie': 1, 'green': 3},  Winrate: 0.44
+Game 009, Length: 410,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 5, 'Tie': 1, 'green': 3},  Winrate: 0.39
+Game 010, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 5, 'Tie': 2, 'green': 3},  Winrate: 0.4
+Game 011, Length: 182,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 6, 'Tie': 2, 'green': 3},  Winrate: 0.36
+Game 012, Length: 211,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 7, 'Tie': 2, 'green': 3},  Winrate: 0.33
+Game 013, Length: 396,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 8, 'Tie': 2, 'green': 3},  Winrate: 0.31
+Game 014, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 8, 'Tie': 2, 'green': 4},  Winrate: 0.36
+Game 015, Length: 501,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 9, 'Tie': 2, 'green': 4},  Winrate: 0.33
+Game 016, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 9, 'Tie': 3, 'green': 4},  Winrate: 0.34
+Game 017, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 10, 'Tie': 3, 'green': 4},  Winrate: 0.32
+Game 018, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 10, 'Tie': 4, 'green': 4},  Winrate: 0.33
+Game 019, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 10, 'Tie': 4, 'green': 5},  Winrate: 0.37
+Game 020, Length: 444,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 11, 'Tie': 4, 'green': 5},  Winrate: 0.35
+Game 021, Length: 493,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 12, 'Tie': 4, 'green': 5},  Winrate: 0.33
+Game 022, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 13, 'Tie': 4, 'green': 5},  Winrate: 0.32
+Game 023, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 13, 'Tie': 5, 'green': 5},  Winrate: 0.33
+Game 024, Length: 214,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 13, 'Tie': 5, 'green': 6},  Winrate: 0.35
+Game 025, Length: 444,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 14, 'Tie': 5, 'green': 6},  Winrate: 0.34
+Game 026, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 14, 'Tie': 6, 'green': 6},  Winrate: 0.35
+Game 027, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 15, 'Tie': 6, 'green': 6},  Winrate: 0.33
+Game 028, Length: 326,      CurrentScore: {'red': 5, 'green': 9},      TotalScore: {'red': 15, 'Tie': 6, 'green': 7},  Winrate: 0.36
+Game 029, Length: 245,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 16, 'Tie': 6, 'green': 7},  Winrate: 0.34
+Game 030, Length: 179,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 17, 'Tie': 6, 'green': 7},  Winrate: 0.33
+Game 031, Length: 501,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 18, 'Tie': 6, 'green': 7},  Winrate: 0.32
+Game 032, Length: 324,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 19, 'Tie': 6, 'green': 7},  Winrate: 0.31
+Game 033, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 19, 'Tie': 7, 'green': 7},  Winrate: 0.32
+Game 034, Length: 299,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 19, 'Tie': 7, 'green': 8},  Winrate: 0.34
+Game 035, Length: 233,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 20, 'Tie': 7, 'green': 8},  Winrate: 0.33
+Game 036, Length: 336,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 21, 'Tie': 7, 'green': 8},  Winrate: 0.32
+Game 037, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 21, 'Tie': 7, 'green': 9},  Winrate: 0.34
+Game 038, Length: 500,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 21, 'Tie': 7, 'green': 10},  Winrate: 0.36
+Game 039, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 22, 'Tie': 7, 'green': 10},  Winrate: 0.35
+Game 040, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 23, 'Tie': 7, 'green': 10},  Winrate: 0.34
+Game 041, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 24, 'Tie': 7, 'green': 10},  Winrate: 0.33
+Game 042, Length: 193,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 25, 'Tie': 7, 'green': 10},  Winrate: 0.32
+Game 043, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 25, 'Tie': 8, 'green': 10},  Winrate: 0.33
+Game 044, Length: 344,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 26, 'Tie': 8, 'green': 10},  Winrate: 0.32
+Game 045, Length: 427,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 27, 'Tie': 8, 'green': 10},  Winrate: 0.31
+Game 046, Length: 387,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 28, 'Tie': 8, 'green': 10},  Winrate: 0.3
+Game 047, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 29, 'Tie': 8, 'green': 10},  Winrate: 0.3
+Game 048, Length: 296,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 30, 'Tie': 8, 'green': 10},  Winrate: 0.29
+Game 049, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 30, 'Tie': 8, 'green': 11},  Winrate: 0.31
+Game 050, Length: 435,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 31, 'Tie': 8, 'green': 11},  Winrate: 0.3
+Game 051, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 31, 'Tie': 9, 'green': 11},  Winrate: 0.3
+Game 052, Length: 453,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 32, 'Tie': 9, 'green': 11},  Winrate: 0.3
+Game 053, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 32, 'Tie': 10, 'green': 11},  Winrate: 0.3
+Game 054, Length: 500,      CurrentScore: {'red': 6, 'green': 4},      TotalScore: {'red': 33, 'Tie': 10, 'green': 11},  Winrate: 0.3
+Game 055, Length: 166,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 34, 'Tie': 10, 'green': 11},  Winrate: 0.29
+Game 056, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 35, 'Tie': 10, 'green': 11},  Winrate: 0.29
+Game 057, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 36, 'Tie': 10, 'green': 11},  Winrate: 0.28
+Game 058, Length: 418,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 37, 'Tie': 10, 'green': 11},  Winrate: 0.28
+Game 059, Length: 406,      CurrentScore: {'red': 10, 'green': 3},      TotalScore: {'red': 38, 'Tie': 10, 'green': 11},  Winrate: 0.27
+Game 060, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 38, 'Tie': 10, 'green': 12},  Winrate: 0.28
+Game 061, Length: 492,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 39, 'Tie': 10, 'green': 12},  Winrate: 0.28
+Game 062, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 39, 'Tie': 10, 'green': 13},  Winrate: 0.29
+Game 063, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 39, 'Tie': 11, 'green': 13},  Winrate: 0.29
+Game 064, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 39, 'Tie': 12, 'green': 13},  Winrate: 0.3
+Game 065, Length: 432,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 40, 'Tie': 12, 'green': 13},  Winrate: 0.29
+Game 066, Length: 424,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 40, 'Tie': 12, 'green': 14},  Winrate: 0.3
+Game 067, Length: 379,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 41, 'Tie': 12, 'green': 14},  Winrate: 0.3
+Game 068, Length: 335,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 42, 'Tie': 12, 'green': 14},  Winrate: 0.29
+Game 069, Length: 246,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 43, 'Tie': 12, 'green': 14},  Winrate: 0.29
+Game 070, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 43, 'Tie': 12, 'green': 15},  Winrate: 0.3
+Game 071, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 43, 'Tie': 13, 'green': 15},  Winrate: 0.3
+Game 072, Length: 262,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 44, 'Tie': 13, 'green': 15},  Winrate: 0.3
+Game 073, Length: 392,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 45, 'Tie': 13, 'green': 15},  Winrate: 0.29
+Game 074, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 45, 'Tie': 13, 'green': 16},  Winrate: 0.3
+Game 075, Length: 232,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 46, 'Tie': 13, 'green': 16},  Winrate: 0.3
+Game 076, Length: 488,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 47, 'Tie': 13, 'green': 16},  Winrate: 0.3
+Game 077, Length: 358,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 48, 'Tie': 13, 'green': 16},  Winrate: 0.29
+Game 078, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 49, 'Tie': 13, 'green': 16},  Winrate: 0.29
+Game 079, Length: 286,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 50, 'Tie': 13, 'green': 16},  Winrate: 0.28
+Game 080, Length: 168,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 50, 'Tie': 13, 'green': 17},  Winrate: 0.29
+Game 081, Length: 459,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 51, 'Tie': 13, 'green': 17},  Winrate: 0.29
+Game 082, Length: 156,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 52, 'Tie': 13, 'green': 17},  Winrate: 0.29
+Game 083, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 52, 'Tie': 13, 'green': 18},  Winrate: 0.3
+Game 084, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 52, 'Tie': 13, 'green': 19},  Winrate: 0.3
+Game 085, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 52, 'Tie': 14, 'green': 19},  Winrate: 0.31
+Game 086, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 53, 'Tie': 14, 'green': 19},  Winrate: 0.3
+Game 087, Length: 180,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 54, 'Tie': 14, 'green': 19},  Winrate: 0.3
+Game 088, Length: 311,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 55, 'Tie': 14, 'green': 19},  Winrate: 0.3
+Game 089, Length: 254,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 56, 'Tie': 14, 'green': 19},  Winrate: 0.29
+Game 090, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 56, 'Tie': 15, 'green': 19},  Winrate: 0.29
+Game 091, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 57, 'Tie': 15, 'green': 19},  Winrate: 0.29
+Game 092, Length: 500,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 57, 'Tie': 16, 'green': 19},  Winrate: 0.29
+Game 093, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 57, 'Tie': 16, 'green': 20},  Winrate: 0.3
+Game 094, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 58, 'Tie': 16, 'green': 20},  Winrate: 0.3
+Game 095, Length: 487,      CurrentScore: {'red': 10, 'green': 1},      TotalScore: {'red': 59, 'Tie': 16, 'green': 20},  Winrate: 0.29
+Game 096, Length: 326,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 60, 'Tie': 16, 'green': 20},  Winrate: 0.29
+Game 097, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 60, 'Tie': 16, 'green': 21},  Winrate: 0.3
+Game 098, Length: 187,      CurrentScore: {'red': 4, 'green': 9},      TotalScore: {'red': 60, 'Tie': 16, 'green': 22},  Winrate: 0.31
+Game 099, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 61, 'Tie': 16, 'green': 22},  Winrate: 0.3
+Game 100, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 61, 'Tie': 16, 'green': 23},  Winrate: 0.31
+Game 101, Length: 246,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 61, 'Tie': 16, 'green': 24},  Winrate: 0.32
+Game 102, Length: 408,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 62, 'Tie': 16, 'green': 24},  Winrate: 0.31
+Game 103, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 62, 'Tie': 16, 'green': 25},  Winrate: 0.32
+Game 104, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 63, 'Tie': 16, 'green': 25},  Winrate: 0.31
+Game 105, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 63, 'Tie': 17, 'green': 25},  Winrate: 0.3
+Game 106, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 64, 'Tie': 17, 'green': 25},  Winrate: 0.3
+Game 107, Length: 386,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 65, 'Tie': 17, 'green': 25},  Winrate: 0.3
+Game 108, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 66, 'Tie': 17, 'green': 25},  Winrate: 0.3
+Game 109, Length: 500,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 66, 'Tie': 17, 'green': 26},  Winrate: 0.31
+Game 110, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 66, 'Tie': 18, 'green': 26},  Winrate: 0.31
+Game 111, Length: 165,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 67, 'Tie': 18, 'green': 26},  Winrate: 0.31
+Game 112, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 67, 'Tie': 19, 'green': 26},  Winrate: 0.32
+Game 113, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 68, 'Tie': 19, 'green': 26},  Winrate: 0.32
+Game 114, Length: 399,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 68, 'Tie': 19, 'green': 27},  Winrate: 0.32
+Game 115, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 68, 'Tie': 19, 'green': 28},  Winrate: 0.33
+Game 116, Length: 475,      CurrentScore: {'red': 10, 'green': 2},      TotalScore: {'red': 69, 'Tie': 19, 'green': 28},  Winrate: 0.32
+Game 117, Length: 501,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 69, 'Tie': 20, 'green': 28},  Winrate: 0.33
+Game 118, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 69, 'Tie': 20, 'green': 29},  Winrate: 0.33
+Game 119, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 69, 'Tie': 20, 'green': 30},  Winrate: 0.33
+Game 120, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 69, 'Tie': 20, 'green': 31},  Winrate: 0.34
+Game 121, Length: 153,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 69, 'Tie': 20, 'green': 32},  Winrate: 0.35
+Game 122, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 70, 'Tie': 20, 'green': 32},  Winrate: 0.35
+Game 123, Length: 279,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 70, 'Tie': 20, 'green': 33},  Winrate: 0.35
+Game 124, Length: 423,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 71, 'Tie': 20, 'green': 33},  Winrate: 0.34
+Game 125, Length: 371,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 72, 'Tie': 20, 'green': 33},  Winrate: 0.34
+Game 126, Length: 241,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 73, 'Tie': 20, 'green': 33},  Winrate: 0.34
+Game 127, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 73, 'Tie': 21, 'green': 33},  Winrate: 0.34
+Game 128, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 73, 'Tie': 22, 'green': 33},  Winrate: 0.34
+Game 129, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 73, 'Tie': 23, 'green': 33},  Winrate: 0.34
+Game 130, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 73, 'Tie': 24, 'green': 33},  Winrate: 0.35
+Game 131, Length: 336,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 74, 'Tie': 24, 'green': 33},  Winrate: 0.35
+Game 132, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 75, 'Tie': 24, 'green': 33},  Winrate: 0.35
+Game 133, Length: 250,      CurrentScore: {'red': 10, 'green': 1},      TotalScore: {'red': 76, 'Tie': 24, 'green': 33},  Winrate: 0.34
+Game 134, Length: 360,      CurrentScore: {'red': 2, 'green': 10},      TotalScore: {'red': 76, 'Tie': 24, 'green': 34},  Winrate: 0.34
+Game 135, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 77, 'Tie': 24, 'green': 34},  Winrate: 0.34
+Game 136, Length: 433,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 78, 'Tie': 24, 'green': 34},  Winrate: 0.34
+Game 137, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 79, 'Tie': 24, 'green': 34},  Winrate: 0.34
+Game 138, Length: 501,      CurrentScore: {'red': 5, 'green': 4},      TotalScore: {'red': 80, 'Tie': 24, 'green': 34},  Winrate: 0.33
+Game 139, Length: 242,      CurrentScore: {'red': 3, 'green': 10},      TotalScore: {'red': 80, 'Tie': 24, 'green': 35},  Winrate: 0.34
+Game 140, Length: 249,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 80, 'Tie': 24, 'green': 36},  Winrate: 0.34
+Game 141, Length: 501,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 80, 'Tie': 25, 'green': 36},  Winrate: 0.35
+Game 142, Length: 291,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 81, 'Tie': 25, 'green': 36},  Winrate: 0.35
+Game 143, Length: 497,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 81, 'Tie': 25, 'green': 37},  Winrate: 0.35
+Game 144, Length: 378,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 81, 'Tie': 25, 'green': 38},  Winrate: 0.36
+Game 145, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 81, 'Tie': 25, 'green': 39},  Winrate: 0.38
+Game 146, Length: 501,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 81, 'Tie': 25, 'green': 40},  Winrate: 0.39
+Game 147, Length: 319,      CurrentScore: {'red': 3, 'green': 10},      TotalScore: {'red': 81, 'Tie': 25, 'green': 41},  Winrate: 0.4
+Game 148, Length: 257,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 81, 'Tie': 25, 'green': 42},  Winrate: 0.41
+Game 149, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 82, 'Tie': 25, 'green': 42},  Winrate: 0.4
+Game 150, Length: 323,      CurrentScore: {'red': 2, 'green': 10},      TotalScore: {'red': 82, 'Tie': 25, 'green': 43},  Winrate: 0.41
+Game 151, Length: 245,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 83, 'Tie': 25, 'green': 43},  Winrate: 0.4
+Game 152, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 84, 'Tie': 25, 'green': 43},  Winrate: 0.4
+Game 153, Length: 378,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 85, 'Tie': 25, 'green': 43},  Winrate: 0.4
+Game 154, Length: 335,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 86, 'Tie': 25, 'green': 43},  Winrate: 0.4
+Game 155, Length: 242,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 87, 'Tie': 25, 'green': 43},  Winrate: 0.4
+Game 156, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 88, 'Tie': 25, 'green': 43},  Winrate: 0.4
+Game 157, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 88, 'Tie': 25, 'green': 44},  Winrate: 0.41
+Game 158, Length: 264,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 88, 'Tie': 25, 'green': 45},  Winrate: 0.41
+Game 159, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 88, 'Tie': 25, 'green': 46},  Winrate: 0.42
+Game 160, Length: 253,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 88, 'Tie': 25, 'green': 47},  Winrate: 0.42
+Game 161, Length: 400,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 89, 'Tie': 25, 'green': 47},  Winrate: 0.42
+Game 162, Length: 501,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 89, 'Tie': 25, 'green': 48},  Winrate: 0.42
+Game 163, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 90, 'Tie': 25, 'green': 48},  Winrate: 0.42
+Game 164, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 91, 'Tie': 25, 'green': 48},  Winrate: 0.41
+Game 165, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 92, 'Tie': 25, 'green': 48},  Winrate: 0.41
+Game 166, Length: 501,      CurrentScore: {'red': 2, 'green': 3},      TotalScore: {'red': 92, 'Tie': 25, 'green': 49},  Winrate: 0.41
+Game 167, Length: 280,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 92, 'Tie': 25, 'green': 50},  Winrate: 0.42
+Game 168, Length: 203,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 93, 'Tie': 25, 'green': 50},  Winrate: 0.42
+Game 169, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 94, 'Tie': 25, 'green': 50},  Winrate: 0.42
+Game 170, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 94, 'Tie': 25, 'green': 51},  Winrate: 0.42
+Game 171, Length: 501,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 94, 'Tie': 25, 'green': 52},  Winrate: 0.43
+Game 172, Length: 298,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 95, 'Tie': 25, 'green': 52},  Winrate: 0.43
+Game 173, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 95, 'Tie': 26, 'green': 52},  Winrate: 0.43
+Game 174, Length: 500,      CurrentScore: {'red': 4, 'green': 6},      TotalScore: {'red': 95, 'Tie': 26, 'green': 53},  Winrate: 0.43
+Game 175, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 95, 'Tie': 26, 'green': 54},  Winrate: 0.45
+Game 176, Length: 309,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 96, 'Tie': 26, 'green': 54},  Winrate: 0.45
+Game 177, Length: 374,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 97, 'Tie': 26, 'green': 54},  Winrate: 0.45
+Game 178, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 98, 'Tie': 26, 'green': 54},  Winrate: 0.45
+Game 179, Length: 500,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 98, 'Tie': 26, 'green': 55},  Winrate: 0.46
+Game 180, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 99, 'Tie': 26, 'green': 55},  Winrate: 0.45
+Game 181, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 99, 'Tie': 26, 'green': 56},  Winrate: 0.46
+Game 182, Length: 500,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 99, 'Tie': 27, 'green': 56},  Winrate: 0.46
+Game 183, Length: 291,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 100, 'Tie': 27, 'green': 56},  Winrate: 0.45
+Game 184, Length: 231,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 101, 'Tie': 27, 'green': 56},  Winrate: 0.44
+Game 185, Length: 218,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 101, 'Tie': 27, 'green': 57},  Winrate: 0.45
+Game 186, Length: 501,      CurrentScore: {'red': 3, 'green': 4},      TotalScore: {'red': 101, 'Tie': 27, 'green': 58},  Winrate: 0.46
+Game 187, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 102, 'Tie': 27, 'green': 58},  Winrate: 0.46
+Game 188, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 103, 'Tie': 27, 'green': 58},  Winrate: 0.46
+Game 189, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 103, 'Tie': 28, 'green': 58},  Winrate: 0.46
+Game 190, Length: 335,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 104, 'Tie': 28, 'green': 58},  Winrate: 0.46
+Game 191, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 105, 'Tie': 28, 'green': 58},  Winrate: 0.46
+Game 192, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 106, 'Tie': 28, 'green': 58},  Winrate: 0.45
+Game 193, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 107, 'Tie': 28, 'green': 58},  Winrate: 0.44
+Game 194, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 108, 'Tie': 28, 'green': 58},  Winrate: 0.44
+Game 195, Length: 501,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 109, 'Tie': 28, 'green': 58},  Winrate: 0.44
+Game 196, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 109, 'Tie': 28, 'green': 59},  Winrate: 0.45
+Game 197, Length: 196,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 109, 'Tie': 28, 'green': 60},  Winrate: 0.45
+Game 198, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 109, 'Tie': 29, 'green': 60},  Winrate: 0.45
+Game 199, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 110, 'Tie': 29, 'green': 60},  Winrate: 0.45
+Game 200, Length: 333,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 111, 'Tie': 29, 'green': 60},  Winrate: 0.43
+Game 201, Length: 501,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 111, 'Tie': 29, 'green': 61},  Winrate: 0.43
+Game 202, Length: 296,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 112, 'Tie': 29, 'green': 61},  Winrate: 0.43
+Game 203, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 113, 'Tie': 29, 'green': 61},  Winrate: 0.42
+Game 204, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 114, 'Tie': 29, 'green': 61},  Winrate: 0.42
+Game 205, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 114, 'Tie': 29, 'green': 62},  Winrate: 0.43
+Game 206, Length: 267,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 115, 'Tie': 29, 'green': 62},  Winrate: 0.43
+Game 207, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 116, 'Tie': 29, 'green': 62},  Winrate: 0.43
+Game 208, Length: 262,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 117, 'Tie': 29, 'green': 62},  Winrate: 0.43
+Game 209, Length: 281,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 118, 'Tie': 29, 'green': 62},  Winrate: 0.42
+Game 210, Length: 330,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 118, 'Tie': 29, 'green': 63},  Winrate: 0.42
+Game 211, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 119, 'Tie': 29, 'green': 63},  Winrate: 0.42
+Game 212, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 119, 'Tie': 30, 'green': 63},  Winrate: 0.42
+Game 213, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 119, 'Tie': 31, 'green': 63},  Winrate: 0.43
+Game 214, Length: 171,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 120, 'Tie': 31, 'green': 63},  Winrate: 0.42
+Game 215, Length: 322,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 120, 'Tie': 31, 'green': 64},  Winrate: 0.42
+Game 216, Length: 501,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 120, 'Tie': 31, 'green': 65},  Winrate: 0.43
+Game 217, Length: 181,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 120, 'Tie': 31, 'green': 66},  Winrate: 0.43
+Game 218, Length: 221,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 121, 'Tie': 31, 'green': 66},  Winrate: 0.42
+Game 219, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 122, 'Tie': 31, 'green': 66},  Winrate: 0.41
+Game 220, Length: 500,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 122, 'Tie': 31, 'green': 67},  Winrate: 0.41
+Game 221, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 122, 'Tie': 31, 'green': 68},  Winrate: 0.41
+Game 222, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 122, 'Tie': 32, 'green': 68},  Winrate: 0.42
+Game 223, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 123, 'Tie': 32, 'green': 68},  Winrate: 0.41
+Game 224, Length: 373,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 123, 'Tie': 32, 'green': 69},  Winrate: 0.42
+Game 225, Length: 221,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 124, 'Tie': 32, 'green': 69},  Winrate: 0.42
+Game 226, Length: 129,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 124, 'Tie': 32, 'green': 70},  Winrate: 0.43
+Game 227, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 124, 'Tie': 32, 'green': 71},  Winrate: 0.43
+Game 228, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 124, 'Tie': 32, 'green': 72},  Winrate: 0.44
+Game 229, Length: 501,      CurrentScore: {'red': 2, 'green': 3},      TotalScore: {'red': 124, 'Tie': 32, 'green': 73},  Winrate: 0.45
+Game 230, Length: 243,      CurrentScore: {'red': 2, 'green': 9},      TotalScore: {'red': 124, 'Tie': 32, 'green': 74},  Winrate: 0.45
+Game 231, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 125, 'Tie': 32, 'green': 74},  Winrate: 0.45
+Game 232, Length: 297,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 125, 'Tie': 32, 'green': 75},  Winrate: 0.46
+Game 233, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 126, 'Tie': 32, 'green': 75},  Winrate: 0.46
+Game 234, Length: 501,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 126, 'Tie': 32, 'green': 76},  Winrate: 0.46
+Game 235, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 126, 'Tie': 32, 'green': 77},  Winrate: 0.47
+Game 236, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 126, 'Tie': 33, 'green': 77},  Winrate: 0.47
+Game 237, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 126, 'Tie': 34, 'green': 77},  Winrate: 0.48
+Game 238, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 126, 'Tie': 35, 'green': 77},  Winrate: 0.48
+Game 239, Length: 371,      CurrentScore: {'red': 10, 'green': 2},      TotalScore: {'red': 127, 'Tie': 35, 'green': 77},  Winrate: 0.47
+Game 240, Length: 261,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 127, 'Tie': 35, 'green': 78},  Winrate: 0.47
+Game 241, Length: 259,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 128, 'Tie': 35, 'green': 78},  Winrate: 0.47
+Game 242, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 128, 'Tie': 35, 'green': 79},  Winrate: 0.48
+Game 243, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 128, 'Tie': 35, 'green': 80},  Winrate: 0.48
+Game 244, Length: 241,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 129, 'Tie': 35, 'green': 80},  Winrate: 0.47
+Game 245, Length: 465,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 130, 'Tie': 35, 'green': 80},  Winrate: 0.46
+Game 246, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 130, 'Tie': 36, 'green': 80},  Winrate: 0.46
+Game 247, Length: 240,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 130, 'Tie': 36, 'green': 81},  Winrate: 0.46
+Game 248, Length: 371,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 131, 'Tie': 36, 'green': 81},  Winrate: 0.45
+Game 249, Length: 242,      CurrentScore: {'red': 9, 'green': 2},      TotalScore: {'red': 132, 'Tie': 36, 'green': 81},  Winrate: 0.45
+Game 250, Length: 277,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 133, 'Tie': 36, 'green': 81},  Winrate: 0.43
+Game 251, Length: 298,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 134, 'Tie': 36, 'green': 81},  Winrate: 0.43
+Game 252, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 135, 'Tie': 36, 'green': 81},  Winrate: 0.43
+Game 253, Length: 362,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 136, 'Tie': 36, 'green': 81},  Winrate: 0.43
+Game 254, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 137, 'Tie': 36, 'green': 81},  Winrate: 0.43
+Game 255, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 137, 'Tie': 37, 'green': 81},  Winrate: 0.44
+Game 256, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 138, 'Tie': 37, 'green': 81},  Winrate: 0.44
+Game 257, Length: 215,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 139, 'Tie': 37, 'green': 81},  Winrate: 0.43
+Game 258, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 139, 'Tie': 37, 'green': 82},  Winrate: 0.43
+Game 259, Length: 501,      CurrentScore: {'red': 3, 'green': 5},      TotalScore: {'red': 139, 'Tie': 37, 'green': 83},  Winrate: 0.43
+Game 260, Length: 380,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 140, 'Tie': 37, 'green': 83},  Winrate: 0.42
+Game 261, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 141, 'Tie': 37, 'green': 83},  Winrate: 0.42
+Game 262, Length: 501,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 141, 'Tie': 37, 'green': 84},  Winrate: 0.42
+Game 263, Length: 501,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 141, 'Tie': 38, 'green': 84},  Winrate: 0.42
+Game 264, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 141, 'Tie': 39, 'green': 84},  Winrate: 0.43
+Game 265, Length: 205,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 141, 'Tie': 39, 'green': 85},  Winrate: 0.44
+Game 266, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 141, 'Tie': 39, 'green': 86},  Winrate: 0.44
+Game 267, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 142, 'Tie': 39, 'green': 86},  Winrate: 0.43
+Game 268, Length: 220,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 143, 'Tie': 39, 'green': 86},  Winrate: 0.43
+Game 269, Length: 164,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 143, 'Tie': 39, 'green': 87},  Winrate: 0.44
+Game 270, Length: 284,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 143, 'Tie': 39, 'green': 88},  Winrate: 0.44
+Game 271, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 144, 'Tie': 39, 'green': 88},  Winrate: 0.43
+Game 272, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 145, 'Tie': 39, 'green': 88},  Winrate: 0.43
+Game 273, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 145, 'Tie': 39, 'green': 89},  Winrate: 0.43
+Game 274, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 146, 'Tie': 39, 'green': 89},  Winrate: 0.42
+Game 275, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 147, 'Tie': 39, 'green': 89},  Winrate: 0.41
+Game 276, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 147, 'Tie': 39, 'green': 90},  Winrate: 0.42
+Game 277, Length: 334,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 148, 'Tie': 39, 'green': 90},  Winrate: 0.42
+Game 278, Length: 213,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 148, 'Tie': 39, 'green': 91},  Winrate: 0.43
+Game 279, Length: 500,      CurrentScore: {'red': 4, 'green': 1},      TotalScore: {'red': 149, 'Tie': 39, 'green': 91},  Winrate: 0.42
+Game 280, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 149, 'Tie': 39, 'green': 92},  Winrate: 0.43
+Game 281, Length: 186,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 149, 'Tie': 39, 'green': 93},  Winrate: 0.43
+Game 282, Length: 500,      CurrentScore: {'red': 5, 'green': 3},      TotalScore: {'red': 150, 'Tie': 39, 'green': 93},  Winrate: 0.43
+Game 283, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 151, 'Tie': 39, 'green': 93},  Winrate: 0.43
+Game 284, Length: 500,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 151, 'Tie': 40, 'green': 93},  Winrate: 0.43
+Game 285, Length: 208,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 152, 'Tie': 40, 'green': 93},  Winrate: 0.42
+Game 286, Length: 119,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 153, 'Tie': 40, 'green': 93},  Winrate: 0.41
+Game 287, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 153, 'Tie': 40, 'green': 94},  Winrate: 0.42
+Game 288, Length: 264,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 153, 'Tie': 40, 'green': 95},  Winrate: 0.43
+Game 289, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 154, 'Tie': 40, 'green': 95},  Winrate: 0.43
+Game 290, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 155, 'Tie': 40, 'green': 95},  Winrate: 0.43
+Game 291, Length: 500,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 155, 'Tie': 40, 'green': 96},  Winrate: 0.44
+Game 292, Length: 182,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 155, 'Tie': 40, 'green': 97},  Winrate: 0.45
+Game 293, Length: 228,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 155, 'Tie': 40, 'green': 98},  Winrate: 0.46
+Game 294, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 155, 'Tie': 41, 'green': 98},  Winrate: 0.47
+Game 295, Length: 243,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 156, 'Tie': 41, 'green': 98},  Winrate: 0.47
+Game 296, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 157, 'Tie': 41, 'green': 98},  Winrate: 0.46
+Game 297, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 157, 'Tie': 41, 'green': 99},  Winrate: 0.46
+Game 298, Length: 360,      CurrentScore: {'red': 10, 'green': 1},      TotalScore: {'red': 158, 'Tie': 41, 'green': 99},  Winrate: 0.45
+Game 299, Length: 460,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 159, 'Tie': 41, 'green': 99},  Winrate: 0.45
+Game 300, Length: 310,      CurrentScore: {'red': 10, 'green': 4},      TotalScore: {'red': 160, 'Tie': 41, 'green': 99},  Winrate: 0.45
+Game 301, Length: 118,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 160, 'Tie': 41, 'green': 100},  Winrate: 0.45
+Game 302, Length: 415,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 161, 'Tie': 41, 'green': 100},  Winrate: 0.45
+Game 303, Length: 303,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 161, 'Tie': 41, 'green': 101},  Winrate: 0.46
+Game 304, Length: 404,      CurrentScore: {'red': 9, 'green': 2},      TotalScore: {'red': 162, 'Tie': 41, 'green': 101},  Winrate: 0.46
+Game 305, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 162, 'Tie': 41, 'green': 102},  Winrate: 0.46
+Game 306, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 163, 'Tie': 41, 'green': 102},  Winrate: 0.46
+Game 307, Length: 124,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 164, 'Tie': 41, 'green': 102},  Winrate: 0.46
+Game 308, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 164, 'Tie': 41, 'green': 103},  Winrate: 0.47
+Game 309, Length: 501,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 164, 'Tie': 42, 'green': 103},  Winrate: 0.47
+Game 310, Length: 361,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 165, 'Tie': 42, 'green': 103},  Winrate: 0.47
+Game 311, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 165, 'Tie': 43, 'green': 103},  Winrate: 0.47
+Game 312, Length: 315,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 166, 'Tie': 43, 'green': 103},  Winrate: 0.47
+Game 313, Length: 453,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 167, 'Tie': 43, 'green': 103},  Winrate: 0.46
+Game 314, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 167, 'Tie': 43, 'green': 104},  Winrate: 0.47
+Game 315, Length: 474,      CurrentScore: {'red': 8, 'green': 2},      TotalScore: {'red': 168, 'Tie': 43, 'green': 104},  Winrate: 0.46
+Game 316, Length: 159,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 168, 'Tie': 43, 'green': 105},  Winrate: 0.46
+Game 317, Length: 500,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 168, 'Tie': 43, 'green': 106},  Winrate: 0.46
+Game 318, Length: 501,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 168, 'Tie': 43, 'green': 107},  Winrate: 0.47
+Game 319, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 169, 'Tie': 43, 'green': 107},  Winrate: 0.47
+Game 320, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 169, 'Tie': 44, 'green': 107},  Winrate: 0.47
+Game 321, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 170, 'Tie': 44, 'green': 107},  Winrate: 0.46
+Game 322, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 171, 'Tie': 44, 'green': 107},  Winrate: 0.45
+Game 323, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 172, 'Tie': 44, 'green': 107},  Winrate: 0.45
+Game 324, Length: 327,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 173, 'Tie': 44, 'green': 107},  Winrate: 0.44
+Game 325, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 173, 'Tie': 45, 'green': 107},  Winrate: 0.45
+Game 326, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 174, 'Tie': 45, 'green': 107},  Winrate: 0.43
+Game 327, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 174, 'Tie': 45, 'green': 108},  Winrate: 0.43
+Game 328, Length: 260,      CurrentScore: {'red': 5, 'green': 10},      TotalScore: {'red': 174, 'Tie': 45, 'green': 109},  Winrate: 0.43
+Game 329, Length: 500,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 174, 'Tie': 45, 'green': 110},  Winrate: 0.43
+Game 330, Length: 483,      CurrentScore: {'red': 9, 'green': 1},      TotalScore: {'red': 175, 'Tie': 45, 'green': 110},  Winrate: 0.42
+Game 331, Length: 150,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 175, 'Tie': 45, 'green': 111},  Winrate: 0.43
+Game 332, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 175, 'Tie': 45, 'green': 112},  Winrate: 0.43
+Game 333, Length: 500,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 176, 'Tie': 45, 'green': 112},  Winrate: 0.43
+Game 334, Length: 293,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 177, 'Tie': 45, 'green': 112},  Winrate: 0.42
+Game 335, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 178, 'Tie': 45, 'green': 112},  Winrate: 0.41
+Game 336, Length: 216,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 178, 'Tie': 45, 'green': 113},  Winrate: 0.42
+Game 337, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 178, 'Tie': 45, 'green': 114},  Winrate: 0.42
+Game 338, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 178, 'Tie': 46, 'green': 114},  Winrate: 0.42
+Game 339, Length: 161,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 178, 'Tie': 46, 'green': 115},  Winrate: 0.43
+Game 340, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 178, 'Tie': 46, 'green': 116},  Winrate: 0.43
+Game 341, Length: 200,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 179, 'Tie': 46, 'green': 116},  Winrate: 0.43
+Game 342, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 180, 'Tie': 46, 'green': 116},  Winrate: 0.42
+Game 343, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 181, 'Tie': 46, 'green': 116},  Winrate: 0.41
+Game 344, Length: 261,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 182, 'Tie': 46, 'green': 116},  Winrate: 0.41
+Game 345, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 183, 'Tie': 46, 'green': 116},  Winrate: 0.41
+Game 346, Length: 295,      CurrentScore: {'red': 6, 'green': 8},      TotalScore: {'red': 183, 'Tie': 46, 'green': 117},  Winrate: 0.42
+Game 347, Length: 195,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 183, 'Tie': 46, 'green': 118},  Winrate: 0.42
+Game 348, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 183, 'Tie': 46, 'green': 119},  Winrate: 0.43
+Game 349, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 184, 'Tie': 46, 'green': 119},  Winrate: 0.43
+Game 350, Length: 144,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 184, 'Tie': 46, 'green': 120},  Winrate: 0.44
+Game 351, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 185, 'Tie': 46, 'green': 120},  Winrate: 0.44
+Game 352, Length: 294,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 186, 'Tie': 46, 'green': 120},  Winrate: 0.44
+Game 353, Length: 374,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 187, 'Tie': 46, 'green': 120},  Winrate: 0.44
+Game 354, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 188, 'Tie': 46, 'green': 120},  Winrate: 0.44
+Game 355, Length: 249,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 189, 'Tie': 46, 'green': 120},  Winrate: 0.43
+Game 356, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 189, 'Tie': 46, 'green': 121},  Winrate: 0.45
+Game 357, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 189, 'Tie': 46, 'green': 122},  Winrate: 0.46
+Game 358, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 190, 'Tie': 46, 'green': 122},  Winrate: 0.45
+Game 359, Length: 403,      CurrentScore: {'red': 10, 'green': 1},      TotalScore: {'red': 191, 'Tie': 46, 'green': 122},  Winrate: 0.43
+Game 360, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 191, 'Tie': 46, 'green': 123},  Winrate: 0.45
+Game 361, Length: 427,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 191, 'Tie': 46, 'green': 124},  Winrate: 0.46
+Game 362, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 192, 'Tie': 46, 'green': 124},  Winrate: 0.45
+Game 363, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 192, 'Tie': 46, 'green': 125},  Winrate: 0.45
+Game 364, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 193, 'Tie': 46, 'green': 125},  Winrate: 0.45
+Game 365, Length: 166,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 193, 'Tie': 46, 'green': 126},  Winrate: 0.45
+Game 366, Length: 115,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 194, 'Tie': 46, 'green': 126},  Winrate: 0.43
+Game 367, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 194, 'Tie': 46, 'green': 127},  Winrate: 0.45
+Game 368, Length: 267,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 194, 'Tie': 46, 'green': 128},  Winrate: 0.46
+Game 369, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 194, 'Tie': 47, 'green': 128},  Winrate: 0.45
+Game 370, Length: 501,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 194, 'Tie': 47, 'green': 129},  Winrate: 0.45
+Game 371, Length: 486,      CurrentScore: {'red': 10, 'green': 1},      TotalScore: {'red': 195, 'Tie': 47, 'green': 129},  Winrate: 0.45
+Game 372, Length: 501,      CurrentScore: {'red': 6, 'green': 1},      TotalScore: {'red': 196, 'Tie': 47, 'green': 129},  Winrate: 0.45
+Game 373, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 197, 'Tie': 47, 'green': 129},  Winrate: 0.44
+Game 374, Length: 267,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 197, 'Tie': 47, 'green': 130},  Winrate: 0.45
+Game 375, Length: 501,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 197, 'Tie': 48, 'green': 130},  Winrate: 0.46
+Game 376, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 197, 'Tie': 49, 'green': 130},  Winrate: 0.45
+Game 377, Length: 219,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 197, 'Tie': 49, 'green': 131},  Winrate: 0.46
+Game 378, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 197, 'Tie': 50, 'green': 131},  Winrate: 0.46
+Game 379, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 198, 'Tie': 50, 'green': 131},  Winrate: 0.46
+Game 380, Length: 226,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 198, 'Tie': 50, 'green': 132},  Winrate: 0.46
+Game 381, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 198, 'Tie': 50, 'green': 133},  Winrate: 0.46
+Game 382, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 199, 'Tie': 50, 'green': 133},  Winrate: 0.46
+Game 383, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 199, 'Tie': 51, 'green': 133},  Winrate: 0.46
+Game 384, Length: 473,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 200, 'Tie': 51, 'green': 133},  Winrate: 0.46
+Game 385, Length: 192,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 201, 'Tie': 51, 'green': 133},  Winrate: 0.46
+Game 386, Length: 500,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 201, 'Tie': 51, 'green': 134},  Winrate: 0.47
+Game 387, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 202, 'Tie': 51, 'green': 134},  Winrate: 0.46
+Game 388, Length: 196,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 203, 'Tie': 51, 'green': 134},  Winrate: 0.45
+Game 389, Length: 434,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 204, 'Tie': 51, 'green': 134},  Winrate: 0.45
+Game 390, Length: 191,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 205, 'Tie': 51, 'green': 134},  Winrate: 0.45
+Game 391, Length: 400,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 206, 'Tie': 51, 'green': 134},  Winrate: 0.43
+Game 392, Length: 303,      CurrentScore: {'red': 5, 'green': 10},      TotalScore: {'red': 206, 'Tie': 51, 'green': 135},  Winrate: 0.43
+Game 393, Length: 493,      CurrentScore: {'red': 10, 'green': 4},      TotalScore: {'red': 207, 'Tie': 51, 'green': 135},  Winrate: 0.42
+Game 394, Length: 430,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 208, 'Tie': 51, 'green': 135},  Winrate: 0.42
+Game 395, Length: 264,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 208, 'Tie': 51, 'green': 136},  Winrate: 0.43
+Game 396, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 208, 'Tie': 51, 'green': 137},  Winrate: 0.44
+Game 397, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 209, 'Tie': 51, 'green': 137},  Winrate: 0.43
+Game 398, Length: 489,      CurrentScore: {'red': 10, 'green': 3},      TotalScore: {'red': 210, 'Tie': 51, 'green': 137},  Winrate: 0.43
+Game 399, Length: 221,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 210, 'Tie': 51, 'green': 138},  Winrate: 0.44
+Game 400, Length: 317,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 210, 'Tie': 51, 'green': 139},  Winrate: 0.45
+Game 401, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 210, 'Tie': 51, 'green': 140},  Winrate: 0.45
+Game 402, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 211, 'Tie': 51, 'green': 140},  Winrate: 0.45
+Game 403, Length: 185,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 211, 'Tie': 51, 'green': 141},  Winrate: 0.45
+Game 404, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 211, 'Tie': 52, 'green': 141},  Winrate: 0.46
+Game 405, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 211, 'Tie': 52, 'green': 142},  Winrate: 0.46
+Game 406, Length: 193,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 211, 'Tie': 52, 'green': 143},  Winrate: 0.47
+Game 407, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 212, 'Tie': 52, 'green': 143},  Winrate: 0.47
+Game 408, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 212, 'Tie': 53, 'green': 143},  Winrate: 0.46
+Game 409, Length: 423,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 213, 'Tie': 53, 'green': 143},  Winrate: 0.46
+Game 410, Length: 307,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 213, 'Tie': 53, 'green': 144},  Winrate: 0.47
+Game 411, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 213, 'Tie': 53, 'green': 145},  Winrate: 0.47
+Game 412, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 214, 'Tie': 53, 'green': 145},  Winrate: 0.47
+Game 413, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 215, 'Tie': 53, 'green': 145},  Winrate: 0.47
+Game 414, Length: 271,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 215, 'Tie': 53, 'green': 146},  Winrate: 0.47
+Game 415, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 215, 'Tie': 53, 'green': 147},  Winrate: 0.48
+Game 416, Length: 255,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 215, 'Tie': 53, 'green': 148},  Winrate: 0.48
+Game 417, Length: 223,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 215, 'Tie': 53, 'green': 149},  Winrate: 0.48
+Game 418, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 216, 'Tie': 53, 'green': 149},  Winrate: 0.47
+Game 419, Length: 501,      CurrentScore: {'red': 3, 'green': 4},      TotalScore: {'red': 216, 'Tie': 53, 'green': 150},  Winrate: 0.48
+Game 420, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 216, 'Tie': 54, 'green': 150},  Winrate: 0.48
+Game 421, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 217, 'Tie': 54, 'green': 150},  Winrate: 0.48
+Game 422, Length: 501,      CurrentScore: {'red': 3, 'green': 1},      TotalScore: {'red': 218, 'Tie': 54, 'green': 150},  Winrate: 0.48
+Game 423, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 218, 'Tie': 54, 'green': 151},  Winrate: 0.49
+Game 424, Length: 214,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 218, 'Tie': 54, 'green': 152},  Winrate: 0.5
+Game 425, Length: 388,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 218, 'Tie': 54, 'green': 153},  Winrate: 0.51
+Game 426, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 219, 'Tie': 54, 'green': 153},  Winrate: 0.51
+Game 427, Length: 214,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 219, 'Tie': 54, 'green': 154},  Winrate: 0.51
+Game 428, Length: 500,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 220, 'Tie': 54, 'green': 154},  Winrate: 0.49
+Game 429, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 221, 'Tie': 54, 'green': 154},  Winrate: 0.48
+Game 430, Length: 113,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 222, 'Tie': 54, 'green': 154},  Winrate: 0.48
+Game 431, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 222, 'Tie': 54, 'green': 155},  Winrate: 0.48
+Game 432, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 222, 'Tie': 54, 'green': 156},  Winrate: 0.48
+Game 433, Length: 225,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 223, 'Tie': 54, 'green': 156},  Winrate: 0.48
+Game 434, Length: 460,      CurrentScore: {'red': 2, 'green': 10},      TotalScore: {'red': 223, 'Tie': 54, 'green': 157},  Winrate: 0.49
+Game 435, Length: 400,      CurrentScore: {'red': 10, 'green': 2},      TotalScore: {'red': 224, 'Tie': 54, 'green': 157},  Winrate: 0.49
+Game 436, Length: 500,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 225, 'Tie': 54, 'green': 157},  Winrate: 0.48
+Game 437, Length: 348,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 225, 'Tie': 54, 'green': 158},  Winrate: 0.48
+Game 438, Length: 238,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 225, 'Tie': 54, 'green': 159},  Winrate: 0.49
+Game 439, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 225, 'Tie': 54, 'green': 160},  Winrate: 0.49
+Game 440, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 225, 'Tie': 54, 'green': 161},  Winrate: 0.49
+Game 441, Length: 501,      CurrentScore: {'red': 6, 'green': 1},      TotalScore: {'red': 226, 'Tie': 54, 'green': 161},  Winrate: 0.49
+Game 442, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 226, 'Tie': 54, 'green': 162},  Winrate: 0.5
+Game 443, Length: 190,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 226, 'Tie': 54, 'green': 163},  Winrate: 0.51
+Game 444, Length: 229,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 226, 'Tie': 54, 'green': 164},  Winrate: 0.52
+Game 445, Length: 226,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 227, 'Tie': 54, 'green': 164},  Winrate: 0.52
+Game 446, Length: 298,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 228, 'Tie': 54, 'green': 164},  Winrate: 0.51
+Game 447, Length: 500,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 228, 'Tie': 54, 'green': 165},  Winrate: 0.51
+Game 448, Length: 260,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 229, 'Tie': 54, 'green': 165},  Winrate: 0.5
+Game 449, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 230, 'Tie': 54, 'green': 165},  Winrate: 0.5
+Game 450, Length: 368,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 231, 'Tie': 54, 'green': 165},  Winrate: 0.49
+Game 451, Length: 456,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 232, 'Tie': 54, 'green': 165},  Winrate: 0.49
+Game 452, Length: 492,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 233, 'Tie': 54, 'green': 165},  Winrate: 0.49
+Game 453, Length: 305,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 233, 'Tie': 54, 'green': 166},  Winrate: 0.5
+Game 454, Length: 209,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 233, 'Tie': 54, 'green': 167},  Winrate: 0.51
+Game 455, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 233, 'Tie': 54, 'green': 168},  Winrate: 0.52
+Game 456, Length: 189,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 233, 'Tie': 54, 'green': 169},  Winrate: 0.52
+Game 457, Length: 377,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 234, 'Tie': 54, 'green': 169},  Winrate: 0.51
+Game 458, Length: 300,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 235, 'Tie': 54, 'green': 169},  Winrate: 0.51
+Game 459, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 235, 'Tie': 55, 'green': 169},  Winrate: 0.52
+Game 460, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 236, 'Tie': 55, 'green': 169},  Winrate: 0.51
+Game 461, Length: 500,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 236, 'Tie': 55, 'green': 170},  Winrate: 0.51
+Game 462, Length: 210,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 237, 'Tie': 55, 'green': 170},  Winrate: 0.51
+Game 463, Length: 490,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 238, 'Tie': 55, 'green': 170},  Winrate: 0.49
+Game 464, Length: 336,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 238, 'Tie': 55, 'green': 171},  Winrate: 0.51
+Game 465, Length: 497,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 239, 'Tie': 55, 'green': 171},  Winrate: 0.49
+Game 466, Length: 453,      CurrentScore: {'red': 10, 'green': 5},      TotalScore: {'red': 240, 'Tie': 55, 'green': 171},  Winrate: 0.49
+Game 467, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 241, 'Tie': 55, 'green': 171},  Winrate: 0.48
+Game 468, Length: 232,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 242, 'Tie': 55, 'green': 171},  Winrate: 0.47
+Game 469, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 242, 'Tie': 55, 'green': 172},  Winrate: 0.48
+Game 470, Length: 282,      CurrentScore: {'red': 10, 'green': 1},      TotalScore: {'red': 243, 'Tie': 55, 'green': 172},  Winrate: 0.47
+Game 471, Length: 501,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 243, 'Tie': 55, 'green': 173},  Winrate: 0.48
+Game 472, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 243, 'Tie': 56, 'green': 173},  Winrate: 0.48
+Game 473, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 244, 'Tie': 56, 'green': 173},  Winrate: 0.48
+Game 474, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 245, 'Tie': 56, 'green': 173},  Winrate: 0.47
+Game 475, Length: 501,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 245, 'Tie': 56, 'green': 174},  Winrate: 0.48
+Game 476, Length: 252,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 245, 'Tie': 56, 'green': 175},  Winrate: 0.48
+Game 477, Length: 244,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 245, 'Tie': 56, 'green': 176},  Winrate: 0.48
+Game 478, Length: 500,      CurrentScore: {'red': 3, 'green': 3},      TotalScore: {'red': 245, 'Tie': 57, 'green': 176},  Winrate: 0.48
+Game 479, Length: 264,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 246, 'Tie': 57, 'green': 176},  Winrate: 0.48
+Game 480, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 246, 'Tie': 57, 'green': 177},  Winrate: 0.48
+Game 481, Length: 140,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 246, 'Tie': 57, 'green': 178},  Winrate: 0.48
+Game 482, Length: 500,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 246, 'Tie': 57, 'green': 179},  Winrate: 0.49
+Game 483, Length: 501,      CurrentScore: {'red': 3, 'green': 6},      TotalScore: {'red': 246, 'Tie': 57, 'green': 180},  Winrate: 0.5
+Game 484, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 247, 'Tie': 57, 'green': 180},  Winrate: 0.5
+Game 485, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 248, 'Tie': 57, 'green': 180},  Winrate: 0.5
+Game 486, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 248, 'Tie': 57, 'green': 181},  Winrate: 0.5
+Game 487, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 248, 'Tie': 58, 'green': 181},  Winrate: 0.51
+Game 488, Length: 195,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 249, 'Tie': 58, 'green': 181},  Winrate: 0.51
+Game 489, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 250, 'Tie': 58, 'green': 181},  Winrate: 0.51
+Game 490, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 251, 'Tie': 58, 'green': 181},  Winrate: 0.51
+Game 491, Length: 264,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 251, 'Tie': 58, 'green': 182},  Winrate: 0.52
+Game 492, Length: 194,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 252, 'Tie': 58, 'green': 182},  Winrate: 0.51
+Game 493, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 252, 'Tie': 59, 'green': 182},  Winrate: 0.51
+Game 494, Length: 139,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 253, 'Tie': 59, 'green': 182},  Winrate: 0.51
+Game 495, Length: 212,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 253, 'Tie': 59, 'green': 183},  Winrate: 0.51
+Game 496, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 254, 'Tie': 59, 'green': 183},  Winrate: 0.5
+Game 497, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 255, 'Tie': 59, 'green': 183},  Winrate: 0.5
+Game 498, Length: 434,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 256, 'Tie': 59, 'green': 183},  Winrate: 0.5
+Game 499, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 257, 'Tie': 59, 'green': 183},  Winrate: 0.49
+Game 500, Length: 320,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 258, 'Tie': 59, 'green': 183},  Winrate: 0.48
+Game 501, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 259, 'Tie': 59, 'green': 183},  Winrate: 0.47
+Game 502, Length: 174,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 259, 'Tie': 59, 'green': 184},  Winrate: 0.48
+Game 503, Length: 274,      CurrentScore: {'red': 9, 'green': 2},      TotalScore: {'red': 260, 'Tie': 59, 'green': 184},  Winrate: 0.47
+Game 504, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 260, 'Tie': 59, 'green': 185},  Winrate: 0.47
+Game 505, Length: 297,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 261, 'Tie': 59, 'green': 185},  Winrate: 0.47
+Game 506, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 262, 'Tie': 59, 'green': 185},  Winrate: 0.46
+Game 507, Length: 214,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 263, 'Tie': 59, 'green': 185},  Winrate: 0.46
+Game 508, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 263, 'Tie': 59, 'green': 186},  Winrate: 0.46
+Game 509, Length: 501,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 263, 'Tie': 59, 'green': 187},  Winrate: 0.47
+Game 510, Length: 501,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 263, 'Tie': 59, 'green': 188},  Winrate: 0.47
+Game 511, Length: 300,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 263, 'Tie': 59, 'green': 189},  Winrate: 0.47
+Game 512, Length: 303,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 263, 'Tie': 59, 'green': 190},  Winrate: 0.48
+Game 513, Length: 397,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 264, 'Tie': 59, 'green': 190},  Winrate: 0.48
+Game 514, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 264, 'Tie': 60, 'green': 190},  Winrate: 0.47
+Game 515, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 265, 'Tie': 60, 'green': 190},  Winrate: 0.47
+Game 516, Length: 401,      CurrentScore: {'red': 5, 'green': 10},      TotalScore: {'red': 265, 'Tie': 60, 'green': 191},  Winrate: 0.47
+Game 517, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 265, 'Tie': 60, 'green': 192},  Winrate: 0.47
+Game 518, Length: 202,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 266, 'Tie': 60, 'green': 192},  Winrate: 0.47
+Game 519, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 266, 'Tie': 60, 'green': 193},  Winrate: 0.47
+Game 520, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 267, 'Tie': 60, 'green': 193},  Winrate: 0.46
+Game 521, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 268, 'Tie': 60, 'green': 193},  Winrate: 0.46
+Game 522, Length: 237,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 269, 'Tie': 60, 'green': 193},  Winrate: 0.46
+Game 523, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 269, 'Tie': 60, 'green': 194},  Winrate: 0.46
+Game 524, Length: 306,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 269, 'Tie': 60, 'green': 195},  Winrate: 0.46
+Game 525, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 269, 'Tie': 60, 'green': 196},  Winrate: 0.46
+Game 526, Length: 500,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 269, 'Tie': 60, 'green': 197},  Winrate: 0.47
+Game 527, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 269, 'Tie': 61, 'green': 197},  Winrate: 0.47
+Game 528, Length: 133,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 270, 'Tie': 61, 'green': 197},  Winrate: 0.47
+Game 529, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 271, 'Tie': 61, 'green': 197},  Winrate: 0.47
+Game 530, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 272, 'Tie': 61, 'green': 197},  Winrate: 0.47
+Game 531, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 272, 'Tie': 62, 'green': 197},  Winrate: 0.46
+Game 532, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 273, 'Tie': 62, 'green': 197},  Winrate: 0.45
+Game 533, Length: 299,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 274, 'Tie': 62, 'green': 197},  Winrate: 0.45
+Game 534, Length: 281,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 274, 'Tie': 62, 'green': 198},  Winrate: 0.45
+Game 535, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 274, 'Tie': 62, 'green': 199},  Winrate: 0.46
+Game 536, Length: 182,      CurrentScore: {'red': 9, 'green': 3},      TotalScore: {'red': 275, 'Tie': 62, 'green': 199},  Winrate: 0.46
+Game 537, Length: 445,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 275, 'Tie': 62, 'green': 200},  Winrate: 0.46
+Game 538, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 276, 'Tie': 62, 'green': 200},  Winrate: 0.45
+Game 539, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 276, 'Tie': 63, 'green': 200},  Winrate: 0.45
+Game 540, Length: 303,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 276, 'Tie': 63, 'green': 201},  Winrate: 0.45
+Game 541, Length: 370,      CurrentScore: {'red': 9, 'green': 6},      TotalScore: {'red': 277, 'Tie': 63, 'green': 201},  Winrate: 0.45
+Game 542, Length: 501,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 277, 'Tie': 63, 'green': 202},  Winrate: 0.45
+Game 543, Length: 216,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 277, 'Tie': 63, 'green': 203},  Winrate: 0.45
+Game 544, Length: 332,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 278, 'Tie': 63, 'green': 203},  Winrate: 0.43
+Game 545, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 279, 'Tie': 63, 'green': 203},  Winrate: 0.43
+Game 546, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 279, 'Tie': 64, 'green': 203},  Winrate: 0.44
+Game 547, Length: 501,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 279, 'Tie': 64, 'green': 204},  Winrate: 0.44
+Game 548, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 279, 'Tie': 65, 'green': 204},  Winrate: 0.45
+Game 549, Length: 309,      CurrentScore: {'red': 10, 'green': 2},      TotalScore: {'red': 280, 'Tie': 65, 'green': 204},  Winrate: 0.45
+Game 550, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 280, 'Tie': 66, 'green': 204},  Winrate: 0.45
+Game 551, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 281, 'Tie': 66, 'green': 204},  Winrate: 0.45
+Game 552, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 281, 'Tie': 67, 'green': 204},  Winrate: 0.46
+Game 553, Length: 121,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 281, 'Tie': 67, 'green': 205},  Winrate: 0.46
+Game 554, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 282, 'Tie': 67, 'green': 205},  Winrate: 0.45
+Game 555, Length: 408,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 283, 'Tie': 67, 'green': 205},  Winrate: 0.43
+Game 556, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 284, 'Tie': 67, 'green': 205},  Winrate: 0.42
+Game 557, Length: 501,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 284, 'Tie': 67, 'green': 206},  Winrate: 0.43
+Game 558, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 284, 'Tie': 68, 'green': 206},  Winrate: 0.44
+Game 559, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 284, 'Tie': 68, 'green': 207},  Winrate: 0.45
+Game 560, Length: 343,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 284, 'Tie': 68, 'green': 208},  Winrate: 0.46
+Game 561, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 284, 'Tie': 68, 'green': 209},  Winrate: 0.46
+Game 562, Length: 363,      CurrentScore: {'red': 2, 'green': 9},      TotalScore: {'red': 284, 'Tie': 68, 'green': 210},  Winrate: 0.47
+Game 563, Length: 501,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 284, 'Tie': 68, 'green': 211},  Winrate: 0.47
+Game 564, Length: 196,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 284, 'Tie': 68, 'green': 212},  Winrate: 0.47
+Game 565, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 284, 'Tie': 69, 'green': 212},  Winrate: 0.48
+Game 566, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 285, 'Tie': 69, 'green': 212},  Winrate: 0.48
+Game 567, Length: 501,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 285, 'Tie': 69, 'green': 213},  Winrate: 0.49
+Game 568, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 286, 'Tie': 69, 'green': 213},  Winrate: 0.49
+Game 569, Length: 501,      CurrentScore: {'red': 2, 'green': 3},      TotalScore: {'red': 286, 'Tie': 69, 'green': 214},  Winrate: 0.49
+Game 570, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 287, 'Tie': 69, 'green': 214},  Winrate: 0.49
+Game 571, Length: 220,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 288, 'Tie': 69, 'green': 214},  Winrate: 0.48
+Game 572, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 288, 'Tie': 70, 'green': 214},  Winrate: 0.48
+Game 573, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 288, 'Tie': 71, 'green': 214},  Winrate: 0.48
+Game 574, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 288, 'Tie': 72, 'green': 214},  Winrate: 0.49
+Game 575, Length: 349,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 289, 'Tie': 72, 'green': 214},  Winrate: 0.48
+Game 576, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 290, 'Tie': 72, 'green': 214},  Winrate: 0.47
+Game 577, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 290, 'Tie': 72, 'green': 215},  Winrate: 0.47
+Game 578, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 290, 'Tie': 72, 'green': 216},  Winrate: 0.47
+Game 579, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 290, 'Tie': 72, 'green': 217},  Winrate: 0.48
+Game 580, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 290, 'Tie': 73, 'green': 217},  Winrate: 0.48
+Game 581, Length: 359,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 291, 'Tie': 73, 'green': 217},  Winrate: 0.47
+Game 582, Length: 214,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 291, 'Tie': 73, 'green': 218},  Winrate: 0.47
+Game 583, Length: 501,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 292, 'Tie': 73, 'green': 218},  Winrate: 0.46
+Game 584, Length: 309,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 292, 'Tie': 73, 'green': 219},  Winrate: 0.47
+Game 585, Length: 500,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 293, 'Tie': 73, 'green': 219},  Winrate: 0.47
+Game 586, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 294, 'Tie': 73, 'green': 219},  Winrate: 0.46
+Game 587, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 294, 'Tie': 73, 'green': 220},  Winrate: 0.47
+Game 588, Length: 234,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 294, 'Tie': 73, 'green': 221},  Winrate: 0.47
+Game 589, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 294, 'Tie': 73, 'green': 222},  Winrate: 0.48
+Game 590, Length: 363,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 295, 'Tie': 73, 'green': 222},  Winrate: 0.48
+Game 591, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 295, 'Tie': 73, 'green': 223},  Winrate: 0.48
+Game 592, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 295, 'Tie': 74, 'green': 223},  Winrate: 0.49
+Game 593, Length: 150,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 296, 'Tie': 74, 'green': 223},  Winrate: 0.48
+Game 594, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 297, 'Tie': 74, 'green': 223},  Winrate: 0.48
+Game 595, Length: 358,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 297, 'Tie': 74, 'green': 224},  Winrate: 0.48
+Game 596, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 298, 'Tie': 74, 'green': 224},  Winrate: 0.48
+Game 597, Length: 443,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 299, 'Tie': 74, 'green': 224},  Winrate: 0.48
+Game 598, Length: 253,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 299, 'Tie': 74, 'green': 225},  Winrate: 0.49
+Game 599, Length: 501,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 299, 'Tie': 74, 'green': 226},  Winrate: 0.51
+Game 600, Length: 501,      CurrentScore: {'red': 5, 'green': 4},      TotalScore: {'red': 300, 'Tie': 74, 'green': 226},  Winrate: 0.51
+Game 601, Length: 501,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 300, 'Tie': 74, 'green': 227},  Winrate: 0.52
+Game 602, Length: 129,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 300, 'Tie': 74, 'green': 228},  Winrate: 0.52
+Game 603, Length: 146,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 301, 'Tie': 74, 'green': 228},  Winrate: 0.52
+Game 604, Length: 291,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 302, 'Tie': 74, 'green': 228},  Winrate: 0.51
+Game 605, Length: 166,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 303, 'Tie': 74, 'green': 228},  Winrate: 0.51
+Game 606, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 303, 'Tie': 74, 'green': 229},  Winrate: 0.52
+Game 607, Length: 501,      CurrentScore: {'red': 4, 'green': 6},      TotalScore: {'red': 303, 'Tie': 74, 'green': 230},  Winrate: 0.53
+Game 608, Length: 269,      CurrentScore: {'red': 2, 'green': 9},      TotalScore: {'red': 303, 'Tie': 74, 'green': 231},  Winrate: 0.53
+Game 609, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 304, 'Tie': 74, 'green': 231},  Winrate: 0.52
+Game 610, Length: 179,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 304, 'Tie': 74, 'green': 232},  Winrate: 0.52
+Game 611, Length: 169,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 304, 'Tie': 74, 'green': 233},  Winrate: 0.52
+Game 612, Length: 370,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 304, 'Tie': 74, 'green': 234},  Winrate: 0.52
+Game 613, Length: 229,      CurrentScore: {'red': 0, 'green': 10},      TotalScore: {'red': 304, 'Tie': 74, 'green': 235},  Winrate: 0.53
+Game 614, Length: 501,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 304, 'Tie': 74, 'green': 236},  Winrate: 0.53
+Game 615, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 304, 'Tie': 75, 'green': 236},  Winrate: 0.54
+Game 616, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 305, 'Tie': 75, 'green': 236},  Winrate: 0.53
+Game 617, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 306, 'Tie': 75, 'green': 236},  Winrate: 0.52
+Game 618, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 306, 'Tie': 75, 'green': 237},  Winrate: 0.53
+Game 619, Length: 212,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 306, 'Tie': 75, 'green': 238},  Winrate: 0.53
+Game 620, Length: 458,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 307, 'Tie': 75, 'green': 238},  Winrate: 0.53
+Game 621, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 307, 'Tie': 76, 'green': 238},  Winrate: 0.53
+Game 622, Length: 223,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 307, 'Tie': 76, 'green': 239},  Winrate: 0.54
+Game 623, Length: 389,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 308, 'Tie': 76, 'green': 239},  Winrate: 0.53
+Game 624, Length: 500,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 308, 'Tie': 76, 'green': 240},  Winrate: 0.53
+Game 625, Length: 280,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 309, 'Tie': 76, 'green': 240},  Winrate: 0.52
+Game 626, Length: 194,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 309, 'Tie': 76, 'green': 241},  Winrate: 0.52
+Game 627, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 309, 'Tie': 76, 'green': 242},  Winrate: 0.53
+Game 628, Length: 140,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 309, 'Tie': 76, 'green': 243},  Winrate: 0.54
+Game 629, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 309, 'Tie': 77, 'green': 243},  Winrate: 0.54
+Game 630, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 309, 'Tie': 78, 'green': 243},  Winrate: 0.55
+Game 631, Length: 357,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 310, 'Tie': 78, 'green': 243},  Winrate: 0.54
+Game 632, Length: 371,      CurrentScore: {'red': 8, 'green': 3},      TotalScore: {'red': 311, 'Tie': 78, 'green': 243},  Winrate: 0.54
+Game 633, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 312, 'Tie': 78, 'green': 243},  Winrate: 0.54
+Game 634, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 312, 'Tie': 79, 'green': 243},  Winrate: 0.54
+Game 635, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 312, 'Tie': 80, 'green': 243},  Winrate: 0.53
+Game 636, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 312, 'Tie': 80, 'green': 244},  Winrate: 0.54
+Game 637, Length: 500,      CurrentScore: {'red': 3, 'green': 3},      TotalScore: {'red': 312, 'Tie': 81, 'green': 244},  Winrate: 0.54
+Game 638, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 313, 'Tie': 81, 'green': 244},  Winrate: 0.54
+Game 639, Length: 271,      CurrentScore: {'red': 9, 'green': 1},      TotalScore: {'red': 314, 'Tie': 81, 'green': 244},  Winrate: 0.53
+Game 640, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 315, 'Tie': 81, 'green': 244},  Winrate: 0.52
+Game 641, Length: 501,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 316, 'Tie': 81, 'green': 244},  Winrate: 0.52
+Game 642, Length: 467,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 317, 'Tie': 81, 'green': 244},  Winrate: 0.51
+Game 643, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 317, 'Tie': 82, 'green': 244},  Winrate: 0.51
+Game 644, Length: 205,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 317, 'Tie': 82, 'green': 245},  Winrate: 0.52
+Game 645, Length: 490,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 318, 'Tie': 82, 'green': 245},  Winrate: 0.52
+Game 646, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 319, 'Tie': 82, 'green': 245},  Winrate: 0.51
+Game 647, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 320, 'Tie': 82, 'green': 245},  Winrate: 0.5
+Game 648, Length: 500,      CurrentScore: {'red': 3, 'green': 1},      TotalScore: {'red': 321, 'Tie': 82, 'green': 245},  Winrate: 0.49
+Game 649, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 321, 'Tie': 82, 'green': 246},  Winrate: 0.51
+Game 650, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 321, 'Tie': 82, 'green': 247},  Winrate: 0.51
+Game 651, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 321, 'Tie': 83, 'green': 247},  Winrate: 0.52
+Game 652, Length: 376,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 322, 'Tie': 83, 'green': 247},  Winrate: 0.51
+Game 653, Length: 248,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 322, 'Tie': 83, 'green': 248},  Winrate: 0.51
+Game 654, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 322, 'Tie': 83, 'green': 249},  Winrate: 0.52
+Game 655, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 322, 'Tie': 83, 'green': 250},  Winrate: 0.53
+Game 656, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 322, 'Tie': 83, 'green': 251},  Winrate: 0.54
+Game 657, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 322, 'Tie': 83, 'green': 252},  Winrate: 0.54
+Game 658, Length: 450,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 323, 'Tie': 83, 'green': 252},  Winrate: 0.54
+Game 659, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 323, 'Tie': 84, 'green': 252},  Winrate: 0.53
+Game 660, Length: 501,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 323, 'Tie': 84, 'green': 253},  Winrate: 0.53
+Game 661, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 323, 'Tie': 84, 'green': 254},  Winrate: 0.53
+Game 662, Length: 329,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 324, 'Tie': 84, 'green': 254},  Winrate: 0.52
+Game 663, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 324, 'Tie': 84, 'green': 255},  Winrate: 0.52
+Game 664, Length: 296,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 325, 'Tie': 84, 'green': 255},  Winrate: 0.51
+Game 665, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 326, 'Tie': 84, 'green': 255},  Winrate: 0.51
+Game 666, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 327, 'Tie': 84, 'green': 255},  Winrate: 0.51
+Game 667, Length: 376,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 327, 'Tie': 84, 'green': 256},  Winrate: 0.51
+Game 668, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 327, 'Tie': 85, 'green': 256},  Winrate: 0.51
+Game 669, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 328, 'Tie': 85, 'green': 256},  Winrate: 0.5
+Game 670, Length: 470,      CurrentScore: {'red': 10, 'green': 2},      TotalScore: {'red': 329, 'Tie': 85, 'green': 256},  Winrate: 0.5
+Game 671, Length: 283,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 329, 'Tie': 85, 'green': 257},  Winrate: 0.51
+Game 672, Length: 449,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 330, 'Tie': 85, 'green': 257},  Winrate: 0.51
+Game 673, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 331, 'Tie': 85, 'green': 257},  Winrate: 0.5
+Game 674, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 331, 'Tie': 85, 'green': 258},  Winrate: 0.51
+Game 675, Length: 391,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 331, 'Tie': 85, 'green': 259},  Winrate: 0.52
+Game 676, Length: 241,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 331, 'Tie': 85, 'green': 260},  Winrate: 0.53
+Game 677, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 331, 'Tie': 86, 'green': 260},  Winrate: 0.52
+Game 678, Length: 501,      CurrentScore: {'red': 3, 'green': 6},      TotalScore: {'red': 331, 'Tie': 86, 'green': 261},  Winrate: 0.52
+Game 679, Length: 279,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 332, 'Tie': 86, 'green': 261},  Winrate: 0.51
+Game 680, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 333, 'Tie': 86, 'green': 261},  Winrate: 0.51
+Game 681, Length: 187,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 333, 'Tie': 86, 'green': 262},  Winrate: 0.52
+Game 682, Length: 500,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 334, 'Tie': 86, 'green': 262},  Winrate: 0.51
+Game 683, Length: 176,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 334, 'Tie': 86, 'green': 263},  Winrate: 0.52
+Game 684, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 335, 'Tie': 86, 'green': 263},  Winrate: 0.51
+Game 685, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 335, 'Tie': 87, 'green': 263},  Winrate: 0.51
+Game 686, Length: 389,      CurrentScore: {'red': 9, 'green': 5},      TotalScore: {'red': 336, 'Tie': 87, 'green': 263},  Winrate: 0.51
+Game 687, Length: 245,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 336, 'Tie': 87, 'green': 264},  Winrate: 0.51
+Game 688, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 336, 'Tie': 88, 'green': 264},  Winrate: 0.51
+Game 689, Length: 434,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 336, 'Tie': 88, 'green': 265},  Winrate: 0.51
+Game 690, Length: 254,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 336, 'Tie': 88, 'green': 266},  Winrate: 0.52
+Game 691, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 336, 'Tie': 88, 'green': 267},  Winrate: 0.52
+Game 692, Length: 501,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 336, 'Tie': 89, 'green': 267},  Winrate: 0.52
+Game 693, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 337, 'Tie': 89, 'green': 267},  Winrate: 0.52
+Game 694, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 337, 'Tie': 89, 'green': 268},  Winrate: 0.53
+Game 695, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 337, 'Tie': 90, 'green': 268},  Winrate: 0.52
+Game 696, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 337, 'Tie': 91, 'green': 268},  Winrate: 0.53
+Game 697, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 337, 'Tie': 91, 'green': 269},  Winrate: 0.54
+Game 698, Length: 156,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 338, 'Tie': 91, 'green': 269},  Winrate: 0.53
+Game 699, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 338, 'Tie': 91, 'green': 270},  Winrate: 0.53
+Game 700, Length: 500,      CurrentScore: {'red': 6, 'green': 3},      TotalScore: {'red': 339, 'Tie': 91, 'green': 270},  Winrate: 0.53
+Game 701, Length: 493,      CurrentScore: {'red': 10, 'green': 2},      TotalScore: {'red': 340, 'Tie': 91, 'green': 270},  Winrate: 0.52
+Game 702, Length: 361,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 340, 'Tie': 91, 'green': 271},  Winrate: 0.52
+Game 703, Length: 344,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 341, 'Tie': 91, 'green': 271},  Winrate: 0.52
+Game 704, Length: 500,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 341, 'Tie': 91, 'green': 272},  Winrate: 0.53
+Game 705, Length: 501,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 342, 'Tie': 91, 'green': 272},  Winrate: 0.53
+Game 706, Length: 257,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 342, 'Tie': 91, 'green': 273},  Winrate: 0.53
+Game 707, Length: 501,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 342, 'Tie': 91, 'green': 274},  Winrate: 0.53
+Game 708, Length: 295,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 343, 'Tie': 91, 'green': 274},  Winrate: 0.52
+Game 709, Length: 365,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 344, 'Tie': 91, 'green': 274},  Winrate: 0.52
+Game 710, Length: 195,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 345, 'Tie': 91, 'green': 274},  Winrate: 0.51
+Game 711, Length: 265,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 345, 'Tie': 91, 'green': 275},  Winrate: 0.51
+Game 712, Length: 236,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 346, 'Tie': 91, 'green': 275},  Winrate: 0.49
+Game 713, Length: 388,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 347, 'Tie': 91, 'green': 275},  Winrate: 0.48
+Game 714, Length: 345,      CurrentScore: {'red': 4, 'green': 10},      TotalScore: {'red': 347, 'Tie': 91, 'green': 276},  Winrate: 0.48
+Game 715, Length: 501,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 348, 'Tie': 91, 'green': 276},  Winrate: 0.48
+Game 716, Length: 500,      CurrentScore: {'red': 6, 'green': 3},      TotalScore: {'red': 349, 'Tie': 91, 'green': 276},  Winrate: 0.48
+Game 717, Length: 215,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 349, 'Tie': 91, 'green': 277},  Winrate: 0.49
+Game 718, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 349, 'Tie': 91, 'green': 278},  Winrate: 0.49
+Game 719, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 350, 'Tie': 91, 'green': 278},  Winrate: 0.48
+Game 720, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 351, 'Tie': 91, 'green': 278},  Winrate: 0.48
+Game 721, Length: 402,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 352, 'Tie': 91, 'green': 278},  Winrate: 0.47
+Game 722, Length: 219,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 352, 'Tie': 91, 'green': 279},  Winrate: 0.47
+Game 723, Length: 366,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 353, 'Tie': 91, 'green': 279},  Winrate: 0.47
+Game 724, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 353, 'Tie': 91, 'green': 280},  Winrate: 0.47
+Game 725, Length: 431,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 354, 'Tie': 91, 'green': 280},  Winrate: 0.47
+Game 726, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 354, 'Tie': 91, 'green': 281},  Winrate: 0.47
+Game 727, Length: 290,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 355, 'Tie': 91, 'green': 281},  Winrate: 0.47
+Game 728, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 356, 'Tie': 91, 'green': 281},  Winrate: 0.46
+Game 729, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 357, 'Tie': 91, 'green': 281},  Winrate: 0.45
+Game 730, Length: 484,      CurrentScore: {'red': 9, 'green': 2},      TotalScore: {'red': 358, 'Tie': 91, 'green': 281},  Winrate: 0.45
+Game 731, Length: 501,      CurrentScore: {'red': 5, 'green': 3},      TotalScore: {'red': 359, 'Tie': 91, 'green': 281},  Winrate: 0.45
+Game 732, Length: 267,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 359, 'Tie': 91, 'green': 282},  Winrate: 0.46
+Game 733, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 360, 'Tie': 91, 'green': 282},  Winrate: 0.46
+Game 734, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 361, 'Tie': 91, 'green': 282},  Winrate: 0.45
+Game 735, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 361, 'Tie': 91, 'green': 283},  Winrate: 0.46
+Game 736, Length: 212,      CurrentScore: {'red': 9, 'green': 1},      TotalScore: {'red': 362, 'Tie': 91, 'green': 283},  Winrate: 0.45
+Game 737, Length: 266,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 363, 'Tie': 91, 'green': 283},  Winrate: 0.44
+Game 738, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 363, 'Tie': 92, 'green': 283},  Winrate: 0.45
+Game 739, Length: 462,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 364, 'Tie': 92, 'green': 283},  Winrate: 0.45
+Game 740, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 364, 'Tie': 93, 'green': 283},  Winrate: 0.45
+Game 741, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 365, 'Tie': 93, 'green': 283},  Winrate: 0.45
+Game 742, Length: 257,      CurrentScore: {'red': 10, 'green': 4},      TotalScore: {'red': 366, 'Tie': 93, 'green': 283},  Winrate: 0.45
+Game 743, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 367, 'Tie': 93, 'green': 283},  Winrate: 0.45
+Game 744, Length: 276,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 368, 'Tie': 93, 'green': 283},  Winrate: 0.43
+Game 745, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 369, 'Tie': 93, 'green': 283},  Winrate: 0.43
+Game 746, Length: 501,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 369, 'Tie': 93, 'green': 284},  Winrate: 0.45
+Game 747, Length: 139,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 369, 'Tie': 93, 'green': 285},  Winrate: 0.46
+Game 748, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 370, 'Tie': 93, 'green': 285},  Winrate: 0.46
+Game 749, Length: 360,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 371, 'Tie': 93, 'green': 285},  Winrate: 0.45
+Game 750, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 372, 'Tie': 93, 'green': 285},  Winrate: 0.43
+Game 751, Length: 298,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 372, 'Tie': 93, 'green': 286},  Winrate: 0.44
+Game 752, Length: 181,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 372, 'Tie': 93, 'green': 287},  Winrate: 0.45
+Game 753, Length: 247,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 372, 'Tie': 93, 'green': 288},  Winrate: 0.45
+Game 754, Length: 340,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 372, 'Tie': 93, 'green': 289},  Winrate: 0.45
+Game 755, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 372, 'Tie': 93, 'green': 290},  Winrate: 0.45
+Game 756, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 372, 'Tie': 93, 'green': 291},  Winrate: 0.45
+Game 757, Length: 302,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 372, 'Tie': 93, 'green': 292},  Winrate: 0.45
+Game 758, Length: 194,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 373, 'Tie': 93, 'green': 292},  Winrate: 0.45
+Game 759, Length: 130,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 374, 'Tie': 93, 'green': 292},  Winrate: 0.45
+Game 760, Length: 393,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 375, 'Tie': 93, 'green': 292},  Winrate: 0.43
+Game 761, Length: 462,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 376, 'Tie': 93, 'green': 292},  Winrate: 0.42
+Game 762, Length: 501,      CurrentScore: {'red': 3, 'green': 4},      TotalScore: {'red': 376, 'Tie': 93, 'green': 293},  Winrate: 0.43
+Game 763, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 377, 'Tie': 93, 'green': 293},  Winrate: 0.42
+Game 764, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 378, 'Tie': 93, 'green': 293},  Winrate: 0.42
+Game 765, Length: 381,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 378, 'Tie': 93, 'green': 294},  Winrate: 0.43
+Game 766, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 378, 'Tie': 94, 'green': 294},  Winrate: 0.44
+Game 767, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 378, 'Tie': 94, 'green': 295},  Winrate: 0.44
+Game 768, Length: 273,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 378, 'Tie': 94, 'green': 296},  Winrate: 0.45
+Game 769, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 378, 'Tie': 94, 'green': 297},  Winrate: 0.46
+Game 770, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 379, 'Tie': 94, 'green': 297},  Winrate: 0.46
+Game 771, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 379, 'Tie': 94, 'green': 298},  Winrate: 0.46
+Game 772, Length: 281,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 379, 'Tie': 94, 'green': 299},  Winrate: 0.47
+Game 773, Length: 233,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 379, 'Tie': 94, 'green': 300},  Winrate: 0.47
+Game 774, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 380, 'Tie': 94, 'green': 300},  Winrate: 0.47
+Game 775, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 380, 'Tie': 94, 'green': 301},  Winrate: 0.47
+Game 776, Length: 501,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 380, 'Tie': 94, 'green': 302},  Winrate: 0.47
+Game 777, Length: 501,      CurrentScore: {'red': 3, 'green': 4},      TotalScore: {'red': 380, 'Tie': 94, 'green': 303},  Winrate: 0.47
+Game 778, Length: 286,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 381, 'Tie': 94, 'green': 303},  Winrate: 0.46
+Game 779, Length: 500,      CurrentScore: {'red': 5, 'green': 3},      TotalScore: {'red': 382, 'Tie': 94, 'green': 303},  Winrate: 0.46
+Game 780, Length: 230,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 382, 'Tie': 94, 'green': 304},  Winrate: 0.47
+Game 781, Length: 501,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 382, 'Tie': 95, 'green': 304},  Winrate: 0.47
+Game 782, Length: 271,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 382, 'Tie': 95, 'green': 305},  Winrate: 0.47
+Game 783, Length: 501,      CurrentScore: {'red': 6, 'green': 4},      TotalScore: {'red': 383, 'Tie': 95, 'green': 305},  Winrate: 0.47
+Game 784, Length: 500,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 383, 'Tie': 95, 'green': 306},  Winrate: 0.47
+Game 785, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 384, 'Tie': 95, 'green': 306},  Winrate: 0.47
+Game 786, Length: 500,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 385, 'Tie': 95, 'green': 306},  Winrate: 0.47
+Game 787, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 386, 'Tie': 95, 'green': 306},  Winrate: 0.46
+Game 788, Length: 337,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 387, 'Tie': 95, 'green': 306},  Winrate: 0.46
+Game 789, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 387, 'Tie': 96, 'green': 306},  Winrate: 0.45
+Game 790, Length: 362,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 387, 'Tie': 96, 'green': 307},  Winrate: 0.45
+Game 791, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 387, 'Tie': 96, 'green': 308},  Winrate: 0.45
+Game 792, Length: 447,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 388, 'Tie': 96, 'green': 308},  Winrate: 0.45
+Game 793, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 389, 'Tie': 96, 'green': 308},  Winrate: 0.45
+Game 794, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 390, 'Tie': 96, 'green': 308},  Winrate: 0.43
+Game 795, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 391, 'Tie': 96, 'green': 308},  Winrate: 0.43
+Game 796, Length: 327,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 392, 'Tie': 96, 'green': 308},  Winrate: 0.42
+Game 797, Length: 308,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 393, 'Tie': 96, 'green': 308},  Winrate: 0.41
+Game 798, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 393, 'Tie': 96, 'green': 309},  Winrate: 0.42
+Game 799, Length: 347,      CurrentScore: {'red': 8, 'green': 3},      TotalScore: {'red': 394, 'Tie': 96, 'green': 309},  Winrate: 0.41
+Game 800, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 395, 'Tie': 96, 'green': 309},  Winrate: 0.41
+Game 801, Length: 229,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 395, 'Tie': 96, 'green': 310},  Winrate: 0.42
+Game 802, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 396, 'Tie': 96, 'green': 310},  Winrate: 0.41
+Game 803, Length: 238,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 396, 'Tie': 96, 'green': 311},  Winrate: 0.42
+Game 804, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 397, 'Tie': 96, 'green': 311},  Winrate: 0.41
+Game 805, Length: 501,      CurrentScore: {'red': 5, 'green': 4},      TotalScore: {'red': 398, 'Tie': 96, 'green': 311},  Winrate: 0.41
+Game 806, Length: 313,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 399, 'Tie': 96, 'green': 311},  Winrate: 0.41
+Game 807, Length: 343,      CurrentScore: {'red': 2, 'green': 9},      TotalScore: {'red': 399, 'Tie': 96, 'green': 312},  Winrate: 0.41
+Game 808, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 400, 'Tie': 96, 'green': 312},  Winrate: 0.41
+Game 809, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 400, 'Tie': 97, 'green': 312},  Winrate: 0.41
+Game 810, Length: 322,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 400, 'Tie': 97, 'green': 313},  Winrate: 0.42
+Game 811, Length: 224,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 400, 'Tie': 97, 'green': 314},  Winrate: 0.42
+Game 812, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 401, 'Tie': 97, 'green': 314},  Winrate: 0.42
+Game 813, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 401, 'Tie': 97, 'green': 315},  Winrate: 0.43
+Game 814, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 402, 'Tie': 97, 'green': 315},  Winrate: 0.42
+Game 815, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 402, 'Tie': 98, 'green': 315},  Winrate: 0.42
+Game 816, Length: 500,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 403, 'Tie': 98, 'green': 315},  Winrate: 0.42
+Game 817, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 403, 'Tie': 99, 'green': 315},  Winrate: 0.42
+Game 818, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 404, 'Tie': 99, 'green': 315},  Winrate: 0.41
+Game 819, Length: 326,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 404, 'Tie': 99, 'green': 316},  Winrate: 0.42
+Game 820, Length: 123,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 404, 'Tie': 99, 'green': 317},  Winrate: 0.43
+Game 821, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 404, 'Tie': 99, 'green': 318},  Winrate: 0.44
+Game 822, Length: 501,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 404, 'Tie': 99, 'green': 319},  Winrate: 0.44
+Game 823, Length: 217,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 405, 'Tie': 99, 'green': 319},  Winrate: 0.44
+Game 824, Length: 501,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 405, 'Tie': 99, 'green': 320},  Winrate: 0.44
+Game 825, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 405, 'Tie': 99, 'green': 321},  Winrate: 0.45
+Game 826, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 405, 'Tie': 99, 'green': 322},  Winrate: 0.45
+Game 827, Length: 448,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 405, 'Tie': 99, 'green': 323},  Winrate: 0.46
+Game 828, Length: 501,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 405, 'Tie': 99, 'green': 324},  Winrate: 0.47
+Game 829, Length: 263,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 405, 'Tie': 99, 'green': 325},  Winrate: 0.48
+Game 830, Length: 501,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 405, 'Tie': 99, 'green': 326},  Winrate: 0.49
+Game 831, Length: 501,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 405, 'Tie': 99, 'green': 327},  Winrate: 0.5
+Game 832, Length: 501,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 405, 'Tie': 99, 'green': 328},  Winrate: 0.5
+Game 833, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 406, 'Tie': 99, 'green': 328},  Winrate: 0.5
+Game 834, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 406, 'Tie': 99, 'green': 329},  Winrate: 0.51
+Game 835, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 406, 'Tie': 99, 'green': 330},  Winrate: 0.51
+Game 836, Length: 500,      CurrentScore: {'red': 3, 'green': 6},      TotalScore: {'red': 406, 'Tie': 99, 'green': 331},  Winrate: 0.52
+Game 837, Length: 219,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 406, 'Tie': 99, 'green': 332},  Winrate: 0.53
+Game 838, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 406, 'Tie': 100, 'green': 332},  Winrate: 0.53
+Game 839, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 407, 'Tie': 100, 'green': 332},  Winrate: 0.53
+Game 840, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 407, 'Tie': 101, 'green': 332},  Winrate: 0.53
+Game 841, Length: 358,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 408, 'Tie': 101, 'green': 332},  Winrate: 0.53
+Game 842, Length: 260,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 408, 'Tie': 101, 'green': 333},  Winrate: 0.54
+Game 843, Length: 256,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 408, 'Tie': 101, 'green': 334},  Winrate: 0.55
+Game 844, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 408, 'Tie': 101, 'green': 335},  Winrate: 0.56
+Game 845, Length: 355,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 409, 'Tie': 101, 'green': 335},  Winrate: 0.56
+Game 846, Length: 301,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 409, 'Tie': 101, 'green': 336},  Winrate: 0.56
+Game 847, Length: 219,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 409, 'Tie': 101, 'green': 337},  Winrate: 0.56
+Game 848, Length: 188,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 410, 'Tie': 101, 'green': 337},  Winrate: 0.56
+Game 849, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 410, 'Tie': 102, 'green': 337},  Winrate: 0.56
+Game 850, Length: 501,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 410, 'Tie': 103, 'green': 337},  Winrate: 0.57
+Game 851, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 411, 'Tie': 103, 'green': 337},  Winrate: 0.56
+Game 852, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 411, 'Tie': 103, 'green': 338},  Winrate: 0.56
+Game 853, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 412, 'Tie': 103, 'green': 338},  Winrate: 0.55
+Game 854, Length: 395,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 413, 'Tie': 103, 'green': 338},  Winrate: 0.54
+Game 855, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 414, 'Tie': 103, 'green': 338},  Winrate: 0.53
+Game 856, Length: 168,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 414, 'Tie': 103, 'green': 339},  Winrate: 0.53
+Game 857, Length: 191,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 415, 'Tie': 103, 'green': 339},  Winrate: 0.52
+Game 858, Length: 500,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 416, 'Tie': 103, 'green': 339},  Winrate: 0.52
+Game 859, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 416, 'Tie': 103, 'green': 340},  Winrate: 0.53
+Game 860, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 416, 'Tie': 103, 'green': 341},  Winrate: 0.54
+Game 861, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 416, 'Tie': 104, 'green': 341},  Winrate: 0.55
+Game 862, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 417, 'Tie': 104, 'green': 341},  Winrate: 0.54
+Game 863, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 417, 'Tie': 105, 'green': 341},  Winrate: 0.54
+Game 864, Length: 359,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 418, 'Tie': 105, 'green': 341},  Winrate: 0.54
+Game 865, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 419, 'Tie': 105, 'green': 341},  Winrate: 0.53
+Game 866, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 419, 'Tie': 106, 'green': 341},  Winrate: 0.53
+Game 867, Length: 165,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 420, 'Tie': 106, 'green': 341},  Winrate: 0.52
+Game 868, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 421, 'Tie': 106, 'green': 341},  Winrate: 0.51
+Game 869, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 422, 'Tie': 106, 'green': 341},  Winrate: 0.5
+Game 870, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 423, 'Tie': 106, 'green': 341},  Winrate: 0.5
+Game 871, Length: 336,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 424, 'Tie': 106, 'green': 341},  Winrate: 0.49
+Game 872, Length: 123,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 424, 'Tie': 106, 'green': 342},  Winrate: 0.49
+Game 873, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 424, 'Tie': 106, 'green': 343},  Winrate: 0.49
+Game 874, Length: 321,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 425, 'Tie': 106, 'green': 343},  Winrate: 0.49
+Game 875, Length: 275,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 426, 'Tie': 106, 'green': 343},  Winrate: 0.48
+Game 876, Length: 492,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 427, 'Tie': 106, 'green': 343},  Winrate: 0.47
+Game 877, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 427, 'Tie': 106, 'green': 344},  Winrate: 0.47
+Game 878, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 428, 'Tie': 106, 'green': 344},  Winrate: 0.47
+Game 879, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 428, 'Tie': 106, 'green': 345},  Winrate: 0.48
+Game 880, Length: 273,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 428, 'Tie': 106, 'green': 346},  Winrate: 0.48
+Game 881, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 428, 'Tie': 107, 'green': 346},  Winrate: 0.48
+Game 882, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 429, 'Tie': 107, 'green': 346},  Winrate: 0.47
+Game 883, Length: 275,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 430, 'Tie': 107, 'green': 346},  Winrate: 0.47
+Game 884, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 430, 'Tie': 107, 'green': 347},  Winrate: 0.47
+Game 885, Length: 500,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 430, 'Tie': 107, 'green': 348},  Winrate: 0.48
+Game 886, Length: 257,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 431, 'Tie': 107, 'green': 348},  Winrate: 0.48
+Game 887, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 431, 'Tie': 108, 'green': 348},  Winrate: 0.48
+Game 888, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 431, 'Tie': 108, 'green': 349},  Winrate: 0.49
+Game 889, Length: 116,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 431, 'Tie': 108, 'green': 350},  Winrate: 0.5
+Game 890, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 431, 'Tie': 109, 'green': 350},  Winrate: 0.49
+Game 891, Length: 313,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 431, 'Tie': 109, 'green': 351},  Winrate: 0.49
+Game 892, Length: 393,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 431, 'Tie': 109, 'green': 352},  Winrate: 0.51
+Game 893, Length: 500,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 431, 'Tie': 109, 'green': 353},  Winrate: 0.52
+Game 894, Length: 252,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 431, 'Tie': 109, 'green': 354},  Winrate: 0.53
+Game 895, Length: 201,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 431, 'Tie': 109, 'green': 355},  Winrate: 0.54
+Game 896, Length: 329,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 431, 'Tie': 109, 'green': 356},  Winrate: 0.55
+Game 897, Length: 297,      CurrentScore: {'red': 9, 'green': 2},      TotalScore: {'red': 432, 'Tie': 109, 'green': 356},  Winrate: 0.55
+Game 898, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 433, 'Tie': 109, 'green': 356},  Winrate: 0.54
+Game 899, Length: 158,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 433, 'Tie': 109, 'green': 357},  Winrate: 0.55
+Game 900, Length: 501,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 433, 'Tie': 110, 'green': 357},  Winrate: 0.55
+Game 901, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 433, 'Tie': 110, 'green': 358},  Winrate: 0.55
+Game 902, Length: 500,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 433, 'Tie': 110, 'green': 359},  Winrate: 0.56
+Game 903, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 434, 'Tie': 110, 'green': 359},  Winrate: 0.55
+Game 904, Length: 244,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 434, 'Tie': 110, 'green': 360},  Winrate: 0.56
+Game 905, Length: 334,      CurrentScore: {'red': 9, 'green': 1},      TotalScore: {'red': 435, 'Tie': 110, 'green': 360},  Winrate: 0.56
+Game 906, Length: 412,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 436, 'Tie': 110, 'green': 360},  Winrate: 0.56
+Game 907, Length: 501,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 436, 'Tie': 110, 'green': 361},  Winrate: 0.56
+Game 908, Length: 150,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 437, 'Tie': 110, 'green': 361},  Winrate: 0.56
+Game 909, Length: 173,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 437, 'Tie': 110, 'green': 362},  Winrate: 0.56
+Game 910, Length: 501,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 437, 'Tie': 111, 'green': 362},  Winrate: 0.56
+Game 911, Length: 500,      CurrentScore: {'red': 6, 'green': 1},      TotalScore: {'red': 438, 'Tie': 111, 'green': 362},  Winrate: 0.55
+Game 912, Length: 292,      CurrentScore: {'red': 10, 'green': 4},      TotalScore: {'red': 439, 'Tie': 111, 'green': 362},  Winrate: 0.55
+Game 913, Length: 302,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 440, 'Tie': 111, 'green': 362},  Winrate: 0.54
+Game 914, Length: 501,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 440, 'Tie': 111, 'green': 363},  Winrate: 0.55
+Game 915, Length: 386,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 440, 'Tie': 111, 'green': 364},  Winrate: 0.56
+Game 916, Length: 153,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 440, 'Tie': 111, 'green': 365},  Winrate: 0.56
+Game 917, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 440, 'Tie': 111, 'green': 366},  Winrate: 0.57
+Game 918, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 440, 'Tie': 111, 'green': 367},  Winrate: 0.58
+Game 919, Length: 392,      CurrentScore: {'red': 8, 'green': 3},      TotalScore: {'red': 441, 'Tie': 111, 'green': 367},  Winrate: 0.57
+Game 920, Length: 136,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 441, 'Tie': 111, 'green': 368},  Winrate: 0.57
+Game 921, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 441, 'Tie': 111, 'green': 369},  Winrate: 0.57
+Game 922, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 442, 'Tie': 111, 'green': 369},  Winrate: 0.56
+Game 923, Length: 501,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 443, 'Tie': 111, 'green': 369},  Winrate: 0.56
+Game 924, Length: 500,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 443, 'Tie': 111, 'green': 370},  Winrate: 0.56
+Game 925, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 444, 'Tie': 111, 'green': 370},  Winrate: 0.55
+Game 926, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 445, 'Tie': 111, 'green': 370},  Winrate: 0.54
+Game 927, Length: 219,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 446, 'Tie': 111, 'green': 370},  Winrate: 0.53
+Game 928, Length: 171,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 446, 'Tie': 111, 'green': 371},  Winrate: 0.53
+Game 929, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 446, 'Tie': 112, 'green': 371},  Winrate: 0.53
+Game 930, Length: 204,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 446, 'Tie': 112, 'green': 372},  Winrate: 0.53
+Game 931, Length: 500,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 446, 'Tie': 112, 'green': 373},  Winrate: 0.53
+Game 932, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 446, 'Tie': 112, 'green': 374},  Winrate: 0.53
+Game 933, Length: 500,      CurrentScore: {'red': 3, 'green': 5},      TotalScore: {'red': 446, 'Tie': 112, 'green': 375},  Winrate: 0.54
+Game 934, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 446, 'Tie': 112, 'green': 376},  Winrate: 0.54
+Game 935, Length: 501,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 446, 'Tie': 112, 'green': 377},  Winrate: 0.54
+Game 936, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 446, 'Tie': 113, 'green': 377},  Winrate: 0.53
+Game 937, Length: 293,      CurrentScore: {'red': 8, 'green': 3},      TotalScore: {'red': 447, 'Tie': 113, 'green': 377},  Winrate: 0.52
+Game 938, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 447, 'Tie': 113, 'green': 378},  Winrate: 0.53
+Game 939, Length: 405,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 448, 'Tie': 113, 'green': 378},  Winrate: 0.53
+Game 940, Length: 175,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 448, 'Tie': 113, 'green': 379},  Winrate: 0.53
+Game 941, Length: 117,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 448, 'Tie': 113, 'green': 380},  Winrate: 0.54
+Game 942, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 448, 'Tie': 114, 'green': 380},  Winrate: 0.54
+Game 943, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 448, 'Tie': 114, 'green': 381},  Winrate: 0.54
+Game 944, Length: 501,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 449, 'Tie': 114, 'green': 381},  Winrate: 0.53
+Game 945, Length: 150,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 450, 'Tie': 114, 'green': 381},  Winrate: 0.53
+Game 946, Length: 279,      CurrentScore: {'red': 6, 'green': 8},      TotalScore: {'red': 450, 'Tie': 114, 'green': 382},  Winrate: 0.53
+Game 947, Length: 500,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 450, 'Tie': 114, 'green': 383},  Winrate: 0.53
+Game 948, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 450, 'Tie': 114, 'green': 384},  Winrate: 0.54
+Game 949, Length: 371,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 451, 'Tie': 114, 'green': 384},  Winrate: 0.53
+Game 950, Length: 158,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 452, 'Tie': 114, 'green': 384},  Winrate: 0.53
+Game 951, Length: 261,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 453, 'Tie': 114, 'green': 384},  Winrate: 0.53
+Game 952, Length: 501,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 454, 'Tie': 114, 'green': 384},  Winrate: 0.52
+Game 953, Length: 292,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 454, 'Tie': 114, 'green': 385},  Winrate: 0.53
+Game 954, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 454, 'Tie': 114, 'green': 386},  Winrate: 0.54
+Game 955, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 455, 'Tie': 114, 'green': 386},  Winrate: 0.54
+Game 956, Length: 501,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 456, 'Tie': 114, 'green': 386},  Winrate: 0.53
+Game 957, Length: 501,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 457, 'Tie': 114, 'green': 386},  Winrate: 0.53
+Game 958, Length: 501,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 457, 'Tie': 114, 'green': 387},  Winrate: 0.54
+Game 959, Length: 410,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 457, 'Tie': 114, 'green': 388},  Winrate: 0.54
+Game 960, Length: 215,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 457, 'Tie': 114, 'green': 389},  Winrate: 0.54
+Game 961, Length: 501,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 458, 'Tie': 114, 'green': 389},  Winrate: 0.53
+Game 962, Length: 292,      CurrentScore: {'red': 2, 'green': 10},      TotalScore: {'red': 458, 'Tie': 114, 'green': 390},  Winrate: 0.54
+Game 963, Length: 215,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 459, 'Tie': 114, 'green': 390},  Winrate: 0.54
+Game 964, Length: 271,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 460, 'Tie': 114, 'green': 390},  Winrate: 0.54
+Game 965, Length: 275,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 461, 'Tie': 114, 'green': 390},  Winrate: 0.54
+Game 966, Length: 346,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 462, 'Tie': 114, 'green': 390},  Winrate: 0.53
+Game 967, Length: 269,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 463, 'Tie': 114, 'green': 390},  Winrate: 0.53
+Game 968, Length: 337,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 463, 'Tie': 114, 'green': 391},  Winrate: 0.54
+Game 969, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 463, 'Tie': 114, 'green': 392},  Winrate: 0.55
+Game 970, Length: 492,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 464, 'Tie': 114, 'green': 392},  Winrate: 0.55
+Game 971, Length: 501,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 465, 'Tie': 114, 'green': 392},  Winrate: 0.55
+Game 972, Length: 500,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 465, 'Tie': 115, 'green': 392},  Winrate: 0.55
+Game 973, Length: 501,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 465, 'Tie': 115, 'green': 393},  Winrate: 0.55
+Game 974, Length: 232,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 466, 'Tie': 115, 'green': 393},  Winrate: 0.55
+Game 975, Length: 210,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 467, 'Tie': 115, 'green': 393},  Winrate: 0.55
+Game 976, Length: 500,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 468, 'Tie': 115, 'green': 393},  Winrate: 0.55
+Game 977, Length: 311,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 469, 'Tie': 115, 'green': 393},  Winrate: 0.54
+Game 978, Length: 333,      CurrentScore: {'red': 9, 'green': 0},      TotalScore: {'red': 470, 'Tie': 115, 'green': 393},  Winrate: 0.54
+Game 979, Length: 355,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 471, 'Tie': 115, 'green': 393},  Winrate: 0.53
+Game 980, Length: 501,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 471, 'Tie': 116, 'green': 393},  Winrate: 0.52
+Game 981, Length: 145,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 472, 'Tie': 116, 'green': 393},  Winrate: 0.52
+Game 982, Length: 501,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 473, 'Tie': 116, 'green': 393},  Winrate: 0.52
+Game 983, Length: 485,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 474, 'Tie': 116, 'green': 393},  Winrate: 0.52
+Game 984, Length: 500,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 474, 'Tie': 116, 'green': 394},  Winrate: 0.52
+Game 985, Length: 364,      CurrentScore: {'red': 9, 'green': 6},      TotalScore: {'red': 475, 'Tie': 116, 'green': 394},  Winrate: 0.51
+Game 986, Length: 485,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 476, 'Tie': 116, 'green': 394},  Winrate: 0.51
+Game 987, Length: 426,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 477, 'Tie': 116, 'green': 394},  Winrate: 0.5
+Game 988, Length: 501,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 477, 'Tie': 116, 'green': 395},  Winrate: 0.5
+Game 989, Length: 419,      CurrentScore: {'red': 10, 'green': 4},      TotalScore: {'red': 478, 'Tie': 116, 'green': 395},  Winrate: 0.49
+Game 990, Length: 188,      CurrentScore: {'red': 1, 'green': 10},      TotalScore: {'red': 478, 'Tie': 116, 'green': 396},  Winrate: 0.49
+Game 991, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 478, 'Tie': 116, 'green': 397},  Winrate: 0.49
+Game 992, Length: 166,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 478, 'Tie': 116, 'green': 398},  Winrate: 0.49
+Game 993, Length: 447,      CurrentScore: {'red': 10, 'green': 0},      TotalScore: {'red': 479, 'Tie': 116, 'green': 398},  Winrate: 0.48
+Game 994, Length: 500,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 479, 'Tie': 116, 'green': 399},  Winrate: 0.48
+Game 995, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 479, 'Tie': 116, 'green': 400},  Winrate: 0.48
+Game 996, Length: 500,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 480, 'Tie': 116, 'green': 400},  Winrate: 0.47
+Game 997, Length: 377,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 480, 'Tie': 116, 'green': 401},  Winrate: 0.48
+Game 998, Length: 432,      CurrentScore: {'red': 9, 'green': 3},      TotalScore: {'red': 481, 'Tie': 116, 'green': 401},  Winrate: 0.48
+Game 999, Length: 500,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 481, 'Tie': 116, 'green': 402},  Winrate: 0.48
+Game 1000, Length: 331,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 481, 'Tie': 116, 'green': 403},  Winrate: 0.49
+[ 7.21508835e-01  8.00109748e-01  6.92047995e-01  1.71592146e-01
+  4.19077196e-01  3.80235311e-01  5.36450724e-01  5.36206231e-01
+  7.14037883e-01  5.40252963e-01  1.32465964e-01  3.71563772e-01
+  2.50407191e-01  5.78418969e-01  2.58072604e-01  3.99228439e-01
+  3.15170053e-01  6.63731242e-01  8.57947698e-01  8.05244069e-01
+  3.76884684e-01  3.75500158e-01  1.96631241e-01  2.64263491e-02
+ -5.41221122e-02  1.42801864e-01  6.78188935e-01  4.61651393e-01
+  4.41021083e-01  2.84987769e-01 -3.31680229e-01  1.62976781e-01
+ -3.10141295e-02 -7.51734568e-02  4.31802075e-01  3.28799523e-01
+  8.14288262e-01  3.20339720e-01  3.11958273e-01  3.72928573e-01
+  4.91925128e-01  2.40716714e-01 -1.24495637e-01  4.23770902e-01
+  1.26568763e-01  9.84517181e-01  3.59312447e-01  4.90107133e-01
+  6.03801268e-01  3.39103764e-02  3.18801442e-01  4.58388913e-01
+ -5.36650057e-02  3.03217910e-01  6.32212153e-01  1.43439082e-01
+  5.87631114e-01  9.24592661e-02  6.98297750e-01  4.04252397e-01
+  1.96938806e-01  1.45706896e-01  8.73109727e-01  5.35341160e-01
+  7.61104575e-02  1.69981003e-01  1.89368800e-02  7.95312970e-01
+  2.02348678e-01  1.76619049e-01  8.49051068e-01  1.93731009e-01
+  6.25780214e-01  4.15951763e-01  4.88734570e-01 -1.36911216e-01
+ -8.54112150e-02 -2.81899941e-02 -3.05742338e-02  3.91870027e-01
+  3.68975363e-01  1.12013809e-01  4.37301760e-01  8.40729845e-01
+  1.15718070e-01 -1.45942517e-02  3.09046178e-01 -1.06425358e-01
+  6.11934645e-02  3.66409507e-01  1.66061705e-01  1.69782814e-02
+  8.11392317e-01  2.22149771e-02  4.72102998e-01  2.32365087e-01
+  5.88338492e-01  3.04909124e-01  6.32356187e-01  4.53483747e-01
+  4.17723053e-01 -2.13892004e-02  3.92132059e-01 -6.97711987e-02
+ -9.99784467e-02  1.26846062e-02  5.09546696e-01  3.66853183e-01
+  8.37054014e-01  3.84001446e-01  7.31690881e-01  2.87223639e-02
+ -3.12001165e-02  2.91945782e-01  3.80116832e-01  6.38789224e-01
+  4.29416390e-01  2.95068549e-02  5.30409741e-01  9.39918100e-02
+  1.15557157e-01  5.06694772e-02 -7.65646593e-02 -1.50839437e-01
+  5.45208127e-01  6.61258063e-01 -8.22672238e-03  4.27875961e-01
+  1.18926782e-01  6.61284332e-01  4.15479698e-01  4.26586271e-01
+ -2.31967523e-01 -2.63650413e-02  3.20714553e-01  6.90643199e-01
+  2.93718335e-02  9.09075018e-01  5.50129839e-02  5.04389438e-01
+  5.95696708e-01  4.13046552e-01  6.34378671e-02 -4.17760558e-02
+  4.99538031e-01  1.27483324e-01 -9.75496661e-02  3.35964604e-01
+  1.55264089e-01  5.40905738e-01  3.41222420e-01  5.04663462e-01
+  4.71746139e-01  1.35312545e-01  6.13837451e-01  2.73648194e-01
+  5.43251284e-01  3.24410667e-01  7.16270622e-01  1.27297566e-01
+  4.33819281e-01  6.93006783e-01  8.14068278e-01  2.09854213e-01
+  1.58846606e-01  3.29636104e-01 -6.16011200e-02 -4.01960850e-02
+  6.68708988e-02  1.42914336e-01  7.59403047e-01  2.82559490e-01
+  8.37394004e-01  6.95708146e-01  4.58096375e-01  5.74180018e-01
+  3.62667509e-01 -3.85325949e-01 -9.96371865e-02 -3.71214200e-01
+  8.04957735e-01  5.11354825e-01  2.67371317e-01  3.85614041e-02
+  3.45649954e-01 -1.60591494e-01  6.33036017e-01  3.48033605e-01
+  3.12393217e-01  1.91363598e-01  8.92604235e-02  5.85058425e-01
+  2.52887740e-01  3.96005822e-01  9.16207271e-02  4.45226274e-02
+  3.95127914e-01  5.91053359e-01  8.27436840e-01  8.49495235e-01
+  3.42270641e-01  3.19104472e-01  7.35036816e-01  7.12673908e-01
+  6.35170234e-01  8.78120445e-01  6.02629544e-01  5.66780378e-01
+  4.77450675e-01  5.24030603e-01 -6.80686300e-02 -3.72507274e-01
+ -1.59378881e-01  3.92107442e-02  1.45338727e-01  2.65897728e-01
+  2.17303026e-01  6.25647022e-01  3.13144463e-01  3.90115271e-01
+  1.02942273e-01  8.24734483e-01  4.33860197e-01  2.44099251e-01
+ -1.58387039e-01  9.44774550e-01  6.80152261e-01  1.65702529e-01
+  5.15661503e-01  5.70651304e-01 -3.01913977e-02  3.69481195e-01
+  1.73960711e-02  4.67138051e-01  6.12433407e-03  3.26207417e-01
+  6.19017135e-01  5.34548162e-02  4.40909763e-01 -1.03646487e-02
+  4.26145988e-01  1.02221369e-01  8.33953445e-01  8.81596028e-01
+  8.64075412e-01  6.35475637e-01 -5.94842577e-02 -3.71187503e-02
+  2.36266972e-01  5.42477463e-01  6.44130977e-01  2.06439873e-01
+  4.94298797e-01  5.58458306e-01 -1.08741104e-01  9.01905966e-02
+  7.34688657e-02 -3.68586989e-01 -2.51504865e-01  1.81548310e-01
+  8.91568773e-01  1.61395033e-01 -8.12152365e-02  5.43301492e-01
+  4.42429061e-01  5.56244671e-01  2.66303953e-01 -3.02210023e-01
+  5.78955318e-01 -2.09437699e-01  9.75226879e-01  6.33877613e-02
+  7.55441668e-01  3.16238281e-01 -1.33465734e-01  2.25915688e-01
+  2.29997216e-01  3.63246968e-01  5.37385037e-01  4.12583375e-01
+  2.19153247e-02 -9.44318093e-02  2.07753421e-01  6.27101391e-01
+  4.17276136e-01  4.28384608e-01  6.20153383e-01  6.69528130e-01
+  8.41372345e-01  4.61475781e-01  5.10959300e-01  5.50312760e-01
+  5.84316627e-01  7.44991380e-01  1.08484422e-01  1.14254404e-01
+  5.57691947e-01 -5.87655052e-03  3.55655792e-01  3.28838143e-01
+  1.95562943e-01 -1.79453399e-01 -1.40740835e-01  3.62998340e-02
+  8.88519475e-01  1.46712409e-01 -8.65071718e-02  6.89323224e-01
+  1.13780216e-01  3.28128105e-01  6.36222830e-01  2.70221985e-01
+  4.50694730e-01  2.93419394e-01  2.27311964e-01  7.30858622e-01
+  4.91102307e-01  5.22837821e-01 -2.79765805e-01  5.30806911e-01
+  5.82787877e-01  1.58070285e-01  3.99467647e-01  6.03980628e-01
+  6.26109502e-01 -7.57386867e-02  1.21033906e-01 -3.41238075e-02
+  5.44238966e-01  4.65944066e-01  7.27966518e-01  2.61789178e-01
+  1.59916653e-01  4.36201990e-02  5.73608990e-01  9.22618921e-01
+  6.58086456e-01  5.37271872e-01  5.75810027e-02  6.25016923e-01
+  5.36495143e-01  1.32557473e-01  7.72457511e-01  2.69506116e-01
+  4.71606280e-01  8.70964921e-02 -2.92082678e-01 -1.23293336e-01
+ -4.08144044e-02 -4.11368597e-02  9.32552488e-01  1.79691510e-01
+  5.52888898e-02  5.87493770e-01 -1.26421061e-01  6.03795960e-01
+ -1.32206731e-01 -7.06272864e-02  3.92881115e-01 -1.51902085e-01
+  1.04932288e+00  9.01344488e-01  1.18561706e-01  4.64153036e-01
+  1.34532851e-01  5.35422913e-01  1.64683397e-01  5.57993943e-01
+  3.46532220e-01  3.69027649e-01 -4.33538838e-02  4.65347355e-01
+  5.70980468e-01  2.18038992e-01  5.94661125e-01  6.42396410e-01
+  2.64332285e-01  7.46361716e-01  2.46982754e-01  4.71319211e-01
+  4.60283346e-01 -1.52045914e-03  5.57172243e-01  1.04215819e-01
+  1.43575559e-01  2.08854084e-01  7.50293845e-01  4.17617399e-01
+  5.45539415e-01  1.99298115e-01 -6.43331887e-02  2.29337284e-03
+ -2.21424273e-01 -1.07672747e-01  5.84976923e-01  5.82911040e-01
+  1.98076220e-01  3.93219255e-01  4.08376938e-01  5.65371005e-01
+  3.88159183e-01  4.04248681e-02  4.34804184e-02  4.21492473e-01
+ -1.65949593e-01  9.88606100e-01  8.34627659e-01  3.13863973e-01
+  5.82152705e-02  4.40038209e-01  1.09117904e-01  5.53462501e-01
+  6.29635395e-01  3.25220438e-01  3.82246065e-01  7.51820233e-01
+  6.93031709e-01  4.16805076e-01  3.60274339e-01  4.60429879e-01
+  2.68915685e-01  2.72921800e-01  4.35022849e-01  3.90155589e-01
+  1.03603994e-01  3.64480740e-01  6.12320975e-01  4.69695325e-01
+  8.61528940e-01  8.97226424e-01  5.07184004e-01  7.97073530e-01
+  7.28713991e-01  4.38527115e-01  1.81328776e-01  2.88024809e-01
+ -1.87588615e-01 -2.07360633e-01 -1.28328610e-01  1.44099564e-01
+  6.72369169e-01  7.15637274e-01  6.18981353e-01  5.57580566e-01
+ -1.00318332e-01  5.01037498e-01  2.68058884e-01 -6.45924416e-02
+  1.70763456e-01  2.45526857e-01  3.88870743e-01  3.96538773e-01
+  7.99636315e-01  6.43363933e-01  4.05668505e-01  2.27166244e-01
+  8.98188030e-01  1.63626124e-01  8.08141135e-01  7.14137665e-02
+  2.90965995e-01 -3.66996857e-03  4.11692126e-01  6.24957355e-02
+  3.86604358e-01  1.56687595e-01  2.26592205e-01  6.34285964e-01
+  4.64307384e-01  3.39951642e-01  7.18400854e-01  4.23021745e-01
+  6.58830386e-02  4.41829466e-01 -3.82505311e-02  6.66225975e-03
+ -1.54480750e-01  2.60533975e-01 -1.84959773e-01  7.96093959e-01
+  1.13028646e-01 -4.95070985e-01 -4.77435632e-01 -3.01788283e-01
+  5.33759423e-01  4.27266482e-01  2.39377089e-01 -5.09340686e-02
+  8.41989063e-01  9.62788424e-02  1.47750149e-02  7.34661825e-02
+  7.95633468e-02  3.71272392e-01  8.51050264e-01  9.33195885e-01
+  3.20670323e-01  4.75149042e-01  5.31201874e-01  6.67231156e-01
+ -8.52665289e-03  8.12656420e-01  6.53586462e-01  9.04035655e-01
+  3.69670727e-01  6.93214700e-01  6.36923005e-01  5.77120536e-01
+  9.11922911e-01  1.12810095e-01  2.18762388e-02 -1.14190862e-02
+  6.81333397e-01  3.28182949e-01  8.58893721e-02  3.95378363e-01
+  4.26899311e-01  7.36468487e-01  6.99448031e-01 -1.31197753e-01
+  7.37221678e-02  1.02786036e-02  2.13970109e-01  6.24355769e-01
+  4.07547121e-02  1.57400044e-01 -3.23246063e-01 -1.53829861e-01
+  4.01172378e-03  5.33381164e-01  4.51669028e-01  2.17606662e-01
+  8.36038619e-01  3.59880287e-01  1.20567017e-01  1.70140148e-01
+  5.69145296e-01  4.05818151e-01 -3.49365659e-01  2.10755975e-01
+  3.70894832e-01  1.73405289e-01  1.44070974e-01  5.12213877e-01
+  1.55214428e-01  4.79457809e-01  5.30588136e-01  6.94463634e-01
+  8.57322068e-01  8.38919201e-01  1.55487482e-01  6.02167137e-01
+ -2.24228077e-02  4.31918132e-01  3.68074837e-01  8.46317324e-01
+ -6.15257089e-02  5.01341379e-01  4.21580540e-01 -3.69125270e-02
+ -3.87601034e-02  6.33430603e-01  1.79692730e-01  6.81235275e-01
+  1.86332412e-01  4.25715368e-01  4.32114414e-01  1.99886905e-01
+  4.49154675e-01  1.73323917e-01  6.92194200e-02 -3.24615174e-01
+ -1.86534160e-01 -7.09055328e-02  4.97334676e-01  3.88168400e-01
+ -1.03522911e-01  4.17047700e-01  7.67773965e-01  3.59062298e-01
+  3.64971178e-01  5.85687795e-01 -4.22012067e-01 -4.68884045e-02
+  4.66210125e-01  1.50686036e-01  9.75701653e-01  5.61427431e-01
+  1.57507050e-01  3.33486897e-02  4.59178176e-01  1.29979863e-01
+  1.84793371e-01  3.56802085e-01  7.69944610e-01  2.84829848e-02
+  6.20478515e-01 -4.89800118e-02  1.30083441e-01  7.81430218e-01
+  1.92539441e-01  4.24321455e-01  6.85510171e-01 -3.51563305e-02
+  5.88854666e-01  2.83464150e-01  3.38851830e-01  4.69274851e-01
+  5.59143128e-01  1.20827965e-01  3.37344123e-02  5.21389728e-01
+  4.00364011e-01  2.53042750e-01  3.17016430e-02  9.29028797e-03
+ -1.27696466e-01 -4.77725979e-01 -2.81127818e-01  6.54534909e-01
+  2.64317623e-01  6.93247338e-01  5.19295773e-01  5.66527494e-01
+ -3.06098014e-03 -1.20714787e-01  2.20878765e-01  4.34806822e-01
+ -3.87643030e-01  5.33817851e-02  4.16120317e-01  9.58687750e-01
+  7.09248433e-01  6.07792928e-01 -2.75212743e-02 -2.89975782e-04
+  5.36294777e-01  2.17379968e-01  2.76762385e-01  6.70753275e-01
+  7.53517716e-01  8.45182297e-01  5.54362250e-02  4.38770532e-01
+ -2.06603628e-02  2.80081935e-01  9.85573316e-02  2.95488659e-01
+  5.78522943e-01  5.71003091e-01  5.53271691e-01  6.29835996e-01
+  6.99299051e-01  6.22066758e-01  4.27496152e-01  6.08645324e-01
+  1.47352895e-01  3.59897225e-01  1.48048191e-01  1.08171325e-01
+  3.56502192e-02 -3.72122760e-01 -5.42402293e-01 -3.42781696e-01
+  3.83904654e-01  2.66283588e-01  3.20854555e-01  3.46025208e-01
+  1.64983729e-01  7.54614528e-01 -3.00084330e-02  7.58733085e-01
+ -4.80339567e-01 -4.67243303e-01  6.09937600e-01  8.83040306e-01
+  3.08740895e-01  9.25593369e-01  8.40933680e-01 -5.34930828e-03
+  4.93463938e-01  3.40575554e-01  6.90420036e-01  5.79441127e-01
+  4.64401532e-01  5.37324930e-01  3.58636506e-02  6.62249689e-01
+  1.35783577e-01  1.07063889e-01  3.64440746e-01  7.69393247e-01
+  6.86868678e-01  6.08497934e-01 -5.31069534e-02  6.90162591e-01
+  4.06621749e-01  4.01867832e-01  1.32235343e-01  2.58437991e-01
+  8.35645353e-02  7.08877389e-01  3.02969278e-02  1.95832891e-01
+  2.53365912e-01 -3.50980196e-01 -3.23621071e-01 -3.34664068e-01
+ -1.15917652e-01  1.27270918e-01  5.49292354e-01  7.11248229e-01
+  2.08678333e-01  2.13797194e-01 -1.21350355e-01 -4.93797860e-02
+  6.47561625e-01  3.14214640e-01 -3.53954901e-01  4.65666838e-01
+  7.41415631e-01  4.47399590e-02  8.14229544e-02  5.00017781e-01
+ -3.33900001e-02  1.19148681e-02  3.97265164e-02  6.41010638e-01
+  5.93657051e-01  2.02666635e-01  1.94261333e-01  6.74963893e-02
+  5.52484527e-01  4.76877255e-02  3.88793900e-01  1.11110568e-01
+  1.72716749e-01 -1.69802663e-01  9.76235027e-02  6.00209351e-01
+  1.79715611e-01  8.33128947e-02  2.65475302e-01 -1.63306240e-01
+  3.55781001e-01  5.02922759e-01  5.33218553e-01  5.51034908e-01
+  3.41760600e-01  3.44395086e-01 -6.83929411e-01 -3.10780440e-01
+  4.79634042e-02  5.11443290e-02  1.21900983e-01  7.46403719e-01
+  2.43053525e-02  7.61980209e-01  2.16406177e-01 -7.61811981e-02
+  5.50830070e-01  2.92263060e-01  3.56255890e-01 -2.45705769e-01
+  5.58291956e-01  7.82795708e-01  7.49706231e-01  1.04584373e-01
+ -6.35131517e-02  8.97491186e-01  1.50242882e-01  5.62505297e-01
+  6.54918067e-01 -5.07686260e-03  1.26724824e-01  3.62990747e-01
+  7.27282281e-01  6.96306951e-01  5.37205509e-01  2.14806104e-01
+  6.23922906e-01  5.98795096e-01  1.41853760e-01  3.94332464e-01
+  3.36808997e-01  6.43543811e-01  4.54132079e-01  6.59935113e-01
+  7.38809355e-01 -3.56669479e-02  3.73919490e-01  5.19923335e-01
+  4.59001222e-01  2.68068164e-01 -2.16071404e-01  5.61439113e-02
+ -2.34851457e-01 -3.51072263e-01 -5.41661826e-01  4.80301302e-01
+  6.14020403e-01  8.13024868e-01  1.80054388e-01  1.83263433e-01
+ -9.71421814e-02  2.59384829e-01  2.42178529e-01 -3.41025192e-01
+  4.42445940e-01  4.74147535e-01  8.92326531e-01  3.59661009e-02
+  4.84963617e-01  1.03807946e-01  1.07145545e-02  1.82332047e-03
+  4.81362538e-01  4.49601147e-01  8.15692814e-01  8.70169291e-01
+  7.54573068e-02  2.33436684e-01  5.75168840e-01  5.57870656e-01
+  7.10138692e-01  3.64776948e-01  6.55018893e-01  4.53039414e-01
+  5.62579128e-01  6.21825635e-01  2.84825809e-02  4.05438590e-01
+ -1.04760872e-01  1.62620483e-01  6.98887494e-02  5.42488224e-01
+  6.95707474e-02  4.15000836e-01  2.48210454e-01 -3.63624806e-01
+ -3.81649360e-01 -1.36316006e-01  1.07539042e-01 -1.69238360e-01
+  6.78424036e-01  2.94388312e-01 -1.34036288e-02 -1.36340096e-02
+ -4.98559094e-02  4.46358560e-01  3.52471641e-01  6.33121380e-01
+  2.77218040e-01  4.46162146e-01  7.76724547e-01  8.25820562e-01
+  5.64980186e-01  9.82836097e-01  6.03251977e-01  2.27993785e-01
+  7.01132178e-02 -5.15450097e-02  3.07401194e-01  4.78626986e-01
+  8.39302477e-01  7.11290814e-01  7.22799320e-01  3.89640220e-01
+  1.30436507e-01  1.78999894e-01  7.31353568e-01  7.66676830e-01
+ -8.70718168e-02  1.24429666e-01  3.14108334e-01  2.20790348e-01
+  1.00531294e-01  2.68311782e-01  7.95796108e-02 -3.30094047e-02
+ -3.92270062e-02  5.14419469e-01  6.50475485e-01 -2.12768050e-01
+ -3.01362555e-01 -2.23815322e-01  5.82601174e-02 -1.34701790e-01
+ -5.63704045e-01  7.13202608e-01  9.51749177e-01 -2.68074623e-02
+  1.54184505e-02  4.29254811e-02  5.78283110e-01  8.19392990e-01
+  4.35727091e-01 -2.81778276e-01  2.50334534e-01 -7.39308004e-02]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-23-28>
+Subject: Job 5808790: <LinearAprox4a> in cluster <dcc> Done
+
+Job <LinearAprox4a> was submitted from host <n-62-27-20> by user <s183905> in cluster <dcc> at Tue Mar 10 18:52:53 2020
+Job was executed on host(s) <n-62-23-28>, in queue <hpc>, as user <s183905> in cluster <dcc> at Tue Mar 10 18:52:54 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Tue Mar 10 18:52:54 2020
+Terminated at Tue Mar 10 19:52:45 2020
+Results reported at Tue Mar 10 19:52:45 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -o outputs/test_%J.out
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=1G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 1500
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3586.08 sec.
+    Max Memory :                                 89 MB
+    Average Memory :                             83.24 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               935.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   3614 sec.
+    Turnaround time :                            3592 sec.
+
+The output (if any) is above this job summary.
+
