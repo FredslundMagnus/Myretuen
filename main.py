@@ -15,7 +15,7 @@ if debuggerMode:
     agentsDic = {'LinearAprox': LinearAprox(), 'SimpleLinear': SimpleLinear(), 'NNAgent': NNAgent()}
     ourAgent = agentsDic[sys.argv[4]]
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent)
-    controller.run(NGames=nGames, AddAgent=addAgent, CalculateProbs=False, UI=False)
+    controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=SimpleLinear())
     controller.run(CalculateProbs=False)
