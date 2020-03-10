@@ -145,8 +145,10 @@ class Move():
             probofstate = self.game.prob.probmatrix[int(theAnt.id[-1]), int(self.end.ants[-1].id[-1])]
 
         if (self.end.ants[-1].magnet == theAnt.magnet and not oppesite) or (self.end.ants[-1].magnet != theAnt.magnet and oppesite):
-            if probofstate != 0 and probofstate != 1:
+            try:
                 self.game.prob.fight(theAnt, self.end.ants[-1], winner=True)
+            except:
+                pass
             win = True
             ids = {ant.id for ant in self.end.ants}
             for ant in ants:
@@ -156,8 +158,10 @@ class Move():
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
         else:
-            if probofstate != 0 and probofstate != 1:
+            try:
                 self.game.prob.fight(theAnt, self.end.ants[-1], winner=False)
+            except:
+                pass
             for ant in ants:
                 if ant.id == self.end.ants[-1].id:
                     theAnt = ant
