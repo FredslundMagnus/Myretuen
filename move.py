@@ -188,8 +188,6 @@ class Move():
         if self.needResim:
             ants1, probofstate, _ = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants])
             ants2, probofstate, ants2win = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants], oppesite=True)  # Jakob
-            print(probofstate)
-            print(self.game.prob.probmatrix, ants2win)
             if ants2win == True:
                 return ants2, ants1, probofstate
         else:

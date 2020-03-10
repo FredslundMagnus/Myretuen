@@ -17,7 +17,7 @@ class SimpleLinear(Agent):
         x = np.array(state).reshape(-1, self.Nfeature)
         return x @ self.phi @ self.factor
 
-    def train(self, reward, action, newState, alpha=0.00001, discount=0.9, lambd=0):
+    def train(self, reward, action, newState, alpha=0.00001, discount=0.9, lambd=0.5):
         Vst = self.value(self.previousState)
         state, _ = self.previousState[0] if type(self.previousState) == type([1]) else self.previousState
         x = self.factor @ np.array(state).reshape(-1, self.Nfeature)
