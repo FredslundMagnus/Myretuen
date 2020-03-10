@@ -1,5 +1,4 @@
 #!/bin/sh
-#BSUB -J test
 #BSUB -o outputs/test_%J.out
 #BSUB -q hpc
 #BSUB -n 1
