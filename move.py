@@ -94,6 +94,9 @@ class Move():
                 reward -= 3
             moving.reverse()
             self.end.ants = moving + self.end.ants
+
+        self.giveantsprobabilities(self.game.prob.probmatrix, self.game.ants)
+
         return reward
 
     def simulateSimple(self, ants):
@@ -114,6 +117,11 @@ class Move():
 
     def simulateComplex(self, ants, oppesite=False):
         win = False
+        self.game.prob.True_clusters = self.game.prob.clusters
+        self.game.prob.True_history = self.game.prob.history
+        self.game.prob.True_Ant_clusters = self.game.prob.Ant_clusters
+        self.game.prob.True_probmatrix = self.game.prob.probmatrix
+
         if self.start.type == 'Base':
             for ant in ants:
                 if ant.id == self.start.home[0].id:
@@ -137,6 +145,8 @@ class Move():
             probofstate = self.game.prob.probmatrix[int(theAnt.id[-1]), int(self.end.ants[-1].id[-1])]
 
         if (self.end.ants[-1].magnet == theAnt.magnet and not oppesite) or (self.end.ants[-1].magnet != theAnt.magnet and oppesite):
+            if probofstate != 0 and probofstate != 1:
+                self.game.prob.fight(theAnt, self.end.ants[-1], winner=True)
             win = True
             ids = {ant.id for ant in self.end.ants}
             for ant in ants:
@@ -146,6 +156,8 @@ class Move():
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
         else:
+            if probofstate != 0 and probofstate != 1:
+                self.game.prob.fight(theAnt, self.end.ants[-1], winner=False)
             for ant in ants:
                 if ant.id == self.end.ants[-1].id:
                     theAnt = ant
@@ -155,6 +167,14 @@ class Move():
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
                 theAnt.antsUnderMe[ant.color] += 1
+        self.game.prob.CalculateWinChance()
+        self.giveantsprobabilities(self.game.prob.probmatrix, ants)
+
+        self.game.prob.clusters = self.game.prob.True_clusters
+        self.game.prob.history = self.game.prob.True_history
+        self.game.prob.Ant_clusters = self.game.prob.True_Ant_clusters 
+        self.game.prob.probmatrix = self.game.prob.True_probmatrix
+
 
         self.simulateClean(ants)
 
@@ -186,19 +206,27 @@ class Move():
 
     def simulate(self):
         if self.needResim:
-            ants1, probofstate, _ = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants])
-            ants2, probofstate, ants2win = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants], oppesite=True)  # Jakob
+            ants1, probofstate, _ = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice, ant.probcapture) for ant in self.game.ants])
+            ants2, probofstate, ants2win = self.simulateComplex([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice, ant.probcapture) for ant in self.game.ants], oppesite=True)  # Jakob
             if ants2win == True:
                 return ants2, ants1, probofstate
         else:
             probofstate = 0
             ants2 = [None]
-            ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice) for ant in self.game.ants])  # Jakob
+            ants1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice, ant.probcapture) for ant in self.game.ants])  # Jakob
         return ants1, ants2, probofstate
+
+    def giveantsprobabilities(self, Pmatrix, ants):
+        for ant in ants:
+            if ant.color != self.game.player1:
+                ant.probcapture = list(Pmatrix[int(ant.id[-1]),:])
+            else:
+                ant.probcapture = list(Pmatrix[:,int(ant.id[-1])])
+
 
 
 class SimpleAnt():
-    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, dieJustUsedInSimulation):  # Jakob
+    def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, dieJustUsedInSimulation, probcapture):  # Jakob
         self.color = color
         self.magnet = magnet
         self.position = position
@@ -207,3 +235,4 @@ class SimpleAnt():
         self.flipped = flipped
         self.antsUnderMe = antsUnderMe
         self.dieJustUsedInSimulation = dieJustUsedInSimulation
+        self.probcapture = probcapture
