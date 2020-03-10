@@ -29,6 +29,8 @@ else:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
+    agentsDic = {'LinearAprox': LinearAprox(), 'SimpleLinear': SimpleLinear(), 'NNAgent': NNAgent()}
+    ourAgent = agentsDic[sys.argv[4]]
 
 
 def plot(name):
@@ -46,7 +48,7 @@ if showUI:
 
 
 opponent = Opponent(RandomAgent())
-controller = Gamecontroller(env=env, agent1=opponent, agent2=NNAgent())
+controller = Gamecontroller(env=env, agent1=opponent, agent2=ourAgent)
 
 if showUI:
     x = threading.Thread(target=controller.run)
