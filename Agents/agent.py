@@ -110,7 +110,7 @@ class Agent():
     def antState(self, ant):
         antSituation = self.ant_situation(ant)
         if sum(antSituation) != 0:
-            (mine, dine) = self.getDistancesToAnts(ant)
+            (mine, dine) = self.getDistances(ant)
             carryEnimy = self.carrying_number_of_enemy_ants(ant)
             carryAlly = self.carrying_number_of_ally_ants(ant)
             splitDistance = self.distanceToSplits(ant)
@@ -149,10 +149,9 @@ class Agent():
 
         return [[Antstate1], ProbOfState] if ants2 == [None] else [[Antstate1, Antstate2], ProbOfState]
 
-    def getDistancesToAnts(self, ant):
+    def getDistances(self, ant):
         mine = [0]*35
         dine = [0]*35
-        GameOver = 1
         for ant2 in self.currentAnts:
             if ant2.isAlive == True:
                 if ant2.position.type != 'Base':
@@ -162,6 +161,16 @@ class Agent():
                         dine[ant.position.dist_to_all[ant2.position.id]] += 1
 
         return (mine[1:], dine[1:])
+
+    def getDistancesToAnts(self, ant):
+        n = len(self.currentAnts)//2
+        ants = [0]*n
+        for i, ant2 in enumerate(self.currentAnts):
+            if ant.color != ant2.color:
+                if ant2.isAlive == True:
+                    if ant2.position.type != 'Base':
+                        ants[i % n] = ant.position.dist_to_all[ant2.position.id]
+        return ants
 
     def ant_situation(self, ant):
         if ant.position.id == ant.color:
