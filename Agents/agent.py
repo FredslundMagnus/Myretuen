@@ -117,6 +117,11 @@ class Agent():
             baseDistance = self.distanceToBases(ant)
             dice = self.dicer(ant)
             score = self.currentScore(ant)
+            antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
+            disttoantsGlobal = self.getDistancesToAnts(ant)
+            ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
+            kval = list(np.array([ratio*disttoantsGlobal, (3-np.array(disttoantsGlobal))/ratio]).max(axis=0))
+            print(kval)
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score
 
     def state(self, game, action=None):
@@ -126,6 +131,7 @@ class Agent():
             ants1, ants2, ProbOfState = action.simulate()
         mines1, dines1, mines2, dines2 = [], [], [], []
         self.currentAnts = ants1
+        self.antsUnder = self.antsUnderAnts()
         for ant1 in ants1:
             for ant1State in self.antState(ant1):
                 if ant1.color == game.currentPlayer:
@@ -139,6 +145,7 @@ class Agent():
 
         if ants2 != [None]:
             self.currentAnts = ants2
+            self.antsUnder = self.antsUnderAnts()
             for ant2 in ants2:
                 for ant2State in self.antState(ant2):
                     if ant2.color == game.currentPlayer:
@@ -169,7 +176,17 @@ class Agent():
             if ant.color != ant2.color:
                 if ant2.isAlive == True:
                     if ant2.position.type != 'Base':
-                        ants[i % n] = ant.position.dist_to_all[ant2.position.id]
+                        dis = ant.position.dist_to_all[ant2.position.id]
+                        ants[i % n] = 3 if dis < 7 else 2 if dis < 13 else 1
+        return ants
+
+    def antsUnderAnts(self):
+        n = len(self.currentAnts)//2
+        ants = {self.currentAnts[0].color: [0]*n, self.currentAnts[-1].color: [0]*n}
+        for i, ant in enumerate(self.currentAnts):
+            if ant.isAlive == True:
+                if ant.position.type != 'Base':
+                    ants[ant.color][i % n] = sum(val for _, val in ant.antsUnderMe.items())
         return ants
 
     def ant_situation(self, ant):
