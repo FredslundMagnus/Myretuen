@@ -246,7 +246,10 @@ class Probability_calculator():
                 self.Combinations(State_if_lose, 0, clustersleft)
                 losings = self.finalcount
                 self.finalcount = 0
-                EatChance = winnings/(winnings+losings)
+                try:
+                    EatChance = winnings/(winnings+losings)
+                except:
+                    EatChance = 0.5
 
                 antsincluster1 = self.Ant_clusters[tuple(unique_clusters[i])]
                 antsincluster2 = self.Ant_clusters[tuple(unique_clusters[k])]
