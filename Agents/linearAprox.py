@@ -3,7 +3,7 @@ from Agents.agent import Agent
 
 
 class LinearAprox(Agent):
-    def __init__(self, explore=False, doTrain=True):
+    def __init__(self, explore=True, doTrain=True):
         self.setup(explore, doTrain)
 
     def value(self, infostate):

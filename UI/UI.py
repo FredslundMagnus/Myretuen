@@ -15,7 +15,8 @@ def drawAntAtPos(ant, pos, win):
         f'UI/Ants/Ant{ant.color}.png').convert_alpha()
     win.blit(pygame.transform.scale(
         pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*scale, 15*scale)), ((pos[0]+2*scale), (pos[1]+2*scale)))
-    centerText(12*scale, ant.id[-1], (0, 0, 0), pos, 0, win)
+    x, y = pos
+    centerText(5*scale, ant.id[-1], colors[ant.color], (x+scale*14, y+scale*6), 0, win)
 
 
 def centerText(size, text, color, position, rotation, win):
