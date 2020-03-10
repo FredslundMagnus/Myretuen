@@ -13,17 +13,18 @@ class NNAgent(Agent):
         self.optimizer = optim.Adam(
             self.phi.parameters(), lr=0.0001, amsgrad=True)
 
-    def value(self, state, return_float=True):
+    def value(self, infostate, return_float=True):
+        state, n = infostate[0] if type(infostate) == type([1]) else infostate
         Nfeature = np.array(state).shape[-1]
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
-            (np.ones(x.shape[0]//2), -np.ones(x.shape[0]//2)), axis=0))
+            (np.ones(n), -np.ones(x.shape[0]-n)), axis=0))
         value = torch.dot(torch.flatten(
             self.phi(torch.FloatTensor(x))), factor)
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, newState, lambd = 0.9, discount=0.995):
+    def train(self, reward, action, newState, lambd=0.9, discount=0.995):
         if abs(reward) > 30:
             reward = 30*reward/abs(reward)
         Vst = self.value(self.previousState, return_float=False)
@@ -41,7 +42,7 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(39, 20)
+        self.fc1 = nn.Linear(46, 20)
         self.fc2 = nn.Linear(20, 10)
         self.fc3 = nn.Linear(10, 10)
         self.fc4 = nn.Linear(10, 1)

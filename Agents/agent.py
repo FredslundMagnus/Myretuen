@@ -101,20 +101,23 @@ class Agent():
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
 
-    def boolHot(self, bo):
-        return [int(bo), int(not bo)]
-
-    def SameDice(self):
-        self.ga
+    def currentScore(self, ant):
+        score = [0, 0]
+        for color, val in self.env.getCurrentScore().items():
+            score[int(ant.color == color)] = val
+        return score
 
     def antState(self, ant):
         antSituation = self.ant_situation(ant)
-        (mine, dine), GameOver = self.getDistancesToAnts(ant)
-        carryEnimy = self.carrying_number_of_enemy_ants(ant)
-        carryAlly = self.carrying_number_of_ally_ants(ant)
-        splitDistance = self.distanceToSplits(ant)
-        baseDistance = self.distanceToBases(ant)
-        return antSituation + mine[:12] + dine[:12] + GameOver + splitDistance + baseDistance + [carryEnimy, carryAlly]  # Jakob
+        if sum(antSituation) != 0:
+            (mine, dine), GameOver = self.getDistancesToAnts(ant)
+            carryEnimy = self.carrying_number_of_enemy_ants(ant)
+            carryAlly = self.carrying_number_of_ally_ants(ant)
+            splitDistance = self.distanceToSplits(ant)
+            baseDistance = self.distanceToBases(ant)
+            dice = self.dicer(ant)
+            score = self.currentScore(ant)
+            yield antSituation + mine[:12] + dine[:12] + GameOver + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score
 
     def state(self, game, action=None):
         if action == None:
@@ -124,12 +127,12 @@ class Agent():
         mines1, dines1, mines2, dines2 = [], [], [], []
         for ant1 in ants1:
             self.currentAnts = ants1
-            ant1State = self.antState(ant1)
-            if ant1.color == game.currentPlayer:
-                mines1.append(ant1State)
-            else:
-                dines1.append(ant1State)
-        Antstate1 = mines1 + dines1
+            for ant1State in self.antState(ant1):
+                if ant1.color == game.currentPlayer:
+                    mines1.append(ant1State)
+                else:
+                    dines1.append(ant1State)
+        Antstate1 = (mines1 + dines1, len(mines1))
 
         if action == None:
             return Antstate1
@@ -137,12 +140,12 @@ class Agent():
         if ants2 != [None]:
             for ant2 in ants2:
                 self.currentAnts = ants2
-                ant2State = self.antState(ant2)
-                if ant2.color == game.currentPlayer:
-                    mines2.append(ant2State)
-                else:
-                    dines2.append(ant2State)
-        Antstate2 = mines2 + dines2
+                for ant2State in self.antState(ant2):
+                    if ant2.color == game.currentPlayer:
+                        mines2.append(ant2State)
+                    else:
+                        dines2.append(ant2State)
+        Antstate2 = (mines2 + dines2, len(mines2))
 
         return [[Antstate1], ProbOfState] if ants2 == [None] else [[Antstate1, Antstate2], ProbOfState]
 
@@ -164,23 +167,23 @@ class Agent():
 
     def ant_situation(self, ant):
         if ant.position.id == ant.color:
-            return [1, 0, 0, 0, 0, 0]
-        elif ant.isAlive == True:
-            if ant.position.id in ['E1', 'B1']:
-                return [0, 1, 0, 0, 0, 0]
-            if ant.position.id in ['A1', 'D1']:
-                return [0, 0, 1, 0, 0, 0]
-            else:
-                return [0, 0, 0, 1, 0, 0]
-        elif ant.position.type == 'Base':
-            return [0, 0, 0, 0, 1, 0]
-        else:
-            return [0, 0, 0, 0, 0, 1]
+            return [1, 0, 0, 0]
+        if ant.isAlive == True:
+            if ant.position.id in [base.id for base in self.env.bases[ant.color].goals]:
+                return [0, 1, 0, 0]
+            if ant.position.id in [base.id for base in self.env.bases[[color for color in self.env.bases if color != ant.color][0]].goals]:
+                return [0, 0, 1, 0]
+            return [0, 0, 0, 1]
+        return [0, 0, 0, 0]
 
-    def Dicer(self, game, ants):
-        # for ant in ants:
-        #     if len(game.rolled) == 2 or game.rolledSameDice:
-        #         ant.OtherDie = [0, game.rolled[0]]
-        #     else:
-        #         ant.OtherDie = [1, 0]
-        #     ant.Turnsleft = len(game.rolled) - 1 + 2 * game.rolledSameDice
+    def dicer(self, ant):
+        dice = [0, 0, 0, 0, 0, 0, 0]
+        if ant.dieJustUsedInSimulation == 0:
+            for d in self.env.rolled:
+                dice[d - 1] = 1
+            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2
+        else:
+            d = sum(self.env.rolled) - ant.dieJustUsedInSimulation
+            dice[d - 1] = 1
+            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 - 1
+        return dice

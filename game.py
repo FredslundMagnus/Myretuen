@@ -31,7 +31,6 @@ class Myretuen(gym.Env):
         self.rolled = self.diceHolder.roll()
         self.rolledSameDice = len(set(self.rolled)) == 1
 
-
     def actions(self):
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):
@@ -96,8 +95,11 @@ class Myretuen(gym.Env):
             return True
         return False
 
+    def getCurrentScore(self):
+        return {name: len(base.captured) for name, base in self.bases.items()}
+
     def gameStatus(self):
-        currentScore = {name: len(base.captured) for name, base in self.bases.items()}
+        currentScore = self.getCurrentScore()
 
         scores = [score for name, score in currentScore.items()]
         names = [name for name, score in currentScore.items()]
