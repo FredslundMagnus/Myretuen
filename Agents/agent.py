@@ -120,9 +120,9 @@ class Agent():
             # antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             # disttoantsGlobal = self.getDistancesToAnts(ant)
             # ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
-            # kval = list(np.array([ratio*disttoantsGlobal, (3-np.array(disttoantsGlobal))/ratio]).max(axis=0))
             GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             # print(GetProbabilityOfEat)
+            # kval = list(np.array([ratio*disttoantsGlobal*np.array(self.GetProbabilityOfEat(ant)), (3-np.array(disttoantsGlobal))/ratio*(1-np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat
 
     def state(self, game, action=None):
@@ -212,5 +212,6 @@ class Agent():
             dice[d - 1] = 1
             dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 - 1
         return dice
+
     def GetProbabilityOfEat(self, ant):
         return ant.probcapture
