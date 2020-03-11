@@ -26,6 +26,7 @@ class Myretuen(gym.Env):
         self.wins = []
         self.Runningwinrate = None
         self.prob = Probability_calculator(self.bases, self.ants)
+        self.playerwithnomoves = None
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1
@@ -46,16 +47,34 @@ class Myretuen(gym.Env):
         if action == None:
             reward = 0
             self.rolled = []
+            self.playerwithnomoves = self.currentPlayer
         else:
             reward = action.execute(CalculateProb)
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
+        if done:
+            endReward = 40
+            info = {player: (val*2-1)*endReward for player, val in self.whoWonThisGame().items()}
+            info['PlayerSwapped'] = False
         if len(self.rolled) == 0:
             if not self.rolledSameDice:
-                self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
-                info['PlayerSwapped'] = True
+                if self.playerwithnomoves == None or self.playerwithnomoves == self.currentPlayer:
+                    self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
+                    info['PlayerSwapped'] = True
             self.roll()
         return observation, reward, done, info
+
+    def whoWonThisGame(self):
+        if all([not x.isAlive for x in self.ants[len(self.ants)//2:]]):
+            return {self.player1: 1, self.player2: 0}
+        if all([not x.isAlive for x in self.ants[:len(self.ants)//2]]):
+            return {self.player1: 0, self.player2: 1}
+        currentScore = self.getCurrentScore()
+        if currentScore[self.player1] > currentScore[self.player2]:
+            return {self.player1: 1, self.player2: 0}
+        if currentScore[self.player1] < currentScore[self.player2]:
+            return {self.player1: 0, self.player2: 1}
+        return {self.player1: 0.5, self.player2: 0.5}
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
@@ -94,30 +113,26 @@ class Myretuen(gym.Env):
                 return True
         if self.maxRolls <= self.dicesThatHaveBeenRolled:
             return True
-        return False
+        if any(x == True for x in [x.isAlive for x in self.ants[:len(self.ants)//2]]) and any(x == True for x in [x.isAlive for x in self.ants[len(self.ants)//2:]]):
+            return False
+        return True
 
     def getCurrentScore(self):
         return {name: len(base.captured) for name, base in self.bases.items()}
 
     def gameStatus(self, agents):
-        currentScore = self.getCurrentScore()
-
-        scores = [score for name, score in currentScore.items()]
-        names = [name for name, score in currentScore.items()]
-        if scores[0] > scores[1]:
-            self.totalScore[names[0]] += 1
-            score = 0
-        elif scores[1] > scores[0]:
-            self.totalScore[names[1]] += 1
-            score = 1
+        winStatus = self.whoWonThisGame()
+        if winStatus[self.player1] == 1:
+            self.totalScore[self.player1] += 1
+        elif winStatus[self.player2] == 1:
+            self.totalScore[self.player2] += 1
         else:
             self.totalScore['Tie'] += 1
-            score = 0.5
-        Elo(agents[self.player2], agents[self.player1], score)
+        Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
         if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
-            self.wins.append(score)
+            self.wins.append(winStatus[self.player2])
         self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
-        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
+        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {self.getCurrentScore()},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
     def reset(self):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
@@ -128,6 +143,7 @@ class Myretuen(gym.Env):
         self.rolledSameDice = False
         self.nGamePlay += 1
         self.prob = Probability_calculator(self.bases, self.ants)
+        self.playerwithnomoves = None
 
 
 class Controller():
