@@ -18,10 +18,11 @@ if debuggerMode:
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
-    controller.run(CalculateProbs=False, timeDelay=0)
+    controller.run(CalculateProbs=False, timeDelay=0, AddAgent=10)
 
 
 def plot(name):
+    plt.title(name)
     if debuggerMode:
         plt.savefig('outputs/' + name + nameOfRun + '.png')
         plt.clf()
@@ -42,6 +43,10 @@ print(parameters[:, -1])
 
 if not debuggerMode:
     controller.agents['green'].saveModel()
+
+plt.plot([agent.rating for agent in controller.agents['red'][1:]])
+plt.ylim((0, 1500))
+plot('Elo-Rating')
 
 # import cProfile
 # import pstats

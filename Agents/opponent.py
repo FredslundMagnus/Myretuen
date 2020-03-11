@@ -39,7 +39,11 @@ class Opponent():
             agent.loadModel(extention + str(i))
 
     def append(self, agent):
+        connection = agent.connection
+        agent.connection = 0
         adder = deepcopy(agent)
+        adder.connection = connection
+        agent.connection = connection
         adder.doTrain = False
         adder.env = self.env
         self.agents.append(adder)
