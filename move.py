@@ -3,6 +3,9 @@ import time
 
 class Move():
     def __init__(self, start=None, dice=None, end=None, game=None):
+        self.Eatreward = 3
+        self.basereward = 6
+        self.stepreward = -0.2
         self.start = start
         self.dice = dice
         self.end = end
@@ -13,15 +16,14 @@ class Move():
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
 
     def execute(self, CalculateProb, oppesite=False):
-        reward = 0
+        self.reward = 0
         self.removeDice()
         moving = self.liftAnts()
         myAnt = moving[-1]
-        rewardAdded = self.placeOnBoard(moving, oppesite, CalculateProb)
-        reward += rewardAdded
-        reward += self.transforCaputuredToBase(myAnt)
+        self.reward += self.placeOnBoard(moving, oppesite, CalculateProb)
+        self.reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
-        return reward
+        return self.reward
 
     def removeDice(self):
         self.game.rolled.remove(self.dice)
@@ -57,8 +59,8 @@ class Move():
                     ant.position = self.game.bases[color]
                     ant.flipped = False
                     self.game.bases[color].captured.append(ant)
-                reward += 6 * factor
-            reward -= 6 * factor
+                reward += self.basereward * factor
+            reward -= self.basereward * factor
             self.end.ants = []
         return reward
 
@@ -83,7 +85,7 @@ class Move():
                 self.game.prob.CalculateWinChance()
             for ant in self.end.ants:
                 ant.isAlive = False
-                reward += 3
+                reward += self.Eatreward
             self.end.ants = self.end.ants + moving
         else:
             if CalculateProb == True:
@@ -92,7 +94,7 @@ class Move():
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
-                reward -= 3
+                reward -= self.Eatreward
             moving.reverse()
             self.end.ants = moving + self.end.ants
 
@@ -101,7 +103,7 @@ class Move():
         return reward
 
     def simulateSimple(self, ants):
-        simul_reward = -0.2
+        simul_reward = self.stepreward
         if self.start.type == 'Base':
             for ant in ants:
                 if ant.id == self.start.home[0].id:
@@ -116,9 +118,9 @@ class Move():
                     ant.position = self.end
                     if ant.position.special == 'Flag' and self.end.id in [x.id for x in self.game.bases[theAnt.color].goals]:
                         foundflag = True
-                        simul_reward += 6
+                        simul_reward += self.basereward
             if foundflag == True:
-                simul_reward -= 6
+                simul_reward -= self.basereward
 
         self.simulateClean(ants)
 
@@ -126,7 +128,7 @@ class Move():
 
     def simulateComplex(self, ants, oppesite=False):
         win = False
-        simul_reward = -0.2
+        simul_reward = self.stepreward
         self.game.prob.True_clusters = self.game.prob.clusters
         self.game.prob.True_history = self.game.prob.history
         self.game.prob.True_Ant_clusters = self.game.prob.Ant_clusters
@@ -165,7 +167,7 @@ class Move():
                     for Acolor in ant.antsUnderMe:
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
-                    simul_reward += 3
+                    simul_reward += self.Eatreward
         else:
             probofstate = 1 - probofstate
             if probofstate != 1:
@@ -180,7 +182,7 @@ class Move():
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
                 theAnt.antsUnderMe[ant.color] += 1
-                simul_reward -= 3
+                simul_reward -= self.Eatreward
 
         self.game.prob.CalculateWinChance()
         self.giveantsprobabilities(self.game.prob.probmatrix, ants)

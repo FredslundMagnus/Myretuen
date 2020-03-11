@@ -26,6 +26,7 @@ class Myretuen(gym.Env):
         self.wins = []
         self.Runningwinrate = None
         self.prob = Probability_calculator(self.bases, self.ants)
+        self.playerwithnomoves = None
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1
@@ -46,6 +47,7 @@ class Myretuen(gym.Env):
         if action == None:
             reward = 0
             self.rolled = []
+            self.playerwithnomoves = self.currentPlayer
         else:
             reward = action.execute(CalculateProb)
         done = self.gameHasEnded()
@@ -56,8 +58,9 @@ class Myretuen(gym.Env):
             info = {'PlayerSwapped': False, self.player1: score[self.player1], self.player2: score[self.player2]}
         if len(self.rolled) == 0:
             if not self.rolledSameDice:
-                self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
-                info['PlayerSwapped'] = True
+                if self.playerwithnomoves == None or self.playerwithnomoves == self.currentPlayer:
+                    self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
+                    info['PlayerSwapped'] = True
             self.roll()
         return observation, reward, done, info
 
@@ -107,7 +110,9 @@ class Myretuen(gym.Env):
                 return True
         if self.maxRolls <= self.dicesThatHaveBeenRolled:
             return True
-        return False
+        if any(x == True for x in [x.isAlive for x in self.ants[:len(self.ants)//2]]) and any(x == True for x in [x.isAlive for x in self.ants[len(self.ants)//2:]]):
+            return False
+        return True
 
     def getCurrentScore(self):
         return {name: len(base.captured) for name, base in self.bases.items()}
@@ -141,6 +146,7 @@ class Myretuen(gym.Env):
         self.rolledSameDice = False
         self.nGamePlay += 1
         self.prob = Probability_calculator(self.bases, self.ants)
+        self.playerwithnomoves = None
 
 
 class Controller():
