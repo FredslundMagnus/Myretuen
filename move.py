@@ -103,6 +103,7 @@ class Move():
     def simulateSimple(self, ants):
         simul_reward = -0.2
         foundflag = False
+        theAnt = self.start.ants[-1]
         if self.start.type == 'Base':
             for ant in ants:
                 if ant.id == self.start.home[0].id:
@@ -113,9 +114,9 @@ class Move():
             for ant in ants:
                 if ant.id in ids:
                     ant.position = self.end
-                    if ant.position.special == 'Flag' and ant.position in self.game.bases[ant.color].goals:
-                        foundflag = True
-                        simul_reward += 6
+                    if ant.position.special == 'Flag' and self.end.ant in self.game.bases[theAnt.color].goals:
+            foundflag = True
+            simul_reward += 6
         if foundflag == True:
             simul_reward -= 6
 
