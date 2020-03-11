@@ -121,24 +121,18 @@ class Myretuen(gym.Env):
         return {name: len(base.captured) for name, base in self.bases.items()}
 
     def gameStatus(self, agents):
-        currentScore = self.getCurrentScore()
-
-        scores = [score for name, score in currentScore.items()]
-        names = [name for name, score in currentScore.items()]
-        if scores[0] > scores[1]:
-            self.totalScore[names[0]] += 1
-            score = 0
-        elif scores[1] > scores[0]:
-            self.totalScore[names[1]] += 1
-            score = 1
+        winStatus = self.whoWonThisGame()
+        if winStatus[self.player1] == 1:
+            self.totalScore[self.player1] += 1
+        elif winStatus[self.player2] == 1:
+            self.totalScore[self.player2] += 1
         else:
             self.totalScore['Tie'] += 1
-            score = 0.5
-        Elo(agents[self.player2], agents[self.player1], score)
+        Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
         if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
-            self.wins.append(score)
+            self.wins.append(winStatus[self.player2])
         self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
-        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
+        return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {self.getCurrentScore()},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
     def reset(self):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
