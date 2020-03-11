@@ -22,6 +22,7 @@ else:
 
 
 def plot(name):
+    plt.legend()
     plt.title(name)
     if debuggerMode:
         plt.savefig('outputs/' + name + nameOfRun + '.png')
@@ -45,6 +46,7 @@ if not debuggerMode:
     controller.agents['green'].saveModel()
 
 plt.plot([agent.rating for agent in controller.agents['red'][1:]])
+plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]), label='RandomAgent')
 plt.ylim((0, 2500))
 plot('Elo-Rating')
 
