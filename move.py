@@ -115,8 +115,8 @@ class Move():
                 if ant.id in ids:
                     ant.position = self.end
                     if ant.position.special == 'Flag' and self.end.ant in self.game.bases[theAnt.color].goals:
-            foundflag = True
-            simul_reward += 6
+                        foundflag = True
+                        simul_reward += 6
         if foundflag == True:
             simul_reward -= 6
 
