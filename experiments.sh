@@ -19,13 +19,13 @@
 #1 bsub -J "LinearAprox7x" -P "LinearAprox7x 3500 100 LinearAprox" < submit.sh
 #1 bsub -J "LinearAprox8x" -P "LinearAprox8x 3500 100 LinearAprox" < submit.sh
 #1 bsub -J "LinearAprox9x" -P "LinearAprox9x 3500 100 LinearAprox" < submit.sh
-bsub -J "NNAgent0p" -P "NNAgent0p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent1p" -P "NNAgent1p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent2p" -P "NNAgent2p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent3p" -P "NNAgent3p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent4p" -P "NNAgent4p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent5p" -P "NNAgent5p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent6p" -P "NNAgent6p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent7p" -P "NNAgent7p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent8p" -P "NNAgent8p 1500 100 NNAgent" < submit.sh
-bsub -J "NNAgent9p" -P "NNAgent9p 1500 100 NNAgent" < submit.sh
+bsub -J "NNAgent0elo2" -P "NNAgent0elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent1elo2" -P "NNAgent1elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent2elo2" -P "NNAgent2elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent3elo2" -P "NNAgent3elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent4elo2" -P "NNAgent4elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent5elo2" -P "NNAgent5elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent6elo2" -P "NNAgent6elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent7elo2" -P "NNAgent7elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent8elo2" -P "NNAgent8elo2 1500 10 NNAgent" < submit.sh
+bsub -J "NNAgent9elo2" -P "NNAgent9elo2 1500 10 NNAgent" < submit.sh

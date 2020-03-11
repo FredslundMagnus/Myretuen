@@ -1,4 +1,4 @@
-def Elo(me, opponent, result, K=42):
+def Elo(me, opponent, result, K=32):
     A = me if me.__class__.__name__ != "Opponent" else me.currentAgent
     B = opponent if opponent.__class__.__name__ != "Opponent" else opponent.currentAgent
 

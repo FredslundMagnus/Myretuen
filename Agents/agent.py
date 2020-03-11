@@ -55,7 +55,7 @@ class Agent():
         pass
 
     def setup(self, explore, doTrain):
-        self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating = 0, [], [], explore, doTrain, [], None, [], [], 500
+        self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating = 0, [], [], explore, doTrain, [], None, [], [], 1200
 
     def resetGame(self):
         try:
@@ -126,7 +126,7 @@ class Agent():
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
     def state(self, game, action=None):
-        probofstate1, probofstate2, simul_reward1, simul_reward2 = 1,0,0,0
+        probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
         if action == None:
             ants1 = game.ants
         else:
