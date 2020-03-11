@@ -17,7 +17,7 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent)
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
 else:
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=SimpleLinear())
     controller.run(CalculateProbs=False, timeDelay=0, AddAgent=10)
 
 

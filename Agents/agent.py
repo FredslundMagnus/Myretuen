@@ -3,6 +3,7 @@ import numpy as np
 import time
 import pickle
 import numpy as np
+from impala import Impala
 
 
 class Agent():
@@ -45,6 +46,8 @@ class Agent():
         else:
             newState = self.state(observation)[0]
             self.previousState = self.previousState[0]
+        if self.ImpaleIsActivated:
+            self.impala.addData(reward, self.previousState, newState)
         self.train(reward, self.previousState, newState)
         self.previousState = []
 
@@ -54,8 +57,10 @@ class Agent():
     def value(self, state):
         pass
 
-    def setup(self, explore, doTrain):
+    def setup(self, explore, doTrain, impala):
         self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = 0, [], [], explore, doTrain, [], None, [], [], 1200, None
+        self.ImpaleIsActivated = impala
+        self.impala = Impala(self.train)
 
     def resetGame(self):
         try:
