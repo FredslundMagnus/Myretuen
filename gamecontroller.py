@@ -36,6 +36,8 @@ class Gamecontroller():
                     opponentReward = reward
                 else:
                     agent.trainAgent(reward-0.2, action, observation)
+
+            print(self.env.gameStatus(self.agents))
             # Final train
             # print('\n\n', opponentReward, reward, '\n')
             for color, agent in self.agents.items():
@@ -45,7 +47,6 @@ class Gamecontroller():
                 self.agents[self.env.player1].append(self.agents[self.env.player2])
                 print(self.agents[self.env.player1])
 
-            print(self.env.gameStatus(self.agents))
             self.winrate.append(self.env.Runningwinrate)
             self.env.reset()
             if gameN >= NGames:

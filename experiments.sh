@@ -1,31 +1,31 @@
 #!/bin/sh
-bsub -J "SimpleLinear0x" -P "SimpleLinear0x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear1x" -P "SimpleLinear1x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear2x" -P "SimpleLinear2x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear3x" -P "SimpleLinear3x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear4x" -P "SimpleLinear4x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear5x" -P "SimpleLinear5x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear6x" -P "SimpleLinear6x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear7x" -P "SimpleLinear7x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear8x" -P "SimpleLinear8x 5000 100 SimpleLinear" < submit.sh
-bsub -J "SimpleLinear9x" -P "SimpleLinear9x 5000 100 SimpleLinear" < submit.sh
-bsub -J "LinearAprox0x" -P "LinearAprox0x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox1x" -P "LinearAprox1x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox2x" -P "LinearAprox2x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox3x" -P "LinearAprox3x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox4x" -P "LinearAprox4x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox5x" -P "LinearAprox5x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox6x" -P "LinearAprox6x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox7x" -P "LinearAprox7x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox8x" -P "LinearAprox8x 3500 100 LinearAprox" < submit.sh
-bsub -J "LinearAprox9x" -P "LinearAprox9x 3500 100 LinearAprox" < submit.sh
-bsub -J "NNAgent0x" -P "NNAgent0x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent1x" -P "NNAgent1x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent2x" -P "NNAgent2x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent3x" -P "NNAgent3x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent4x" -P "NNAgent4x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent5x" -P "NNAgent5x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent6x" -P "NNAgent6x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent7x" -P "NNAgent7x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent8x" -P "NNAgent8x 3500 100 NNAgent" < submit.sh
-bsub -J "NNAgent9x" -P "NNAgent9x 3500 100 NNAgent" < submit.sh
+#1 bsub -J "SimpleLinear0x" -P "SimpleLinear0x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear1x" -P "SimpleLinear1x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear2x" -P "SimpleLinear2x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear3x" -P "SimpleLinear3x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear4x" -P "SimpleLinear4x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear5x" -P "SimpleLinear5x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear6x" -P "SimpleLinear6x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear7x" -P "SimpleLinear7x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear8x" -P "SimpleLinear8x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "SimpleLinear9x" -P "SimpleLinear9x 5000 100 SimpleLinear" < submit.sh
+#1 bsub -J "LinearAprox0x" -P "LinearAprox0x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox1x" -P "LinearAprox1x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox2x" -P "LinearAprox2x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox3x" -P "LinearAprox3x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox4x" -P "LinearAprox4x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox5x" -P "LinearAprox5x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox6x" -P "LinearAprox6x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox7x" -P "LinearAprox7x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox8x" -P "LinearAprox8x 3500 100 LinearAprox" < submit.sh
+#1 bsub -J "LinearAprox9x" -P "LinearAprox9x 3500 100 LinearAprox" < submit.sh
+bsub -J "NNAgent0p" -P "NNAgent0p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent1p" -P "NNAgent1p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent2p" -P "NNAgent2p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent3p" -P "NNAgent3p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent4p" -P "NNAgent4p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent5p" -P "NNAgent5p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent6p" -P "NNAgent6p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent7p" -P "NNAgent7p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent8p" -P "NNAgent8p 1000 100 NNAgent" < submit.sh
+bsub -J "NNAgent9p" -P "NNAgent9p 1000 100 NNAgent" < submit.sh
