@@ -22,12 +22,15 @@ class Gamecontroller():
             opponentReward = 0
             DONE = False
             agent = self.agents[self.env.currentPlayer]
-            while getattr(thread, "do_run", True) and not DONE:
+            while getattr(thread, "do_run", True):
                 self.sleep()
                 actions = env.action_space()
                 action = agent.choose(actions)
                 observation, reward, DONE, info = env.step(action, CalculateProbs)
                 opponentReward -= reward
+
+                if DONE:
+                    break
 
                 agent = self.agents[self.env.currentPlayer]
 
@@ -37,6 +40,7 @@ class Gamecontroller():
                 else:
                     agent.trainAgent(reward-0.2, action, observation)
 
+            print(info)
             print(self.env.gameStatus(self.agents))
             # Final train
             # print('\n\n', opponentReward, reward, '\n')

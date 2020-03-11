@@ -50,12 +50,25 @@ class Myretuen(gym.Env):
             reward = action.execute(CalculateProb)
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
+        if done:
+            endReward = 40
+            score = {player: (val*2-1)*endReward for player, val in self.whoWonThisGame().items()}
+            info = {'PlayerSwapped': False, self.player1: score[self.player1], self.player2: score[self.player2]}
         if len(self.rolled) == 0:
             if not self.rolledSameDice:
                 self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
                 info['PlayerSwapped'] = True
             self.roll()
         return observation, reward, done, info
+
+    def whoWonThisGame(self):
+        if
+        currentScore = self.getCurrentScore()
+        if currentScore[self.player1] > currentScore[self.player2]:
+            return {self.player1: 1, self.player2: 0}
+        if currentScore[self.player1] < currentScore[self.player2]:
+            return {self.player1: 0, self.player2: 1}
+        return {self.player1: 0.5, self.player2: 0.5}
 
     def getAllStartConfigurations(self):
         for ant in self.getAllCurrentPlayersAnts():
