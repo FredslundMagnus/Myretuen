@@ -35,6 +35,10 @@ class Agent():
                     valueMax = value
                     bestAction = action
                     self.actionState = state
+        # if len(actions) == 0 and self.newreward != 0:
+        #     self.train(self.newreward, None, self.previousState)
+        #     print(self.newreward)
+        #     self.newreward = 0
         if len(actions) == 0:
             self.previousState = []
         return bestAction
@@ -47,7 +51,7 @@ class Agent():
         self.previousState = []
         self.newreward = reward
 
-    def train(self, reward, action, newState):
+    def train(self, reward, action, newState, notLast=1):
         pass
 
     def value(self, state):
@@ -64,7 +68,9 @@ class Agent():
             self.parameters.append(np.array(li).reshape(-1))
         except:
             self.parameters.append(np.array(self.phi))
-
+        self.previousState = self.state(self.env)
+        self.train(self.newreward, None, self.previousState, notLast=0)
+        self.newreward = 0
         self.previousState = []
 
     def saveModel(self, extention=''):

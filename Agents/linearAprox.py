@@ -18,9 +18,9 @@ class LinearAprox(Agent):
         x[len(self.phi)//2:len(self.phi)//2+len(r)] = r
         return x.T @ self.phi
 
-    def train(self, reward, action, newState, alpha=0.000001, discount=0.8):
+    def train(self, reward, action, newState, alpha=0.000001, discount=0.8, notLast=1):
         Vst = self.value(self.previousState)
-        Vstnext = self.value(newState)
+        Vstnext = self.value(newState) * notLast
         x = np.zeros(len(self.phi))
         state, n = self.previousState[0] if type(self.previousState) == type([1]) else self.previousState
         s = np.array(state).reshape(-1)

@@ -15,7 +15,7 @@ class NNAgent(Agent):
         Nfeature = np.array(state).shape[-1]
         if self.phi == []:
             self.phi = Net(Nfeature)
-            self.optimizer = optim.Adam(self.phi.parameters(), lr=0.0001, amsgrad=True)
+            self.optimizer = optim.Adam(self.phi.parameters(), lr=0.00005, amsgrad=True)
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
             (np.ones(n), -np.ones(x.shape[0]-n)), axis=0))
@@ -24,11 +24,14 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, newState, lambd=0.9, discount=0.995):
+    def train(self, reward, action, newState, lambd=0.9, discount=0.995, notLast=1):
+        # print(reward, end=' ')
+        # if notLast == 0:
+        #     print('The game is done!')
         if abs(reward) > 30:
             reward = 30*reward/abs(reward)
         Vst = self.value(self.previousState, return_float=False)
-        Vstnext = self.value(newState, return_float=False)
+        Vstnext = self.value(newState, return_float=False) * notLast
         label = torch.FloatTensor([reward + discount * Vstnext])
         criterion = nn.MSELoss()
         loss = criterion(Vst, label)
