@@ -54,8 +54,8 @@ class Myretuen(gym.Env):
         info = {'PlayerSwapped': False}
         if done:
             endReward = 40
-            score = {player: (val*2-1)*endReward for player, val in self.whoWonThisGame().items()}
-            info = {'PlayerSwapped': False, self.player1: score[self.player1], self.player2: score[self.player2]}
+            info = {player: (val*2-1)*endReward for player, val in self.whoWonThisGame().items()}
+            info['PlayerSwapped'] = False
         if len(self.rolled) == 0:
             if not self.rolledSameDice:
                 if self.playerwithnomoves == None or self.playerwithnomoves == self.currentPlayer:
@@ -65,7 +65,10 @@ class Myretuen(gym.Env):
         return observation, reward, done, info
 
     def whoWonThisGame(self):
-        if
+        if all([not x.isAlive for x in self.ants[len(self.ants)//2:]]):
+            return {self.player1: 1, self.player2: 0}
+        if all([not x.isAlive for x in self.ants[:len(self.ants)//2]]):
+            return {self.player1: 0, self.player2: 1}
         currentScore = self.getCurrentScore()
         if currentScore[self.player1] > currentScore[self.player2]:
             return {self.player1: 1, self.player2: 0}

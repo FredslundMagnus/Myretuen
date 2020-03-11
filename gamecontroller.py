@@ -39,11 +39,14 @@ class Gamecontroller():
                     opponentReward = reward
                 else:
                     agent.trainAgent(reward-0.2, action, observation)
-
-            print(info)
-            print(self.env.gameStatus(self.agents))
             # Final train
-            # print('\n\n', opponentReward, reward, '\n')
+            print(info)
+            self.agents[env.player1].trainAgent(info[env.player1], action, observation)
+            self.agents[env.player2].trainAgent(info[env.player2], action, observation)
+
+            # Final train
+            print(self.env.gameStatus(self.agents))
+
             for color, agent in self.agents.items():
                 agent.resetGame()
 
