@@ -45,10 +45,10 @@ class Agent():
         else:
             newState = self.state(observation)[0]
             self.previousState = self.previousState[0]
-        self.train(reward, action, newState)
+        self.train(reward, self.previousState, newState)
         self.previousState = []
 
-    def train(self, reward, action, newState, notLast=1):
+    def train(self, reward, previousState, newState):
         pass
 
     def value(self, state):
