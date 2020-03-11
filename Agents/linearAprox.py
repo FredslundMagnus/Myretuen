@@ -7,7 +7,7 @@ class LinearAprox(Agent):
         self.setup(explore, doTrain)
 
     def value(self, infostate):
-        state, n = infostate[0] if type(infostate) == type([1]) else infostate
+        state, n = infostate[0], infostate[1]
         if len(self.phi) == 0:
             self.Nfeature = np.array(state).shape[-1]
             self.phi = np.random.rand(len(np.array(state).reshape(-1)))
@@ -22,7 +22,7 @@ class LinearAprox(Agent):
         Vst = self.value(previousState)
         Vstnext = self.value(newState)
         x = np.zeros(len(self.phi))
-        state, n = previousState[0] if type(previousState) == type([1]) else previousState
+        state, n = previousState[0], previousState[1]
         s = np.array(state).reshape(-1)
         x[:n*self.Nfeature] = s[:n*self.Nfeature]
         r = s[n*self.Nfeature:]
