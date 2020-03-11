@@ -97,7 +97,9 @@ class Myretuen(gym.Env):
                 return True
         if self.maxRolls <= self.dicesThatHaveBeenRolled:
             return True
-        return False
+        if any(x == True for x in [x.isAlive for x in self.ants[:len(self.ants)//2]]) and any(x == True for x in [x.isAlive for x in self.ants[len(self.ants)//2:]]):
+            return False
+        return True
 
     def getCurrentScore(self):
         return {name: len(base.captured) for name, base in self.bases.items()}
