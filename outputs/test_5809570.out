@@ -1,0 +1,51 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-23-26>
+Subject: Job 5809570: <LinearAprox8b> in cluster <dcc> Exited
+
+Job <LinearAprox8b> was submitted from host <n-62-27-20> by user <s183905> in cluster <dcc> at Tue Mar 10 21:34:30 2020
+Job was executed on host(s) <n-62-23-26>, in queue <hpc>, as user <s183905> in cluster <dcc> at Tue Mar 10 21:34:31 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Tue Mar 10 21:34:31 2020
+Terminated at Tue Mar 10 23:02:04 2020
+Results reported at Tue Mar 10 23:02:04 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -o outputs/test_%J.out
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=1G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 1500
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Exited with exit code 120.
+
+Resource usage summary:
+
+    CPU time :                                   5250.88 sec.
+    Max Memory :                                 87 MB
+    Average Memory :                             83.16 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               937.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   5258 sec.
+    Turnaround time :                            5254 sec.
+
+The output (if any) is above this job summary.
+
