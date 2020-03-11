@@ -7,8 +7,8 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=True, doTrain=True):
-        self.setup(explore, doTrain)
+    def __init__(self, explore=True, doTrain=True, impala=True):
+        self.setup(explore, doTrain, impala)
 
     def value(self, infostate, return_float=True):
         state, n = infostate[0], infostate[1]
@@ -24,14 +24,15 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, newState, lambd=0.9, discount=0.995):
-        Vst = self.value(self.previousState, return_float=False)
+    def train(self, reward, previousState, newState, lambd=0.9, discount=0.995, updateWeights=True):
+        Vst = self.value(previousState, return_float=False)
         Vstnext = self.value(newState, return_float=False)
         label = torch.FloatTensor([reward + discount * Vstnext])
         criterion = nn.MSELoss()
         loss = criterion(Vst, label)
         loss.backward()
-        self.optimizer.step()
+        if updateWeights:
+            self.optimizer.step()
         for f in self.phi.parameters():
             f.grad *= lambd
 

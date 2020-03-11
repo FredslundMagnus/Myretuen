@@ -3,9 +3,8 @@ import time
 
 
 class PlayerAgent(Agent):
-    def __init__(self, connection=None, explore=False, doTrain=False):
-        self.setup(explore, doTrain)
-        self.connection = connection
+    def __init__(self, explore=False, doTrain=False, impala=False):
+        self.setup(explore, doTrain, impala)
 
     def choose(self, actions):
         while len(actions) != 0:
