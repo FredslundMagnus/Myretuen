@@ -48,7 +48,7 @@ class Agent():
         self.train(reward, action, newState)
         self.previousState = []
 
-    def train(self, reward, action, newState, notLast=1):
+    def train(self, reward, action, newState):
         pass
 
     def value(self, state):

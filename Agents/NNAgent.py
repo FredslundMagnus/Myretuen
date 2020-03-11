@@ -24,9 +24,10 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, action, newState, lambd=0.9, discount=0.995, notLast=1):
+    def train(self, reward, action, newState, lambd=0.9, discount=0.995):
+        print(reward, end=' ')
         Vst = self.value(self.previousState, return_float=False)
-        Vstnext = self.value(newState, return_float=False) * notLast
+        Vstnext = self.value(newState, return_float=False)
         label = torch.FloatTensor([reward + discount * Vstnext])
         criterion = nn.MSELoss()
         loss = criterion(Vst, label)
