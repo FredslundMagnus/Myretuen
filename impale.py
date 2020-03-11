@@ -4,7 +4,7 @@ import random
 
 class Impala():
     def __init__(self, trainFunktion, historyLength=50, startAfterNgames=20):
-        self.games = [[1, 2, 3, 4, 5, 6, 7], [2, 2, 3, 4, 5, 6, 7, 8], [3, 2, 3, 4, 5, 6, 7, 9]]
+        self.games = []
         self.currentGame = []
         self.historyLength = historyLength
         self.startAfterNgames = startAfterNgames
@@ -42,6 +42,3 @@ class Impala():
             previousState, reward = newState, newreward
         newState, _ = batch[-1]
         self.trainFunktion(reward, deepcopy(previousState), deepcopy(newState))
-
-
-Impala(1).getBatch(3)
