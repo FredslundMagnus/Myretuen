@@ -102,23 +102,23 @@ class Move():
 
     def simulateSimple(self, ants):
         simul_reward = -0.2
-        foundflag = False
-        theAnt = self.start.ants[-1]
         if self.start.type == 'Base':
             for ant in ants:
                 if ant.id == self.start.home[0].id:
                     ant.position = self.end
                     break
         else:
+            foundflag = False
+            theAnt = self.start.ants[-1]
             ids = {ant.id for ant in self.start.ants}
             for ant in ants:
                 if ant.id in ids:
                     ant.position = self.end
-                    if ant.position.special == 'Flag' and self.end.ant in self.game.bases[theAnt.color].goals:
+                    if ant.position.special == 'Flag' and self.end.id in [x.id for x in self.game.bases[theAnt.color].goals]:
                         foundflag = True
                         simul_reward += 6
-        if foundflag == True:
-            simul_reward -= 6
+            if foundflag == True:
+                simul_reward -= 6
 
         self.simulateClean(ants)
 
