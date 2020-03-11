@@ -45,7 +45,7 @@ if not debuggerMode:
     controller.agents['green'].saveModel()
 
 plt.plot([agent.rating for agent in controller.agents['red'][1:]])
-plt.ylim((0, 1500))
+plt.ylim((0, 2500))
 plot('Elo-Rating')
 
 # import cProfile
