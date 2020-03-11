@@ -14,10 +14,10 @@ class Agent():
             values = []
             for action in actions:
                 states.append(self.state(self.env, action))
-                if len(states[-1][0]) == 1:
-                    values.append(self.value(states[-1][0]))
+                if len(states[-1]) == 1:
+                    values.append(self.value(states[-1][0]) + states[-1][0][3])
                 else:
-                    values.append(self.value(states[-1][0][0]) * states[-1][1] + self.value(states[-1][0][1]) * (1 - states[-1][1]))
+                    values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
             chances = self.softmax(values)
             index = np.random.choice(len(chances), 1, p=chances)[0]
             self.actionState = states[index]
@@ -27,18 +27,14 @@ class Agent():
             bestAction = None
             for action in actions:
                 state = self.state(self.env, action)
-                if len(state[0]) == 1:
-                    value = self.value(state[0])
+                if len(state) == 1:
+                    value = self.value(state[0]) + state[0][3]
                 else:
-                    value = self.value(state[0][0]) * state[1] + self.value(state[0][1]) * (1 - state[1])
+                    value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
                 if value > valueMax:
                     valueMax = value
                     bestAction = action
                     self.actionState = state
-        # if len(actions) == 0 and self.newreward != 0:
-        #     self.train(self.newreward, None, self.previousState)
-        #     print(self.newreward)
-        #     self.newreward = 0
         if len(actions) == 0:
             self.previousState = []
         return bestAction
@@ -46,10 +42,11 @@ class Agent():
     def trainAgent(self, reward, action, observation):
         if len(self.previousState) == 0 or action == None or not self.doTrain:
             return
-        newState = self.state(observation)
-        self.train(self.newreward, action, newState)
+        else:
+            newState = self.state(observation)[0]
+            self.previousState = self.previousState[0]
+        self.train(reward, action, newState)
         self.previousState = []
-        self.newreward = reward
 
     def train(self, reward, action, newState, notLast=1):
         pass
@@ -58,7 +55,7 @@ class Agent():
         pass
 
     def setup(self, explore, doTrain):
-        self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = 0, [], [], explore, doTrain, [], None, [], []
+        self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = [], [], explore, doTrain, [], None, [], []
 
     def resetGame(self):
         try:
@@ -69,8 +66,6 @@ class Agent():
         except:
             self.parameters.append(np.array(self.phi))
         self.previousState = self.state(self.env)
-        self.train(self.newreward, None, self.previousState, notLast=0)
-        self.newreward = 0
         self.previousState = []
 
     def saveModel(self, extention=''):
@@ -131,10 +126,11 @@ class Agent():
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
     def state(self, game, action=None):
+        probofstate1, probofstate2, simul_reward1, simul_reward2 = 1,0,0,0
         if action == None:
             ants1 = game.ants
         else:
-            ants1, ants2, ProbOfState = action.simulate()
+            ants1, ants2, probofstate1, probofstate2, simul_reward1, simul_reward2 = action.simulate()
         mines1, dines1, mines2, dines2 = [], [], [], []
         self.currentAnts = ants1
         self.antsUnder = self.antsUnderAnts()
@@ -144,23 +140,22 @@ class Agent():
                     mines1.append(ant1State)
                 else:
                     dines1.append(ant1State)
-        Antstate1 = (mines1 + dines1, len(mines1))
+        Antstate1 = [mines1 + dines1, len(mines1), probofstate1, simul_reward1]
 
-        if action == None:
-            return Antstate1
+        if action == None or ants2 == [None]:
+            return [Antstate1]
 
-        if ants2 != [None]:
-            self.currentAnts = ants2
-            self.antsUnder = self.antsUnderAnts()
-            for ant2 in ants2:
-                for ant2State in self.antState(ant2):
-                    if ant2.color == game.currentPlayer:
-                        mines2.append(ant2State)
-                    else:
-                        dines2.append(ant2State)
-        Antstate2 = (mines2 + dines2, len(mines2))
+        self.currentAnts = ants2
+        self.antsUnder = self.antsUnderAnts()
+        for ant2 in ants2:
+            for ant2State in self.antState(ant2):
+                if ant2.color == game.currentPlayer:
+                    mines2.append(ant2State)
+                else:
+                    dines2.append(ant2State)
+        Antstate2 = [mines2 + dines2, len(mines2), probofstate2, simul_reward2]
 
-        return [[Antstate1], ProbOfState] if ants2 == [None] else [[Antstate1, Antstate2], ProbOfState]
+        return [Antstate1, Antstate2]
 
     def getDistances(self, ant):
         mine = [0]*35

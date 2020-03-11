@@ -7,7 +7,7 @@ class SimpleLinear(Agent):
         self.setup(explore, doTrain)
 
     def value(self, infostate):
-        state, n = infostate[0] if type(infostate) == type([1]) else infostate
+        state, n = infostate[0], infostate[1]
         if len(self.phi) == 0:
             self.Nfeature = np.array(state).shape[-1]
             self.phi = np.random.rand(self.Nfeature)
@@ -19,7 +19,7 @@ class SimpleLinear(Agent):
 
     def train(self, reward, action, newState, alpha=0.00001, discount=0.9, lambd=0.5, notLast=1):
         Vst = self.value(self.previousState)
-        state, _ = self.previousState[0] if type(self.previousState) == type([1]) else self.previousState
+        state = self.previousState[0]
         x = self.factor @ np.array(state).reshape(-1, self.Nfeature)
         Vstnext = self.value(newState) * notLast
         self.trace = self.trace*lambd + x

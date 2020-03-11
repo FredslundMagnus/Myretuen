@@ -11,7 +11,7 @@ class NNAgent(Agent):
         self.setup(explore, doTrain)
 
     def value(self, infostate, return_float=True):
-        state, n = infostate[0] if type(infostate) == type([1]) else infostate
+        state, n = infostate[0], infostate[1]
         Nfeature = np.array(state).shape[-1]
         if self.phi == []:
             self.phi = Net(Nfeature)
@@ -25,11 +25,6 @@ class NNAgent(Agent):
         return value.item() if return_float else value
 
     def train(self, reward, action, newState, lambd=0.9, discount=0.995, notLast=1):
-        # print(reward, end=' ')
-        # if notLast == 0:
-        #     print('The game is done!')
-        if abs(reward) > 30:
-            reward = 30*reward/abs(reward)
         Vst = self.value(self.previousState, return_float=False)
         Vstnext = self.value(newState, return_float=False) * notLast
         label = torch.FloatTensor([reward + discount * Vstnext])

@@ -12,7 +12,7 @@ class Gamecontroller():
         agent1.start()
         self.winrate = []
 
-    def run(self, NGames=float('inf'), timeDelay=1, AddAgent=10000, CalculateProbs=True):
+    def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, CalculateProbs=True):
         self.timeDelay = timeDelay
         thread = threading.currentThread()
         env = self.env
@@ -36,6 +36,9 @@ class Gamecontroller():
                     opponentReward = reward
                 else:
                     agent.trainAgent(reward-0.2, action, observation)
+
+
+
             # Final train
             # print('\n\n', opponentReward, reward, '\n')
             for color, agent in self.agents.items():
