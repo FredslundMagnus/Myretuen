@@ -21,8 +21,9 @@ else:
     controller.run(CalculateProbs=False, timeDelay=0, AddAgent=10)
 
 
-def plot(name):
-    plt.legend()
+def plot(name, labels=False):
+    if labels:
+        plt.legend()
     plt.title(name)
     if debuggerMode:
         plt.savefig('outputs/' + name + nameOfRun + '.png')
@@ -48,7 +49,7 @@ if not debuggerMode:
 plt.plot([agent.rating for agent in controller.agents['red'][1:]])
 plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]), label='RandomAgent')
 plt.ylim((0, 2500))
-plot('Elo-Rating')
+plot('Elo-Rating', labels=True)
 
 # import cProfile
 # import pstats
