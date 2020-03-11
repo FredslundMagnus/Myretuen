@@ -127,6 +127,7 @@ class Move():
         return ants, simul_reward
 
     def simulateComplex(self, ants, oppesite=False):
+        sim_win_reward = 0
         win = False
         simul_reward = self.stepreward
         self.game.prob.True_clusters = self.game.prob.clusters
@@ -168,6 +169,10 @@ class Move():
                         ant.antsUnderMe[Acolor] = 0
                     theAnt.antsUnderMe[ant.color] += 1
                     simul_reward += self.Eatreward
+
+            enemies = [ant for ant in ants if ant.color == self.end.ants[-1].color]
+            if all([not x.isAlive for x in enemies]):
+                sim_win_reward += 3*len(ants)/2+10
         else:
             probofstate = 1 - probofstate
             if probofstate != 1:
@@ -175,14 +180,18 @@ class Move():
 
             for ant in ants:
                 if ant.id == self.end.ants[-1].id:
-                    theAnt = ant
+                    masterant = ant
             for ant in moving:
                 ant.isAlive = False
                 ant.flipped = not ant.flipped
                 for Acolor in ant.antsUnderMe:
                     ant.antsUnderMe[Acolor] = 0
-                theAnt.antsUnderMe[ant.color] += 1
+                masterant.antsUnderMe[ant.color] += 1
                 simul_reward -= self.Eatreward
+
+            allies = [ant for ant in ants if ant.color == theAnt.color]
+            if all([not x.isAlive for x in allies]):
+                sim_win_reward -= 3*len(ants)/2+10
 
         self.game.prob.CalculateWinChance()
         self.giveantsprobabilities(self.game.prob.probmatrix, ants)
@@ -192,7 +201,8 @@ class Move():
         self.game.prob.Ant_clusters = self.game.prob.True_Ant_clusters
         self.game.prob.probmatrix = self.game.prob.True_probmatrix.copy()
 
-
+        if sim_win_reward != 0:
+            simul_reward = sim_win_reward
         self.simulateClean(ants)
 
         return ants, probofstate, simul_reward, win

@@ -39,8 +39,7 @@ class Gamecontroller():
                     opponentReward = reward
                 else:
                     agent.trainAgent(reward-0.2, action, observation)
-            # Final train
-            print(info)
+
             try:
                 self.agents[env.player1].trainAgent(info[env.player1], action, observation)
                 self.agents[env.player2].trainAgent(info[env.player2], action, observation)
