@@ -55,7 +55,7 @@ class Agent():
         pass
 
     def setup(self, explore, doTrain):
-        self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi = [], [], explore, doTrain, [], None, [], []
+        self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating = 0, [], [], explore, doTrain, [], None, [], [], 500
 
     def resetGame(self):
         try:

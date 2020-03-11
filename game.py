@@ -7,6 +7,7 @@ from UI.UI import addRect
 import gym
 from gym import spaces
 from Probability_function import Probability_calculator
+from elo import Elo
 
 
 class Myretuen(gym.Env):
@@ -105,16 +106,16 @@ class Myretuen(gym.Env):
         names = [name for name, score in currentScore.items()]
         if scores[0] > scores[1]:
             self.totalScore[names[0]] += 1
-            if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
-                self.wins.append(0)
+            score = 0
         elif scores[1] > scores[0]:
             self.totalScore[names[1]] += 1
-            if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
-                self.wins.append(1)
+            score = 1
         else:
             self.totalScore['Tie'] += 1
-            if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
-                self.wins.append(0.5)
+            score = 0.5
+        Elo(agents[self.player2], agents[self.player1], score)
+        if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
+            self.wins.append(score)
         self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
         return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {currentScore},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
