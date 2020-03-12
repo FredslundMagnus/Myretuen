@@ -3,8 +3,8 @@ from Agents.agent import Agent
 
 
 class RandomAgent(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False):
-        self.setup(explore, doTrain, impala)
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True):
+        self.setup(explore, doTrain, impala, calcprobs)
 
     def choose(self, actions):
         if len(actions) != 0:

@@ -18,6 +18,8 @@ class Agent():
                 if len(states[-1]) == 1:
                     values.append(self.value(states[-1][0]) + states[-1][0][3])
                 else:
+                    if self.calcprobs == False:
+                        states[-1][0][2], states[-1][1][2] = 0.5, 0.5
                     values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
             chances = self.softmax(values)
             index = np.random.choice(len(chances), 1, p=chances)[0]
@@ -31,6 +33,8 @@ class Agent():
                 if len(state) == 1:
                     value = self.value(state[0]) + state[0][3]
                 else:
+                    if self.calcprobs == False:
+                        state[0][2], state[1][2] = 0.5, 0.5
                     value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
                 if value > valueMax:
                     valueMax = value
@@ -58,8 +62,8 @@ class Agent():
     def value(self, state):
         pass
 
-    def setup(self, explore, doTrain, impala):
-        self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = 0, [], [], explore, doTrain, [], None, [], [], 1200, None
+    def setup(self, explore, doTrain, impala, calcprobs):
+        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1200, None
         self.ImpaleIsActivated = impala
         self.impala = Impala(self.train)
 
@@ -128,7 +132,10 @@ class Agent():
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
             ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
-            GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
+            if self.calcprobs == True:
+                GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
+            else:
+                GetProbabilityOfEat = []
             kval = list(np.array([ratio*disttoantsGlobal*np.array(self.GetProbabilityOfEat(ant)), (3-np.array(disttoantsGlobal))/ratio*(1-np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
