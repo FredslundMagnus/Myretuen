@@ -52,7 +52,6 @@ class Agent():
             self.previousState = self.previousState[0]
         if self.ImpaleIsActivated:
             self.impala.addData(reward, self.previousState, newState)
-            self.impala.batchTrain()
         self.train(reward, self.previousState, newState)
         self.previousState = []
 
@@ -77,6 +76,8 @@ class Agent():
             self.parameters.append(np.array(self.phi))
         self.previousState = self.state(self.env)
         self.previousState = []
+        if self.ImpaleIsActivated:
+            self.impala.batchTrain(batchSize=1000)
         self.impala.restart()
 
     def saveModel(self, extention=''):
