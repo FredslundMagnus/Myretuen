@@ -80,7 +80,7 @@ class Agent():
         self.previousState = []
         if self.ImpaleIsActivated:
             self.impala.batchTrain(batchSize=1000)
-        self.impala.restart()
+            self.impala.restart()
         self.resettrace()
 
     def saveModel(self, extention=''):

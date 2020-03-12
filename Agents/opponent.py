@@ -40,11 +40,23 @@ class Opponent():
 
     def append(self, agent):
         connection = agent.connection
+        currentAnts = agent.currentAnts
+        env = agent.env
+        impala = agent.impala
+        agent.impala = 0
+        agent.env = 0
+        agent.currentAnts = 0
         agent.connection = 0
         adder = deepcopy(agent)
+        agent.impala = impala
+        adder.env = env
+        agent.env = env
+        adder.currentAnts = currentAnts
+        agent.currentAnts = currentAnts
         adder.connection = connection
         agent.connection = connection
         adder.doTrain = False
+        adder.ImpaleIsActivated = False
         adder.env = self.env
         self.agents.append(adder)
 

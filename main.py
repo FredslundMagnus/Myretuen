@@ -1,8 +1,11 @@
+import pstats
+import cProfile
 from game import Myretuen, Controller
 from agents import *
 import numpy as np
 from matplotlib import pyplot as plt
 import sys
+import os
 
 debuggerMode = len(sys.argv) != 1
 
@@ -19,6 +22,11 @@ if debuggerMode:
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
+# controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
+# cProfile.run('controller.run(NGames=50, AddAgent=10, UI=False)', 'stats')
+# p = pstats.Stats('stats')
+# p.strip_dirs().sort_stats('cumulative').print_stats()
+# os.remove('stats')
 
 
 def plot(name, labels=False):
@@ -58,10 +66,3 @@ plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((0, 2500))
 plot('Increase in Elo over time', labels=True)
-
-# import cProfile
-# import pstats
-# cProfile.run('controller.run(NGames=10)', 'stats')
-# p = pstats.Stats('stats')
-# p.strip_dirs().sort_stats('cumulative').print_stats()
-# os.remove('stats')
