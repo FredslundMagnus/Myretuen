@@ -129,6 +129,10 @@ class Myretuen(gym.Env):
         else:
             self.totalScore['Tie'] += 1
         Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
+
+        agents[self.player2].EloWhileTrain[0].append(agents[self.player2].rating)
+        agents[self.player2].EloWhileTrain[1].append(self.nGamePlay)
+
         if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
             self.wins.append(winStatus[self.player2])
         self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])

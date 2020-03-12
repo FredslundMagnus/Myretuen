@@ -51,6 +51,11 @@ plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]
 plt.ylim((0, 2500))
 plot('Elo-Rating', labels=True)
 
+plt.plot(controller.agents['green'].EloWhileTrain[1], controller.agents['green'].EloWhileTrain[0], label=controller.agents['green'].name)
+plt.xlabel('Games played')
+plt.ylabel('Elo')
+plot('Elo-Rating', labels=True)
+
 # import cProfile
 # import pstats
 # cProfile.run('controller.run(NGames=10)', 'stats')
