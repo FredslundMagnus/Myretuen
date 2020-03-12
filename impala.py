@@ -3,12 +3,13 @@ import random
 
 
 class Impala():
-    def __init__(self, trainFunktion, historyLength=50, startAfterNgames=20):
+    def __init__(self, trainFunktion, resetFunktion, historyLength=50, startAfterNgames=20):
         self.games = []
         self.currentGame = []
         self.historyLength = historyLength
         self.startAfterNgames = startAfterNgames
         self.trainFunktion = trainFunktion
+        self.resetFunktion = resetFunktion
         self.lastState = None
 
     def addData(self, reward, previousState, newState):
@@ -36,6 +37,7 @@ class Impala():
         return deepcopy(game[pos-length:pos])
 
     def trainOneBatch(self, batch):
+        self.resetFunktion()
         previousState, reward = batch[0]
         for newState, newreward in batch[1:-1]:
             self.trainFunktion(reward, deepcopy(previousState), deepcopy(newState), updateWeights=False)

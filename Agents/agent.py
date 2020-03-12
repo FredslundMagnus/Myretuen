@@ -64,7 +64,7 @@ class Agent():
     def setup(self, explore, doTrain, impala, calcprobs, name):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1200, None
         self.ImpaleIsActivated = impala
-        self.impala = Impala(self.train)
+        self.impala = Impala(self.train, self.resettrace)
         self.EloWhileTrain = []
         self.name = name
 
@@ -81,6 +81,7 @@ class Agent():
         if self.ImpaleIsActivated:
             self.impala.batchTrain(batchSize=1000)
         self.impala.restart()
+        self.resettrace()
 
     def saveModel(self, extention=''):
         filename = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'wb')
@@ -232,7 +233,8 @@ class Agent():
 
     def GetProbabilityOfEat(self, ant):
         return ant.probcapture
-    def resettrace (self):
+
+    def resettrace(self):
         if self.name == 'NNAgent':
             self.optimizer.zero_grad()
         elif self.name == 'SimpleLinear':

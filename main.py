@@ -17,7 +17,7 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent)
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
 else:
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=SimpleLinear())
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
 
 
@@ -52,8 +52,8 @@ plt.ylim((0, 2500))
 plot('Elo-Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
-plt.plot(np.arange(1,NumberOfGames+1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
-plt.plot(np.arange(1,NumberOfGames+1), [controller.agents['red'][0].rating] * NumberOfGames)
+plt.plot(np.arange(1, NumberOfGames+1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
+plt.plot(np.arange(1, NumberOfGames+1), [controller.agents['red'][0].rating] * NumberOfGames)
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((0, 2500))
