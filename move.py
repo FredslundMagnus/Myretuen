@@ -5,7 +5,7 @@ class Move():
     def __init__(self, start=None, dice=None, end=None, game=None):
         self.Eatreward = 3
         self.basereward = 6
-        self.stepreward = -0.2
+        self.stepreward = 0
         self.start = start
         self.dice = dice
         self.end = end
