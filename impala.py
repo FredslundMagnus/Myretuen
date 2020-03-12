@@ -27,8 +27,11 @@ class Impala():
         if len(self.games) < self.startAfterNgames:
             return
         for _ in range(batchSize):
-            batch = self.getBatch(sampleLenth)
-            self.trainOneBatch(batch)
+            try:
+                batch = self.getBatch(sampleLenth)
+                self.trainOneBatch(batch)
+            except Exception as e:
+                print(e)
 
     def getBatch(self, length):
         length += 1
