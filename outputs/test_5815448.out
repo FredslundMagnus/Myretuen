@@ -1,1 +1,276 @@
 Loaded module: python3/3.6.2
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Game 001, Length: 112,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 0, 'Tie': 0, 'green': 1},  Winrate: 1.0
+Game 002, Length: 135,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 0, 'Tie': 0, 'green': 2},  Winrate: 1.0
+Game 003, Length: 191,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 0, 'Tie': 0, 'green': 3},  Winrate: 1.0
+Game 004, Length: 140,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 0, 'Tie': 0, 'green': 4},  Winrate: 1.0
+Game 005, Length: 187,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 0, 'Tie': 0, 'green': 5},  Winrate: 1.0
+Game 006, Length: 144,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 0, 'Tie': 0, 'green': 6},  Winrate: 1.0
+Game 007, Length: 120,      CurrentScore: {'red': 1, 'green': 3},      TotalScore: {'red': 0, 'Tie': 0, 'green': 7},  Winrate: 1.0
+Game 008, Length: 489,      CurrentScore: {'red': 9, 'green': 4},      TotalScore: {'red': 1, 'Tie': 0, 'green': 7},  Winrate: 0.88
+Game 009, Length: 098,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 2, 'Tie': 0, 'green': 7},  Winrate: 0.78
+Game 010, Length: 149,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 2, 'Tie': 0, 'green': 8},  Winrate: 0.8
+['RandomAgent', 'NNAgent']
+Game 011, Length: 139,      CurrentScore: {'red': 1, 'green': 4},      TotalScore: {'red': 2, 'Tie': 0, 'green': 9},  Winrate: 0.82
+Game 012, Length: 114,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 3, 'Tie': 0, 'green': 9},  Winrate: 0.82
+Game 013, Length: 084,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 3, 'Tie': 0, 'green': 10},  Winrate: 0.83
+Game 014, Length: 112,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 3, 'Tie': 0, 'green': 11},  Winrate: 0.85
+Game 015, Length: 105,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 4, 'Tie': 0, 'green': 11},  Winrate: 0.85
+Game 016, Length: 107,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 4, 'Tie': 0, 'green': 12},  Winrate: 0.85
+Game 017, Length: 158,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 4, 'Tie': 0, 'green': 13},  Winrate: 0.86
+Game 018, Length: 159,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 4, 'Tie': 0, 'green': 14},  Winrate: 0.87
+Game 019, Length: 169,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 4, 'Tie': 0, 'green': 15},  Winrate: 0.87
+Game 020, Length: 121,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 4, 'Tie': 0, 'green': 16},  Winrate: 0.88
+['RandomAgent', 'NNAgent', 'NNAgent']
+Game 021, Length: 123,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 4, 'Tie': 0, 'green': 17},  Winrate: 0.88
+Game 022, Length: 081,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 4, 'Tie': 0, 'green': 18},  Winrate: 0.88
+Game 023, Length: 111,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 5, 'Tie': 0, 'green': 18},  Winrate: 0.88
+Game 024, Length: 089,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 6, 'Tie': 0, 'green': 18},  Winrate: 0.88
+Game 025, Length: 082,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 7, 'Tie': 0, 'green': 18},  Winrate: 0.88
+Game 026, Length: 150,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 7, 'Tie': 0, 'green': 19},  Winrate: 0.89
+Game 027, Length: 119,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 7, 'Tie': 0, 'green': 20},  Winrate: 0.89
+Game 028, Length: 080,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 8, 'Tie': 0, 'green': 20},  Winrate: 0.89
+Game 029, Length: 270,      CurrentScore: {'red': 5, 'green': 9},      TotalScore: {'red': 8, 'Tie': 0, 'green': 21},  Winrate: 0.9
+Game 030, Length: 351,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 8, 'Tie': 0, 'green': 22},  Winrate: 0.9
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 031, Length: 126,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 9, 'Tie': 0, 'green': 22},  Winrate: 0.9
+Game 032, Length: 099,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 9, 'Tie': 0, 'green': 23},  Winrate: 0.9
+Game 033, Length: 165,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 9, 'Tie': 0, 'green': 24},  Winrate: 0.91
+Game 034, Length: 154,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 9, 'Tie': 0, 'green': 25},  Winrate: 0.91
+Game 035, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 9, 'Tie': 1, 'green': 25},  Winrate: 0.91
+Game 036, Length: 097,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 9, 'Tie': 1, 'green': 26},  Winrate: 0.91
+Game 037, Length: 318,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 9, 'Tie': 1, 'green': 27},  Winrate: 0.91
+Game 038, Length: 110,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 10, 'Tie': 1, 'green': 27},  Winrate: 0.91
+Game 039, Length: 206,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 10, 'Tie': 1, 'green': 28},  Winrate: 0.91
+Game 040, Length: 159,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 10, 'Tie': 1, 'green': 29},  Winrate: 0.92
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 041, Length: 134,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 11, 'Tie': 1, 'green': 29},  Winrate: 0.92
+Game 042, Length: 142,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 12, 'Tie': 1, 'green': 29},  Winrate: 0.92
+Game 043, Length: 167,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 12, 'Tie': 1, 'green': 30},  Winrate: 0.92
+Game 044, Length: 129,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 12, 'Tie': 1, 'green': 31},  Winrate: 0.92
+Game 045, Length: 099,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 13, 'Tie': 1, 'green': 31},  Winrate: 0.92
+Game 046, Length: 244,      CurrentScore: {'red': 6, 'green': 8},      TotalScore: {'red': 13, 'Tie': 1, 'green': 32},  Winrate: 0.92
+Game 047, Length: 097,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 14, 'Tie': 1, 'green': 32},  Winrate: 0.92
+Game 048, Length: 152,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 14, 'Tie': 1, 'green': 33},  Winrate: 0.92
+Game 049, Length: 123,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 15, 'Tie': 1, 'green': 33},  Winrate: 0.92
+Game 050, Length: 145,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 15, 'Tie': 1, 'green': 34},  Winrate: 0.92
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 051, Length: 177,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 15, 'Tie': 1, 'green': 35},  Winrate: 0.92
+Game 052, Length: 273,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 15, 'Tie': 1, 'green': 36},  Winrate: 0.92
+Game 053, Length: 136,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 15, 'Tie': 1, 'green': 37},  Winrate: 0.92
+Game 054, Length: 248,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 16, 'Tie': 1, 'green': 37},  Winrate: 0.92
+Game 055, Length: 138,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 17, 'Tie': 1, 'green': 37},  Winrate: 0.92
+Game 056, Length: 311,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 17, 'Tie': 1, 'green': 38},  Winrate: 0.92
+Game 057, Length: 161,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 17, 'Tie': 1, 'green': 39},  Winrate: 0.92
+Game 058, Length: 082,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 17, 'Tie': 1, 'green': 40},  Winrate: 0.92
+Game 059, Length: 069,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 17, 'Tie': 1, 'green': 41},  Winrate: 0.92
+Game 060, Length: 117,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 17, 'Tie': 1, 'green': 42},  Winrate: 0.92
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 061, Length: 091,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 17, 'Tie': 1, 'green': 43},  Winrate: 0.92
+Game 062, Length: 110,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 17, 'Tie': 1, 'green': 44},  Winrate: 0.92
+Game 063, Length: 231,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 18, 'Tie': 1, 'green': 44},  Winrate: 0.92
+Game 064, Length: 100,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 19, 'Tie': 1, 'green': 44},  Winrate: 0.92
+Game 065, Length: 356,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 20, 'Tie': 1, 'green': 44},  Winrate: 0.92
+Game 066, Length: 089,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 20, 'Tie': 1, 'green': 45},  Winrate: 0.92
+Game 067, Length: 097,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 21, 'Tie': 1, 'green': 45},  Winrate: 0.92
+Game 068, Length: 107,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 21, 'Tie': 1, 'green': 46},  Winrate: 0.93
+Game 069, Length: 183,      CurrentScore: {'red': 6, 'green': 3},      TotalScore: {'red': 21, 'Tie': 1, 'green': 47},  Winrate: 0.93
+Game 070, Length: 500,      CurrentScore: {'red': 4, 'green': 1},      TotalScore: {'red': 22, 'Tie': 1, 'green': 47},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 071, Length: 134,      CurrentScore: {'red': 8, 'green': 2},      TotalScore: {'red': 23, 'Tie': 1, 'green': 47},  Winrate: 0.89
+Game 072, Length: 100,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 23, 'Tie': 1, 'green': 48},  Winrate: 0.89
+Game 073, Length: 094,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 23, 'Tie': 1, 'green': 49},  Winrate: 0.9
+Game 074, Length: 098,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 24, 'Tie': 1, 'green': 49},  Winrate: 0.9
+Game 075, Length: 188,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 24, 'Tie': 1, 'green': 50},  Winrate: 0.9
+Game 076, Length: 177,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 25, 'Tie': 1, 'green': 50},  Winrate: 0.9
+Game 077, Length: 095,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 25, 'Tie': 1, 'green': 51},  Winrate: 0.9
+Game 078, Length: 088,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 25, 'Tie': 1, 'green': 52},  Winrate: 0.9
+Game 079, Length: 093,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 26, 'Tie': 1, 'green': 52},  Winrate: 0.9
+Game 080, Length: 092,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 26, 'Tie': 1, 'green': 53},  Winrate: 0.9
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 081, Length: 127,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 26, 'Tie': 1, 'green': 54},  Winrate: 0.9
+Game 082, Length: 166,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 26, 'Tie': 1, 'green': 55},  Winrate: 0.9
+Game 083, Length: 183,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 26, 'Tie': 1, 'green': 56},  Winrate: 0.9
+Game 084, Length: 076,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 27, 'Tie': 1, 'green': 56},  Winrate: 0.9
+Game 085, Length: 096,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 27, 'Tie': 1, 'green': 57},  Winrate: 0.9
+Game 086, Length: 175,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 27, 'Tie': 1, 'green': 58},  Winrate: 0.9
+Game 087, Length: 129,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 27, 'Tie': 1, 'green': 59},  Winrate: 0.9
+Game 088, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 28, 'Tie': 1, 'green': 59},  Winrate: 0.9
+Game 089, Length: 135,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 28, 'Tie': 1, 'green': 60},  Winrate: 0.9
+Game 090, Length: 117,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 28, 'Tie': 1, 'green': 61},  Winrate: 0.9
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 091, Length: 204,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 28, 'Tie': 1, 'green': 62},  Winrate: 0.9
+Game 092, Length: 091,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 28, 'Tie': 1, 'green': 63},  Winrate: 0.91
+Game 093, Length: 191,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 29, 'Tie': 1, 'green': 63},  Winrate: 0.88
+Game 094, Length: 146,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 30, 'Tie': 1, 'green': 63},  Winrate: 0.88
+Game 095, Length: 118,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 30, 'Tie': 1, 'green': 64},  Winrate: 0.88
+Game 096, Length: 086,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 31, 'Tie': 1, 'green': 64},  Winrate: 0.88
+Game 097, Length: 500,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 31, 'Tie': 2, 'green': 64},  Winrate: 0.88
+Game 098, Length: 175,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 32, 'Tie': 2, 'green': 64},  Winrate: 0.88
+Game 099, Length: 457,      CurrentScore: {'red': 9, 'green': 5},      TotalScore: {'red': 33, 'Tie': 2, 'green': 64},  Winrate: 0.88
+Game 100, Length: 128,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 34, 'Tie': 2, 'green': 64},  Winrate: 0.88
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 101, Length: 205,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 34, 'Tie': 2, 'green': 65},  Winrate: 0.88
+Game 102, Length: 500,      CurrentScore: {'red': 5, 'green': 4},      TotalScore: {'red': 35, 'Tie': 2, 'green': 65},  Winrate: 0.88
+Game 103, Length: 119,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 35, 'Tie': 2, 'green': 66},  Winrate: 0.88
+Game 104, Length: 165,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 35, 'Tie': 2, 'green': 67},  Winrate: 0.88
+Game 105, Length: 101,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 35, 'Tie': 2, 'green': 68},  Winrate: 0.88
+Game 106, Length: 219,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 35, 'Tie': 2, 'green': 69},  Winrate: 0.89
+Game 107, Length: 132,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 35, 'Tie': 2, 'green': 70},  Winrate: 0.89
+Game 108, Length: 182,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 36, 'Tie': 2, 'green': 70},  Winrate: 0.89
+Game 109, Length: 153,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 37, 'Tie': 2, 'green': 70},  Winrate: 0.89
+Game 110, Length: 237,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 38, 'Tie': 2, 'green': 70},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 111, Length: 135,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 38, 'Tie': 2, 'green': 71},  Winrate: 0.89
+Game 112, Length: 164,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 38, 'Tie': 2, 'green': 72},  Winrate: 0.89
+Game 113, Length: 178,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 38, 'Tie': 2, 'green': 73},  Winrate: 0.89
+Game 114, Length: 104,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 39, 'Tie': 2, 'green': 73},  Winrate: 0.89
+Game 115, Length: 161,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 40, 'Tie': 2, 'green': 73},  Winrate: 0.89
+Game 116, Length: 192,      CurrentScore: {'red': 4, 'green': 9},      TotalScore: {'red': 40, 'Tie': 2, 'green': 74},  Winrate: 0.89
+Game 117, Length: 110,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 40, 'Tie': 2, 'green': 75},  Winrate: 0.89
+Game 118, Length: 288,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 41, 'Tie': 2, 'green': 75},  Winrate: 0.89
+Game 119, Length: 101,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 42, 'Tie': 2, 'green': 75},  Winrate: 0.89
+Game 120, Length: 289,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 43, 'Tie': 2, 'green': 75},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 121, Length: 221,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 43, 'Tie': 2, 'green': 76},  Winrate: 0.89
+Game 122, Length: 193,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 44, 'Tie': 2, 'green': 76},  Winrate: 0.89
+Game 123, Length: 150,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 45, 'Tie': 2, 'green': 76},  Winrate: 0.89
+Game 124, Length: 128,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 45, 'Tie': 2, 'green': 77},  Winrate: 0.89
+Game 125, Length: 232,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 45, 'Tie': 2, 'green': 78},  Winrate: 0.89
+Game 126, Length: 107,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 46, 'Tie': 2, 'green': 78},  Winrate: 0.89
+Game 127, Length: 148,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 47, 'Tie': 2, 'green': 78},  Winrate: 0.89
+Game 128, Length: 145,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 47, 'Tie': 2, 'green': 79},  Winrate: 0.89
+Game 129, Length: 104,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 47, 'Tie': 2, 'green': 80},  Winrate: 0.89
+Game 130, Length: 228,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 47, 'Tie': 2, 'green': 81},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 131, Length: 267,      CurrentScore: {'red': 4, 'green': 6},      TotalScore: {'red': 47, 'Tie': 2, 'green': 82},  Winrate: 0.89
+Game 132, Length: 179,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 47, 'Tie': 2, 'green': 83},  Winrate: 0.89
+Game 133, Length: 500,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 47, 'Tie': 2, 'green': 84},  Winrate: 0.89
+Game 134, Length: 156,      CurrentScore: {'red': 2, 'green': 9},      TotalScore: {'red': 47, 'Tie': 2, 'green': 85},  Winrate: 0.89
+Game 135, Length: 098,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 47, 'Tie': 2, 'green': 86},  Winrate: 0.89
+Game 136, Length: 115,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 48, 'Tie': 2, 'green': 86},  Winrate: 0.89
+Game 137, Length: 080,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 49, 'Tie': 2, 'green': 86},  Winrate: 0.89
+Game 138, Length: 254,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 50, 'Tie': 2, 'green': 86},  Winrate: 0.89
+Game 139, Length: 129,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 51, 'Tie': 2, 'green': 86},  Winrate: 0.89
+Game 140, Length: 500,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 51, 'Tie': 3, 'green': 86},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 141, Length: 232,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 52, 'Tie': 3, 'green': 86},  Winrate: 0.89
+Game 142, Length: 121,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 52, 'Tie': 3, 'green': 87},  Winrate: 0.89
+Game 143, Length: 228,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 52, 'Tie': 3, 'green': 88},  Winrate: 0.89
+Game 144, Length: 218,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 52, 'Tie': 3, 'green': 89},  Winrate: 0.89
+Game 145, Length: 500,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 53, 'Tie': 3, 'green': 89},  Winrate: 0.89
+Game 146, Length: 171,      CurrentScore: {'red': 9, 'green': 1},      TotalScore: {'red': 54, 'Tie': 3, 'green': 89},  Winrate: 0.89
+Game 147, Length: 205,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 54, 'Tie': 3, 'green': 90},  Winrate: 0.89
+Game 148, Length: 266,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 55, 'Tie': 3, 'green': 90},  Winrate: 0.89
+Game 149, Length: 133,      CurrentScore: {'red': 1, 'green': 5},      TotalScore: {'red': 56, 'Tie': 3, 'green': 90},  Winrate: 0.89
+Game 150, Length: 128,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 56, 'Tie': 3, 'green': 91},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 151, Length: 143,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 57, 'Tie': 3, 'green': 91},  Winrate: 0.89
+Game 152, Length: 244,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 57, 'Tie': 3, 'green': 92},  Winrate: 0.89
+Game 153, Length: 169,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 57, 'Tie': 3, 'green': 93},  Winrate: 0.89
+Game 154, Length: 316,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 57, 'Tie': 3, 'green': 94},  Winrate: 0.89
+Game 155, Length: 206,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 58, 'Tie': 3, 'green': 94},  Winrate: 0.89
+Game 156, Length: 151,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 58, 'Tie': 3, 'green': 95},  Winrate: 0.89
+Game 157, Length: 208,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 58, 'Tie': 3, 'green': 96},  Winrate: 0.89
+Game 158, Length: 270,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 58, 'Tie': 3, 'green': 97},  Winrate: 0.89
+Game 159, Length: 237,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 58, 'Tie': 3, 'green': 98},  Winrate: 0.89
+Game 160, Length: 391,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 59, 'Tie': 3, 'green': 98},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 161, Length: 500,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 60, 'Tie': 3, 'green': 98},  Winrate: 0.89
+Game 162, Length: 500,      CurrentScore: {'red': 3, 'green': 6},      TotalScore: {'red': 60, 'Tie': 3, 'green': 99},  Winrate: 0.89
+Game 163, Length: 175,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 60, 'Tie': 3, 'green': 100},  Winrate: 0.89
+Game 164, Length: 332,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 61, 'Tie': 3, 'green': 100},  Winrate: 0.89
+Game 165, Length: 244,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 61, 'Tie': 3, 'green': 101},  Winrate: 0.89
+Game 166, Length: 155,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 62, 'Tie': 3, 'green': 101},  Winrate: 0.89
+Game 167, Length: 275,      CurrentScore: {'red': 8, 'green': 2},      TotalScore: {'red': 63, 'Tie': 3, 'green': 101},  Winrate: 0.89
+Game 168, Length: 322,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 64, 'Tie': 3, 'green': 101},  Winrate: 0.89
+Game 169, Length: 267,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 65, 'Tie': 3, 'green': 101},  Winrate: 0.89
+Game 170, Length: 399,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 66, 'Tie': 3, 'green': 101},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 171, Length: 111,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 66, 'Tie': 3, 'green': 102},  Winrate: 0.89
+Game 172, Length: 104,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 66, 'Tie': 3, 'green': 103},  Winrate: 0.89
+Game 173, Length: 234,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 67, 'Tie': 3, 'green': 103},  Winrate: 0.89
+Game 174, Length: 293,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 67, 'Tie': 3, 'green': 104},  Winrate: 0.89
+Game 175, Length: 500,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 67, 'Tie': 3, 'green': 105},  Winrate: 0.89
+Game 176, Length: 288,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 68, 'Tie': 3, 'green': 105},  Winrate: 0.89
+Game 177, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 68, 'Tie': 3, 'green': 106},  Winrate: 0.89
+Game 178, Length: 209,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 68, 'Tie': 3, 'green': 107},  Winrate: 0.89
+Game 179, Length: 231,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 68, 'Tie': 3, 'green': 108},  Winrate: 0.89
+Game 180, Length: 139,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 68, 'Tie': 3, 'green': 109},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 181, Length: 155,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 68, 'Tie': 3, 'green': 110},  Winrate: 0.89
+Game 182, Length: 500,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 69, 'Tie': 3, 'green': 110},  Winrate: 0.89
+Game 183, Length: 144,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 69, 'Tie': 3, 'green': 111},  Winrate: 0.89
+Game 184, Length: 165,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 69, 'Tie': 3, 'green': 112},  Winrate: 0.89
+Game 185, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 69, 'Tie': 4, 'green': 112},  Winrate: 0.89
+Game 186, Length: 118,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 69, 'Tie': 4, 'green': 113},  Winrate: 0.89
+Game 187, Length: 235,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 69, 'Tie': 4, 'green': 114},  Winrate: 0.89
+Game 188, Length: 328,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 69, 'Tie': 4, 'green': 115},  Winrate: 0.89
+Game 189, Length: 275,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 69, 'Tie': 4, 'green': 116},  Winrate: 0.89
+Game 190, Length: 488,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 70, 'Tie': 4, 'green': 116},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 191, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 70, 'Tie': 5, 'green': 116},  Winrate: 0.89
+Game 192, Length: 109,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 70, 'Tie': 5, 'green': 117},  Winrate: 0.89
+Game 193, Length: 500,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 71, 'Tie': 5, 'green': 117},  Winrate: 0.89
+Game 194, Length: 268,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 71, 'Tie': 5, 'green': 118},  Winrate: 0.89
+Game 195, Length: 500,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 71, 'Tie': 5, 'green': 119},  Winrate: 0.89
+Game 196, Length: 225,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 72, 'Tie': 5, 'green': 119},  Winrate: 0.89
+Game 197, Length: 219,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 72, 'Tie': 5, 'green': 120},  Winrate: 0.89
+Game 198, Length: 500,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 72, 'Tie': 5, 'green': 121},  Winrate: 0.89
+Game 199, Length: 395,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 72, 'Tie': 5, 'green': 122},  Winrate: 0.89
+Game 200, Length: 334,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 73, 'Tie': 5, 'green': 122},  Winrate: 0.89
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+[-0.400156   -0.284954   -0.2503873  ...  0.5193569  -1.0575578
+  0.02541442]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-23-28>
+Subject: Job 5815448: <NNAgent5short> in cluster <dcc> Done
+
+Job <NNAgent5short> was submitted from host <n-62-27-19> by user <s183905> in cluster <dcc> at Thu Mar 12 10:00:15 2020
+Job was executed on host(s) <n-62-23-28>, in queue <hpc>, as user <s183905> in cluster <dcc> at Thu Mar 12 10:00:16 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Thu Mar 12 10:00:16 2020
+Terminated at Thu Mar 12 15:09:24 2020
+Results reported at Thu Mar 12 15:09:24 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -o outputs/test_%J.out
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=20G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 1500
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   18541.46 sec.
+    Max Memory :                                 2775 MB
+    Average Memory :                             1520.29 MB
+    Total Requested Memory :                     20480.00 MB
+    Delta Memory :                               17705.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   18548 sec.
+    Turnaround time :                            18549 sec.
+
+The output (if any) is above this job summary.
+
