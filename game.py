@@ -121,6 +121,7 @@ class Myretuen(gym.Env):
         return {name: len(base.captured) for name, base in self.bases.items()}
 
     def gameStatus(self, agents):
+        agents[self.player2].EloWhileTrain.append(agents[self.player2].rating)
         winStatus = self.whoWonThisGame()
         if winStatus[self.player1] == 1:
             self.totalScore[self.player1] += 1
@@ -130,8 +131,6 @@ class Myretuen(gym.Env):
             self.totalScore['Tie'] += 1
         Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
 
-        agents[self.player2].EloWhileTrain[0].append(agents[self.player2].rating)
-        agents[self.player2].EloWhileTrain[1].append(self.nGamePlay)
 
         if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
             self.wins.append(winStatus[self.player2])

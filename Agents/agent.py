@@ -66,7 +66,7 @@ class Agent():
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1200, None
         self.ImpaleIsActivated = impala
         self.impala = Impala(self.train)
-        self.EloWhileTrain = [[],[]]
+        self.EloWhileTrain = []
         self.name = name
 
     def resetGame(self):
@@ -231,3 +231,8 @@ class Agent():
 
     def GetProbabilityOfEat(self, ant):
         return ant.probcapture
+    def resettrace (self):
+        if self.name == 'NNAgent':
+            self.optimizer.zero_grad()
+        elif self.name == 'SimpleLinear':
+            self.trace = np.zeros(self.Nfeature)
