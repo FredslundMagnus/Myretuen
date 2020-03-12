@@ -1,1 +1,1106 @@
 Loaded module: python3/3.6.2
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 001, Length: 126,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 0, 'Tie': 0, 'green': 1},  Winrate: 1.0
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 002, Length: 118,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 0, 'Tie': 0, 'green': 2},  Winrate: 1.0
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 003, Length: 100,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 0, 'Tie': 0, 'green': 3},  Winrate: 1.0
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 004, Length: 176,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 0, 'Tie': 0, 'green': 4},  Winrate: 1.0
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 005, Length: 096,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 0, 'Tie': 0, 'green': 5},  Winrate: 1.0
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 006, Length: 139,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 0, 'Tie': 0, 'green': 6},  Winrate: 1.0
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 007, Length: 132,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 0, 'Tie': 0, 'green': 7},  Winrate: 1.0
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 008, Length: 092,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 1, 'Tie': 0, 'green': 7},  Winrate: 0.88
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 009, Length: 146,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 1, 'Tie': 0, 'green': 8},  Winrate: 0.89
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 010, Length: 109,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 1, 'Tie': 0, 'green': 9},  Winrate: 0.9
+['RandomAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 011, Length: 161,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 1, 'Tie': 0, 'green': 10},  Winrate: 0.91
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 012, Length: 158,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 1, 'Tie': 0, 'green': 11},  Winrate: 0.92
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 013, Length: 099,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 1, 'Tie': 0, 'green': 12},  Winrate: 0.92
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 014, Length: 161,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 1, 'Tie': 0, 'green': 13},  Winrate: 0.93
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 015, Length: 222,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 1, 'Tie': 0, 'green': 14},  Winrate: 0.93
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 016, Length: 139,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 2, 'Tie': 0, 'green': 14},  Winrate: 0.93
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 017, Length: 143,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 2, 'Tie': 0, 'green': 15},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 018, Length: 127,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 2, 'Tie': 0, 'green': 16},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 019, Length: 164,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 2, 'Tie': 0, 'green': 17},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 020, Length: 091,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 2, 'Tie': 0, 'green': 18},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 021, Length: 133,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 3, 'Tie': 0, 'green': 18},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 022, Length: 119,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 4, 'Tie': 0, 'green': 18},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 023, Length: 171,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 4, 'Tie': 0, 'green': 19},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 024, Length: 120,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 5, 'Tie': 0, 'green': 19},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 025, Length: 157,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 5, 'Tie': 0, 'green': 20},  Winrate: 0.95
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 026, Length: 107,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 6, 'Tie': 0, 'green': 20},  Winrate: 0.95
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 027, Length: 142,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 7, 'Tie': 0, 'green': 20},  Winrate: 0.95
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 028, Length: 210,      CurrentScore: {'red': 3, 'green': 5},      TotalScore: {'red': 7, 'Tie': 0, 'green': 21},  Winrate: 0.95
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 029, Length: 089,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 8, 'Tie': 0, 'green': 21},  Winrate: 0.95
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 030, Length: 168,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 8, 'Tie': 0, 'green': 22},  Winrate: 0.95
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 031, Length: 148,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 8, 'Tie': 0, 'green': 23},  Winrate: 0.95
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 032, Length: 194,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 8, 'Tie': 0, 'green': 24},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 033, Length: 135,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 8, 'Tie': 0, 'green': 25},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 034, Length: 077,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 8, 'Tie': 0, 'green': 26},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 035, Length: 174,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 8, 'Tie': 0, 'green': 27},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 036, Length: 134,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 8, 'Tie': 0, 'green': 28},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 037, Length: 174,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 8, 'Tie': 0, 'green': 29},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 038, Length: 188,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 8, 'Tie': 0, 'green': 30},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 039, Length: 099,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 8, 'Tie': 0, 'green': 31},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 040, Length: 130,      CurrentScore: {'red': 6, 'green': 5},      TotalScore: {'red': 9, 'Tie': 0, 'green': 31},  Winrate: 0.96
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 041, Length: 109,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 10, 'Tie': 0, 'green': 31},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 042, Length: 101,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 10, 'Tie': 0, 'green': 32},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 043, Length: 109,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 10, 'Tie': 0, 'green': 33},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 044, Length: 076,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 11, 'Tie': 0, 'green': 33},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 045, Length: 155,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 12, 'Tie': 0, 'green': 33},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 046, Length: 222,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 12, 'Tie': 0, 'green': 34},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 047, Length: 107,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 12, 'Tie': 0, 'green': 35},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 048, Length: 216,      CurrentScore: {'red': 6, 'green': 8},      TotalScore: {'red': 12, 'Tie': 0, 'green': 36},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 049, Length: 210,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 12, 'Tie': 0, 'green': 37},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 050, Length: 116,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 12, 'Tie': 0, 'green': 38},  Winrate: 0.96
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 051, Length: 116,      CurrentScore: {'red': 8, 'green': 2},      TotalScore: {'red': 13, 'Tie': 0, 'green': 38},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 052, Length: 084,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 14, 'Tie': 0, 'green': 38},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 053, Length: 185,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 14, 'Tie': 0, 'green': 39},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 054, Length: 253,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 15, 'Tie': 0, 'green': 39},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 055, Length: 139,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 16, 'Tie': 0, 'green': 39},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 056, Length: 168,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 16, 'Tie': 0, 'green': 40},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 057, Length: 144,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 16, 'Tie': 0, 'green': 41},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 058, Length: 080,      CurrentScore: {'red': 5, 'green': 0},      TotalScore: {'red': 17, 'Tie': 0, 'green': 41},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 059, Length: 166,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 17, 'Tie': 0, 'green': 42},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 060, Length: 265,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 18, 'Tie': 0, 'green': 42},  Winrate: 0.96
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 061, Length: 157,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 19, 'Tie': 0, 'green': 42},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 062, Length: 068,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 20, 'Tie': 0, 'green': 42},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 063, Length: 120,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 20, 'Tie': 0, 'green': 43},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 064, Length: 153,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 21, 'Tie': 0, 'green': 43},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 065, Length: 105,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 21, 'Tie': 0, 'green': 44},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 066, Length: 134,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 21, 'Tie': 0, 'green': 45},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 067, Length: 106,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 21, 'Tie': 0, 'green': 46},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 068, Length: 103,      CurrentScore: {'red': 2, 'green': 9},      TotalScore: {'red': 21, 'Tie': 0, 'green': 47},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 069, Length: 132,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 21, 'Tie': 0, 'green': 48},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 070, Length: 143,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 21, 'Tie': 0, 'green': 49},  Winrate: 0.96
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 071, Length: 160,      CurrentScore: {'red': 4, 'green': 6},      TotalScore: {'red': 21, 'Tie': 0, 'green': 50},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 072, Length: 097,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 21, 'Tie': 0, 'green': 51},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 073, Length: 188,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 22, 'Tie': 0, 'green': 51},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 074, Length: 149,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 22, 'Tie': 0, 'green': 52},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 075, Length: 131,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 22, 'Tie': 0, 'green': 53},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 076, Length: 135,      CurrentScore: {'red': 6, 'green': 0},      TotalScore: {'red': 23, 'Tie': 0, 'green': 53},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 077, Length: 222,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 23, 'Tie': 0, 'green': 54},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 078, Length: 229,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 24, 'Tie': 0, 'green': 54},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 079, Length: 111,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 25, 'Tie': 0, 'green': 54},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 080, Length: 174,      CurrentScore: {'red': 5, 'green': 3},      TotalScore: {'red': 26, 'Tie': 0, 'green': 54},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 081, Length: 133,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 27, 'Tie': 0, 'green': 54},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 082, Length: 500,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 28, 'Tie': 0, 'green': 54},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 083, Length: 156,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 28, 'Tie': 0, 'green': 55},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 084, Length: 178,      CurrentScore: {'red': 6, 'green': 4},      TotalScore: {'red': 29, 'Tie': 0, 'green': 55},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 085, Length: 126,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 29, 'Tie': 0, 'green': 56},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 086, Length: 150,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 30, 'Tie': 0, 'green': 56},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 087, Length: 098,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 30, 'Tie': 0, 'green': 57},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 088, Length: 082,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 30, 'Tie': 0, 'green': 58},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 089, Length: 358,      CurrentScore: {'red': 9, 'green': 6},      TotalScore: {'red': 31, 'Tie': 0, 'green': 58},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 090, Length: 151,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 32, 'Tie': 0, 'green': 58},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 091, Length: 218,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 33, 'Tie': 0, 'green': 58},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 092, Length: 176,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 33, 'Tie': 0, 'green': 59},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 093, Length: 086,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 33, 'Tie': 0, 'green': 60},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 094, Length: 124,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 33, 'Tie': 0, 'green': 61},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 095, Length: 242,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 34, 'Tie': 0, 'green': 61},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 096, Length: 228,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 34, 'Tie': 0, 'green': 62},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 097, Length: 071,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 35, 'Tie': 0, 'green': 62},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 098, Length: 178,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 36, 'Tie': 0, 'green': 62},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 099, Length: 244,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 36, 'Tie': 0, 'green': 63},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 100, Length: 394,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 36, 'Tie': 0, 'green': 64},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 101, Length: 500,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 37, 'Tie': 0, 'green': 64},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 102, Length: 240,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 38, 'Tie': 0, 'green': 64},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 103, Length: 328,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 39, 'Tie': 0, 'green': 64},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 104, Length: 281,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 39, 'Tie': 0, 'green': 65},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 105, Length: 173,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 40, 'Tie': 0, 'green': 65},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 106, Length: 199,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 40, 'Tie': 0, 'green': 66},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 107, Length: 179,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 40, 'Tie': 0, 'green': 67},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 108, Length: 213,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 41, 'Tie': 0, 'green': 67},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 109, Length: 165,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 42, 'Tie': 0, 'green': 67},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 110, Length: 167,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 42, 'Tie': 0, 'green': 68},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 111, Length: 155,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 43, 'Tie': 0, 'green': 68},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 112, Length: 215,      CurrentScore: {'red': 1, 'green': 6},      TotalScore: {'red': 43, 'Tie': 0, 'green': 69},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 113, Length: 225,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 44, 'Tie': 0, 'green': 69},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 114, Length: 105,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 44, 'Tie': 0, 'green': 70},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 115, Length: 170,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 44, 'Tie': 0, 'green': 71},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 116, Length: 125,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 44, 'Tie': 0, 'green': 72},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 117, Length: 198,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 44, 'Tie': 0, 'green': 73},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 118, Length: 273,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 44, 'Tie': 0, 'green': 74},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 119, Length: 233,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 44, 'Tie': 0, 'green': 75},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 120, Length: 195,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 44, 'Tie': 0, 'green': 76},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 121, Length: 119,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 45, 'Tie': 0, 'green': 76},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 122, Length: 106,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 46, 'Tie': 0, 'green': 76},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 123, Length: 226,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 46, 'Tie': 0, 'green': 77},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 124, Length: 143,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 46, 'Tie': 0, 'green': 78},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 125, Length: 202,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 46, 'Tie': 0, 'green': 79},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 126, Length: 094,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 46, 'Tie': 0, 'green': 80},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 127, Length: 121,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 46, 'Tie': 0, 'green': 81},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 128, Length: 259,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 47, 'Tie': 0, 'green': 81},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 129, Length: 089,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 48, 'Tie': 0, 'green': 81},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 130, Length: 170,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 48, 'Tie': 0, 'green': 82},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 131, Length: 208,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 48, 'Tie': 0, 'green': 83},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 132, Length: 079,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 49, 'Tie': 0, 'green': 83},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 133, Length: 225,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 49, 'Tie': 0, 'green': 84},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 134, Length: 254,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 50, 'Tie': 0, 'green': 84},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 135, Length: 209,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 50, 'Tie': 0, 'green': 85},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 136, Length: 231,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 50, 'Tie': 0, 'green': 86},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 137, Length: 212,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 50, 'Tie': 0, 'green': 87},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 138, Length: 172,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 51, 'Tie': 0, 'green': 87},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 139, Length: 145,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 51, 'Tie': 0, 'green': 88},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 140, Length: 174,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 52, 'Tie': 0, 'green': 88},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 141, Length: 235,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 52, 'Tie': 0, 'green': 89},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 142, Length: 125,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 52, 'Tie': 0, 'green': 90},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 143, Length: 119,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 52, 'Tie': 0, 'green': 91},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 144, Length: 104,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 53, 'Tie': 0, 'green': 91},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 145, Length: 180,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 53, 'Tie': 0, 'green': 92},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 146, Length: 281,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 54, 'Tie': 0, 'green': 92},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 147, Length: 185,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 54, 'Tie': 0, 'green': 93},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 148, Length: 255,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 54, 'Tie': 0, 'green': 94},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 149, Length: 136,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 54, 'Tie': 0, 'green': 95},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 150, Length: 175,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 54, 'Tie': 0, 'green': 96},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 151, Length: 233,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 54, 'Tie': 0, 'green': 97},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 152, Length: 244,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 54, 'Tie': 0, 'green': 98},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 153, Length: 196,      CurrentScore: {'red': 8, 'green': 3},      TotalScore: {'red': 55, 'Tie': 0, 'green': 98},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 154, Length: 365,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 56, 'Tie': 0, 'green': 98},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 155, Length: 109,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 56, 'Tie': 0, 'green': 99},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 156, Length: 115,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 56, 'Tie': 0, 'green': 100},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 157, Length: 121,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 56, 'Tie': 0, 'green': 101},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 158, Length: 343,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 57, 'Tie': 0, 'green': 101},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 159, Length: 156,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 58, 'Tie': 0, 'green': 101},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 160, Length: 189,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 59, 'Tie': 0, 'green': 101},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 161, Length: 121,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 59, 'Tie': 0, 'green': 102},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 162, Length: 230,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 59, 'Tie': 0, 'green': 103},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 163, Length: 309,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 60, 'Tie': 0, 'green': 103},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 164, Length: 118,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 60, 'Tie': 0, 'green': 104},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 165, Length: 202,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 60, 'Tie': 0, 'green': 105},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 166, Length: 186,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 60, 'Tie': 0, 'green': 106},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 167, Length: 151,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 60, 'Tie': 0, 'green': 107},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 168, Length: 328,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 60, 'Tie': 0, 'green': 108},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 169, Length: 305,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 60, 'Tie': 0, 'green': 109},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 170, Length: 198,      CurrentScore: {'red': 3, 'green': 5},      TotalScore: {'red': 60, 'Tie': 0, 'green': 110},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 171, Length: 167,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 61, 'Tie': 0, 'green': 110},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 172, Length: 203,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 61, 'Tie': 0, 'green': 111},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 173, Length: 222,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 61, 'Tie': 0, 'green': 112},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 174, Length: 277,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 61, 'Tie': 0, 'green': 113},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 175, Length: 167,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 61, 'Tie': 0, 'green': 114},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 176, Length: 173,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 61, 'Tie': 0, 'green': 115},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 177, Length: 161,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 61, 'Tie': 0, 'green': 116},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 178, Length: 422,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 61, 'Tie': 0, 'green': 117},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 179, Length: 163,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 61, 'Tie': 0, 'green': 118},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 180, Length: 324,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 61, 'Tie': 0, 'green': 119},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 181, Length: 424,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 62, 'Tie': 0, 'green': 119},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 182, Length: 121,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 62, 'Tie': 0, 'green': 120},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 183, Length: 186,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 62, 'Tie': 0, 'green': 121},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 184, Length: 212,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 62, 'Tie': 0, 'green': 122},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 185, Length: 439,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 62, 'Tie': 0, 'green': 123},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 186, Length: 176,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 62, 'Tie': 0, 'green': 124},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 187, Length: 231,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 62, 'Tie': 0, 'green': 125},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 188, Length: 269,      CurrentScore: {'red': 9, 'green': 2},      TotalScore: {'red': 63, 'Tie': 0, 'green': 125},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 189, Length: 244,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 63, 'Tie': 0, 'green': 126},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 190, Length: 162,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 63, 'Tie': 0, 'green': 127},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 191, Length: 126,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 63, 'Tie': 0, 'green': 128},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 192, Length: 147,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 63, 'Tie': 0, 'green': 129},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 193, Length: 200,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 63, 'Tie': 0, 'green': 130},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 194, Length: 288,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 63, 'Tie': 0, 'green': 131},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 195, Length: 329,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 64, 'Tie': 0, 'green': 131},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 196, Length: 204,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 64, 'Tie': 0, 'green': 132},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 197, Length: 209,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 64, 'Tie': 0, 'green': 133},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 198, Length: 259,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 65, 'Tie': 0, 'green': 133},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 199, Length: 157,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 65, 'Tie': 0, 'green': 134},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 200, Length: 138,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 66, 'Tie': 0, 'green': 134},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 201, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 66, 'Tie': 1, 'green': 134},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 202, Length: 156,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 66, 'Tie': 1, 'green': 135},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 203, Length: 210,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 67, 'Tie': 1, 'green': 135},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 204, Length: 178,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 67, 'Tie': 1, 'green': 136},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 205, Length: 462,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 68, 'Tie': 1, 'green': 136},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 206, Length: 113,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 68, 'Tie': 1, 'green': 137},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 207, Length: 336,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 68, 'Tie': 1, 'green': 138},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 208, Length: 185,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 68, 'Tie': 1, 'green': 139},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 209, Length: 183,      CurrentScore: {'red': 0, 'green': 6},      TotalScore: {'red': 68, 'Tie': 1, 'green': 140},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 210, Length: 217,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 68, 'Tie': 1, 'green': 141},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 211, Length: 459,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 69, 'Tie': 1, 'green': 141},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 212, Length: 158,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 69, 'Tie': 1, 'green': 142},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 213, Length: 273,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 69, 'Tie': 1, 'green': 143},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 214, Length: 140,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 69, 'Tie': 1, 'green': 144},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 215, Length: 500,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 69, 'Tie': 1, 'green': 145},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 216, Length: 258,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 69, 'Tie': 1, 'green': 146},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 217, Length: 434,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 69, 'Tie': 1, 'green': 147},  Winrate: 0.97
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 218, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 69, 'Tie': 1, 'green': 148},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 219, Length: 500,      CurrentScore: {'red': 3, 'green': 1},      TotalScore: {'red': 70, 'Tie': 1, 'green': 148},  Winrate: 0.97
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 220, Length: 293,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 71, 'Tie': 1, 'green': 148},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 221, Length: 287,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 71, 'Tie': 1, 'green': 149},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 222, Length: 500,      CurrentScore: {'red': 6, 'green': 3},      TotalScore: {'red': 72, 'Tie': 1, 'green': 149},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 223, Length: 245,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 73, 'Tie': 1, 'green': 149},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 224, Length: 326,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 73, 'Tie': 1, 'green': 150},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 225, Length: 444,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 73, 'Tie': 1, 'green': 151},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 226, Length: 500,      CurrentScore: {'red': 6, 'green': 4},      TotalScore: {'red': 74, 'Tie': 1, 'green': 151},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 227, Length: 193,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 74, 'Tie': 1, 'green': 152},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 228, Length: 123,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 74, 'Tie': 1, 'green': 153},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 229, Length: 197,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 74, 'Tie': 1, 'green': 154},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 230, Length: 416,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 74, 'Tie': 1, 'green': 155},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 231, Length: 127,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 74, 'Tie': 1, 'green': 156},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 232, Length: 348,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 74, 'Tie': 1, 'green': 157},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 233, Length: 283,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 74, 'Tie': 1, 'green': 158},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 234, Length: 500,      CurrentScore: {'red': 6, 'green': 5},      TotalScore: {'red': 75, 'Tie': 1, 'green': 158},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 235, Length: 269,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 76, 'Tie': 1, 'green': 158},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 236, Length: 180,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 76, 'Tie': 1, 'green': 159},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 237, Length: 283,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 76, 'Tie': 1, 'green': 160},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 238, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 77, 'Tie': 1, 'green': 160},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 239, Length: 500,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 78, 'Tie': 1, 'green': 160},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 240, Length: 149,      CurrentScore: {'red': 8, 'green': 1},      TotalScore: {'red': 79, 'Tie': 1, 'green': 160},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 241, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 79, 'Tie': 2, 'green': 160},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 242, Length: 334,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 80, 'Tie': 2, 'green': 160},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 243, Length: 162,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 80, 'Tie': 2, 'green': 161},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 244, Length: 214,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 80, 'Tie': 2, 'green': 162},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 245, Length: 345,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 80, 'Tie': 2, 'green': 163},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 246, Length: 344,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 81, 'Tie': 2, 'green': 163},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 247, Length: 172,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 81, 'Tie': 2, 'green': 164},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 248, Length: 500,      CurrentScore: {'red': 3, 'green': 3},      TotalScore: {'red': 81, 'Tie': 3, 'green': 164},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 249, Length: 267,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 81, 'Tie': 3, 'green': 165},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 250, Length: 500,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 82, 'Tie': 3, 'green': 165},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 251, Length: 256,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 83, 'Tie': 3, 'green': 165},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 252, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 84, 'Tie': 3, 'green': 165},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 253, Length: 479,      CurrentScore: {'red': 3, 'green': 9},      TotalScore: {'red': 84, 'Tie': 3, 'green': 166},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 254, Length: 294,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 84, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 255, Length: 463,      CurrentScore: {'red': 9, 'green': 4},      TotalScore: {'red': 85, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 256, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 86, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 257, Length: 250,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 87, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 258, Length: 364,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 88, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 259, Length: 301,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 89, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 260, Length: 402,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 90, 'Tie': 3, 'green': 167},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 261, Length: 429,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 91, 'Tie': 3, 'green': 167},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 262, Length: 160,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 91, 'Tie': 3, 'green': 168},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 263, Length: 301,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 91, 'Tie': 3, 'green': 169},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 264, Length: 204,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 91, 'Tie': 3, 'green': 170},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 265, Length: 273,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 91, 'Tie': 3, 'green': 171},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 266, Length: 344,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 91, 'Tie': 3, 'green': 172},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 267, Length: 478,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 91, 'Tie': 3, 'green': 173},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 268, Length: 277,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 92, 'Tie': 3, 'green': 173},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 269, Length: 126,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 92, 'Tie': 3, 'green': 174},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 270, Length: 317,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 92, 'Tie': 3, 'green': 175},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 271, Length: 369,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 93, 'Tie': 3, 'green': 175},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 272, Length: 295,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 94, 'Tie': 3, 'green': 175},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 273, Length: 416,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 94, 'Tie': 3, 'green': 176},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 274, Length: 175,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 94, 'Tie': 3, 'green': 177},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 275, Length: 334,      CurrentScore: {'red': 4, 'green': 9},      TotalScore: {'red': 94, 'Tie': 3, 'green': 178},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 276, Length: 122,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 94, 'Tie': 3, 'green': 179},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 277, Length: 330,      CurrentScore: {'red': 4, 'green': 9},      TotalScore: {'red': 94, 'Tie': 3, 'green': 180},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 278, Length: 483,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 94, 'Tie': 3, 'green': 181},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 279, Length: 435,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 94, 'Tie': 3, 'green': 182},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 280, Length: 207,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 95, 'Tie': 3, 'green': 182},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 281, Length: 415,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 95, 'Tie': 3, 'green': 183},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 282, Length: 500,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 95, 'Tie': 3, 'green': 184},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 283, Length: 211,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 95, 'Tie': 3, 'green': 185},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 284, Length: 435,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 95, 'Tie': 3, 'green': 186},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 285, Length: 268,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 95, 'Tie': 3, 'green': 187},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 286, Length: 466,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 96, 'Tie': 3, 'green': 187},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 287, Length: 266,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 96, 'Tie': 3, 'green': 188},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 288, Length: 288,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 97, 'Tie': 3, 'green': 188},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 289, Length: 373,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 98, 'Tie': 3, 'green': 188},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 290, Length: 194,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 98, 'Tie': 3, 'green': 189},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 291, Length: 199,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 98, 'Tie': 3, 'green': 190},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 292, Length: 215,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 98, 'Tie': 3, 'green': 191},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 293, Length: 361,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 99, 'Tie': 3, 'green': 191},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 294, Length: 318,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 100, 'Tie': 3, 'green': 191},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 295, Length: 201,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 100, 'Tie': 3, 'green': 192},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 296, Length: 122,      CurrentScore: {'red': 0, 'green': 9},      TotalScore: {'red': 100, 'Tie': 3, 'green': 193},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 297, Length: 400,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 100, 'Tie': 3, 'green': 194},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 298, Length: 127,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 100, 'Tie': 3, 'green': 195},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 299, Length: 126,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 100, 'Tie': 3, 'green': 196},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 300, Length: 410,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 100, 'Tie': 3, 'green': 197},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 301, Length: 480,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 101, 'Tie': 3, 'green': 197},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 302, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 101, 'Tie': 4, 'green': 197},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 303, Length: 242,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 102, 'Tie': 4, 'green': 197},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 304, Length: 380,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 103, 'Tie': 4, 'green': 197},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 305, Length: 119,      CurrentScore: {'red': 2, 'green': 8},      TotalScore: {'red': 103, 'Tie': 4, 'green': 198},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 306, Length: 141,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 103, 'Tie': 4, 'green': 199},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 307, Length: 208,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 103, 'Tie': 4, 'green': 200},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 308, Length: 180,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 104, 'Tie': 4, 'green': 200},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 309, Length: 158,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 104, 'Tie': 4, 'green': 201},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 310, Length: 299,      CurrentScore: {'red': 6, 'green': 8},      TotalScore: {'red': 104, 'Tie': 4, 'green': 202},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 311, Length: 197,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 105, 'Tie': 4, 'green': 202},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 312, Length: 269,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 106, 'Tie': 4, 'green': 202},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 313, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 107, 'Tie': 4, 'green': 202},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 314, Length: 395,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 107, 'Tie': 4, 'green': 203},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 315, Length: 190,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 107, 'Tie': 4, 'green': 204},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 316, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 107, 'Tie': 5, 'green': 204},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 317, Length: 476,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 108, 'Tie': 5, 'green': 204},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 318, Length: 500,      CurrentScore: {'red': 6, 'green': 1},      TotalScore: {'red': 109, 'Tie': 5, 'green': 204},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 319, Length: 219,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 109, 'Tie': 5, 'green': 205},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 320, Length: 496,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 109, 'Tie': 5, 'green': 206},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 321, Length: 140,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 109, 'Tie': 5, 'green': 207},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 322, Length: 165,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 109, 'Tie': 5, 'green': 208},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 323, Length: 191,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 109, 'Tie': 5, 'green': 209},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 324, Length: 299,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 110, 'Tie': 5, 'green': 209},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 325, Length: 425,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 110, 'Tie': 5, 'green': 210},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 326, Length: 215,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 111, 'Tie': 5, 'green': 210},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 327, Length: 382,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 111, 'Tie': 5, 'green': 211},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 328, Length: 281,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 111, 'Tie': 5, 'green': 212},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 329, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 112, 'Tie': 5, 'green': 212},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 330, Length: 346,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 112, 'Tie': 5, 'green': 213},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 331, Length: 273,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 112, 'Tie': 5, 'green': 214},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 332, Length: 322,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 113, 'Tie': 5, 'green': 214},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 333, Length: 218,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 113, 'Tie': 5, 'green': 215},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 334, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 113, 'Tie': 6, 'green': 215},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 335, Length: 292,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 113, 'Tie': 6, 'green': 216},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 336, Length: 444,      CurrentScore: {'red': 8, 'green': 2},      TotalScore: {'red': 114, 'Tie': 6, 'green': 216},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 337, Length: 160,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 114, 'Tie': 6, 'green': 217},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 338, Length: 476,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 114, 'Tie': 6, 'green': 218},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 339, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 114, 'Tie': 7, 'green': 218},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 340, Length: 500,      CurrentScore: {'red': 2, 'green': 3},      TotalScore: {'red': 114, 'Tie': 7, 'green': 219},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 341, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 114, 'Tie': 8, 'green': 219},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 342, Length: 500,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 114, 'Tie': 8, 'green': 220},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 343, Length: 456,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 114, 'Tie': 8, 'green': 221},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 344, Length: 260,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 114, 'Tie': 8, 'green': 222},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 345, Length: 500,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 115, 'Tie': 8, 'green': 222},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 346, Length: 199,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 115, 'Tie': 8, 'green': 223},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 347, Length: 197,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 115, 'Tie': 8, 'green': 224},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 348, Length: 500,      CurrentScore: {'red': 4, 'green': 1},      TotalScore: {'red': 116, 'Tie': 8, 'green': 224},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 349, Length: 500,      CurrentScore: {'red': 5, 'green': 4},      TotalScore: {'red': 117, 'Tie': 8, 'green': 224},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 350, Length: 500,      CurrentScore: {'red': 3, 'green': 1},      TotalScore: {'red': 118, 'Tie': 8, 'green': 224},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 351, Length: 359,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 118, 'Tie': 8, 'green': 225},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 352, Length: 240,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 118, 'Tie': 8, 'green': 226},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 353, Length: 431,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 119, 'Tie': 8, 'green': 226},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 354, Length: 340,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 119, 'Tie': 8, 'green': 227},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 355, Length: 223,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 119, 'Tie': 8, 'green': 228},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 356, Length: 262,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 119, 'Tie': 8, 'green': 229},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 357, Length: 372,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 120, 'Tie': 8, 'green': 229},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 358, Length: 462,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 121, 'Tie': 8, 'green': 229},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 359, Length: 240,      CurrentScore: {'red': 0, 'green': 8},      TotalScore: {'red': 121, 'Tie': 8, 'green': 230},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 360, Length: 500,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 122, 'Tie': 8, 'green': 230},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 361, Length: 194,      CurrentScore: {'red': 9, 'green': 6},      TotalScore: {'red': 123, 'Tie': 8, 'green': 230},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 362, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 123, 'Tie': 9, 'green': 230},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 363, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 123, 'Tie': 10, 'green': 230},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 364, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 123, 'Tie': 10, 'green': 231},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 365, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 124, 'Tie': 10, 'green': 231},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 366, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 125, 'Tie': 10, 'green': 231},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 367, Length: 247,      CurrentScore: {'red': 4, 'green': 8},      TotalScore: {'red': 125, 'Tie': 10, 'green': 232},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 368, Length: 199,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 125, 'Tie': 10, 'green': 233},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 369, Length: 293,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 125, 'Tie': 10, 'green': 234},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 370, Length: 283,      CurrentScore: {'red': 8, 'green': 5},      TotalScore: {'red': 126, 'Tie': 10, 'green': 234},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 371, Length: 500,      CurrentScore: {'red': 6, 'green': 5},      TotalScore: {'red': 127, 'Tie': 10, 'green': 234},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 372, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 127, 'Tie': 10, 'green': 235},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 373, Length: 500,      CurrentScore: {'red': 3, 'green': 6},      TotalScore: {'red': 127, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 374, Length: 500,      CurrentScore: {'red': 6, 'green': 5},      TotalScore: {'red': 128, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 375, Length: 323,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 129, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 376, Length: 365,      CurrentScore: {'red': 8, 'green': 2},      TotalScore: {'red': 130, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 377, Length: 500,      CurrentScore: {'red': 6, 'green': 5},      TotalScore: {'red': 131, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 378, Length: 247,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 132, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 379, Length: 370,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 133, 'Tie': 10, 'green': 236},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 380, Length: 150,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 134, 'Tie': 10, 'green': 236},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 381, Length: 389,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 134, 'Tie': 10, 'green': 237},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 382, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 135, 'Tie': 10, 'green': 237},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 383, Length: 500,      CurrentScore: {'red': 2, 'green': 3},      TotalScore: {'red': 135, 'Tie': 10, 'green': 238},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 384, Length: 443,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 135, 'Tie': 10, 'green': 239},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 385, Length: 208,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 135, 'Tie': 10, 'green': 240},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 386, Length: 453,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 136, 'Tie': 10, 'green': 240},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 387, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 136, 'Tie': 11, 'green': 240},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 388, Length: 227,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 136, 'Tie': 11, 'green': 241},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 389, Length: 282,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 136, 'Tie': 11, 'green': 242},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 390, Length: 177,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 136, 'Tie': 11, 'green': 243},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 391, Length: 500,      CurrentScore: {'red': 5, 'green': 1},      TotalScore: {'red': 137, 'Tie': 11, 'green': 243},  Winrate: 0.98
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 392, Length: 500,      CurrentScore: {'red': 6, 'green': 6},      TotalScore: {'red': 137, 'Tie': 12, 'green': 243},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 393, Length: 454,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 137, 'Tie': 12, 'green': 244},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 394, Length: 500,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 137, 'Tie': 12, 'green': 245},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 395, Length: 500,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 137, 'Tie': 12, 'green': 246},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 396, Length: 413,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 138, 'Tie': 12, 'green': 246},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 397, Length: 325,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 139, 'Tie': 12, 'green': 246},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 398, Length: 226,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 139, 'Tie': 12, 'green': 247},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 399, Length: 302,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 139, 'Tie': 12, 'green': 248},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 400, Length: 159,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 139, 'Tie': 12, 'green': 249},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 401, Length: 438,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 139, 'Tie': 12, 'green': 250},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 402, Length: 491,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 139, 'Tie': 12, 'green': 251},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 403, Length: 268,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 139, 'Tie': 12, 'green': 252},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 404, Length: 500,      CurrentScore: {'red': 1, 'green': 2},      TotalScore: {'red': 139, 'Tie': 12, 'green': 253},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 405, Length: 367,      CurrentScore: {'red': 8, 'green': 4},      TotalScore: {'red': 140, 'Tie': 12, 'green': 253},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 406, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 141, 'Tie': 12, 'green': 253},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 407, Length: 450,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 142, 'Tie': 12, 'green': 253},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 408, Length: 311,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 143, 'Tie': 12, 'green': 253},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 409, Length: 298,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 144, 'Tie': 12, 'green': 253},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 410, Length: 500,      CurrentScore: {'red': 2, 'green': 3},      TotalScore: {'red': 144, 'Tie': 12, 'green': 254},  Winrate: 0.98
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 411, Length: 354,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 144, 'Tie': 12, 'green': 255},  Winrate: 0.98
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 412, Length: 200,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 144, 'Tie': 12, 'green': 256},  Winrate: 0.98
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 413, Length: 500,      CurrentScore: {'red': 3, 'green': 2},      TotalScore: {'red': 145, 'Tie': 12, 'green': 256},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 414, Length: 324,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 145, 'Tie': 12, 'green': 257},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 415, Length: 202,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 145, 'Tie': 12, 'green': 258},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 416, Length: 500,      CurrentScore: {'red': 3, 'green': 5},      TotalScore: {'red': 145, 'Tie': 12, 'green': 259},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 417, Length: 211,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 145, 'Tie': 12, 'green': 260},  Winrate: 0.96
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 418, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 145, 'Tie': 13, 'green': 260},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 419, Length: 192,      CurrentScore: {'red': 1, 'green': 9},      TotalScore: {'red': 145, 'Tie': 13, 'green': 261},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 420, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 146, 'Tie': 13, 'green': 261},  Winrate: 0.96
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 421, Length: 344,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 146, 'Tie': 13, 'green': 262},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 422, Length: 228,      CurrentScore: {'red': 1, 'green': 8},      TotalScore: {'red': 146, 'Tie': 13, 'green': 263},  Winrate: 0.96
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 423, Length: 386,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 146, 'Tie': 13, 'green': 264},  Winrate: 0.96
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 424, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 146, 'Tie': 14, 'green': 264},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 425, Length: 260,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 147, 'Tie': 14, 'green': 264},  Winrate: 0.96
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 426, Length: 500,      CurrentScore: {'red': 2, 'green': 1},      TotalScore: {'red': 148, 'Tie': 14, 'green': 264},  Winrate: 0.93
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 427, Length: 185,      CurrentScore: {'red': 3, 'green': 8},      TotalScore: {'red': 148, 'Tie': 14, 'green': 265},  Winrate: 0.93
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 428, Length: 289,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 148, 'Tie': 14, 'green': 266},  Winrate: 0.93
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 429, Length: 416,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 149, 'Tie': 14, 'green': 266},  Winrate: 0.93
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 430, Length: 500,      CurrentScore: {'red': 6, 'green': 2},      TotalScore: {'red': 150, 'Tie': 14, 'green': 266},  Winrate: 0.93
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 431, Length: 108,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 150, 'Tie': 14, 'green': 267},  Winrate: 0.93
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 432, Length: 207,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 150, 'Tie': 14, 'green': 268},  Winrate: 0.93
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 433, Length: 176,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 150, 'Tie': 14, 'green': 269},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 434, Length: 500,      CurrentScore: {'red': 4, 'green': 3},      TotalScore: {'red': 151, 'Tie': 14, 'green': 269},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 435, Length: 252,      CurrentScore: {'red': 5, 'green': 8},      TotalScore: {'red': 151, 'Tie': 14, 'green': 270},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 436, Length: 500,      CurrentScore: {'red': 6, 'green': 4},      TotalScore: {'red': 152, 'Tie': 14, 'green': 270},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 437, Length: 500,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 152, 'Tie': 14, 'green': 271},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 438, Length: 500,      CurrentScore: {'red': 6, 'green': 1},      TotalScore: {'red': 153, 'Tie': 14, 'green': 271},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 439, Length: 282,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 154, 'Tie': 14, 'green': 271},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 440, Length: 295,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 154, 'Tie': 14, 'green': 272},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 441, Length: 300,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 155, 'Tie': 14, 'green': 272},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 442, Length: 465,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 156, 'Tie': 14, 'green': 272},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 443, Length: 270,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 157, 'Tie': 14, 'green': 272},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 444, Length: 500,      CurrentScore: {'red': 3, 'green': 1},      TotalScore: {'red': 158, 'Tie': 14, 'green': 272},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 445, Length: 157,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 158, 'Tie': 14, 'green': 273},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 446, Length: 500,      CurrentScore: {'red': 5, 'green': 4},      TotalScore: {'red': 159, 'Tie': 14, 'green': 273},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 447, Length: 200,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 160, 'Tie': 14, 'green': 273},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 448, Length: 153,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 160, 'Tie': 14, 'green': 274},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 449, Length: 354,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 160, 'Tie': 14, 'green': 275},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 450, Length: 256,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 160, 'Tie': 14, 'green': 276},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 451, Length: 314,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 160, 'Tie': 14, 'green': 277},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 452, Length: 235,      CurrentScore: {'red': 3, 'green': 7},      TotalScore: {'red': 160, 'Tie': 14, 'green': 278},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 453, Length: 295,      CurrentScore: {'red': 9, 'green': 4},      TotalScore: {'red': 161, 'Tie': 14, 'green': 278},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 454, Length: 351,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 161, 'Tie': 14, 'green': 279},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 455, Length: 272,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 162, 'Tie': 14, 'green': 279},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 456, Length: 446,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 163, 'Tie': 14, 'green': 279},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 457, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 164, 'Tie': 14, 'green': 279},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 458, Length: 486,      CurrentScore: {'red': 5, 'green': 7},      TotalScore: {'red': 164, 'Tie': 14, 'green': 280},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 459, Length: 500,      CurrentScore: {'red': 2, 'green': 4},      TotalScore: {'red': 164, 'Tie': 14, 'green': 281},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 460, Length: 500,      CurrentScore: {'red': 4, 'green': 2},      TotalScore: {'red': 165, 'Tie': 14, 'green': 281},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 461, Length: 232,      CurrentScore: {'red': 8, 'green': 0},      TotalScore: {'red': 166, 'Tie': 14, 'green': 281},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 462, Length: 500,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 166, 'Tie': 14, 'green': 282},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 463, Length: 356,      CurrentScore: {'red': 7, 'green': 3},      TotalScore: {'red': 167, 'Tie': 14, 'green': 282},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 464, Length: 291,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 168, 'Tie': 14, 'green': 282},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 465, Length: 500,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 169, 'Tie': 14, 'green': 282},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 466, Length: 329,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 169, 'Tie': 14, 'green': 283},  Winrate: 0.94
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 467, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 169, 'Tie': 15, 'green': 283},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 468, Length: 118,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 169, 'Tie': 15, 'green': 284},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 469, Length: 359,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 170, 'Tie': 15, 'green': 284},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 470, Length: 500,      CurrentScore: {'red': 5, 'green': 3},      TotalScore: {'red': 171, 'Tie': 15, 'green': 284},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 471, Length: 500,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 171, 'Tie': 15, 'green': 285},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 472, Length: 375,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 172, 'Tie': 15, 'green': 285},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 473, Length: 418,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 173, 'Tie': 15, 'green': 285},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 474, Length: 203,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 173, 'Tie': 15, 'green': 286},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 475, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 174, 'Tie': 15, 'green': 286},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 476, Length: 496,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 175, 'Tie': 15, 'green': 286},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 477, Length: 500,      CurrentScore: {'red': 5, 'green': 6},      TotalScore: {'red': 175, 'Tie': 15, 'green': 287},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': True}
+Game 478, Length: 437,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 176, 'Tie': 15, 'green': 287},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 479, Length: 304,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 177, 'Tie': 15, 'green': 287},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 480, Length: 250,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 178, 'Tie': 15, 'green': 287},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 481, Length: 140,      CurrentScore: {'red': 2, 'green': 6},      TotalScore: {'red': 178, 'Tie': 15, 'green': 288},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 482, Length: 324,      CurrentScore: {'red': 4, 'green': 7},      TotalScore: {'red': 178, 'Tie': 15, 'green': 289},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 483, Length: 466,      CurrentScore: {'red': 6, 'green': 7},      TotalScore: {'red': 178, 'Tie': 15, 'green': 290},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 484, Length: 394,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 179, 'Tie': 15, 'green': 290},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 485, Length: 500,      CurrentScore: {'red': 5, 'green': 2},      TotalScore: {'red': 180, 'Tie': 15, 'green': 290},  Winrate: 0.94
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 486, Length: 500,      CurrentScore: {'red': 4, 'green': 4},      TotalScore: {'red': 180, 'Tie': 16, 'green': 290},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 487, Length: 500,      CurrentScore: {'red': 6, 'green': 4},      TotalScore: {'red': 181, 'Tie': 16, 'green': 290},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 488, Length: 468,      CurrentScore: {'red': 8, 'green': 6},      TotalScore: {'red': 182, 'Tie': 16, 'green': 290},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 489, Length: 294,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 183, 'Tie': 16, 'green': 290},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 490, Length: 500,      CurrentScore: {'red': 6, 'green': 3},      TotalScore: {'red': 184, 'Tie': 16, 'green': 290},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 491, Length: 200,      CurrentScore: {'red': 1, 'green': 7},      TotalScore: {'red': 184, 'Tie': 16, 'green': 291},  Winrate: 0.94
+{'red': 0.0, 'green': 0.0, 'PlayerSwapped': False}
+Game 492, Length: 500,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 184, 'Tie': 17, 'green': 291},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 493, Length: 192,      CurrentScore: {'red': 9, 'green': 3},      TotalScore: {'red': 185, 'Tie': 17, 'green': 291},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 494, Length: 431,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 186, 'Tie': 17, 'green': 291},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 495, Length: 500,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 187, 'Tie': 17, 'green': 291},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 496, Length: 500,      CurrentScore: {'red': 3, 'green': 4},      TotalScore: {'red': 187, 'Tie': 17, 'green': 292},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': False}
+Game 497, Length: 500,      CurrentScore: {'red': 4, 'green': 5},      TotalScore: {'red': 187, 'Tie': 17, 'green': 293},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 498, Length: 442,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 188, 'Tie': 17, 'green': 293},  Winrate: 0.94
+{'red': 40, 'green': -40, 'PlayerSwapped': False}
+Game 499, Length: 405,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 189, 'Tie': 17, 'green': 293},  Winrate: 0.94
+{'red': -40, 'green': 40, 'PlayerSwapped': True}
+Game 500, Length: 157,      CurrentScore: {'red': 2, 'green': 7},      TotalScore: {'red': 189, 'Tie': 17, 'green': 294},  Winrate: 0.94
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+[ 0.23154026  0.10145092 -0.0474038  ... -1.8103452  -1.7917329
+  0.21106847]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-23-26>
+Subject: Job 5814333: <NNAgent7impala> in cluster <dcc> Done
+
+Job <NNAgent7impala> was submitted from host <n-62-27-19> by user <s183905> in cluster <dcc> at Wed Mar 11 23:35:58 2020
+Job was executed on host(s) <n-62-23-26>, in queue <hpc>, as user <s183905> in cluster <dcc> at Wed Mar 11 23:36:01 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Wed Mar 11 23:36:01 2020
+Terminated at Thu Mar 12 21:08:37 2020
+Results reported at Thu Mar 12 21:08:37 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -o outputs/test_%J.out
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=20G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 1500
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   77533.75 sec.
+    Max Memory :                                 11151 MB
+    Average Memory :                             5582.43 MB
+    Total Requested Memory :                     20480.00 MB
+    Delta Memory :                               9329.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   77573 sec.
+    Turnaround time :                            77559 sec.
+
+The output (if any) is above this job summary.
+
