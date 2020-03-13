@@ -1,108 +1,86 @@
 import numpy as np
 from game import Myretuen
 from Agents.agent import Agent
-
+from move import Move
+from setups import setup
+import random
+import copy
 
 class MinMaxCalculate():
-    def __init__(self, valuefunction,  game, Agent, move, TopNvalues=3, cutOffdepth = 0.01):
-        self.valuefunction = valuefunction
-        self.TopNvalues = TopNvalues
+    def __init__(self, valuefunction, TopNvalues=3, cutOffdepth=3):
+        self.TopNvalues = TopNvalues # brug int(1 + 10 / np.log2(len(self.ants)))
         self.cutOffdepth = cutOffdepth
-        self.move = move
+        self.Move = Move
+        self.Agent = Agent()
+        self.game = Myretuen()
+        self.value = valuefunction
+        self.whichturn = self.game.currentPlayer
 
-        self.RootGame = Myretuen
-        self.MyAgent = Agent
+    def DeepSearch(self):
+        fakegame = copy.deepcopy(self.game)
+        self.DeepLoop(1, fakegame, 0, self.cutOffdepth)
 
-        # Make simple copy of game
-        self.prob, self.fields, self.bases, self.ants, self.rolled, self.rolledSameDice = game.prob, game.fields, game.bases, game.ants, game.rolled, game.rolledSameDice
+    def DeepLoop(self, Proba, fakegame, rewardtrace, cutOffdepth):
+        actionss = fakegame.action_space()
+        canditate_actions, canditate_states, candidate_values, canditate_rewards = [None]*self.TopNvalues, [[None],[None]]*self.TopNvalues, [-float('inf')]*self.TopNvalues, [[None],[None]]*self.TopNvalues
+        for action in actionss:
+            state = self.Agent.state(fakegame)
+            if len(state) == 1:
+                if fakegame.currentPlayer == self.whichturn:
+                    value = self.value(state[0]) + state[0][3]
+                else:
+                    swapstate = state[state[1]:len(state[0])] + state[0:state[1]]
+                    value = self.value(swapstate) - state[0][3]
+            else:
+                if fakegame.currentPlayer == self.whichturn:
+                    value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
+                else:
+                    swapstate = state[state[1]:len(state[0])] + state[0:state[1]]
+                    value = (self.value(state[0]) - state[0][3]) * state[0][2] + (self.value(state[1]) - state[1][3]) * state[1][2]
 
-    def actions(self):
-        for ant, start, dice in self.getAllStartConfigurations():
-            for end in self.getAllPositionsAtDistance(start, dice):
-                if self.isLegalMove(ant, end):
-                    yield self.move(start=ant.position, dice=dice, end=end, game=self)
+            if value > candidate_values[np.argmin(candidate_values)]:
+                replace = np.argmin(candidate_values)
+                candidate_values[replace] = value
+                canditate_actions[replace] = action
 
-    def action_space(self):
-        return list(self.actions())
+        if cutOffdepth < 1:
+            return rewardtrace + np.max(candidate_values)
+        cutOffdepth -= 1
 
-    def step(self, action, CalculateProb):
-        observation = self
-        if action == None:
-            reward = 0
-            self.rolled = []
-            self.playerwithnomoves = self.currentPlayer
-        else:
-            reward = action.execute(CalculateProb)
-        done = self.gameHasEnded()
-        info = {'PlayerSwapped': False}
-        if done:
-            endReward = 3*len(self.ants)/2+10
-            info = {player: (val*2-1)*endReward for player, val in self.whoWonThisGame().items()}
-            info['PlayerSwapped'] = False
-        if len(self.rolled) == 0:
-            if not self.rolledSameDice:
-                if self.playerwithnomoves == None or self.playerwithnomoves == self.currentPlayer:
-                    self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
-                    info['PlayerSwapped'] = True
-            self.roll()
-        return observation, reward, done, info
+        for i in range(self.TopNvalues):
+            if len(canditate_states[i]) == 1:
+                if fakegame.rolled != []:
+                    newfakegame = copy.deepcopy(fakegame)
+                    canditate_states[i], canditate_rewards[i], _, _ = newfakegame.step(canditate_actions[i], CalculateProb=True)
+                    self.DeepLoop(Proba, newfakegame, canditate_rewards[i]+rewardtrace, cutOffdepth-1)
+                else:
+                    for j in range(1, 7):
+                        newfakegame = copy.deepcopy(fakegame)
+                        newfakegame.rolled.append(j)
+                        for k in range(j, 7):
+                            newfakegame = copy.deepcopy(fakegame)
+                            newfakegame.rolled.append(i)
+                            thisproba = Proba
+                            if j == k:
+                                newfakegame.rolledSameDice = True
+                                thisproba = Proba/2
+                            self.DeepLoop(thisproba, newfakegame, canditate_rewards[i]+rewardtrace, cutOffdepth-1)
+            else:
+                prob_of_state = canditate_states[i][0][2]
+                for l in canditate_states[i]:
+                    if fakegame.rolled != []:
+                        newfakegame = copy.deepcopy(fakegame)
+                        canditate_states[i], canditate_rewards[i], _, _ = newfakegame.step(canditate_actions[i][l], CalculateProb=True)
+                        self.DeepLoop(Proba*prob_of_state, newfakegame, canditate_rewards[i][l][3]+rewardtrace, cutOffdepth-1)
+                    else:
+                        if rollsame is False:
+                            turn = self.game.player2 if turn == self.game.player1 else self.game.player1
+                        for j in range(1, 7):
+                            for k in range(1, 7):
+                                if j == k:
+                                    rollsame = True
+                                dice = [j, k]
+                                self.DeepLoop(Proba*(1 - prob_of_state), canditate_states[i][l], dice, turn, cutOffdepth-1, rollsame)
 
-    def getAllStartConfigurations(self):
-        for ant in self.getAllCurrentPlayersAnts():
-            for start in ant.startPositions():
-                for dice in set(self.rolled):
-                    yield (ant, start, dice)
-
-    def getAllCurrentPlayersAnts(self):
-        hasSeenOneFromBase = False
-        for ant in self.ants:
-            if ant.color == self.currentPlayer and ant.isAlive and not hasSeenOneFromBase:
-                hasSeenOneFromBase = ant.position.type == 'Base'
-                yield ant
-
-    def getAllPositionsAtDistance(self, position, distance, previous=None):
-        for step1 in self.goOneStep(position, previous):
-            if distance == 1:
-                yield step1
-                continue
-            for step2 in self.getAllPositionsAtDistance(step1, distance-1, previous=position):
-                yield step2
-
-    def goOneStep(self, current, previous):
-        for field in current.neighbors:
-            if current.special == 'Flag' or field != previous:
-                yield field
-
-    def isLegalMove(self, ant, end):
-        if end.ants == [] or end.ants[-1].color != ant.color:
-            return True
-        return False
-
-
-
-
-
-
-
-    actions = self.action_space()
-    valueMax = -float('inf')
-    CanditatesActions, CanditateStates, ProbOfStates = [None]*self.TopNvalues, [None]*self.TopNvalues, [[None], [None]]*self.TopNvalues
-    for action in actions:
-        state = self.MyAgent.state(self., action)
-        if len(state) == 1:
-            value = self.value(state[0]) + state[0][3]
-        else:
-            if self.calcprobs == False:
-                state[0][2], state[1][2] = 0.5, 0.5
-            value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
-        if value > CanditatesActions[np.argmin(CanditatesActions)]:
-            CanditatesActions[np.argmin(CanditatesActions)] = action
-            CanditateStates[np.argmin(CanditatesActions)] = state
-            ProbOfStates[np.argmin(CanditatesActions)][0] = state[0][2]
-            ProbOfStates[np.argmin(CanditatesActions)][1] = 1 - state[0][2]
-
-
-    for i in range(len(CanditatesActions)):
-        CurrentDice = self.rolled
-        CurrentDice.remove(CanditatesActions[i].dice)
-        self.given_diceCanditatesActions.dice
+Minmax = MinMaxCalculate("yo")
+Minmax.DeepSearch()

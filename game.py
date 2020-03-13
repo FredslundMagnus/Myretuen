@@ -42,14 +42,14 @@ class Myretuen(gym.Env):
     def action_space(self):
         return list(self.actions())
 
-    def step(self, action, CalculateProb):
+    def step(self, action, CalculateProb, oppesite=False):
         observation = self
         if action == None:
             reward = 0
             self.rolled = []
             self.playerwithnomoves = self.currentPlayer
         else:
-            reward = action.execute(CalculateProb)
+            reward = action.execute(CalculateProb, oppesite=oppesite)
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if done:
