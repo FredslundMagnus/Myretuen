@@ -19,6 +19,8 @@ if debuggerMode:
     ourAgent = agentsDic[sys.argv[4]]
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent)
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
+    os.system("printf '\033c'")
+    print(sys.argv)
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
