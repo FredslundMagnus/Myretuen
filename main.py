@@ -23,6 +23,7 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
+    print(f"# Parameters for {Thename}")
     print("\n\n", sys.argv[2:-1], "\n\n")
 else:
     env = Myretuen()
