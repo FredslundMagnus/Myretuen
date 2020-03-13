@@ -23,7 +23,7 @@ if debuggerMode:
     os.system("printf '\033c'")
     print(sys.argv)
 else:
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent().loadModel())
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
 # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
 # cProfile.run('controller.run(NGames=50, AddAgent=10, UI=False)', 'stats')

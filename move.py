@@ -252,6 +252,7 @@ class Move():
 
 
 
+
 class SimpleAnt():
     def __init__(self, color, magnet, position, idd, isAlive, flipped, antsUnderMe, dieJustUsedInSimulation, probcapture):  # Jakob
         self.color = color
