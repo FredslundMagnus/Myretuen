@@ -1,1 +1,112 @@
 Loaded module: python3/3.6.2
+TERM environment variable not set.
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Game 001, Length: 181,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 0, 'Tie': 0, 'green': 1},  Winrate: 1.0
+Game 002, Length: 500,      CurrentScore: {'red': 3, 'green': 3},      TotalScore: {'red': 0, 'Tie': 1, 'green': 1},  Winrate: 0.75
+Game 003, Length: 156,      CurrentScore: {'red': 0, 'green': 4},      TotalScore: {'red': 0, 'Tie': 1, 'green': 2},  Winrate: 0.83
+Game 004, Length: 182,      CurrentScore: {'red': 5, 'green': 5},      TotalScore: {'red': 0, 'Tie': 1, 'green': 3},  Winrate: 0.88
+Game 005, Length: 123,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 0, 'Tie': 1, 'green': 4},  Winrate: 0.9
+Game 006, Length: 092,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 0, 'Tie': 1, 'green': 5},  Winrate: 0.92
+Game 007, Length: 076,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 0, 'Tie': 1, 'green': 6},  Winrate: 0.93
+Game 008, Length: 199,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 0, 'Tie': 1, 'green': 7},  Winrate: 0.94
+Game 009, Length: 123,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 0, 'Tie': 1, 'green': 8},  Winrate: 0.94
+Game 010, Length: 069,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 0, 'Tie': 1, 'green': 9},  Winrate: 0.95
+['RandomAgent', 'NNAgent']
+Game 011, Length: 211,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 0, 'Tie': 1, 'green': 10},  Winrate: 0.95
+Game 012, Length: 054,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 0, 'Tie': 1, 'green': 11},  Winrate: 0.95
+Game 013, Length: 165,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 0, 'Tie': 1, 'green': 12},  Winrate: 0.96
+Game 014, Length: 500,      CurrentScore: {'red': 1, 'green': 1},      TotalScore: {'red': 0, 'Tie': 2, 'green': 12},  Winrate: 0.96
+Game 015, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 0, 'Tie': 2, 'green': 13},  Winrate: 0.96
+Game 016, Length: 357,      CurrentScore: {'red': 7, 'green': 4},      TotalScore: {'red': 1, 'Tie': 2, 'green': 13},  Winrate: 0.96
+Game 017, Length: 138,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 1, 'Tie': 2, 'green': 14},  Winrate: 0.96
+Game 018, Length: 068,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 1, 'Tie': 2, 'green': 15},  Winrate: 0.96
+Game 019, Length: 105,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 1, 'Tie': 2, 'green': 16},  Winrate: 0.96
+Game 020, Length: 066,      CurrentScore: {'red': 0, 'green': 7},      TotalScore: {'red': 1, 'Tie': 2, 'green': 17},  Winrate: 0.96
+['RandomAgent', 'NNAgent', 'NNAgent']
+Game 021, Length: 500,      CurrentScore: {'red': 2, 'green': 5},      TotalScore: {'red': 1, 'Tie': 2, 'green': 18},  Winrate: 0.96
+Game 022, Length: 109,      CurrentScore: {'red': 7, 'green': 2},      TotalScore: {'red': 2, 'Tie': 2, 'green': 18},  Winrate: 0.96
+Game 023, Length: 143,      CurrentScore: {'red': 7, 'green': 6},      TotalScore: {'red': 3, 'Tie': 2, 'green': 18},  Winrate: 0.96
+Game 024, Length: 407,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 3, 'Tie': 2, 'green': 19},  Winrate: 0.96
+Game 025, Length: 134,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 3, 'Tie': 2, 'green': 20},  Winrate: 0.97
+Game 026, Length: 477,      CurrentScore: {'red': 7, 'green': 5},      TotalScore: {'red': 4, 'Tie': 2, 'green': 20},  Winrate: 0.97
+Game 027, Length: 153,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 4, 'Tie': 2, 'green': 21},  Winrate: 0.97
+Game 028, Length: 121,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 4, 'Tie': 2, 'green': 22},  Winrate: 0.97
+Game 029, Length: 500,      CurrentScore: {'red': 0, 'green': 3},      TotalScore: {'red': 4, 'Tie': 2, 'green': 23},  Winrate: 0.97
+Game 030, Length: 204,      CurrentScore: {'red': 6, 'green': 3},      TotalScore: {'red': 5, 'Tie': 2, 'green': 23},  Winrate: 0.97
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 031, Length: 066,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 6, 'Tie': 2, 'green': 23},  Winrate: 0.97
+Game 032, Length: 090,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 7, 'Tie': 2, 'green': 23},  Winrate: 0.97
+Game 033, Length: 078,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 8, 'Tie': 2, 'green': 23},  Winrate: 0.97
+Game 034, Length: 500,      CurrentScore: {'red': 2, 'green': 2},      TotalScore: {'red': 8, 'Tie': 3, 'green': 23},  Winrate: 0.97
+Game 035, Length: 500,      CurrentScore: {'red': 3, 'green': 1},      TotalScore: {'red': 9, 'Tie': 3, 'green': 23},  Winrate: 0.91
+Game 036, Length: 500,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 10, 'Tie': 3, 'green': 23},  Winrate: 0.91
+Game 037, Length: 075,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 11, 'Tie': 3, 'green': 23},  Winrate: 0.91
+Game 038, Length: 049,      CurrentScore: {'red': 7, 'green': 0},      TotalScore: {'red': 12, 'Tie': 3, 'green': 23},  Winrate: 0.91
+Game 039, Length: 149,      CurrentScore: {'red': 1, 'green': 0},      TotalScore: {'red': 12, 'Tie': 3, 'green': 24},  Winrate: 0.92
+Game 040, Length: 156,      CurrentScore: {'red': 3, 'green': 0},      TotalScore: {'red': 13, 'Tie': 3, 'green': 24},  Winrate: 0.92
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+Game 041, Length: 088,      CurrentScore: {'red': 4, 'green': 0},      TotalScore: {'red': 14, 'Tie': 3, 'green': 24},  Winrate: 0.92
+Game 042, Length: 065,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 14, 'Tie': 3, 'green': 25},  Winrate: 0.92
+Game 043, Length: 118,      CurrentScore: {'red': 0, 'green': 0},      TotalScore: {'red': 14, 'Tie': 3, 'green': 26},  Winrate: 0.92
+Game 044, Length: 073,      CurrentScore: {'red': 0, 'green': 1},      TotalScore: {'red': 14, 'Tie': 3, 'green': 27},  Winrate: 0.92
+Game 045, Length: 137,      CurrentScore: {'red': 3, 'green': 5},      TotalScore: {'red': 14, 'Tie': 3, 'green': 28},  Winrate: 0.93
+Game 046, Length: 078,      CurrentScore: {'red': 7, 'green': 1},      TotalScore: {'red': 15, 'Tie': 3, 'green': 28},  Winrate: 0.93
+Game 047, Length: 321,      CurrentScore: {'red': 6, 'green': 1},      TotalScore: {'red': 16, 'Tie': 3, 'green': 28},  Winrate: 0.93
+Game 048, Length: 097,      CurrentScore: {'red': 2, 'green': 0},      TotalScore: {'red': 17, 'Tie': 3, 'green': 28},  Winrate: 0.93
+Game 049, Length: 500,      CurrentScore: {'red': 0, 'green': 2},      TotalScore: {'red': 17, 'Tie': 3, 'green': 29},  Winrate: 0.93
+Game 050, Length: 104,      CurrentScore: {'red': 0, 'green': 5},      TotalScore: {'red': 17, 'Tie': 3, 'green': 30},  Winrate: 0.93
+['RandomAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent', 'NNAgent']
+['50', '10', 'NNAgent', '1', '1', '1', '1']
+[-0.06466989 -0.03653985 -0.10110295 ... -0.1799737   0.01027736
+  0.27032265]
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-21-98>
+Subject: Job 5821442: <NNAgent5Test3> in cluster <dcc> Done
+
+Job <NNAgent5Test3> was submitted from host <n-62-30-7> by user <s183905> in cluster <dcc> at Fri Mar 13 14:12:42 2020
+Job was executed on host(s) <n-62-21-98>, in queue <hpc>, as user <s183905> in cluster <dcc> at Fri Mar 13 14:12:42 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Fri Mar 13 14:12:42 2020
+Terminated at Fri Mar 13 14:19:58 2020
+Results reported at Fri Mar 13 14:19:58 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=20G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 2000
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   434.30 sec.
+    Max Memory :                                 84 MB
+    Average Memory :                             80.69 MB
+    Total Requested Memory :                     20480.00 MB
+    Delta Memory :                               20396.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   435 sec.
+    Turnaround time :                            436 sec.
+
+The output (if any) is above this job summary.
+
