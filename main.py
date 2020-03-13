@@ -1,11 +1,12 @@
-import pstats
-import cProfile
-from game import Myretuen, Controller
-from agents import *
-import numpy as np
-from matplotlib import pyplot as plt
-import sys
 import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+from matplotlib import pyplot as plt
+import numpy as np
+from agents import *
+from game import Myretuen, Controller
+import cProfile
+import pstats
+import sys
 
 debuggerMode = len(sys.argv) != 1
 
@@ -22,11 +23,12 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
-    print("\n\n", sys.argv[2:-1], "\n\n\n\n\n\n\n")
+    print("\n\n", sys.argv[2:-1], "\n\n")
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
+# env = Myretuen()
 # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
 # cProfile.run('controller.run(NGames=50, AddAgent=10, UI=False)', 'stats')
 # p = pstats.Stats('stats')
@@ -51,7 +53,7 @@ plot('TrainingCurve')
 
 
 parameters = np.array(controller.agents['green'].parameters).T
-plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1]/(parameters.shape[0]*3))
+plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
 plot('Weights')
 
 print(parameters[:, -1])
@@ -65,8 +67,8 @@ plt.ylim((0, 2500))
 plot('Elo-Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
-plt.plot(np.arange(1, NumberOfGames+1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
-plt.plot(np.arange(1, NumberOfGames+1), [controller.agents['red'][0].rating] * NumberOfGames)
+plt.plot(np.arange(1, NumberOfGames + 1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
+plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames)
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((0, 2500))
