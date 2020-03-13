@@ -31,6 +31,7 @@ if debuggerMode:
     print(f'    DoTrain enabled :              {str(doTrain)}.')
     print(f'    Impala enabled :               {str(impala)}.')
     print(f'    Calcprobs enabled :            {str(calcprobs)}.\n')
+    print(f"# Other prints\n")
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
