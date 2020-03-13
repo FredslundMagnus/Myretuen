@@ -20,8 +20,8 @@ if debuggerMode:
     explore, doTrain, impala, calcprobs = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8]))
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
-    os.system("printf '\033c'")
-    print(sys.argv)
+    os.system("clear")
+    print(sys.argv[2:])
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
