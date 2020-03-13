@@ -24,7 +24,13 @@ if debuggerMode:
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
     print(f"# Parameters for {Thename}")
-    print("\n\n", sys.argv[2:-1], "\n\n")
+    print(f"Use the agent :                {sys.argv[4]}.")
+    print(f"Play for  :                    {nGames} games.")
+    print(f"Add Agent every :              {addAgent} game.")
+    print(f'Explore enabled :              {str(explore)}.')
+    print(f'DoTrain enabled :              {str(doTrain)}.')
+    print(f'Impala enabled :               {str(impala)}.')
+    print(f'Calcprobs enabled :            {str(calcprobs)}.')
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
