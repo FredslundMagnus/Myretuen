@@ -24,13 +24,13 @@ if debuggerMode:
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
     print(f"# Parameters for {Thename}\n")
-    print(f"    Use the agent :                {sys.argv[4]}.")
-    print(f"    Play for  :                    {nGames} games.")
-    print(f"    Add Agent every :              {addAgent} game.")
-    print(f'    Explore enabled :              {str(explore)}.')
-    print(f'    DoTrain enabled :              {str(doTrain)}.')
-    print(f'    Impala enabled :               {str(impala)}.')
-    print(f'    Calcprobs enabled :            {str(calcprobs)}.\n')
+    print(f"    Use the agent :             {sys.argv[4]}.")
+    print(f"    Play for :                  {nGames} games.")
+    print(f"    Add Agent every :           {addAgent} game.")
+    print(f'    Explore enabled :           {str(explore)}.')
+    print(f'    DoTrain enabled :           {str(doTrain)}.')
+    print(f'    Impala enabled :            {str(impala)}.')
+    print(f'    Calcprobs enabled :         {str(calcprobs)}.\n')
     print(f"# Other prints\n")
 else:
     env = Myretuen()
@@ -81,3 +81,7 @@ plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((0, 2500))
 plot('Increase in Elo over time', labels=True)
+
+if debuggerMode:
+    print('\n---------------------------------------------------------------------------------------------------------------------\n')
+    print(f"# HPC Stats\n")
