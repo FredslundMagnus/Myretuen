@@ -9,8 +9,6 @@ import os
 
 debuggerMode = len(sys.argv) != 1
 
-env = Myretuen()
-
 if debuggerMode:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
@@ -20,11 +18,13 @@ if debuggerMode:
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8]))
     sys.stdout = open(os.devnull, 'w')
+    env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
-    print(sys.argv[2:-1])
+    print("\n\n", sys.argv[2:-1], "\n\n\n\n\n\n\n")
 else:
+    env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
 # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
