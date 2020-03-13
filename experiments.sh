@@ -1,12 +1,12 @@
 #!/bin/sh
-mkdir outputs/TestLayout
-bsub -o "outputs/TestLayout/NNAgent0TestLayout.md" -J "NNAgent0TestLayout" -P "NNAgent0TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent1TestLayout.md" -J "NNAgent1TestLayout" -P "NNAgent1TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent2TestLayout.md" -J "NNAgent2TestLayout" -P "NNAgent2TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent3TestLayout.md" -J "NNAgent3TestLayout" -P "NNAgent3TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent4TestLayout.md" -J "NNAgent4TestLayout" -P "NNAgent4TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent5TestLayout.md" -J "NNAgent5TestLayout" -P "NNAgent5TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent6TestLayout.md" -J "NNAgent6TestLayout" -P "NNAgent6TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent7TestLayout.md" -J "NNAgent7TestLayout" -P "NNAgent7TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent8TestLayout.md" -J "NNAgent8TestLayout" -P "NNAgent8TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
-bsub -o "outputs/TestLayout/NNAgent9TestLayout.md" -J "NNAgent9TestLayout" -P "NNAgent9TestLayout 30 10 NNAgent 1 1 1 1 TestLayout" < submit.sh
+mkdir outputs/Jakob
+bsub -o "outputs/Jakob/NNAgent0Jakob.md" -J "NNAgent0Jakob" -P "NNAgent0Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent1Jakob.md" -J "NNAgent1Jakob" -P "NNAgent1Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent2Jakob.md" -J "NNAgent2Jakob" -P "NNAgent2Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent3Jakob.md" -J "NNAgent3Jakob" -P "NNAgent3Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent4Jakob.md" -J "NNAgent4Jakob" -P "NNAgent4Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent5Jakob.md" -J "NNAgent5Jakob" -P "NNAgent5Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent6Jakob.md" -J "NNAgent6Jakob" -P "NNAgent6Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent7Jakob.md" -J "NNAgent7Jakob" -P "NNAgent7Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent8Jakob.md" -J "NNAgent8Jakob" -P "NNAgent8Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
+bsub -o "outputs/Jakob/NNAgent9Jakob.md" -J "NNAgent9Jakob" -P "NNAgent9Jakob 30 10 NNAgent 1 1 1 1 Jakob" < submit.sh
