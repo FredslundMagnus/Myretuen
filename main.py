@@ -15,6 +15,7 @@ if debuggerMode:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
+    Thename = sys.argv[-1]
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8]))
@@ -22,7 +23,7 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
-    print(sys.argv[2:])
+    print(sys.argv[2:-1])
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
@@ -38,7 +39,7 @@ def plot(name, labels=False):
         plt.legend()
     plt.title(name)
     if debuggerMode:
-        plt.savefig('outputs/' + name + nameOfRun + '.png')
+        plt.savefig(f'outputs/{Thename}/' + name + nameOfRun + '.png')
         plt.clf()
     else:
         plt.show()
