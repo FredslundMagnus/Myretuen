@@ -20,7 +20,7 @@ if debuggerMode:
     explore, doTrain, impala, calcprobs = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8]))
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     sys.stdout = sys.__stdout__
     print(f"# Parameters for {Thename}\n")
@@ -83,5 +83,6 @@ plt.ylim((0, 2500))
 plot('Increase in Elo over time', labels=True)
 
 if debuggerMode:
+    print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")
     print('\n---------------------------------------------------------------------------------------------------------------------\n')
     print(f"# HPC Stats\n")
