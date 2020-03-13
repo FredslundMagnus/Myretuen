@@ -18,9 +18,10 @@ if debuggerMode:
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8]))
+    sys.stdout = open(os.devnull, 'w')
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=False, doTrain=False, impala=False, calcprobs=True))
     controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
-    os.system("clear")
+    sys.stdout = sys.__stdout__
     print(sys.argv[2:])
 else:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())

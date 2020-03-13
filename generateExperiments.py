@@ -2,8 +2,8 @@
 file = open('experiments.sh', 'w')
 file.write('#!/bin/sh\n')
 agent = 'NNAgent'
-name = 'Test4'
-gameLength = 50
+name = 'Test5'
+gameLength = 30
 explore, doTrain, impala, calcprobs = True, True, True, True
 
 file.write(f"mkdir outputs/{name}\n")
