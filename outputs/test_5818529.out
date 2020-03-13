@@ -1,0 +1,51 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-21-104>
+Subject: Job 5818529: <NNAgent1new2> in cluster <dcc> Exited
+
+Job <NNAgent1new2> was submitted from host <n-62-30-5> by user <s183905> in cluster <dcc> at Thu Mar 12 21:13:40 2020
+Job was executed on host(s) <n-62-21-104>, in queue <hpc>, as user <s183905> in cluster <dcc> at Thu Mar 12 21:13:41 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Thu Mar 12 21:13:41 2020
+Terminated at Fri Mar 13 12:54:09 2020
+Results reported at Fri Mar 13 12:54:09 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -o outputs/test_%J.out
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=20G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 2000
+# end of BSUB options
+
+module load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Exited with exit code 120.
+
+Resource usage summary:
+
+    CPU time :                                   56424.02 sec.
+    Max Memory :                                 1525 MB
+    Average Memory :                             890.68 MB
+    Total Requested Memory :                     20480.00 MB
+    Delta Memory :                               18955.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   56456 sec.
+    Turnaround time :                            56429 sec.
+
+The output (if any) is above this job summary.
+
