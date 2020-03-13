@@ -6,7 +6,7 @@
 #BSUB -W 2000
 # end of BSUB options
 
-module load python3
+module -s load python3
 source ../myretuen-env/bin/activate
 
 python main.py $LSB_PROJECT_NAME

@@ -1,12 +1,12 @@
 #!/bin/sh
-mkdir outputs/Test7
-bsub -o "outputs/Test7/NNAgent0Test7.out" -J "NNAgent0Test7" -P "NNAgent0Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent1Test7.out" -J "NNAgent1Test7" -P "NNAgent1Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent2Test7.out" -J "NNAgent2Test7" -P "NNAgent2Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent3Test7.out" -J "NNAgent3Test7" -P "NNAgent3Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent4Test7.out" -J "NNAgent4Test7" -P "NNAgent4Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent5Test7.out" -J "NNAgent5Test7" -P "NNAgent5Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent6Test7.out" -J "NNAgent6Test7" -P "NNAgent6Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent7Test7.out" -J "NNAgent7Test7" -P "NNAgent7Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent8Test7.out" -J "NNAgent8Test7" -P "NNAgent8Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
-bsub -o "outputs/Test7/NNAgent9Test7.out" -J "NNAgent9Test7" -P "NNAgent9Test7 30 10 NNAgent 1 1 1 1 Test7" < submit.sh
+mkdir outputs/Test8
+bsub -o "outputs/Test8/NNAgent0Test8.md" -J "NNAgent0Test8" -P "NNAgent0Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent1Test8.md" -J "NNAgent1Test8" -P "NNAgent1Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent2Test8.md" -J "NNAgent2Test8" -P "NNAgent2Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent3Test8.md" -J "NNAgent3Test8" -P "NNAgent3Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent4Test8.md" -J "NNAgent4Test8" -P "NNAgent4Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent5Test8.md" -J "NNAgent5Test8" -P "NNAgent5Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent6Test8.md" -J "NNAgent6Test8" -P "NNAgent6Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent7Test8.md" -J "NNAgent7Test8" -P "NNAgent7Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent8Test8.md" -J "NNAgent8Test8" -P "NNAgent8Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
+bsub -o "outputs/Test8/NNAgent9Test8.md" -J "NNAgent9Test8" -P "NNAgent9Test8 30 10 NNAgent 1 1 1 1 Test8" < submit.sh
