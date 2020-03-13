@@ -2,7 +2,7 @@
 file = open('experiments.sh', 'w')
 file.write('#!/bin/sh\n')
 agent = 'NNAgent'
-name = 'Test9'
+name = 'Test0'
 gameLength = 30
 explore, doTrain, impala, calcprobs = True, True, True, True
 
