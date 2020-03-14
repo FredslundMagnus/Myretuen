@@ -43,8 +43,8 @@ def print_stats(self, *amount):
     print(indent, self.total_calls, "function calls", end=' ', file=self.stream)
     if self.total_calls != self.prim_calls:
         print("(%d primitive calls)" % self.prim_calls, end=' ', file=self.stream)
-    print("in %.3f seconds" % self.total_tt, file=self.stream)
-    print(file=self.stream)
+    print("in %.2f seconds" % self.total_tt, file=self.stream)
+    print(end='\n## ', file=self.stream)
     width, list = self.get_print_list(amount)
     if list:
         print_title(self)
@@ -72,6 +72,6 @@ def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs):
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
     p.print_stats = print_stats
-    p.strip_dirs().sort_stats('cumulative').print_stats(p)
+    p.strip_dirs().sort_stats('cumulative').print_stats(p, 60)
     os.remove('stats')
     print(f"# Other prints\n")
