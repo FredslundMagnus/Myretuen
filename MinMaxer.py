@@ -5,29 +5,30 @@ import random
 import copy
 from Probability_function import Probability_calculator
 
+
 class MinMaxCalculate():
-    def __init__(self, game, TopNvalues=2, cutOffdepth=2):
-        self.TopNvalues = TopNvalues # brug int(1 + 10 / np.log2(len(self.ants)))
+    def __init__(self, value, TopNvalues=2, cutOffdepth=2):
+        self.TopNvalues = TopNvalues  # brug int(1 + 10 / np.log2(len(self.ants)))
         self.cutOffdepth = cutOffdepth
         self.Move = Move
+        self.value = value
+
+    def DeepSearch(self, game):
         self.game = game
         self.prob = Probability_calculator(self.game.bases, self.game.ants)
         self.calcprobs = self.prob.probmatrix
-
-
-    def DeepSearch(self):
         fakegame = copy.deepcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth)
 
     def DeepLoop(self, Proba, fakegame, cutOffdepth):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
-        canditate_actions, candidate_values, canditate_probs, sumvalue = [None]*limitedactions, [-float('inf')]*limitedactions, [None]*limitedactions, [0]*limitedactions
+        canditate_actions, candidate_values, canditate_probs, sumvalue = [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions, [0] * limitedactions
         for action in actionss:
             self.env = fakegame
             state = self.state(fakegame)
             if len(state) == 1:
-                value = self.value(state[0])*state[0][2] + state[0][3]
+                value = self.value(state[0]) * state[0][2] + state[0][3]
             else:
                 value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
 
@@ -39,9 +40,9 @@ class MinMaxCalculate():
 
         if cutOffdepth < 1:
             return np.max(candidate_values[replace]) * Proba if fakegame.currentPlayer == self.game.currentPlayer else -np.max(candidate_values[replace])
-        
+
         if cutOffdepth == self.cutOffdepth:
-            Truemovelist = [None]*limitedactions
+            Truemovelist = [None] * limitedactions
 
         for i in range(limitedactions):
             newfakegame = copy.deepcopy(fakegame)
@@ -49,35 +50,35 @@ class MinMaxCalculate():
             newfakegame.step(Truemove, CalculateProb=True, deepsearch=True)
             if canditate_probs[i] == 1:
                 if newfakegame.rolled != []:
-                    sumvalue[i] += self.DeepLoop(Proba, newfakegame, cutOffdepth-1)
+                    sumvalue[i] += self.DeepLoop(Proba, newfakegame, cutOffdepth - 1)
                 else:
                     for j in range(1, 7):
                         for k in range(j, 7):
                             newfakegame2 = copy.deepcopy(newfakegame)
-                            newfakegame2.rolled = [j,k]
-                            thisproba = Proba/18
+                            newfakegame2.rolled = [j, k]
+                            thisproba = Proba / 18
                             if j == k:
                                 newfakegame2.rolledSameDice = True
-                                thisproba = Proba/2
-                            sumvalue[i] += self.DeepLoop(thisproba, newfakegame2, cutOffdepth-1)
-                    
+                                thisproba = Proba / 2
+                            sumvalue[i] += self.DeepLoop(thisproba, newfakegame2, cutOffdepth - 1)
+
             else:
                 newfakegameOp = copy.deepcopy(fakegame)
                 newfakegameOp.step(Truemove, CalculateProb=True, deepsearch=True, opposite=True)
                 if newfakegame.rolled != []:
-                    sumvalue[i] += self.DeepLoop(Proba * canditate_probs[i], newfakegame, cutOffdepth-1)
-                    sumvalue[i] += self.DeepLoop(Proba * (1 - canditate_probs[i]), newfakegameOp, cutOffdepth-1)
+                    sumvalue[i] += self.DeepLoop(Proba * canditate_probs[i], newfakegame, cutOffdepth - 1)
+                    sumvalue[i] += self.DeepLoop(Proba * (1 - canditate_probs[i]), newfakegameOp, cutOffdepth - 1)
                 else:
                     for j in range(1, 7):
                         for k in range(j, 7):
                             newfakegame2, newfakegameOp2 = copy.deepcopy(newfakegame), copy.deepcopy(newfakegame)
-                            newfakegame2.rolled, newfakegameOp2.rolled = [j,k], [j,k]
-                            thisproba = Proba/18
+                            newfakegame2.rolled, newfakegameOp2.rolled = [j, k], [j, k]
+                            thisproba = Proba / 18
                             if j == k:
                                 newfakegame2.rolledSameDice = True
-                                thisproba = Proba/2
-                            sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth-1)
-                            sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth-1)
+                                thisproba = Proba / 2
+                            sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth - 1)
+                            sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1)
             if cutOffdepth == self.cutOffdepth:
                 Truemovelist[i] = Truemove
 
@@ -85,11 +86,6 @@ class MinMaxCalculate():
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         else:
             return sumvalue, Truemovelist
-
-
-
-
-
 
     def convertMove(self, game, move):
         move.game = game
@@ -135,12 +131,12 @@ class MinMaxCalculate():
             score = self.currentScore(ant)
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
-            ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
+            ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
             if self.calcprobs is True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             else:
                 GetProbabilityOfEat = []
-            kval = list(np.array([ratio*disttoantsGlobal*np.array(self.GetProbabilityOfEat(ant)), (3-np.array(disttoantsGlobal))/ratio*(1-np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
+            kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
     def state(self, game, action=None):
@@ -176,8 +172,8 @@ class MinMaxCalculate():
         return [Antstate1, Antstate2]
 
     def getDistances(self, ant):
-        mine = [0]*35
-        dine = [0]*35
+        mine = [0] * 35
+        dine = [0] * 35
         for ant2 in self.currentAnts:
             if ant2.isAlive == True:
                 if ant2.position.type != 'Base':
@@ -189,8 +185,8 @@ class MinMaxCalculate():
         return (mine[1:], dine[1:])
 
     def getDistancesToAnts(self, ant):
-        n = len(self.currentAnts)//2
-        ants = [0]*n
+        n = len(self.currentAnts) // 2
+        ants = [0] * n
         for i, ant2 in enumerate(self.currentAnts):
             if ant.color != ant2.color:
                 if ant2.isAlive == True:
@@ -200,8 +196,8 @@ class MinMaxCalculate():
         return ants
 
     def antsUnderAnts(self):
-        n = len(self.currentAnts)//2
-        ants = {self.currentAnts[0].color: [0]*n, self.currentAnts[-1].color: [0]*n}
+        n = len(self.currentAnts) // 2
+        ants = {self.currentAnts[0].color: [0] * n, self.currentAnts[-1].color: [0] * n}
         for i, ant in enumerate(self.currentAnts):
             if ant.isAlive == True:
                 if ant.position.type != 'Base':
@@ -233,6 +229,3 @@ class MinMaxCalculate():
 
     def GetProbabilityOfEat(self, ant):
         return ant.probcapture
-
-    def value(self, state):
-        return random.choice([0,1,2,3,4])
