@@ -28,7 +28,10 @@ class Gamecontroller():
                 action = agent.choose(actions)
                 observation, reward, DONE, info = env.step(action, CalculateProbs)
                 opponentReward -= reward
-
+                try:
+                    agent[0].minmaxsearch()
+                except:
+                    agent.minmaxsearch()
                 if DONE:
                     break
 

@@ -4,6 +4,8 @@ import time
 import pickle
 import numpy as np
 from impala import Impala
+from MinMaxer import MinMaxCalculate
+import copy
 
 
 class Agent():
@@ -239,3 +241,6 @@ class Agent():
             self.optimizer.zero_grad()
         elif self.name == 'SimpleLinear':
             self.trace = np.zeros(self.Nfeature)
+    def minmaxsearch(self):
+        minmaxer = MinMaxCalculate(self.env)
+        print(minmaxer.DeepSearch())

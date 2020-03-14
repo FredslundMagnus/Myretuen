@@ -42,7 +42,7 @@ class Myretuen(gym.Env):
     def action_space(self):
         return list(self.actions())
 
-    def step(self, action, CalculateProb, oppesite=False):
+    def step(self, action, CalculateProb, oppesite=False, deepsearch=False):
         observation = self
         if action == None:
             reward = 0
@@ -61,8 +61,10 @@ class Myretuen(gym.Env):
                 if self.playerwithnomoves == None or self.playerwithnomoves == self.currentPlayer:
                     self.currentPlayer = self.player2 if self.currentPlayer == self.player1 else self.player1
                     info['PlayerSwapped'] = True
-            self.roll()
-        return observation, reward, done, info
+            if deepsearch is False:
+                self.roll()
+        if deepsearch is False:
+            return observation, reward, done, info
 
     def whoWonThisGame(self):
         if all([not x.isAlive for x in self.ants[len(self.ants)//2:]]):
