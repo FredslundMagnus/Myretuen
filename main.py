@@ -6,8 +6,10 @@ from agents import *
 from game import Myretuen, Controller
 import cProfile
 import pstats
+from pstats import func_get_function_name
 import sys
 import time
+
 
 debuggerMode = len(sys.argv) != 1
 
@@ -25,7 +27,7 @@ if debuggerMode:
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
     # controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
-    start = time.time()
+    end = time.time()
     sys.stdout = sys.__stdout__
     print(f"# Parameters for {Thename}\n")
     print(f"    Use the agent :             {sys.argv[4]}.")
@@ -34,11 +36,37 @@ if debuggerMode:
     print(f'    Explore enabled :           {str(explore)}.')
     print(f'    DoTrain enabled :           {str(doTrain)}.')
     print(f'    Impala enabled :            {str(impala)}.')
-    print(f'    Calcprobs enabled :         {str(calcprobs)}.\n')
-    print(f"# Other prints\n")
+    print(f'    Calcprobs enabled :         {str(calcprobs)}.')
+    print(f'    Time used :                 {start - end} s.\n')
+    print(f"# Profiling\n")
     p = pstats.Stats('stats')
+
+    def print_stats(self, *amount):
+        for filename in self.files:
+            print(filename, file=self.stream)
+        if self.files:
+            print(file=self.stream)
+        indent = ' ' * 16
+        for func in self.top_level:
+            print(indent, func_get_function_name(func), file=self.stream)
+
+        print(indent, self.total_calls, "function calls", end=' ', file=self.stream)
+        if self.total_calls != self.prim_calls:
+            print("(%d primitive calls)" % self.prim_calls, end=' ', file=self.stream)
+        print("in %.3f seconds" % self.total_tt, file=self.stream)
+        print(file=self.stream)
+        width, list = self.get_print_list(amount)
+        if list:
+            self.print_title()
+            for func in list:
+                self.print_line(func)
+            print(file=self.stream)
+            print(file=self.stream)
+        return self
+    p.print_stats = print_stats
     p.strip_dirs().sort_stats('cumulative').print_stats()
     os.remove('stats')
+    print(f"# Other prints\n")
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
