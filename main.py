@@ -7,6 +7,7 @@ from game import Myretuen, Controller
 import cProfile
 import pstats
 import sys
+import time
 
 debuggerMode = len(sys.argv) != 1
 
@@ -21,7 +22,10 @@ if debuggerMode:
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs))
-    controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
+    start = time.time()
+    cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
+    # controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
+    start = time.time()
     sys.stdout = sys.__stdout__
     print(f"# Parameters for {Thename}\n")
     print(f"    Use the agent :             {sys.argv[4]}.")
@@ -32,6 +36,9 @@ if debuggerMode:
     print(f'    Impala enabled :            {str(impala)}.')
     print(f'    Calcprobs enabled :         {str(calcprobs)}.\n')
     print(f"# Other prints\n")
+    p = pstats.Stats('stats')
+    p.strip_dirs().sort_stats('cumulative').print_stats()
+    os.remove('stats')
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
