@@ -52,17 +52,17 @@ print(parameters[:, -1])
 if not debuggerMode:
     controller.agents['green'].saveModel()
 
-plt.plot([agent.rating for agent in controller.agents['red'][1:]])
+plt.plot([agent.rating for agent in controller.agents['red'][1:]], label=controller.agents['green'].name)
 plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]), label='RandomAgent')
-plt.ylim((0, 2500))
+plt.ylim((700, 2000))
 plot('Elo-Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
 plt.plot(np.arange(1, NumberOfGames + 1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
-plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames)
+plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames, label='RandomAgent')
 plt.xlabel('Games played')
 plt.ylabel('Elo')
-plt.ylim((0, 2500))
+plt.ylim((700, 2000))
 plot('Increase in Elo over time', labels=True)
 
 if debuggerMode:
