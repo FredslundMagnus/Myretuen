@@ -17,7 +17,7 @@ class Myretuen(gym.Env):
         self.player2 = self.ants[-1].color
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
-        self.winNumber = min(winNumber, len(self.ants)//2)
+        self.winNumber = min(winNumber, len(self.ants) // 2)
         self.maxRolls = maxRolls
         self.dicesThatHaveBeenRolled = 0
         self.rolledSameDice = False
@@ -53,8 +53,8 @@ class Myretuen(gym.Env):
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if done:
-            endReward = 3*len(self.ants)/2+10
-            info = {player: (val*2-1)*endReward for player, val in self.whoWonThisGame().items()}
+            endReward = 3 * len(self.ants) / 2 + 10
+            info = {player: (val * 2 - 1) * endReward for player, val in self.whoWonThisGame().items()}
             info['PlayerSwapped'] = False
         if len(self.rolled) == 0:
             if not self.rolledSameDice:
@@ -65,9 +65,9 @@ class Myretuen(gym.Env):
         return observation, reward, done, info
 
     def whoWonThisGame(self):
-        if all([not x.isAlive for x in self.ants[len(self.ants)//2:]]):
+        if all([not x.isAlive for x in self.ants[len(self.ants) // 2:]]):
             return {self.player1: 1, self.player2: 0}
-        if all([not x.isAlive for x in self.ants[:len(self.ants)//2]]):
+        if all([not x.isAlive for x in self.ants[:len(self.ants) // 2]]):
             return {self.player1: 0, self.player2: 1}
         currentScore = self.getCurrentScore()
         if currentScore[self.player1] > currentScore[self.player2]:
@@ -85,16 +85,19 @@ class Myretuen(gym.Env):
     def getAllCurrentPlayersAnts(self):
         hasSeenOneFromBase = False
         for ant in self.ants:
-            if ant.color == self.currentPlayer and ant.isAlive and not hasSeenOneFromBase:
-                hasSeenOneFromBase = ant.position.type == 'Base'
-                yield ant
+            if ant.color == self.currentPlayer and ant.isAlive:
+                onlyOneFromBase = ant.position.type == 'Base' and not hasSeenOneFromBase
+                if ant.position.type == 'Base':
+                    hasSeenOneFromBase = True
+                if onlyOneFromBase or ant.position.type != 'Base':
+                    yield ant
 
     def getAllPositionsAtDistance(self, position, distance, previous=None):
         for step1 in self.goOneStep(position, previous):
             if distance == 1:
                 yield step1
                 continue
-            for step2 in self.getAllPositionsAtDistance(step1, distance-1, previous=position):
+            for step2 in self.getAllPositionsAtDistance(step1, distance - 1, previous=position):
                 yield step2
 
     def goOneStep(self, current, previous):
@@ -113,7 +116,7 @@ class Myretuen(gym.Env):
                 return True
         if self.maxRolls <= self.dicesThatHaveBeenRolled:
             return True
-        if any(x == True for x in [x.isAlive for x in self.ants[:len(self.ants)//2]]) and any(x == True for x in [x.isAlive for x in self.ants[len(self.ants)//2:]]):
+        if any(x == True for x in [x.isAlive for x in self.ants[:len(self.ants) // 2]]) and any(x == True for x in [x.isAlive for x in self.ants[len(self.ants) // 2:]]):
             return False
         return True
 
@@ -131,10 +134,9 @@ class Myretuen(gym.Env):
             self.totalScore['Tie'] += 1
         Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
 
-
         if agents[self.player1].currentAgent.__class__.__name__ == "RandomAgent":
             self.wins.append(winStatus[self.player2])
-        self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
+        self.Runningwinrate = sum(self.wins[-100:]) / len(self.wins[-100:])
         return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {self.getCurrentScore()},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
     def reset(self):
