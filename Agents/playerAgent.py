@@ -27,7 +27,6 @@ class PlayerAgent(Agent):
             if len(theAction) == 0:
                 continue
             time.sleep(5 / 60)
-            print(theAction[0])
             return theAction[0]
 
         return None
