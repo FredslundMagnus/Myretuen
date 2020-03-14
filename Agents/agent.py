@@ -8,9 +8,10 @@ from impala import Impala
 
 class Agent():
 
-    def choose(self, actions):
+    def choose(self, actions, K=100):
         self.previousState = self.state(self.env)
         if self.explore and actions != []:
+            temp = K / self.gameNumber if K is not None else 1
             states = []
             values = []
             for action in actions:
@@ -21,7 +22,7 @@ class Agent():
                     if self.calcprobs == False:
                         states[-1][0][2], states[-1][1][2] = 0.5, 0.5
                     values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
-            chances = self.softmax(values)
+            chances = self.softmax(values / temp)
             index = np.random.choice(len(chances), 1, p=chances)[0]
             self.actionState = states[index]
             bestAction = actions[index]
@@ -67,6 +68,7 @@ class Agent():
         self.impala = Impala(self.train, self.resettrace)
         self.EloWhileTrain = []
         self.name = name
+        self.gameNumber = 1
 
     def resetGame(self):
         try:
@@ -82,6 +84,7 @@ class Agent():
             self.impala.batchTrain()
             self.impala.restart()
         self.resettrace()
+        self.gameNumber += 1
 
     def saveModel(self, extention=''):
         filename = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'wb')
