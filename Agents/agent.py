@@ -22,7 +22,7 @@ class Agent():
                     if self.calcprobs == False:
                         states[-1][0][2], states[-1][1][2] = 0.5, 0.5
                     values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
-            chances = self.softmax(values / temp)
+            chances = self.softmax(np.array(values) / temp)
             index = np.random.choice(len(chances), 1, p=chances)[0]
             self.actionState = states[index]
             bestAction = actions[index]
