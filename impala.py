@@ -23,7 +23,7 @@ class Impala():
         if len(self.games) > 50:
             self.games = self.games[1:]
 
-    def batchTrain(self, batchSize=100, sampleLenth=5):
+    def batchTrain(self, batchSize=20, sampleLenth=5):
         if len(self.games) < self.startAfterNgames:
             return
         for _ in range(batchSize):
