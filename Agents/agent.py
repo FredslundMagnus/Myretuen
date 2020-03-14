@@ -8,7 +8,7 @@ from impala import Impala
 
 class Agent():
 
-    def choose(self, actions, K=50):
+    def choose(self, actions, K=100):
         self.previousState = self.state(self.env)
         if self.explore and actions != []:
             temp = K / self.gameNumber if K is not None else 1
