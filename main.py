@@ -1,12 +1,11 @@
-import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+from debug import debugger
 from matplotlib import pyplot as plt
 import numpy as np
 from agents import *
 from game import Myretuen, Controller
-import cProfile
-import pstats
 import sys
+import os
+
 
 debuggerMode = len(sys.argv) != 1
 
@@ -21,27 +20,11 @@ if debuggerMode:
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs))
-    controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
-    sys.stdout = sys.__stdout__
-    print(f"# Parameters for {Thename}\n")
-    print(f"    Use the agent :             {sys.argv[4]}.")
-    print(f"    Play for :                  {nGames} games.")
-    print(f"    Add Agent every :           {addAgent} game.")
-    print(f'    Explore enabled :           {str(explore)}.')
-    print(f'    DoTrain enabled :           {str(doTrain)}.')
-    print(f'    Impala enabled :            {str(impala)}.')
-    print(f'    Calcprobs enabled :         {str(calcprobs)}.\n')
-    print(f"# Other prints\n")
+    debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
+    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=PlayerAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
-# env = Myretuen()
-# controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
-# cProfile.run('controller.run(NGames=50, AddAgent=10, UI=False)', 'stats')
-# p = pstats.Stats('stats')
-# p.strip_dirs().sort_stats('cumulative').print_stats()
-# os.remove('stats')
 
 
 def plot(name, labels=False):
@@ -69,17 +52,17 @@ print(parameters[:, -1])
 if not debuggerMode:
     controller.agents['green'].saveModel()
 
-plt.plot([agent.rating for agent in controller.agents['red'][1:]])
+plt.plot([agent.rating for agent in controller.agents['red'][1:]], label=controller.agents['green'].name)
 plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]), label='RandomAgent')
-plt.ylim((0, 2500))
+plt.ylim((700, 2000))
 plot('Elo-Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
 plt.plot(np.arange(1, NumberOfGames + 1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
-plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames)
+plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames, label='RandomAgent')
 plt.xlabel('Games played')
 plt.ylabel('Elo')
-plt.ylim((0, 2500))
+plt.ylim((700, 2000))
 plot('Increase in Elo over time', labels=True)
 
 if debuggerMode:

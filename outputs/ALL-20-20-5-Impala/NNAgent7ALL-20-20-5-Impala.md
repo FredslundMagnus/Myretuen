@@ -1,17 +1,17 @@
-# Parameters for NoImpala2
+# Parameters for ALL-20-20-5-Impala
 
     Use the agent :             NNAgent.
-    Play for :                  2000 games.
+    Play for :                  1000 games.
     Add Agent every :           10 game.
     Explore enabled :           True.
     DoTrain enabled :           True.
-    Impala enabled :            False.
+    Impala enabled :            True.
     Calcprobs enabled :         True.
 
 # Other prints
 
-[-0.12563768  0.26983783  0.08923431 ... -0.23607084  0.26910537
-  0.07765383]
+[-0.09996679  0.07158203  0.05467395 ... -0.2504121  -0.35703552
+ -0.08811498]
 
  <br /> 
  <br /> 
@@ -24,16 +24,16 @@
 
 
 ------------------------------------------------------------
-Sender: LSF System <lsfadmin@n-62-23-20>
-Subject: Job 5823904: <NNAgent5NoImpala2> in cluster <dcc> Done
+Sender: LSF System <lsfadmin@n-62-21-108>
+Subject: Job 5825354: <NNAgent7ALL-20-20-5-Impala> in cluster <dcc> Done
 
-Job <NNAgent5NoImpala2> was submitted from host <n-62-30-6> by user <s183905> in cluster <dcc> at Sat Mar 14 00:14:00 2020
-Job was executed on host(s) <n-62-23-20>, in queue <hpc>, as user <s183905> in cluster <dcc> at Sat Mar 14 00:14:01 2020
+Job <NNAgent7ALL-20-20-5-Impala> was submitted from host <n-62-27-22> by user <s183905> in cluster <dcc> at Sat Mar 14 13:27:19 2020
+Job was executed on host(s) <n-62-21-108>, in queue <hpc>, as user <s183905> in cluster <dcc> at Sat Mar 14 13:27:20 2020
 </zhome/ee/d/137643> was used as the home directory.
 </zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
-Started at Sat Mar 14 00:14:01 2020
-Terminated at Sat Mar 14 20:19:01 2020
-Results reported at Sat Mar 14 20:19:01 2020
+Started at Sat Mar 14 13:27:20 2020
+Terminated at Sat Mar 14 21:01:33 2020
+Results reported at Sat Mar 14 21:01:33 2020
 
 Your job looked like:
 
@@ -59,16 +59,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   72288.91 sec.
-    Max Memory :                                 4786 MB
-    Average Memory :                             1936.20 MB
+    CPU time :                                   27247.26 sec.
+    Max Memory :                                 1628 MB
+    Average Memory :                             838.87 MB
     Total Requested Memory :                     20480.00 MB
-    Delta Memory :                               15694.00 MB
+    Delta Memory :                               18852.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                8
-    Run time :                                   72325 sec.
-    Turnaround time :                            72301 sec.
+    Run time :                                   27253 sec.
+    Turnaround time :                            27254 sec.
 
 The output (if any) is above this job summary.
 

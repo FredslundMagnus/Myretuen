@@ -3,7 +3,7 @@ import random
 
 
 class Impala():
-    def __init__(self, trainFunktion, resetFunktion, historyLength=100, startAfterNgames=20):
+    def __init__(self, trainFunktion, resetFunktion, historyLength=20, startAfterNgames=20):
         self.games = []
         self.currentGame = []
         self.historyLength = historyLength
@@ -23,7 +23,7 @@ class Impala():
         if len(self.games) > 50:
             self.games = self.games[1:]
 
-    def batchTrain(self, batchSize=10, sampleLenth=5):
+    def batchTrain(self, batchSize=20, sampleLenth=5):
         if len(self.games) < self.startAfterNgames:
             return
         for _ in range(batchSize):
@@ -34,7 +34,7 @@ class Impala():
         length += 1
         game = random.choice(self.games)
         pos = random.randint(length, len(game))
-        return game[pos-length:pos]
+        return game[pos - length:pos]
 
     def trainOneBatch(self, batch):
         self.resetFunktion()
