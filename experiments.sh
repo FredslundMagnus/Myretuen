@@ -1,12 +1,12 @@
 #!/bin/sh
-mkdir outputs/NoImpala2
-bsub -o "outputs/NoImpala2/NNAgent0NoImpala2.md" -J "NNAgent0NoImpala2" -P "NNAgent0NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent1NoImpala2.md" -J "NNAgent1NoImpala2" -P "NNAgent1NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent2NoImpala2.md" -J "NNAgent2NoImpala2" -P "NNAgent2NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent3NoImpala2.md" -J "NNAgent3NoImpala2" -P "NNAgent3NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent4NoImpala2.md" -J "NNAgent4NoImpala2" -P "NNAgent4NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent5NoImpala2.md" -J "NNAgent5NoImpala2" -P "NNAgent5NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent6NoImpala2.md" -J "NNAgent6NoImpala2" -P "NNAgent6NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent7NoImpala2.md" -J "NNAgent7NoImpala2" -P "NNAgent7NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent8NoImpala2.md" -J "NNAgent8NoImpala2" -P "NNAgent8NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
-bsub -o "outputs/NoImpala2/NNAgent9NoImpala2.md" -J "NNAgent9NoImpala2" -P "NNAgent9NoImpala2 2000 10 NNAgent 1 1 0 1 NoImpala2" < submit.sh
+mkdir outputs/ALL-20-100-5-Impala
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent0ALL-20-100-5-Impala.md" -J "NNAgent0ALL-20-100-5-Impala" -P "NNAgent0ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent1ALL-20-100-5-Impala.md" -J "NNAgent1ALL-20-100-5-Impala" -P "NNAgent1ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent2ALL-20-100-5-Impala.md" -J "NNAgent2ALL-20-100-5-Impala" -P "NNAgent2ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent3ALL-20-100-5-Impala.md" -J "NNAgent3ALL-20-100-5-Impala" -P "NNAgent3ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent4ALL-20-100-5-Impala.md" -J "NNAgent4ALL-20-100-5-Impala" -P "NNAgent4ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent5ALL-20-100-5-Impala.md" -J "NNAgent5ALL-20-100-5-Impala" -P "NNAgent5ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent6ALL-20-100-5-Impala.md" -J "NNAgent6ALL-20-100-5-Impala" -P "NNAgent6ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent7ALL-20-100-5-Impala.md" -J "NNAgent7ALL-20-100-5-Impala" -P "NNAgent7ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent8ALL-20-100-5-Impala.md" -J "NNAgent8ALL-20-100-5-Impala" -P "NNAgent8ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh
+bsub -o "outputs/ALL-20-100-5-Impala/NNAgent9ALL-20-100-5-Impala.md" -J "NNAgent9ALL-20-100-5-Impala" -P "NNAgent9ALL-20-100-5-Impala 1000 10 NNAgent 1 1 1 1 ALL-20-100-5-Impala" < submit.sh

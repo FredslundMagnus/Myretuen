@@ -79,7 +79,7 @@ class Agent():
         self.previousState = self.state(self.env)
         self.previousState = []
         if self.ImpaleIsActivated:
-            self.impala.batchTrain(batchSize=1000)
+            self.impala.batchTrain()
             self.impala.restart()
         self.resettrace()
 
@@ -135,12 +135,12 @@ class Agent():
             score = self.currentScore(ant)
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
-            ratio = (np.array(antsUnderGlobal)+1) / (carryEnimy + carryAlly + 1)
+            ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
             if self.calcprobs == True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             else:
                 GetProbabilityOfEat = []
-            kval = list(np.array([ratio*disttoantsGlobal*np.array(self.GetProbabilityOfEat(ant)), (3-np.array(disttoantsGlobal))/ratio*(1-np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
+            kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
     def state(self, game, action=None):
@@ -176,8 +176,8 @@ class Agent():
         return [Antstate1, Antstate2]
 
     def getDistances(self, ant):
-        mine = [0]*35
-        dine = [0]*35
+        mine = [0] * 35
+        dine = [0] * 35
         for ant2 in self.currentAnts:
             if ant2.isAlive == True:
                 if ant2.position.type != 'Base':
@@ -189,8 +189,8 @@ class Agent():
         return (mine[1:], dine[1:])
 
     def getDistancesToAnts(self, ant):
-        n = len(self.currentAnts)//2
-        ants = [0]*n
+        n = len(self.currentAnts) // 2
+        ants = [0] * n
         for i, ant2 in enumerate(self.currentAnts):
             if ant.color != ant2.color:
                 if ant2.isAlive == True:
@@ -200,8 +200,8 @@ class Agent():
         return ants
 
     def antsUnderAnts(self):
-        n = len(self.currentAnts)//2
-        ants = {self.currentAnts[0].color: [0]*n, self.currentAnts[-1].color: [0]*n}
+        n = len(self.currentAnts) // 2
+        ants = {self.currentAnts[0].color: [0] * n, self.currentAnts[-1].color: [0] * n}
         for i, ant in enumerate(self.currentAnts):
             if ant.isAlive == True:
                 if ant.position.type != 'Base':
