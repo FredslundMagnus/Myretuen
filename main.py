@@ -11,12 +11,17 @@ import sys
 import time
 
 
+def print_title(self):
+    print('           ncalls  tottime  percall  cumtime  percall', end=' ', file=self.stream)
+    print('filename:lineno(function)', file=self.stream)
+
+
 def print_line(self, func):  # hack: should print percentages
     cc, nc, tt, ct, callers = self.stats[func]
     c = str(nc)
     if nc != cc:
         c = c + '/' + str(cc)
-    print('    ', c.rjust(9), end=' ', file=self.stream)
+    print('       ', c.rjust(9), end=' ', file=self.stream)
     print(f8(tt), end=' ', file=self.stream)
     if nc == 0:
         print(' ' * 8, end=' ', file=self.stream)
@@ -46,7 +51,7 @@ def print_stats(self, *amount):
     print(file=self.stream)
     width, list = self.get_print_list(amount)
     if list:
-        self.print_title()
+        print_title(self)
         for func in list:
             print_line(self, func)
         print(file=self.stream)
@@ -69,7 +74,6 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs))
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
-    # controller.run(NGames=nGames, AddAgent=addAgent, UI=False)
     end = time.time()
     sys.stdout = sys.__stdout__
     print(f"# Parameters for {Thename}\n")
@@ -80,7 +84,7 @@ if debuggerMode:
     print(f'    DoTrain enabled :           {str(doTrain)}.')
     print(f'    Impala enabled :            {str(impala)}.')
     print(f'    Calcprobs enabled :         {str(calcprobs)}.')
-    print(f'    Time used :                 {end-start} seconds.\n')
+    print(f'    Time used :                 {(end-start)//60} minutes.\n')
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
     p.print_stats = print_stats
@@ -91,12 +95,6 @@ else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
-# env = Myretuen()
-# controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
-# cProfile.run('controller.run(NGames=50, AddAgent=10, UI=False)', 'stats')
-# p = pstats.Stats('stats')
-# p.strip_dirs().sort_stats('cumulative').print_stats()
-# os.remove('stats')
 
 
 def plot(name, labels=False):

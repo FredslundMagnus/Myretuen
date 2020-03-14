@@ -11,12 +11,11 @@
 
 # Profiling
 
-
       72989253 function calls (71254229 primitive calls) in 169.775 seconds
 
-   Ordered by: cumulative time
+Ordered by: cumulative time
 
-   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        ncalls  tottime  percall  cumtime  percall filename:lineno(function)
              1    0.000    0.000  170.070  170.070 {built-in method builtins.exec}
              1    0.000    0.000  170.070  170.070 <string>:1(<module>)
              1    0.000    0.000  170.070  170.070 game.py:161(run)
@@ -342,23 +341,22 @@
              1    0.000    0.000    0.000    0.000 {method 'isdisjoint' of 'set' objects}
              5    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
 
-
 # Other prints
 
-[ 0.03029308 -0.09075436  0.03442743 ... -0.13675295  0.08499845
- -0.1658627 ]
+[ 0.03029308 -0.09075436 0.03442743 ... -0.13675295 0.08499845
+-0.1658627 ]
 
  <br /> 
  <br /> 
  <br /> 
  <br />
 
----------------------------------------------------------------------------------------------------------------------
+---
 
 # HPC Stats
 
+---
 
-------------------------------------------------------------
 Sender: LSF System <lsfadmin@n-62-21-108>
 Subject: Job 5825775: <NNAgent3Test4> in cluster <dcc> Done
 
@@ -372,23 +370,25 @@ Results reported at Sat Mar 14 14:14:41 2020
 
 Your job looked like:
 
-------------------------------------------------------------
+---
+
 # LSBATCH: User input
+
 #!/bin/sh
 #BSUB -q hpc
 #BSUB -n 1
 #BSUB -R "rusage[mem=20G]"
 #BSUB -R "span[hosts=1]"
 #BSUB -W 2000
+
 # end of BSUB options
 
 module -s load python3
 source ../myretuen-env/bin/activate
 
-python main.py $LSB_PROJECT_NAME
+python main.py \$LSB_PROJECT_NAME
 
-
-------------------------------------------------------------
+---
 
 Successfully completed.
 
@@ -406,4 +406,3 @@ Resource usage summary:
     Turnaround time :                            174 sec.
 
 The output (if any) is above this job summary.
-
