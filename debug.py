@@ -72,6 +72,6 @@ def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs):
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
     p.print_stats = print_stats
-    p.strip_dirs().sort_stats('cumulative').print_stats(p, 60)
+    p.strip_dirs().sort_stats('cumulative').print_stats(p, 100)
     os.remove('stats')
     print(f"# Other prints\n")
