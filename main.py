@@ -6,9 +6,52 @@ from agents import *
 from game import Myretuen, Controller
 import cProfile
 import pstats
-from pstats import func_get_function_name
+from pstats import func_get_function_name, func_std_string, f8
 import sys
 import time
+
+
+def print_line(self, func):  # hack: should print percentages
+    cc, nc, tt, ct, callers = self.stats[func]
+    c = str(nc)
+    if nc != cc:
+        c = c + '/' + str(cc)
+    print('    ', c.rjust(9), end=' ', file=self.stream)
+    print(f8(tt), end=' ', file=self.stream)
+    if nc == 0:
+        print(' ' * 8, end=' ', file=self.stream)
+    else:
+        print(f8(tt / nc), end=' ', file=self.stream)
+    print(f8(ct), end=' ', file=self.stream)
+    if cc == 0:
+        print(' ' * 8, end=' ', file=self.stream)
+    else:
+        print(f8(ct / cc), end=' ', file=self.stream)
+    print(func_std_string(func), file=self.stream)
+
+
+def print_stats(self, *amount):
+    # for filename in self.files:
+    #     print(filename, file=self.stream)
+    if self.files:
+        print(file=self.stream)
+    indent = ' ' * 5
+    for func in self.top_level:
+        print(indent, func_get_function_name(func), file=self.stream)
+
+    print(indent, self.total_calls, "function calls", end=' ', file=self.stream)
+    if self.total_calls != self.prim_calls:
+        print("(%d primitive calls)" % self.prim_calls, end=' ', file=self.stream)
+    print("in %.3f seconds" % self.total_tt, file=self.stream)
+    print(file=self.stream)
+    width, list = self.get_print_list(amount)
+    if list:
+        self.print_title()
+        for func in list:
+            print_line(self, func)
+        print(file=self.stream)
+        print(file=self.stream)
+    return self
 
 
 debuggerMode = len(sys.argv) != 1
@@ -40,29 +83,6 @@ if debuggerMode:
     print(f'    Time used :                 {end-start} seconds.\n')
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
-
-    def print_stats(self, *amount):
-        for filename in self.files:
-            print(filename, file=self.stream)
-        if self.files:
-            print(file=self.stream)
-        indent = ' ' * 16
-        for func in self.top_level:
-            print(indent, func_get_function_name(func), file=self.stream)
-
-        print(indent, self.total_calls, "function calls", end=' ', file=self.stream)
-        if self.total_calls != self.prim_calls:
-            print("(%d primitive calls)" % self.prim_calls, end=' ', file=self.stream)
-        print("in %.3f seconds" % self.total_tt, file=self.stream)
-        print(file=self.stream)
-        width, list = self.get_print_list(amount)
-        if list:
-            self.print_title()
-            for func in list:
-                self.print_line(func)
-            print(file=self.stream)
-            print(file=self.stream)
-        return self
     p.print_stats = print_stats
     p.strip_dirs().sort_stats('cumulative').print_stats(p)
     os.remove('stats')
