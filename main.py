@@ -37,7 +37,7 @@ if debuggerMode:
     print(f'    DoTrain enabled :           {str(doTrain)}.')
     print(f'    Impala enabled :            {str(impala)}.')
     print(f'    Calcprobs enabled :         {str(calcprobs)}.')
-    print(f'    Time used :                 {start - end} s.\n')
+    print(f'    Time used :                 {end-start} seconds.\n')
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
 
@@ -64,7 +64,7 @@ if debuggerMode:
             print(file=self.stream)
         return self
     p.print_stats = print_stats
-    p.strip_dirs().sort_stats('cumulative').print_stats()
+    p.strip_dirs().sort_stats('cumulative').print_stats(p)
     os.remove('stats')
     print(f"# Other prints\n")
 else:
