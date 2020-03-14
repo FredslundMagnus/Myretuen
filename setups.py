@@ -90,7 +90,7 @@ def setup():
 
     Give_bases_dists(bases)
 
-    ants = generateAnts(10)
+    ants = generateAnts(2)
 
     placeAntsOnBoard(ants, bases)
 

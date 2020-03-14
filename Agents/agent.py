@@ -4,6 +4,8 @@ import time
 import pickle
 import numpy as np
 from impala import Impala
+from MinMaxer import MinMaxCalculate
+import copy
 
 
 class Agent():
@@ -59,8 +61,8 @@ class Agent():
     def train(self, reward, previousState, newState):
         pass
 
-    def value(self, state):
-        pass
+    def value(self, infostate):
+        return random.choice([0, 1])
 
     def setup(self, explore, doTrain, impala, calcprobs, name):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1200, None
@@ -69,6 +71,7 @@ class Agent():
         self.EloWhileTrain = []
         self.name = name
         self.gameNumber = 1
+        self.minmaxer = MinMaxCalculate(self.value)
 
     def resetGame(self):
         try:
@@ -242,3 +245,6 @@ class Agent():
             self.optimizer.zero_grad()
         elif self.name == 'SimpleLinear':
             self.trace = np.zeros(self.Nfeature)
+
+    def minmaxsearch(self):
+        print(self.minmaxer.DeepSearch(self.env))
