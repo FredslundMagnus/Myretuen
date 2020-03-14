@@ -3,8 +3,8 @@ from Agents.agent import Agent
 
 
 class LinearAprox(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True):
-        self.setup(explore, doTrain, impala, calcprobs, name='BigLinear')
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=True):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, name='BigLinear')
 
     def value(self, infostate):
         state, n = infostate[0], infostate[1]

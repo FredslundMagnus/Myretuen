@@ -12,37 +12,42 @@ class Agent():
 
     def choose(self, actions, K=100):
         self.previousState = self.state(self.env)
-        if self.explore and actions != []:
-            temp = K / self.gameNumber if K is not None else 1
-            states = []
-            values = []
-            for action in actions:
-                states.append(self.state(self.env, action))
-                if len(states[-1]) == 1:
-                    values.append(self.value(states[-1][0]) + states[-1][0][3])
-                else:
-                    if self.calcprobs == False:
-                        states[-1][0][2], states[-1][1][2] = 0.5, 0.5
-                    values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
-            chances = self.softmax(np.array(values) / temp)
-            index = np.random.choice(len(chances), 1, p=chances)[0]
-            self.actionState = states[index]
-            bestAction = actions[index]
-        else:
-            valueMax = -float('inf')
-            bestAction = None
-            for action in actions:
-                state = self.state(self.env, action)
-                if len(state) == 1:
-                    value = self.value(state[0]) + state[0][3]
-                else:
-                    if self.calcprobs == False:
-                        state[0][2], state[1][2] = 0.5, 0.5
-                    value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
-                if value > valueMax:
-                    valueMax = value
-                    bestAction = action
-                    self.actionState = state
+        if self.minimaxi == False:
+            if self.explore and actions != []:
+                temp = K / self.gameNumber if K is not None else 1
+                states = []
+                values = []
+                for action in actions:
+                    states.append(self.state(self.env, action))
+                    if len(states[-1]) == 1:
+                        values.append(self.value(states[-1][0]) + states[-1][0][3])
+                    else:
+                        if self.calcprobs == False:
+                            states[-1][0][2], states[-1][1][2] = 0.5, 0.5
+                        values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
+                chances = self.softmax(np.array(values) / temp)
+                index = np.random.choice(len(chances), 1, p=chances)[0]
+                self.actionState = states[index]
+                bestAction = actions[index]
+            else:
+                valueMax = -float('inf')
+                bestAction = None
+                for action in actions:
+                    state = self.state(self.env, action)
+                    if len(state) == 1:
+                        value = self.value(state[0]) + state[0][3]
+                    else:
+                        if self.calcprobs == False:
+                            state[0][2], state[1][2] = 0.5, 0.5
+                        value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
+                    if value > valueMax:
+                        valueMax = value
+                        bestAction = action
+                        self.actionState = state
+        elif actions != []:
+            searchresults = self.minmaxer.DeepSearch(self.env)
+            bestAction = self.convertMove(self.env, searchresults[1][np.argmax(searchresults[0])])
+            self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:
             self.previousState = []
         return bestAction
@@ -64,7 +69,7 @@ class Agent():
     def value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, name):
+    def setup(self, explore, doTrain, impala, calcprobs, minmax, name):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1200, None
         self.ImpaleIsActivated = impala
         self.impala = Impala(self.train, self.resettrace)
@@ -72,6 +77,7 @@ class Agent():
         self.name = name
         self.gameNumber = 1
         self.minmaxer = MinMaxCalculate(self.value)
+        self.minimaxi = minmax
 
     def resetGame(self):
         try:
@@ -246,5 +252,11 @@ class Agent():
         elif self.name == 'SimpleLinear':
             self.trace = np.zeros(self.Nfeature)
 
-    def minmaxsearch(self):
-        print(self.minmaxer.DeepSearch(self.env))
+    def convertMove(self, game, move):
+        move.game = game
+        move.end = game.fields[move.end.id]
+        if move.start.id in game.fields:
+            move.start = game.fields[move.start.id]
+        else:
+            move.start = game.bases[move.start.id]
+        return move
