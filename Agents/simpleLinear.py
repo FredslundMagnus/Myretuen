@@ -3,8 +3,8 @@ from Agents.agent import Agent
 
 
 class SimpleLinear(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True):
-        self.setup(explore, doTrain, impala, calcprobs, name='SimpleLinear')
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=True):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, name='SimpleLinear')
 
     def value(self, infostate):
         state, n = infostate[0], infostate[1]

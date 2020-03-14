@@ -13,10 +13,11 @@ class MinMaxCalculate():
         self.Move = Move
         self.value = value
 
-    def DeepSearch(self, game):
+    def DeepSearch(self, game, calcprobs=True):
         self.game = game
         self.prob = Probability_calculator(self.game.bases, self.game.ants)
-        self.calcprobs = self.prob.probmatrix
+        self.probmatrix = self.prob.probmatrix
+        self.calcprobs = calcprobs
         fakegame = copy.deepcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth)
 
@@ -42,7 +43,7 @@ class MinMaxCalculate():
             return np.max(candidate_values[replace]) * Proba if fakegame.currentPlayer == self.game.currentPlayer else -np.max(candidate_values[replace])
 
         if cutOffdepth == self.cutOffdepth:
-            Truemovelist = [None] * limitedactions
+            bestcanditates = canditate_actions
 
         for i in range(limitedactions):
             newfakegame = copy.deepcopy(fakegame)
@@ -79,13 +80,11 @@ class MinMaxCalculate():
                                 thisproba = Proba / 2
                             sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth - 1)
                             sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1)
-            if cutOffdepth == self.cutOffdepth:
-                Truemovelist[i] = Truemove
 
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         else:
-            return sumvalue, Truemovelist
+            return sumvalue, bestcanditates
 
     def convertMove(self, game, move):
         move.game = game
