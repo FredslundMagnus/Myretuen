@@ -10,7 +10,7 @@ import copy
 
 class Agent():
 
-    def choose(self, actions, K=100):
+    def choose(self, actions, K=None):
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
@@ -52,7 +52,7 @@ class Agent():
                 self.actionState = self.state(self.env, bestAction)
                 self.NextbestAction = []
             else:
-                Thismove, self.NextbestAction  = self.minmaxer.DeepSearch(self.env, self.calcprobs)
+                Thismove, self.NextbestAction = self.minmaxer.DeepSearch(self.env, self.calcprobs)
                 bestAction = self.convertMove(self.env, Thismove)
                 self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:

@@ -1,12 +1,23 @@
 #!/bin/sh
-mkdir outputs/MinMax-off
-bsub -o "outputs/MinMax-off/NNAgent0MinMax-off.md" -J "NNAgent0MinMax-off" -P "NNAgent0MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent1MinMax-off.md" -J "NNAgent1MinMax-off" -P "NNAgent1MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent2MinMax-off.md" -J "NNAgent2MinMax-off" -P "NNAgent2MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent3MinMax-off.md" -J "NNAgent3MinMax-off" -P "NNAgent3MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent4MinMax-off.md" -J "NNAgent4MinMax-off" -P "NNAgent4MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent5MinMax-off.md" -J "NNAgent5MinMax-off" -P "NNAgent5MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent6MinMax-off.md" -J "NNAgent6MinMax-off" -P "NNAgent6MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent7MinMax-off.md" -J "NNAgent7MinMax-off" -P "NNAgent7MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent8MinMax-off.md" -J "NNAgent8MinMax-off" -P "NNAgent8MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
-bsub -o "outputs/MinMax-off/NNAgent9MinMax-off.md" -J "NNAgent9MinMax-off" -P "NNAgent9MinMax-off 500 10 NNAgent 0 1 1 1 0 MinMax-off" < submit.sh
+mkdir outputs/Explorer-off
+bsub -o "outputs/Explorer-off/NNAgent0Explorer-off.md" -J "NNAgent0Explorer-off" -P "NNAgent0Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent1Explorer-off.md" -J "NNAgent1Explorer-off" -P "NNAgent1Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent2Explorer-off.md" -J "NNAgent2Explorer-off" -P "NNAgent2Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent3Explorer-off.md" -J "NNAgent3Explorer-off" -P "NNAgent3Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent4Explorer-off.md" -J "NNAgent4Explorer-off" -P "NNAgent4Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent5Explorer-off.md" -J "NNAgent5Explorer-off" -P "NNAgent5Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent6Explorer-off.md" -J "NNAgent6Explorer-off" -P "NNAgent6Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent7Explorer-off.md" -J "NNAgent7Explorer-off" -P "NNAgent7Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent8Explorer-off.md" -J "NNAgent8Explorer-off" -P "NNAgent8Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+bsub -o "outputs/Explorer-off/NNAgent9Explorer-off.md" -J "NNAgent9Explorer-off" -P "NNAgent9Explorer-off 2000 10 NNAgent 0 1 1 1 0 Explorer-off" < submit.sh
+mkdir outputs/Explorer-on-no-temp
+bsub -o "outputs/Explorer-on-no-temp/NNAgent0Explorer-on-no-temp.md" -J "NNAgent0Explorer-on-no-temp" -P "NNAgent0Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent1Explorer-on-no-temp.md" -J "NNAgent1Explorer-on-no-temp" -P "NNAgent1Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent2Explorer-on-no-temp.md" -J "NNAgent2Explorer-on-no-temp" -P "NNAgent2Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent3Explorer-on-no-temp.md" -J "NNAgent3Explorer-on-no-temp" -P "NNAgent3Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent4Explorer-on-no-temp.md" -J "NNAgent4Explorer-on-no-temp" -P "NNAgent4Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent5Explorer-on-no-temp.md" -J "NNAgent5Explorer-on-no-temp" -P "NNAgent5Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent6Explorer-on-no-temp.md" -J "NNAgent6Explorer-on-no-temp" -P "NNAgent6Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent7Explorer-on-no-temp.md" -J "NNAgent7Explorer-on-no-temp" -P "NNAgent7Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent8Explorer-on-no-temp.md" -J "NNAgent8Explorer-on-no-temp" -P "NNAgent8Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
+bsub -o "outputs/Explorer-on-no-temp/NNAgent9Explorer-on-no-temp.md" -J "NNAgent9Explorer-on-no-temp" -P "NNAgent9Explorer-on-no-temp 2000 10 NNAgent 1 1 1 1 0 Explorer-on-no-temp" < submit.sh
