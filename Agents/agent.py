@@ -44,10 +44,17 @@ class Agent():
                         valueMax = value
                         bestAction = action
                         self.actionState = state
+
         elif actions != []:
-            searchresults = self.minmaxer.DeepSearch(self.env, self.calcprobs)
-            bestAction = self.convertMove(self.env, searchresults[1][np.argmax(searchresults[0])])
-            self.actionState = self.state(self.env, bestAction)
+            if self.NextbestAction != []:
+                self.NextbestAction = self.convertMove(self.env, self.NextbestAction)
+                bestAction = self.NextbestAction
+                self.actionState = self.state(self.env, bestAction)
+                self.NextbestAction = []
+            else:
+                Thismove, self.NextbestAction  = self.minmaxer.DeepSearch(self.env, self.calcprobs)
+                bestAction = self.convertMove(self.env, Thismove)
+                self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:
             self.previousState = []
         return bestAction
@@ -78,6 +85,7 @@ class Agent():
         self.gameNumber = 1
         self.minmaxer = MinMaxCalculate(self.value)
         self.minimaxi = minmax
+        self.NextbestAction = []
 
     def resetGame(self):
         try:
@@ -94,15 +102,20 @@ class Agent():
             self.impala.restart()
         self.resettrace()
         self.gameNumber += 1
+        self.NextbestAction = []
 
-    def saveModel(self, extention=''):
-        filename = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'wb')
+    def saveModel(self, name=None, place='Agents/Trained/'):
+        if name == None:
+            name = self.__class__.__name__
+        filename = open(place + name + '.obj', 'wb')
         pickle.dump(self.phi, filename)
         return self
 
-    def loadModel(self, extention=''):
+    def loadModel(self, name=None, place='Agents/Trained/'):
         try:
-            filehandler = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'rb')
+            if name == None:
+                name = self.__class__.__name__
+            filehandler = open(place + name + '.obj', 'rb')
             self.phi = pickle.load(filehandler)
         except:
             pass

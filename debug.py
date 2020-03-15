@@ -55,7 +55,7 @@ def print_stats(self, *amount):
     return self
 
 
-def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs):
+def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs, minmax):
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
     end = time.time()
@@ -68,6 +68,7 @@ def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs):
     print(f'    DoTrain enabled :           {str(doTrain)}.')
     print(f'    Impala enabled :            {str(impala)}.')
     print(f'    Calcprobs enabled :         {str(calcprobs)}.')
+    print(f'    Minimax enabled :           {str(minmax)}.')
     print(f'    Time used :                 {int((end-start)//60)} minutes.\n')
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
