@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=3, cutOffdepth=1, ValueCutOff=10, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=1, ValueCutOff=10, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
