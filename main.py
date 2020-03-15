@@ -49,7 +49,9 @@ plot('Weights')
 
 print(parameters[:, -1])
 
-if not debuggerMode:
+if debuggerMode:
+    controller.agents['green'].saveModel()
+else:
     controller.agents['green'].saveModel()
 
 plt.plot([agent.rating for agent in controller.agents['red'][1:]], label=controller.agents['green'].name)

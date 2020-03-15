@@ -103,14 +103,18 @@ class Agent():
         self.resettrace()
         self.gameNumber += 1
 
-    def saveModel(self, extention=''):
-        filename = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'wb')
+    def saveModel(self, name=None, place='Agents/Trained/'):
+        if name == None:
+            name = self.__class__.__name__
+        filename = open(place + name + '.obj', 'wb')
         pickle.dump(self.phi, filename)
         return self
 
-    def loadModel(self, extention=''):
+    def loadModel(self, name=None, place='Agents/Trained/'):
         try:
-            filehandler = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'rb')
+            if name == None:
+                name = self.__class__.__name__
+            filehandler = open(place + name + '.obj', 'rb')
             self.phi = pickle.load(filehandler)
         except:
             pass
