@@ -44,10 +44,17 @@ class Agent():
                         valueMax = value
                         bestAction = action
                         self.actionState = state
+
         elif actions != []:
-            searchresults = self.minmaxer.DeepSearch(self.env, self.calcprobs)
-            bestAction = self.convertMove(self.env, searchresults[1][np.argmax(searchresults[0])])
-            self.actionState = self.state(self.env, bestAction)
+            if self.NextbestAction != []:
+                bestAction = self.NextbestAction
+                self.actionState = self.state(self.env, bestAction)
+                self.NextbestAction = []
+            else:
+                Thismove, Nextmove = self.minmaxer.DeepSearch(self.env, self.calcprobs)
+                bestAction = self.convertMove(self.env, Thismove)
+                self.NextbestAction = self.convertMove(self.env, Nextmove)
+                self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:
             self.previousState = []
         return bestAction
@@ -78,6 +85,7 @@ class Agent():
         self.gameNumber = 1
         self.minmaxer = MinMaxCalculate(self.value)
         self.minimaxi = minmax
+        self.NextbestAction = []
 
     def resetGame(self):
         try:

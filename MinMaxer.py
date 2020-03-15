@@ -18,12 +18,13 @@ class MinMaxCalculate():
         self.value = value
 
     def DeepSearch(self, game, calcprobs=True):
+        self.nextmoves = []
         self.game = game
         self.calcprobs = calcprobs
         fakegame = copy.deepcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
-    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace):
+    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs, sumvalue = [[0,0]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions, [0] * limitedactions
@@ -49,7 +50,7 @@ class MinMaxCalculate():
                         canditate_rewards[replace] = [-state[0][3], 0]
                     else:
                         canditate_rewards[replace] = [-state[0][3], -state[1][3]]
-        print(rewardtrace, end=' ')
+
         ### Remove values worse than ValueDifference
         candi_sorted = candidate_values.copy()
         candi_sorted.sort(reverse=True)
@@ -111,7 +112,7 @@ class MinMaxCalculate():
 
                 if newfakegame.rolled != []:
                     sumvalue[i] += self.DeepLoop(Proba * canditate_probs[i], newfakegame, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
-                    sumvalue[i] += self.DeepLoop(Proba * (1 - canditate_probs[i]), newfakegameOp, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1])
+                    sumvalue[i] += self.DeepLoop(Proba * (1 - canditate_probs[i]), newfakegameOp, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1], Realgame=False)
                 else:
                     for j in range(1, 7):
                         for k in range(j, 7):
@@ -122,11 +123,15 @@ class MinMaxCalculate():
                                 newfakegame2.rolledSameDice = True
                                 thisproba /= 2
                             sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
-                            sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1])
+                            sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1], Realgame=False)
+
+        if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
+            self.nextmoves.append(canditate_actions[np.argmax(sumvalue)])
 
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
-        return sumvalue, canditate_actions
+
+        return canditate_actions[np.argmax(sumvalue)], self.nextmoves[np.argmax(sumvalue)]
 
 
 
