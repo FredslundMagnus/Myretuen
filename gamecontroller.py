@@ -22,6 +22,7 @@ class Gamecontroller():
             opponentReward = 0
             DONE = False
             agent = self.agents[self.env.currentPlayer]
+            env.roll()
             while getattr(thread, "do_run", True):
                 self.sleep()
                 actions = env.action_space()

@@ -12,7 +12,6 @@ class DiceHolder():
 
         for _ in range(2):
             self.dices.append(Dice())
-        self.roll()
 
     def roll(self):
         seperated = False
