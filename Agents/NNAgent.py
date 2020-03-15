@@ -18,7 +18,7 @@ class NNAgent(Agent):
             self.optimizer = optim.Adam(self.phi.parameters(), lr=0.00005, amsgrad=True)
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
-            (np.ones(n), -np.ones(x.shape[0]-n)), axis=0))
+            (np.ones(n), -np.ones(x.shape[0] - n)), axis=0))
         value = torch.dot(torch.flatten(
             self.phi(torch.FloatTensor(x))), factor)
         value = value.view(-1)

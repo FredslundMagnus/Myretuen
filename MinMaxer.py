@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=10, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=1, ValueCutOff=10, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -26,7 +26,7 @@ class MinMaxCalculate():
     def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
-        canditate_rewards, canditate_actions, candidate_values, canditate_probs, sumvalue = [[0,0]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions, [0] * limitedactions
+        canditate_rewards, canditate_actions, candidate_values, canditate_probs, sumvalue = [[0, 0]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions, [0] * limitedactions
         for action in actionss:
             self.env = fakegame
             state = self.state(fakegame, action)
@@ -50,13 +50,13 @@ class MinMaxCalculate():
                     else:
                         canditate_rewards[replace] = [-state[0][3], -state[1][3]]
 
-        ### Remove values worse than ValueDifference
+        # Remove values worse than ValueDifference
         candi_sorted = candidate_values.copy()
         candi_sorted.sort(reverse=True)
         cutoff = self.ValueCutOff
-        for i in range(len(candidate_values)-1):
-            if abs(candi_sorted[i] - candi_sorted[i+1]) > self.ValueDiffCutOff:
-                cutoff = candi_sorted[i+1]
+        for i in range(len(candidate_values) - 1):
+            if abs(candi_sorted[i] - candi_sorted[i + 1]) > self.ValueDiffCutOff:
+                cutoff = candi_sorted[i + 1]
                 break
         if cutoff != self.ValueCutOff:
             smallerindex = [candidate_values.index(value) for value in candidate_values if value <= cutoff]
@@ -69,7 +69,7 @@ class MinMaxCalculate():
         if cutOffdepth == self.cutOffdepth - 1 and self.cutOffdepth == 1 and Realgame == True:
             self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
 
-        ### Check if any of the requirements are fulfilled.
+        # Check if any of the requirements are fulfilled.
         if fakegame.currentPlayer == self.game.currentPlayer:
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
@@ -79,9 +79,7 @@ class MinMaxCalculate():
         if cutOffdepth < 1:
             return Endvalue * Proba
 
-
-
-        ### Loop over the remaining canditate moves
+        # Loop over the remaining canditate moves
         for i in range(len(candidate_values)):
             if canditate_probs[i] == 1:
                 newfakegame = copy.deepcopy(fakegame)
@@ -97,7 +95,7 @@ class MinMaxCalculate():
                             thisproba = Proba / 18
                             if j == k:
                                 newfakegame2.rolledSameDice = True
-                                thisproba /=  2
+                                thisproba /= 2
                             sumvalue[i] += self.DeepLoop(thisproba, newfakegame2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
 
             else:
@@ -108,7 +106,6 @@ class MinMaxCalculate():
                 newfakegameOp = copy.deepcopy(fakegame)
                 Truemove2 = self.convertMove(newfakegameOp, canditate_actions[i])
                 newfakegameOp.step(Truemove2, CalculateProb=True, deepsearch=True, oppesite=True)
-
 
                 if newfakegameOp.DeepsimWin == True:
                     newfakegameOp.DeepsimWin = False
@@ -136,19 +133,6 @@ class MinMaxCalculate():
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         return canditate_actions[np.argmax(sumvalue)], self.nextmoves[np.argmax(sumvalue)]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     def convertMove(self, game, move):
         move.game = game
