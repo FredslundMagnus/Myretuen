@@ -7,9 +7,13 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=4, cutOffdepth=1):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=15, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
         self.TopNvalues = TopNvalues  # brug int(1 + 10 / np.log2(len(self.ants)))
         self.cutOffdepth = cutOffdepth
+        self.ValueCutOff = ValueCutOff
+        self.ValueDiffCutOff = ValueDiffCutOff
+        self.ProbabilityCutOff = ProbabilityCutOff
+
         self.Move = Move
         self.value = value
 
@@ -35,22 +39,44 @@ class MinMaxCalculate():
                 candidate_values[replace] = value
                 canditate_actions[replace] = action
                 canditate_probs[replace] = state[0][2]
-                # if len(state) != 1:
-                #     print(state[0][3], state[1][3], replace, end= ' ')
                 if fakegame.currentPlayer == self.game.currentPlayer:
                     if len(state) == 1:
-                        canditate_rewards[replace][0] = state[0][3]
+                        canditate_rewards[replace] = [state[0][3], 0]
                     else:
                         canditate_rewards[replace] = [state[0][3], state[1][3]]
                 else:
                     if len(state) == 1:
-                        canditate_rewards[replace][0] = -state[0][3]
+                        canditate_rewards[replace] = [-state[0][3], 0]
                     else:
                         canditate_rewards[replace] = [-state[0][3], -state[1][3]]
+        print(rewardtrace, end=' ')
+        ### Remove values worse than ValueDifference
+        candi_sorted = candidate_values.copy()
+        candi_sorted.sort(reverse=True)
+        cutoff = self.ValueCutOff
+        for i in range(len(candidate_values)-1):
+            if abs(candi_sorted[i] - candi_sorted[i+1]) > self.ValueDiffCutOff:
+                cutoff = candi_sorted[i+1]
+                break
+        if cutoff != self.ValueCutOff:
+            smallerindex = [candidate_values.index(value) for value in candidate_values if value <= cutoff]
+            for i in sorted(smallerindex, reverse=True):
+                del candidate_values[i]
+                del canditate_actions[i]
+                del canditate_probs[i]
+                del canditate_rewards[i]
 
-        if cutOffdepth < 1:
-            return np.max(candidate_values[replace] + rewardtrace) * Proba if fakegame.currentPlayer == self.game.currentPlayer else -np.max(candidate_values[replace] + rewardtrace) * Proba
-        for i in range(limitedactions):
+        ### Check if any of the requirements are fulfilled.
+        if fakegame.currentPlayer == self.game.currentPlayer:
+            Endvalue = np.max(np.array(candidate_values)) + rewardtrace
+        else:
+            Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
+        if cutOffdepth < 1 or self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff:
+            return Endvalue * Proba
+
+
+        ### Loop over the remaining canditate moves
+        for i in range(len(candidate_values)):
             if canditate_probs[i] == 1:
                 newfakegame = copy.deepcopy(fakegame)
                 Truemove = self.convertMove(newfakegame, canditate_actions[i])
@@ -100,6 +126,19 @@ class MinMaxCalculate():
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         return sumvalue, canditate_actions
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def convertMove(self, game, move):
         move.game = game
