@@ -47,13 +47,13 @@ class Agent():
 
         elif actions != []:
             if self.NextbestAction != []:
+                self.NextbestAction = self.convertMove(self.env, self.NextbestAction)
                 bestAction = self.NextbestAction
                 self.actionState = self.state(self.env, bestAction)
                 self.NextbestAction = []
             else:
-                Thismove, Nextmove = self.minmaxer.DeepSearch(self.env, self.calcprobs)
+                Thismove, self.NextbestAction  = self.minmaxer.DeepSearch(self.env, self.calcprobs)
                 bestAction = self.convertMove(self.env, Thismove)
-                self.NextbestAction = self.convertMove(self.env, Nextmove)
                 self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:
             self.previousState = []
@@ -102,6 +102,7 @@ class Agent():
             self.impala.restart()
         self.resettrace()
         self.gameNumber += 1
+        self.NextbestAction = []
 
     def saveModel(self, extention=''):
         filename = open('Agents/Trained/' + self.__class__.__name__ + extention + '.obj', 'wb')

@@ -7,13 +7,12 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=15, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=10, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
         self.ValueDiffCutOff = ValueDiffCutOff
         self.ProbabilityCutOff = ProbabilityCutOff
-
         self.Move = Move
         self.value = value
 
@@ -67,13 +66,19 @@ class MinMaxCalculate():
                 del canditate_probs[i]
                 del canditate_rewards[i]
 
+        if cutOffdepth == self.cutOffdepth - 1 and self.cutOffdepth == 1 and Realgame == True:
+            self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
+
         ### Check if any of the requirements are fulfilled.
         if fakegame.currentPlayer == self.game.currentPlayer:
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
             Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
-        if cutOffdepth < 1 or self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff:
+        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff) and (cutOffdepth < (self.cutOffdepth)):
             return Endvalue * Proba
+        if cutOffdepth < 1:
+            return Endvalue * Proba
+
 
 
         ### Loop over the remaining canditate moves
@@ -125,12 +130,11 @@ class MinMaxCalculate():
                             sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
                             sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1], Realgame=False)
 
-        if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
+        if cutOffdepth == (self.cutOffdepth - 1) and Realgame == True:
             self.nextmoves.append(canditate_actions[np.argmax(sumvalue)])
 
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
-
         return canditate_actions[np.argmax(sumvalue)], self.nextmoves[np.argmax(sumvalue)]
 
 
