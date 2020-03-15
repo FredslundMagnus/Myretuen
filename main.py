@@ -50,7 +50,7 @@ plot('Weights')
 print(parameters[:, -1])
 
 if debuggerMode:
-    controller.agents['green'].saveModel()
+    controller.agents['green'].saveModel(name=nameOfRun, place=f'outputs/{Thename}/')
 else:
     controller.agents['green'].saveModel()
 
