@@ -80,6 +80,8 @@ class Move():
     def moveToOpponent(self, moving, oppesite, CalculateProb):
         reward = 0
         if (self.end.ants[-1].magnet == moving[-1].magnet and not oppesite) or (self.end.ants[-1].magnet != moving[-1].magnet and oppesite):
+            if oppesite == True:
+                self.game.DeepsimWin = True
             if CalculateProb == True:
                 self.game.prob.fight(moving[-1], self.end.ants[-1], winner=True)
                 self.game.prob.CalculateWinChance()

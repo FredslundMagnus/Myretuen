@@ -45,7 +45,7 @@ class Agent():
                         bestAction = action
                         self.actionState = state
         elif actions != []:
-            searchresults = self.minmaxer.DeepSearch(self.env)
+            searchresults = self.minmaxer.DeepSearch(self.env, self.calcprobs)
             bestAction = self.convertMove(self.env, searchresults[1][np.argmax(searchresults[0])])
             self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:

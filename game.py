@@ -27,6 +27,7 @@ class Myretuen(gym.Env):
         self.Runningwinrate = None
         self.prob = Probability_calculator(self.bases, self.ants)
         self.playerwithnomoves = None
+        self.DeepsimWin = False
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1

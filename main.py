@@ -23,7 +23,7 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
+    controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent())
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
 
 
