@@ -8,7 +8,7 @@ from Probability_function import Probability_calculator
 
 class MinMaxCalculate():
     def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=15, ValueDiffCutOff=3, ProbabilityCutOff=0.02):
-        self.TopNvalues = TopNvalues  # brug int(1 + 10 / np.log2(len(self.ants)))
+        self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
         self.ValueDiffCutOff = ValueDiffCutOff
@@ -101,12 +101,13 @@ class MinMaxCalculate():
 
                 newfakegameOp = copy.deepcopy(fakegame)
                 Truemove2 = self.convertMove(newfakegameOp, canditate_actions[i])
-                newfakegameOp.step(Truemove2, CalculateProb=True, deepsearch=True)
+                newfakegameOp.step(Truemove2, CalculateProb=True, deepsearch=True, oppesite=True)
 
 
                 if newfakegameOp.DeepsimWin == True:
-                    canditate_probs[i] = (1 - canditate_probs[i])
                     newfakegameOp.DeepsimWin = False
+                    canditate_probs[i] = (1 - canditate_probs[i])
+                    canditate_rewards[i][0], canditate_rewards[i][1] = canditate_rewards[i][1], canditate_rewards[i][0]
 
                 if newfakegame.rolled != []:
                     sumvalue[i] += self.DeepLoop(Proba * canditate_probs[i], newfakegame, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
