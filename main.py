@@ -1,11 +1,11 @@
 from debug import debugger
-from matplotlib import pyplot as plt
+import matplotlib
 import numpy as np
 from agents import *
 from game import Myretuen, Controller
 import sys
 import os
-
+from matplotlib import pyplot as plt
 
 debuggerMode = len(sys.argv) != 1
 
