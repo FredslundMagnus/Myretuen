@@ -131,10 +131,10 @@ class MinMaxCalculate():
                                 thisproba /= 2
                             sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
                             sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1], Realgame=False)
-        print([print(x) for x in canditate_actions], sumvalue)
+        
         if cutOffdepth == (self.cutOffdepth - 1) and Realgame == True:
             self.nextmoves.append(canditate_actions[np.argmax(sumvalue)])
-        print([print(x) for x in canditate_actions], sumvalue)
+
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         return canditate_actions[np.argmax(sumvalue)], self.nextmoves[np.argmax(sumvalue)]
