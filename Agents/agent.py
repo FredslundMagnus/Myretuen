@@ -117,6 +117,7 @@ class Agent():
                 name = self.__class__.__name__
             filehandler = open(place + name + '.obj', 'rb')
             self.phi = pickle.load(filehandler)
+            print('Loaded model succesfully')
         except:
             pass
         return self

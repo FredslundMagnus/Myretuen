@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=3, cutOffdepth=2, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -131,16 +131,13 @@ class MinMaxCalculate():
                                 thisproba /= 2
                             sumvalue[i] += self.DeepLoop(thisproba * canditate_probs[i], newfakegame2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
                             sumvalue[i] += self.DeepLoop(thisproba * (1 - canditate_probs[i]), newfakegameOp2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][1], Realgame=False)
-        
+
         if cutOffdepth == (self.cutOffdepth - 1) and Realgame == True:
             self.nextmoves.append(canditate_actions[np.argmax(sumvalue)])
 
         if cutOffdepth != self.cutOffdepth:
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         return canditate_actions[np.argmax(sumvalue)], self.nextmoves[np.argmax(sumvalue)]
-
-
-
 
     def convertMove(self, game, move):
         move.game = game
