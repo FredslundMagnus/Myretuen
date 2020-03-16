@@ -27,6 +27,7 @@ class Gamecontroller():
                 self.sleep()
                 actions = env.action_space()
                 action = agent.choose(actions)
+                action = self.convertMove(self.env, action)
                 observation, reward, DONE, info = env.step(action, CalculateProbs)
                 opponentReward -= reward
                 if DONE:
@@ -63,3 +64,12 @@ class Gamecontroller():
 
     def sleep(self):
         time.sleep(self.timeDelay)
+
+    def convertMove(self, game, move):
+        move.game = game
+        move.end = game.fields[move.end.id]
+        if move.start.id in game.fields:
+            move.start = game.fields[move.start.id]
+        else:
+            move.start = game.bases[move.start.id]
+        return move
