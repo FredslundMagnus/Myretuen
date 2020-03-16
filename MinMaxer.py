@@ -61,16 +61,20 @@ class MinMaxCalculate():
         if cutoff != self.ValueCutOff:
             smallerindex = [candidate_values.index(value) for value in candidate_values if value <= cutoff]
             for i in sorted(smallerindex, reverse=True):
-                del candidate_values[i]
-                del canditate_actions[i]
-                del canditate_probs[i]
-                del canditate_rewards[i]
+                if len(candidate_values) > 1:
+                    del candidate_values[i]
+                    del canditate_actions[i]
+                    del canditate_probs[i]
+                    del canditate_rewards[i]
 
         if cutOffdepth == self.cutOffdepth - 1 and self.cutOffdepth == 1 and Realgame == True:
             self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
 
         # Check if any of the requirements are fulfilled.
-        if fakegame.currentPlayer == self.game.currentPlayer:
+
+        if candidate_values == []:
+            return rewardtrace * Proba
+        elif fakegame.currentPlayer == self.game.currentPlayer:
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
             Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
