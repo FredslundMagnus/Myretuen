@@ -13,4 +13,4 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 # genExperiments('MinMax-5-1-1000', 'NNAgent', 1000, 10, False, True, True, True, True, 10)
 # genExperiments('Explorer-K-10', 'NNAgent', 2000, 10, True, True, True, True, False, 10)
 # genExperiments('Explorer-K-50', 'NNAgent', 2000, 10, True, True, True, True, False, 10)
-genExperiments('Explorer-K-500', 'NNAgent', 4000, 10, True, True, True, True, False, 10)
+# genExperiments('Explorer-K-500', 'NNAgent', 4000, 10, True, True, True, True, False, 10)
