@@ -46,7 +46,7 @@ class Agent():
                         self.actionState = state
 
         elif actions != []:
-            if self.NextbestAction != []:
+            if self.NextbestAction != [] and self.NextbestAction.game.nGamePlay == self.env.nGamePlay:
                 self.NextbestAction = self.convertMove(self.env, self.NextbestAction)
                 bestAction = self.NextbestAction
                 self.actionState = self.state(self.env, bestAction)

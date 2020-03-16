@@ -7,7 +7,7 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=True):
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False):
         self.setup(explore, doTrain, impala, calcprobs, minmax, name='NNAgent')
 
     def value(self, infostate, return_float=True):
