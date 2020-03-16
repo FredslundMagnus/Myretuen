@@ -10,7 +10,7 @@ import copy
 
 class Agent():
 
-    def choose(self, actions, K=None):
+    def choose(self, actions, K=500):
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
