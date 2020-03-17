@@ -1,23 +1,34 @@
 #!/bin/sh
-mkdir outputs/MinMax-4-1-500-fix
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent0MinMax-4-1-500-fix.md" -J "NNAgent0MinMax-4-1-500-fix" -P "NNAgent0MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent1MinMax-4-1-500-fix.md" -J "NNAgent1MinMax-4-1-500-fix" -P "NNAgent1MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent2MinMax-4-1-500-fix.md" -J "NNAgent2MinMax-4-1-500-fix" -P "NNAgent2MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent3MinMax-4-1-500-fix.md" -J "NNAgent3MinMax-4-1-500-fix" -P "NNAgent3MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent4MinMax-4-1-500-fix.md" -J "NNAgent4MinMax-4-1-500-fix" -P "NNAgent4MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent5MinMax-4-1-500-fix.md" -J "NNAgent5MinMax-4-1-500-fix" -P "NNAgent5MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent6MinMax-4-1-500-fix.md" -J "NNAgent6MinMax-4-1-500-fix" -P "NNAgent6MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent7MinMax-4-1-500-fix.md" -J "NNAgent7MinMax-4-1-500-fix" -P "NNAgent7MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent8MinMax-4-1-500-fix.md" -J "NNAgent8MinMax-4-1-500-fix" -P "NNAgent8MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-500-fix/NNAgent9MinMax-4-1-500-fix.md" -J "NNAgent9MinMax-4-1-500-fix" -P "NNAgent9MinMax-4-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-4-1-500-fix" < submit.sh
-mkdir outputs/MinMax-4-1-1000-fix
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent0MinMax-4-1-1000-fix.md" -J "NNAgent0MinMax-4-1-1000-fix" -P "NNAgent0MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent1MinMax-4-1-1000-fix.md" -J "NNAgent1MinMax-4-1-1000-fix" -P "NNAgent1MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent2MinMax-4-1-1000-fix.md" -J "NNAgent2MinMax-4-1-1000-fix" -P "NNAgent2MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent3MinMax-4-1-1000-fix.md" -J "NNAgent3MinMax-4-1-1000-fix" -P "NNAgent3MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent4MinMax-4-1-1000-fix.md" -J "NNAgent4MinMax-4-1-1000-fix" -P "NNAgent4MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent5MinMax-4-1-1000-fix.md" -J "NNAgent5MinMax-4-1-1000-fix" -P "NNAgent5MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent6MinMax-4-1-1000-fix.md" -J "NNAgent6MinMax-4-1-1000-fix" -P "NNAgent6MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent7MinMax-4-1-1000-fix.md" -J "NNAgent7MinMax-4-1-1000-fix" -P "NNAgent7MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent8MinMax-4-1-1000-fix.md" -J "NNAgent8MinMax-4-1-1000-fix" -P "NNAgent8MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
-bsub -o "outputs/MinMax-4-1-1000-fix/NNAgent9MinMax-4-1-1000-fix.md" -J "NNAgent9MinMax-4-1-1000-fix" -P "NNAgent9MinMax-4-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-4-1-1000-fix" < submit.sh
+mkdir outputs/Combo-4-1-500-250-abs
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent0Combo-4-1-500-250-abs.md" -J "NNAgent0Combo-4-1-500-250-abs" -P "NNAgent0Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent1Combo-4-1-500-250-abs.md" -J "NNAgent1Combo-4-1-500-250-abs" -P "NNAgent1Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent2Combo-4-1-500-250-abs.md" -J "NNAgent2Combo-4-1-500-250-abs" -P "NNAgent2Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent3Combo-4-1-500-250-abs.md" -J "NNAgent3Combo-4-1-500-250-abs" -P "NNAgent3Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent4Combo-4-1-500-250-abs.md" -J "NNAgent4Combo-4-1-500-250-abs" -P "NNAgent4Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent5Combo-4-1-500-250-abs.md" -J "NNAgent5Combo-4-1-500-250-abs" -P "NNAgent5Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent6Combo-4-1-500-250-abs.md" -J "NNAgent6Combo-4-1-500-250-abs" -P "NNAgent6Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent7Combo-4-1-500-250-abs.md" -J "NNAgent7Combo-4-1-500-250-abs" -P "NNAgent7Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent8Combo-4-1-500-250-abs.md" -J "NNAgent8Combo-4-1-500-250-abs" -P "NNAgent8Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-500-250-abs/NNAgent9Combo-4-1-500-250-abs.md" -J "NNAgent9Combo-4-1-500-250-abs" -P "NNAgent9Combo-4-1-500-250-abs 500 10 NNAgent 1 1 1 1 1 Combo-4-1-500-250-abs" < submit.sh
+mkdir outputs/Combo-4-1-1000-250-abs
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent0Combo-4-1-1000-250-abs.md" -J "NNAgent0Combo-4-1-1000-250-abs" -P "NNAgent0Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent1Combo-4-1-1000-250-abs.md" -J "NNAgent1Combo-4-1-1000-250-abs" -P "NNAgent1Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent2Combo-4-1-1000-250-abs.md" -J "NNAgent2Combo-4-1-1000-250-abs" -P "NNAgent2Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent3Combo-4-1-1000-250-abs.md" -J "NNAgent3Combo-4-1-1000-250-abs" -P "NNAgent3Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent4Combo-4-1-1000-250-abs.md" -J "NNAgent4Combo-4-1-1000-250-abs" -P "NNAgent4Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent5Combo-4-1-1000-250-abs.md" -J "NNAgent5Combo-4-1-1000-250-abs" -P "NNAgent5Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent6Combo-4-1-1000-250-abs.md" -J "NNAgent6Combo-4-1-1000-250-abs" -P "NNAgent6Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent7Combo-4-1-1000-250-abs.md" -J "NNAgent7Combo-4-1-1000-250-abs" -P "NNAgent7Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent8Combo-4-1-1000-250-abs.md" -J "NNAgent8Combo-4-1-1000-250-abs" -P "NNAgent8Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1000-250-abs/NNAgent9Combo-4-1-1000-250-abs.md" -J "NNAgent9Combo-4-1-1000-250-abs" -P "NNAgent9Combo-4-1-1000-250-abs 1000 10 NNAgent 1 1 1 1 1 Combo-4-1-1000-250-abs" < submit.sh
+mkdir outputs/Combo-4-1-1500-250-abs
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent0Combo-4-1-1500-250-abs.md" -J "NNAgent0Combo-4-1-1500-250-abs" -P "NNAgent0Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent1Combo-4-1-1500-250-abs.md" -J "NNAgent1Combo-4-1-1500-250-abs" -P "NNAgent1Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent2Combo-4-1-1500-250-abs.md" -J "NNAgent2Combo-4-1-1500-250-abs" -P "NNAgent2Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent3Combo-4-1-1500-250-abs.md" -J "NNAgent3Combo-4-1-1500-250-abs" -P "NNAgent3Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent4Combo-4-1-1500-250-abs.md" -J "NNAgent4Combo-4-1-1500-250-abs" -P "NNAgent4Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent5Combo-4-1-1500-250-abs.md" -J "NNAgent5Combo-4-1-1500-250-abs" -P "NNAgent5Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent6Combo-4-1-1500-250-abs.md" -J "NNAgent6Combo-4-1-1500-250-abs" -P "NNAgent6Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent7Combo-4-1-1500-250-abs.md" -J "NNAgent7Combo-4-1-1500-250-abs" -P "NNAgent7Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent8Combo-4-1-1500-250-abs.md" -J "NNAgent8Combo-4-1-1500-250-abs" -P "NNAgent8Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
+bsub -o "outputs/Combo-4-1-1500-250-abs/NNAgent9Combo-4-1-1500-250-abs.md" -J "NNAgent9Combo-4-1-1500-250-abs" -P "NNAgent9Combo-4-1-1500-250-abs 1500 10 NNAgent 1 1 1 1 1 Combo-4-1-1500-250-abs" < submit.sh
