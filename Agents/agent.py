@@ -53,6 +53,8 @@ class Agent():
                 self.NextbestAction = []
             else:
                 Thismove, self.NextbestAction = self.minmaxer.DeepSearch(self.env, self.calcprobs)
+                if self.NextbestAction == None:
+                    self.NextbestAction = []
                 bestAction = self.convertMove(self.env, Thismove)
                 self.actionState = self.state(self.env, bestAction)
         if len(actions) == 0:
