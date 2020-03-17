@@ -1,12 +1,23 @@
 #!/bin/sh
-mkdir outputs/Explorer-K-250-new-loss
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent0Explorer-K-250-new-loss.md" -J "NNAgent0Explorer-K-250-new-loss" -P "NNAgent0Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent1Explorer-K-250-new-loss.md" -J "NNAgent1Explorer-K-250-new-loss" -P "NNAgent1Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent2Explorer-K-250-new-loss.md" -J "NNAgent2Explorer-K-250-new-loss" -P "NNAgent2Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent3Explorer-K-250-new-loss.md" -J "NNAgent3Explorer-K-250-new-loss" -P "NNAgent3Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent4Explorer-K-250-new-loss.md" -J "NNAgent4Explorer-K-250-new-loss" -P "NNAgent4Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent5Explorer-K-250-new-loss.md" -J "NNAgent5Explorer-K-250-new-loss" -P "NNAgent5Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent6Explorer-K-250-new-loss.md" -J "NNAgent6Explorer-K-250-new-loss" -P "NNAgent6Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent7Explorer-K-250-new-loss.md" -J "NNAgent7Explorer-K-250-new-loss" -P "NNAgent7Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent8Explorer-K-250-new-loss.md" -J "NNAgent8Explorer-K-250-new-loss" -P "NNAgent8Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
-bsub -o "outputs/Explorer-K-250-new-loss/NNAgent9Explorer-K-250-new-loss.md" -J "NNAgent9Explorer-K-250-new-loss" -P "NNAgent9Explorer-K-250-new-loss 2000 10 NNAgent 1 1 1 1 0 Explorer-K-250-new-loss" < submit.sh
+mkdir outputs/MinMax-5-1-500-fix
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent0MinMax-5-1-500-fix.md" -J "NNAgent0MinMax-5-1-500-fix" -P "NNAgent0MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent1MinMax-5-1-500-fix.md" -J "NNAgent1MinMax-5-1-500-fix" -P "NNAgent1MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent2MinMax-5-1-500-fix.md" -J "NNAgent2MinMax-5-1-500-fix" -P "NNAgent2MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent3MinMax-5-1-500-fix.md" -J "NNAgent3MinMax-5-1-500-fix" -P "NNAgent3MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent4MinMax-5-1-500-fix.md" -J "NNAgent4MinMax-5-1-500-fix" -P "NNAgent4MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent5MinMax-5-1-500-fix.md" -J "NNAgent5MinMax-5-1-500-fix" -P "NNAgent5MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent6MinMax-5-1-500-fix.md" -J "NNAgent6MinMax-5-1-500-fix" -P "NNAgent6MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent7MinMax-5-1-500-fix.md" -J "NNAgent7MinMax-5-1-500-fix" -P "NNAgent7MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent8MinMax-5-1-500-fix.md" -J "NNAgent8MinMax-5-1-500-fix" -P "NNAgent8MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-500-fix/NNAgent9MinMax-5-1-500-fix.md" -J "NNAgent9MinMax-5-1-500-fix" -P "NNAgent9MinMax-5-1-500-fix 500 10 NNAgent 0 1 1 1 1 MinMax-5-1-500-fix" < submit.sh
+mkdir outputs/MinMax-5-1-1000-fix
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent0MinMax-5-1-1000-fix.md" -J "NNAgent0MinMax-5-1-1000-fix" -P "NNAgent0MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent1MinMax-5-1-1000-fix.md" -J "NNAgent1MinMax-5-1-1000-fix" -P "NNAgent1MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent2MinMax-5-1-1000-fix.md" -J "NNAgent2MinMax-5-1-1000-fix" -P "NNAgent2MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent3MinMax-5-1-1000-fix.md" -J "NNAgent3MinMax-5-1-1000-fix" -P "NNAgent3MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent4MinMax-5-1-1000-fix.md" -J "NNAgent4MinMax-5-1-1000-fix" -P "NNAgent4MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent5MinMax-5-1-1000-fix.md" -J "NNAgent5MinMax-5-1-1000-fix" -P "NNAgent5MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent6MinMax-5-1-1000-fix.md" -J "NNAgent6MinMax-5-1-1000-fix" -P "NNAgent6MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent7MinMax-5-1-1000-fix.md" -J "NNAgent7MinMax-5-1-1000-fix" -P "NNAgent7MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent8MinMax-5-1-1000-fix.md" -J "NNAgent8MinMax-5-1-1000-fix" -P "NNAgent8MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
+bsub -o "outputs/MinMax-5-1-1000-fix/NNAgent9MinMax-5-1-1000-fix.md" -J "NNAgent9MinMax-5-1-1000-fix" -P "NNAgent9MinMax-5-1-1000-fix 1000 10 NNAgent 0 1 1 1 1 MinMax-5-1-1000-fix" < submit.sh
