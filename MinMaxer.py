@@ -67,7 +67,7 @@ class MinMaxCalculate():
                     del canditate_probs[i]
                     del canditate_rewards[i]
 
-        if cutOffdepth == self.cutOffdepth - 1 and self.cutOffdepth == 1 and Realgame == True:
+        if cutOffdepth == self.cutOffdepth - 1 and self.cutOffdepth == 1 and Realgame == True and actionss != []:
             self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
 
         # Check if any of the requirements are fulfilled.
