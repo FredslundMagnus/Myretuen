@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=5, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -50,13 +50,10 @@ class MinMaxCalculate():
                     else:
                         canditate_rewards[replace] = [-state[0][3], -state[1][3]]
 
-
-
         if actionss == []:
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(None)
             return Proba * (rewardtrace - 3 * len(self.game.ants) / 2 + 10) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 3 * len(self.game.ants) / 2 + 10)
-
 
         # Remove values worse than ValueDifference
         candi_sorted = candidate_values.copy()
