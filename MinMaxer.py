@@ -16,39 +16,71 @@ class MinMaxCalculate():
         self.Move = Move
         self.value = value
 
-    def DeepSearch(self, game, calcprobs=True):
+    def DeepSearch(self, game, gamenumber, calcprobs=True):
+        self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
         self.calcprobs = calcprobs
         fakegame = copy.deepcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
-    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
+    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True, explore=False, K=250):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs = [[None, None]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions
-        for action in actionss:
-            self.env = fakegame
-            state = self.state(fakegame, action)
-            if len(state) == 1:
-                value = self.value(state[0]) * state[0][2] + state[0][3]
-            else:
-                value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
-            if value > candidate_values[np.argmin(candidate_values)]:
-                replace = np.argmin(candidate_values)
-                candidate_values[replace] = value
-                canditate_actions[replace] = action
-                canditate_probs[replace] = state[0][2]
-                if fakegame.currentPlayer == self.game.currentPlayer:
-                    if len(state) == 1:
-                        canditate_rewards[replace] = [state[0][3], None]
-                    else:
-                        canditate_rewards[replace] = [state[0][3], state[1][3]]
+        self.env = fakegame
+
+        if explore == True and actionss != []:
+            temp = K / self.gameNumber if K is not None else 1
+            states = []
+            values = []
+            for action in actionss:
+                states.append(self.state(self.env, action))
+                if len(states[-1]) == 1:
+                    values.append(self.value(states[-1][0]) + states[-1][0][3])
                 else:
-                    if len(state) == 1:
-                        canditate_rewards[replace] = [-state[0][3], None]
+                    values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
+            chances = self.softmax(np.array(values) / temp)
+
+            for i in range(limitedactions):
+                chances = chances/sum(chances)
+                replacer = np.random.choice(len(chances), 1, p=chances)[0]
+                chances[replacer] = 2.05623357236e-296
+                candidate_values[i] = values[replacer]
+                canditate_actions[i] = actionss[replacer]
+                canditate_probs[i] = states[replacer][0][2]
+                if fakegame.currentPlayer == self.game.currentPlayer:
+                    if len(states[replacer]) == 1:
+                        canditate_rewards[i] = [states[replacer][0][3], None]
                     else:
-                        canditate_rewards[replace] = [-state[0][3], -state[1][3]]
+                        canditate_rewards[i] = [states[replacer][0][3], states[replacer][1][3]]
+                else:
+                    if len(states[replacer]) == 1:
+                        canditate_rewards[i] = [-states[replacer][0][3], None]
+                    else:
+                        canditate_rewards[i] = [-states[replacer][0][3], -states[replacer][1][3]]
+        else:
+            for action in actionss:
+                state = self.state(fakegame, action)
+                if len(state) == 1:
+                    value = self.value(state[0]) * state[0][2] + state[0][3]
+                else:
+                    value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
+                if value > candidate_values[np.argmin(candidate_values)]:
+                    replace = np.argmin(candidate_values)
+                    candidate_values[replace] = value
+                    canditate_actions[replace] = action
+                    canditate_probs[replace] = state[0][2]
+                    if fakegame.currentPlayer == self.game.currentPlayer:
+                        if len(state) == 1:
+                            canditate_rewards[replace] = [state[0][3], None]
+                        else:
+                            canditate_rewards[replace] = [state[0][3], state[1][3]]
+                    else:
+                        if len(state) == 1:
+                            canditate_rewards[replace] = [-state[0][3], None]
+                        else:
+                            canditate_rewards[replace] = [-state[0][3], -state[1][3]]
 
         if actionss == []:
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
@@ -286,3 +318,7 @@ class MinMaxCalculate():
 
     def GetProbabilityOfEat(self, ant):
         return ant.probcapture
+
+    def softmax(self, x):
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum()
