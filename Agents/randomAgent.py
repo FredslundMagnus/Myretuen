@@ -3,8 +3,8 @@ from Agents.agent import Agent
 
 
 class RandomAgent(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=False, minmax=False):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, name='RandomAgent')
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=False, minmax=False, lossf='MME'):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, name='RandomAgent')
         self.rating = 1000
 
     def choose(self, actions):
