@@ -49,9 +49,22 @@ controller.run()
 
 # Versions
 
+## version-0.5
+
+- Added Boltzmann Approach to the explorer
+- Changes Elo system to be absolute
+- Impala is now batch training
+
+## version-0.4
+
+- Feature and reward improvements
+- Added probaility calculations
+- Added an Elo system
+- Added impala
+
 ## version-0.3
 
-- Added esplorer mode
+- Added explorer mode
 - Added TD(lambda)
 - Added self play option
 
