@@ -14,7 +14,7 @@ class Agent():
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
-                temp = self.K / self.gameNumber if K is not None else 1
+                temp = self.K / self.gameNumber if self.K is not None else 1
                 states = []
                 values = []
                 for action in actions:
