@@ -16,6 +16,7 @@ class LinearAprox(Agent):
         x[:n * self.Nfeature] = s[:n * self.Nfeature]
         r = s[n * self.Nfeature:]
         x[len(self.phi) // 2:len(self.phi) // 2 + len(r)] = r
+        x[np.random.rand(x.size) < self.dropout] = 0
         return x.T @ self.phi
 
     def train(self, reward, previousState, newState):
