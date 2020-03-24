@@ -12,7 +12,7 @@ def getvals(args):
     for i, s in enumerate(args):
         if s in d:
             try:
-                d[s] = int(args[i + 1])
+                d[s] = float(args[i + 1])
             except:
                 d[s] = args[i + 1]
     return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr']
