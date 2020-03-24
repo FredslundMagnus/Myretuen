@@ -11,11 +11,6 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 
 genExperiments('Test-8', 'NNAgent', 50, 10, True, True, True, True, False, 10, lossf='MME', K=250)
 genExperiments('Test-9', 'NNAgent', 50, 10, True, True, True, True, False, 10, lossf='Abs', K=2)
-genExperiments('Test-10', 'SimpleLinear', 50, 10, True, True, True, True, False, 10, lossf='Abs', K=10)
-genExperiments('Test-11', 'LinearAprox', 50, 10, True, True, True, True, False, 10, lossf='Abs', K=10)
-genExperiments('Test-12', 'NNAgent', 50, 10, True, True, True, True, False, 10, alpha=0.01, discount=0.5, lambd=0.5, lr=0.4)
-genExperiments('Test-13', 'SimpleLinear', 50, 10, True, True, True, True, False, 10, alpha=0.01, discount=0.5, lambd=0.5, lr=0.4)
-genExperiments('Test-14', 'LinearAprox', 50, 10, True, True, True, True, False, 10, alpha=0.01, discount=0.5, lambd=0.5, lr=0.4)
 # genExperiments('Combo-4-1-1000-250-abs', 'NNAgent', 1000, 10, True, True, True, True, True, 10)
 # genExperiments('Combo-4-1-1500-250-abs', 'NNAgent', 1500, 10, True, True, True, True, True, 10)
 # genExperiments('Explorer-K-10', 'NNAgent', 2000, 10, True, True, True, True, False, 10)
