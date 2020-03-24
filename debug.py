@@ -7,6 +7,17 @@ import sys
 import time
 
 
+def getvals(args):
+    d = {'-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005}
+    for i, s in enumerate(args):
+        if s in d:
+            try:
+                d[s] = int(args[i + 1])
+            except:
+                d[s] = args[i + 1]
+    return d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr']
+
+
 def print_title(self):
     print('           ncalls  tottime  percall  cumtime  percall', end=' ', file=self.stream)
     print('filename:lineno(function)', file=self.stream)

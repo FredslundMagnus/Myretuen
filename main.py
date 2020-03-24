@@ -1,4 +1,4 @@
-from debug import debugger
+from debug import debugger, getvals
 import matplotlib
 import numpy as np
 from agents import *
@@ -17,10 +17,11 @@ if debuggerMode:
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs, minmax = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8])), bool(int(sys.argv[9]))
+    K, dropout, alpha, discount, lambd, lr = getvals(sys.argv[11:])
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax))
-    debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs, minmax)
+    controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False)), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr))
+    debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs, minmax, K, dropout, alpha, discount, lambd, lr)
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(NNAgent(lossf='MME', minmax=True)), agent2=NNAgent())

@@ -7,15 +7,15 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=True, lossf='Abs'):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, name='NNAgent')
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=True, lossf='Abs', K=None, dropout=0, alpha=None, discount=0.995, lambd=0.9, lr=0.00005):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent')
 
     def value(self, infostate, return_float=True):
         state, n = infostate[0], infostate[1]
         Nfeature = np.array(state).shape[-1]
         if self.phi == []:
             self.phi = Net(Nfeature)
-            self.optimizer = optim.Adam(self.phi.parameters(), lr=0.00005, amsgrad=True)
+            self.optimizer = optim.Adam(self.phi.parameters(), lr=self.lr, amsgrad=True)
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
             (np.ones(n), -np.ones(x.shape[0] - n)), axis=0))
@@ -24,20 +24,19 @@ class NNAgent(Agent):
         value = value.view(-1)
         return value.item() if return_float else value
 
-    def train(self, reward, previousState, newState, lambd=0.9, discount=0.995, updateWeights=True):
+    def train(self, reward, previousState, newState):
         Vst = self.value(previousState, return_float=False)
         Vstnext = self.value(newState, return_float=False)
-        label = torch.FloatTensor([reward + discount * Vstnext])
+        label = torch.FloatTensor([reward + self.discount * Vstnext])
         if self.lossf == 'Abs':
             criterion = nn.L1Loss()
         else:
             criterion = nn.MSELoss()
         loss = criterion(Vst, label)
         loss.backward()
-        if updateWeights:
-            self.optimizer.step()
+        self.optimizer.step()
         for f in self.phi.parameters():
-            f.grad *= lambd
+            f.grad *= self.lambd
 
 
 class Net(nn.Module):
