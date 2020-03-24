@@ -15,6 +15,7 @@ class SimpleLinear(Agent):
         l = np.array(state).size // (self.Nfeature)
         self.factor = np.concatenate((np.ones(n), -np.ones(l - n)), axis=0)
         x = np.array(state).reshape(-1, self.Nfeature)
+        x[np.random.rand(x.shape[0], x.shape[1]) < self.dropout] = 0
         return x @ self.phi @ self.factor
 
     def train(self, reward, previousState, newState):
