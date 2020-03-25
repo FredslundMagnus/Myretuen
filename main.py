@@ -34,7 +34,7 @@ def plot(name, labels=False):
         plt.legend()
     plt.title(name)
     if debuggerMode:
-        plt.savefig(f'outputs/{Thename}/' + name + nameOfRun + '.png')
+        plt.savefig(f'outputs/{Thename}/{name}/' + nameOfRun + '.png')
         plt.clf()
     else:
         plt.show()
@@ -65,7 +65,7 @@ if debuggerMode:
     # a.tofile(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", sep=', ', format=' % 10.5f')
     np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo2.csv", a, delimiter=',', fmt='%d')
 plt.ylim((700, 2000))
-plot('Elo-Rating', labels=True)
+plot('Elo_Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
 green = np.array(controller.agents['green'].EloWhileTrain)
@@ -79,7 +79,7 @@ if debuggerMode:
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((700, 2000))
-plot('Increase in Elo over time', labels=True)
+plot('Increase_in_Elo_over_time', labels=True)
 
 if debuggerMode:
     print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")
