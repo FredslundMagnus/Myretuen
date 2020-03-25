@@ -6,6 +6,7 @@ from game import Myretuen, Controller
 import sys
 import os
 from matplotlib import pyplot as plt
+import pandas as pd
 
 debuggerMode = len(sys.argv) != 1
 
@@ -56,14 +57,22 @@ if debuggerMode:
 else:
     controller.agents['green'].saveModel()
 
-plt.plot([agent.rating for agent in controller.agents['red'][1:]], label=controller.agents['green'].name)
-plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]), label='RandomAgent')
+green = np.array([agent.rating for agent in controller.agents['red'][1:]])
+red = np.array([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]))
+plt.plot(green, label=controller.agents['green'].name)
+plt.plot(red, label='RandomAgent')
+if debuggerMode:
+    pd.DataFrame([green, red]).to_csv(f"outputs/{Thename}/{nameOfRun}-Elo.csv")
 plt.ylim((700, 2000))
 plot('Elo-Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
-plt.plot(np.arange(1, NumberOfGames + 1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
-plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames, label='RandomAgent')
+green = np.array(controller.agents['green'].EloWhileTrain)
+red = np.array([controller.agents['red'][0].rating] * NumberOfGames)
+plt.plot(np.arange(1, NumberOfGames + 1), green, label=controller.agents['green'].name)
+plt.plot(np.arange(1, NumberOfGames + 1), red, label='RandomAgent')
+if debuggerMode:
+    pd.DataFrame([green, red]).to_csv(f"outputs/{Thename}/{nameOfRun}-EloOverTime.csv")
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((700, 2000))

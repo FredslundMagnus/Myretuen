@@ -1,111 +1,12 @@
 #!/bin/sh
-mkdir outputs/lambda-0.5-0.995
-bsub -o "outputs/lambda-0.5-0.995/NNAgent0lambda-0.5-0.995.md" -J "NNAgent0lambda-0.5-0.995" -P "NNAgent0lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent1lambda-0.5-0.995.md" -J "NNAgent1lambda-0.5-0.995" -P "NNAgent1lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent2lambda-0.5-0.995.md" -J "NNAgent2lambda-0.5-0.995" -P "NNAgent2lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent3lambda-0.5-0.995.md" -J "NNAgent3lambda-0.5-0.995" -P "NNAgent3lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent4lambda-0.5-0.995.md" -J "NNAgent4lambda-0.5-0.995" -P "NNAgent4lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent5lambda-0.5-0.995.md" -J "NNAgent5lambda-0.5-0.995" -P "NNAgent5lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent6lambda-0.5-0.995.md" -J "NNAgent6lambda-0.5-0.995" -P "NNAgent6lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent7lambda-0.5-0.995.md" -J "NNAgent7lambda-0.5-0.995" -P "NNAgent7lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent8lambda-0.5-0.995.md" -J "NNAgent8lambda-0.5-0.995" -P "NNAgent8lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-bsub -o "outputs/lambda-0.5-0.995/NNAgent9lambda-0.5-0.995.md" -J "NNAgent9lambda-0.5-0.995" -P "NNAgent9lambda-0.5-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.5-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.5" < submit.sh
-mkdir outputs/lambda-0.6-0.995
-bsub -o "outputs/lambda-0.6-0.995/NNAgent0lambda-0.6-0.995.md" -J "NNAgent0lambda-0.6-0.995" -P "NNAgent0lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent1lambda-0.6-0.995.md" -J "NNAgent1lambda-0.6-0.995" -P "NNAgent1lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent2lambda-0.6-0.995.md" -J "NNAgent2lambda-0.6-0.995" -P "NNAgent2lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent3lambda-0.6-0.995.md" -J "NNAgent3lambda-0.6-0.995" -P "NNAgent3lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent4lambda-0.6-0.995.md" -J "NNAgent4lambda-0.6-0.995" -P "NNAgent4lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent5lambda-0.6-0.995.md" -J "NNAgent5lambda-0.6-0.995" -P "NNAgent5lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent6lambda-0.6-0.995.md" -J "NNAgent6lambda-0.6-0.995" -P "NNAgent6lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent7lambda-0.6-0.995.md" -J "NNAgent7lambda-0.6-0.995" -P "NNAgent7lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent8lambda-0.6-0.995.md" -J "NNAgent8lambda-0.6-0.995" -P "NNAgent8lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-bsub -o "outputs/lambda-0.6-0.995/NNAgent9lambda-0.6-0.995.md" -J "NNAgent9lambda-0.6-0.995" -P "NNAgent9lambda-0.6-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.6-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.6" < submit.sh
-mkdir outputs/lambda-0.7-0.995
-bsub -o "outputs/lambda-0.7-0.995/NNAgent0lambda-0.7-0.995.md" -J "NNAgent0lambda-0.7-0.995" -P "NNAgent0lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent1lambda-0.7-0.995.md" -J "NNAgent1lambda-0.7-0.995" -P "NNAgent1lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent2lambda-0.7-0.995.md" -J "NNAgent2lambda-0.7-0.995" -P "NNAgent2lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent3lambda-0.7-0.995.md" -J "NNAgent3lambda-0.7-0.995" -P "NNAgent3lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent4lambda-0.7-0.995.md" -J "NNAgent4lambda-0.7-0.995" -P "NNAgent4lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent5lambda-0.7-0.995.md" -J "NNAgent5lambda-0.7-0.995" -P "NNAgent5lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent6lambda-0.7-0.995.md" -J "NNAgent6lambda-0.7-0.995" -P "NNAgent6lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent7lambda-0.7-0.995.md" -J "NNAgent7lambda-0.7-0.995" -P "NNAgent7lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent8lambda-0.7-0.995.md" -J "NNAgent8lambda-0.7-0.995" -P "NNAgent8lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.995/NNAgent9lambda-0.7-0.995.md" -J "NNAgent9lambda-0.7-0.995" -P "NNAgent9lambda-0.7-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.7" < submit.sh
-mkdir outputs/lambda-0.8-0.995
-bsub -o "outputs/lambda-0.8-0.995/NNAgent0lambda-0.8-0.995.md" -J "NNAgent0lambda-0.8-0.995" -P "NNAgent0lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent1lambda-0.8-0.995.md" -J "NNAgent1lambda-0.8-0.995" -P "NNAgent1lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent2lambda-0.8-0.995.md" -J "NNAgent2lambda-0.8-0.995" -P "NNAgent2lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent3lambda-0.8-0.995.md" -J "NNAgent3lambda-0.8-0.995" -P "NNAgent3lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent4lambda-0.8-0.995.md" -J "NNAgent4lambda-0.8-0.995" -P "NNAgent4lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent5lambda-0.8-0.995.md" -J "NNAgent5lambda-0.8-0.995" -P "NNAgent5lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent6lambda-0.8-0.995.md" -J "NNAgent6lambda-0.8-0.995" -P "NNAgent6lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent7lambda-0.8-0.995.md" -J "NNAgent7lambda-0.8-0.995" -P "NNAgent7lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent8lambda-0.8-0.995.md" -J "NNAgent8lambda-0.8-0.995" -P "NNAgent8lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.995/NNAgent9lambda-0.8-0.995.md" -J "NNAgent9lambda-0.8-0.995" -P "NNAgent9lambda-0.8-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.8" < submit.sh
-mkdir outputs/lambda-0.9-0.995
-bsub -o "outputs/lambda-0.9-0.995/NNAgent0lambda-0.9-0.995.md" -J "NNAgent0lambda-0.9-0.995" -P "NNAgent0lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent1lambda-0.9-0.995.md" -J "NNAgent1lambda-0.9-0.995" -P "NNAgent1lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent2lambda-0.9-0.995.md" -J "NNAgent2lambda-0.9-0.995" -P "NNAgent2lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent3lambda-0.9-0.995.md" -J "NNAgent3lambda-0.9-0.995" -P "NNAgent3lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent4lambda-0.9-0.995.md" -J "NNAgent4lambda-0.9-0.995" -P "NNAgent4lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent5lambda-0.9-0.995.md" -J "NNAgent5lambda-0.9-0.995" -P "NNAgent5lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent6lambda-0.9-0.995.md" -J "NNAgent6lambda-0.9-0.995" -P "NNAgent6lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent7lambda-0.9-0.995.md" -J "NNAgent7lambda-0.9-0.995" -P "NNAgent7lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent8lambda-0.9-0.995.md" -J "NNAgent8lambda-0.9-0.995" -P "NNAgent8lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.995/NNAgent9lambda-0.9-0.995.md" -J "NNAgent9lambda-0.9-0.995" -P "NNAgent9lambda-0.9-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 0.9" < submit.sh
-mkdir outputs/lambda-1.0-0.995
-bsub -o "outputs/lambda-1.0-0.995/NNAgent0lambda-1.0-0.995.md" -J "NNAgent0lambda-1.0-0.995" -P "NNAgent0lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent1lambda-1.0-0.995.md" -J "NNAgent1lambda-1.0-0.995" -P "NNAgent1lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent2lambda-1.0-0.995.md" -J "NNAgent2lambda-1.0-0.995" -P "NNAgent2lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent3lambda-1.0-0.995.md" -J "NNAgent3lambda-1.0-0.995" -P "NNAgent3lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent4lambda-1.0-0.995.md" -J "NNAgent4lambda-1.0-0.995" -P "NNAgent4lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent5lambda-1.0-0.995.md" -J "NNAgent5lambda-1.0-0.995" -P "NNAgent5lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent6lambda-1.0-0.995.md" -J "NNAgent6lambda-1.0-0.995" -P "NNAgent6lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent7lambda-1.0-0.995.md" -J "NNAgent7lambda-1.0-0.995" -P "NNAgent7lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent8lambda-1.0-0.995.md" -J "NNAgent8lambda-1.0-0.995" -P "NNAgent8lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.995/NNAgent9lambda-1.0-0.995.md" -J "NNAgent9lambda-1.0-0.995" -P "NNAgent9lambda-1.0-0.995 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.995 -lossf Abs -K 250 -discount 0.995 -lambda 1.0" < submit.sh
-mkdir outputs/lambda-0.7-0.8
-bsub -o "outputs/lambda-0.7-0.8/NNAgent0lambda-0.7-0.8.md" -J "NNAgent0lambda-0.7-0.8" -P "NNAgent0lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent1lambda-0.7-0.8.md" -J "NNAgent1lambda-0.7-0.8" -P "NNAgent1lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent2lambda-0.7-0.8.md" -J "NNAgent2lambda-0.7-0.8" -P "NNAgent2lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent3lambda-0.7-0.8.md" -J "NNAgent3lambda-0.7-0.8" -P "NNAgent3lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent4lambda-0.7-0.8.md" -J "NNAgent4lambda-0.7-0.8" -P "NNAgent4lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent5lambda-0.7-0.8.md" -J "NNAgent5lambda-0.7-0.8" -P "NNAgent5lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent6lambda-0.7-0.8.md" -J "NNAgent6lambda-0.7-0.8" -P "NNAgent6lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent7lambda-0.7-0.8.md" -J "NNAgent7lambda-0.7-0.8" -P "NNAgent7lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent8lambda-0.7-0.8.md" -J "NNAgent8lambda-0.7-0.8" -P "NNAgent8lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-bsub -o "outputs/lambda-0.7-0.8/NNAgent9lambda-0.7-0.8.md" -J "NNAgent9lambda-0.7-0.8" -P "NNAgent9lambda-0.7-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.7-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.7" < submit.sh
-mkdir outputs/lambda-0.8-0.8
-bsub -o "outputs/lambda-0.8-0.8/NNAgent0lambda-0.8-0.8.md" -J "NNAgent0lambda-0.8-0.8" -P "NNAgent0lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent1lambda-0.8-0.8.md" -J "NNAgent1lambda-0.8-0.8" -P "NNAgent1lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent2lambda-0.8-0.8.md" -J "NNAgent2lambda-0.8-0.8" -P "NNAgent2lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent3lambda-0.8-0.8.md" -J "NNAgent3lambda-0.8-0.8" -P "NNAgent3lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent4lambda-0.8-0.8.md" -J "NNAgent4lambda-0.8-0.8" -P "NNAgent4lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent5lambda-0.8-0.8.md" -J "NNAgent5lambda-0.8-0.8" -P "NNAgent5lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent6lambda-0.8-0.8.md" -J "NNAgent6lambda-0.8-0.8" -P "NNAgent6lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent7lambda-0.8-0.8.md" -J "NNAgent7lambda-0.8-0.8" -P "NNAgent7lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent8lambda-0.8-0.8.md" -J "NNAgent8lambda-0.8-0.8" -P "NNAgent8lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-bsub -o "outputs/lambda-0.8-0.8/NNAgent9lambda-0.8-0.8.md" -J "NNAgent9lambda-0.8-0.8" -P "NNAgent9lambda-0.8-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.8-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.8" < submit.sh
-mkdir outputs/lambda-0.9-0.8
-bsub -o "outputs/lambda-0.9-0.8/NNAgent0lambda-0.9-0.8.md" -J "NNAgent0lambda-0.9-0.8" -P "NNAgent0lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent1lambda-0.9-0.8.md" -J "NNAgent1lambda-0.9-0.8" -P "NNAgent1lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent2lambda-0.9-0.8.md" -J "NNAgent2lambda-0.9-0.8" -P "NNAgent2lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent3lambda-0.9-0.8.md" -J "NNAgent3lambda-0.9-0.8" -P "NNAgent3lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent4lambda-0.9-0.8.md" -J "NNAgent4lambda-0.9-0.8" -P "NNAgent4lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent5lambda-0.9-0.8.md" -J "NNAgent5lambda-0.9-0.8" -P "NNAgent5lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent6lambda-0.9-0.8.md" -J "NNAgent6lambda-0.9-0.8" -P "NNAgent6lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent7lambda-0.9-0.8.md" -J "NNAgent7lambda-0.9-0.8" -P "NNAgent7lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent8lambda-0.9-0.8.md" -J "NNAgent8lambda-0.9-0.8" -P "NNAgent8lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-bsub -o "outputs/lambda-0.9-0.8/NNAgent9lambda-0.9-0.8.md" -J "NNAgent9lambda-0.9-0.8" -P "NNAgent9lambda-0.9-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-0.9-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 0.9" < submit.sh
-mkdir outputs/lambda-1.0-0.8
-bsub -o "outputs/lambda-1.0-0.8/NNAgent0lambda-1.0-0.8.md" -J "NNAgent0lambda-1.0-0.8" -P "NNAgent0lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent1lambda-1.0-0.8.md" -J "NNAgent1lambda-1.0-0.8" -P "NNAgent1lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent2lambda-1.0-0.8.md" -J "NNAgent2lambda-1.0-0.8" -P "NNAgent2lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent3lambda-1.0-0.8.md" -J "NNAgent3lambda-1.0-0.8" -P "NNAgent3lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent4lambda-1.0-0.8.md" -J "NNAgent4lambda-1.0-0.8" -P "NNAgent4lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent5lambda-1.0-0.8.md" -J "NNAgent5lambda-1.0-0.8" -P "NNAgent5lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent6lambda-1.0-0.8.md" -J "NNAgent6lambda-1.0-0.8" -P "NNAgent6lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent7lambda-1.0-0.8.md" -J "NNAgent7lambda-1.0-0.8" -P "NNAgent7lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent8lambda-1.0-0.8.md" -J "NNAgent8lambda-1.0-0.8" -P "NNAgent8lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
-bsub -o "outputs/lambda-1.0-0.8/NNAgent9lambda-1.0-0.8.md" -J "NNAgent9lambda-1.0-0.8" -P "NNAgent9lambda-1.0-0.8 2000 10 NNAgent 1 1 1 1 0 lambda-1.0-0.8 -lossf Abs -K 250 -discount 0.8 -lambda 1.0" < submit.sh
+mkdir outputs/test
+bsub -o "outputs/test/NNAgent0test.md" -J "NNAgent0test" -P "NNAgent0test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent1test.md" -J "NNAgent1test" -P "NNAgent1test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent2test.md" -J "NNAgent2test" -P "NNAgent2test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent3test.md" -J "NNAgent3test" -P "NNAgent3test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent4test.md" -J "NNAgent4test" -P "NNAgent4test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent5test.md" -J "NNAgent5test" -P "NNAgent5test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent6test.md" -J "NNAgent6test" -P "NNAgent6test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent7test.md" -J "NNAgent7test" -P "NNAgent7test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent8test.md" -J "NNAgent8test" -P "NNAgent8test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
+bsub -o "outputs/test/NNAgent9test.md" -J "NNAgent9test" -P "NNAgent9test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
