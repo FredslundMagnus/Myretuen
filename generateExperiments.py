@@ -25,7 +25,7 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 # genExperiments('lambda-0.8-0.8', 'NNAgent', 2000, 10, True, True, True, True, False, 10, lossf='Abs', K=250, discount=0.8, lambd=0.8)
 # genExperiments('lambda-0.9-0.8', 'NNAgent', 2000, 10, True, True, True, True, False, 10, lossf='Abs', K=250, discount=0.8, lambd=0.9)
 # genExperiments('lambda-1.0-0.8', 'NNAgent', 2000, 10, True, True, True, True, False, 10, lossf='Abs', K=250, discount=0.8, lambd=1.0)
-genExperiments('test2', 'NNAgent', 50, 10, True, True, True, True, False, 10, lossf='Abs')
+genExperiments('test', 'NNAgent', 50, 10, True, True, True, True, False, 10, lossf='Abs')
 # genExperiments('Test-9', 'NNAgent', 2000, 10, True, True, True, True, False, 10, lossf='Abs', K=2)
 # genExperiments('Combo-4-1-1000-250-abs', 'NNAgent', 1000, 10, True, True, True, True, True, 10)
 # genExperiments('Combo-4-1-1500-250-abs', 'NNAgent', 1500, 10, True, True, True, True, True, 10)
