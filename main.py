@@ -62,8 +62,7 @@ plt.plot(green, label=controller.agents['green'].name)
 plt.plot(red, label='RandomAgent')
 if debuggerMode:
     a = np.array([green, red])
-    # a.tofile(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", sep=', ', format=' % 10.5f')
-    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo2.csv", a, delimiter=',', fmt='%d')
+    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", a, delimiter=',', fmt='%d')
 plt.ylim((700, 2000))
 plot('Elo_Rating', labels=True)
 
@@ -74,8 +73,7 @@ plt.plot(np.arange(1, NumberOfGames + 1), green, label=controller.agents['green'
 plt.plot(np.arange(1, NumberOfGames + 1), red, label='RandomAgent')
 if debuggerMode:
     a = np.array([green, red])
-    # a.tofile(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime.csv", sep=', ', format=' % 10.5f')
-    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime2.csv", a, delimiter=',', fmt='%d')
+    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime.csv", a, delimiter=',', fmt='%d')
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((700, 2000))
