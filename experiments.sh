@@ -1,6 +1,7 @@
 #!/bin/sh
 mkdir outputs/test
 mkdir outputs/test/csv
+mkdir outputs/test/trained
 bsub -o "outputs/test/NNAgent0test.md" -J "NNAgent0test" -P "NNAgent0test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
 bsub -o "outputs/test/NNAgent1test.md" -J "NNAgent1test" -P "NNAgent1test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh
 bsub -o "outputs/test/NNAgent2test.md" -J "NNAgent2test" -P "NNAgent2test 50 10 NNAgent 1 1 1 1 0 test -lossf Abs" < submit.sh

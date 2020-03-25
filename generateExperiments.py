@@ -6,6 +6,7 @@ file.write('#!/bin/sh\n')
 def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, calcprobs, minmax, n, lossf=None, K=None, dropout=None, alpha=None, discount=None, lambd=None, lr=None):
     file.write(f"mkdir outputs/{name}\n")
     file.write(f"mkdir outputs/{name}/csv\n")
+    file.write(f"mkdir outputs/{name}/trained\n")
     for i in range(n):
         file.write(f'bsub -o "outputs/{name}/{agent}{str(i)}{name}.md" -J "{agent}{str(i)}{name}" -P "{agent}{str(i)}{name} {gameLength} {adAgent} {agent} {int(explore)} {int(doTrain)} {int(impala)} {int(calcprobs)} {int(minmax)} {name}{" -lossf " + str(lossf) if lossf is not None else ""}{" -K " + str(K) if K is not None else ""}{" -dropout " + str(dropout) if dropout is not None else ""}{" -alpha " + str(alpha) if alpha is not None else ""}{" -discount " + str(discount) if discount is not None else ""}{" -lambda " + str(lambd) if lambd is not None else ""}{" -lr " + str(lr) if lr is not None else ""}" < submit.sh\n')
 

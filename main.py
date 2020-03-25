@@ -52,7 +52,7 @@ plot('Weights')
 print(parameters[:, -1])
 
 if debuggerMode:
-    controller.agents['green'].saveModel(name=nameOfRun, place=f'outputs/{Thename}/')
+    controller.agents['green'].saveModel(name=nameOfRun, place=f'outputs/{Thename}/trained/')
 else:
     controller.agents['green'].saveModel()
 
