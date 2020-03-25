@@ -6,7 +6,6 @@ from game import Myretuen, Controller
 import sys
 import os
 from matplotlib import pyplot as plt
-import pandas as pd
 
 debuggerMode = len(sys.argv) != 1
 
@@ -14,7 +13,7 @@ if debuggerMode:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
-    Thename = sys.argv[-1]
+    Thename = sys.argv[10]
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs, minmax = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8])), bool(int(sys.argv[9]))
@@ -62,7 +61,8 @@ red = np.array([controller.agents['red'][0].rating] * len(controller.agents['red
 plt.plot(green, label=controller.agents['green'].name)
 plt.plot(red, label='RandomAgent')
 if debuggerMode:
-    pd.DataFrame([green, red]).to_csv(f"outputs/{Thename}/{nameOfRun}-Elo.csv")
+    a = np.array([green, red])
+    a.tofile(f"outputs/{Thename}/{nameOfRun}-Elo.csv", sep=', ', format=' % 10.5f')
 plt.ylim((700, 2000))
 plot('Elo-Rating', labels=True)
 
@@ -72,7 +72,8 @@ red = np.array([controller.agents['red'][0].rating] * NumberOfGames)
 plt.plot(np.arange(1, NumberOfGames + 1), green, label=controller.agents['green'].name)
 plt.plot(np.arange(1, NumberOfGames + 1), red, label='RandomAgent')
 if debuggerMode:
-    pd.DataFrame([green, red]).to_csv(f"outputs/{Thename}/{nameOfRun}-EloOverTime.csv")
+    a = np.array([green, red])
+    a.tofile(f"outputs/{Thename}/{nameOfRun}-EloOverTime.csv", sep=', ', format=' % 10.5f')
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((700, 2000))
