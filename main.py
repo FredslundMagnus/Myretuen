@@ -1,4 +1,4 @@
-from debug import debugger
+from debug import debugger, getvals
 import matplotlib
 import numpy as np
 from agents import *
@@ -13,14 +13,16 @@ if debuggerMode:
     nameOfRun = sys.argv[1]
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
-    Thename = sys.argv[-1]
+    Thename = sys.argv[10]
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs, minmax = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8])), bool(int(sys.argv[9]))
+    lossf, K, dropout, alpha, discount, lambd, lr = getvals(sys.argv[11:])
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax))
-    debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs, minmax)
+    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr)
+    controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False)), agent2=mainplayer)
+    debugger(nGames, addAgent, Thename, mainplayer)
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(NNAgent(lossf='MME', minmax=True)), agent2=NNAgent())
@@ -32,7 +34,7 @@ def plot(name, labels=False):
         plt.legend()
     plt.title(name)
     if debuggerMode:
-        plt.savefig(f'outputs/{Thename}/' + name + nameOfRun + '.png')
+        plt.savefig(f'outputs/{Thename}/{name}/' + nameOfRun + '.png')
         plt.clf()
     else:
         plt.show()
@@ -50,22 +52,32 @@ plot('Weights')
 print(parameters[:, -1])
 
 if debuggerMode:
-    controller.agents['green'].saveModel(name=nameOfRun, place=f'outputs/{Thename}/')
+    controller.agents['green'].saveModel(name=nameOfRun, place=f'outputs/{Thename}/trained/')
 else:
     controller.agents['green'].saveModel()
 
-plt.plot([agent.rating for agent in controller.agents['red'][1:]], label=controller.agents['green'].name)
-plt.plot([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]), label='RandomAgent')
+green = np.array([agent.rating for agent in controller.agents['red'][1:]])
+red = np.array([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]))
+plt.plot(green, label=controller.agents['green'].name)
+plt.plot(red, label='RandomAgent')
+if debuggerMode:
+    a = np.array([green, red])
+    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", a, delimiter=',', fmt='%d')
 plt.ylim((700, 2000))
-plot('Elo-Rating', labels=True)
+plot('Elo_Rating', labels=True)
 
 NumberOfGames = len(controller.agents['green'].EloWhileTrain)
-plt.plot(np.arange(1, NumberOfGames + 1), controller.agents['green'].EloWhileTrain, label=controller.agents['green'].name)
-plt.plot(np.arange(1, NumberOfGames + 1), [controller.agents['red'][0].rating] * NumberOfGames, label='RandomAgent')
+green = np.array(controller.agents['green'].EloWhileTrain)
+red = np.array([controller.agents['red'][0].rating] * NumberOfGames)
+plt.plot(np.arange(1, NumberOfGames + 1), green, label=controller.agents['green'].name)
+plt.plot(np.arange(1, NumberOfGames + 1), red, label='RandomAgent')
+if debuggerMode:
+    a = np.array([green, red])
+    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime.csv", a, delimiter=',', fmt='%d')
 plt.xlabel('Games played')
 plt.ylabel('Elo')
 plt.ylim((700, 2000))
-plot('Increase in Elo over time', labels=True)
+plot('Increase_in_Elo_over_time', labels=True)
 
 if debuggerMode:
     print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")

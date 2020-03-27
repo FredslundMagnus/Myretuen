@@ -7,6 +7,17 @@ import sys
 import time
 
 
+def getvals(args):
+    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005}
+    for i, s in enumerate(args):
+        if s in d:
+            try:
+                d[s] = float(args[i + 1])
+            except:
+                d[s] = args[i + 1]
+    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr']
+
+
 def print_title(self):
     print('           ncalls  tottime  percall  cumtime  percall', end=' ', file=self.stream)
     print('filename:lineno(function)', file=self.stream)
@@ -55,7 +66,8 @@ def print_stats(self, *amount):
     return self
 
 
-def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs, minmax):
+def debugger(nGames, addAgent, Thename, p):
+    explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
     end = time.time()
@@ -69,6 +81,14 @@ def debugger(nGames, addAgent, Thename, explore, doTrain, impala, calcprobs, min
     print(f'    Impala enabled :            {str(impala)}.')
     print(f'    Calcprobs enabled :         {str(calcprobs)}.')
     print(f'    Minimax enabled :           {str(minmax)}.')
+    print(f'    Lossfunction  :             {str(lossf)}.')
+    print(f'    Value of K :                {str(K)}.')
+    print(f'    Value of dropout :          {str(dropout)}.')
+    print(f'    Value of alpha :            {str(alpha)}.')
+    print(f'    Value of discount :         {str(discount)}.')
+    print(f'    Value of lambda :           {str(lambd)}.')
+    print(f'    Learningrate :              {str(lr)}.')
+
     print(f'    Time used :                 {int((end-start)//60)} minutes.\n')
     print(f"# Profiling\n")
     p = pstats.Stats('stats')

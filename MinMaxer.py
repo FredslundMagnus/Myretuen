@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=4, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
+    def __init__(self, value, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -43,7 +43,7 @@ class MinMaxCalculate():
             chances = self.softmax(np.array(values) / temp)
 
             for i in range(limitedactions):
-                chances = chances/sum(chances)
+                chances = chances / sum(chances)
                 replacer = np.random.choice(len(chances), 1, p=chances)[0]
                 chances[replacer] = 2.05623357236e-296
                 candidate_values[i] = values[replacer]

@@ -10,11 +10,11 @@ import copy
 
 class Agent():
 
-    def choose(self, actions, K=250):
+    def choose(self, actions):
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
-                temp = K / self.gameNumber if K is not None else 1
+                temp = self.K / self.gameNumber if self.K is not None else 1
                 states = []
                 values = []
                 for action in actions:
@@ -78,7 +78,7 @@ class Agent():
     def value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, name):
+    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1200, None
         self.ImpaleIsActivated = impala
         self.impala = Impala(self.train, self.resettrace)
@@ -89,6 +89,7 @@ class Agent():
         self.minimaxi = minmax
         self.NextbestAction = []
         self.lossf = lossf
+        self.K, self.dropout, self.alpha, self.discount, self.lambd, self.lr = K, dropout, alpha, discount, lambd, lr
 
     def resetGame(self):
         try:
