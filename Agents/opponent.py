@@ -1,4 +1,5 @@
 import random
+import numpy as np
 from copy import deepcopy
 
 
@@ -10,9 +11,10 @@ def incrementalChooser(obj):
     obj.i = (obj.i + 1) % len(obj.agents)
     return obj.agents[obj.i]
 
+
 def weightedChooser(obj):
-    p = np.arange(1,len(obj.agents)+1)
-    obj.i = np.random.choice(obj.agents, 1, p=p/sum(p))
+    p = np.arange(1, len(obj.agents) + 1)
+    obj.i = np.random.choice(obj.agents, 1, p=p / sum(p))
     return obj.agents[obj.i]
 
 
