@@ -42,23 +42,22 @@ class MinMaxCalculate():
                     values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
             chances = self.softmax(np.array(values) / temp)
 
+            replacer = np.random.choice(len(chances), limitedactions, p=chances, replace=False)
             for i in range(limitedactions):
-                chances = chances / sum(chances)
-                replacer = np.random.choice(len(chances), 1, p=chances)[0]
-                chances[replacer] = 2.05623357236e-296
-                candidate_values[i] = values[replacer]
-                canditate_actions[i] = actionss[replacer]
-                canditate_probs[i] = states[replacer][0][2]
+                #print(values, replacer, candidate_values)
+                candidate_values[i] = values[replacer[i]]
+                canditate_actions[i] = actionss[replacer[i]]
+                canditate_probs[i] = states[replacer[i]][0][2]
                 if fakegame.currentPlayer == self.game.currentPlayer:
-                    if len(states[replacer]) == 1:
-                        canditate_rewards[i] = [states[replacer][0][3], None]
+                    if len(states[replacer[i]]) == 1:
+                        canditate_rewards[i] = [states[replacer[i]][0][3], None]
                     else:
-                        canditate_rewards[i] = [states[replacer][0][3], states[replacer][1][3]]
+                        canditate_rewards[i] = [states[replacer[i]][0][3], states[replacer[i]][1][3]]
                 else:
-                    if len(states[replacer]) == 1:
-                        canditate_rewards[i] = [-states[replacer][0][3], None]
+                    if len(states[replacer[i]]) == 1:
+                        canditate_rewards[i] = [-states[replacer[i]][0][3], None]
                     else:
-                        canditate_rewards[i] = [-states[replacer][0][3], -states[replacer][1][3]]
+                        canditate_rewards[i] = [-states[replacer[i]][0][3], -states[replacer[i]][1][3]]
         else:
             for action in actionss:
                 state = self.state(fakegame, action)
