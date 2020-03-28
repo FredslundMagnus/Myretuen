@@ -1,4 +1,5 @@
 import random
+import numpy as np
 from copy import deepcopy
 
 
@@ -11,8 +12,14 @@ def incrementalChooser(obj):
     return obj.agents[obj.i]
 
 
+def weightedChooser(obj):
+    p = np.arange(1, len(obj.agents) + 1)
+    obj.i = np.random.choice(obj.agents, 1, p=p / sum(p))
+    return obj.agents[obj.i]
+
+
 class Opponent():
-    def __init__(self, agents, chooser=randomChooser):
+    def __init__(self, agents, chooser=weightedChooser):
         if not isinstance(agents, list):
             agents = [agents]
         self.agents = agents
