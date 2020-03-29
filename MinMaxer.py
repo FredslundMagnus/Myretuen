@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=4, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
+    def __init__(self, value, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03, explore=True, K=250, calcprobs=True):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -15,23 +15,26 @@ class MinMaxCalculate():
         self.ProbabilityCutOff = ProbabilityCutOff
         self.Move = Move
         self.value = value
+        self.explore = explore
+        self.calcprobs = calcprobs
+        self.K = K
 
-    def DeepSearch(self, game, gamenumber, calcprobs=True):
+    def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
-        self.calcprobs = calcprobs
+
         fakegame = copy.deepcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
-    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True, explore=False, K=None):
+    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs = [[None, None]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions
         self.env = fakegame
 
-        if explore == True and actionss != []:
-            temp = K / self.gameNumber if K is not None else 1
+        if self.explore == True and actionss != []:
+            temp = self.K / self.gameNumber if self.K is not None else 1
             states = []
             values = []
             for action in actionss:

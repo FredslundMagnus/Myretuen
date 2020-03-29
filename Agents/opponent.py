@@ -19,7 +19,7 @@ def weightedChooser(obj):
 
 
 class Opponent():
-    def __init__(self, agents, chooser=weightedChooser):
+    def __init__(self, agents, chooser=randomChooser):
         if not isinstance(agents, list):
             agents = [agents]
         self.agents = agents

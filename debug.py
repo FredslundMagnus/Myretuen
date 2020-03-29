@@ -8,14 +8,14 @@ import time
 
 
 def getvals(args):
-    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005}
+    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03, '-historyLength': 20, '-startAfterNgames': 20, '-batchSize': 20, '-sampleLenth': 5}
     for i, s in enumerate(args):
         if s in d:
             try:
                 d[s] = float(args[i + 1])
             except:
                 d[s] = args[i + 1]
-    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr']
+    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr'], d['-chooserfunction'], d['-TopNvalues'], d['-cutOffdepth'], d['-ValueCutOff'], d['-ValueDiffCutOff'], d['-ProbabilityCutOff'], d['-historyLength'], d['-startAfterNgames'], d['-batchSize'], d['-sampleLenth']
 
 
 def print_title(self):
@@ -66,7 +66,7 @@ def print_stats(self, *amount):
     return self
 
 
-def debugger(nGames, addAgent, Thename, p):
+def debugger(nGames, addAgent, Thename, p, chooserfunction):
     explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
@@ -75,21 +75,32 @@ def debugger(nGames, addAgent, Thename, p):
     print(f"# Parameters for {Thename}\n")
     print(f"    Use the agent :             {sys.argv[4]}.")
     print(f"    Play for :                  {nGames} games.")
-    print(f"    Add Agent every :           {addAgent} game.")
+    print(f"      Add Agent every :         {addAgent} game.")
     print(f'    Explore enabled :           {str(explore)}.')
+    print(f'      K :                       {str(K)}.')
+    print(f'      Dropout :                 {str(dropout)}.')
     print(f'    DoTrain enabled :           {str(doTrain)}.')
+    print(f'      Lossfunction  :           {str(lossf)}.')
+    print(f'      Value of alpha :          {str(alpha)}.')
+    print(f'      Value of discount :       {str(discount)}.')
+    print(f'      Value of lambda :         {str(lambd)}.')
+    print(f'      Learningrate :            {str(lr)}.')
     print(f'    Impala enabled :            {str(impala)}.')
-    print(f'    Calcprobs enabled :         {str(calcprobs)}.')
+    print(f'      historyLength :           {str(p.historyLength)}.')
+    print(f'      startAfterNgames :        {str(p.startAfterNgames)}.')
+    print(f'      batchSize :               {str(p.batchSize)}.')
+    print(f'      sampleLenth :             {str(p.sampleLenth)}.')
     print(f'    Minimax enabled :           {str(minmax)}.')
-    print(f'    Lossfunction  :             {str(lossf)}.')
-    print(f'    Value of K :                {str(K)}.')
-    print(f'    Value of dropout :          {str(dropout)}.')
-    print(f'    Value of alpha :            {str(alpha)}.')
-    print(f'    Value of discount :         {str(discount)}.')
-    print(f'    Value of lambda :           {str(lambd)}.')
-    print(f'    Learningrate :              {str(lr)}.')
+    print(f'      TopNvalues :              {str(p.TopNvalues)}.')
+    print(f'      cutOffdepth :             {str(p.cutOffdepth)}.')
+    print(f'      ValueCutOff :             {str(p.ValueCutOff)}.')
+    print(f'      ValueDiffCutOff :         {str(p.ValueDiffCutOff)}.')
+    print(f'      ProbabilityCutOff :       {str(p.ProbabilityCutOff)}.')
+    print(f'    Calcprobs enabled :         {str(calcprobs)}.')
+    print(f'    Chooserfunction :           {str(chooserfunction)}.')
 
-    print(f'    Time used :                 {int((end-start)//60)} minutes.\n')
+    print(f'    Minutes used :              {int((end-start)//60)} minutes.\n')
+    print(f'    Hours used :                {int((end-start)//3600)} minutes.\n')
     print(f"# Profiling\n")
     p = pstats.Stats('stats')
     p.print_stats = print_stats

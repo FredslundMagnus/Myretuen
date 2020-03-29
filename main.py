@@ -14,15 +14,16 @@ if debuggerMode:
     nGames = int(sys.argv[2])
     addAgent = int(sys.argv[3])
     Thename = sys.argv[10]
+    chooserfunctions = {'randomChooser': randomChooser, 'incrementalChooser': incrementalChooser, 'weightedChooser': weightedChooser}
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs, minmax = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8])), bool(int(sys.argv[9]))
-    lossf, K, dropout, alpha, discount, lambd, lr = getvals(sys.argv[11:])
+    lossf, K, dropout, alpha, discount, lambd, lr, chooserfunction, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth = getvals(sys.argv[11:])
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
-    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr)
-    controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False)), agent2=mainplayer)
-    debugger(nGames, addAgent, Thename, mainplayer)
+    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr, TopNvalues=TopNvalues, cutOffdepth=cutOffdepth, ValueCutOff=ValueCutOff, ValueDiffCutOff=ValueDiffCutOff, ProbabilityCutOff=ProbabilityCutOff, historyLength=historyLength, startAfterNgames=startAfterNgames, batchSize=batchSize, sampleLenth=sampleLenth)
+    controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False), chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
+    debugger(nGames, addAgent, Thename, mainplayer, chooserfunction)
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent())
