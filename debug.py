@@ -8,14 +8,14 @@ import time
 
 
 def getvals(args):
-    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005}
+    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser'}
     for i, s in enumerate(args):
         if s in d:
             try:
                 d[s] = float(args[i + 1])
             except:
                 d[s] = args[i + 1]
-    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr']
+    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr'], d['-chooserfunction']
 
 
 def print_title(self):
@@ -66,7 +66,7 @@ def print_stats(self, *amount):
     return self
 
 
-def debugger(nGames, addAgent, Thename, p):
+def debugger(nGames, addAgent, Thename, p, chooserfunction):
     explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
@@ -88,6 +88,7 @@ def debugger(nGames, addAgent, Thename, p):
     print(f'    Value of discount :         {str(discount)}.')
     print(f'    Value of lambda :           {str(lambd)}.')
     print(f'    Learningrate :              {str(lr)}.')
+    print(f'    Chooserfunction :           {str(chooserfunction)}.')
 
     print(f'    Time used :                 {int((end-start)//60)} minutes.\n')
     print(f"# Profiling\n")
