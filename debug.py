@@ -8,14 +8,14 @@ import time
 
 
 def getvals(args):
-    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03}
+    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03, '-historyLength': 20, '-startAfterNgames': 20, '-batchSize': 20, '-sampleLenth': 5}
     for i, s in enumerate(args):
         if s in d:
             try:
                 d[s] = float(args[i + 1])
             except:
                 d[s] = args[i + 1]
-    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr'], d['-chooserfunction'], d['-TopNvalues'], d['-cutOffdepth'], d['-ValueCutOff'], d['-ValueDiffCutOff'], d['-ProbabilityCutOff']
+    return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr'], d['-chooserfunction'], d['-TopNvalues'], d['-cutOffdepth'], d['-ValueCutOff'], d['-ValueDiffCutOff'], d['-ProbabilityCutOff'], d['-historyLength'], d['-startAfterNgames'], d['-batchSize'], d['-sampleLenth']
 
 
 def print_title(self):

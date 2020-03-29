@@ -83,7 +83,7 @@ class Agent():
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = historyLength, startAfterNgames, batchSize, sampleLenth
-            self.impala = Impala(self.train, self.resettrace, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5)
+            self.impala = Impala(self.train, self.resettrace, historyLength=self.historyLength, startAfterNgames=self.startAfterNgames, batchSize=self.batchSize, sampleLenth=self.sampleLenth)
         else:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = None, None, None, None
         self.EloWhileTrain = []
