@@ -18,10 +18,10 @@ if debuggerMode:
     agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs, minmax = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8])), bool(int(sys.argv[9]))
-    lossf, K, dropout, alpha, discount, lambd, lr, chooserfunction = getvals(sys.argv[11:])
+    lossf, K, dropout, alpha, discount, lambd, lr, chooserfunction, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff = getvals(sys.argv[11:])
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen()
-    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr)
+    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr, TopNvalues=TopNvalues, cutOffdepth=cutOffdepth, ValueCutOff=ValueCutOff, ValueDiffCutOff=ValueDiffCutOff, ProbabilityCutOff=ProbabilityCutOff)
     controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False), chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction)
 else:
