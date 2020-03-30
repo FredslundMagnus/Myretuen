@@ -102,6 +102,7 @@ class Agent():
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
 
     def resetGame(self):
+        print(self.rating)
         try:
             li = []
             for item in [list(p.data.numpy().reshape(-1)) for p in self.phi.parameters()]:

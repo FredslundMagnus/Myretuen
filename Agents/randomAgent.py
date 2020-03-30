@@ -7,11 +7,11 @@ class RandomAgent(Agent):
         self.setup(False, False, False, calcprobs, minmax, None, None, None, None, None, None, None, 'RandomAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth)
         self.rating = 1000
 
-    def choose(self, actions):
-        if len(actions) != 0:
-            action = random.choice(actions)
-            return action
-        return None
+    # def choose(self, actions):
+    #     if len(actions) != 0:
+    #         action = random.choice(actions)
+    #         return action
+    #     return None
 
     def resetGame(self):
         self.rating = 1000
