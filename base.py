@@ -19,6 +19,7 @@ class Base():
         self.distBases = {}
         self.dist_to_targets = []
         self.dist_to_all = {}
+        self.homeSquares = None
 
     def __str__(self):
         return f"Base({self.color.capitalize()})"

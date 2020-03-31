@@ -14,9 +14,9 @@ def drawAntAtPos(ant, pos, win):
     img = pygame.image.load(
         f'UI/Ants/Ant{ant.color}.png').convert_alpha()
     win.blit(pygame.transform.scale(
-        pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*scale, 15*scale)), ((pos[0]+2*scale), (pos[1]+2*scale)))
+        pygame.transform.smoothscale(img, (15 * scale, 15 * scale)), (15 * scale, 15 * scale)), ((pos[0] + 2 * scale), (pos[1] + 2 * scale)))
     x, y = pos
-    centerText(5*scale, ant.id[-1], colors[ant.color], (x+scale*14, y+scale*6), 0, win)
+    centerText(5 * scale, ant.id[-1], colors[ant.color], (x + scale * 14, y + scale * 6), 0, win)
 
 
 def centerText(size, text, color, position, rotation, win):
@@ -28,13 +28,13 @@ def centerText(size, text, color, position, rotation, win):
 
 
 def square(x, y, size, scale):
-    rect = pygame.Rect(x*scale, y*scale, size*scale, size*scale)
-    border = pygame.Rect((x-1)*scale, (y-1)*scale,
-                         (size+2)*scale, (size+2)*scale)
-    shadow1 = pygame.Rect((x-10)*scale, (y-10)*scale,
-                          (size+20)*scale, (size+20)*scale)
-    shadow2 = pygame.Rect((x-3)*scale, (y-3)*scale,
-                          (size+6)*scale, (size+6)*scale)
+    rect = pygame.Rect(x * scale, y * scale, size * scale, size * scale)
+    border = pygame.Rect((x - 1) * scale, (y - 1) * scale,
+                         (size + 2) * scale, (size + 2) * scale)
+    shadow1 = pygame.Rect((x - 10) * scale, (y - 10) * scale,
+                          (size + 20) * scale, (size + 20) * scale)
+    shadow2 = pygame.Rect((x - 3) * scale, (y - 3) * scale,
+                          (size + 6) * scale, (size + 6) * scale)
     return (rect, border, shadow1, shadow2)
 
 
@@ -50,7 +50,7 @@ class Dice():
         img = pygame.image.load(
             f'UI/Terninger/Terning{self.number}.png').convert_alpha()
         self.win.blit(pygame.transform.rotate(pygame.transform.scale(
-            pygame.transform.smoothscale(img, (15*scale, 15*scale)), (15*self.scale, 15*self.scale)), self.rotation), ((self.x+2)*self.scale, (self.y+2)*self.scale))
+            pygame.transform.smoothscale(img, (15 * scale, 15 * scale)), (15 * self.scale, 15 * self.scale)), self.rotation), ((self.x + 2) * self.scale, (self.y + 2) * self.scale))
 
 
 class Base():
@@ -67,20 +67,22 @@ class Base():
         self.homeChange = base.homeChange
         self.antsN = len(base.home)
         base.rect = self.rect
-
-        self.homeSquares = []
-        for i in range(self.antsN):
-            x, y = self.homePos
-            xadd, yadd = self.homeChange
-            if i % 4 == 0:
-                adder = -5 if xadd > 0 else 5
-            elif i % 4 == 2:
-                adder = 5 if xadd > 0 else -5
-            else:
-                adder = 0
-            self.homeSquares.append(square(
-                x + xadd*i, y + yadd*i + adder, 19, scale))
-        base.homeSquares = self.homeSquares
+        if base.homeSquares is None:
+            self.homeSquares = []
+            for i in range(self.antsN):
+                x, y = self.homePos
+                xadd, yadd = self.homeChange
+                if i % 4 == 0:
+                    adder = -5 if xadd > 0 else 5
+                elif i % 4 == 2:
+                    adder = 5 if xadd > 0 else -5
+                else:
+                    adder = 0
+                self.homeSquares.append(square(
+                    x + xadd * i, y + yadd * i + adder, 19, scale))
+            base.homeSquares = self.homeSquares
+        else:
+            self.homeSquares = base.homeSquares
 
     def draw(self, borderColor=(0, 0, 0)):
         pygame.draw.rect(self.win, borderColor, self.border)
@@ -145,10 +147,10 @@ class Field():
         if self.special == 'Flag':
             img = pygame.image.load('UI/flag.png').convert_alpha()
             self.win.blit(pygame.transform.rotate(pygame.transform.scale(
-                img, (15*self.scale, 15*self.scale)), self.rotation), ((self.x+2)*self.scale, (self.y+2)*self.scale))
+                img, (15 * self.scale, 15 * self.scale)), self.rotation), ((self.x + 2) * self.scale, (self.y + 2) * self.scale))
 
         if self.special == 'Start':
-            centerText(7*self.scale, 'Start', (0, 0, 0),
+            centerText(7 * self.scale, 'Start', (0, 0, 0),
                        self.rect.center, self.rotation, self.win)
 
     def shadowDraw1(self):
@@ -212,14 +214,14 @@ def addRect(game):
             else:
                 adder = 0
             homeSquares.append(square(
-                x + xadd*i, y + yadd*i + adder, 19, scale))
+                x + xadd * i, y + yadd * i + adder, 19, scale))
         base.homeSquares = homeSquares
 
 
 def drawBackground(fields=[], diceHolder=None, bases=[]):
 
     pygame.init()
-    size = (390*scale, 390*scale)
+    size = (390 * scale, 390 * scale)
     win = pygame.display.set_mode(size)
     pygame.display.set_caption(" Myretuen")
     programIcon = pygame.image.load('UI/Ants/Antgreen.png')
@@ -243,7 +245,7 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     pygame.display.update()
     pygame.image.save(win, "temp.jpeg")
     img = Image.open('temp.jpeg').filter(
-        ImageFilter.GaussianBlur(radius=5*scale))
+        ImageFilter.GaussianBlur(radius=5 * scale))
     img.save('temp2.jpeg')
     background = pygame.image.load('temp2.jpeg')
 
@@ -273,7 +275,7 @@ def updateScreen(background, win, game=None, connection=None):
                         if (field.rect.collidepoint(event.pos)):
                             isHovering = True
                             x, y = event.pos
-                            pos = (x + 10*scale, y - 10*scale)
+                            pos = (x + 10 * scale, y - 10 * scale)
                             idd = field.id
                             isHoveringOn = Field(field, scale, win)
                             break
@@ -281,7 +283,7 @@ def updateScreen(background, win, game=None, connection=None):
                         if (field.rect.collidepoint(event.pos)):
                             isHovering = True
                             x, y = event.pos
-                            pos = (x + 10*scale, y - 10*scale)
+                            pos = (x + 10 * scale, y - 10 * scale)
                             idd = field.id
                             isHoveringOn = Base(field, scale, win)
                             break
@@ -316,23 +318,22 @@ def updateScreen(background, win, game=None, connection=None):
 
             for _, base in game.bases.items():
 
-                centerText(22*scale, str(len(base.captured)),
+                centerText(22 * scale, str(len(base.captured)),
                            (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
 
                 for i, ant in enumerate(base.home):
-                    drawAntAtPos(
-                        ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
+                    drawAntAtPos(ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
 
             for _, field in game.fields.items():
                 for i, ant in enumerate(field.ants):
-                    drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390-scale/2)),
-                                       int(field.rect.y + 3 * i * (field.rect.center[1] / 390-scale/2))), win)
+                    drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390 - scale / 2)),
+                                       int(field.rect.y + 3 * i * (field.rect.center[1] / 390 - scale / 2))), win)
 
             if isHovering:
-                centerText(12*scale, idd, (0, 0, 0), pos, 0, win)
+                centerText(12 * scale, idd, (0, 0, 0), pos, 0, win)
 
             pygame.display.update()
-            pygame.time.delay(round(1000/60))
+            pygame.time.delay(round(1000 / 60))
 
         except:
             pass
