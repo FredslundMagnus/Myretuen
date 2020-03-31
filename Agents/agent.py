@@ -33,6 +33,7 @@ class Agent():
                 valueMax = -float('inf')
                 bestAction = None
                 for action in actions:
+                    print(action)
                     state = self.state(self.env, action)
                     if len(state) == 1:
                         value = self.value(state[0]) + state[0][3]
@@ -181,6 +182,7 @@ class Agent():
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             else:
                 GetProbabilityOfEat = []
+            print(antsUnderGlobal, disttoantsGlobal, GetProbabilityOfEat, ant.id)
             kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
@@ -203,7 +205,6 @@ class Agent():
 
         if action == None or ants2 == [None]:
             return [Antstate1]
-
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
         for ant2 in ants2:
@@ -237,7 +238,9 @@ class Agent():
                 if ant2.isAlive == True:
                     if ant2.position.type != 'Base':
                         dis = ant.position.dist_to_all[ant2.position.id]
-                        ants[i % n] = 3 if dis < 7 else 2 if dis < 13 else 1
+                    else:
+                        dis = ant.position.distBases[ant2.color][0]
+                    ants[i % n] = 4 if dis < 3 else 3 if dis < 7 else 2 if dis < 13 else 1
         return ants
 
     def antsUnderAnts(self):
