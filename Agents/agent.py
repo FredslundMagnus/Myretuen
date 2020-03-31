@@ -33,7 +33,7 @@ class Agent():
                 valueMax = -float('inf')
                 bestAction = None
                 for action in actions:
-                    print(action)
+                    #print(action)
                     state = self.state(self.env, action)
                     if len(state) == 1:
                         value = self.value(state[0]) + state[0][3]
@@ -249,6 +249,8 @@ class Agent():
         for i, ant in enumerate(self.currentAnts):
             if ant.isAlive == True:
                 if ant.position.type != 'Base':
+                    # if sum(val for _, val in ant.antsUnderMe.items()) != 0:
+                    #     print(sum(val for _, val in ant.antsUnderMe.items()))
                     ants[ant.color][i % n] = sum(val for _, val in ant.antsUnderMe.items())
         return ants
 

@@ -153,7 +153,6 @@ class Move():
                     moving.append(ant)
                 if ant.id == self.start.ants[-1].id:
                     theAnt = ant
-
         if theAnt.color != self.game.player1:
             probofstate = self.game.prob.probmatrix[int(self.end.ants[-1].id[-1]), int(theAnt.id[-1])]
         else:
@@ -263,6 +262,6 @@ class SimpleAnt():
         self.id = idd
         self.isAlive = isAlive
         self.flipped = flipped
-        self.antsUnderMe = antsUnderMe
+        self.antsUnderMe = antsUnderMe.copy()
         self.dieJustUsedInSimulation = dieJustUsedInSimulation
         self.probcapture = probcapture
