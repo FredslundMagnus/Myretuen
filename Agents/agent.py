@@ -160,13 +160,15 @@ class Agent():
         return ant.position.distBases[ant.color]
 
     def currentScore(self, ant):
-        score = [0, 0, 0]
+        score = [0, 0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
             score[int(ant.color == color)] = val
         if score[0] > score[1]:
             score[2] = 1
         elif score[0] < score[1]:
             score[2] = -1
+        if self.env.maxRolls - self.env.dicesThatHaveBeenRolled < 50:
+            score[3] = 1
         return score
 
     def antState(self, ant):

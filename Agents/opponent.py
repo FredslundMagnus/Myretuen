@@ -14,6 +14,8 @@ def incrementalChooser(obj):
 
 def weightedChooser(obj):
     p = np.arange(1, len(obj.agents) + 1)
+    if len(obj.agents) < 5:
+        p = p[::-1]
     agent = np.random.choice(obj.agents, 1, p=p / sum(p))[0]
     return agent
 

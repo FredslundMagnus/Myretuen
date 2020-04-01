@@ -135,7 +135,7 @@ class Myretuen(gym.Env):
             self.totalScore[self.player2] += 1
         else:
             self.totalScore['Tie'] += 1
-        Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
+        Elo(agents[self.player2], agents[self.player1], winStatus[self.player2], K=(100000000/(self.nGamePlay+1))**(1/4))
 
         self.wins.append(winStatus[self.player2])
 
