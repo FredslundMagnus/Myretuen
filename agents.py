@@ -38,5 +38,5 @@ def weightedChooser(obj, *args, **kwargs):
     return _weightedChooser(obj, *args, **kwargs)
 
 
-def Opponent(agents, chooser=randomChooser, *args, **kwargs):
+def Opponent(agents, chooser=weightedChooser, *args, **kwargs):
     return _Opponent(agents, chooser=chooser, *args, **kwargs)

@@ -11,7 +11,7 @@ from elo import Elo
 
 
 class Myretuen(gym.Env):
-    def __init__(self, winNumber=10, maxRolls=500):
+    def __init__(self, winNumber=10, maxRolls=300):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
