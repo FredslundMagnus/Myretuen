@@ -138,7 +138,6 @@ class Myretuen(gym.Env):
         Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
 
         self.wins.append(winStatus[self.player2])
-        print(self.wins)
 
         self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
         #self.Runningwinrate = (self.totalScore[self.player2] + self.totalScore['Tie']/2) / (self.totalScore[self.player2] + self.totalScore['Tie'] + self.totalScore[self.player1])
