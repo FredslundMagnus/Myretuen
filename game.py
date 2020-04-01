@@ -11,7 +11,7 @@ from elo import Elo
 
 
 class Myretuen(gym.Env):
-    def __init__(self, winNumber=7, maxRolls=500):
+    def __init__(self, winNumber=10, maxRolls=500):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
@@ -138,8 +138,9 @@ class Myretuen(gym.Env):
         Elo(agents[self.player2], agents[self.player1], winStatus[self.player2])
 
         self.wins.append(winStatus[self.player2])
+        print(self.wins)
 
-        self.Runningwinrate = (sum(self.wins[-104:-4]) + sum(self.wins[-103:-3]) + sum(self.wins[-102:-2]) + sum(self.wins[-101:-1]) + sum(self.wins[-100:])) / (len(self.wins[-104:-4]) + len(self.wins[-103:-3]) + len(self.wins[-102:-2]) + len(self.wins[-101:-1]) + len(self.wins[-100:]))
+        self.Runningwinrate = sum(self.wins[-100:])/len(self.wins[-100:])
         #self.Runningwinrate = (self.totalScore[self.player2] + self.totalScore['Tie']/2) / (self.totalScore[self.player2] + self.totalScore['Tie'] + self.totalScore[self.player1])
         return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {self.getCurrentScore()},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
