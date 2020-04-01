@@ -33,6 +33,7 @@ class Agent():
                 valueMax = -float('inf')
                 bestAction = None
                 for action in actions:
+                    #print(action)
                     state = self.state(self.env, action)
                     if len(state) == 1:
                         value = self.value(state[0]) + state[0][3]
@@ -78,20 +79,31 @@ class Agent():
     def value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name):
+    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
         self.ImpaleIsActivated = impala
-        self.impala = Impala(self.train, self.resettrace)
+        if self.ImpaleIsActivated:
+            self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = historyLength, startAfterNgames, batchSize, sampleLenth
+            self.impala = Impala(self.train, self.resettrace, historyLength=self.historyLength, startAfterNgames=self.startAfterNgames, batchSize=self.batchSize, sampleLenth=self.sampleLenth)
+        else:
+            self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = None, None, None, None
         self.EloWhileTrain = []
         self.name = name
         self.gameNumber = 1
-        self.minmaxer = MinMaxCalculate(self.value)
-        self.minimaxi = minmax
+        self.K, self.dropout, self.alpha, self.discount, self.lambd, self.lr = K, dropout, alpha, discount, lambd, lr
+        if not self.explore:
+            self.K = None
         self.NextbestAction = []
         self.lossf = lossf
-        self.K, self.dropout, self.alpha, self.discount, self.lambd, self.lr = K, dropout, alpha, discount, lambd, lr
+        self.minimaxi = minmax
+        if self.minimaxi:
+            self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff
+            self.minmaxer = MinMaxCalculate(self.value, TopNvalues=self.TopNvalues, cutOffdepth=self.cutOffdepth, ValueCutOff=self.ValueCutOff, ValueDiffCutOff=self.ValueDiffCutOff, ProbabilityCutOff=self.ProbabilityCutOff, explore=self.explore, K=self.K, calcprobs=self.calcprobs)
+        else:
+            self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
 
     def resetGame(self):
+        print(self.rating)
         try:
             li = []
             for item in [list(p.data.numpy().reshape(-1)) for p in self.phi.parameters()]:
@@ -148,9 +160,13 @@ class Agent():
         return ant.position.distBases[ant.color]
 
     def currentScore(self, ant):
-        score = [0, 0]
+        score = [0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
             score[int(ant.color == color)] = val
+        if score[0] > score[1]:
+            score[2] = 1
+        elif score[0] < score[1]:
+            score[2] = -1
         return score
 
     def antState(self, ant):
@@ -192,7 +208,6 @@ class Agent():
 
         if action == None or ants2 == [None]:
             return [Antstate1]
-
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
         for ant2 in ants2:
@@ -226,7 +241,9 @@ class Agent():
                 if ant2.isAlive == True:
                     if ant2.position.type != 'Base':
                         dis = ant.position.dist_to_all[ant2.position.id]
-                        ants[i % n] = 3 if dis < 7 else 2 if dis < 13 else 1
+                    else:
+                        dis = ant.position.distBases[ant2.color][0]
+                    ants[i % n] = 4 if dis < 3 else 3 if dis < 7 else 2 if dis < 13 else 1
         return ants
 
     def antsUnderAnts(self):
@@ -235,6 +252,8 @@ class Agent():
         for i, ant in enumerate(self.currentAnts):
             if ant.isAlive == True:
                 if ant.position.type != 'Base':
+                    # if sum(val for _, val in ant.antsUnderMe.items()) != 0:
+                    #     print(sum(val for _, val in ant.antsUnderMe.items()))
                     ants[ant.color][i % n] = sum(val for _, val in ant.antsUnderMe.items())
         return ants
 

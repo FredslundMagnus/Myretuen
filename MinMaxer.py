@@ -7,7 +7,7 @@ from Probability_function import Probability_calculator
 
 
 class MinMaxCalculate():
-    def __init__(self, value, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=1000, calcprobs=True):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -15,23 +15,25 @@ class MinMaxCalculate():
         self.ProbabilityCutOff = ProbabilityCutOff
         self.Move = Move
         self.value = value
+        self.explore = explore
+        self.calcprobs = calcprobs
+        self.K = K
 
-    def DeepSearch(self, game, gamenumber, calcprobs=True):
+    def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
-        self.calcprobs = calcprobs
         fakegame = copy.deepcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
-    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True, explore=True, K=250):
+    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs = [[None, None]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions
         self.env = fakegame
 
-        if explore == True and actionss != []:
-            temp = K / self.gameNumber if K is not None else 1
+        if self.explore == True and actionss != []:
+            temp = self.K / self.gameNumber if self.K is not None else 1
             states = []
             values = []
             for action in actionss:
@@ -44,7 +46,6 @@ class MinMaxCalculate():
 
             replacer = np.random.choice(len(chances), limitedactions, p=chances, replace=False)
             for i in range(limitedactions):
-                #print(values, replacer, candidate_values)
                 candidate_values[i] = values[replacer[i]]
                 canditate_actions[i] = actionss[replacer[i]]
                 canditate_probs[i] = states[replacer[i]][0][2]
@@ -85,6 +86,13 @@ class MinMaxCalculate():
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(None)
             return Proba * (rewardtrace - 3 * len(self.game.ants) / 2 + 10) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 3 * len(self.game.ants) / 2 + 10)
+        # for i in range(len(canditate_actions)):
+        #     print(canditate_actions[i], end=' ')
+        #     print(canditate_probs[i], end=' ')
+        #     print(canditate_rewards[i], end=' ')
+        #     print(candidate_values[i], end=' ')
+        #     print(' ')
+        # print(Proba)
 
         # Remove values worse than ValueDifference
         candi_sorted = candidate_values.copy()
