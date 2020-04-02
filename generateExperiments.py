@@ -3,7 +3,7 @@ file = open('experiments.sh', 'w')
 file.write('#!/bin/sh\n')
 
 
-def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, calcprobs, minmax, n, lossf=None, K=None, dropout=None, alpha=None, discount=None, lambd=None, lr=None, chooserfunction=None, TopNvalues=None, cutOffdepth=None, ValueCutOff=None, ValueDiffCutOff=None, ProbabilityCutOff=None, historyLength=None, startAfterNgames=None, batchSize=None, sampleLenth=None):
+def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, calcprobs, minmax, n=10, lossf=None, K=None, dropout=None, alpha=None, discount=None, lambd=None, lr=None, chooserfunction=None, TopNvalues=None, cutOffdepth=None, ValueCutOff=None, ValueDiffCutOff=None, ProbabilityCutOff=None, historyLength=None, startAfterNgames=None, batchSize=None, sampleLenth=None):
     file.write(f"mkdir outputs/{name}\n")
     file.write(f"mkdir outputs/{name}/csv\n")
     file.write(f"mkdir outputs/{name}/trained\n")
@@ -15,7 +15,18 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
         file.write(f'bsub -o "outputs/{name}/{agent}{str(i)}{name}.md" -J "{agent}{str(i)}{name}" -P "{agent}{str(i)}{name} {gameLength} {adAgent} {agent} {int(explore)} {int(doTrain)} {int(impala)} {int(calcprobs)} {int(minmax)} {name}{" -lossf " + str(lossf) if lossf is not None else ""}{" -K " + str(K) if K is not None else ""}{" -dropout " + str(dropout) if dropout is not None else ""}{" -alpha " + str(alpha) if alpha is not None else ""}{" -discount " + str(discount) if discount is not None else ""}{" -lambda " + str(lambd) if lambd is not None else ""}{" -lr " + str(lr) if lr is not None else ""}{" -chooserfunction " + str(chooserfunction) if chooserfunction is not None else ""}{" -TopNvalues " + str(TopNvalues) if TopNvalues is not None else ""}{" -cutOffdepth " + str(cutOffdepth) if cutOffdepth is not None else ""}{" -ValueCutOff " + str(ValueCutOff) if ValueCutOff is not None else ""}{" -ValueDiffCutOff " + str(ValueDiffCutOff) if ValueDiffCutOff is not None else ""}{" -ProbabilityCutOff " + str(ProbabilityCutOff) if ProbabilityCutOff is not None else ""}{" -historyLength " + str(historyLength) if historyLength is not None else ""}{" -startAfterNgames " + str(startAfterNgames) if startAfterNgames is not None else ""}{" -batchSize " + str(batchSize) if batchSize is not None else ""}{" -sampleLenth " + str(sampleLenth) if sampleLenth is not None else ""}" < submit.sh\n')
 
 
-genExperiments('test', 'NNAgent', 20, 10, True, True, True, True, False, 10, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
+genExperiments('Dis-1-lamd-1', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=1, lambd=1, lr=0.0002)
+genExperiments('Dis-1-lamd-0', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=1, lambd=0, lr=0.0002)
+genExperiments('Dis-0-lamd-1', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0, lambd=1, lr=0.0002)
+genExperiments('Dis-0-lamd-0', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0, lambd=0, lr=0.0002)
+
+genExperiments('calcprob-true', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
+genExperiments('calcprob-false', 'NNAgent', 2000, 10, True, True, True, False, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
+
+genExperiments('minmax-dept-2', 'NNAgent', 1000, 10, True, True, True, True, True, lossf='MME', K=1000, discount=0.995, lambd=0.9, lr=0.0002, TopNvalues=6, cutOffdepth=2)
+genExperiments('minmax-dept-1', 'NNAgent', 1000, 10, True, True, True, True, True, lossf='MME', K=1000, discount=0.995, lambd=0.9, lr=0.0002, TopNvalues=6, cutOffdepth=1)
+genExperiments('minmax-false', 'NNAgent', 1000, 10, True, True, True, True, False, lossf='MME', K=1000, discount=0.995, lambd=0.9, lr=0.0002)
+
 # genExperiments('K-2000-2000-NN', 'NNAgent', 2000, 10, True, True, True, True, False, 10, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
 # genExperiments('K-2000-2500-NN', 'NNAgent', 2500, 10, True, True, True, True, False, 10, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
 # genExperiments('K-2000-3000-NN', 'NNAgent', 3000, 10, True, True, True, True, False, 10, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
