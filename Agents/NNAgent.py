@@ -7,7 +7,7 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0, alpha=None, discount=0.995, lambd=0.9, lr=0.00005, TopNvalues=5, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=30, startAfterNgames=30, batchSize=30, sampleLenth=10):
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0.3, alpha=None, discount=0.995, lambd=0.9, lr=0.00005, TopNvalues=5, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=30, startAfterNgames=30, batchSize=30, sampleLenth=10):
         self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth)
 
     def value(self, infostate, return_float=True):
@@ -44,11 +44,11 @@ class Net(nn.Module):
     def __init__(self, inputN, dropout):
         super(Net, self).__init__()
         self.fc1 = nn.Linear(inputN, 50)
-        self.drop1 = nn.Dropout(dropout**(1 / 3))
+        self.drop1 = nn.Dropout(dropout**3)
         self.fc2 = nn.Linear(50, 25)
-        self.drop2 = nn.Dropout(dropout**(1 / 3))
+        self.drop2 = nn.Dropout(dropout**3)
         self.fc3 = nn.Linear(25, 10)
-        self.drop3 = nn.Dropout(dropout**(1 / 3))
+        self.drop3 = nn.Dropout(dropout**3)
         self.fc4 = nn.Linear(10, 10)
         self.fc5 = nn.Linear(10, 1)
 
