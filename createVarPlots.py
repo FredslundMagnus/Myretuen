@@ -55,6 +55,7 @@ for directory in subdirs:
             plt.title(f'{name} - Elo Rating')
             plt.xlabel('Players')
             plt.ylabel('Elo')
+            plt.savefig(f'plots/EloRating/' + f'{name}' + '.png')
             plt.savefig(f'outputs/{name}/' + f'{name} - Elo Rating' + '.png')
             plt.clf()
 
@@ -76,6 +77,7 @@ for directory in subdirs:
             plt.title(f'{name} - Elo Rating over Time')
             plt.xlabel('Games')
             plt.ylabel('Elo')
+            plt.savefig(f'plots/EloRatingOverTime/' + f'{name}' + '.png')
             plt.savefig(f'outputs/{name}/' + f'{name} - Elo Rating over Time' + '.png')
             plt.clf()
         Elo = None
