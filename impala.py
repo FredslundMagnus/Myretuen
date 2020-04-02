@@ -3,7 +3,7 @@ import random
 
 
 class Impala():
-    def __init__(self, trainFunktion, resetFunktion, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5):
+    def __init__(self, trainFunktion, resetFunktion, historyLength=30, startAfterNgames=30, batchSize=30, sampleLenth=20):
         self.games = []
         self.currentGame = []
         self.historyLength = historyLength

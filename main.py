@@ -27,7 +27,7 @@ if debuggerMode:
 else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(explore=True, doTrain=True, impala=True, minmax=False, cutOffdepth=3, TopNvalues=3))
-    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
+    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
 
 
 def plot(name, labels=False):
