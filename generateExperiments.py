@@ -15,19 +15,22 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
         file.write(f'bsub -o "outputs/{name}/{agent}{str(i)}{name}.md" -J "{agent}{str(i)}{name}" -P "{agent}{str(i)}{name} {gameLength} {adAgent} {agent} {int(explore)} {int(doTrain)} {int(impala)} {int(calcprobs)} {int(minmax)} {name}{" -lossf " + str(lossf) if lossf is not None else ""}{" -K " + str(K) if K is not None else ""}{" -dropout " + str(dropout) if dropout is not None else ""}{" -alpha " + str(alpha) if alpha is not None else ""}{" -discount " + str(discount) if discount is not None else ""}{" -lambda " + str(lambd) if lambd is not None else ""}{" -lr " + str(lr) if lr is not None else ""}{" -chooserfunction " + str(chooserfunction) if chooserfunction is not None else ""}{" -TopNvalues " + str(TopNvalues) if TopNvalues is not None else ""}{" -cutOffdepth " + str(cutOffdepth) if cutOffdepth is not None else ""}{" -ValueCutOff " + str(ValueCutOff) if ValueCutOff is not None else ""}{" -ValueDiffCutOff " + str(ValueDiffCutOff) if ValueDiffCutOff is not None else ""}{" -ProbabilityCutOff " + str(ProbabilityCutOff) if ProbabilityCutOff is not None else ""}{" -historyLength " + str(historyLength) if historyLength is not None else ""}{" -startAfterNgames " + str(startAfterNgames) if startAfterNgames is not None else ""}{" -batchSize " + str(batchSize) if batchSize is not None else ""}{" -sampleLenth " + str(sampleLenth) if sampleLenth is not None else ""}" < submit.sh\n')
 
 
-genExperiments('dropout-0', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0)
-genExperiments('dropout-0.25', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.25)
-genExperiments('dropout-0.5', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.5)
-genExperiments('dropout-0.75', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.75)
-genExperiments('dropout-1', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=1)
+# genExperiments('dropout-0', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0)
+# genExperiments('dropout-0.25', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.25)
+# genExperiments('dropout-0.5', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.5)
+# genExperiments('dropout-0.75', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.75)
+# genExperiments('dropout-1', 'NNAgent', 2000, 10, False, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=1)
 
-# genExperiments('Dis-1-lamd-1', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=1, lambd=1, lr=0.0002)
-# genExperiments('Dis-1-lamd-0', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=1, lambd=0, lr=0.0002)
-# genExperiments('Dis-0-lamd-1', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0, lambd=1, lr=0.0002)
-# genExperiments('Dis-0-lamd-0', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0, lambd=0, lr=0.0002)
+genExperiments('4000-MME', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002, n=20)
+genExperiments('4000-Abs', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='Abs', K=2000, discount=0.995, lambd=0.9, lr=0.0002, n=20)
 
-# genExperiments('calcprob-true', 'NNAgent', 2000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
-# genExperiments('calcprob-false', 'NNAgent', 2000, 10, True, True, True, False, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
+genExperiments('4000-Dis-1-lamd-1', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=1, lambd=1, lr=0.0002)
+genExperiments('4000-Dis-1-lamd-0', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=1, lambd=0, lr=0.0002)
+genExperiments('4000-Dis-0-lamd-1', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0, lambd=1, lr=0.0002)
+genExperiments('4000-Dis-0-lamd-0', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0, lambd=0, lr=0.0002)
+
+genExperiments('4000-calcprob-true', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
+genExperiments('4000-calcprob-false', 'NNAgent', 4000, 10, True, True, True, False, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
 
 # genExperiments('minmax-dept-2', 'NNAgent', 1000, 10, True, True, True, True, True, lossf='MME', K=1000, discount=0.995, lambd=0.9, lr=0.0002, TopNvalues=6, cutOffdepth=2)
 # genExperiments('minmax-dept-1', 'NNAgent', 1000, 10, True, True, True, True, True, lossf='MME', K=1000, discount=0.995, lambd=0.9, lr=0.0002, TopNvalues=6, cutOffdepth=1)
