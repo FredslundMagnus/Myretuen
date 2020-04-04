@@ -33,7 +33,7 @@ class Agent():
                 valueMax = -float('inf')
                 bestAction = None
                 for action in actions:
-                    #print(action)
+                    # print(action)
                     state = self.state(self.env, action)
                     if len(state) == 1:
                         value = self.value(state[0]) + state[0][3]
@@ -134,8 +134,8 @@ class Agent():
             filehandler = open(place + name + '.obj', 'rb')
             self.phi = pickle.load(filehandler)
             print('Loaded model succesfully')
-        except:
-            pass
+        except Exception as e:
+            print(e)
         return self
 
     def softmax(self, x):
