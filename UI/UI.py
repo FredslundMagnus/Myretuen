@@ -318,16 +318,17 @@ def updateScreen(background, win, game=None, connection=None):
 
             for _, base in game.bases.items():
 
-                centerText(22 * scale, str(len(base.captured)),
-                           (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
+                centerText(22 * scale, str(len(base.captured)), (255, 255, 255), (base.rect.center[0], base.rect.center[1] + 2), 0, win)
 
                 for i, ant in enumerate(base.home):
                     drawAntAtPos(ant, (base.homeSquares[i][0].x, base.homeSquares[i][0].y), win)
 
             for _, field in game.fields.items():
+                i = 0
                 for i, ant in enumerate(field.ants):
-                    drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390 - scale / 2)),
-                                       int(field.rect.y + 3 * i * (field.rect.center[1] / 390 - scale / 2))), win)
+                    drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390 - scale / 2)), int(field.rect.y + 3 * i * (field.rect.center[1] / 390 - scale / 2))), win)
+                if i > 0:
+                    centerText(6 * scale, str(i + 1), (0, 0, 0), (int(field.rect.x + 3 * i * (field.rect.center[0] / 390 - scale / 2)) + 10 * scale, int(field.rect.y + 3 * i * (field.rect.center[1] / 390 - scale / 2) + 10 * scale)), 0, win)
 
             if isHovering:
                 centerText(12 * scale, idd, (0, 0, 0), pos, 0, win)

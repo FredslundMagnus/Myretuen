@@ -7,7 +7,7 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0.3, alpha=None, discount=0.995, lambd=0.9, lr=0.00005, TopNvalues=5, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=30, startAfterNgames=30, batchSize=30, sampleLenth=10):
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False, lossf='MME', K=2000, dropout=0.45, alpha=None, discount=0.995, lambd=0.9, lr=0.00005, TopNvalues=5, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=30, sampleLenth=6):
         self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth)
 
     def value(self, infostate, return_float=True):
