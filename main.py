@@ -1,3 +1,5 @@
+import pyximport
+pyximport.install()
 from debug import debugger, getvals
 import matplotlib
 import numpy as np
