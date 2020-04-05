@@ -8,9 +8,9 @@ from impala import Impala
 from MinMaxer import MinMaxCalculate
 
 
-class Agent():
+cdef class Agent():
 
-    def choose(self, actions):
+    cpdef choose(self, actions):
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
@@ -62,7 +62,7 @@ class Agent():
             self.previousState = []
         return bestAction
 
-    def trainAgent(self, reward, action, observation):
+    cpdef trainAgent(self, reward, action, observation):
         if len(self.previousState) == 0 or action == None:
             return
 
@@ -80,13 +80,13 @@ class Agent():
 
         self.previousState = []
 
-    def train(self, reward, previousState, newState):
+    cpdef train(self, reward, previousState, newState):
         pass
 
-    def value(self, infostate):
+    cpdef value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth):
+    cpdef setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
@@ -109,7 +109,7 @@ class Agent():
         else:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
 
-    def resetGame(self):
+    cpdef resetGame(self):
         print(self.rating)
         try:
             li = []
@@ -146,7 +146,7 @@ class Agent():
             print(e)
         return self
 
-    def softmax(self, x):
+    cdef softmax(self, x):
         e_x = np.exp(x - np.max(x))
         return e_x / e_x.sum()
 
@@ -155,19 +155,19 @@ class Agent():
             if field != previous or current.special == 'Flag':
                 yield field
 
-    def carrying_number_of_enemy_ants(self, ant):
+    cdef carrying_number_of_enemy_ants(self, ant):
         return [val for color, val in ant.antsUnderMe.items() if color != ant.color][0]
 
-    def carrying_number_of_ally_ants(self, ant):
+    cdef carrying_number_of_ally_ants(self, ant):
         return ant.antsUnderMe[ant.color]
 
-    def distanceToSplits(self, ant):
+    cdef distanceToSplits(self, ant):
         return list(sorted(ant.position.dist_to_targets))
 
-    def distanceToBases(self, ant):
+    cdef distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
 
-    def currentScore(self, ant):
+    cdef currentScore(self, ant):
         score = [0, 0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
             score[int(ant.color == color)] = val
@@ -199,7 +199,7 @@ class Agent():
             kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
-    def state(self, game, action=None):
+    cpdef state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
         if action == None:
             ants1 = game.ants
@@ -230,7 +230,7 @@ class Agent():
 
         return [Antstate1, Antstate2]
 
-    def getDistances(self, ant):
+    cdef getDistances(self, ant):
         mine = [0] * 35
         dine = [0] * 35
         for ant2 in self.currentAnts:
@@ -243,7 +243,7 @@ class Agent():
 
         return (mine[1:], dine[1:])
 
-    def getDistancesToAnts(self, ant):
+    cdef getDistancesToAnts(self, ant):
         n = len(self.currentAnts) // 2
         ants = [0] * n
         for i, ant2 in enumerate(self.currentAnts):
@@ -256,7 +256,7 @@ class Agent():
                     ants[i % n] = 4 if dis < 3 else 3 if dis < 7 else 2 if dis < 13 else 1
         return ants
 
-    def antsUnderAnts(self):
+    cdef antsUnderAnts(self):
         n = len(self.currentAnts) // 2
         ants = {self.currentAnts[0].color: [0] * n, self.currentAnts[-1].color: [0] * n}
         for i, ant in enumerate(self.currentAnts):
@@ -267,7 +267,7 @@ class Agent():
                     ants[ant.color][i % n] = sum(val for _, val in ant.antsUnderMe.items())
         return ants
 
-    def ant_situation(self, ant):
+    cdef ant_situation(self, ant):
         if ant.position.id == ant.color:
             return [1, 0, 0, 0]
         if ant.isAlive == True:
@@ -278,7 +278,7 @@ class Agent():
             return [0, 0, 0, 1]
         return [0, 0, 0, 0]
 
-    def dicer(self, ant):
+    cdef dicer(self, ant):
         dice = [0, 0, 0, 0, 0, 0, 0]
         if ant.dieJustUsedInSimulation == 0:
             for d in self.env.rolled:
@@ -290,16 +290,16 @@ class Agent():
             dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 - 1
         return dice
 
-    def GetProbabilityOfEat(self, ant):
+    cdef GetProbabilityOfEat(self, ant):
         return ant.probcapture
 
-    def resettrace(self):
+    cdef resettrace(self):
         if self.name == 'NNAgent':
             self.optimizer.zero_grad()
         elif self.name == 'SimpleLinear':
             self.trace = np.zeros(self.Nfeature)
 
-    def convertMove(self, game, move):
+    cdef convertMove(self, game, move):
         move.game = game
         move.end = game.fields[move.end.id]
         if move.start.id in game.fields:
