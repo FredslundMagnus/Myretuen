@@ -2,6 +2,8 @@ import random
 
 
 class Field():
+    __slots__ = ("color", "special", "rotation", "rect", "x", "y", "id", "ants", "neighbors", "type", "distBases", "dist_to_targets", "dist_to_all")
+
     def __init__(self, x: int, y: int, color=None, special=None, rotation=0):
         self.color = color if color != None else random.choice(['yellowFade', 'greenFade', 'blueFade', 'redFade'])
         self.special = special
@@ -67,12 +69,12 @@ def Give_dist_to_bases(bases, fields):
                     break
 
         for h in range(len(flags[l])):
-            for g in range(len(ToFlags[2*h])):
-                if str(colors[l]) not in ToFlags[2*h+1][g].distBases:
-                    ToFlags[2*h+1][g].distBases.update({str(colors[l]): ToFlags[2*h][g]})
+            for g in range(len(ToFlags[2 * h])):
+                if str(colors[l]) not in ToFlags[2 * h + 1][g].distBases:
+                    ToFlags[2 * h + 1][g].distBases.update({str(colors[l]): ToFlags[2 * h][g]})
                 else:
-                    if ToFlags[2*h+1][g].distBases[str(colors[l])] > ToFlags[2*h][g]:
-                        ToFlags[2*h+1][g].distBases.update({str(colors[l]): ToFlags[2*h][g]})
+                    if ToFlags[2 * h + 1][g].distBases[str(colors[l])] > ToFlags[2 * h][g]:
+                        ToFlags[2 * h + 1][g].distBases.update({str(colors[l]): ToFlags[2 * h][g]})
     for a_field in fields.values():
         New_value = []
         for value in a_field.distBases.values():
@@ -113,6 +115,7 @@ def Give_dist_to_target(fields, targets):
         for g in range(len(ToFlags[0])):
             ToFlags[1][g].dist_to_targets.append(ToFlags[0][g])
 
+
 def Give_dist_to_all(fields):
     flags = [fields[x] for x in fields]
 
@@ -142,12 +145,13 @@ def Give_dist_to_all(fields):
         for g in range(len(ToFlags[0])):
             flags[k].dist_to_all[ToFlags[1][g].id] = ToFlags[0][g]
 
+
 def Give_bases_dists(bases):
     for values in bases.values():
-        values.dist_to_targets = [x+1 for x in values.starts[0].dist_to_targets]
+        values.dist_to_targets = [x + 1 for x in values.starts[0].dist_to_targets]
         for i in range(1, len(values.starts)):
             for j in range(len(values.starts[i].dist_to_targets)):
-                if values.starts[i].dist_to_targets[j]+1 < values.dist_to_targets[j]:
+                if values.starts[i].dist_to_targets[j] + 1 < values.dist_to_targets[j]:
                     values.dist_to_targets[j] = values.starts[i].dist_to_targets[j] + 1
 
     for values in bases.values():
@@ -159,7 +163,6 @@ def Give_bases_dists(bases):
             else:
                 values.distBases[key1][0] += 1
                 values.distBases[key1][1] += -1
-
 
     for base1 in bases.values():
         base1.dist_to_all = base1.goals[0].dist_to_all

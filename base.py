@@ -2,6 +2,8 @@ from field import Field
 
 
 class Base():
+    __slots__ = ("color", "x", "y", "id", "rect", "home", "captured", "starts", "goals", "homePos", "homeChange", "type", "startPoint", "distBases", "dist_to_targets", "dist_to_all", "homeSquares")
+
     def __init__(self, x: int, y: int, homePos, homeChange):
         self.color = None
         self.x = x

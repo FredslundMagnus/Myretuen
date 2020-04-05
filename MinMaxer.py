@@ -2,8 +2,15 @@ import numpy as np
 from game import Myretuen
 from move import Move
 import random
-import copy
+from copy import deepcopy
 from Probability_function import Probability_calculator
+import pickle
+import time
+
+
+def fastcopy(game):
+    # return deepcopy(game)
+    return pickle.loads(pickle.dumps(game, -1))
 
 
 class MinMaxCalculate():
@@ -23,7 +30,7 @@ class MinMaxCalculate():
         self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
-        fakegame = copy.deepcopy(self.game)
+        fakegame = fastcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
     def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
@@ -131,7 +138,7 @@ class MinMaxCalculate():
         # Loop over the remaining canditate moves
         for i in range(len(candidate_values)):
             if canditate_probs[i] == 1:
-                newfakegame = copy.deepcopy(fakegame)
+                newfakegame = fastcopy(fakegame)
                 Truemove = self.convertMove(newfakegame, canditate_actions[i])
                 newfakegame.step(Truemove, CalculateProb=True, deepsearch=True)
                 if newfakegame.rolled != []:
@@ -139,7 +146,7 @@ class MinMaxCalculate():
                 else:
                     for j in range(1, 7):
                         for k in range(j, 7):
-                            newfakegame2 = copy.deepcopy(newfakegame)
+                            newfakegame2 = fastcopy(newfakegame)
                             newfakegame2.rolled = [j, k]
                             thisproba = Proba / 18
                             if j == k:
@@ -148,11 +155,11 @@ class MinMaxCalculate():
                             sumvalue[i] += self.DeepLoop(thisproba, newfakegame2, cutOffdepth - 1, rewardtrace + canditate_rewards[i][0])
 
             else:
-                newfakegame = copy.deepcopy(fakegame)
+                newfakegame = fastcopy(fakegame)
                 Truemove = self.convertMove(newfakegame, canditate_actions[i])
                 newfakegame.step(Truemove, CalculateProb=True, deepsearch=True)
 
-                newfakegameOp = copy.deepcopy(fakegame)
+                newfakegameOp = fastcopy(fakegame)
                 Truemove2 = self.convertMove(newfakegameOp, canditate_actions[i])
                 newfakegameOp.step(Truemove2, CalculateProb=True, deepsearch=True, oppesite=True)
 
@@ -167,7 +174,7 @@ class MinMaxCalculate():
                 else:
                     for j in range(1, 7):
                         for k in range(j, 7):
-                            newfakegame2, newfakegameOp2 = copy.deepcopy(newfakegame), copy.deepcopy(newfakegame)
+                            newfakegame2, newfakegameOp2 = fastcopy(newfakegame), fastcopy(newfakegame)
                             newfakegame2.rolled, newfakegameOp2.rolled = [j, k], [j, k]
                             thisproba = Proba / 18
                             if j == k:
