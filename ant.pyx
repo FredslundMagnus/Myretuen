@@ -1,8 +1,11 @@
+# cython: profile=True
 import random
 import numpy as np
 
 
 class Ant():
+    __slots__ = ("color", "rotation", "magnet", "position", "id", "isAlive", "flipped", "antsUnderMe", "dieJustUsedInSimulation", "probcapture")
+
     def __init__(self):
         self.color = None
         self.rotation = random.choice([0, 90, 180, 270])
@@ -46,22 +49,22 @@ def generateAnts(N):
     arr = np.arange(N)
     np.random.shuffle(arr)
 
-    for i in list(arr[:N//2]):
+    for i in list(arr[:N // 2]):
         ants1[i].magnet = 'N'
 
     np.random.shuffle(arr)
 
-    for i in list(arr[:N//2]):
+    for i in list(arr[:N // 2]):
         ants2[i].magnet = 'N'
 
-    return ants1+ants2
+    return ants1 + ants2
 
 
 def placeAntsOnBoard(ants, bases):
     m = len(ants) // 2
     i = 0
     for name, base in bases.items():
-        base.home = ants[i*m: (i+1)*m]
+        base.home = ants[i * m: (i + 1) * m]
         for k, ant in enumerate(base.home):
             ant.color = name
             ant.position = base

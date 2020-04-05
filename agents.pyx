@@ -1,3 +1,4 @@
+# cython: profile=True
 from Agents.randomAgent import RandomAgent as _RandomAgent
 from Agents.playerAgent import PlayerAgent as _PlayerAgent
 from Agents.linearAprox import LinearAprox as _LinearAprox

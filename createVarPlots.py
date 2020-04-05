@@ -21,26 +21,29 @@ for directory in subdirs:
                 if match:
                     items = match.groups()
                     agent = items[0]
-
-                curentname = filename.split('-')[-1][:-4]
-                data = pd.read_csv(directory + '\\' + filename, header=None)
-                data = np.array(data).reshape(data.shape[0], data.shape[1], 1)
+                curentname = None
+                try:
+                    curentname = filename.split('-')[-1][:-4]
+                    data = pd.read_csv(directory + '\\' + filename, header=None)
+                    data = np.array(data).reshape(data.shape[0], data.shape[1], 1)
+                except Exception as e:
+                    print(e)
                 if curentname == 'Elo':
                     try:
                         if Elo is None:
                             Elo = data
                         else:
                             Elo = np.concatenate((Elo, data), axis=-1)
-                    except:
-                        pass
+                    except Exception as e:
+                        print(e)
                 elif curentname == 'EloOverTime':
                     try:
                         if EloOverTime is None:
                             EloOverTime = data
                         else:
                             EloOverTime = np.concatenate((EloOverTime, data), axis=-1)
-                    except:
-                        pass
+                    except Exception as e:
+                        print(e)
         name = directory.split('\\')[-2]
         try:
             if Elo is not None:
@@ -64,8 +67,8 @@ for directory in subdirs:
                 plt.savefig(f'plots/EloRating/' + f'{name}' + '.png')
                 plt.savefig(f'outputs/{name}/' + f'{name} - Elo Rating' + '.png')
                 plt.clf()
-        except:
-            pass
+        except Exception as e:
+            print(e)
         try:
             if EloOverTime is not None:
                 Mean = np.mean(EloOverTime, axis=2)
@@ -88,9 +91,11 @@ for directory in subdirs:
                 plt.savefig(f'plots/EloRatingOverTime/' + f'{name}' + '.png')
                 plt.savefig(f'outputs/{name}/' + f'{name} - Elo Rating over Time' + '.png')
                 plt.clf()
-        except:
-            pass
+        except Exception as e:
+            print(e)
         Elo = None
         EloOverTime = None
-    except:
-        pass
+        data = None
+    except Exception as e:
+        print(directory)
+        print(e)
