@@ -1,3 +1,4 @@
+# cython: profile=True
 from copy import deepcopy
 import random
 

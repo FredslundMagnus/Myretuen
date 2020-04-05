@@ -1,3 +1,4 @@
+# cython: profile=True
 from Agents.agent import Agent
 import torch
 import torch.nn as nn

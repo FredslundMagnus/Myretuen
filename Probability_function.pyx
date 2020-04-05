@@ -1,3 +1,4 @@
+# cython: profile=True
 import itertools
 import numpy as np
 from ant import generateAnts, placeAntsOnBoard
