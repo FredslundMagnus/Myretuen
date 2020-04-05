@@ -1,3 +1,4 @@
+# cython: profile=True
 def generateLines(fields):
     for _, Field1 in fields.items():
         for _, Field2 in fields.items():

@@ -1,3 +1,4 @@
+# cython: profile=True
 from field import Field
 
 

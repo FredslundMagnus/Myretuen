@@ -1,3 +1,4 @@
+# cython: profile=True
 import random
 import numpy as np
 

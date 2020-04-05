@@ -1,3 +1,4 @@
+# cython: profile=True
 import random
 from dice import Dice
 
