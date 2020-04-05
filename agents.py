@@ -2,12 +2,17 @@ from Agents.randomAgent import RandomAgent as _RandomAgent
 from Agents.playerAgent import PlayerAgent as _PlayerAgent
 from Agents.linearAprox import LinearAprox as _LinearAprox
 from Agents.simpleLinear import SimpleLinear as _SimpleLinear
+from Agents.cleverRandom import CleverRandom as _CleverRandom
 from Agents.NNAgent import NNAgent as _NNAgent
 from Agents.opponent import Opponent as _Opponent, randomChooser as _randomChooser, incrementalChooser as _incrementalChooser, weightedChooser as _weightedChooser
 
 
 def RandomAgent(*args, **kwargs):
     return _RandomAgent(*args, **kwargs)
+
+
+def CleverRandom(*args, **kwargs):
+    return _CleverRandom(*args, **kwargs)
 
 
 def PlayerAgent(*args, **kwargs):

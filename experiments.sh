@@ -1,157 +1,108 @@
 #!/bin/sh
-mkdir outputs/4000-MME
-mkdir outputs/4000-MME/csv
-mkdir outputs/4000-MME/trained
-mkdir outputs/4000-MME/TrainingCurve
-mkdir outputs/4000-MME/Weights
-mkdir outputs/4000-MME/Elo_Rating
-mkdir outputs/4000-MME/Increase_in_Elo_over_time
-bsub -o "outputs/4000-MME/NNAgent04000-MME.md" -J "NNAgent04000-MME" -P "NNAgent04000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent14000-MME.md" -J "NNAgent14000-MME" -P "NNAgent14000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent24000-MME.md" -J "NNAgent24000-MME" -P "NNAgent24000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent34000-MME.md" -J "NNAgent34000-MME" -P "NNAgent34000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent44000-MME.md" -J "NNAgent44000-MME" -P "NNAgent44000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent54000-MME.md" -J "NNAgent54000-MME" -P "NNAgent54000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent64000-MME.md" -J "NNAgent64000-MME" -P "NNAgent64000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent74000-MME.md" -J "NNAgent74000-MME" -P "NNAgent74000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent84000-MME.md" -J "NNAgent84000-MME" -P "NNAgent84000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent94000-MME.md" -J "NNAgent94000-MME" -P "NNAgent94000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent104000-MME.md" -J "NNAgent104000-MME" -P "NNAgent104000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent114000-MME.md" -J "NNAgent114000-MME" -P "NNAgent114000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent124000-MME.md" -J "NNAgent124000-MME" -P "NNAgent124000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent134000-MME.md" -J "NNAgent134000-MME" -P "NNAgent134000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent144000-MME.md" -J "NNAgent144000-MME" -P "NNAgent144000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent154000-MME.md" -J "NNAgent154000-MME" -P "NNAgent154000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent164000-MME.md" -J "NNAgent164000-MME" -P "NNAgent164000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent174000-MME.md" -J "NNAgent174000-MME" -P "NNAgent174000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent184000-MME.md" -J "NNAgent184000-MME" -P "NNAgent184000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-MME/NNAgent194000-MME.md" -J "NNAgent194000-MME" -P "NNAgent194000-MME 4000 10 NNAgent 1 1 1 1 0 4000-MME -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-mkdir outputs/4000-Abs
-mkdir outputs/4000-Abs/csv
-mkdir outputs/4000-Abs/trained
-mkdir outputs/4000-Abs/TrainingCurve
-mkdir outputs/4000-Abs/Weights
-mkdir outputs/4000-Abs/Elo_Rating
-mkdir outputs/4000-Abs/Increase_in_Elo_over_time
-bsub -o "outputs/4000-Abs/NNAgent04000-Abs.md" -J "NNAgent04000-Abs" -P "NNAgent04000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent14000-Abs.md" -J "NNAgent14000-Abs" -P "NNAgent14000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent24000-Abs.md" -J "NNAgent24000-Abs" -P "NNAgent24000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent34000-Abs.md" -J "NNAgent34000-Abs" -P "NNAgent34000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent44000-Abs.md" -J "NNAgent44000-Abs" -P "NNAgent44000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent54000-Abs.md" -J "NNAgent54000-Abs" -P "NNAgent54000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent64000-Abs.md" -J "NNAgent64000-Abs" -P "NNAgent64000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent74000-Abs.md" -J "NNAgent74000-Abs" -P "NNAgent74000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent84000-Abs.md" -J "NNAgent84000-Abs" -P "NNAgent84000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent94000-Abs.md" -J "NNAgent94000-Abs" -P "NNAgent94000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent104000-Abs.md" -J "NNAgent104000-Abs" -P "NNAgent104000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent114000-Abs.md" -J "NNAgent114000-Abs" -P "NNAgent114000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent124000-Abs.md" -J "NNAgent124000-Abs" -P "NNAgent124000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent134000-Abs.md" -J "NNAgent134000-Abs" -P "NNAgent134000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent144000-Abs.md" -J "NNAgent144000-Abs" -P "NNAgent144000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent154000-Abs.md" -J "NNAgent154000-Abs" -P "NNAgent154000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent164000-Abs.md" -J "NNAgent164000-Abs" -P "NNAgent164000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent174000-Abs.md" -J "NNAgent174000-Abs" -P "NNAgent174000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent184000-Abs.md" -J "NNAgent184000-Abs" -P "NNAgent184000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Abs/NNAgent194000-Abs.md" -J "NNAgent194000-Abs" -P "NNAgent194000-Abs 4000 10 NNAgent 1 1 1 1 0 4000-Abs -lossf Abs -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-mkdir outputs/4000-Dis-1-lamd-1
-mkdir outputs/4000-Dis-1-lamd-1/csv
-mkdir outputs/4000-Dis-1-lamd-1/trained
-mkdir outputs/4000-Dis-1-lamd-1/TrainingCurve
-mkdir outputs/4000-Dis-1-lamd-1/Weights
-mkdir outputs/4000-Dis-1-lamd-1/Elo_Rating
-mkdir outputs/4000-Dis-1-lamd-1/Increase_in_Elo_over_time
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent04000-Dis-1-lamd-1.md" -J "NNAgent04000-Dis-1-lamd-1" -P "NNAgent04000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent14000-Dis-1-lamd-1.md" -J "NNAgent14000-Dis-1-lamd-1" -P "NNAgent14000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent24000-Dis-1-lamd-1.md" -J "NNAgent24000-Dis-1-lamd-1" -P "NNAgent24000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent34000-Dis-1-lamd-1.md" -J "NNAgent34000-Dis-1-lamd-1" -P "NNAgent34000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent44000-Dis-1-lamd-1.md" -J "NNAgent44000-Dis-1-lamd-1" -P "NNAgent44000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent54000-Dis-1-lamd-1.md" -J "NNAgent54000-Dis-1-lamd-1" -P "NNAgent54000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent64000-Dis-1-lamd-1.md" -J "NNAgent64000-Dis-1-lamd-1" -P "NNAgent64000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent74000-Dis-1-lamd-1.md" -J "NNAgent74000-Dis-1-lamd-1" -P "NNAgent74000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent84000-Dis-1-lamd-1.md" -J "NNAgent84000-Dis-1-lamd-1" -P "NNAgent84000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-1/NNAgent94000-Dis-1-lamd-1.md" -J "NNAgent94000-Dis-1-lamd-1" -P "NNAgent94000-Dis-1-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-1 -lossf MME -K 2000 -discount 1 -lambda 1 -lr 0.0002" < submit.sh
-mkdir outputs/4000-Dis-1-lamd-0
-mkdir outputs/4000-Dis-1-lamd-0/csv
-mkdir outputs/4000-Dis-1-lamd-0/trained
-mkdir outputs/4000-Dis-1-lamd-0/TrainingCurve
-mkdir outputs/4000-Dis-1-lamd-0/Weights
-mkdir outputs/4000-Dis-1-lamd-0/Elo_Rating
-mkdir outputs/4000-Dis-1-lamd-0/Increase_in_Elo_over_time
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent04000-Dis-1-lamd-0.md" -J "NNAgent04000-Dis-1-lamd-0" -P "NNAgent04000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent14000-Dis-1-lamd-0.md" -J "NNAgent14000-Dis-1-lamd-0" -P "NNAgent14000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent24000-Dis-1-lamd-0.md" -J "NNAgent24000-Dis-1-lamd-0" -P "NNAgent24000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent34000-Dis-1-lamd-0.md" -J "NNAgent34000-Dis-1-lamd-0" -P "NNAgent34000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent44000-Dis-1-lamd-0.md" -J "NNAgent44000-Dis-1-lamd-0" -P "NNAgent44000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent54000-Dis-1-lamd-0.md" -J "NNAgent54000-Dis-1-lamd-0" -P "NNAgent54000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent64000-Dis-1-lamd-0.md" -J "NNAgent64000-Dis-1-lamd-0" -P "NNAgent64000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent74000-Dis-1-lamd-0.md" -J "NNAgent74000-Dis-1-lamd-0" -P "NNAgent74000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent84000-Dis-1-lamd-0.md" -J "NNAgent84000-Dis-1-lamd-0" -P "NNAgent84000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-1-lamd-0/NNAgent94000-Dis-1-lamd-0.md" -J "NNAgent94000-Dis-1-lamd-0" -P "NNAgent94000-Dis-1-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-1-lamd-0 -lossf MME -K 2000 -discount 1 -lambda 0 -lr 0.0002" < submit.sh
-mkdir outputs/4000-Dis-0-lamd-1
-mkdir outputs/4000-Dis-0-lamd-1/csv
-mkdir outputs/4000-Dis-0-lamd-1/trained
-mkdir outputs/4000-Dis-0-lamd-1/TrainingCurve
-mkdir outputs/4000-Dis-0-lamd-1/Weights
-mkdir outputs/4000-Dis-0-lamd-1/Elo_Rating
-mkdir outputs/4000-Dis-0-lamd-1/Increase_in_Elo_over_time
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent04000-Dis-0-lamd-1.md" -J "NNAgent04000-Dis-0-lamd-1" -P "NNAgent04000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent14000-Dis-0-lamd-1.md" -J "NNAgent14000-Dis-0-lamd-1" -P "NNAgent14000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent24000-Dis-0-lamd-1.md" -J "NNAgent24000-Dis-0-lamd-1" -P "NNAgent24000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent34000-Dis-0-lamd-1.md" -J "NNAgent34000-Dis-0-lamd-1" -P "NNAgent34000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent44000-Dis-0-lamd-1.md" -J "NNAgent44000-Dis-0-lamd-1" -P "NNAgent44000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent54000-Dis-0-lamd-1.md" -J "NNAgent54000-Dis-0-lamd-1" -P "NNAgent54000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent64000-Dis-0-lamd-1.md" -J "NNAgent64000-Dis-0-lamd-1" -P "NNAgent64000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent74000-Dis-0-lamd-1.md" -J "NNAgent74000-Dis-0-lamd-1" -P "NNAgent74000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent84000-Dis-0-lamd-1.md" -J "NNAgent84000-Dis-0-lamd-1" -P "NNAgent84000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-1/NNAgent94000-Dis-0-lamd-1.md" -J "NNAgent94000-Dis-0-lamd-1" -P "NNAgent94000-Dis-0-lamd-1 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-1 -lossf MME -K 2000 -discount 0 -lambda 1 -lr 0.0002" < submit.sh
-mkdir outputs/4000-Dis-0-lamd-0
-mkdir outputs/4000-Dis-0-lamd-0/csv
-mkdir outputs/4000-Dis-0-lamd-0/trained
-mkdir outputs/4000-Dis-0-lamd-0/TrainingCurve
-mkdir outputs/4000-Dis-0-lamd-0/Weights
-mkdir outputs/4000-Dis-0-lamd-0/Elo_Rating
-mkdir outputs/4000-Dis-0-lamd-0/Increase_in_Elo_over_time
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent04000-Dis-0-lamd-0.md" -J "NNAgent04000-Dis-0-lamd-0" -P "NNAgent04000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent14000-Dis-0-lamd-0.md" -J "NNAgent14000-Dis-0-lamd-0" -P "NNAgent14000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent24000-Dis-0-lamd-0.md" -J "NNAgent24000-Dis-0-lamd-0" -P "NNAgent24000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent34000-Dis-0-lamd-0.md" -J "NNAgent34000-Dis-0-lamd-0" -P "NNAgent34000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent44000-Dis-0-lamd-0.md" -J "NNAgent44000-Dis-0-lamd-0" -P "NNAgent44000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent54000-Dis-0-lamd-0.md" -J "NNAgent54000-Dis-0-lamd-0" -P "NNAgent54000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent64000-Dis-0-lamd-0.md" -J "NNAgent64000-Dis-0-lamd-0" -P "NNAgent64000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent74000-Dis-0-lamd-0.md" -J "NNAgent74000-Dis-0-lamd-0" -P "NNAgent74000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent84000-Dis-0-lamd-0.md" -J "NNAgent84000-Dis-0-lamd-0" -P "NNAgent84000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-Dis-0-lamd-0/NNAgent94000-Dis-0-lamd-0.md" -J "NNAgent94000-Dis-0-lamd-0" -P "NNAgent94000-Dis-0-lamd-0 4000 10 NNAgent 1 1 1 1 0 4000-Dis-0-lamd-0 -lossf MME -K 2000 -discount 0 -lambda 0 -lr 0.0002" < submit.sh
-mkdir outputs/4000-calcprob-true
-mkdir outputs/4000-calcprob-true/csv
-mkdir outputs/4000-calcprob-true/trained
-mkdir outputs/4000-calcprob-true/TrainingCurve
-mkdir outputs/4000-calcprob-true/Weights
-mkdir outputs/4000-calcprob-true/Elo_Rating
-mkdir outputs/4000-calcprob-true/Increase_in_Elo_over_time
-bsub -o "outputs/4000-calcprob-true/NNAgent04000-calcprob-true.md" -J "NNAgent04000-calcprob-true" -P "NNAgent04000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent14000-calcprob-true.md" -J "NNAgent14000-calcprob-true" -P "NNAgent14000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent24000-calcprob-true.md" -J "NNAgent24000-calcprob-true" -P "NNAgent24000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent34000-calcprob-true.md" -J "NNAgent34000-calcprob-true" -P "NNAgent34000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent44000-calcprob-true.md" -J "NNAgent44000-calcprob-true" -P "NNAgent44000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent54000-calcprob-true.md" -J "NNAgent54000-calcprob-true" -P "NNAgent54000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent64000-calcprob-true.md" -J "NNAgent64000-calcprob-true" -P "NNAgent64000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent74000-calcprob-true.md" -J "NNAgent74000-calcprob-true" -P "NNAgent74000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent84000-calcprob-true.md" -J "NNAgent84000-calcprob-true" -P "NNAgent84000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-true/NNAgent94000-calcprob-true.md" -J "NNAgent94000-calcprob-true" -P "NNAgent94000-calcprob-true 4000 10 NNAgent 1 1 1 1 0 4000-calcprob-true -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-mkdir outputs/4000-calcprob-false
-mkdir outputs/4000-calcprob-false/csv
-mkdir outputs/4000-calcprob-false/trained
-mkdir outputs/4000-calcprob-false/TrainingCurve
-mkdir outputs/4000-calcprob-false/Weights
-mkdir outputs/4000-calcprob-false/Elo_Rating
-mkdir outputs/4000-calcprob-false/Increase_in_Elo_over_time
-bsub -o "outputs/4000-calcprob-false/NNAgent04000-calcprob-false.md" -J "NNAgent04000-calcprob-false" -P "NNAgent04000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent14000-calcprob-false.md" -J "NNAgent14000-calcprob-false" -P "NNAgent14000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent24000-calcprob-false.md" -J "NNAgent24000-calcprob-false" -P "NNAgent24000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent34000-calcprob-false.md" -J "NNAgent34000-calcprob-false" -P "NNAgent34000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent44000-calcprob-false.md" -J "NNAgent44000-calcprob-false" -P "NNAgent44000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent54000-calcprob-false.md" -J "NNAgent54000-calcprob-false" -P "NNAgent54000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent64000-calcprob-false.md" -J "NNAgent64000-calcprob-false" -P "NNAgent64000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent74000-calcprob-false.md" -J "NNAgent74000-calcprob-false" -P "NNAgent74000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent84000-calcprob-false.md" -J "NNAgent84000-calcprob-false" -P "NNAgent84000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/4000-calcprob-false/NNAgent94000-calcprob-false.md" -J "NNAgent94000-calcprob-false" -P "NNAgent94000-calcprob-false 4000 10 NNAgent 1 1 1 0 0 4000-calcprob-false -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
+mkdir outputs/CleverRandomElo
+mkdir outputs/CleverRandomElo/csv
+mkdir outputs/CleverRandomElo/trained
+mkdir outputs/CleverRandomElo/TrainingCurve
+mkdir outputs/CleverRandomElo/Weights
+mkdir outputs/CleverRandomElo/Elo_Rating
+mkdir outputs/CleverRandomElo/Increase_in_Elo_over_time
+bsub -o "outputs/CleverRandomElo/CleverRandom0CleverRandomElo.md" -J "CleverRandom0CleverRandomElo" -P "CleverRandom0CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom1CleverRandomElo.md" -J "CleverRandom1CleverRandomElo" -P "CleverRandom1CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom2CleverRandomElo.md" -J "CleverRandom2CleverRandomElo" -P "CleverRandom2CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom3CleverRandomElo.md" -J "CleverRandom3CleverRandomElo" -P "CleverRandom3CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom4CleverRandomElo.md" -J "CleverRandom4CleverRandomElo" -P "CleverRandom4CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom5CleverRandomElo.md" -J "CleverRandom5CleverRandomElo" -P "CleverRandom5CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom6CleverRandomElo.md" -J "CleverRandom6CleverRandomElo" -P "CleverRandom6CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom7CleverRandomElo.md" -J "CleverRandom7CleverRandomElo" -P "CleverRandom7CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom8CleverRandomElo.md" -J "CleverRandom8CleverRandomElo" -P "CleverRandom8CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom9CleverRandomElo.md" -J "CleverRandom9CleverRandomElo" -P "CleverRandom9CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom10CleverRandomElo.md" -J "CleverRandom10CleverRandomElo" -P "CleverRandom10CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom11CleverRandomElo.md" -J "CleverRandom11CleverRandomElo" -P "CleverRandom11CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom12CleverRandomElo.md" -J "CleverRandom12CleverRandomElo" -P "CleverRandom12CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom13CleverRandomElo.md" -J "CleverRandom13CleverRandomElo" -P "CleverRandom13CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom14CleverRandomElo.md" -J "CleverRandom14CleverRandomElo" -P "CleverRandom14CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom15CleverRandomElo.md" -J "CleverRandom15CleverRandomElo" -P "CleverRandom15CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom16CleverRandomElo.md" -J "CleverRandom16CleverRandomElo" -P "CleverRandom16CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom17CleverRandomElo.md" -J "CleverRandom17CleverRandomElo" -P "CleverRandom17CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom18CleverRandomElo.md" -J "CleverRandom18CleverRandomElo" -P "CleverRandom18CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom19CleverRandomElo.md" -J "CleverRandom19CleverRandomElo" -P "CleverRandom19CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom20CleverRandomElo.md" -J "CleverRandom20CleverRandomElo" -P "CleverRandom20CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom21CleverRandomElo.md" -J "CleverRandom21CleverRandomElo" -P "CleverRandom21CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom22CleverRandomElo.md" -J "CleverRandom22CleverRandomElo" -P "CleverRandom22CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom23CleverRandomElo.md" -J "CleverRandom23CleverRandomElo" -P "CleverRandom23CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom24CleverRandomElo.md" -J "CleverRandom24CleverRandomElo" -P "CleverRandom24CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom25CleverRandomElo.md" -J "CleverRandom25CleverRandomElo" -P "CleverRandom25CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom26CleverRandomElo.md" -J "CleverRandom26CleverRandomElo" -P "CleverRandom26CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom27CleverRandomElo.md" -J "CleverRandom27CleverRandomElo" -P "CleverRandom27CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom28CleverRandomElo.md" -J "CleverRandom28CleverRandomElo" -P "CleverRandom28CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom29CleverRandomElo.md" -J "CleverRandom29CleverRandomElo" -P "CleverRandom29CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom30CleverRandomElo.md" -J "CleverRandom30CleverRandomElo" -P "CleverRandom30CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom31CleverRandomElo.md" -J "CleverRandom31CleverRandomElo" -P "CleverRandom31CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom32CleverRandomElo.md" -J "CleverRandom32CleverRandomElo" -P "CleverRandom32CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom33CleverRandomElo.md" -J "CleverRandom33CleverRandomElo" -P "CleverRandom33CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom34CleverRandomElo.md" -J "CleverRandom34CleverRandomElo" -P "CleverRandom34CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom35CleverRandomElo.md" -J "CleverRandom35CleverRandomElo" -P "CleverRandom35CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom36CleverRandomElo.md" -J "CleverRandom36CleverRandomElo" -P "CleverRandom36CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom37CleverRandomElo.md" -J "CleverRandom37CleverRandomElo" -P "CleverRandom37CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom38CleverRandomElo.md" -J "CleverRandom38CleverRandomElo" -P "CleverRandom38CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom39CleverRandomElo.md" -J "CleverRandom39CleverRandomElo" -P "CleverRandom39CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom40CleverRandomElo.md" -J "CleverRandom40CleverRandomElo" -P "CleverRandom40CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom41CleverRandomElo.md" -J "CleverRandom41CleverRandomElo" -P "CleverRandom41CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom42CleverRandomElo.md" -J "CleverRandom42CleverRandomElo" -P "CleverRandom42CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom43CleverRandomElo.md" -J "CleverRandom43CleverRandomElo" -P "CleverRandom43CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom44CleverRandomElo.md" -J "CleverRandom44CleverRandomElo" -P "CleverRandom44CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom45CleverRandomElo.md" -J "CleverRandom45CleverRandomElo" -P "CleverRandom45CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom46CleverRandomElo.md" -J "CleverRandom46CleverRandomElo" -P "CleverRandom46CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom47CleverRandomElo.md" -J "CleverRandom47CleverRandomElo" -P "CleverRandom47CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom48CleverRandomElo.md" -J "CleverRandom48CleverRandomElo" -P "CleverRandom48CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom49CleverRandomElo.md" -J "CleverRandom49CleverRandomElo" -P "CleverRandom49CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom50CleverRandomElo.md" -J "CleverRandom50CleverRandomElo" -P "CleverRandom50CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom51CleverRandomElo.md" -J "CleverRandom51CleverRandomElo" -P "CleverRandom51CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom52CleverRandomElo.md" -J "CleverRandom52CleverRandomElo" -P "CleverRandom52CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom53CleverRandomElo.md" -J "CleverRandom53CleverRandomElo" -P "CleverRandom53CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom54CleverRandomElo.md" -J "CleverRandom54CleverRandomElo" -P "CleverRandom54CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom55CleverRandomElo.md" -J "CleverRandom55CleverRandomElo" -P "CleverRandom55CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom56CleverRandomElo.md" -J "CleverRandom56CleverRandomElo" -P "CleverRandom56CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom57CleverRandomElo.md" -J "CleverRandom57CleverRandomElo" -P "CleverRandom57CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom58CleverRandomElo.md" -J "CleverRandom58CleverRandomElo" -P "CleverRandom58CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom59CleverRandomElo.md" -J "CleverRandom59CleverRandomElo" -P "CleverRandom59CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom60CleverRandomElo.md" -J "CleverRandom60CleverRandomElo" -P "CleverRandom60CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom61CleverRandomElo.md" -J "CleverRandom61CleverRandomElo" -P "CleverRandom61CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom62CleverRandomElo.md" -J "CleverRandom62CleverRandomElo" -P "CleverRandom62CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom63CleverRandomElo.md" -J "CleverRandom63CleverRandomElo" -P "CleverRandom63CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom64CleverRandomElo.md" -J "CleverRandom64CleverRandomElo" -P "CleverRandom64CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom65CleverRandomElo.md" -J "CleverRandom65CleverRandomElo" -P "CleverRandom65CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom66CleverRandomElo.md" -J "CleverRandom66CleverRandomElo" -P "CleverRandom66CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom67CleverRandomElo.md" -J "CleverRandom67CleverRandomElo" -P "CleverRandom67CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom68CleverRandomElo.md" -J "CleverRandom68CleverRandomElo" -P "CleverRandom68CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom69CleverRandomElo.md" -J "CleverRandom69CleverRandomElo" -P "CleverRandom69CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom70CleverRandomElo.md" -J "CleverRandom70CleverRandomElo" -P "CleverRandom70CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom71CleverRandomElo.md" -J "CleverRandom71CleverRandomElo" -P "CleverRandom71CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom72CleverRandomElo.md" -J "CleverRandom72CleverRandomElo" -P "CleverRandom72CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom73CleverRandomElo.md" -J "CleverRandom73CleverRandomElo" -P "CleverRandom73CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom74CleverRandomElo.md" -J "CleverRandom74CleverRandomElo" -P "CleverRandom74CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom75CleverRandomElo.md" -J "CleverRandom75CleverRandomElo" -P "CleverRandom75CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom76CleverRandomElo.md" -J "CleverRandom76CleverRandomElo" -P "CleverRandom76CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom77CleverRandomElo.md" -J "CleverRandom77CleverRandomElo" -P "CleverRandom77CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom78CleverRandomElo.md" -J "CleverRandom78CleverRandomElo" -P "CleverRandom78CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom79CleverRandomElo.md" -J "CleverRandom79CleverRandomElo" -P "CleverRandom79CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom80CleverRandomElo.md" -J "CleverRandom80CleverRandomElo" -P "CleverRandom80CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom81CleverRandomElo.md" -J "CleverRandom81CleverRandomElo" -P "CleverRandom81CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom82CleverRandomElo.md" -J "CleverRandom82CleverRandomElo" -P "CleverRandom82CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom83CleverRandomElo.md" -J "CleverRandom83CleverRandomElo" -P "CleverRandom83CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom84CleverRandomElo.md" -J "CleverRandom84CleverRandomElo" -P "CleverRandom84CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom85CleverRandomElo.md" -J "CleverRandom85CleverRandomElo" -P "CleverRandom85CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom86CleverRandomElo.md" -J "CleverRandom86CleverRandomElo" -P "CleverRandom86CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom87CleverRandomElo.md" -J "CleverRandom87CleverRandomElo" -P "CleverRandom87CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom88CleverRandomElo.md" -J "CleverRandom88CleverRandomElo" -P "CleverRandom88CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom89CleverRandomElo.md" -J "CleverRandom89CleverRandomElo" -P "CleverRandom89CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom90CleverRandomElo.md" -J "CleverRandom90CleverRandomElo" -P "CleverRandom90CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom91CleverRandomElo.md" -J "CleverRandom91CleverRandomElo" -P "CleverRandom91CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom92CleverRandomElo.md" -J "CleverRandom92CleverRandomElo" -P "CleverRandom92CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom93CleverRandomElo.md" -J "CleverRandom93CleverRandomElo" -P "CleverRandom93CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom94CleverRandomElo.md" -J "CleverRandom94CleverRandomElo" -P "CleverRandom94CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom95CleverRandomElo.md" -J "CleverRandom95CleverRandomElo" -P "CleverRandom95CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom96CleverRandomElo.md" -J "CleverRandom96CleverRandomElo" -P "CleverRandom96CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom97CleverRandomElo.md" -J "CleverRandom97CleverRandomElo" -P "CleverRandom97CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom98CleverRandomElo.md" -J "CleverRandom98CleverRandomElo" -P "CleverRandom98CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh
+bsub -o "outputs/CleverRandomElo/CleverRandom99CleverRandomElo.md" -J "CleverRandom99CleverRandomElo" -P "CleverRandom99CleverRandomElo 4000 100000 CleverRandom 0 0 0 0 0 CleverRandomElo" < submit.sh

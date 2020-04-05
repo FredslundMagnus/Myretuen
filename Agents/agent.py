@@ -63,14 +63,21 @@ class Agent():
         return bestAction
 
     def trainAgent(self, reward, action, observation):
-        if len(self.previousState) == 0 or action == None or not self.doTrain:
+        if len(self.previousState) == 0 or action == None:
             return
-        else:
-            newState = self.state(observation)[0]
-            self.previousState = self.previousState[0]
+
+        if not self.doTrain and not self.ImpaleIsActivated:
+            return
+
+        newState = self.state(observation)[0]
+        self.previousState = self.previousState[0]
+
         if self.ImpaleIsActivated:
             self.impala.addData(reward, self.previousState, newState)
-        self.train(reward, self.previousState, newState)
+
+        if self.doTrain:
+            self.train(reward, self.previousState, newState)
+
         self.previousState = []
 
     def train(self, reward, previousState, newState):
