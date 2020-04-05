@@ -11,4 +11,4 @@ class CleverRandom(Agent):
     #     self.rating = 1000
 
     def value(self, infostate):
-        return random.uniform(0, 1)
+        return random.uniform(-0.001, 0.001)
