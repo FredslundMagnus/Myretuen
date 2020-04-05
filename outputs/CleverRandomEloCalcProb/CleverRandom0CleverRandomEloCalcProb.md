@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Traceback (most recent call last):
   File "main.py", line 1, in <module>
     import pyximport
@@ -256,3 +257,5 @@ Resource usage summary:
 
 The output (if any) is above this job summary.
 
+=======
+>>>>>>> d1bcfe28a5b6845ce7d620046093849116df245e
