@@ -70,7 +70,7 @@ try:
     if debuggerMode:
         a = np.array([green, red])
         np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", a, delimiter=',', fmt='%d')
-    plt.ylim((700, 2000))
+    plt.ylim((900, 2500))
     plot('Elo_Rating', labels=True)
 except:
     pass
@@ -86,7 +86,7 @@ try:
         np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime.csv", a, delimiter=',', fmt='%d')
     plt.xlabel('Games played')
     plt.ylabel('Elo')
-    plt.ylim((700, 2000))
+    plt.ylim((900, 2500))
     plot('Increase_in_Elo_over_time', labels=True)
 except:
     pass
