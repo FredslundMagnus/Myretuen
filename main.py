@@ -15,7 +15,7 @@ if debuggerMode:
     addAgent = int(sys.argv[3])
     Thename = sys.argv[10]
     chooserfunctions = {'randomChooser': randomChooser, 'incrementalChooser': incrementalChooser, 'weightedChooser': weightedChooser}
-    agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent}
+    agentsDic = {'LinearAprox': LinearAprox, 'SimpleLinear': SimpleLinear, 'NNAgent': NNAgent, 'CleverRandom': CleverRandom}
     ourAgent = agentsDic[sys.argv[4]]
     explore, doTrain, impala, calcprobs, minmax = bool(int(sys.argv[5])), bool(int(sys.argv[6])), bool(int(sys.argv[7])), bool(int(sys.argv[8])), bool(int(sys.argv[9]))
     lossf, K, dropout, alpha, discount, lambd, lr, chooserfunction, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth = getvals(sys.argv[11:])
@@ -39,6 +39,7 @@ def plot(name, labels=False):
         plt.clf()
     else:
         plt.show()
+
 
 plt.plot(controller.winrate)
 plt.ylim((0, 1))
