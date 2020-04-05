@@ -104,7 +104,7 @@ class Agent():
         self.lossf = lossf
         self.minimaxi = minmax
         if self.minimaxi:
-            self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff
+            self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = int(TopNvalues), int(cutOffdepth), ValueCutOff, ValueDiffCutOff, ProbabilityCutOff
             self.minmaxer = MinMaxCalculate(self.value, TopNvalues=self.TopNvalues, cutOffdepth=self.cutOffdepth, ValueCutOff=self.ValueCutOff, ValueDiffCutOff=self.ValueDiffCutOff, ProbabilityCutOff=self.ProbabilityCutOff, explore=self.explore, K=self.K, calcprobs=self.calcprobs)
         else:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
