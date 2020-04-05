@@ -1,5 +1,5 @@
-import pyximport
-pyximport.install(language_level=3)
+# import pyximport
+# pyximport.install(language_level=3)
 from debug import debugger, getvals
 import matplotlib
 import numpy as np
