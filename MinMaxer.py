@@ -28,7 +28,7 @@ class MinMaxCalculate():
 
     def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
         actionss = fakegame.action_space()
-        limitedactions = min(self.TopNvalues, len(actionss))
+        limitedactions = int(min(self.TopNvalues, len(actionss)))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs = [[None, None]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions
         self.env = fakegame
 
