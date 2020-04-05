@@ -9,14 +9,14 @@ import pickle
 import time
 
 
-cdef fastcopy(game):
+def fastcopy(game):
     # return deepcopy(game)
     return pickle.loads(pickle.dumps(game, -1))
 
 
-cdef class MinMaxCalculate():
+class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder")
-    cdef TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, Move, value, explore, calcprobs, K, gameNumber, nextmoves, game, env, currentAnts, antsUnder
+
     def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=1000, calcprobs=True):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
@@ -29,14 +29,14 @@ cdef class MinMaxCalculate():
         self.calcprobs = calcprobs
         self.K = K
 
-    cpdef DeepSearch(self, game, gamenumber):
+    def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
         fakegame = fastcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
-    cdef DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
+    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
         actionss = fakegame.action_space()
         limitedactions = min(self.TopNvalues, len(actionss))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs = [[None, None]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions
@@ -193,7 +193,7 @@ cdef class MinMaxCalculate():
             return np.max(sumvalue) if fakegame.currentPlayer == self.game.currentPlayer else np.min(sumvalue)
         return canditate_actions[np.argmax(sumvalue)], self.nextmoves[np.argmax(sumvalue)]
 
-    cdef convertMove(self, game, move):
+    def convertMove(self, game, move):
         move.game = game
         move.end = game.fields[move.end.id]
         if move.start.id in game.fields:
@@ -207,19 +207,19 @@ cdef class MinMaxCalculate():
             if field != previous or current.special == 'Flag':
                 yield field
 
-    cdef carrying_number_of_enemy_ants(self, ant):
+    def carrying_number_of_enemy_ants(self, ant):
         return [val for color, val in ant.antsUnderMe.items() if color != ant.color][0]
 
-    cdef carrying_number_of_ally_ants(self, ant):
+    def carrying_number_of_ally_ants(self, ant):
         return ant.antsUnderMe[ant.color]
 
-    cdef distanceToSplits(self, ant):
+    def distanceToSplits(self, ant):
         return list(sorted(ant.position.dist_to_targets))
 
-    cdef distanceToBases(self, ant):
+    def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
 
-    cdef currentScore(self, ant):
+    def currentScore(self, ant):
         score = [0, 0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
             score[int(ant.color == color)] = val
@@ -251,7 +251,7 @@ cdef class MinMaxCalculate():
             kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
 
-    cdef state(self, game, action=None):
+    def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
         if action == None:
             ants1 = game.ants
@@ -283,7 +283,7 @@ cdef class MinMaxCalculate():
 
         return [Antstate1, Antstate2]
 
-    cdef getDistances(self, ant):
+    def getDistances(self, ant):
         mine = [0] * 35
         dine = [0] * 35
         for ant2 in self.currentAnts:
@@ -296,7 +296,7 @@ cdef class MinMaxCalculate():
 
         return (mine[1:], dine[1:])
 
-    cdef getDistancesToAnts(self, ant):
+    def getDistancesToAnts(self, ant):
         n = len(self.currentAnts) // 2
         ants = [0] * n
         for i, ant2 in enumerate(self.currentAnts):
@@ -307,7 +307,7 @@ cdef class MinMaxCalculate():
                         ants[i % n] = 3 if dis < 7 else 2 if dis < 13 else 1
         return ants
 
-    cdef antsUnderAnts(self):
+    def antsUnderAnts(self):
         n = len(self.currentAnts) // 2
         ants = {self.currentAnts[0].color: [0] * n, self.currentAnts[-1].color: [0] * n}
         for i, ant in enumerate(self.currentAnts):
@@ -316,7 +316,7 @@ cdef class MinMaxCalculate():
                     ants[ant.color][i % n] = sum(val for _, val in ant.antsUnderMe.items())
         return ants
 
-    cdef ant_situation(self, ant):
+    def ant_situation(self, ant):
         if ant.position.id == ant.color:
             return [1, 0, 0, 0]
         if ant.isAlive == True:
@@ -327,7 +327,7 @@ cdef class MinMaxCalculate():
             return [0, 0, 0, 1]
         return [0, 0, 0, 0]
 
-    cdef dicer(self, ant):
+    def dicer(self, ant):
         dice = [0, 0, 0, 0, 0, 0, 0]
         if ant.dieJustUsedInSimulation == 0:
             for d in self.env.rolled:
@@ -339,9 +339,9 @@ cdef class MinMaxCalculate():
             dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 - 1
         return dice
 
-    cdef GetProbabilityOfEat(self, ant):
+    def GetProbabilityOfEat(self, ant):
         return ant.probcapture
 
-    cdef softmax(self, x):
+    def softmax(self, x):
         e_x = np.exp(x - np.max(x))
         return e_x / e_x.sum()
