@@ -4,7 +4,7 @@ import numpy as np
 
 
 class Ant():
-    __slots__ = ("color", "rotation", "magnet", "position", "id", "isAlive", "flipped", "antsUnderMe", "dieJustUsedInSimulation", "probcapture")
+    __slots__ = ("color", "rotation", "magnet", "position", "id", "isAlive", "flipped", "antsUnderMe", "dieJustUsedInSimulation", "probcapture", "pos")
 
     def __init__(self):
         self.color = None
@@ -17,6 +17,7 @@ class Ant():
         self.antsUnderMe = {}
         self.dieJustUsedInSimulation = 0
         self.probcapture = None
+        self.pos = None
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
