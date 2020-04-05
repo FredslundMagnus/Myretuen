@@ -116,7 +116,8 @@ class Agent():
         if self.ImpaleIsActivated:
             self.impala.batchTrain()
             self.impala.restart()
-        self.resettrace()
+        if self.ImpaleIsActivated == True or self.doTrain == True:
+            self.resettrace()
         self.gameNumber += 1
         self.NextbestAction = []
 
