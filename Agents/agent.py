@@ -63,14 +63,21 @@ class Agent():
         return bestAction
 
     def trainAgent(self, reward, action, observation):
-        if len(self.previousState) == 0 or action == None or not self.doTrain:
+        if len(self.previousState) == 0 or action == None:
             return
-        else:
-            newState = self.state(observation)[0]
-            self.previousState = self.previousState[0]
+
+        if not self.doTrain and not self.ImpaleIsActivated:
+            return
+
+        newState = self.state(observation)[0]
+        self.previousState = self.previousState[0]
+
         if self.ImpaleIsActivated:
             self.impala.addData(reward, self.previousState, newState)
-        self.train(reward, self.previousState, newState)
+
+        if self.doTrain:
+            self.train(reward, self.previousState, newState)
+
         self.previousState = []
 
     def train(self, reward, previousState, newState):
@@ -97,7 +104,7 @@ class Agent():
         self.lossf = lossf
         self.minimaxi = minmax
         if self.minimaxi:
-            self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff
+            self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = int(TopNvalues), int(cutOffdepth), ValueCutOff, ValueDiffCutOff, ProbabilityCutOff
             self.minmaxer = MinMaxCalculate(self.value, TopNvalues=self.TopNvalues, cutOffdepth=self.cutOffdepth, ValueCutOff=self.ValueCutOff, ValueDiffCutOff=self.ValueDiffCutOff, ProbabilityCutOff=self.ProbabilityCutOff, explore=self.explore, K=self.K, calcprobs=self.calcprobs)
         else:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
@@ -116,7 +123,8 @@ class Agent():
         if self.ImpaleIsActivated:
             self.impala.batchTrain()
             self.impala.restart()
-        self.resettrace()
+        if self.ImpaleIsActivated == True or self.doTrain == True:
+            self.resettrace()
         self.gameNumber += 1
         self.NextbestAction = []
 
