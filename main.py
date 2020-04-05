@@ -45,40 +45,49 @@ plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plot('TrainingCurve')
 
+try:
+    parameters = np.array(controller.agents['green'].parameters).T
+    plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
+    plot('Weights')
 
-parameters = np.array(controller.agents['green'].parameters).T
-plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
-plot('Weights')
+    print(parameters[:, -1])
+except:
+    pass
 
-print(parameters[:, -1])
 
 if debuggerMode:
     controller.agents['green'].saveModel(name=nameOfRun, place=f'outputs/{Thename}/trained/')
 else:
     controller.agents['green'].saveModel()
 
-green = np.array([agent.rating for agent in controller.agents['red'][1:]])
-red = np.array([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]))
-plt.plot(green, label=controller.agents['green'].name)
-plt.plot(red, label='RandomAgent')
-if debuggerMode:
-    a = np.array([green, red])
-    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", a, delimiter=',', fmt='%d')
-plt.ylim((700, 2000))
-plot('Elo_Rating', labels=True)
+try:
+    green = np.array([agent.rating for agent in controller.agents['red'][1:]])
+    red = np.array([controller.agents['red'][0].rating] * len(controller.agents['red'][1:]))
+    plt.plot(green, label=controller.agents['green'].name)
+    plt.plot(red, label='RandomAgent')
+    if debuggerMode:
+        a = np.array([green, red])
+        np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-Elo.csv", a, delimiter=',', fmt='%d')
+    plt.ylim((700, 2000))
+    plot('Elo_Rating', labels=True)
+except:
+    pass
 
-NumberOfGames = len(controller.agents['green'].EloWhileTrain)
-green = np.array(controller.agents['green'].EloWhileTrain)
-red = np.array([controller.agents['red'][0].rating] * NumberOfGames)
-plt.plot(np.arange(1, NumberOfGames + 1), green, label=controller.agents['green'].name)
-plt.plot(np.arange(1, NumberOfGames + 1), red, label='RandomAgent')
-if debuggerMode:
-    a = np.array([green, red])
-    np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime.csv", a, delimiter=',', fmt='%d')
-plt.xlabel('Games played')
-plt.ylabel('Elo')
-plt.ylim((700, 2000))
-plot('Increase_in_Elo_over_time', labels=True)
+try:
+    NumberOfGames = len(controller.agents['green'].EloWhileTrain)
+    green = np.array(controller.agents['green'].EloWhileTrain)
+    red = np.array([controller.agents['red'][0].rating] * NumberOfGames)
+    plt.plot(np.arange(1, NumberOfGames + 1), green, label=controller.agents['green'].name)
+    plt.plot(np.arange(1, NumberOfGames + 1), red, label='RandomAgent')
+    if debuggerMode:
+        a = np.array([green, red])
+        np.savetxt(f"outputs/{Thename}/csv/{nameOfRun}-EloOverTime.csv", a, delimiter=',', fmt='%d')
+    plt.xlabel('Games played')
+    plt.ylabel('Elo')
+    plt.ylim((700, 2000))
+    plot('Increase_in_Elo_over_time', labels=True)
+except:
+    pass
 
 if debuggerMode:
     print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")
