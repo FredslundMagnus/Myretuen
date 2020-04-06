@@ -78,3 +78,7 @@ controller.run()
 
 - One linear model
 - Most basic feateres implemented
+
+# Attributions
+
+[Ants Vectors by Vecteezy](https://www.vecteezy.com/free-vector/ants "Vecteezy.com")
