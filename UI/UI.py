@@ -269,6 +269,7 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     marie = pygame.transform.scale(pygame.image.load('UI/marie.png').convert_alpha(), (int(301 / s * scale), int(213 / s * scale)))
     skar = pygame.transform.scale(pygame.image.load('UI/skar.png').convert_alpha(), (int(348 / s * scale), int(233 / s * scale)))
     sommer = pygame.transform.scale(pygame.image.load('UI/sommer.png').convert_alpha(), (int(320 / s * scale), int(293 / s * scale)))
+    title = pygame.transform.rotate(pygame.transform.scale(pygame.image.load('UI/title.png').convert_alpha(), (int(275 / 2 * scale), int(85 / 2 * scale))), 45)
     pygame.time.delay(round(1000 / 10))
     # https://www.vecteezy.com/
     win.blit(img, (240 * scale, 270 * scale))
@@ -278,6 +279,8 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     win.blit(marie, (293 * scale, 150 * scale))
     win.blit(skar, (60 * scale, 215 * scale))
     win.blit(sommer, (232 * scale, 85 * scale))
+    # https://fontmeme.com/
+    win.blit(title, (30 * scale, 30 * scale))
     pygame.time.delay(round(1000 / 10))
     pygame.display.update()
     pygame.image.save(win, "background.jpeg")

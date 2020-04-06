@@ -102,6 +102,7 @@ class Agent():
             self.K = None
         self.NextbestAction = []
         self.lossf = lossf
+        self.currentAgent = self
         self.minimaxi = minmax
         if self.minimaxi:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = int(TopNvalues), int(cutOffdepth), ValueCutOff, ValueDiffCutOff, ProbabilityCutOff
