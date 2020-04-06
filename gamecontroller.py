@@ -65,8 +65,8 @@ class Gamecontroller():
     def sleep(self):
         if not self.agents[self.env.currentPlayer].currentAgent.name == 'PlayerAgent':
             time.sleep(self.timeDelay)
-        else:
-            self.timeDelay = max(1, self.timeDelay)
+        # else: # For artificial break
+        #     self.timeDelay = max(1, self.timeDelay)
 
     def convertMove(self, game, move):
         move.game = game
