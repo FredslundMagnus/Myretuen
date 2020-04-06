@@ -22,7 +22,7 @@ class Impala():
         self.currentGame.append((self.lastState, 0))
         self.games.append(self.currentGame)
         self.currentGame = []
-        if len(self.games) > 50:
+        if len(self.games) > self.historyLength:
             self.games = self.games[1:]
 
     def batchTrain(self):
