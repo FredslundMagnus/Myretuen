@@ -4,7 +4,7 @@ import os
 
 
 scale = 2
-animationSpeed = 0.8  # 0 er stillestående, 1 er lige med det samme
+animationSpeed = 0.5  # 0 er stillestående, 1 er lige med det samme
 
 colors = {'blueFade': (179, 180, 208), 'redFade': (
     215, 173, 175), 'greenFade': (176, 186, 134), 'yellowFade': (222, 202, 152),
