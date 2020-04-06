@@ -45,11 +45,11 @@ class Net(nn.Module):
 
     def __init__(self, inputN, dropout):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(inputN, 50)
+        self.fc1 = nn.Linear(inputN, 40)
         self.drop1 = nn.Dropout(dropout**3)
-        self.fc2 = nn.Linear(50, 25)
+        self.fc2 = nn.Linear(40, 20)
         self.drop2 = nn.Dropout(dropout**3)
-        self.fc3 = nn.Linear(25, 10)
+        self.fc3 = nn.Linear(20, 10)
         self.drop3 = nn.Dropout(dropout**3)
         self.fc4 = nn.Linear(10, 10)
         self.fc5 = nn.Linear(10, 1)
