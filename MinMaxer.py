@@ -293,6 +293,15 @@ class MinMaxCalculate():
                         mine[ant.position.dist_to_all[ant2.position.id]] += 1
                     else:
                         dine[ant.position.dist_to_all[ant2.position.id]] += 1
+                else:
+                    if ant.position.type != 'Base':
+                        if ant.color == ant2.color:
+                            mine[ant.position.distBases[ant2.color][0]] += 1
+                        else:
+                            dine[ant.position.distBases[ant2.color][0]] += 1
+                    else:
+                        if ant.color != ant2.color:
+                            dine[21] += 1
 
         return (mine[1:], dine[1:])
 
