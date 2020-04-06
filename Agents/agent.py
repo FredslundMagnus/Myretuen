@@ -90,7 +90,7 @@ class Agent():
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
-            self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = historyLength, startAfterNgames, batchSize, sampleLenth
+            self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)
             self.impala = Impala(self.train, self.resettrace, historyLength=self.historyLength, startAfterNgames=self.startAfterNgames, batchSize=self.batchSize, sampleLenth=self.sampleLenth)
         else:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = None, None, None, None
