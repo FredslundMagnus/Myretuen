@@ -8,6 +8,7 @@ import gym
 from gym import spaces
 from Probability_function import Probability_calculator
 from elo import Elo
+import UI.UI as ui
 
 
 class Myretuen():  # gym.Env
@@ -168,14 +169,20 @@ class Controller():
 
     def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, CalculateProbs=True, UI=True):
         if UI:
+            animation = False
             background, win, connection = drawBackground(fields=self.env.fields, diceHolder=self.env.diceHolder, bases=self.env.bases)
             for _, agent in self.gameController.agents.items():
                 if agent.__class__.__name__ == 'Opponent':
                     for a in agent:
                         a.connection = connection
+                        if a.name == 'PlayerAgent':
+                            animation = True
                 else:
                     agent.connection = connection
-
+                    if agent.name == 'PlayerAgent':
+                        animation = True
+            if not animation:
+                ui.animationSpeed = 1
             x = threading.Thread(target=self.gameController.run, kwargs={'NGames': NGames, 'timeDelay': timeDelay, 'AddAgent': AddAgent, 'CalculateProbs': CalculateProbs})
             x.start()
 

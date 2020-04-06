@@ -262,9 +262,22 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
 
     win.blit(backgroundtemp, (0, 0))
     img = pygame.transform.scale(pygame.image.load('UI/bunk.png').convert_alpha(), (int(2340 / 18 * scale), int(1578 / 18 * scale)))
+    s = 10
+    myre = pygame.transform.scale(pygame.image.load('UI/myre.png').convert_alpha(), (int(386 / s * scale), int(268 / s * scale)))
+    bi = pygame.transform.scale(pygame.image.load('UI/bi.png').convert_alpha(), (int(288 / s * scale), int(310 / s * scale)))
+    grhop = pygame.transform.scale(pygame.image.load('UI/græshop.png').convert_alpha(), (int(397 / s * scale), int(279 / s * scale)))
+    marie = pygame.transform.scale(pygame.image.load('UI/marie.png').convert_alpha(), (int(301 / s * scale), int(213 / s * scale)))
+    skar = pygame.transform.scale(pygame.image.load('UI/skar.png').convert_alpha(), (int(348 / s * scale), int(233 / s * scale)))
+    sommer = pygame.transform.scale(pygame.image.load('UI/sommer.png').convert_alpha(), (int(320 / s * scale), int(293 / s * scale)))
     pygame.time.delay(round(1000 / 10))
     # https://www.vecteezy.com/
     win.blit(img, (240 * scale, 270 * scale))
+    win.blit(myre, (120 * scale, 275 * scale))
+    win.blit(bi, (295 * scale, 85 * scale))
+    win.blit(grhop, (60 * scale, 275 * scale))
+    win.blit(marie, (293 * scale, 150 * scale))
+    win.blit(skar, (60 * scale, 215 * scale))
+    win.blit(sommer, (232 * scale, 85 * scale))
     pygame.time.delay(round(1000 / 10))
     pygame.display.update()
     pygame.image.save(win, "background.jpeg")
@@ -342,7 +355,7 @@ def updateScreen(background, win, game=None, connection=None):
             if i > 0:
                 centerText(6 * scale, str(i + 1), (0, 0, 0), (int(ant.pos[0] + 3 * i * (field.rect.center[0] / 390 - scale / 2)) + 10 * scale, int(ant.pos[1] + 3 * i * (field.rect.center[1] / 390 - scale / 2) + 10 * scale)), 0, win)
 
-        centerText(20 * scale, f'{game.dicesThatHaveBeenRolled}/{game.maxRolls}', (0, 0, 0), (int(50 * scale), int(30 * scale)), 0, win)
+        centerText(20 * scale, f'{game.dicesThatHaveBeenRolled}/{game.maxRolls}', (0, 0, 0), (int(70 * scale), int(40 * scale)), 0, win)
 
         if isHovering:
             centerText(12 * scale, idd, (0, 0, 0), pos, 0, win)
