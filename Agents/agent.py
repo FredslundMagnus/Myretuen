@@ -122,8 +122,8 @@ class Agent():
         self.previousState = self.state(self.env)
         self.previousState = []
         if self.ImpaleIsActivated:
-            self.impala.batchTrain()
             self.impala.restart()
+            self.impala.batchTrain()
         if self.ImpaleIsActivated == True or self.doTrain == True:
             self.resettrace()
         self.gameNumber += 1
