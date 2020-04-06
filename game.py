@@ -56,7 +56,7 @@ class Myretuen():  # gym.Env
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if done:
-            endReward = 3 * len(self.ants) / 2 + 10
+            endReward = 2 * len(self.ants) + 10
             info = {player: (val * 2 - 1) * endReward for player, val in self.whoWonThisGame().items()}
             info['PlayerSwapped'] = False
         if len(self.rolled) == 0:

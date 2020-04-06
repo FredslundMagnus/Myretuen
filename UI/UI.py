@@ -12,8 +12,7 @@ colors = {'blueFade': (179, 180, 208), 'redFade': (
 
 
 def drawAntAtPos(ant, pos, win):
-    img = pygame.image.load(
-        f'UI/Ants/Ant{ant.color}.png').convert_alpha()
+    img = pygame.image.load(f'UI/Ants/Ant{ant.color}.png').convert_alpha()
 
     if ant.pos is None:
         ant.pos = pos
@@ -248,8 +247,7 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
 
     pygame.display.update()
     pygame.image.save(win, "temp.jpeg")
-    img = Image.open('temp.jpeg').filter(
-        ImageFilter.GaussianBlur(radius=5 * scale))
+    img = Image.open('temp.jpeg').filter(ImageFilter.GaussianBlur(radius=5 * scale))
     img.save('temp2.jpeg')
     background = pygame.image.load('temp2.jpeg')
 
@@ -259,10 +257,19 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
         obj.draw()
 
     pygame.display.update()
+    pygame.image.save(win, "backgroundtemp.jpeg")
+    backgroundtemp = pygame.image.load('backgroundtemp.jpeg')
+
+    win.blit(backgroundtemp, (0, 0))
+    img = pygame.transform.scale(pygame.image.load('UI/bunk.png').convert_alpha(), (int(2340 / 18 * scale), int(1578 / 18 * scale)))
+    pygame.time.delay(round(1000 / 10))
+    win.blit(img, (240 * scale, 270 * scale))
+    pygame.time.delay(round(1000 / 10))
+    pygame.display.update()
     pygame.image.save(win, "background.jpeg")
     background = pygame.image.load('background.jpeg')
-    [os.remove(file)
-     for file in ["temp.jpeg", 'temp2.jpeg', 'background.jpeg']]
+
+    [os.remove(file) for file in ["temp.jpeg", 'temp2.jpeg', 'background.jpeg', 'backgroundtemp.jpeg']]
     connection = Connection(win)
     return background, win, connection
 
@@ -333,6 +340,8 @@ def updateScreen(background, win, game=None, connection=None):
                 drawAntAtPos(ant, (int(field.rect.x + 3 * i * (field.rect.center[0] / 390 - scale / 2)), int(field.rect.y + 3 * i * (field.rect.center[1] / 390 - scale / 2))), win)
             if i > 0:
                 centerText(6 * scale, str(i + 1), (0, 0, 0), (int(ant.pos[0] + 3 * i * (field.rect.center[0] / 390 - scale / 2)) + 10 * scale, int(ant.pos[1] + 3 * i * (field.rect.center[1] / 390 - scale / 2) + 10 * scale)), 0, win)
+
+        centerText(20 * scale, f'{game.dicesThatHaveBeenRolled}/{game.maxRolls}', (0, 0, 0), (int(50 * scale), int(30 * scale)), 0, win)
 
         if isHovering:
             centerText(12 * scale, idd, (0, 0, 0), pos, 0, win)
