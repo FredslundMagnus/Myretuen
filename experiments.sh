@@ -1,18 +1,18 @@
 #!/bin/sh
-mkdir outputs/test
-mkdir outputs/test/csv
-mkdir outputs/test/trained
-mkdir outputs/test/TrainingCurve
-mkdir outputs/test/Weights
-mkdir outputs/test/Elo_Rating
-mkdir outputs/test/Increase_in_Elo_over_time
-bsub -o "outputs/test/NNAgent0test.md" -J "NNAgent0test" -P "NNAgent0test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent1test.md" -J "NNAgent1test" -P "NNAgent1test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent2test.md" -J "NNAgent2test" -P "NNAgent2test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent3test.md" -J "NNAgent3test" -P "NNAgent3test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent4test.md" -J "NNAgent4test" -P "NNAgent4test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent5test.md" -J "NNAgent5test" -P "NNAgent5test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent6test.md" -J "NNAgent6test" -P "NNAgent6test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent7test.md" -J "NNAgent7test" -P "NNAgent7test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent8test.md" -J "NNAgent8test" -P "NNAgent8test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
-bsub -o "outputs/test/NNAgent9test.md" -J "NNAgent9test" -P "NNAgent9test 20 10 NNAgent 1 1 1 1 0 test -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002" < submit.sh
+mkdir outputs/test2
+mkdir outputs/test2/csv
+mkdir outputs/test2/trained
+mkdir outputs/test2/TrainingCurve
+mkdir outputs/test2/Weights
+mkdir outputs/test2/Elo_Rating
+mkdir outputs/test2/Increase_in_Elo_over_time
+bsub -o "outputs/test2/NNAgent0test2.md" -J "NNAgent0test2" -P "NNAgent0test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent1test2.md" -J "NNAgent1test2" -P "NNAgent1test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent2test2.md" -J "NNAgent2test2" -P "NNAgent2test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent3test2.md" -J "NNAgent3test2" -P "NNAgent3test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent4test2.md" -J "NNAgent4test2" -P "NNAgent4test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent5test2.md" -J "NNAgent5test2" -P "NNAgent5test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent6test2.md" -J "NNAgent6test2" -P "NNAgent6test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent7test2.md" -J "NNAgent7test2" -P "NNAgent7test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent8test2.md" -J "NNAgent8test2" -P "NNAgent8test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
+bsub -o "outputs/test2/NNAgent9test2.md" -J "NNAgent9test2" -P "NNAgent9test2 20 10 NNAgent 1 1 1 1 0 test2 -lossf MME -dropout 0.5 -discount 0.995 -lambda 0.9 -lr 0.0002 -batchSize 7" < submit.sh
