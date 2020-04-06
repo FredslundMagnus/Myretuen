@@ -22,7 +22,7 @@ class Impala():
         self.currentGame.append((self.lastState, 0))
         self.games.append(self.currentGame)
         self.currentGame = []
-        if len(self.games) > 50:
+        if len(self.games) > self.historyLength:
             self.games = self.games[1:]
 
     def batchTrain(self):
@@ -35,8 +35,9 @@ class Impala():
     def getBatch(self, length):
         length += 1
         game = random.choice(self.games)
-        pos = random.randint(length, len(game))
-        return game[pos - length:pos]
+        pos = random.randint(1, len(game) + length - 1)
+        print(max(pos - length, 0), min(pos, len(game)))
+        return game[max(pos - length, 0):min(pos, len(game))]
 
     def trainOneBatch(self, batch):
         self.resetFunktion()
