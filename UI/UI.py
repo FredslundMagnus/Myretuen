@@ -263,6 +263,7 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     win.blit(backgroundtemp, (0, 0))
     img = pygame.transform.scale(pygame.image.load('UI/bunk.png').convert_alpha(), (int(2340 / 18 * scale), int(1578 / 18 * scale)))
     pygame.time.delay(round(1000 / 10))
+    # https://www.vecteezy.com/
     win.blit(img, (240 * scale, 270 * scale))
     pygame.time.delay(round(1000 / 10))
     pygame.display.update()
