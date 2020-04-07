@@ -85,7 +85,7 @@ def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
     print(f"      Basereward :              {basereward}.")
     print(f"      Stepreward :              {stepreward}.\n")
 
-    print(f"      Rewards :                 {rewards}.\n")
+    print(f"      Features :                {rewards}.\n")
 
     if network is not None:
         print(f"      Network :                 {network}.\n")
