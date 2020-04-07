@@ -4,10 +4,10 @@ import time
 class Move():
     __slots__ = ("Eatreward", "basereward", "stepreward", "start", "dice", "end", "game", "needResim", "reward")
 
-    def __init__(self, start=None, dice=None, end=None, game=None):
-        self.Eatreward = 6
-        self.basereward = 3
-        self.stepreward = 0
+    def __init__(self, start=None, dice=None, end=None, game=None, Eatreward=None, basereward=None, stepreward=None):
+        self.Eatreward = Eatreward
+        self.basereward = basereward
+        self.stepreward = stepreward
         self.start = start
         self.dice = dice
         self.end = end
@@ -175,7 +175,7 @@ class Move():
 
             enemies = [ant for ant in ants if ant.color == self.end.ants[-1].color]
             if all([not x.isAlive for x in enemies]):
-                sim_win_reward += 3 * len(ants) / 2 + 10
+                sim_win_reward += 2 * len(ants) + 10
         else:
             probofstate = 1 - probofstate
             if probofstate != 1:
@@ -194,7 +194,7 @@ class Move():
 
             allies = [ant for ant in ants if ant.color == theAnt.color]
             if all([not x.isAlive for x in allies]):
-                sim_win_reward -= 3 * len(ants) / 2 + 10
+                sim_win_reward -= 2 * len(ants) + 10
 
         self.game.prob.CalculateWinChance()
         self.giveantsprobabilities(self.game.prob.probmatrix, ants)
