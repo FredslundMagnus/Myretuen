@@ -67,7 +67,7 @@ def print_stats(self, *amount):
 
 
 def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
-    explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, network, rewards = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr, p.network, p.rewards
+    explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, network, Features = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr, p.network, p.Features
     winNumber, maxRolls, Eatreward, basereward, stepreward = env.winNumber, env.maxRolls, env.Eatreward, env.basereward, env.stepreward
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
@@ -85,7 +85,7 @@ def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
     print(f"      Basereward :              {basereward}.")
     print(f"      Stepreward :              {stepreward}.\n")
 
-    print(f"      Features :                {rewards}.\n")
+    print(f"      Features :                {Features}.\n")
 
     if network is not None:
         print(f"      Network :                 {network}.\n")
