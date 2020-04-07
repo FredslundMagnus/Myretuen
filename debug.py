@@ -112,7 +112,7 @@ def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
     print(f'      cutOffdepth :             {str(p.cutOffdepth)}.')
     print(f'      ValueCutOff :             {str(p.ValueCutOff)}.')
     print(f'      ValueDiffCutOff :         {str(p.ValueDiffCutOff)}.')
-    print(f'      ProbabilityCutOff :       {str(p.ProbabilityCutOff)}\n.')
+    print(f'      ProbabilityCutOff :       {str(p.ProbabilityCutOff)}.\n')
 
     print(f'    Calcprobs enabled :         {str(calcprobs)}.\n')
 
