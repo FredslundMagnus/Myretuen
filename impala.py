@@ -36,7 +36,7 @@ class Impala():
         length += 1
         game = random.choice(self.games)
         pos = random.randint(1, len(game) + length - 1)
-        print(max(pos - length, 0), min(pos, len(game)))
+        # print((max(pos - length, 0) - min(pos, len(game))), end=' ')
         return game[max(pos - length, 0):min(pos, len(game))]
 
     def trainOneBatch(self, batch):
