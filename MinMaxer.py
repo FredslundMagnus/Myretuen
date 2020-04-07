@@ -95,7 +95,7 @@ class MinMaxCalculate():
         if actionss == []:
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(None)
-            return Proba * (rewardtrace - 3 * len(self.game.ants) / 2 + 10) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 3 * len(self.game.ants) / 2 + 10)
+            return Proba * (rewardtrace - 2 * len(self.game.ants) + 10) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 2 * len(self.game.ants) + 10)
         # for i in range(len(canditate_actions)):
         #     print(canditate_actions[i], end=' ')
         #     print(canditate_probs[i], end=' ')

@@ -176,8 +176,7 @@ class Agent():
             score[2] = 1
         elif score[0] < score[1]:
             score[2] = -1
-        if self.env.maxRolls - self.env.dicesThatHaveBeenRolled < 50:
-            score[3] = 1
+        score[3] = (self.env.dicesThatHaveBeenRolled/self.env.maxRolls)**6
         return score
 
     def antState(self, ant):
