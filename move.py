@@ -5,8 +5,8 @@ class Move():
     __slots__ = ("Eatreward", "basereward", "stepreward", "start", "dice", "end", "game", "needResim", "reward")
 
     def __init__(self, start=None, dice=None, end=None, game=None):
-        self.Eatreward = 6
-        self.basereward = 3
+        self.Eatreward = 5
+        self.basereward = 5
         self.stepreward = 0
         self.start = start
         self.dice = dice
