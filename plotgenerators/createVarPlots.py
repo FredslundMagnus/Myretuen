@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 import re
+from plots import EloPlot
 
 subdirs = set()
 for s, _, _ in os.walk(os.curdir):
@@ -45,64 +46,21 @@ for directory in subdirs:
                     except Exception as e:
                         print(e)
         name = directory.split('\\')[-2]
+
         try:
             if Elo is not None:
-                Mean = np.mean(Elo, axis=2)
-                Std = np.std(Elo, axis=2)
-                y = Mean[0, :]
-                sd = Std[0, :]
-                x = np.arange(1, len(y) + 1)
-                plt.plot(x, y, lw=2, label=agent, color='#4CAF50', zorder=2)
-                plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
-                plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
-                plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
-                plt.axhline(y=1800, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=2400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.fill_between(x, y + sd, y - sd, facecolor='#4CAF50', alpha=0.5, zorder=2)
-                plt.legend(loc='upper left')
-                plt.ylim((900, 2500))
-                plt.title(f'{name} - Elo Rating')
-                plt.xlabel('Players')
-                plt.ylabel('Elo')
-                plt.savefig(f'plots/EloRating/' + f'{name}' + '.png')
-                plt.savefig(f'outputs/{name}/' + f'{name} - Elo Rating' + '.png')
-                plt.clf()
+                with EloPlot(xlabel='Players', title=f'{name} - Elo Rating', saves=[f'plots/EloRating/' + f'{name}' + '.png', f'outputs/{name}/' + f'{name} - Elo Rating' + '.png']) as plt:
+                    plt.varPlot(plt, Elo, agent, '#4CAF50')
         except Exception as e:
             print(e)
+
         try:
             if EloOverTime is not None:
-                Mean = np.mean(EloOverTime, axis=2)
-                Std = np.std(EloOverTime, axis=2)
-                y = Mean[0, :]
-                sd = Std[0, :]
-                x = np.arange(1, len(y) + 1)
-                plt.plot(x, y, lw=2, label=agent, color='#4CAF50', zorder=2)
-                plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
-                plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
-                plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
-                plt.axhline(y=1800, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.axhline(y=2400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-                plt.fill_between(x, y + sd, y - sd, facecolor='#4CAF50', alpha=0.5, zorder=2)
-                plt.legend(loc='upper left')
-                plt.ylim((900, 2500))
-                plt.title(f'{name} - Elo Rating over Time')
-                plt.xlabel('Games')
-                plt.ylabel('Elo')
-                plt.savefig(f'plots/EloRatingOverTime/' + f'{name}' + '.png')
-                plt.savefig(f'outputs/{name}/' + f'{name} - Elo Rating over Time' + '.png')
-                plt.clf()
+                with EloPlot(title=f'{name} - Elo Rating over Time', saves=[f'plots/EloRatingOverTime/' + f'{name}' + '.png', f'outputs/{name}/' + f'{name} - Elo Rating over Time' + '.png']) as plt:
+                    plt.varPlot(plt, EloOverTime, agent, '#4CAF50')
         except Exception as e:
             print(e)
+
         Elo = None
         EloOverTime = None
         data = None
