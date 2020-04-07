@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 import re
-
+print('\n\n\n')
 Elo = None
 EloOverTime = None
 agent = 'Error'
@@ -36,8 +36,10 @@ for directory in [".\outputs\CleverRandomElo\csv", ".\outputs\CleverRandomEloCal
     theData = EloOverTime[0, 1000:, :]
     m = theData.mean()
     sd = theData.std() / np.sqrt(theData.size) * 1.96
-    print(f'{name}: mean = {m:.6}    ,    95% = [{(m-sd):.6}, {(m+sd):.6}]')
+    print(f'Calculated from {theData.shape[1]} samples.')
+    print(f'{name}: mean = {m:.6}    ,    95% = [{(m-sd):.6}, {(m+sd):.6}]\n')
 
     Elo = None
     EloOverTime = None
     data = None
+print('\n\n')
