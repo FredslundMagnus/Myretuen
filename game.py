@@ -12,9 +12,9 @@ import UI.UI as ui
 
 
 class Myretuen():  # gym.Env
-    __slots__ = ("fields", "player1", "player2", "currentPlayer", "rolled", "winNumber", "maxRolls", "dicesThatHaveBeenRolled", "rolledSameDice", "nGamePlay", "totalScore", "wins", "Runningwinrate", "prob", "playerwithnomoves", "DeepsimWin", "bases", "diceHolder", "ants")
+    __slots__ = ("fields", "player1", "player2", "currentPlayer", "rolled", "winNumber", "maxRolls", "dicesThatHaveBeenRolled", "rolledSameDice", "nGamePlay", "totalScore", "wins", "Runningwinrate", "prob", "playerwithnomoves", "DeepsimWin", "bases", "diceHolder", "ants", "Eatreward", "basereward", "stepreward")
 
-    def __init__(self, winNumber=9, maxRolls=300):
+    def __init__(self, winNumber=9, maxRolls=300, Eatreward=4, basereward=4, stepreward=0):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
@@ -31,6 +31,9 @@ class Myretuen():  # gym.Env
         self.prob = Probability_calculator(self.bases, self.ants)
         self.playerwithnomoves = None
         self.DeepsimWin = False
+        self.Eatreward = Eatreward
+        self.basereward = basereward
+        self.stepreward = stepreward
 
     def roll(self):
         self.dicesThatHaveBeenRolled += 1
@@ -38,10 +41,14 @@ class Myretuen():  # gym.Env
         self.rolledSameDice = len(set(self.rolled)) == 1
 
     def actions(self):
+        Eatreward = self.Eatreward
+        basereward = self.basereward
+        stepreward = self.stepreward
+        isLegalMove = self.isLegalMove
         for ant, start, dice in self.getAllStartConfigurations():
             for end in self.getAllPositionsAtDistance(start, dice):
-                if self.isLegalMove(ant, end):
-                    yield Move(start=ant.position, dice=dice, end=end, game=self)
+                if isLegalMove(ant, end):
+                    yield Move(start=ant.position, dice=dice, end=end, game=self, Eatreward=Eatreward, basereward=basereward, stepreward=stepreward)
 
     def action_space(self):
         return list(self.actions())
