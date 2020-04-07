@@ -1,13 +1,13 @@
 #!/bin/sh
-mkdir outputs/testing
-mkdir outputs/testing/csv
-mkdir outputs/testing/trained
-mkdir outputs/testing/TrainingCurve
-mkdir outputs/testing/Weights
-mkdir outputs/testing/Elo_Rating
-mkdir outputs/testing/Increase_in_Elo_over_time
-bsub -o "outputs/testing/NNAgent0testing.md" -J "NNAgent0testing" -P "NNAgent0testing 30 5 NNAgent 1 1 1 1 0 testing -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,50,40,30,20,10] -winNumber 5 -maxRolls 500 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
-bsub -o "outputs/testing/NNAgent1testing.md" -J "NNAgent1testing" -P "NNAgent1testing 30 5 NNAgent 1 1 1 1 0 testing -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,50,40,30,20,10] -winNumber 5 -maxRolls 500 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
-bsub -o "outputs/testing/NNAgent2testing.md" -J "NNAgent2testing" -P "NNAgent2testing 30 5 NNAgent 1 1 1 1 0 testing -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,50,40,30,20,10] -winNumber 5 -maxRolls 500 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
-bsub -o "outputs/testing/NNAgent3testing.md" -J "NNAgent3testing" -P "NNAgent3testing 30 5 NNAgent 1 1 1 1 0 testing -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,50,40,30,20,10] -winNumber 5 -maxRolls 500 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
-bsub -o "outputs/testing/NNAgent4testing.md" -J "NNAgent4testing" -P "NNAgent4testing 30 5 NNAgent 1 1 1 1 0 testing -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,50,40,30,20,10] -winNumber 5 -maxRolls 500 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
+mkdir outputs/testing2
+mkdir outputs/testing2/csv
+mkdir outputs/testing2/trained
+mkdir outputs/testing2/TrainingCurve
+mkdir outputs/testing2/Weights
+mkdir outputs/testing2/Elo_Rating
+mkdir outputs/testing2/Increase_in_Elo_over_time
+bsub -o "outputs/testing2/NNAgent0testing2.md" -J "NNAgent0testing2" -P "NNAgent0testing2 30 5 NNAgent 1 1 1 1 0 testing2 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,5,50,40,30,20,10] -winNumber 5 -maxRolls 20 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
+bsub -o "outputs/testing2/NNAgent1testing2.md" -J "NNAgent1testing2" -P "NNAgent1testing2 30 5 NNAgent 1 1 1 1 0 testing2 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,5,50,40,30,20,10] -winNumber 5 -maxRolls 20 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
+bsub -o "outputs/testing2/NNAgent2testing2.md" -J "NNAgent2testing2" -P "NNAgent2testing2 30 5 NNAgent 1 1 1 1 0 testing2 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,5,50,40,30,20,10] -winNumber 5 -maxRolls 20 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
+bsub -o "outputs/testing2/NNAgent3testing2.md" -J "NNAgent3testing2" -P "NNAgent3testing2 30 5 NNAgent 1 1 1 1 0 testing2 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,5,50,40,30,20,10] -winNumber 5 -maxRolls 20 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
+bsub -o "outputs/testing2/NNAgent4testing2.md" -J "NNAgent4testing2" -P "NNAgent4testing2 30 5 NNAgent 1 1 1 1 0 testing2 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -network [70,60,5,50,40,30,20,10] -winNumber 5 -maxRolls 20 -Eatreward 10 -basereward 10 -stepreward -1" < submit.sh
