@@ -8,7 +8,7 @@ Elo = None
 EloOverTime = None
 agent = 'Error'
 data = None
-for directory in [".\outputs\CleverRandomElo\csv", ".\outputs\CleverRandomEloCalcProb\csv"]:
+for directory in [".\outputs\CleverRandomElo\csv", ".\outputs\CleverRandomEloCalcProb-4000\csv"]:
     for _, _, files in os.walk(directory):
         for filename in files:
             match = re.match(r"([a-z]+)([0-9]+)", filename, re.I)
@@ -22,15 +22,8 @@ for directory in [".\outputs\CleverRandomElo\csv", ".\outputs\CleverRandomEloCal
                 data = np.array(data).reshape(data.shape[0], data.shape[1], 1)
             except Exception as e:
                 pass
-            if curentname == 'Elo':
-                try:
-                    if Elo is None:
-                        Elo = data
-                    else:
-                        Elo = np.concatenate((Elo, data), axis=-1)
-                except Exception as e:
-                    print(e)
-            elif curentname == 'EloOverTime':
+
+            if curentname == 'EloOverTime':
                 try:
                     if EloOverTime is None:
                         EloOverTime = data
@@ -38,6 +31,7 @@ for directory in [".\outputs\CleverRandomElo\csv", ".\outputs\CleverRandomEloCal
                         EloOverTime = np.concatenate((EloOverTime, data), axis=-1)
                 except Exception as e:
                     print(e)
+
     name = directory.split('\\')[-2]
     theData = EloOverTime[0, 1000:, :]
     m = theData.mean()
