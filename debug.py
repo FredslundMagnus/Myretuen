@@ -80,7 +80,7 @@ def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
     print(f"    Play for :                  {nGames} games.")
     print(f"      Add Agent every :         {addAgent} game.")
     print(f"      Game length :             {maxRolls} rolls.")
-    print(f"      With with :               {winNumber} ants.")
+    print(f"      Win with :                {winNumber} ants.")
     print(f"      Eatreward :               {Eatreward}.")
     print(f"      Basereward :              {basereward}.")
     print(f"      Stepreward :              {stepreward}.\n")
