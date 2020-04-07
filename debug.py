@@ -8,7 +8,7 @@ import time
 
 
 def getvals(args):
-    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03, '-historyLength': 20, '-startAfterNgames': 20, '-batchSize': 20, '-sampleLenth': 5, '-network': [40, 20, 10], '-winNumber': 9, '-maxRolls': 300, '-Eatreward': 4, '-basereward': 4, '-stepreward': 0}
+    d = {'-lossf': 'Abs', '-K': 2000, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03, '-historyLength': 20, '-startAfterNgames': 20, '-batchSize': 20, '-sampleLenth': 5, '-network': [40, 20, 10], '-winNumber': 9, '-maxRolls': 300, '-Eatreward': 4, '-basereward': 4, '-stepreward': 0}
     for i, s in enumerate(args):
         if s in d:
             try:

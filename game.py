@@ -20,8 +20,8 @@ class Myretuen():  # gym.Env
         self.player2 = self.ants[-1].color
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
-        self.winNumber = min(winNumber, len(self.ants) // 2)
-        self.maxRolls = maxRolls
+        self.winNumber = int(min(winNumber, len(self.ants) // 2))
+        self.maxRolls = int(maxRolls)
         self.dicesThatHaveBeenRolled = 0
         self.rolledSameDice = False
         self.nGamePlay = 1
