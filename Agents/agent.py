@@ -86,16 +86,17 @@ class Agent():
     def value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth):
+    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)
             self.impala = Impala(self.train, self.resettrace, historyLength=self.historyLength, startAfterNgames=self.startAfterNgames, batchSize=self.batchSize, sampleLenth=self.sampleLenth)
         else:
-            self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = None, None, None, None
+            self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth, self.impala = None, None, None, None, None
         self.EloWhileTrain = []
         self.name = name
+        self.network = network
         self.gameNumber = 1
         self.K, self.dropout, self.alpha, self.discount, self.lambd, self.lr = K, dropout, alpha, discount, lambd, lr
         if not self.explore:
@@ -176,7 +177,7 @@ class Agent():
             score[2] = 1
         elif score[0] < score[1]:
             score[2] = -1
-        score[3] = (self.env.dicesThatHaveBeenRolled/self.env.maxRolls)**6
+        score[3] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**6
         return score
 
     def antState(self, ant):

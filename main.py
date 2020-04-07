@@ -28,7 +28,7 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(NNAgent(explore=False, doTrain=False, impala=False, dropout=0, minmax=False).loadModel('NNAgentIMPALAFULL')), agent2=NNAgent(explore=False, doTrain=False, impala=False, dropout=0.5, minmax=False).loadModel('NNAgentIMPALAFULL'))
+    controller = Controller(env=env, agent1=Opponent(NNAgent(explore=False, doTrain=False, impala=False, dropout=0, minmax=False)), agent2=NNAgent(explore=False, doTrain=False, impala=False, dropout=0.5, minmax=False))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
 
 
