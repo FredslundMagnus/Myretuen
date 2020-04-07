@@ -16,7 +16,7 @@ class NNAgent(Agent):
         state, n = infostate[0], infostate[1]
         Nfeature = np.array(state).shape[-1]
         if self.phi == []:
-            self.phi = Net(Nfeature, self.dropout)
+            self.phi = Net(Nfeature, self.dropout, [40, 20, 10])
             self.optimizer = optim.Adam(self.phi.parameters(), lr=self.lr, amsgrad=True)
         x = np.array(state).reshape(-1, Nfeature)
         factor = torch.FloatTensor(np.concatenate(
@@ -43,24 +43,35 @@ class NNAgent(Agent):
 
 class Net(nn.Module):
 
-    def __init__(self, inputN, dropout):
+    def __init__(self, inputN, dropout, network):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(inputN, 40)
-        self.drop1 = nn.Dropout(dropout**3)
-        self.fc2 = nn.Linear(40, 20)
-        self.drop2 = nn.Dropout(dropout**3)
-        self.fc3 = nn.Linear(20, 10)
-        self.drop3 = nn.Dropout(dropout**3)
-        self.fc4 = nn.Linear(10, 10)
-        self.fc5 = nn.Linear(10, 1)
+        self.network = nn.ModuleList([nn.Linear(inputN, network[0])])
+        network = network + [network[-1]]
+        for i, n in enumerate(network[:-1]):
+            self.network.append(nn.LeakyReLU())
+            self.network.append(nn.Dropout(dropout))
+            self.network.append(nn.Linear(n, network[i + 1]))
+        self.network.append(nn.LeakyReLU())
+        self.network.append(nn.Linear(network[-1], 1))
+        # self.fc1 = nn.Linear(inputN, 40)
+        # self.drop1 = nn.Dropout(dropout**3)
+        # self.fc2 = nn.Linear(40, 20)
+        # self.drop2 = nn.Dropout(dropout**3)
+        # self.fc3 = nn.Linear(20, 10)
+        # self.drop3 = nn.Dropout(dropout**3)
+        # self.fc4 = nn.Linear(10, 10)
+        # self.fc5 = nn.Linear(10, 1)
 
     def forward(self, x):
-        x = F.leaky_relu(self.fc1(x))
-        x = self.drop1(x)
-        x = F.leaky_relu(self.fc2(x))
-        x = self.drop2(x)
-        x = F.leaky_relu(self.fc3(x))
-        x = self.drop3(x)
-        x = F.leaky_relu(self.fc4(x))
-        x = self.fc5(x)
+        # x = F.leaky_relu(self.fc1(x))
+        # x = self.drop1(x)
+        # x = F.leaky_relu(self.fc2(x))
+        # x = self.drop2(x)
+        # x = F.leaky_relu(self.fc3(x))
+        # x = self.drop3(x)
+        # x = F.leaky_relu(self.fc4(x))
+        # x = self.fc5(x)
+        # return x
+        for f in self.network:
+            x = f(x)
         return x
