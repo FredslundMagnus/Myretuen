@@ -3,7 +3,7 @@ import numpy as np
 
 
 with EloPlot(title=f'Clever Random - Elo Rating', saves=[f'GoodPlots/CleverRandom.png'], CR=False, CRP=False) as plt:
-    for EloOverTime, name, agent, color in Data([".\\outputs\\CleverRandomElo\\csv", ".\\outputs\\CleverRandomEloCalcProb-4000\\csv"], colors=['#4CAF50', '#2196F3'], elo=False):
+    for EloOverTime, name, agent, color in Data([".\\outputs\\CleverRandomEloCalcProb-4000\\csv", ".\\outputs\\CleverRandomElo\\csv"], colors=['#4CAF50', '#2196F3'], elo=False):
         name = 'CleverRandom+probs' if name == 'CleverRandomEloCalcProb-4000' else 'CleverRandom'
         theData = EloOverTime[0, 1000:, :]
 
