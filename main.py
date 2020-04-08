@@ -28,8 +28,8 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(NNAgent(explore=False, doTrain=False, impala=False, dropout=0, minmax=False)), agent2=NNAgent(explore=False, doTrain=False, impala=False, dropout=0.5, minmax=False))
-    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
+    controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, doTrain=False, impala=True, calcprobs=True, minmax=True, lossf='MME', K=500, dropout=0.1, alpha=None, discount=0.98, lambd=0.8, lr=0.0002, TopNvalues=3, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=10, startAfterNgames=10, batchSize=100, sampleLenth=10, network=[50, 25, 10], rating=1000))
+    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=10)
 
 
 def plot(name, labels=False):
