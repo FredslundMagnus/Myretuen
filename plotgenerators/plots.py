@@ -23,26 +23,30 @@ class EloPlot():
             x = np.arange(1, len(y) + 1)
             self.plot(x, y, lw=2, label=agent, color=color, zorder=2)
             self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+            if data is not None:
+                self.doPrint = True
 
         self.plt.varPlot = varPlot
+        self.plt.doPrint = False
 
     def __enter__(self):
         return self.plt
 
     def __exit__(self, types, value, traceback):
-        self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
-        self.plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
-        self.plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
-        self.plt.axhline(y=1800, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.axhline(y=2400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-        self.plt.legend(loc='upper left')
-        for savepos in self.saves:
-            self.plt.savefig(savepos)
+        if self.plt.doPrint:
+            self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
+            self.plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
+            self.plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
+            self.plt.axhline(y=1800, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=2400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.legend(loc='upper left')
+            for savepos in self.saves:
+                self.plt.savefig(savepos)
         self.plt.clf()
 
 
@@ -92,35 +96,11 @@ class DataFinder():
         self.data = None
 
 
-# for directory in subdirs:
-#     try:
-#         for _, _, files in os.walk(directory):
-#             for filename in files:
-#                 match = re.match(r"([a-z]+)([0-9]+)", filename, re.I)
-#                 if match:
-#                     items = match.groups()
-#                     agent = items[0]
-#                 curentname = None
-#                 try:
-#                     curentname = filename.split('-')[-1][:-4]
-#                     data = pd.read_csv(directory + '\\' + filename, header=None)
-#                     data = np.array(data).reshape(data.shape[0], data.shape[1], 1)
-#                 except Exception as e:
-#                     print(e)
-#                 if curentname == 'Elo':
-#                     try:
-#                         if Elo is None:
-#                             Elo = data
-#                         else:
-#                             Elo = np.concatenate((Elo, data), axis=-1)
-#                     except Exception as e:
-#                         print(e)
-#                 elif curentname == 'EloOverTime':
-#                     try:
-#                         if EloOverTime is None:
-#                             EloOverTime = data
-#                         else:
-#                             EloOverTime = np.concatenate((EloOverTime, data), axis=-1)
-#                     except Exception as e:
-#                         print(e)
-#         name = directory.split('\\')[-2]
+def allDirs():
+    subdirs = set()
+    for s, _, _ in os.walk(os.curdir):
+        if s[:10] == '.\outputs\\':
+            for s1, _, _ in os.walk(s):
+                if s1[-3:] == 'csv':
+                    subdirs.add(s1)
+    return subdirs
