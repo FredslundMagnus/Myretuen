@@ -86,8 +86,8 @@ class Agent():
     def value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth):
-        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
+    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, rating=1000):
+        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], rating, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)

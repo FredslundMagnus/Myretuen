@@ -8,8 +8,8 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0.45, alpha=None, discount=0.995, lambd=0.9, lr=0.0005, TopNvalues=10, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=25, startAfterNgames=25, batchSize=100, sampleLenth=5):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth)
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0, alpha=None, discount=0.995, lambd=0.9, lr=0.0005, TopNvalues=10, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=25, startAfterNgames=25, batchSize=100, sampleLenth=5, rating=1000):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, rating)
         self.optimizer = None
 
     def value(self, infostate, return_float=True):
@@ -46,11 +46,11 @@ class Net(nn.Module):
     def __init__(self, inputN, dropout):
         super(Net, self).__init__()
         self.fc1 = nn.Linear(inputN, 40)
-        self.drop1 = nn.Dropout(dropout**3)
+        self.drop1 = nn.Dropout(dropout)
         self.fc2 = nn.Linear(40, 20)
-        self.drop2 = nn.Dropout(dropout**3)
+        self.drop2 = nn.Dropout(dropout)
         self.fc3 = nn.Linear(20, 10)
-        self.drop3 = nn.Dropout(dropout**3)
+        self.drop3 = nn.Dropout(dropout)
         self.fc4 = nn.Linear(10, 10)
         self.fc5 = nn.Linear(10, 1)
 
