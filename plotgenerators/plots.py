@@ -6,7 +6,7 @@ import os
 
 
 class EloPlot():
-    def __init__(self, xlabel='Games', title='Placeholder', saves=[]):
+    def __init__(self, xlabel='Games', title='Placeholder', saves=[], RA=True, CR=True, CRP=True):
         self.plt = plt
         self.plt.ylim((900, 2500))
         self.plt.title(title)
@@ -14,16 +14,17 @@ class EloPlot():
         self.plt.xlabel(xlabel)
         self.plt.ylabel('Elo')
         self.saves = saves
+        self.RA, self.CR, self.CRP = RA, CR, CRP
 
         def varPlot(self, data, agent, color):
-            Mean = np.mean(data, axis=2)
-            Std = np.std(data, axis=2)
-            y = Mean[0, :]
-            sd = Std[0, :]
-            x = np.arange(1, len(y) + 1)
-            self.plot(x, y, lw=2, label=agent, color=color, zorder=2)
-            self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
             if data is not None:
+                Mean = np.mean(data, axis=2)
+                Std = np.std(data, axis=2)
+                y = Mean[0, :]
+                sd = Std[0, :]
+                x = np.arange(1, len(y) + 1)
+                self.plot(x, y, lw=2, label=agent, color=color, zorder=2)
+                self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
                 self.doPrint = True
 
         self.plt.varPlot = varPlot
@@ -34,12 +35,15 @@ class EloPlot():
 
     def __exit__(self, types, value, traceback):
         if self.plt.doPrint:
-            self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
+            if self.RA:
+                self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
             self.plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-            self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
+            if self.CR:
+                self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
             self.plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-            self.plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
+            if self.CRP:
+                self.plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
             self.plt.axhline(y=1800, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
@@ -68,7 +72,9 @@ class DataFinder():
                     data = pd.read_csv(directory + '\\' + filename, header=None)
                     data = np.array(data).reshape(data.shape[0], data.shape[1], 1)
                 except Exception as e:
-                    print(e, 3)
+                    curentname = None
+                    print(e, 3, curentname)
+
                 if curentname == 'Elo'and elo:
                     try:
                         if self.Elo is None:

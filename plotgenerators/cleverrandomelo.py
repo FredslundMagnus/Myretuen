@@ -2,7 +2,7 @@ from plots import EloPlot, DataFinder
 import numpy as np
 
 
-with EloPlot(title=f'Clever Random - Elo Rating', saves=[f'GoodPlots/CleverRandom.png']) as plt:
+with EloPlot(title=f'Clever Random - Elo Rating', saves=[f'GoodPlots/CleverRandom.png'], CR=False, CRP=False) as plt:
     for directory, color in [(".\outputs\CleverRandomElo\csv", '#4CAF50'), (".\outputs\CleverRandomEloCalcProb-4000\csv", '#2196F3')]:
         with DataFinder(directory, elo=False) as obj:
             _, EloOverTime, name, agent = obj
