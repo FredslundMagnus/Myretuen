@@ -16,6 +16,7 @@ class RandomAgent(Agent):
 
     def resetGame(self):
         self.rating = 1000
+        print(self.rating)
 
     def value(self, infostate):
         return random.uniform(0, 1)

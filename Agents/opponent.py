@@ -12,12 +12,11 @@ def incrementalChooser(obj):
     return obj.agents[obj.i]
 
 
-def weightedChooser(obj):
+def weightedChooser(obj, n=20):
+    if len(obj.agents) < n:
+        return random.choice(obj.agents)
     p = np.arange(1, len(obj.agents) + 1)
-    if len(obj.agents) < 5:
-        p = p[::-1]
-    agent = np.random.choice(obj.agents, 1, p=p / sum(p))[0]
-    return agent
+    return np.random.choice(obj.agents, 1, p=p / sum(p))[0]
 
 
 class Opponent():
