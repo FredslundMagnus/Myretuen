@@ -10,6 +10,6 @@ with EloPlot(title=f'Clever Random - Elo Rating', saves=[f'GoodPlots/CleverRando
         m = theData.mean()
         sd = theData.std() / np.sqrt(theData.size) * 1.96
 
-        print(f'{name}: mean = {m:.6}    ,    95% = [{(m-sd):.6}, {(m+sd):.6}]      Calculated from {theData.shape[1]} samples. \n')
+        print(f'{name}: mean = {m:.6}    ,    95% = [{(m-sd):.6}, {(m+sd):.6}]      Calculated from {theData.shape[1]} samples.')
 
         plt.varPlot(plt, EloOverTime, name, color)
