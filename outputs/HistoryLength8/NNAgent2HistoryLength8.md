@@ -381,3 +381,31 @@ Resource usage summary:
 
 The output (if any) is above this job summary.
 
+1 1 1 Debug
+1 Main
+1 NN
+Traceback (most recent call last):
+  File "main.py", line 29, in <module>
+    debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
+  File "/zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen/debug.py", line 77, in debugger
+    cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
+  File "/appl/python/3.6.2/lib/python3.6/cProfile.py", line 16, in run
+    return _pyprofile._Utils(Profile).run(statement, filename, sort)
+  File "/appl/python/3.6.2/lib/python3.6/profile.py", line 55, in run
+    prof.run(statement)
+  File "/appl/python/3.6.2/lib/python3.6/cProfile.py", line 95, in run
+    return self.runctx(cmd, dict, dict)
+  File "/appl/python/3.6.2/lib/python3.6/cProfile.py", line 100, in runctx
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen/game.py", line 200, in run
+    self.gameController.run(NGames=NGames, timeDelay=timeDelay, AddAgent=AddAgent, CalculateProbs=CalculateProbs)
+  File "/zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen/gamecontroller.py", line 29, in run
+    action = agent.choose(actions)
+  File "/zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen/Agents/agent.py", line 23, in choose
+    values.append(self.value(states[-1][0]) + states[-1][0][3])
+  File "/zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen/Agents/NNAgent.py", line 19, in value
+    self.phi = Net(Nfeature, self.dropout, self.network)
+  File "/zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen/Agents/NNAgent.py", line 49, in __init__
+    self.network = nn.ModuleList([nn.Linear(inputN, network[0])])
+TypeError: 'int' object is not subscriptable
