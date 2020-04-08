@@ -12,7 +12,10 @@ def getvals(args):
     for i, s in enumerate(args):
         if s in d:
             try:
-                d[s] = float(args[i + 1])
+                if s == '-network':
+                    d[s] = eval(args[i + 1])
+                else:
+                    d[s] = float(args[i + 1])
             except:
                 d[s] = args[i + 1]
     return d['-lossf'], d['-K'], d['-dropout'], d['-alpha'], d['-discount'], d['-lambda'], d['-lr'], d['-chooserfunction'], d['-TopNvalues'], d['-cutOffdepth'], d['-ValueCutOff'], d['-ValueDiffCutOff'], d['-ProbabilityCutOff'], d['-historyLength'], d['-startAfterNgames'], d['-batchSize'], d['-sampleLenth'], d['-network'], d['-winNumber'], d['-maxRolls'], d['-Eatreward'], d['-basereward'], d['-stepreward']
