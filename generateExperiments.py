@@ -15,7 +15,7 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
         file.write(f'bsub -o "outputs/{name}/{agent}{str(i)}{name}.md" -J "{agent}{str(i)}{name}" -P "{agent}{str(i)}{name} {gameLength} {adAgent} {agent} {int(explore)} {int(doTrain)} {int(impala)} {int(calcprobs)} {int(minmax)} {name}{" -lossf " + str(lossf) if lossf is not None else ""}{" -K " + str(K) if K is not None else ""}{" -dropout " + str(dropout) if dropout is not None else ""}{" -alpha " + str(alpha) if alpha is not None else ""}{" -discount " + str(discount) if discount is not None else ""}{" -lambda " + str(lambd) if lambd is not None else ""}{" -lr " + str(lr) if lr is not None else ""}{" -chooserfunction " + str(chooserfunction) if chooserfunction is not None else ""}{" -TopNvalues " + str(TopNvalues) if TopNvalues is not None else ""}{" -cutOffdepth " + str(cutOffdepth) if cutOffdepth is not None else ""}{" -ValueCutOff " + str(ValueCutOff) if ValueCutOff is not None else ""}{" -ValueDiffCutOff " + str(ValueDiffCutOff) if ValueDiffCutOff is not None else ""}{" -ProbabilityCutOff " + str(ProbabilityCutOff) if ProbabilityCutOff is not None else ""}{" -historyLength " + str(historyLength) if historyLength is not None else ""}{" -startAfterNgames " + str(startAfterNgames) if startAfterNgames is not None else ""}{" -batchSize " + str(batchSize) if batchSize is not None else ""}{" -sampleLenth " + str(sampleLenth) if sampleLenth is not None else ""}{" -network " + str(network) if network is not None else ""}{" -winNumber " + str(winNumber) if winNumber is not None else ""}{" -maxRolls " + str(maxRolls) if maxRolls is not None else ""}{" -Eatreward " + str(Eatreward) if Eatreward is not None else ""}{" -basereward " + str(basereward) if basereward is not None else ""}{" -stepreward " + str(stepreward) if stepreward is not None else ""}" < submit.sh\n')
 
 
-genExperiments('CleverRandomEloCalcProb-4000', 'CleverRandom', 4000, 100000, False, False, False, True, False, n=100)
+genExperiments('testing2', 'NNAgent', 30, 5, True, True, True, True, False, n=5, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, network='[70,60,5,50,40,30,20,10]', winNumber=5, maxRolls=20, Eatreward=10, basereward=10, stepreward=-1)
 
 # genExperiments('IMP-sample-length1-hist30', 'NNAgent', 4000, 20, True, False, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0001, dropout=0.5, K=2000, batchSize=200, historyLength=30, startAfterNgames=30, sampleLenth=1, chooserfunction='weightedChooser')
 # genExperiments('IMP-sample-length2-hist30', 'NNAgent', 4000, 20, True, False, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0001, dropout=0.5, K=2000, batchSize=100, historyLength=30, startAfterNgames=30, sampleLenth=2, chooserfunction='weightedChooser')
@@ -193,15 +193,15 @@ genExperiments('CleverRandomEloCalcProb-4000', 'CleverRandom', 4000, 100000, Fal
 # genExperiments('dropout-0.8', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.8)
 # genExperiments('dropout-0.9', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, dropout=0.9)
 
-# genExperiments('Chooser-random', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, chooserfunction='randomChooser')
-# genExperiments('Chooser-incremental', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, chooserfunction='incrementalChooser')
-# genExperiments('Chooser-weighted', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, chooserfunction='weightedChooser')
+# genExperiments('Chooser-random', 'NNAgent', 4000, 10, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, chooserfunction='randomChooser')
+# genExperiments('Chooser-incremental', 'NNAgent', 4000, 10, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, chooserfunction='incrementalChooser')
+# genExperiments('Chooser-weighted', 'NNAgent', 4000, 10, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002, chooserfunction='weightedChooser')
 
-# genExperiments('Selfplay-None', 'NNAgent', 4000, 5000, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
-# genExperiments('Selfplay-10', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
-# genExperiments('Selfplay-20', 'NNAgent', 4000, 20, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
-# genExperiments('Selfplay-50', 'NNAgent', 4000, 50, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
-# genExperiments('Selfplay-100', 'NNAgent', 4000, 100, True, True, True, True, False, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
+# genExperiments('Selfplay-None', 'NNAgent', 4000, 5000, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
+# genExperiments('Selfplay-10', 'NNAgent', 4000, 10, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
+# genExperiments('Selfplay-20', 'NNAgent', 4000, 20, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
+# genExperiments('Selfplay-50', 'NNAgent', 4000, 50, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
+# genExperiments('Selfplay-100', 'NNAgent', 4000, 100, True, True, True, True, False, K=2000, lossf='MME', discount=0.995, lambd=0.9, lr=0.0002)
 
 # genExperiments('agent-SL', 'SimpleLinear', 4000, 10, True, True, True, True, False, lossf='MME', alpha=0.00001, discount=0.9, lambd=0.5)
 # genExperiments('agent-LA', 'LinearAprox', 4000, 10, True, True, True, True, False, lossf='MME', alpha=0.000001, discount=0.8, lambd=0.9)

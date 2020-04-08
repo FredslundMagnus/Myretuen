@@ -8,7 +8,7 @@ import time
 
 
 def getvals(args):
-    d = {'-lossf': 'Abs', '-K': None, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03, '-historyLength': 20, '-startAfterNgames': 20, '-batchSize': 20, '-sampleLenth': 5, '-network': [40, 20, 10], '-winNumber': 9, '-maxRolls': 300, '-Eatreward': 4, '-basereward': 4, '-stepreward': 0}
+    d = {'-lossf': 'Abs', '-K': 2000, '-dropout': 0, '-alpha': 0.00001, '-discount': 0.9, '-lambda': 0.5, '-lr': 0.00005, '-chooserfunction': 'randomChooser', '-TopNvalues': 6, '-cutOffdepth': 1, '-ValueCutOff': 5, '-ValueDiffCutOff': 2, '-ProbabilityCutOff': 0.03, '-historyLength': 50, '-startAfterNgames': 20, '-batchSize': 20, '-sampleLenth': 5, '-network': [40, 20, 10], '-winNumber': 9, '-maxRolls': 300, '-Eatreward': 4, '-basereward': 4, '-stepreward': 0}
     for i, s in enumerate(args):
         if s in d:
             try:
@@ -67,7 +67,7 @@ def print_stats(self, *amount):
 
 
 def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
-    explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, network, rewards = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr, p.network, p.rewards
+    explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, network, Features = p.explore, p.doTrain, p.ImpaleIsActivated, p.calcprobs, p.minimaxi, p.lossf, p.K, p.dropout, p.alpha, p.discount, p.lambd, p.lr, p.network, p.Features
     winNumber, maxRolls, Eatreward, basereward, stepreward = env.winNumber, env.maxRolls, env.Eatreward, env.basereward, env.stepreward
     start = time.time()
     cProfile.run(f'controller.run(NGames={nGames}, AddAgent={addAgent}, UI=False)', 'stats')
@@ -85,7 +85,7 @@ def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
     print(f"      Basereward :              {basereward}.")
     print(f"      Stepreward :              {stepreward}.\n")
 
-    print(f"      Rewards :                 {rewards}.\n")
+    print(f"      Features :                {Features}.\n")
 
     if network is not None:
         print(f"      Network :                 {network}.\n")
@@ -112,7 +112,7 @@ def debugger(nGames, addAgent, Thename, p, chooserfunction, env):
     print(f'      cutOffdepth :             {str(p.cutOffdepth)}.')
     print(f'      ValueCutOff :             {str(p.ValueCutOff)}.')
     print(f'      ValueDiffCutOff :         {str(p.ValueDiffCutOff)}.')
-    print(f'      ProbabilityCutOff :       {str(p.ProbabilityCutOff)}\n.')
+    print(f'      ProbabilityCutOff :       {str(p.ProbabilityCutOff)}.\n')
 
     print(f'    Calcprobs enabled :         {str(calcprobs)}.\n')
 
