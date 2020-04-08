@@ -16,7 +16,7 @@ class EloPlot():
         self.saves = saves
         self.RA, self.CR, self.CRP = RA, CR, CRP
 
-        def varPlot(self, data, agent, color):
+        def varPlot(self, data, agent, color, meanVar=False):
             if data is not None:
                 Mean = np.mean(data, axis=2)
                 Std = np.std(data, axis=2)
@@ -24,7 +24,11 @@ class EloPlot():
                 sd = Std[0, :]
                 x = np.arange(1, len(y) + 1)
                 self.plot(x, y, lw=2, label=agent, color=color, zorder=2)
-                self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+                if meanVar:
+                    sd = sd / np.sqrt(data.shape[2])
+                    self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+                else:
+                    self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
                 self.doPrint = True
 
         self.plt.varPlot = varPlot
