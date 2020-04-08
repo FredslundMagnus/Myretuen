@@ -45,7 +45,7 @@ class Net(nn.Module):
 
     def __init__(self, inputN, dropout, network):
         super(Net, self).__init__()
-        print(self.network)
+        print(network, "NN")
         self.network = nn.ModuleList([nn.Linear(inputN, network[0])])
         network = network + [network[-1]]
         for i, n in enumerate(network[:-1]):
