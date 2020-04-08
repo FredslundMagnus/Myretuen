@@ -73,7 +73,6 @@ class DataFinder():
                     data = np.array(data).reshape(data.shape[0], data.shape[1], 1)
                 except Exception as e:
                     curentname = None
-                    print(e, 3, curentname)
 
                 if curentname == 'Elo'and elo:
                     try:
@@ -110,3 +109,20 @@ def allDirs():
                 if s1[-3:] == 'csv':
                     subdirs.add(s1)
     return subdirs
+
+
+def Data(directories, colors=None, elo=True, overTime=True):
+    if colors == None:
+        colors = ['#4CAF50'] * len(directories)
+    for directory, color in zip(directories, colors):
+        with DataFinder(directory, elo=elo, overTime=overTime) as obj:
+            Elo, EloOverTime, name, agent = obj
+            result = []
+            if elo and overTime:
+                yield Elo, EloOverTime, name, agent, color
+            elif elo:
+                yield Elo, name, agent, color
+            elif overTime:
+                yield EloOverTime, name, agent, color
+            else:
+                yield name, agent, color
