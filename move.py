@@ -4,10 +4,10 @@ import time
 class Move():
     __slots__ = ("Eatreward", "basereward", "stepreward", "start", "dice", "end", "game", "needResim", "reward")
 
-    def __init__(self, start=None, dice=None, end=None, game=None):
-        self.Eatreward = 4
-        self.basereward = 4
-        self.stepreward = 0
+    def __init__(self, start=None, dice=None, end=None, game=None, Eatreward=None, basereward=None, stepreward=None):
+        self.Eatreward = Eatreward
+        self.basereward = basereward
+        self.stepreward = stepreward
         self.start = start
         self.dice = dice
         self.end = end
