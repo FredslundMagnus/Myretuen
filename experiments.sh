@@ -1,13 +1,13 @@
 #!/bin/sh
-mkdir outputs/NOTHistoryLength1
-mkdir outputs/NOTHistoryLength1/csv
-mkdir outputs/NOTHistoryLength1/trained
-mkdir outputs/NOTHistoryLength1/TrainingCurve
-mkdir outputs/NOTHistoryLength1/Weights
-mkdir outputs/NOTHistoryLength1/Elo_Rating
-mkdir outputs/NOTHistoryLength1/Increase_in_Elo_over_time
-bsub -o "outputs/NOTHistoryLength1/NNAgent0NOTHistoryLength1.md" -J "NNAgent0NOTHistoryLength1" -P "NNAgent0NOTHistoryLength1 5 10 NNAgent 1 0 1 1 0 NOTHistoryLength1 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -historyLength 2 -startAfterNgames 2 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/NOTHistoryLength1/NNAgent1NOTHistoryLength1.md" -J "NNAgent1NOTHistoryLength1" -P "NNAgent1NOTHistoryLength1 5 10 NNAgent 1 0 1 1 0 NOTHistoryLength1 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -historyLength 2 -startAfterNgames 2 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/NOTHistoryLength1/NNAgent2NOTHistoryLength1.md" -J "NNAgent2NOTHistoryLength1" -P "NNAgent2NOTHistoryLength1 5 10 NNAgent 1 0 1 1 0 NOTHistoryLength1 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -historyLength 2 -startAfterNgames 2 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/NOTHistoryLength1/NNAgent3NOTHistoryLength1.md" -J "NNAgent3NOTHistoryLength1" -P "NNAgent3NOTHistoryLength1 5 10 NNAgent 1 0 1 1 0 NOTHistoryLength1 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -historyLength 2 -startAfterNgames 2 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/NOTHistoryLength1/NNAgent4NOTHistoryLength1.md" -J "NNAgent4NOTHistoryLength1" -P "NNAgent4NOTHistoryLength1 5 10 NNAgent 1 0 1 1 0 NOTHistoryLength1 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -historyLength 2 -startAfterNgames 2 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
+mkdir outputs/TEST10
+mkdir outputs/TEST10/csv
+mkdir outputs/TEST10/trained
+mkdir outputs/TEST10/TrainingCurve
+mkdir outputs/TEST10/Weights
+mkdir outputs/TEST10/Elo_Rating
+mkdir outputs/TEST10/Increase_in_Elo_over_time
+bsub -o "outputs/TEST10/NNAgent0TEST10.md" -J "NNAgent0TEST10" -P "NNAgent0TEST10 5 10 NNAgent 1 0 1 1 0 TEST10 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
+bsub -o "outputs/TEST10/NNAgent1TEST10.md" -J "NNAgent1TEST10" -P "NNAgent1TEST10 5 10 NNAgent 1 0 1 1 0 TEST10 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
+bsub -o "outputs/TEST10/NNAgent2TEST10.md" -J "NNAgent2TEST10" -P "NNAgent2TEST10 5 10 NNAgent 1 0 1 1 0 TEST10 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
+bsub -o "outputs/TEST10/NNAgent3TEST10.md" -J "NNAgent3TEST10" -P "NNAgent3TEST10 5 10 NNAgent 1 0 1 1 0 TEST10 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
+bsub -o "outputs/TEST10/NNAgent4TEST10.md" -J "NNAgent4TEST10" -P "NNAgent4TEST10 5 10 NNAgent 1 0 1 1 0 TEST10 -lossf MME -K 1000 -discount 0.98 -lambda 0.8 -lr 0.0001 -chooserfunction weightedChooser -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
