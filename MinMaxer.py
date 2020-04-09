@@ -17,7 +17,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.01, explore=True, K=100, calcprobs=True, ValueCutOffLow=2):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.01, explore=False, K=200, calcprobs=True, ValueCutOffLow=1):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -103,7 +103,6 @@ class MinMaxCalculate():
         #     print(candidate_values[i], end=' ')
         #     print(' ')
         # print(Proba)
-
         # Remove values worse than ValueDifference
         candi_sorted = candidate_values.copy()
         candi_sorted.sort(reverse=True)
