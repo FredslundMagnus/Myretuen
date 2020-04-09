@@ -15,9 +15,9 @@ def fastcopy(game):
 
 
 class MinMaxCalculate():
-    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder")
+    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=1000, calcprobs=True):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=1000, calcprobs=True, ValueCutOffLow=1):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -28,6 +28,7 @@ class MinMaxCalculate():
         self.explore = explore
         self.calcprobs = calcprobs
         self.K = K
+        self.ValueCutOffLow = ValueCutOffLow
 
     def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
@@ -132,7 +133,9 @@ class MinMaxCalculate():
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
             Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
-        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff) and (cutOffdepth < (self.cutOffdepth - 1)):
+        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue)) and (cutOffdepth < (self.cutOffdepth)):
+            if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
+                self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
             return Endvalue * Proba
         if cutOffdepth < 1:
             return Endvalue * Proba
