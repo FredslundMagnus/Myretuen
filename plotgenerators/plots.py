@@ -16,7 +16,7 @@ class EloPlot():
         self.saves = saves
         self.RA, self.CR, self.CRP = RA, CR, CRP
 
-        def varPlot(self, data, agent, color):
+        def varPlot(self, data, agent, color, meanVar=False):
             if data is not None:
                 Mean = np.mean(data, axis=2)
                 Std = np.std(data, axis=2)
@@ -24,7 +24,11 @@ class EloPlot():
                 sd = Std[0, :]
                 x = np.arange(1, len(y) + 1)
                 self.plot(x, y, lw=2, label=agent, color=color, zorder=2)
-                self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+                if meanVar:
+                    sd = sd / np.sqrt(data.shape[2])
+                    self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+                else:
+                    self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
                 self.doPrint = True
 
         self.plt.varPlot = varPlot
@@ -35,15 +39,16 @@ class EloPlot():
 
     def __exit__(self, types, value, traceback):
         if self.plt.doPrint:
-            if self.RA:
-                self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
-            self.plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-            if self.CR:
-                self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
-            self.plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-            self.plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             if self.CRP:
                 self.plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
+            if self.CR:
+                self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
+            if self.RA:
+                self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
+
+            self.plt.axhline(y=1200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=1400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
+            self.plt.axhline(y=1600, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=1800, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
