@@ -1,241 +1,157 @@
 #!/bin/sh
-mkdir outputs/BATCHSIZE50LR00005
-mkdir outputs/BATCHSIZE50LR00005/csv
-mkdir outputs/BATCHSIZE50LR00005/trained
-mkdir outputs/BATCHSIZE50LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE50LR00005/Weights
-mkdir outputs/BATCHSIZE50LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE50LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE50LR00005/NNAgent0BATCHSIZE50LR00005.md" -J "NNAgent0BATCHSIZE50LR00005" -P "NNAgent0BATCHSIZE50LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR00005/NNAgent1BATCHSIZE50LR00005.md" -J "NNAgent1BATCHSIZE50LR00005" -P "NNAgent1BATCHSIZE50LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR00005/NNAgent2BATCHSIZE50LR00005.md" -J "NNAgent2BATCHSIZE50LR00005" -P "NNAgent2BATCHSIZE50LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR00005/NNAgent3BATCHSIZE50LR00005.md" -J "NNAgent3BATCHSIZE50LR00005" -P "NNAgent3BATCHSIZE50LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR00005/NNAgent4BATCHSIZE50LR00005.md" -J "NNAgent4BATCHSIZE50LR00005" -P "NNAgent4BATCHSIZE50LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE100LR00005
-mkdir outputs/BATCHSIZE100LR00005/csv
-mkdir outputs/BATCHSIZE100LR00005/trained
-mkdir outputs/BATCHSIZE100LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE100LR00005/Weights
-mkdir outputs/BATCHSIZE100LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE100LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE100LR00005/NNAgent0BATCHSIZE100LR00005.md" -J "NNAgent0BATCHSIZE100LR00005" -P "NNAgent0BATCHSIZE100LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR00005/NNAgent1BATCHSIZE100LR00005.md" -J "NNAgent1BATCHSIZE100LR00005" -P "NNAgent1BATCHSIZE100LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR00005/NNAgent2BATCHSIZE100LR00005.md" -J "NNAgent2BATCHSIZE100LR00005" -P "NNAgent2BATCHSIZE100LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR00005/NNAgent3BATCHSIZE100LR00005.md" -J "NNAgent3BATCHSIZE100LR00005" -P "NNAgent3BATCHSIZE100LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR00005/NNAgent4BATCHSIZE100LR00005.md" -J "NNAgent4BATCHSIZE100LR00005" -P "NNAgent4BATCHSIZE100LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE150LR00005
-mkdir outputs/BATCHSIZE150LR00005/csv
-mkdir outputs/BATCHSIZE150LR00005/trained
-mkdir outputs/BATCHSIZE150LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE150LR00005/Weights
-mkdir outputs/BATCHSIZE150LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE150LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE150LR00005/NNAgent0BATCHSIZE150LR00005.md" -J "NNAgent0BATCHSIZE150LR00005" -P "NNAgent0BATCHSIZE150LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR00005/NNAgent1BATCHSIZE150LR00005.md" -J "NNAgent1BATCHSIZE150LR00005" -P "NNAgent1BATCHSIZE150LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR00005/NNAgent2BATCHSIZE150LR00005.md" -J "NNAgent2BATCHSIZE150LR00005" -P "NNAgent2BATCHSIZE150LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR00005/NNAgent3BATCHSIZE150LR00005.md" -J "NNAgent3BATCHSIZE150LR00005" -P "NNAgent3BATCHSIZE150LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR00005/NNAgent4BATCHSIZE150LR00005.md" -J "NNAgent4BATCHSIZE150LR00005" -P "NNAgent4BATCHSIZE150LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE200LR00005
-mkdir outputs/BATCHSIZE200LR00005/csv
-mkdir outputs/BATCHSIZE200LR00005/trained
-mkdir outputs/BATCHSIZE200LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE200LR00005/Weights
-mkdir outputs/BATCHSIZE200LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE200LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE200LR00005/NNAgent0BATCHSIZE200LR00005.md" -J "NNAgent0BATCHSIZE200LR00005" -P "NNAgent0BATCHSIZE200LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR00005/NNAgent1BATCHSIZE200LR00005.md" -J "NNAgent1BATCHSIZE200LR00005" -P "NNAgent1BATCHSIZE200LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR00005/NNAgent2BATCHSIZE200LR00005.md" -J "NNAgent2BATCHSIZE200LR00005" -P "NNAgent2BATCHSIZE200LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR00005/NNAgent3BATCHSIZE200LR00005.md" -J "NNAgent3BATCHSIZE200LR00005" -P "NNAgent3BATCHSIZE200LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR00005/NNAgent4BATCHSIZE200LR00005.md" -J "NNAgent4BATCHSIZE200LR00005" -P "NNAgent4BATCHSIZE200LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE250LR00005
-mkdir outputs/BATCHSIZE250LR00005/csv
-mkdir outputs/BATCHSIZE250LR00005/trained
-mkdir outputs/BATCHSIZE250LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE250LR00005/Weights
-mkdir outputs/BATCHSIZE250LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE250LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE250LR00005/NNAgent0BATCHSIZE250LR00005.md" -J "NNAgent0BATCHSIZE250LR00005" -P "NNAgent0BATCHSIZE250LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR00005/NNAgent1BATCHSIZE250LR00005.md" -J "NNAgent1BATCHSIZE250LR00005" -P "NNAgent1BATCHSIZE250LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR00005/NNAgent2BATCHSIZE250LR00005.md" -J "NNAgent2BATCHSIZE250LR00005" -P "NNAgent2BATCHSIZE250LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR00005/NNAgent3BATCHSIZE250LR00005.md" -J "NNAgent3BATCHSIZE250LR00005" -P "NNAgent3BATCHSIZE250LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR00005/NNAgent4BATCHSIZE250LR00005.md" -J "NNAgent4BATCHSIZE250LR00005" -P "NNAgent4BATCHSIZE250LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE300LR00005
-mkdir outputs/BATCHSIZE300LR00005/csv
-mkdir outputs/BATCHSIZE300LR00005/trained
-mkdir outputs/BATCHSIZE300LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE300LR00005/Weights
-mkdir outputs/BATCHSIZE300LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE300LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE300LR00005/NNAgent0BATCHSIZE300LR00005.md" -J "NNAgent0BATCHSIZE300LR00005" -P "NNAgent0BATCHSIZE300LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR00005/NNAgent1BATCHSIZE300LR00005.md" -J "NNAgent1BATCHSIZE300LR00005" -P "NNAgent1BATCHSIZE300LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR00005/NNAgent2BATCHSIZE300LR00005.md" -J "NNAgent2BATCHSIZE300LR00005" -P "NNAgent2BATCHSIZE300LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR00005/NNAgent3BATCHSIZE300LR00005.md" -J "NNAgent3BATCHSIZE300LR00005" -P "NNAgent3BATCHSIZE300LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR00005/NNAgent4BATCHSIZE300LR00005.md" -J "NNAgent4BATCHSIZE300LR00005" -P "NNAgent4BATCHSIZE300LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE350LR00005
-mkdir outputs/BATCHSIZE350LR00005/csv
-mkdir outputs/BATCHSIZE350LR00005/trained
-mkdir outputs/BATCHSIZE350LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE350LR00005/Weights
-mkdir outputs/BATCHSIZE350LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE350LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE350LR00005/NNAgent0BATCHSIZE350LR00005.md" -J "NNAgent0BATCHSIZE350LR00005" -P "NNAgent0BATCHSIZE350LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR00005/NNAgent1BATCHSIZE350LR00005.md" -J "NNAgent1BATCHSIZE350LR00005" -P "NNAgent1BATCHSIZE350LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR00005/NNAgent2BATCHSIZE350LR00005.md" -J "NNAgent2BATCHSIZE350LR00005" -P "NNAgent2BATCHSIZE350LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR00005/NNAgent3BATCHSIZE350LR00005.md" -J "NNAgent3BATCHSIZE350LR00005" -P "NNAgent3BATCHSIZE350LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR00005/NNAgent4BATCHSIZE350LR00005.md" -J "NNAgent4BATCHSIZE350LR00005" -P "NNAgent4BATCHSIZE350LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE400LR00005
-mkdir outputs/BATCHSIZE400LR00005/csv
-mkdir outputs/BATCHSIZE400LR00005/trained
-mkdir outputs/BATCHSIZE400LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE400LR00005/Weights
-mkdir outputs/BATCHSIZE400LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE400LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE400LR00005/NNAgent0BATCHSIZE400LR00005.md" -J "NNAgent0BATCHSIZE400LR00005" -P "NNAgent0BATCHSIZE400LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR00005/NNAgent1BATCHSIZE400LR00005.md" -J "NNAgent1BATCHSIZE400LR00005" -P "NNAgent1BATCHSIZE400LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR00005/NNAgent2BATCHSIZE400LR00005.md" -J "NNAgent2BATCHSIZE400LR00005" -P "NNAgent2BATCHSIZE400LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR00005/NNAgent3BATCHSIZE400LR00005.md" -J "NNAgent3BATCHSIZE400LR00005" -P "NNAgent3BATCHSIZE400LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR00005/NNAgent4BATCHSIZE400LR00005.md" -J "NNAgent4BATCHSIZE400LR00005" -P "NNAgent4BATCHSIZE400LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE450LR00005
-mkdir outputs/BATCHSIZE450LR00005/csv
-mkdir outputs/BATCHSIZE450LR00005/trained
-mkdir outputs/BATCHSIZE450LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE450LR00005/Weights
-mkdir outputs/BATCHSIZE450LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE450LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE450LR00005/NNAgent0BATCHSIZE450LR00005.md" -J "NNAgent0BATCHSIZE450LR00005" -P "NNAgent0BATCHSIZE450LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR00005/NNAgent1BATCHSIZE450LR00005.md" -J "NNAgent1BATCHSIZE450LR00005" -P "NNAgent1BATCHSIZE450LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR00005/NNAgent2BATCHSIZE450LR00005.md" -J "NNAgent2BATCHSIZE450LR00005" -P "NNAgent2BATCHSIZE450LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR00005/NNAgent3BATCHSIZE450LR00005.md" -J "NNAgent3BATCHSIZE450LR00005" -P "NNAgent3BATCHSIZE450LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR00005/NNAgent4BATCHSIZE450LR00005.md" -J "NNAgent4BATCHSIZE450LR00005" -P "NNAgent4BATCHSIZE450LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE500LR00005
-mkdir outputs/BATCHSIZE500LR00005/csv
-mkdir outputs/BATCHSIZE500LR00005/trained
-mkdir outputs/BATCHSIZE500LR00005/TrainingCurve
-mkdir outputs/BATCHSIZE500LR00005/Weights
-mkdir outputs/BATCHSIZE500LR00005/Elo_Rating
-mkdir outputs/BATCHSIZE500LR00005/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE500LR00005/NNAgent0BATCHSIZE500LR00005.md" -J "NNAgent0BATCHSIZE500LR00005" -P "NNAgent0BATCHSIZE500LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR00005/NNAgent1BATCHSIZE500LR00005.md" -J "NNAgent1BATCHSIZE500LR00005" -P "NNAgent1BATCHSIZE500LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR00005/NNAgent2BATCHSIZE500LR00005.md" -J "NNAgent2BATCHSIZE500LR00005" -P "NNAgent2BATCHSIZE500LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR00005/NNAgent3BATCHSIZE500LR00005.md" -J "NNAgent3BATCHSIZE500LR00005" -P "NNAgent3BATCHSIZE500LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR00005/NNAgent4BATCHSIZE500LR00005.md" -J "NNAgent4BATCHSIZE500LR00005" -P "NNAgent4BATCHSIZE500LR00005 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR00005 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 5e-05 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE50LR0002
-mkdir outputs/BATCHSIZE50LR0002/csv
-mkdir outputs/BATCHSIZE50LR0002/trained
-mkdir outputs/BATCHSIZE50LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE50LR0002/Weights
-mkdir outputs/BATCHSIZE50LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE50LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE50LR0002/NNAgent0BATCHSIZE50LR0002.md" -J "NNAgent0BATCHSIZE50LR0002" -P "NNAgent0BATCHSIZE50LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR0002/NNAgent1BATCHSIZE50LR0002.md" -J "NNAgent1BATCHSIZE50LR0002" -P "NNAgent1BATCHSIZE50LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR0002/NNAgent2BATCHSIZE50LR0002.md" -J "NNAgent2BATCHSIZE50LR0002" -P "NNAgent2BATCHSIZE50LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR0002/NNAgent3BATCHSIZE50LR0002.md" -J "NNAgent3BATCHSIZE50LR0002" -P "NNAgent3BATCHSIZE50LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE50LR0002/NNAgent4BATCHSIZE50LR0002.md" -J "NNAgent4BATCHSIZE50LR0002" -P "NNAgent4BATCHSIZE50LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE50LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 50 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE100LR0002
-mkdir outputs/BATCHSIZE100LR0002/csv
-mkdir outputs/BATCHSIZE100LR0002/trained
-mkdir outputs/BATCHSIZE100LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE100LR0002/Weights
-mkdir outputs/BATCHSIZE100LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE100LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE100LR0002/NNAgent0BATCHSIZE100LR0002.md" -J "NNAgent0BATCHSIZE100LR0002" -P "NNAgent0BATCHSIZE100LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR0002/NNAgent1BATCHSIZE100LR0002.md" -J "NNAgent1BATCHSIZE100LR0002" -P "NNAgent1BATCHSIZE100LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR0002/NNAgent2BATCHSIZE100LR0002.md" -J "NNAgent2BATCHSIZE100LR0002" -P "NNAgent2BATCHSIZE100LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR0002/NNAgent3BATCHSIZE100LR0002.md" -J "NNAgent3BATCHSIZE100LR0002" -P "NNAgent3BATCHSIZE100LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE100LR0002/NNAgent4BATCHSIZE100LR0002.md" -J "NNAgent4BATCHSIZE100LR0002" -P "NNAgent4BATCHSIZE100LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE100LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 100 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE150LR0002
-mkdir outputs/BATCHSIZE150LR0002/csv
-mkdir outputs/BATCHSIZE150LR0002/trained
-mkdir outputs/BATCHSIZE150LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE150LR0002/Weights
-mkdir outputs/BATCHSIZE150LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE150LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE150LR0002/NNAgent0BATCHSIZE150LR0002.md" -J "NNAgent0BATCHSIZE150LR0002" -P "NNAgent0BATCHSIZE150LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR0002/NNAgent1BATCHSIZE150LR0002.md" -J "NNAgent1BATCHSIZE150LR0002" -P "NNAgent1BATCHSIZE150LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR0002/NNAgent2BATCHSIZE150LR0002.md" -J "NNAgent2BATCHSIZE150LR0002" -P "NNAgent2BATCHSIZE150LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR0002/NNAgent3BATCHSIZE150LR0002.md" -J "NNAgent3BATCHSIZE150LR0002" -P "NNAgent3BATCHSIZE150LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE150LR0002/NNAgent4BATCHSIZE150LR0002.md" -J "NNAgent4BATCHSIZE150LR0002" -P "NNAgent4BATCHSIZE150LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE150LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 150 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE200LR0002
-mkdir outputs/BATCHSIZE200LR0002/csv
-mkdir outputs/BATCHSIZE200LR0002/trained
-mkdir outputs/BATCHSIZE200LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE200LR0002/Weights
-mkdir outputs/BATCHSIZE200LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE200LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE200LR0002/NNAgent0BATCHSIZE200LR0002.md" -J "NNAgent0BATCHSIZE200LR0002" -P "NNAgent0BATCHSIZE200LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR0002/NNAgent1BATCHSIZE200LR0002.md" -J "NNAgent1BATCHSIZE200LR0002" -P "NNAgent1BATCHSIZE200LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR0002/NNAgent2BATCHSIZE200LR0002.md" -J "NNAgent2BATCHSIZE200LR0002" -P "NNAgent2BATCHSIZE200LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR0002/NNAgent3BATCHSIZE200LR0002.md" -J "NNAgent3BATCHSIZE200LR0002" -P "NNAgent3BATCHSIZE200LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE200LR0002/NNAgent4BATCHSIZE200LR0002.md" -J "NNAgent4BATCHSIZE200LR0002" -P "NNAgent4BATCHSIZE200LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE200LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 200 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE250LR0002
-mkdir outputs/BATCHSIZE250LR0002/csv
-mkdir outputs/BATCHSIZE250LR0002/trained
-mkdir outputs/BATCHSIZE250LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE250LR0002/Weights
-mkdir outputs/BATCHSIZE250LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE250LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE250LR0002/NNAgent0BATCHSIZE250LR0002.md" -J "NNAgent0BATCHSIZE250LR0002" -P "NNAgent0BATCHSIZE250LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR0002/NNAgent1BATCHSIZE250LR0002.md" -J "NNAgent1BATCHSIZE250LR0002" -P "NNAgent1BATCHSIZE250LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR0002/NNAgent2BATCHSIZE250LR0002.md" -J "NNAgent2BATCHSIZE250LR0002" -P "NNAgent2BATCHSIZE250LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR0002/NNAgent3BATCHSIZE250LR0002.md" -J "NNAgent3BATCHSIZE250LR0002" -P "NNAgent3BATCHSIZE250LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE250LR0002/NNAgent4BATCHSIZE250LR0002.md" -J "NNAgent4BATCHSIZE250LR0002" -P "NNAgent4BATCHSIZE250LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE250LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 250 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE300LR0002
-mkdir outputs/BATCHSIZE300LR0002/csv
-mkdir outputs/BATCHSIZE300LR0002/trained
-mkdir outputs/BATCHSIZE300LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE300LR0002/Weights
-mkdir outputs/BATCHSIZE300LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE300LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE300LR0002/NNAgent0BATCHSIZE300LR0002.md" -J "NNAgent0BATCHSIZE300LR0002" -P "NNAgent0BATCHSIZE300LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR0002/NNAgent1BATCHSIZE300LR0002.md" -J "NNAgent1BATCHSIZE300LR0002" -P "NNAgent1BATCHSIZE300LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR0002/NNAgent2BATCHSIZE300LR0002.md" -J "NNAgent2BATCHSIZE300LR0002" -P "NNAgent2BATCHSIZE300LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR0002/NNAgent3BATCHSIZE300LR0002.md" -J "NNAgent3BATCHSIZE300LR0002" -P "NNAgent3BATCHSIZE300LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE300LR0002/NNAgent4BATCHSIZE300LR0002.md" -J "NNAgent4BATCHSIZE300LR0002" -P "NNAgent4BATCHSIZE300LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE300LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 300 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE350LR0002
-mkdir outputs/BATCHSIZE350LR0002/csv
-mkdir outputs/BATCHSIZE350LR0002/trained
-mkdir outputs/BATCHSIZE350LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE350LR0002/Weights
-mkdir outputs/BATCHSIZE350LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE350LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE350LR0002/NNAgent0BATCHSIZE350LR0002.md" -J "NNAgent0BATCHSIZE350LR0002" -P "NNAgent0BATCHSIZE350LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR0002/NNAgent1BATCHSIZE350LR0002.md" -J "NNAgent1BATCHSIZE350LR0002" -P "NNAgent1BATCHSIZE350LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR0002/NNAgent2BATCHSIZE350LR0002.md" -J "NNAgent2BATCHSIZE350LR0002" -P "NNAgent2BATCHSIZE350LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR0002/NNAgent3BATCHSIZE350LR0002.md" -J "NNAgent3BATCHSIZE350LR0002" -P "NNAgent3BATCHSIZE350LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE350LR0002/NNAgent4BATCHSIZE350LR0002.md" -J "NNAgent4BATCHSIZE350LR0002" -P "NNAgent4BATCHSIZE350LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE350LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 350 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE400LR0002
-mkdir outputs/BATCHSIZE400LR0002/csv
-mkdir outputs/BATCHSIZE400LR0002/trained
-mkdir outputs/BATCHSIZE400LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE400LR0002/Weights
-mkdir outputs/BATCHSIZE400LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE400LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE400LR0002/NNAgent0BATCHSIZE400LR0002.md" -J "NNAgent0BATCHSIZE400LR0002" -P "NNAgent0BATCHSIZE400LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR0002/NNAgent1BATCHSIZE400LR0002.md" -J "NNAgent1BATCHSIZE400LR0002" -P "NNAgent1BATCHSIZE400LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR0002/NNAgent2BATCHSIZE400LR0002.md" -J "NNAgent2BATCHSIZE400LR0002" -P "NNAgent2BATCHSIZE400LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR0002/NNAgent3BATCHSIZE400LR0002.md" -J "NNAgent3BATCHSIZE400LR0002" -P "NNAgent3BATCHSIZE400LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE400LR0002/NNAgent4BATCHSIZE400LR0002.md" -J "NNAgent4BATCHSIZE400LR0002" -P "NNAgent4BATCHSIZE400LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE400LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 400 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE450LR0002
-mkdir outputs/BATCHSIZE450LR0002/csv
-mkdir outputs/BATCHSIZE450LR0002/trained
-mkdir outputs/BATCHSIZE450LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE450LR0002/Weights
-mkdir outputs/BATCHSIZE450LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE450LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE450LR0002/NNAgent0BATCHSIZE450LR0002.md" -J "NNAgent0BATCHSIZE450LR0002" -P "NNAgent0BATCHSIZE450LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR0002/NNAgent1BATCHSIZE450LR0002.md" -J "NNAgent1BATCHSIZE450LR0002" -P "NNAgent1BATCHSIZE450LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR0002/NNAgent2BATCHSIZE450LR0002.md" -J "NNAgent2BATCHSIZE450LR0002" -P "NNAgent2BATCHSIZE450LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR0002/NNAgent3BATCHSIZE450LR0002.md" -J "NNAgent3BATCHSIZE450LR0002" -P "NNAgent3BATCHSIZE450LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE450LR0002/NNAgent4BATCHSIZE450LR0002.md" -J "NNAgent4BATCHSIZE450LR0002" -P "NNAgent4BATCHSIZE450LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE450LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 450 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-mkdir outputs/BATCHSIZE500LR0002
-mkdir outputs/BATCHSIZE500LR0002/csv
-mkdir outputs/BATCHSIZE500LR0002/trained
-mkdir outputs/BATCHSIZE500LR0002/TrainingCurve
-mkdir outputs/BATCHSIZE500LR0002/Weights
-mkdir outputs/BATCHSIZE500LR0002/Elo_Rating
-mkdir outputs/BATCHSIZE500LR0002/Increase_in_Elo_over_time
-bsub -o "outputs/BATCHSIZE500LR0002/NNAgent0BATCHSIZE500LR0002.md" -J "NNAgent0BATCHSIZE500LR0002" -P "NNAgent0BATCHSIZE500LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR0002/NNAgent1BATCHSIZE500LR0002.md" -J "NNAgent1BATCHSIZE500LR0002" -P "NNAgent1BATCHSIZE500LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR0002/NNAgent2BATCHSIZE500LR0002.md" -J "NNAgent2BATCHSIZE500LR0002" -P "NNAgent2BATCHSIZE500LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR0002/NNAgent3BATCHSIZE500LR0002.md" -J "NNAgent3BATCHSIZE500LR0002" -P "NNAgent3BATCHSIZE500LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
-bsub -o "outputs/BATCHSIZE500LR0002/NNAgent4BATCHSIZE500LR0002.md" -J "NNAgent4BATCHSIZE500LR0002" -P "NNAgent4BATCHSIZE500LR0002 1000 20 NNAgent 1 0 1 1 0 BATCHSIZE500LR0002 -lossf MME -K 200 -dropout 0.2 -discount 0.99 -lambda 0.8 -lr 0.0002 -chooserfunction weightedChooser -historyLength 20 -startAfterNgames 20 -batchSize 500 -sampleLenth 10 -winNumber 9 -maxRolls 300 -Eatreward 4 -basereward 4 -stepreward 0" < submit.sh
+mkdir outputs/network-50-50-50-50-50-50
+mkdir outputs/network-50-50-50-50-50-50/csv
+mkdir outputs/network-50-50-50-50-50-50/trained
+mkdir outputs/network-50-50-50-50-50-50/TrainingCurve
+mkdir outputs/network-50-50-50-50-50-50/Weights
+mkdir outputs/network-50-50-50-50-50-50/Elo_Rating
+mkdir outputs/network-50-50-50-50-50-50/Increase_in_Elo_over_time
+bsub -o "outputs/network-50-50-50-50-50-50/NNAgent0network-50-50-50-50-50-50.md" -J "NNAgent0network-50-50-50-50-50-50" -P "NNAgent0network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50-50-50/NNAgent1network-50-50-50-50-50-50.md" -J "NNAgent1network-50-50-50-50-50-50" -P "NNAgent1network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50-50-50/NNAgent2network-50-50-50-50-50-50.md" -J "NNAgent2network-50-50-50-50-50-50" -P "NNAgent2network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50-50-50/NNAgent3network-50-50-50-50-50-50.md" -J "NNAgent3network-50-50-50-50-50-50" -P "NNAgent3network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50-50-50/NNAgent4network-50-50-50-50-50-50.md" -J "NNAgent4network-50-50-50-50-50-50" -P "NNAgent4network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
+mkdir outputs/network-20-20-30-20-20
+mkdir outputs/network-20-20-30-20-20/csv
+mkdir outputs/network-20-20-30-20-20/trained
+mkdir outputs/network-20-20-30-20-20/TrainingCurve
+mkdir outputs/network-20-20-30-20-20/Weights
+mkdir outputs/network-20-20-30-20-20/Elo_Rating
+mkdir outputs/network-20-20-30-20-20/Increase_in_Elo_over_time
+bsub -o "outputs/network-20-20-30-20-20/NNAgent0network-20-20-30-20-20.md" -J "NNAgent0network-20-20-30-20-20" -P "NNAgent0network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
+bsub -o "outputs/network-20-20-30-20-20/NNAgent1network-20-20-30-20-20.md" -J "NNAgent1network-20-20-30-20-20" -P "NNAgent1network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
+bsub -o "outputs/network-20-20-30-20-20/NNAgent2network-20-20-30-20-20.md" -J "NNAgent2network-20-20-30-20-20" -P "NNAgent2network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
+bsub -o "outputs/network-20-20-30-20-20/NNAgent3network-20-20-30-20-20.md" -J "NNAgent3network-20-20-30-20-20" -P "NNAgent3network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
+bsub -o "outputs/network-20-20-30-20-20/NNAgent4network-20-20-30-20-20.md" -J "NNAgent4network-20-20-30-20-20" -P "NNAgent4network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
+mkdir outputs/network-50-50-50-50
+mkdir outputs/network-50-50-50-50/csv
+mkdir outputs/network-50-50-50-50/trained
+mkdir outputs/network-50-50-50-50/TrainingCurve
+mkdir outputs/network-50-50-50-50/Weights
+mkdir outputs/network-50-50-50-50/Elo_Rating
+mkdir outputs/network-50-50-50-50/Increase_in_Elo_over_time
+bsub -o "outputs/network-50-50-50-50/NNAgent0network-50-50-50-50.md" -J "NNAgent0network-50-50-50-50" -P "NNAgent0network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50/NNAgent1network-50-50-50-50.md" -J "NNAgent1network-50-50-50-50" -P "NNAgent1network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50/NNAgent2network-50-50-50-50.md" -J "NNAgent2network-50-50-50-50" -P "NNAgent2network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50/NNAgent3network-50-50-50-50.md" -J "NNAgent3network-50-50-50-50" -P "NNAgent3network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
+bsub -o "outputs/network-50-50-50-50/NNAgent4network-50-50-50-50.md" -J "NNAgent4network-50-50-50-50" -P "NNAgent4network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
+mkdir outputs/network-40-40-40-40
+mkdir outputs/network-40-40-40-40/csv
+mkdir outputs/network-40-40-40-40/trained
+mkdir outputs/network-40-40-40-40/TrainingCurve
+mkdir outputs/network-40-40-40-40/Weights
+mkdir outputs/network-40-40-40-40/Elo_Rating
+mkdir outputs/network-40-40-40-40/Increase_in_Elo_over_time
+bsub -o "outputs/network-40-40-40-40/NNAgent0network-40-40-40-40.md" -J "NNAgent0network-40-40-40-40" -P "NNAgent0network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
+bsub -o "outputs/network-40-40-40-40/NNAgent1network-40-40-40-40.md" -J "NNAgent1network-40-40-40-40" -P "NNAgent1network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
+bsub -o "outputs/network-40-40-40-40/NNAgent2network-40-40-40-40.md" -J "NNAgent2network-40-40-40-40" -P "NNAgent2network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
+bsub -o "outputs/network-40-40-40-40/NNAgent3network-40-40-40-40.md" -J "NNAgent3network-40-40-40-40" -P "NNAgent3network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
+bsub -o "outputs/network-40-40-40-40/NNAgent4network-40-40-40-40.md" -J "NNAgent4network-40-40-40-40" -P "NNAgent4network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
+mkdir outputs/network-30-30-30-30
+mkdir outputs/network-30-30-30-30/csv
+mkdir outputs/network-30-30-30-30/trained
+mkdir outputs/network-30-30-30-30/TrainingCurve
+mkdir outputs/network-30-30-30-30/Weights
+mkdir outputs/network-30-30-30-30/Elo_Rating
+mkdir outputs/network-30-30-30-30/Increase_in_Elo_over_time
+bsub -o "outputs/network-30-30-30-30/NNAgent0network-30-30-30-30.md" -J "NNAgent0network-30-30-30-30" -P "NNAgent0network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
+bsub -o "outputs/network-30-30-30-30/NNAgent1network-30-30-30-30.md" -J "NNAgent1network-30-30-30-30" -P "NNAgent1network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
+bsub -o "outputs/network-30-30-30-30/NNAgent2network-30-30-30-30.md" -J "NNAgent2network-30-30-30-30" -P "NNAgent2network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
+bsub -o "outputs/network-30-30-30-30/NNAgent3network-30-30-30-30.md" -J "NNAgent3network-30-30-30-30" -P "NNAgent3network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
+bsub -o "outputs/network-30-30-30-30/NNAgent4network-30-30-30-30.md" -J "NNAgent4network-30-30-30-30" -P "NNAgent4network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
+mkdir outputs/network-20-20-20-20
+mkdir outputs/network-20-20-20-20/csv
+mkdir outputs/network-20-20-20-20/trained
+mkdir outputs/network-20-20-20-20/TrainingCurve
+mkdir outputs/network-20-20-20-20/Weights
+mkdir outputs/network-20-20-20-20/Elo_Rating
+mkdir outputs/network-20-20-20-20/Increase_in_Elo_over_time
+bsub -o "outputs/network-20-20-20-20/NNAgent0network-20-20-20-20.md" -J "NNAgent0network-20-20-20-20" -P "NNAgent0network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
+bsub -o "outputs/network-20-20-20-20/NNAgent1network-20-20-20-20.md" -J "NNAgent1network-20-20-20-20" -P "NNAgent1network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
+bsub -o "outputs/network-20-20-20-20/NNAgent2network-20-20-20-20.md" -J "NNAgent2network-20-20-20-20" -P "NNAgent2network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
+bsub -o "outputs/network-20-20-20-20/NNAgent3network-20-20-20-20.md" -J "NNAgent3network-20-20-20-20" -P "NNAgent3network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
+bsub -o "outputs/network-20-20-20-20/NNAgent4network-20-20-20-20.md" -J "NNAgent4network-20-20-20-20" -P "NNAgent4network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
+mkdir outputs/network-100-50-10
+mkdir outputs/network-100-50-10/csv
+mkdir outputs/network-100-50-10/trained
+mkdir outputs/network-100-50-10/TrainingCurve
+mkdir outputs/network-100-50-10/Weights
+mkdir outputs/network-100-50-10/Elo_Rating
+mkdir outputs/network-100-50-10/Increase_in_Elo_over_time
+bsub -o "outputs/network-100-50-10/NNAgent0network-100-50-10.md" -J "NNAgent0network-100-50-10" -P "NNAgent0network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
+bsub -o "outputs/network-100-50-10/NNAgent1network-100-50-10.md" -J "NNAgent1network-100-50-10" -P "NNAgent1network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
+bsub -o "outputs/network-100-50-10/NNAgent2network-100-50-10.md" -J "NNAgent2network-100-50-10" -P "NNAgent2network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
+bsub -o "outputs/network-100-50-10/NNAgent3network-100-50-10.md" -J "NNAgent3network-100-50-10" -P "NNAgent3network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
+bsub -o "outputs/network-100-50-10/NNAgent4network-100-50-10.md" -J "NNAgent4network-100-50-10" -P "NNAgent4network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
+mkdir outputs/network-70-50-20
+mkdir outputs/network-70-50-20/csv
+mkdir outputs/network-70-50-20/trained
+mkdir outputs/network-70-50-20/TrainingCurve
+mkdir outputs/network-70-50-20/Weights
+mkdir outputs/network-70-50-20/Elo_Rating
+mkdir outputs/network-70-50-20/Increase_in_Elo_over_time
+bsub -o "outputs/network-70-50-20/NNAgent0network-70-50-20.md" -J "NNAgent0network-70-50-20" -P "NNAgent0network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
+bsub -o "outputs/network-70-50-20/NNAgent1network-70-50-20.md" -J "NNAgent1network-70-50-20" -P "NNAgent1network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
+bsub -o "outputs/network-70-50-20/NNAgent2network-70-50-20.md" -J "NNAgent2network-70-50-20" -P "NNAgent2network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
+bsub -o "outputs/network-70-50-20/NNAgent3network-70-50-20.md" -J "NNAgent3network-70-50-20" -P "NNAgent3network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
+bsub -o "outputs/network-70-50-20/NNAgent4network-70-50-20.md" -J "NNAgent4network-70-50-20" -P "NNAgent4network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
+mkdir outputs/network-50-40-10
+mkdir outputs/network-50-40-10/csv
+mkdir outputs/network-50-40-10/trained
+mkdir outputs/network-50-40-10/TrainingCurve
+mkdir outputs/network-50-40-10/Weights
+mkdir outputs/network-50-40-10/Elo_Rating
+mkdir outputs/network-50-40-10/Increase_in_Elo_over_time
+bsub -o "outputs/network-50-40-10/NNAgent0network-50-40-10.md" -J "NNAgent0network-50-40-10" -P "NNAgent0network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
+bsub -o "outputs/network-50-40-10/NNAgent1network-50-40-10.md" -J "NNAgent1network-50-40-10" -P "NNAgent1network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
+bsub -o "outputs/network-50-40-10/NNAgent2network-50-40-10.md" -J "NNAgent2network-50-40-10" -P "NNAgent2network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
+bsub -o "outputs/network-50-40-10/NNAgent3network-50-40-10.md" -J "NNAgent3network-50-40-10" -P "NNAgent3network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
+bsub -o "outputs/network-50-40-10/NNAgent4network-50-40-10.md" -J "NNAgent4network-50-40-10" -P "NNAgent4network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
+mkdir outputs/network-80-30
+mkdir outputs/network-80-30/csv
+mkdir outputs/network-80-30/trained
+mkdir outputs/network-80-30/TrainingCurve
+mkdir outputs/network-80-30/Weights
+mkdir outputs/network-80-30/Elo_Rating
+mkdir outputs/network-80-30/Increase_in_Elo_over_time
+bsub -o "outputs/network-80-30/NNAgent0network-80-30.md" -J "NNAgent0network-80-30" -P "NNAgent0network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
+bsub -o "outputs/network-80-30/NNAgent1network-80-30.md" -J "NNAgent1network-80-30" -P "NNAgent1network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
+bsub -o "outputs/network-80-30/NNAgent2network-80-30.md" -J "NNAgent2network-80-30" -P "NNAgent2network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
+bsub -o "outputs/network-80-30/NNAgent3network-80-30.md" -J "NNAgent3network-80-30" -P "NNAgent3network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
+bsub -o "outputs/network-80-30/NNAgent4network-80-30.md" -J "NNAgent4network-80-30" -P "NNAgent4network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
+mkdir outputs/network-25-20-15-10
+mkdir outputs/network-25-20-15-10/csv
+mkdir outputs/network-25-20-15-10/trained
+mkdir outputs/network-25-20-15-10/TrainingCurve
+mkdir outputs/network-25-20-15-10/Weights
+mkdir outputs/network-25-20-15-10/Elo_Rating
+mkdir outputs/network-25-20-15-10/Increase_in_Elo_over_time
+bsub -o "outputs/network-25-20-15-10/NNAgent0network-25-20-15-10.md" -J "NNAgent0network-25-20-15-10" -P "NNAgent0network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
+bsub -o "outputs/network-25-20-15-10/NNAgent1network-25-20-15-10.md" -J "NNAgent1network-25-20-15-10" -P "NNAgent1network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
+bsub -o "outputs/network-25-20-15-10/NNAgent2network-25-20-15-10.md" -J "NNAgent2network-25-20-15-10" -P "NNAgent2network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
+bsub -o "outputs/network-25-20-15-10/NNAgent3network-25-20-15-10.md" -J "NNAgent3network-25-20-15-10" -P "NNAgent3network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
+bsub -o "outputs/network-25-20-15-10/NNAgent4network-25-20-15-10.md" -J "NNAgent4network-25-20-15-10" -P "NNAgent4network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
+mkdir outputs/network-15-10
+mkdir outputs/network-15-10/csv
+mkdir outputs/network-15-10/trained
+mkdir outputs/network-15-10/TrainingCurve
+mkdir outputs/network-15-10/Weights
+mkdir outputs/network-15-10/Elo_Rating
+mkdir outputs/network-15-10/Increase_in_Elo_over_time
+bsub -o "outputs/network-15-10/NNAgent0network-15-10.md" -J "NNAgent0network-15-10" -P "NNAgent0network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
+bsub -o "outputs/network-15-10/NNAgent1network-15-10.md" -J "NNAgent1network-15-10" -P "NNAgent1network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
+bsub -o "outputs/network-15-10/NNAgent2network-15-10.md" -J "NNAgent2network-15-10" -P "NNAgent2network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
+bsub -o "outputs/network-15-10/NNAgent3network-15-10.md" -J "NNAgent3network-15-10" -P "NNAgent3network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
+bsub -o "outputs/network-15-10/NNAgent4network-15-10.md" -J "NNAgent4network-15-10" -P "NNAgent4network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
+mkdir outputs/network-10-5
+mkdir outputs/network-10-5/csv
+mkdir outputs/network-10-5/trained
+mkdir outputs/network-10-5/TrainingCurve
+mkdir outputs/network-10-5/Weights
+mkdir outputs/network-10-5/Elo_Rating
+mkdir outputs/network-10-5/Increase_in_Elo_over_time
+bsub -o "outputs/network-10-5/NNAgent0network-10-5.md" -J "NNAgent0network-10-5" -P "NNAgent0network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
+bsub -o "outputs/network-10-5/NNAgent1network-10-5.md" -J "NNAgent1network-10-5" -P "NNAgent1network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
+bsub -o "outputs/network-10-5/NNAgent2network-10-5.md" -J "NNAgent2network-10-5" -P "NNAgent2network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
+bsub -o "outputs/network-10-5/NNAgent3network-10-5.md" -J "NNAgent3network-10-5" -P "NNAgent3network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
+bsub -o "outputs/network-10-5/NNAgent4network-10-5.md" -J "NNAgent4network-10-5" -P "NNAgent4network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
