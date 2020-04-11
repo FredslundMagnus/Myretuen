@@ -80,7 +80,7 @@ class Agent():
             self.train(reward, self.previousState, newState)
 
         if self.analyse:
-            self.analyser.addData(reward, newState)
+            self.analyser.addData(reward, newState, self.env.dicesThatHaveBeenRolled)
 
         self.previousState = []
 
