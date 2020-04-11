@@ -14,8 +14,6 @@ def getvals(args):
             try:
                 if s == '-network':
                     d[s] = eval(args[i + 1])
-                    print(d[s], args[i + 1], eval(args[i + 1]), 'Debug')
-                    print(args)
                 else:
                     d[s] = float(args[i + 1])
             except:
