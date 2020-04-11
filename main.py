@@ -28,7 +28,7 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, doTrain=False, impala=True, calcprobs=True, minmax=False, lossf='MME', K=200, dropout=0.1, alpha=None, discount=0.99, lambd=0.8, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, network=[50, 25, 10]))
+    controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, doTrain=False, impala=True, calcprobs=True, minmax=False, lossf='MME', K=200, dropout=0.1, alpha=None, discount=0.99, lambd=0.8, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, network=[50, 25, 10], analyse=True))
     # controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=True, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02).loadModel('NNAgent2200'))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
 
@@ -91,14 +91,9 @@ try:
     plot('Increase_in_Elo_over_time', labels=True)
 except:
     pass
-
+controller.agents['green'].analyser.saveData(4)
 try:
-    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}-data-green.csv")
-except:
-    pass
-
-try:
-    controller.agents['red'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}-data-red.csv")
+    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}")
 except:
     pass
 
