@@ -2,7 +2,7 @@ class Analyser():
     def __init__(self):
         pass
 
-    def addData(self, data):
+    def addData(self, reward, state):
         pass
 
     def saveData(self, filename):

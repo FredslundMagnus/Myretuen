@@ -6,6 +6,7 @@ import pickle
 import numpy as np
 from impala import Impala
 from MinMaxer import MinMaxCalculate
+from analyser import Analyser
 
 
 class Agent():
@@ -66,7 +67,7 @@ class Agent():
         if len(self.previousState) == 0 or action == None:
             return
 
-        if not self.doTrain and not self.ImpaleIsActivated:
+        if not self.doTrain and not self.ImpaleIsActivated and not self.analyse:
             return
 
         newState = self.state(observation)[0]
@@ -78,6 +79,9 @@ class Agent():
         if self.doTrain:
             self.train(reward, self.previousState, newState)
 
+        if self.analyse:
+            self.analyser.addData(reward, newState)
+
         self.previousState = []
 
     def train(self, reward, previousState, newState):
@@ -86,7 +90,7 @@ class Agent():
     def value(self, infostate):
         return random.choice([0, 1])
 
-    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network):
+    def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse):
         self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
@@ -102,6 +106,9 @@ class Agent():
         if not self.explore:
             self.K = None
         self.NextbestAction = []
+        self.analyse = analyse
+        if self.analyse:
+            self.analyser = Analyser()
         self.lossf = lossf
         self.currentAgent = self
         self.minimaxi = minmax
