@@ -91,8 +91,10 @@ try:
     plot('Increase_in_Elo_over_time', labels=True)
 except:
     pass
-controller.agents['green'].analyser.saveData(4)
+
 try:
+    # Thename = 1
+    # nameOfRun = 1
     controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}")
 except:
     pass
