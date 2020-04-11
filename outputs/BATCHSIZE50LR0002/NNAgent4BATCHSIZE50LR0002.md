@@ -220,3 +220,225 @@ Resource usage summary:
 
 The output (if any) is above this job summary.
 
+# Parameters for BATCHSIZE50LR0002
+
+    Use the agent :             NNAgent.
+
+    Play for :                  1000 games.
+      Add Agent every :         20 game.
+      Game length :             300 rolls.
+      Win with :                9 ants.
+      Eatreward :               4.0.
+      Basereward :              4.0.
+      Stepreward :              0.0.
+
+      Features :                [antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval].
+
+      Network :                 [50, 25, 10].
+
+    Explore enabled :           True.
+      K :                       200.0.
+      Dropout :                 0.2.
+
+    DoTrain enabled :           False.
+      Lossfunction  :           MME.
+      Value of alpha :          None.
+      Value of discount :       0.99.
+      Value of lambda :         0.8.
+      Learningrate :            0.0002.
+
+    Impala enabled :            True.
+      historyLength :           20.
+      startAfterNgames :        20.
+      batchSize :               50.
+      sampleLenth :             10.
+
+    Minimax enabled :           False.
+      TopNvalues :              None.
+      cutOffdepth :             None.
+      ValueCutOff :             None.
+      ValueDiffCutOff :         None.
+      ProbabilityCutOff :       None.
+
+    Calcprobs enabled :         True.
+
+    Chooserfunction :           weightedChooser.
+
+    Minutes used :              553 minutes.
+    Hours used :                9 hours.
+
+# Profiling
+
+
+      11783392075 function calls (11462794711 primitive calls) in 33135.69 seconds
+
+##    Ordered by: cumulative time
+   List reduced from 351 to 100 due to restriction <100>
+
+           ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+                1    0.000    0.000 33182.555 33182.555 {built-in method builtins.exec}
+                1    0.000    0.000 33182.555 33182.555 <string>:1(<module>)
+                1    0.000    0.000 33182.555 33182.555 game.py:177(run)
+                1  127.926  127.926 33182.555 33182.555 gamecontroller.py:15(run)
+           496042  303.614    0.001 30265.599    0.061 agent.py:13(choose)
+         10212423  682.450    0.000 20248.767    0.002 agent.py:204(state)
+        381787926 6722.152    0.000 16895.824    0.000 agent.py:184(antState)
+           253585  115.552    0.000 14902.095    0.059 opponent.py:31(choose)
+         10699666  803.764    0.000 10935.093    0.001 NNAgent.py:15(value)
+        139563855/11167863  656.389    0.000 6311.070    0.001 module.py:522(__call__)
+         10699666  320.742    0.000 6174.084    0.001 NNAgent.py:66(forward)
+        896326782 4961.196    0.000 4961.196    0.000 {built-in method numpy.array}
+         53498330  219.114    0.000 2578.094    0.000 linear.py:86(forward)
+         53498330  155.691    0.000 2280.486    0.000 functional.py:1355(linear)
+          9462301   48.471    0.000 2211.582    0.000 move.py:237(simulate)
+        171520046 2020.016    0.000 2020.016    0.000 agent.py:235(getDistances)
+             1938    0.615    0.000 1833.068    0.946 agent.py:115(resetGame)
+             1000    0.216    0.000 1821.258    1.821 impala.py:28(batchTrain)
+            49050   19.554    0.000 1819.757    0.037 impala.py:42(trainOneBatch)
+           468197   95.146    0.000 1797.779    0.004 NNAgent.py:29(train)
+         32098998   49.872    0.000 1778.146    0.000 dropout.py:53(forward)
+         32098998  168.061    0.000 1728.274    0.000 functional.py:788(dropout)
+           601942   27.531    0.000 1565.199    0.003 move.py:133(simulateComplex)
+         53498330 1557.330    0.000 1557.330    0.000 {built-in method addmm}
+         32098998 1509.735    0.000 1509.735    0.000 {built-in method dropout}
+        171520046 1458.514    0.000 1477.567    0.000 agent.py:257(getDistancesToAnts)
+        171520046  227.699    0.000 1426.195    0.000 {method 'max' of 'numpy.ndarray' objects}
+           614676  180.622    0.000 1373.474    0.002 Probability_function.py:206(CalculateWinChance)
+        171520046   90.311    0.000 1198.495    0.000 _methods.py:28(_amax)
+        173008992 1122.039    0.000 1122.039    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+        119063114/8414620  925.312    0.000 1105.940    0.000 Probability_function.py:196(Combinations)
+        171520046  610.777    0.000 1039.258    0.000 agent.py:173(currentScore)
+        210267880  603.926    0.000  790.224    0.000 agent.py:281(ant_situation)
+         42798664   62.448    0.000  672.837    0.000 activation.py:558(forward)
+         42798664   46.581    0.000  610.390    0.000 functional.py:1050(leaky_relu)
+         42798664  563.808    0.000  563.808    0.000 {built-in method torch._C._nn.leaky_relu}
+         53498330  541.653    0.000  541.653    0.000 {method 't' of 'torch._C._TensorBase' objects}
+          9161330  281.340    0.000  471.529    0.000 move.py:246(<listcomp>)
+        171520046  369.190    0.000  447.179    0.000 agent.py:292(dicer)
+           468197  145.260    0.000  446.417    0.001 adam.py:49(step)
+           506727    2.598    0.000  421.238    0.001 agent.py:65(trainAgent)
+         10513394  219.833    0.000  418.098    0.000 agent.py:270(antsUnderAnts)
+        171522486  176.013    0.000  407.698    0.000 game.py:136(getCurrentScore)
+        171520046  169.480    0.000  370.223    0.000 agent.py:167(distanceToSplits)
+        171520046  233.308    0.000  361.027    0.000 agent.py:161(carrying_number_of_enemy_ants)
+        519485958  253.686    0.000  322.961    0.000 {built-in method builtins.sum}
+         25627642   57.097    0.000  254.980    0.000 numeric.py:159(ones)
+           468197    1.852    0.000  229.020    0.000 tensor.py:167(backward)
+           468197    3.062    0.000  227.168    0.000 __init__.py:44(backward)
+           468197  213.548    0.000  213.548    0.000 {method 'run_backward' of 'torch._C._EngineBase' objects}
+        171522486  172.317    0.000  208.113    0.000 game.py:137(<dictcomp>)
+        195265440  137.956    0.000  202.890    0.000 move.py:260(__init__)
+        171524046  200.759    0.000  200.773    0.000 {built-in method builtins.sorted}
+           505727    3.536    0.000  194.376    0.000 game.py:53(action_space)
+         10122878   27.693    0.000  190.840    0.000 game.py:43(actions)
+         10699666  160.117    0.000  160.117    0.000 {built-in method flatten}
+         37320212  138.215    0.000  159.253    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        1215982437/1215982425  155.098    0.000  155.098    0.000 {built-in method builtins.len}
+         10699666  151.686    0.000  151.686    0.000 {built-in method dot}
+           594398  130.938    0.000  148.740    0.000 Probability_function.py:140(fight)
+         25627642   37.303    0.000  137.834    0.000 <__array_function__ internals>:2(copyto)
+        81396544/17855145   52.973    0.000  137.303    0.000 game.py:108(getAllPositionsAtDistance)
+        139563855  130.633    0.000  130.633    0.000 {built-in method torch._C._get_tracing_state}
+             1000    0.043    0.000  125.573    0.126 game.py:156(reset)
+             1000    0.182    0.000  125.169    0.125 setups.py:9(setup)
+        120072909  123.333    0.000  123.731    0.000 {built-in method builtins.any}
+        837110343  117.586    0.000  117.586    0.000 {method 'items' of 'dict' objects}
+        117697779  109.569    0.000  109.570    0.000 module.py:562(__getattr__)
+          1400000    0.771    0.000  107.991    0.000 field.py:38(Nointersection)
+        514560138  107.772    0.000  107.772    0.000 agent.py:304(GetProbabilityOfEat)
+        247929106   78.884    0.000  107.282    0.000 field.py:23(__eq__)
+          1400000   38.031    0.000  107.220    0.000 field.py:39(<listcomp>)
+             1000    8.631    0.009  105.039    0.105 field.py:120(Give_dist_to_all)
+          9161330   67.468    0.000   95.535    0.000 move.py:109(simulateSimple)
+        171520046   93.149    0.000   93.149    0.000 agent.py:162(<listcomp>)
+          9363940   92.876    0.000   92.876    0.000 {method 'mul_' of 'torch._C._TensorBase' objects}
+           505727    3.165    0.000   89.412    0.000 game.py:56(step)
+         75523503   51.199    0.000   84.330    0.000 game.py:116(goOneStep)
+        171520046   81.869    0.000   81.869    0.000 agent.py:194(<listcomp>)
+         10699666   79.795    0.000   79.795    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        149462637   74.354    0.000   74.354    0.000 agent.py:285(<listcomp>)
+        171520046   70.097    0.000   70.097    0.000 agent.py:170(distanceToBases)
+        448387911   69.275    0.000   69.275    0.000 agent.py:278(<genexpr>)
+        140158747   65.575    0.000   65.575    0.000 agent.py:287(<listcomp>)
+        195265440   64.934    0.000   64.934    0.000 {method 'copy' of 'dict' objects}
+         10699666   16.441    0.000   63.620    0.000 <__array_function__ internals>:2(concatenate)
+          9363940   61.872    0.000   61.872    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+          5171496    2.951    0.000   60.284    0.000 module.py:846(parameters)
+         25627642   60.049    0.000   60.049    0.000 {built-in method numpy.empty}
+           496862   39.209    0.000   59.591    0.000 {method 'choice' of 'numpy.random.mtrand.RandomState' objects}
+          5171496    2.977    0.000   57.333    0.000 module.py:870(named_parameters)
+        289827376   56.388    0.000   56.388    0.000 {method 'values' of 'collections.OrderedDict' objects}
+          5171496   15.920    0.000   54.356    0.000 module.py:833(_named_members)
+         32098998   30.189    0.000   50.478    0.000 _VF.py:11(__getattr__)
+          9763272   49.557    0.000   49.557    0.000 {method 'item' of 'torch._C._TensorBase' objects}
+        275365698   47.603    0.000   47.603    0.000 {built-in method math.factorial}
+        218157662   47.341    0.000   47.341    0.000 {method 'append' of 'list' objects}
+        171520046   46.896    0.000   46.896    0.000 agent.py:164(carrying_number_of_ally_ants)
+           505727    3.657    0.000   45.940    0.000 move.py:20(execute)
+          4681970   45.756    0.000   45.756    0.000 {method 'sqrt' of 'torch._C._TensorBase' objects}
+
+
+# Other prints
+
+[-0.03466528 -0.4026633  -0.12137078 ...  0.25780734  0.14492449
+  0.4482753 ]
+
+ <br /> 
+ <br /> 
+ <br /> 
+ <br />
+
+---------------------------------------------------------------------------------------------------------------------
+
+# HPC Stats
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-21-106>
+Subject: Job 6153056: <NNAgent4BATCHSIZE50LR0002> in cluster <dcc> Done
+
+Job <NNAgent4BATCHSIZE50LR0002> was submitted from host <n-62-30-6> by user <s183905> in cluster <dcc> at Fri Apr 10 16:53:13 2020
+Job was executed on host(s) <n-62-21-106>, in queue <hpc>, as user <s183905> in cluster <dcc> at Fri Apr 10 16:53:15 2020
+</zhome/ee/d/137643> was used as the home directory.
+</zhome/ee/d/137643/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Fri Apr 10 16:53:15 2020
+Terminated at Sat Apr 11 02:06:22 2020
+Results reported at Sat Apr 11 02:06:22 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=20G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 4320
+# end of BSUB options
+
+module -s load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   33184.50 sec.
+    Max Memory :                                 827 MB
+    Average Memory :                             440.32 MB
+    Total Requested Memory :                     20480.00 MB
+    Delta Memory :                               19653.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   33191 sec.
+    Turnaround time :                            33189 sec.
+
+The output (if any) is above this job summary.
+
