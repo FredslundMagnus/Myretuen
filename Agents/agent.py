@@ -80,7 +80,7 @@ class Agent():
             self.train(reward, self.previousState, newState)
 
         if self.analyse:
-            self.analyser.addData(reward, newState, self.env.dicesThatHaveBeenRolled)
+            self.analyser.addData(reward, newState, self.env.dicesThatHaveBeenRolled, self.env.nGamePlay)
 
         self.previousState = []
 
@@ -109,6 +109,8 @@ class Agent():
         self.analyse = analyse
         if self.analyse:
             self.analyser = Analyser()
+        else:
+            self.analyser = None
         self.lossf = lossf
         self.currentAgent = self
         self.minimaxi = minmax
@@ -135,6 +137,8 @@ class Agent():
             self.impala.batchTrain()
         if self.ImpaleIsActivated == True or self.doTrain == True:
             self.resettrace()
+        if self.analyse:
+            self.analyser.restart()
         self.gameNumber += 1
         self.NextbestAction = []
 

@@ -51,12 +51,15 @@ class Opponent():
         currentAnts = agent.currentAnts
         env = agent.env
         impala = agent.impala
+        analyser = agent.analyser
+        agent.analyser = None
         agent.impala = 0
         agent.env = 0
         agent.currentAnts = 0
         agent.connection = 0
         adder = deepcopy(agent)
         agent.impala = impala
+        agent.analyser = analyser
         adder.env = env
         agent.env = env
         adder.currentAnts = currentAnts
