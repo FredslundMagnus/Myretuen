@@ -23,6 +23,7 @@ class Analyser():
         self.analysisGameLength()
 
     def analysisGameLength(self):
+        print(self.gameAxis())
         print(np.array(list(map(lambda x: int(x[-1][0, 1]), self.data))))
 
     def gameAxis(self):

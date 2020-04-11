@@ -67,6 +67,7 @@ class Opponent():
         adder.connection = connection
         agent.connection = connection
         adder.doTrain = False
+        adder.analyse = False
         adder.ImpaleIsActivated = False
         adder.env = self.env
         self.agents.append(adder)

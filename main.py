@@ -93,12 +93,7 @@ except:
     pass
 controller.agents['green'].analyser.saveData(4)
 try:
-    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/green/{nameOfRun}")
-except:
-    pass
-
-try:
-    controller.agents['red'].analyser.saveData(f"outputs/{Thename}/data/red/{nameOfRun}")
+    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}")
 except:
     pass
 
