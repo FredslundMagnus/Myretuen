@@ -92,6 +92,16 @@ try:
 except:
     pass
 
+try:
+    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}-data-green.csv")
+except:
+    pass
+
+try:
+    controller.agents['red'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}-data-red.csv")
+except:
+    pass
+
 if debuggerMode:
     print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")
     print('\n---------------------------------------------------------------------------------------------------------------------\n')
