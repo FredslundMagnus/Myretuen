@@ -1,157 +1,53 @@
 #!/bin/sh
-mkdir outputs/network-50-50-50-50-50-50
-mkdir outputs/network-50-50-50-50-50-50/csv
-mkdir outputs/network-50-50-50-50-50-50/trained
-mkdir outputs/network-50-50-50-50-50-50/TrainingCurve
-mkdir outputs/network-50-50-50-50-50-50/Weights
-mkdir outputs/network-50-50-50-50-50-50/Elo_Rating
-mkdir outputs/network-50-50-50-50-50-50/Increase_in_Elo_over_time
-bsub -o "outputs/network-50-50-50-50-50-50/NNAgent0network-50-50-50-50-50-50.md" -J "NNAgent0network-50-50-50-50-50-50" -P "NNAgent0network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50-50-50/NNAgent1network-50-50-50-50-50-50.md" -J "NNAgent1network-50-50-50-50-50-50" -P "NNAgent1network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50-50-50/NNAgent2network-50-50-50-50-50-50.md" -J "NNAgent2network-50-50-50-50-50-50" -P "NNAgent2network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50-50-50/NNAgent3network-50-50-50-50-50-50.md" -J "NNAgent3network-50-50-50-50-50-50" -P "NNAgent3network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50-50-50/NNAgent4network-50-50-50-50-50-50.md" -J "NNAgent4network-50-50-50-50-50-50" -P "NNAgent4network-50-50-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50,50,50]" < submit.sh
-mkdir outputs/network-20-20-30-20-20
-mkdir outputs/network-20-20-30-20-20/csv
-mkdir outputs/network-20-20-30-20-20/trained
-mkdir outputs/network-20-20-30-20-20/TrainingCurve
-mkdir outputs/network-20-20-30-20-20/Weights
-mkdir outputs/network-20-20-30-20-20/Elo_Rating
-mkdir outputs/network-20-20-30-20-20/Increase_in_Elo_over_time
-bsub -o "outputs/network-20-20-30-20-20/NNAgent0network-20-20-30-20-20.md" -J "NNAgent0network-20-20-30-20-20" -P "NNAgent0network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
-bsub -o "outputs/network-20-20-30-20-20/NNAgent1network-20-20-30-20-20.md" -J "NNAgent1network-20-20-30-20-20" -P "NNAgent1network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
-bsub -o "outputs/network-20-20-30-20-20/NNAgent2network-20-20-30-20-20.md" -J "NNAgent2network-20-20-30-20-20" -P "NNAgent2network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
-bsub -o "outputs/network-20-20-30-20-20/NNAgent3network-20-20-30-20-20.md" -J "NNAgent3network-20-20-30-20-20" -P "NNAgent3network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
-bsub -o "outputs/network-20-20-30-20-20/NNAgent4network-20-20-30-20-20.md" -J "NNAgent4network-20-20-30-20-20" -P "NNAgent4network-20-20-30-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-30-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20.20]" < submit.sh
-mkdir outputs/network-50-50-50-50
-mkdir outputs/network-50-50-50-50/csv
-mkdir outputs/network-50-50-50-50/trained
-mkdir outputs/network-50-50-50-50/TrainingCurve
-mkdir outputs/network-50-50-50-50/Weights
-mkdir outputs/network-50-50-50-50/Elo_Rating
-mkdir outputs/network-50-50-50-50/Increase_in_Elo_over_time
-bsub -o "outputs/network-50-50-50-50/NNAgent0network-50-50-50-50.md" -J "NNAgent0network-50-50-50-50" -P "NNAgent0network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50/NNAgent1network-50-50-50-50.md" -J "NNAgent1network-50-50-50-50" -P "NNAgent1network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50/NNAgent2network-50-50-50-50.md" -J "NNAgent2network-50-50-50-50" -P "NNAgent2network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50/NNAgent3network-50-50-50-50.md" -J "NNAgent3network-50-50-50-50" -P "NNAgent3network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
-bsub -o "outputs/network-50-50-50-50/NNAgent4network-50-50-50-50.md" -J "NNAgent4network-50-50-50-50" -P "NNAgent4network-50-50-50-50 4000 10 NNAgent 1 1 1 1 0 network-50-50-50-50 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,50,50,50]" < submit.sh
-mkdir outputs/network-40-40-40-40
-mkdir outputs/network-40-40-40-40/csv
-mkdir outputs/network-40-40-40-40/trained
-mkdir outputs/network-40-40-40-40/TrainingCurve
-mkdir outputs/network-40-40-40-40/Weights
-mkdir outputs/network-40-40-40-40/Elo_Rating
-mkdir outputs/network-40-40-40-40/Increase_in_Elo_over_time
-bsub -o "outputs/network-40-40-40-40/NNAgent0network-40-40-40-40.md" -J "NNAgent0network-40-40-40-40" -P "NNAgent0network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
-bsub -o "outputs/network-40-40-40-40/NNAgent1network-40-40-40-40.md" -J "NNAgent1network-40-40-40-40" -P "NNAgent1network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
-bsub -o "outputs/network-40-40-40-40/NNAgent2network-40-40-40-40.md" -J "NNAgent2network-40-40-40-40" -P "NNAgent2network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
-bsub -o "outputs/network-40-40-40-40/NNAgent3network-40-40-40-40.md" -J "NNAgent3network-40-40-40-40" -P "NNAgent3network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
-bsub -o "outputs/network-40-40-40-40/NNAgent4network-40-40-40-40.md" -J "NNAgent4network-40-40-40-40" -P "NNAgent4network-40-40-40-40 4000 10 NNAgent 1 1 1 1 0 network-40-40-40-40 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [40,40,40,40]" < submit.sh
-mkdir outputs/network-30-30-30-30
-mkdir outputs/network-30-30-30-30/csv
-mkdir outputs/network-30-30-30-30/trained
-mkdir outputs/network-30-30-30-30/TrainingCurve
-mkdir outputs/network-30-30-30-30/Weights
-mkdir outputs/network-30-30-30-30/Elo_Rating
-mkdir outputs/network-30-30-30-30/Increase_in_Elo_over_time
-bsub -o "outputs/network-30-30-30-30/NNAgent0network-30-30-30-30.md" -J "NNAgent0network-30-30-30-30" -P "NNAgent0network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
-bsub -o "outputs/network-30-30-30-30/NNAgent1network-30-30-30-30.md" -J "NNAgent1network-30-30-30-30" -P "NNAgent1network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
-bsub -o "outputs/network-30-30-30-30/NNAgent2network-30-30-30-30.md" -J "NNAgent2network-30-30-30-30" -P "NNAgent2network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
-bsub -o "outputs/network-30-30-30-30/NNAgent3network-30-30-30-30.md" -J "NNAgent3network-30-30-30-30" -P "NNAgent3network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
-bsub -o "outputs/network-30-30-30-30/NNAgent4network-30-30-30-30.md" -J "NNAgent4network-30-30-30-30" -P "NNAgent4network-30-30-30-30 4000 10 NNAgent 1 1 1 1 0 network-30-30-30-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [30,30,30,30]" < submit.sh
-mkdir outputs/network-20-20-20-20
-mkdir outputs/network-20-20-20-20/csv
-mkdir outputs/network-20-20-20-20/trained
-mkdir outputs/network-20-20-20-20/TrainingCurve
-mkdir outputs/network-20-20-20-20/Weights
-mkdir outputs/network-20-20-20-20/Elo_Rating
-mkdir outputs/network-20-20-20-20/Increase_in_Elo_over_time
-bsub -o "outputs/network-20-20-20-20/NNAgent0network-20-20-20-20.md" -J "NNAgent0network-20-20-20-20" -P "NNAgent0network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
-bsub -o "outputs/network-20-20-20-20/NNAgent1network-20-20-20-20.md" -J "NNAgent1network-20-20-20-20" -P "NNAgent1network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
-bsub -o "outputs/network-20-20-20-20/NNAgent2network-20-20-20-20.md" -J "NNAgent2network-20-20-20-20" -P "NNAgent2network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
-bsub -o "outputs/network-20-20-20-20/NNAgent3network-20-20-20-20.md" -J "NNAgent3network-20-20-20-20" -P "NNAgent3network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
-bsub -o "outputs/network-20-20-20-20/NNAgent4network-20-20-20-20.md" -J "NNAgent4network-20-20-20-20" -P "NNAgent4network-20-20-20-20 4000 10 NNAgent 1 1 1 1 0 network-20-20-20-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [20,20,20,20]" < submit.sh
-mkdir outputs/network-100-50-10
-mkdir outputs/network-100-50-10/csv
-mkdir outputs/network-100-50-10/trained
-mkdir outputs/network-100-50-10/TrainingCurve
-mkdir outputs/network-100-50-10/Weights
-mkdir outputs/network-100-50-10/Elo_Rating
-mkdir outputs/network-100-50-10/Increase_in_Elo_over_time
-bsub -o "outputs/network-100-50-10/NNAgent0network-100-50-10.md" -J "NNAgent0network-100-50-10" -P "NNAgent0network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
-bsub -o "outputs/network-100-50-10/NNAgent1network-100-50-10.md" -J "NNAgent1network-100-50-10" -P "NNAgent1network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
-bsub -o "outputs/network-100-50-10/NNAgent2network-100-50-10.md" -J "NNAgent2network-100-50-10" -P "NNAgent2network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
-bsub -o "outputs/network-100-50-10/NNAgent3network-100-50-10.md" -J "NNAgent3network-100-50-10" -P "NNAgent3network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
-bsub -o "outputs/network-100-50-10/NNAgent4network-100-50-10.md" -J "NNAgent4network-100-50-10" -P "NNAgent4network-100-50-10 4000 10 NNAgent 1 1 1 1 0 network-100-50-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [100,50,10]" < submit.sh
-mkdir outputs/network-70-50-20
-mkdir outputs/network-70-50-20/csv
-mkdir outputs/network-70-50-20/trained
-mkdir outputs/network-70-50-20/TrainingCurve
-mkdir outputs/network-70-50-20/Weights
-mkdir outputs/network-70-50-20/Elo_Rating
-mkdir outputs/network-70-50-20/Increase_in_Elo_over_time
-bsub -o "outputs/network-70-50-20/NNAgent0network-70-50-20.md" -J "NNAgent0network-70-50-20" -P "NNAgent0network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
-bsub -o "outputs/network-70-50-20/NNAgent1network-70-50-20.md" -J "NNAgent1network-70-50-20" -P "NNAgent1network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
-bsub -o "outputs/network-70-50-20/NNAgent2network-70-50-20.md" -J "NNAgent2network-70-50-20" -P "NNAgent2network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
-bsub -o "outputs/network-70-50-20/NNAgent3network-70-50-20.md" -J "NNAgent3network-70-50-20" -P "NNAgent3network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
-bsub -o "outputs/network-70-50-20/NNAgent4network-70-50-20.md" -J "NNAgent4network-70-50-20" -P "NNAgent4network-70-50-20 4000 10 NNAgent 1 1 1 1 0 network-70-50-20 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [70,50,20]" < submit.sh
-mkdir outputs/network-50-40-10
-mkdir outputs/network-50-40-10/csv
-mkdir outputs/network-50-40-10/trained
-mkdir outputs/network-50-40-10/TrainingCurve
-mkdir outputs/network-50-40-10/Weights
-mkdir outputs/network-50-40-10/Elo_Rating
-mkdir outputs/network-50-40-10/Increase_in_Elo_over_time
-bsub -o "outputs/network-50-40-10/NNAgent0network-50-40-10.md" -J "NNAgent0network-50-40-10" -P "NNAgent0network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
-bsub -o "outputs/network-50-40-10/NNAgent1network-50-40-10.md" -J "NNAgent1network-50-40-10" -P "NNAgent1network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
-bsub -o "outputs/network-50-40-10/NNAgent2network-50-40-10.md" -J "NNAgent2network-50-40-10" -P "NNAgent2network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
-bsub -o "outputs/network-50-40-10/NNAgent3network-50-40-10.md" -J "NNAgent3network-50-40-10" -P "NNAgent3network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
-bsub -o "outputs/network-50-40-10/NNAgent4network-50-40-10.md" -J "NNAgent4network-50-40-10" -P "NNAgent4network-50-40-10 4000 10 NNAgent 1 1 1 1 0 network-50-40-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [50,40,10]" < submit.sh
-mkdir outputs/network-80-30
-mkdir outputs/network-80-30/csv
-mkdir outputs/network-80-30/trained
-mkdir outputs/network-80-30/TrainingCurve
-mkdir outputs/network-80-30/Weights
-mkdir outputs/network-80-30/Elo_Rating
-mkdir outputs/network-80-30/Increase_in_Elo_over_time
-bsub -o "outputs/network-80-30/NNAgent0network-80-30.md" -J "NNAgent0network-80-30" -P "NNAgent0network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
-bsub -o "outputs/network-80-30/NNAgent1network-80-30.md" -J "NNAgent1network-80-30" -P "NNAgent1network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
-bsub -o "outputs/network-80-30/NNAgent2network-80-30.md" -J "NNAgent2network-80-30" -P "NNAgent2network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
-bsub -o "outputs/network-80-30/NNAgent3network-80-30.md" -J "NNAgent3network-80-30" -P "NNAgent3network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
-bsub -o "outputs/network-80-30/NNAgent4network-80-30.md" -J "NNAgent4network-80-30" -P "NNAgent4network-80-30 4000 10 NNAgent 1 1 1 1 0 network-80-30 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [80,30]" < submit.sh
-mkdir outputs/network-25-20-15-10
-mkdir outputs/network-25-20-15-10/csv
-mkdir outputs/network-25-20-15-10/trained
-mkdir outputs/network-25-20-15-10/TrainingCurve
-mkdir outputs/network-25-20-15-10/Weights
-mkdir outputs/network-25-20-15-10/Elo_Rating
-mkdir outputs/network-25-20-15-10/Increase_in_Elo_over_time
-bsub -o "outputs/network-25-20-15-10/NNAgent0network-25-20-15-10.md" -J "NNAgent0network-25-20-15-10" -P "NNAgent0network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
-bsub -o "outputs/network-25-20-15-10/NNAgent1network-25-20-15-10.md" -J "NNAgent1network-25-20-15-10" -P "NNAgent1network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
-bsub -o "outputs/network-25-20-15-10/NNAgent2network-25-20-15-10.md" -J "NNAgent2network-25-20-15-10" -P "NNAgent2network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
-bsub -o "outputs/network-25-20-15-10/NNAgent3network-25-20-15-10.md" -J "NNAgent3network-25-20-15-10" -P "NNAgent3network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
-bsub -o "outputs/network-25-20-15-10/NNAgent4network-25-20-15-10.md" -J "NNAgent4network-25-20-15-10" -P "NNAgent4network-25-20-15-10 4000 10 NNAgent 1 1 1 1 0 network-25-20-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [25,20,15,10]" < submit.sh
-mkdir outputs/network-15-10
-mkdir outputs/network-15-10/csv
-mkdir outputs/network-15-10/trained
-mkdir outputs/network-15-10/TrainingCurve
-mkdir outputs/network-15-10/Weights
-mkdir outputs/network-15-10/Elo_Rating
-mkdir outputs/network-15-10/Increase_in_Elo_over_time
-bsub -o "outputs/network-15-10/NNAgent0network-15-10.md" -J "NNAgent0network-15-10" -P "NNAgent0network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
-bsub -o "outputs/network-15-10/NNAgent1network-15-10.md" -J "NNAgent1network-15-10" -P "NNAgent1network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
-bsub -o "outputs/network-15-10/NNAgent2network-15-10.md" -J "NNAgent2network-15-10" -P "NNAgent2network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
-bsub -o "outputs/network-15-10/NNAgent3network-15-10.md" -J "NNAgent3network-15-10" -P "NNAgent3network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
-bsub -o "outputs/network-15-10/NNAgent4network-15-10.md" -J "NNAgent4network-15-10" -P "NNAgent4network-15-10 4000 10 NNAgent 1 1 1 1 0 network-15-10 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [15,10]" < submit.sh
-mkdir outputs/network-10-5
-mkdir outputs/network-10-5/csv
-mkdir outputs/network-10-5/trained
-mkdir outputs/network-10-5/TrainingCurve
-mkdir outputs/network-10-5/Weights
-mkdir outputs/network-10-5/Elo_Rating
-mkdir outputs/network-10-5/Increase_in_Elo_over_time
-bsub -o "outputs/network-10-5/NNAgent0network-10-5.md" -J "NNAgent0network-10-5" -P "NNAgent0network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
-bsub -o "outputs/network-10-5/NNAgent1network-10-5.md" -J "NNAgent1network-10-5" -P "NNAgent1network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
-bsub -o "outputs/network-10-5/NNAgent2network-10-5.md" -J "NNAgent2network-10-5" -P "NNAgent2network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
-bsub -o "outputs/network-10-5/NNAgent3network-10-5.md" -J "NNAgent3network-10-5" -P "NNAgent3network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
-bsub -o "outputs/network-10-5/NNAgent4network-10-5.md" -J "NNAgent4network-10-5" -P "NNAgent4network-10-5 4000 10 NNAgent 1 1 1 1 0 network-10-5 -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction randomChooser -network [10,5]" < submit.sh
+mkdir outputs/Analyser-NN
+mkdir outputs/Analyser-NN/csv
+mkdir outputs/Analyser-NN/trained
+mkdir outputs/Analyser-NN/TrainingCurve
+mkdir outputs/Analyser-NN/Weights
+mkdir outputs/Analyser-NN/Elo_Rating
+mkdir outputs/Analyser-NN/Increase_in_Elo_over_time
+mkdir outputs/Analyser-NN/data
+bsub -o "outputs/Analyser-NN/NNAgent0Analyser-NN.md" -J "NNAgent0Analyser-NN" -P "NNAgent0Analyser-NN 4000 10 NNAgent 1 1 1 1 0 Analyser-NN -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-NN/NNAgent1Analyser-NN.md" -J "NNAgent1Analyser-NN" -P "NNAgent1Analyser-NN 4000 10 NNAgent 1 1 1 1 0 Analyser-NN -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-NN/NNAgent2Analyser-NN.md" -J "NNAgent2Analyser-NN" -P "NNAgent2Analyser-NN 4000 10 NNAgent 1 1 1 1 0 Analyser-NN -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-NN/NNAgent3Analyser-NN.md" -J "NNAgent3Analyser-NN" -P "NNAgent3Analyser-NN 4000 10 NNAgent 1 1 1 1 0 Analyser-NN -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-NN/NNAgent4Analyser-NN.md" -J "NNAgent4Analyser-NN" -P "NNAgent4Analyser-NN 4000 10 NNAgent 1 1 1 1 0 Analyser-NN -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+mkdir outputs/Analyser-SL
+mkdir outputs/Analyser-SL/csv
+mkdir outputs/Analyser-SL/trained
+mkdir outputs/Analyser-SL/TrainingCurve
+mkdir outputs/Analyser-SL/Weights
+mkdir outputs/Analyser-SL/Elo_Rating
+mkdir outputs/Analyser-SL/Increase_in_Elo_over_time
+mkdir outputs/Analyser-SL/data
+bsub -o "outputs/Analyser-SL/SimpleLinear0Analyser-SL.md" -J "SimpleLinear0Analyser-SL" -P "SimpleLinear0Analyser-SL 4000 10 SimpleLinear 1 1 1 1 0 Analyser-SL -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-SL/SimpleLinear1Analyser-SL.md" -J "SimpleLinear1Analyser-SL" -P "SimpleLinear1Analyser-SL 4000 10 SimpleLinear 1 1 1 1 0 Analyser-SL -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-SL/SimpleLinear2Analyser-SL.md" -J "SimpleLinear2Analyser-SL" -P "SimpleLinear2Analyser-SL 4000 10 SimpleLinear 1 1 1 1 0 Analyser-SL -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-SL/SimpleLinear3Analyser-SL.md" -J "SimpleLinear3Analyser-SL" -P "SimpleLinear3Analyser-SL 4000 10 SimpleLinear 1 1 1 1 0 Analyser-SL -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-SL/SimpleLinear4Analyser-SL.md" -J "SimpleLinear4Analyser-SL" -P "SimpleLinear4Analyser-SL 4000 10 SimpleLinear 1 1 1 1 0 Analyser-SL -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+mkdir outputs/Analyser-LA
+mkdir outputs/Analyser-LA/csv
+mkdir outputs/Analyser-LA/trained
+mkdir outputs/Analyser-LA/TrainingCurve
+mkdir outputs/Analyser-LA/Weights
+mkdir outputs/Analyser-LA/Elo_Rating
+mkdir outputs/Analyser-LA/Increase_in_Elo_over_time
+mkdir outputs/Analyser-LA/data
+bsub -o "outputs/Analyser-LA/LinearAprox0Analyser-LA.md" -J "LinearAprox0Analyser-LA" -P "LinearAprox0Analyser-LA 4000 10 LinearAprox 1 1 1 1 0 Analyser-LA -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-LA/LinearAprox1Analyser-LA.md" -J "LinearAprox1Analyser-LA" -P "LinearAprox1Analyser-LA 4000 10 LinearAprox 1 1 1 1 0 Analyser-LA -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-LA/LinearAprox2Analyser-LA.md" -J "LinearAprox2Analyser-LA" -P "LinearAprox2Analyser-LA 4000 10 LinearAprox 1 1 1 1 0 Analyser-LA -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-LA/LinearAprox3Analyser-LA.md" -J "LinearAprox3Analyser-LA" -P "LinearAprox3Analyser-LA 4000 10 LinearAprox 1 1 1 1 0 Analyser-LA -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-LA/LinearAprox4Analyser-LA.md" -J "LinearAprox4Analyser-LA" -P "LinearAprox4Analyser-LA 4000 10 LinearAprox 1 1 1 1 0 Analyser-LA -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+mkdir outputs/Analyser-CR
+mkdir outputs/Analyser-CR/csv
+mkdir outputs/Analyser-CR/trained
+mkdir outputs/Analyser-CR/TrainingCurve
+mkdir outputs/Analyser-CR/Weights
+mkdir outputs/Analyser-CR/Elo_Rating
+mkdir outputs/Analyser-CR/Increase_in_Elo_over_time
+mkdir outputs/Analyser-CR/data
+bsub -o "outputs/Analyser-CR/CleverRandom0Analyser-CR.md" -J "CleverRandom0Analyser-CR" -P "CleverRandom0Analyser-CR 4000 10 CleverRandom 0 0 0 1 0 Analyser-CR -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-CR/CleverRandom1Analyser-CR.md" -J "CleverRandom1Analyser-CR" -P "CleverRandom1Analyser-CR 4000 10 CleverRandom 0 0 0 1 0 Analyser-CR -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-CR/CleverRandom2Analyser-CR.md" -J "CleverRandom2Analyser-CR" -P "CleverRandom2Analyser-CR 4000 10 CleverRandom 0 0 0 1 0 Analyser-CR -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-CR/CleverRandom3Analyser-CR.md" -J "CleverRandom3Analyser-CR" -P "CleverRandom3Analyser-CR 4000 10 CleverRandom 0 0 0 1 0 Analyser-CR -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh
+bsub -o "outputs/Analyser-CR/CleverRandom4Analyser-CR.md" -J "CleverRandom4Analyser-CR" -P "CleverRandom4Analyser-CR 4000 10 CleverRandom 0 0 0 1 0 Analyser-CR -lossf MME -K 2000 -discount 0.995 -lambda 0.9 -lr 0.0002 -chooserfunction weightedChooser" < submit.sh

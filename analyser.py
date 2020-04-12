@@ -25,7 +25,7 @@ class Analyser():
             self.gameLength(),
             self.gameElo()
         ]], axis=1)
-        np.savetxt('test.csv', prGame, fmt='%.1f', delimiter=',', header="GameN, gameLength, gameElo")
+        np.savetxt(position, prGame, fmt='%.1f', delimiter=',', header="GameN, gameLength, gameElo")
 
     def gameLength(self):
         return np.array(list(map(lambda x: int(x[-1][0, 1]), self.data)))

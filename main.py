@@ -23,7 +23,7 @@ if debuggerMode:
     lossf, K, dropout, alpha, discount, lambd, lr, chooserfunction, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, winNumber, maxRolls, Eatreward, basereward, stepreward = getvals(sys.argv[11:])
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen(winNumber=winNumber, maxRolls=maxRolls, Eatreward=Eatreward, basereward=basereward, stepreward=stepreward)
-    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr, TopNvalues=TopNvalues, cutOffdepth=cutOffdepth, ValueCutOff=ValueCutOff, ValueDiffCutOff=ValueDiffCutOff, ProbabilityCutOff=ProbabilityCutOff, historyLength=historyLength, startAfterNgames=startAfterNgames, batchSize=batchSize, sampleLenth=sampleLenth, network=network)
+    mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr, TopNvalues=TopNvalues, cutOffdepth=cutOffdepth, ValueCutOff=ValueCutOff, ValueDiffCutOff=ValueDiffCutOff, ProbabilityCutOff=ProbabilityCutOff, historyLength=historyLength, startAfterNgames=startAfterNgames, batchSize=batchSize, sampleLenth=sampleLenth, network=network, analyse=True)
     controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False), chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
@@ -95,7 +95,7 @@ except:
 try:
     # Thename = 1
     # nameOfRun = 1
-    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}")
+    controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}.csv")
 except:
     pass
 
