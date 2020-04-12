@@ -15,7 +15,7 @@ class Agent():
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
-                temp = self.K / self.gameNumber if self.K is not None else 1
+                temp = self.K/(500+self.gameNumber) if self.K is not None else 1
                 states = []
                 values = []
                 for action in actions:
@@ -91,7 +91,7 @@ class Agent():
         return random.choice([0, 1])
 
     def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse):
-        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
+        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 2017, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)
