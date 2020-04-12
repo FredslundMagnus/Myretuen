@@ -1,7 +1,7 @@
 #!/bin/sh
 #BSUB -q hpc
 #BSUB -n 1
-#BSUB -R "rusage[mem=200G]"
+#BSUB -R "rusage[mem=25G]"
 #BSUB -R "span[hosts=1]"
 #BSUB -W 4320
 # end of BSUB options
