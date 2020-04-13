@@ -28,9 +28,9 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, doTrain=False, impala=True, calcprobs=True, minmax=False, lossf='MME', K=200, dropout=0.1, alpha=None, discount=0.99, lambd=0.8, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, network=[50, 25, 10], analyse=True))
+    controller = Controller(env=env, agent1=Opponent(CleverRandom(calcprobs=True)), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0, alpha=None, discount=0.99, lambd=0.9, lr=0.0002, TopNvalues=2, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=10, startAfterNgames=10, batchSize=200, sampleLenth=10, network=[50, 25, 10], analyse=False).loadModel('NNAgent2017ELO'))
     # controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=True, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02).loadModel('NNAgent2200'))
-    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
+    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=30)
 
 
 def plot(name, labels=False):
