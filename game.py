@@ -9,6 +9,7 @@ from gym import spaces
 from Probability_function import Probability_calculator
 from elo import Elo
 import UI.UI as ui
+import random
 
 
 class Myretuen():  # gym.Env
@@ -64,7 +65,7 @@ class Myretuen():  # gym.Env
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if done:
-            endReward = 2 * len(self.ants) + 10
+            endReward = 2 * len(self.ants)
             info = {player: (val * 2 - 1) * endReward for player, val in self.whoWonThisGame().items()}
             info['PlayerSwapped'] = False
         if len(self.rolled) == 0:
@@ -163,6 +164,8 @@ class Myretuen():  # gym.Env
         self.nGamePlay += 1
         self.prob = Probability_calculator(self.bases, self.ants)
         self.playerwithnomoves = None
+        self.winNumber = random.randint(4,9)
+        self.maxRolls = random.randint(100,300)
 
 
 class Controller():

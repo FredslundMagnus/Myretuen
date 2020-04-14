@@ -7,7 +7,7 @@ import numpy as np
 from impala import Impala
 from MinMaxer import MinMaxCalculate
 from analyser import Analyser
-
+from operator import itemgetter
 
 class Agent():
 
@@ -15,7 +15,7 @@ class Agent():
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
-                temp = self.K/(500+self.gameNumber) if self.K is not None else 1
+                temp = self.K/(self.gameNumber+2500) if self.K is not None else 1
                 states = []
                 values = []
                 for action in actions:
@@ -91,7 +91,7 @@ class Agent():
         return random.choice([0, 1])
 
     def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse):
-        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 2017, None
+        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)
@@ -119,7 +119,7 @@ class Agent():
             self.minmaxer = MinMaxCalculate(self.value, TopNvalues=self.TopNvalues, cutOffdepth=self.cutOffdepth, ValueCutOff=self.ValueCutOff, ValueDiffCutOff=self.ValueDiffCutOff, ProbabilityCutOff=self.ProbabilityCutOff, explore=self.explore, K=self.K, calcprobs=self.calcprobs)
         else:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
-        self.Features = '[antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval]'
+        self.Features = '[antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score]'
 
     def resetGame(self):
         print(self.rating)
@@ -176,20 +176,24 @@ class Agent():
         return ant.antsUnderMe[ant.color]
 
     def distanceToSplits(self, ant):
-        return list(sorted(ant.position.dist_to_targets))
+        if ant.color == self.env.player2:
+            return list(ant.position.dist_to_targets)
+        else:
+            return list(ant.position.dist_to_targets)[::-1]
 
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
 
     def currentScore(self, ant):
-        score = [0, 0, 0, 0]
+        score = [0, 0, 0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
-            score[int(ant.color == color)] = val
+            score[int(ant.color == color)] = (10*val/self.env.winNumber)
         if score[0] > score[1]:
             score[2] = 1
         elif score[0] < score[1]:
             score[2] = -1
-        score[3] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**6
+        score[3] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**4
+        score[4] = self.env.winNumber
         return score
 
     def antState(self, ant):
@@ -204,13 +208,18 @@ class Agent():
             score = self.currentScore(ant)
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
-            ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
+            # ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
             if self.calcprobs == True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             else:
-                GetProbabilityOfEat = []
-            kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
-            yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
+                GetProbabilityOfEat = [0.5]*(len(self.env.ants) // 2)
+            # kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
+            L = []
+            for i in range(len(antsUnderGlobal)):
+                L.append([antsUnderGlobal[i], disttoantsGlobal[i], GetProbabilityOfEat[i]])
+            sorted(L, key=itemgetter(0))
+            flat_list = [item for sublist in L for item in sublist]
+            yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
 
     def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
@@ -262,8 +271,10 @@ class Agent():
                     else:
                         if ant.color != ant2.color:
                             dine[21] += 1
+                        if ant.color == ant2.color:
+                            mine[0] += 1
 
-        return (mine[1:], dine[1:])
+        return (mine, dine)
 
     def getDistancesToAnts(self, ant):
         n = len(self.currentAnts) // 2

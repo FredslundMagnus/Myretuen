@@ -12,7 +12,7 @@ def incrementalChooser(obj):
     return obj.agents[obj.i]
 
 
-def weightedChooser(obj, n=10):
+def weightedChooser(obj, n=30):
     if len(obj.agents) < n:
         return random.choice(obj.agents)
     p = np.arange(1, len(obj.agents) + 1)

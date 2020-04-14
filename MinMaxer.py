@@ -17,7 +17,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.01, explore=False, K=200, calcprobs=True, ValueCutOffLow=0.7):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=200, calcprobs=True, ValueCutOffLow=0.05):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -44,7 +44,7 @@ class MinMaxCalculate():
         self.env = fakegame
 
         if self.explore == True and actionss != []:
-            temp = (self.K*limitedactions) / (500+self.gameNumber) if self.K is not None else 1
+            temp = (self.K*limitedactions) / (self.gameNumber) if self.K is not None else 1
             states = []
             values = []
             for action in actionss:
@@ -131,7 +131,7 @@ class MinMaxCalculate():
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
             Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
-        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue) or np.std(candidate_values) < 0.01) and (cutOffdepth < (self.cutOffdepth)):
+        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue) or np.std(candidate_values) < 0.0) and (cutOffdepth < (self.cutOffdepth)):
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
             return Endvalue * Proba

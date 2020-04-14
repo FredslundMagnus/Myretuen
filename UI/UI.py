@@ -359,6 +359,7 @@ def updateScreen(background, win, game=None, connection=None):
                 centerText(6 * scale, str(i + 1), (0, 0, 0), (int(ant.pos[0] + 3 * i * (field.rect.center[0] / 390 - scale / 2)) + 10 * scale, int(ant.pos[1] + 3 * i * (field.rect.center[1] / 390 - scale / 2) + 10 * scale)), 0, win)
 
         centerText(20 * scale, f'{game.dicesThatHaveBeenRolled}/{game.maxRolls}', (0, 0, 0), (int(70 * scale), int(40 * scale)), 0, win)
+        centerText(20 * scale, f'{game.winNumber}', (0, 50, 0), (int(70 * scale), int(70 * scale)), 0, win)
 
         if isHovering:
             centerText(12 * scale, idd, (0, 0, 0), pos, 0, win)
