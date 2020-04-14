@@ -91,7 +91,7 @@ class Agent():
         return random.choice([0, 1])
 
     def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse):
-        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None
+        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 2000, None
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)
@@ -176,10 +176,19 @@ class Agent():
         return ant.antsUnderMe[ant.color]
 
     def distanceToSplits(self, ant):
+        li = list(ant.position.dist_to_targets)
         if ant.color == self.env.player2:
-            return list(ant.position.dist_to_targets)
+            if li[0] < li[2]:
+                li[0], li[2] = li[2], li[0]
+            if li[1] < li[3]:
+                li[1], li[3] = li[3], li[1]
         else:
-            return list(ant.position.dist_to_targets)[::-1]
+            li = li[::-1]
+            if li[0] < li[2]:
+                li[0], li[2] = li[2], li[0]
+            if li[1] < li[3]:
+                li[1], li[3] = li[3], li[1]
+        return li
 
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]

@@ -224,10 +224,19 @@ class MinMaxCalculate():
         return ant.antsUnderMe[ant.color]
 
     def distanceToSplits(self, ant):
+        li = list(ant.position.dist_to_targets)
         if ant.color == self.env.player2:
-            return list(ant.position.dist_to_targets)
+            if li[0] < li[2]:
+                li[0], li[2] = li[2], li[0]
+            if li[1] < li[3]:
+                li[1], li[3] = li[3], li[1]
         else:
-            return list(ant.position.dist_to_targets)[::-1]
+            li = li[::-1]
+            if li[0] < li[2]:
+                li[0], li[2] = li[2], li[0]
+            if li[1] < li[3]:
+                li[1], li[3] = li[3], li[1]
+        return li
 
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
