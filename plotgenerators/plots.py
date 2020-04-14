@@ -26,12 +26,19 @@ class EloPlot():
                 self.plot(x, y, lw=2, label=agent, color=color, zorder=2)
                 if meanVar:
                     sd = sd / np.sqrt(data.shape[2])
-                    self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
-                else:
-                    self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+                self.fill_between(x, y + sd, y - sd, facecolor=color, alpha=0.5, zorder=2)
+                self.doPrint = True
+
+        def maxPlot(self, data, agent, color):
+            if data is not None:
+                Max = np.max(data, axis=2)
+                y = Max[0, :]
+                x = np.arange(1, len(y) + 1)
+                self.plot(x, y, lw=1, label=agent + ' max', color=color, linestyle='dashed', zorder=2)
                 self.doPrint = True
 
         self.plt.varPlot = varPlot
+        self.plt.maxPlot = maxPlot
         self.plt.doPrint = False
 
     def __enter__(self):
