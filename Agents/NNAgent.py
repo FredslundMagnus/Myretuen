@@ -16,8 +16,10 @@ class NNAgent(Agent):
     def value(self, infostate, return_float=True):
         state, n = infostate[0], infostate[1]
         Nfeature = np.array(state).shape[-1]
-        if self.phi == [] or self.optimise == True:
+        if self.phi == []:
+            print("hello")
             self.phi = Net(Nfeature, self.dropout, self.network)
+        if self.optimise == True:
             self.optimizer = optim.Adam(self.phi.parameters(), lr=self.lr, amsgrad=True)
             self.optimise = False
         x = np.array(state).reshape(-1, Nfeature)
@@ -26,6 +28,7 @@ class NNAgent(Agent):
         value = torch.dot(torch.flatten(
             self.phi(torch.FloatTensor(x))), factor)
         value = value.view(-1)
+        print(value)
         return value.item() if return_float else value
 
     def train(self, reward, previousState, newState):

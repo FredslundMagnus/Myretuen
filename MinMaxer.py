@@ -7,6 +7,7 @@ from copy import deepcopy
 from Probability_function import Probability_calculator
 import pickle
 import time
+from operator import itemgetter
 
 
 def fastcopy(game):
@@ -17,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=200, calcprobs=True, ValueCutOffLow=0.05):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=200, calcprobs=True, ValueCutOffLow=0.3):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -44,7 +45,7 @@ class MinMaxCalculate():
         self.env = fakegame
 
         if self.explore == True and actionss != []:
-            temp = (self.K*limitedactions) / (self.gameNumber) if self.K is not None else 1
+            temp = (4 * self.K*limitedactions) / (self.K + 4 * self.gameNumber) if self.K is not None else 1
             states = []
             values = []
             for action in actionss:
@@ -131,7 +132,7 @@ class MinMaxCalculate():
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
             Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
-        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue) or np.std(candidate_values) < 0.0) and (cutOffdepth < (self.cutOffdepth)):
+        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue) or np.std(candidate_values) < 0.1) and (cutOffdepth < (self.cutOffdepth)):
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
             return Endvalue * Proba
@@ -223,20 +224,24 @@ class MinMaxCalculate():
         return ant.antsUnderMe[ant.color]
 
     def distanceToSplits(self, ant):
-        return list(sorted(ant.position.dist_to_targets))
+        if ant.color == self.env.player2:
+            return list(ant.position.dist_to_targets)
+        else:
+            return list(ant.position.dist_to_targets)[::-1]
 
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
 
     def currentScore(self, ant):
-        score = [0, 0, 0, 0]
+        score = [0, 0, 0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
-            score[int(ant.color == color)] = val
+            score[int(ant.color == color)] = (10*val/self.env.winNumber)
         if score[0] > score[1]:
             score[2] = 1
         elif score[0] < score[1]:
             score[2] = -1
-        score[3] = (self.env.dicesThatHaveBeenRolled/self.env.maxRolls)**6
+        score[3] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**4
+        score[4] = self.env.winNumber
         return score
 
     def antState(self, ant):
@@ -251,13 +256,18 @@ class MinMaxCalculate():
             score = self.currentScore(ant)
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
-            ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
-            if self.calcprobs is True:
+            # ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
+            if self.calcprobs == True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             else:
-                GetProbabilityOfEat = []
-            kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
-            yield antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + GetProbabilityOfEat + antsUnderGlobal + disttoantsGlobal + kval
+                GetProbabilityOfEat = [0.5]*(len(self.env.ants) // 2)
+            # kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
+            L = []
+            for i in range(len(antsUnderGlobal)):
+                L.append([antsUnderGlobal[i], disttoantsGlobal[i], GetProbabilityOfEat[i]])
+            sorted(L, key=itemgetter(0))
+            flat_list = [item for sublist in L for item in sublist]
+            yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
 
     def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
@@ -278,7 +288,6 @@ class MinMaxCalculate():
 
         if action == None or ants2 == [None]:
             return [Antstate1]
-
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
         for ant2 in ants2:
@@ -310,8 +319,10 @@ class MinMaxCalculate():
                     else:
                         if ant.color != ant2.color:
                             dine[21] += 1
+                        if ant.color == ant2.color:
+                            mine[0] += 1
 
-        return (mine[1:], dine[1:])
+        return (mine, dine)
 
     def getDistancesToAnts(self, ant):
         n = len(self.currentAnts) // 2
@@ -321,7 +332,9 @@ class MinMaxCalculate():
                 if ant2.isAlive == True:
                     if ant2.position.type != 'Base':
                         dis = ant.position.dist_to_all[ant2.position.id]
-                        ants[i % n] = 3 if dis < 7 else 2 if dis < 13 else 1
+                    else:
+                        dis = ant.position.distBases[ant2.color][0]
+                    ants[i % n] = 4 if dis < 3 else 3 if dis < 7 else 2 if dis < 13 else 1
         return ants
 
     def antsUnderAnts(self):
@@ -330,6 +343,8 @@ class MinMaxCalculate():
         for i, ant in enumerate(self.currentAnts):
             if ant.isAlive == True:
                 if ant.position.type != 'Base':
+                    # if sum(val for _, val in ant.antsUnderMe.items()) != 0:
+                    #     print(sum(val for _, val in ant.antsUnderMe.items()))
                     ants[ant.color][i % n] = sum(val for _, val in ant.antsUnderMe.items())
         return ants
 
