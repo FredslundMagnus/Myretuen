@@ -28,7 +28,6 @@ class NNAgent(Agent):
         value = torch.dot(torch.flatten(
             self.phi(torch.FloatTensor(x))), factor)
         value = value.view(-1)
-        print(value)
         return value.item() if return_float else value
 
     def train(self, reward, previousState, newState):
