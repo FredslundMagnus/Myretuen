@@ -76,6 +76,14 @@ def printer(ant):
     return 0
 
 
+def minBase(ant):
+    return baseDistance(ant)[0]
+
+
+def dinBase(ant):
+    return baseDistance(ant)[1]
+
+
 class Analyser():
     def __init__(self):
         self.data = []
@@ -94,13 +102,17 @@ class Analyser():
         self.temp = []
 
     def saveData(self, position):
-        self.skabelon(printer, start=0, antPredicate=lambda ant: not opponent(ant))
+        # self.skabelon(printer, antPredicate=lambda ant: not opponent(ant))
+
         prGame = np.concatenate([x.reshape(-1, 1) for x in [
             self.gameN(),
             self.gameLength(),
-            self.gameElo()
+            self.gameElo(),
+            self.meanPrGame(minBase, antPredicate=lambda ant: not opponent(ant)),
+            self.meanPrGame(dinBase, antPredicate=lambda ant: not opponent(ant))
         ]], axis=1)
-        np.savetxt(position, prGame, fmt='%.1f', delimiter=',', header="GameN, gameLength, gameElo")
+        print(prGame)
+        np.savetxt(position, prGame, fmt='%.1f', delimiter=',', header="GameN, gameLength, gameElo, minBase, dinBase")
 
     def skabelon(self, analyseFunction, start=0, adder=lambda old, new: old + new, antPredicate=lambda ant: True, gamePredicate=lambda game: True, statePredicate=lambda state: True, stateEnd=lambda result: result, gameEnd=lambda result: result, finalClean=lambda result: result):
         result = start
@@ -115,6 +127,9 @@ class Analyser():
                 result = gameEnd(result)
         result = finalClean(result)
         return result
+
+    def meanPrGame(self, analyseFunction, antPredicate=lambda ant: True):
+        return self.skabelon(analyseFunction, start=[(0, 0)], antPredicate=antPredicate, gameEnd=lambda result: result[:-1] + [result[-1][0] / result[-1][1], (0, 0)], adder=lambda old, new: old[:-1] + [(old[-1][0] + new, old[-1][1] + 1)], finalClean=lambda result: np.array(result[:-1]))
 
     def gameLength(self):
         return np.array(list(map(lambda x: int(x[-1][0, 1]), self.data)))

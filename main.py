@@ -94,8 +94,9 @@ except:
     pass
 
 try:
-    Thename = 1
-    nameOfRun = 1
+    if not debuggerMode:
+        Thename = 1
+        nameOfRun = 1
     controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}.csv")
 except Exception as e:
     print(e)
