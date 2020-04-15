@@ -23,6 +23,43 @@ def reward(ant):
     return ant[4]
 
 
+# antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
+def antSituation(ant):
+    return ant[5:9]
+
+
+def mineWithin12(ant):
+    return ant[9]
+
+
+def dineWithin12(ant):
+    return ant[10]
+
+
+def mine(ant):
+    return ant[11:23]
+
+
+def dine(ant):
+    return ant[23:35]
+
+
+def splitDistance(ant):
+    return ant[35:39]
+
+
+def baseDistance(ant):
+    return ant[39:41]
+
+
+def carryEnimy(ant):
+    return ant[41]
+
+
+def carryAlly(ant):
+    return ant[42]
+
+
 class Analyser():
     def __init__(self):
         self.data = []
@@ -61,7 +98,6 @@ class Analyser():
     def gameAntsInBases(self):
         for state in self.data[0]:
             for ant in state:
-                print(opponent(ant))
-                # if not opponent(ant):
-                #     print(reward(ant))
+                if not opponent(ant):
+                    print(reward(ant), antSituation(ant), mineWithin12(ant), dineWithin12(ant), mine(ant), dine(ant), splitDistance(ant), baseDistance(ant), carryEnimy(ant), carryAlly(ant))
             print(state.shape)
