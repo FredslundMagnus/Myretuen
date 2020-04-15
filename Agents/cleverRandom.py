@@ -12,6 +12,8 @@ class CleverRandom(Agent):
             self.rating = 1657
         else:
             self.rating = 1280
+        if self.minimaxi == True:
+            self.rating = 2000
         print(self.rating)
 
     def value(self, infostate):
