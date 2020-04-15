@@ -1,5 +1,26 @@
 import numpy as np
 from matplotlib import pyplot as plt
+np.set_printoptions(precision=2, suppress=True)
+
+
+def game(ant):
+    return ant[0]
+
+
+def i(ant):
+    return ant[1]
+
+
+def elo(ant):
+    return ant[2]
+
+
+def opponent(ant):
+    return ant[3] == -1
+
+
+def reward(ant):
+    return ant[4]
 
 
 class Analyser():
@@ -20,6 +41,7 @@ class Analyser():
         self.temp = []
 
     def saveData(self, position):
+        self.gameAntsInBases()
         prGame = np.concatenate([x.reshape(-1, 1) for x in [
             self.gameN(),
             self.gameLength(),
@@ -35,3 +57,11 @@ class Analyser():
 
     def gameN(self):
         return np.arange(len(self.data)) + 1
+
+    def gameAntsInBases(self):
+        for state in self.data[0]:
+            for ant in state:
+                print(opponent(ant))
+                # if not opponent(ant):
+                #     print(reward(ant))
+            print(state.shape)

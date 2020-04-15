@@ -30,6 +30,7 @@ else:
     env = Myretuen()
     controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=True, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10).loadModel('NNAgentrandomstate6'))
     # controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=True, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02).loadModel('NNAgent2200'))
+    # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, analyse=True).loadModel('NNAgentrandomstate6'))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=30)
 
 
@@ -93,8 +94,8 @@ except:
     pass
 
 try:
-    # Thename = 1
-    # nameOfRun = 1
+    Thename = 1
+    nameOfRun = 1
     controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}.csv")
 except:
     pass
