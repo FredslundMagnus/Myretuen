@@ -23,7 +23,6 @@ def reward(ant):
     return ant[4]
 
 
-# antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
 def antSituation(ant):
     return ant[5:9]
 
@@ -60,6 +59,23 @@ def carryAlly(ant):
     return ant[42]
 
 
+def dice(ant):
+    return ant[43: 50]
+
+
+def score(ant):
+    return ant[50: 55]
+
+
+def flat_list(ant):
+    return ant[55:]
+
+
+def printer(ant):
+    print(game(ant), i(ant), elo(ant), opponent(ant), reward(ant), antSituation(ant), mineWithin12(ant), dineWithin12(ant), mine(ant), dine(ant), splitDistance(ant), baseDistance(ant), carryEnimy(ant), carryAlly(ant), dice(ant))
+    return 0
+
+
 class Analyser():
     def __init__(self):
         self.data = []
@@ -78,13 +94,27 @@ class Analyser():
         self.temp = []
 
     def saveData(self, position):
-        self.gameAntsInBases()
+        self.skabelon(printer, start=0, antPredicate=lambda ant: not opponent(ant))
         prGame = np.concatenate([x.reshape(-1, 1) for x in [
             self.gameN(),
             self.gameLength(),
             self.gameElo()
         ]], axis=1)
         np.savetxt(position, prGame, fmt='%.1f', delimiter=',', header="GameN, gameLength, gameElo")
+
+    def skabelon(self, analyseFunction, start=0, adder=lambda old, new: old + new, antPredicate=lambda ant: True, gamePredicate=lambda game: True, statePredicate=lambda state: True, stateEnd=lambda result: result, gameEnd=lambda result: result, finalClean=lambda result: result):
+        result = start
+        for game in self.data:
+            if gamePredicate(game):
+                for state in game:
+                    if statePredicate(state):
+                        for ant in state:
+                            if antPredicate(ant):
+                                result = adder(result, analyseFunction(ant))
+                        result = stateEnd(result)
+                result = gameEnd(result)
+        result = finalClean(result)
+        return result
 
     def gameLength(self):
         return np.array(list(map(lambda x: int(x[-1][0, 1]), self.data)))
@@ -94,10 +124,3 @@ class Analyser():
 
     def gameN(self):
         return np.arange(len(self.data)) + 1
-
-    def gameAntsInBases(self):
-        for state in self.data[0]:
-            for ant in state:
-                if not opponent(ant):
-                    print(reward(ant), antSituation(ant), mineWithin12(ant), dineWithin12(ant), mine(ant), dine(ant), splitDistance(ant), baseDistance(ant), carryEnimy(ant), carryAlly(ant))
-            print(state.shape)

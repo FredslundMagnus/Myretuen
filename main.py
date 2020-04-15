@@ -97,8 +97,8 @@ try:
     Thename = 1
     nameOfRun = 1
     controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}.csv")
-except:
-    pass
+except Exception as e:
+    print(e)
 
 if debuggerMode:
     print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")
