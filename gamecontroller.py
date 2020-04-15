@@ -42,7 +42,9 @@ class Gamecontroller():
                     agent.trainAgent(reward, action, observation)
 
             try:
+                env.currentPlayer = env.player1
                 self.agents[env.player1].trainAgent(info[env.player1], action, observation)
+                env.currentPlayer = env.player2
                 self.agents[env.player2].trainAgent(info[env.player2], action, observation)
             except:
                 pass
