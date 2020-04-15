@@ -164,8 +164,8 @@ class Myretuen():  # gym.Env
         self.nGamePlay += 1
         self.prob = Probability_calculator(self.bases, self.ants)
         self.playerwithnomoves = None
-        self.winNumber = random.randint(4,9)
-        self.maxRolls = random.randint(100,300)
+        #self.winNumber = random.randint(4,9)
+        #self.maxRolls = random.randint(100,300)
 
 
 class Controller():
