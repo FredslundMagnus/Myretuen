@@ -28,8 +28,9 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent(CleverRandom(calcprobs=True)), agent2=NNAgent(explore=True, doTrain=False, impala=True, calcprobs=True, minmax=False, lossf='MME', K=2000, dropout=0, alpha=None, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=40, startAfterNgames=40, batchSize=200, sampleLenth=10, network=[50, 25, 10], analyse=False).loadModel('NNAgentrandomstate3'))
+    controller = Controller(env=env, agent1=Opponent([CleverRandom(calcprobs=True), NNAgent().loadModel('NNAgentrandomstate6'), NNAgent().loadModel('NNAgentrandomstate5'), NNAgent().loadModel('NNAgentrandomstate4')]), agent2=NNAgent(explore=True, K=2000, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10).loadModel('NNAgentrandomstate6'))
     # controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=True, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02).loadModel('NNAgent2200'))
+    # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, analyse=True).loadModel('NNAgentrandomstate6'))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=30)
 
 
@@ -93,11 +94,12 @@ except:
     pass
 
 try:
-    # Thename = 1
-    # nameOfRun = 1
+    if not debuggerMode:
+        Thename = 1
+        nameOfRun = 1
     controller.agents['green'].analyser.saveData(f"outputs/{Thename}/data/{nameOfRun}.csv")
-except:
-    pass
+except Exception as e:
+    print(e)
 
 if debuggerMode:
     print("\n", r"<br />", "\n", r"<br />", "\n", r"<br />", "\n", r"<br />")
