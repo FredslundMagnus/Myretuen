@@ -3,8 +3,8 @@ from Agents.agent import Agent
 
 
 class CleverRandom(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=False, minmax=False, lossf=None, K=None, dropout=None, alpha=None, discount=None, lambd=None, lr=None, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5, network=None, analyse=False):
-        self.setup(False, False, False, calcprobs, minmax, None, None, None, None, None, None, None, 'CleverRandom', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, None, analyse)
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=False, minmax=False, lossf=None, K=None, dropout=None, alpha=None, discount=None, lambd=None, lr=None, TopNvalues=2, cutOffdepth=5, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.005, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5, network=None, analyse=False, montecarlo=True):
+        self.setup(False, False, False, calcprobs, minmax, None, None, None, None, None, None, None, 'CleverRandom', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, None, analyse, montecarlo)
         self.resetGame()
 
     def resetGame(self):

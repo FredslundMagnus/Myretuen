@@ -8,8 +8,8 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0.0, alpha=None, discount=0.995, lambd=0.9, lr=0.0005, TopNvalues=10, cutOffdepth=1, ValueCutOff=25, ValueDiffCutOff=10, ProbabilityCutOff=0.02, historyLength=25, startAfterNgames=25, batchSize=100, sampleLenth=5, network=[50, 25, 10], analyse=False):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse)
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=1000, dropout=0.0, alpha=None, discount=0.995, lambd=0.9, lr=0.0005, TopNvalues=2, cutOffdepth=5, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, historyLength=25, startAfterNgames=25, batchSize=100, sampleLenth=5, network=[50, 25, 10], analyse=False, montecarlo=True):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse, montecarlo)
         self.optimizer = None
         self.optimise = True
 
