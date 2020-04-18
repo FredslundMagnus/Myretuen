@@ -175,7 +175,7 @@ class Move():
 
             enemies = [ant for ant in ants if ant.color == self.end.ants[-1].color]
             if all([not x.isAlive for x in enemies]):
-                sim_win_reward += 2 * len(ants)
+                sim_win_reward += 2 * len(ants) + 60
         else:
             probofstate = 1 - probofstate
             if probofstate != 1:
