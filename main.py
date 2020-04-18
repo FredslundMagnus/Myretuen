@@ -49,14 +49,14 @@ plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plot('TrainingCurve')
 
-try:
-    parameters = np.array(controller.agents['green'].parameters).T
-    plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
-    plot('Weights')
+# try:
+#     parameters = np.array(controller.agents['green'].parameters).T
+#     plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
+#     plot('Weights')
 
-    print(parameters[:, -1])
-except:
-    pass
+#     print(parameters[:, -1])
+# except:
+#     pass
 
 
 if debuggerMode:

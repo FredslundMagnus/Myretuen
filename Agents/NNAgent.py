@@ -31,7 +31,7 @@ class NNAgent(Agent):
 
     def train(self, reward, previousState, newState):
         Vst = self.value(previousState, return_float=False)
-        Vstnext = self.value(newState, return_float=False)
+        Vstnext = self.value(newState, return_float=True)
         label = torch.FloatTensor([reward + self.discount * Vstnext])
         if self.lossf == 'Abs':
             criterion = nn.L1Loss()
