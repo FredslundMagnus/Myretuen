@@ -30,7 +30,6 @@ class NNAgent(Agent):
         return value.item() if return_float else value
 
     def train(self, reward, previousState, newState):
-        print(reward)
         Vst = self.value(previousState, return_float=False)
         Vstnext = self.value(newState, return_float=True)
         label = torch.FloatTensor([reward + self.discount * Vstnext])
