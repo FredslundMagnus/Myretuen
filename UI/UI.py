@@ -53,10 +53,9 @@ class Fruit():  # !Fruit
 
     def draw(self):
         img = pygame.image.load(f'UI/Fruits/{self.color}Fruit.png').convert_alpha()
-        # width = img.get_width()
-        # height = img.get_height()
         img = pygame.transform.scale(img, (scale * 20, scale * 20))
         self.win.blit(img, (self.x * scale, self.y * scale))
+        centerText(6 * scale, '+1', (255, 255, 255), ((self.x + 10) * scale, (self.y + 10) * scale), 0, self.win)
 
     def __str__(self):
         return str(self.color)
