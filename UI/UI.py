@@ -46,7 +46,7 @@ class Fruit():  # !Fruit
     def __init__(self, field, scale: int, win):
         self.win = win
         self.color = fruitColors[field.id]
-        self.color = [color for field, color in fruitColors.items() if color != self.color][0]  # Swap placement
+        self.color = [color for field, color in fruitColors.items() if color != self.color][0]  # Swap Colors
         self.x = field.x - 1
         self.y = field.y - 1
         self.scale = scale

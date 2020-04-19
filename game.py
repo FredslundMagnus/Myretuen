@@ -15,8 +15,8 @@ import random
 class Myretuen():  # gym.Env
     __slots__ = ("fields", "player1", "player2", "currentPlayer", "rolled", "winNumber", "maxRolls", "dicesThatHaveBeenRolled", "rolledSameDice", "nGamePlay", "totalScore", "wins", "Runningwinrate", "prob", "playerwithnomoves", "DeepsimWin", "bases", "diceHolder", "ants", "Eatreward", "basereward", "stepreward")
 
-    def __init__(self, winNumber=5, maxRolls=150, Eatreward=4, basereward=4, stepreward=0):
-        self.fields, self.bases, self.ants, self.diceHolder = setup()
+    def __init__(self, winNumber=5, maxRolls=150, Eatreward=4, basereward=4, stepreward=0, color1='red', color2='green'):
+        self.fields, self.bases, self.ants, self.diceHolder = setup(color1, color2)
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
         self.currentPlayer = self.player1
@@ -155,7 +155,7 @@ class Myretuen():  # gym.Env
         return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {self.getCurrentScore()},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
     def reset(self):
-        self.fields, self.bases, self.ants, self.diceHolder = setup()
+        self.fields, self.bases, self.ants, self.diceHolder = setup(self.player1, self.player2)
         addRect(self)
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()

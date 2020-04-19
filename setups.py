@@ -6,7 +6,7 @@ from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, 
 import numpy as np
 
 
-def setup():
+def setup(color1, color2):
     fields = {
         'D1': Field(60, 320, special='Flag', rotation=90),
         'D2': Field(80, 320, special='Start', rotation=270),
@@ -39,36 +39,36 @@ def setup():
         'A10': Field(110, 210),
         'A11': Field(120, 230),
 
-        'B1': Field(370-60, 370-320, special='Flag', rotation=270),
-        'B2': Field(370-80, 370-320, special='Start', rotation=90),
-        'B3': Field(370-100, 370-310),
-        'B4': Field(370-120, 370-320),
-        'B5': Field(370-140, 370-320),
-        'B6': Field(370-160, 370-310),
-        'B7': Field(370-170, 370-290),
-        'B8': Field(370-170, 370-270),
-        'B9': Field(370-160, 370-250),
-        'B10': Field(370-140, 370-240),
+        'B1': Field(370 - 60, 370 - 320, special='Flag', rotation=270),
+        'B2': Field(370 - 80, 370 - 320, special='Start', rotation=90),
+        'B3': Field(370 - 100, 370 - 310),
+        'B4': Field(370 - 120, 370 - 320),
+        'B5': Field(370 - 140, 370 - 320),
+        'B6': Field(370 - 160, 370 - 310),
+        'B7': Field(370 - 170, 370 - 290),
+        'B8': Field(370 - 170, 370 - 270),
+        'B9': Field(370 - 160, 370 - 250),
+        'B10': Field(370 - 140, 370 - 240),
 
-        'E1': Field(370-30, 370-290, special='Flag', rotation=0),
-        'E2': Field(370-30, 370-270, special='Start', rotation=180),
-        'E3': Field(370-40, 370-250),
-        'E4': Field(370-30, 370-230),
-        'E5': Field(370-30, 370-210),
-        'E6': Field(370-40, 370-190),
-        'E7': Field(370-60, 370-180),
-        'E8': Field(370-80, 370-175),
-        'E9': Field(370-100, 370-190),
-        'E10': Field(370-110, 370-210),
-        'E11': Field(370-120, 370-230),
+        'E1': Field(370 - 30, 370 - 290, special='Flag', rotation=0),
+        'E2': Field(370 - 30, 370 - 270, special='Start', rotation=180),
+        'E3': Field(370 - 40, 370 - 250),
+        'E4': Field(370 - 30, 370 - 230),
+        'E5': Field(370 - 30, 370 - 210),
+        'E6': Field(370 - 40, 370 - 190),
+        'E7': Field(370 - 60, 370 - 180),
+        'E8': Field(370 - 80, 370 - 175),
+        'E9': Field(370 - 100, 370 - 190),
+        'E10': Field(370 - 110, 370 - 210),
+        'E11': Field(370 - 120, 370 - 230),
 
-        'H1': Field(370-190, 370-260),
-        'H2': Field(370-210, 370-255),
-        'H3': Field(370-230, 370-260),
+        'H1': Field(370 - 190, 370 - 260),
+        'H2': Field(370 - 210, 370 - 255),
+        'H3': Field(370 - 230, 370 - 260),
 
-        'I1': Field(370-100, 370-160),
-        'I2': Field(370-110, 370-140),
-        'I3': Field(370-120, 370-120),
+        'I1': Field(370 - 100, 370 - 160),
+        'I2': Field(370 - 110, 370 - 140),
+        'I3': Field(370 - 120, 370 - 120),
     }
 
     giveFieldsID(fields)
@@ -76,8 +76,8 @@ def setup():
     generateLines(fields)
 
     bases = {
-        'red': Base(20, 310, (30, 360), (20, 0)),
-        'green': Base(330, 40, (340, 10), (-20, 0)),
+        color1: Base(20, 310, (30, 360), (20, 0)),
+        color2: Base(330, 40, (340, 10), (-20, 0)),
     }
 
     cleanBases(bases, fields)
@@ -97,6 +97,6 @@ def setup():
     diceHolder = DiceHolder(165, 165)
 
     for ant in ants:
-        ant.probcapture = np.ones(len(ants)//2)/2
+        ant.probcapture = np.ones(len(ants) // 2) / 2
 
     return fields, bases, ants, diceHolder
