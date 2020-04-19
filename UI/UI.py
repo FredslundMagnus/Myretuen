@@ -50,6 +50,7 @@ class Fruit():  # !Fruit
         self.x = field.x - 1
         self.y = field.y - 1
         self.scale = scale
+        self.id = field.id
 
     def draw(self):
         img = pygame.image.load(f'UI/Fruits/{self.color}Fruit.png').convert_alpha()
@@ -311,9 +312,11 @@ def drawBackground(fields=[], diceHolder=None, bases=[], env=None):
     # https://fontmeme.com/
     win.blit(title, (30 * scale, 30 * scale))
 
-    if env.splitvariant:      # !Fruit
-        for fruit in fruits:  # !Fruit
-            fruit.draw()      # !Fruit
+    if env.splitvariant:                     # !Fruit
+        for fruit in fruits:                 # !Fruit
+            fruit.draw()                     # !Fruit
+            fruitColors[fruit.id] = fruit    # !Fruit
+
     pygame.time.delay(round(1000 / 10))
     pygame.display.update()
     pygame.image.save(win, "background.jpeg")
@@ -371,6 +374,8 @@ def updateScreen(background, win, game=None, connection=None):
 
         if isHovering:
             isHoveringOn.draw(borderColor=(255, 255, 255))
+            if isHoveringOn.id in fruitColors:       # !Fruit
+                fruitColors[isHoveringOn.id].draw()  # !Fruit
 
         connection.draw()
 
