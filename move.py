@@ -17,7 +17,7 @@ class Move():
     def __str__(self):
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
 
-    def execute(self, CalculateProb, oppesite=False):
+    def execute(self, CalculateProb, oppesite=False, splitvariant=True):
         self.reward = 0
         self.removeDice()
         moving = self.liftAnts()
@@ -25,7 +25,28 @@ class Move():
         self.reward += self.placeOnBoard(moving, oppesite, CalculateProb)
         self.reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
+        if self.game.splitvariant == True:
+            self.reward += self.SplitPoints(self.game.ants)
         return self.reward
+
+    def SplitPoints(self, ants):
+        reward = 0
+        Squares = [['A8', 'D8'], ['B8', 'E8']]
+        if self.game.currentPlayer == self.game.player1:
+            for square in Squares[0]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color != self.game.player1 and ant.position.id in square and len(self.game.rolled) == 0 and self.game.rolledSameDice == False:
+                        reward -= self.basereward
+                        self.game.bases[self.game.player2].captured.append('BONUS')
+                        break
+        else:
+            for square in Squares[1]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color != self.game.player2 and ant.position.id in square and len(self.game.rolled) == 0 and self.game.rolledSameDice == False:
+                        reward -= self.basereward
+                        self.game.bases[self.game.player1].captured.append('BONUS')
+                        break
+        return reward
 
     def removeDice(self):
         self.game.rolled.remove(self.dice)
@@ -175,7 +196,7 @@ class Move():
 
             enemies = [ant for ant in ants if ant.color == self.end.ants[-1].color]
             if all([not x.isAlive for x in enemies]):
-                sim_win_reward += 2 * len(ants) + 60
+                sim_win_reward += 2 * len(ants) + 40
         else:
             probofstate = 1 - probofstate
             if probofstate != 1:
@@ -194,7 +215,7 @@ class Move():
 
             allies = [ant for ant in ants if ant.color == theAnt.color]
             if all([not x.isAlive for x in allies]):
-                sim_win_reward -= 2 * len(ants)
+                sim_win_reward -= 2 * len(ants) + 40
 
         self.game.prob.CalculateWinChance()
         self.giveantsprobabilities(self.game.prob.probmatrix, ants)
@@ -244,6 +265,7 @@ class Move():
         else:
             probofstate1, probofstate2, simul_reward2, ants2 = 1, 0, 0, [None]
             ants1, simul_reward1 = self.simulateSimple([SimpleAnt(ant.color, ant.magnet, ant.position, ant.id, ant.isAlive, ant.flipped, ant.antsUnderMe, self.dice, ant.probcapture) for ant in self.game.ants])  # Jakob
+
         return ants1, ants2, probofstate1, probofstate2, simul_reward1, simul_reward2
 
     def giveantsprobabilities(self, Pmatrix, ants):

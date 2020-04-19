@@ -16,9 +16,10 @@ def fastcopy(game):
 
 
 class MinMaxCalculate():
-    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo")
+    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant")
 
     def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1, montecarlo=True):
+        self.splitvariant = None
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -32,11 +33,11 @@ class MinMaxCalculate():
         self.ValueCutOffLow = ValueCutOffLow
         self.montecarlo = montecarlo
 
-
     def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
+        self.splitvariant = game.splitvariant
         fakegame = fastcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
@@ -57,7 +58,7 @@ class MinMaxCalculate():
         self.env = fakegame
 
         if self.explore == True and actionss != []:
-            temp = (4 * self.K*limitedactions) / (self.K + 4 * (self.gameNumber)) if self.K is not None else 1
+            temp = (4 * self.K * limitedactions) / (self.K + 4 * (self.gameNumber)) if self.K is not None else 1
             states = []
             values = []
             for action in actionss:
@@ -108,7 +109,7 @@ class MinMaxCalculate():
         if actionss == []:
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(None)
-            return Proba * (rewardtrace - 2 * len(self.game.ants) + 60) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 2 * len(self.game.ants) + 60)
+            return Proba * (rewardtrace - 2 * len(self.game.ants) + 40) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 2 * len(self.game.ants) + 40)
         # for i in range(len(canditate_actions)):
         #     print(canditate_actions[i], end=' ')
         #     print(canditate_probs[i], end=' ')
@@ -165,8 +166,8 @@ class MinMaxCalculate():
                     chances = []
                     for j in range(1, 7):
                         for k in range(j, 7):
-                            rolls.append([j,k])
-                            chances.append(1/18) if j != k else chances.append(1/36)
+                            rolls.append([j, k])
+                            chances.append(1 / 18) if j != k else chances.append(1 / 36)
                     idx = np.random.choice(len(chances), number, p=chances, replace=False)
                     for n in range(number):
                         newfakegame2 = fastcopy(newfakegame)
@@ -197,9 +198,9 @@ class MinMaxCalculate():
                     chances = []
                     for j in range(1, 7):
                         for k in range(j, 7):
-                            rolls.append([j,k])
-                            chances.append(1/18) if j != k else chances.append(1/36)
-                    idx = np.random.choice(len(chances), number, p=chances, replace=False)        
+                            rolls.append([j, k])
+                            chances.append(1 / 18) if j != k else chances.append(1 / 36)
+                    idx = np.random.choice(len(chances), number, p=chances, replace=False)
                     for n in range(number):
                         newfakegame2, newfakegameOp2 = fastcopy(newfakegame), fastcopy(newfakegame)
                         newfakegame2.rolled, newfakegameOp2.rolled = rolls[idx[n]], rolls[idx[n]]
@@ -257,7 +258,7 @@ class MinMaxCalculate():
     def currentScore(self, ant):
         score = [0, 0, 0, 0, 0]
         for color, val in self.env.getCurrentScore().items():
-            score[int(ant.color == color)] = (10*val/self.env.winNumber)
+            score[int(ant.color == color)] = (10 * val / self.env.winNumber)
         if score[0] > score[1]:
             score[2] = 1
         elif score[0] < score[1]:
@@ -282,7 +283,7 @@ class MinMaxCalculate():
             if self.calcprobs == True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
             else:
-                GetProbabilityOfEat = [0.5]*(len(self.env.ants) // 2)
+                GetProbabilityOfEat = [0.5] * (len(self.env.ants) // 2)
             # kval = list(np.array([ratio * disttoantsGlobal * np.array(self.GetProbabilityOfEat(ant)), (3 - np.array(disttoantsGlobal)) / ratio * (1 - np.array(self.GetProbabilityOfEat(ant)))]).max(axis=0))
             L = []
             for i in range(len(antsUnderGlobal)):
@@ -291,7 +292,7 @@ class MinMaxCalculate():
             flat_list = [item for sublist in L for item in sublist]
             yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
 
-    def state(self, game, action=None):
+    def state(self, game, action=None, splitvariant=True):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
         if action == None:
             ants1 = game.ants
@@ -300,6 +301,8 @@ class MinMaxCalculate():
         mines1, dines1, mines2, dines2 = [], [], [], []
         self.currentAnts = ants1
         self.antsUnder = self.antsUnderAnts()
+        if splitvariant == True:
+            simul_reward1 += self.SplitPoints(ants1)
         for ant1 in ants1:
             for ant1State in self.antState(ant1):
                 if ant1.color == game.currentPlayer:
@@ -309,7 +312,11 @@ class MinMaxCalculate():
         Antstate1 = [mines1 + dines1, len(mines1), probofstate1, simul_reward1]
 
         if action == None or ants2 == [None]:
+            if splitvariant == True:
+                self.cleansim()
             return [Antstate1]
+        if splitvariant == True:
+            simul_reward2 += self.SplitPoints(ants2)
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
         for ant2 in ants2:
@@ -320,6 +327,8 @@ class MinMaxCalculate():
                     dines2.append(ant2State)
         Antstate2 = [mines2 + dines2, len(mines2), probofstate2, simul_reward2]
 
+        if splitvariant == True:
+            self.cleansim()
         return [Antstate1, Antstate2]
 
     def getDistances(self, ant):
@@ -399,3 +408,27 @@ class MinMaxCalculate():
     def softmax(self, x):
         e_x = np.exp(x - np.max(x))
         return e_x / e_x.sum()
+
+    def SplitPoints(self, ants):
+        reward = 0
+        Squares = [['A8', 'D8'], ['B8', 'E8']]
+
+        if self.env.currentPlayer == self.env.player1:
+            for square in Squares[0]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color == self.env.player2 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                        reward -= 4
+                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                        break
+        else:
+            for square in Squares[1]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color == self.env.player1 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                        reward -= 4
+                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                        break
+        return reward
+
+    def cleansim(self):
+        self.env.bases[self.env.player1].captured = [value for value in self.env.bases[self.env.player1].captured if value != 'SIMBONUS']
+        self.env.bases[self.env.player2].captured = [value for value in self.env.bases[self.env.player2].captured if value != 'SIMBONUS']

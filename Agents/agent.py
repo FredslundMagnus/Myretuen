@@ -16,7 +16,7 @@ class Agent():
         self.previousState = self.state(self.env)
         if self.minimaxi == False:
             if self.explore and actions != []:
-                temp = 4 * self.K / (self.K + 4 * (self.gameNumber + 3000)) if self.K is not None else 1
+                temp = 4 * self.K / (self.K + 4 * (self.gameNumber)) if self.K is not None else 1
                 states = []
                 values = []
                 for action in actions:
@@ -120,7 +120,7 @@ class Agent():
             self.minmaxer = MinMaxCalculate(self.value, TopNvalues=self.TopNvalues, cutOffdepth=self.cutOffdepth, ValueCutOff=self.ValueCutOff, ValueDiffCutOff=self.ValueDiffCutOff, ProbabilityCutOff=self.ProbabilityCutOff, explore=self.explore, K=self.K, calcprobs=self.calcprobs, montecarlo=self.montecarlo)
         else:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
-        self.Features = '[antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score]'
+        self.Features = 'antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list'
 
     def resetGame(self):
         print(self.rating)
@@ -231,7 +231,7 @@ class Agent():
             flat_list = [item for sublist in L for item in sublist]
             yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
 
-    def state(self, game, action=None):
+    def state(self, game, action=None, splitvariant=True):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
         if action == None:
             ants1 = game.ants
@@ -240,6 +240,8 @@ class Agent():
         mines1, dines1, mines2, dines2 = [], [], [], []
         self.currentAnts = ants1
         self.antsUnder = self.antsUnderAnts()
+        if splitvariant == True:
+            simul_reward1 += self.SplitPoints(ants1)
         for ant1 in ants1:
             for ant1State in self.antState(ant1):
                 if ant1.color == game.currentPlayer:
@@ -249,7 +251,11 @@ class Agent():
         Antstate1 = [mines1 + dines1, len(mines1), probofstate1, simul_reward1]
 
         if action == None or ants2 == [None]:
+            if splitvariant == True:
+                self.cleansim()
             return [Antstate1]
+        if splitvariant == True:
+            simul_reward2 += self.SplitPoints(ants2)
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
         for ant2 in ants2:
@@ -260,6 +266,8 @@ class Agent():
                     dines2.append(ant2State)
         Antstate2 = [mines2 + dines2, len(mines2), probofstate2, simul_reward2]
 
+        if splitvariant == True:
+            self.cleansim()
         return [Antstate1, Antstate2]
 
     def getDistances(self, ant):
@@ -350,3 +358,28 @@ class Agent():
         else:
             move.start = game.bases[move.start.id]
         return move
+
+    def SplitPoints(self, ants):
+        reward = 0
+
+        Squares = [['A8', 'D8'], ['B8', 'E8']]
+
+        if self.env.currentPlayer == self.env.player1:
+            for square in Squares[0]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color == self.env.player2 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                        reward -= 4
+                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                        break
+        else:
+            for square in Squares[1]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color == self.env.player1 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                        reward -= 4
+                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                        break
+        return reward
+
+    def cleansim(self):
+        self.env.bases[self.env.player1].captured = [value for value in self.env.bases[self.env.player1].captured if value != 'SIMBONUS']
+        self.env.bases[self.env.player2].captured = [value for value in self.env.bases[self.env.player2].captured if value != 'SIMBONUS']

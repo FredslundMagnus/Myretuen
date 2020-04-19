@@ -13,12 +13,14 @@ import random
 
 
 class Myretuen():  # gym.Env
-    __slots__ = ("fields", "player1", "player2", "currentPlayer", "rolled", "winNumber", "maxRolls", "dicesThatHaveBeenRolled", "rolledSameDice", "nGamePlay", "totalScore", "wins", "Runningwinrate", "prob", "playerwithnomoves", "DeepsimWin", "bases", "diceHolder", "ants", "Eatreward", "basereward", "stepreward")
+    __slots__ = ("fields", "player1", "player2", "currentPlayer", "rolled", "winNumber", "maxRolls", "splitvariant", "nAnts", "dicesThatHaveBeenRolled", "rolledSameDice", "nGamePlay", "totalScore", "wins", "Runningwinrate", "prob", "playerwithnomoves", "DeepsimWin", "bases", "diceHolder", "ants", "Eatreward", "basereward", "stepreward")
 
-    def __init__(self, winNumber=5, maxRolls=150, Eatreward=4, basereward=4, stepreward=0):
-        self.fields, self.bases, self.ants, self.diceHolder = setup()
+    def __init__(self, winNumber=5, maxRolls=150, Eatreward=4, basereward=4, stepreward=0, color1='red', color2='green', nAnts=10, fruits=False):
+        self.fields, self.bases, self.ants, self.diceHolder = setup(color1, color2, nAnts)
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
+        self.splitvariant = fruits
+        self.nAnts = nAnts
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
         self.winNumber = int(min(winNumber, len(self.ants) // 2))
@@ -65,7 +67,7 @@ class Myretuen():  # gym.Env
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if done:
-            endReward = 2 * len(self.ants) + 60
+            endReward = 2 * len(self.ants) + 40
             info = {player: (val * 2 - 1) * endReward for player, val in self.whoWonThisGame().items()}
             info['PlayerSwapped'] = False
         if len(self.rolled) == 0:
@@ -155,7 +157,7 @@ class Myretuen():  # gym.Env
         return f'Game {self.nGamePlay:03}, Length: {self.dicesThatHaveBeenRolled:03},      CurrentScore: {self.getCurrentScore()},      TotalScore: {self.totalScore},  Winrate: {round(self.Runningwinrate,2)}'
 
     def reset(self):
-        self.fields, self.bases, self.ants, self.diceHolder = setup()
+        self.fields, self.bases, self.ants, self.diceHolder = setup(self.player1, self.player2, self.nAnts)
         addRect(self)
         self.currentPlayer = self.player1
         self.rolled = self.diceHolder.roll()
@@ -171,6 +173,7 @@ class Myretuen():  # gym.Env
 class Controller():
     def __init__(self, env=None, agent1=None, agent2=None):
         self.gameController = Gamecontroller(env=env, agent1=agent1, agent2=agent2)
+        self.env = env
 
     def __getattr__(self, name):
         if name == 'gameController':
@@ -180,7 +183,7 @@ class Controller():
     def run(self, NGames=float('inf'), timeDelay=0, AddAgent=10000, CalculateProbs=True, UI=True):
         if UI:
             animation = False
-            background, win, connection = drawBackground(fields=self.env.fields, diceHolder=self.env.diceHolder, bases=self.env.bases)
+            background, win, connection = drawBackground(fields=self.env.fields, diceHolder=self.env.diceHolder, bases=self.env.bases, env=self.env)
             for _, agent in self.gameController.agents.items():
                 if agent.__class__.__name__ == 'Opponent':
                     for a in agent:

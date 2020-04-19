@@ -5,6 +5,7 @@ import os
 
 scale = 2
 animationSpeed = 0.5  # 0 er stillestående, 1 er lige med det samme
+fruitColors = {'A8': 1, 'B8': 2, 'D8': 1, 'E8': 2}  # !Fruit
 
 colors = {'blueFade': (179, 180, 208), 'redFade': (
     215, 173, 175), 'greenFade': (176, 186, 134), 'yellowFade': (222, 202, 152),
@@ -41,6 +42,26 @@ def square(x, y, size, scale):
     return (rect, border, shadow1, shadow2)
 
 
+class Fruit():  # !Fruit
+    def __init__(self, field, scale: int, win):
+        self.win = win
+        self.color = fruitColors[field.id]
+        self.color = [color for field, color in fruitColors.items() if color != self.color][0]  # Swap Colors
+        self.x = field.x - 1
+        self.y = field.y - 1
+        self.scale = scale
+
+    def draw(self):
+        img = pygame.image.load(f'UI/Fruits/{self.color}Fruit.png').convert_alpha()
+        # width = img.get_width()
+        # height = img.get_height()
+        img = pygame.transform.scale(img, (scale * 20, scale * 20))
+        self.win.blit(img, (self.x * scale, self.y * scale))
+
+    def __str__(self):
+        return str(self.color)
+
+
 class Dice():
     def __init__(self, dice, scale: int, win):
         self.win = win
@@ -50,8 +71,7 @@ class Dice():
         self.number = dice.number
 
     def draw(self):
-        img = pygame.image.load(
-            f'UI/Terninger/Terning{self.number}.png').convert_alpha()
+        img = pygame.image.load(f'UI/Terninger/Terning{self.number}.png').convert_alpha()
         self.win.blit(pygame.transform.rotate(pygame.transform.scale(
             pygame.transform.smoothscale(img, (15 * scale, 15 * scale)), (15 * self.scale, 15 * self.scale)), self.rotation), ((self.x + 2) * self.scale, (self.y + 2) * self.scale))
 
@@ -62,6 +82,16 @@ class Base():
 
         self.win = win
         self.color = colors[base.color]
+
+        global fruitColors                       # !Fruit
+        seen = None                              # !Fruit
+        for key, value in fruitColors.items():   # !Fruit
+            if seen == None:                     # !Fruit
+                if type(value) == type(3):       # !Fruit
+                    seen = value                 # !Fruit
+            if value == seen:                    # !Fruit
+                fruitColors[key] = base.color    # !Fruit
+
         self.x = base.x
         self.y = base.y
         self.id = base.id
@@ -221,7 +251,7 @@ def addRect(game):
         base.homeSquares = homeSquares
 
 
-def drawBackground(fields=[], diceHolder=None, bases=[]):
+def drawBackground(fields=[], diceHolder=None, bases=[], env=None):
 
     pygame.init()
     size = (390 * scale, 390 * scale)
@@ -232,8 +262,8 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
 
     fieldsUI = [Field(field, scale, win) for key, field in fields.items()]
     basesUI = [Base(base, scale, win) for key, base in bases.items()]
-    diceHolderUI = [DiceHolder(diceHolder, scale, win)
-                    ] if diceHolder != None else []
+    diceHolderUI = [DiceHolder(diceHolder, scale, win)] if diceHolder != None else []
+    fruits = [Fruit(field, scale, win) for key, field in fields.items() if len(field.neighbors) > 2]  # !Fruit
 
     objects = fieldsUI + basesUI + diceHolderUI
 
@@ -281,6 +311,10 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     win.blit(sommer, (232 * scale, 85 * scale))
     # https://fontmeme.com/
     win.blit(title, (30 * scale, 30 * scale))
+
+    if env.splitvariant:      # !Fruit
+        for fruit in fruits:  # !Fruit
+            fruit.draw()      # !Fruit
     pygame.time.delay(round(1000 / 10))
     pygame.display.update()
     pygame.image.save(win, "background.jpeg")
