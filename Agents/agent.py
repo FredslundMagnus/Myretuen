@@ -120,7 +120,7 @@ class Agent():
             self.minmaxer = MinMaxCalculate(self.value, TopNvalues=self.TopNvalues, cutOffdepth=self.cutOffdepth, ValueCutOff=self.ValueCutOff, ValueDiffCutOff=self.ValueDiffCutOff, ProbabilityCutOff=self.ProbabilityCutOff, explore=self.explore, K=self.K, calcprobs=self.calcprobs, montecarlo=self.montecarlo)
         else:
             self.TopNvalues, self.cutOffdepth, self.ValueCutOff, self.ValueDiffCutOff, self.ProbabilityCutOff = None, None, None, None, None
-        self.Features = '[antSituation + mine[:12] + dine[:12] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score]'
+        self.Features = 'antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list'
 
     def resetGame(self):
         print(self.rating)
@@ -241,7 +241,7 @@ class Agent():
         self.currentAnts = ants1
         self.antsUnder = self.antsUnderAnts()
         if splitvariant == True:
-            simul_reward1 -= self.SplitPoints(ants1) ##
+            simul_reward1 -= self.SplitPoints(ants1)
         for ant1 in ants1:
             for ant1State in self.antState(ant1):
                 if ant1.color == game.currentPlayer:
@@ -249,7 +249,7 @@ class Agent():
                 else:
                     dines1.append(ant1State)
         if splitvariant == True:
-            self.cleansim() ##
+            self.cleansim()
         Antstate1 = [mines1 + dines1, len(mines1), probofstate1, simul_reward1]
 
         if action == None or ants2 == [None]:
@@ -257,7 +257,7 @@ class Agent():
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
         if splitvariant == True:
-            simul_reward1 -= self.SplitPoints(ants2) ##
+            simul_reward1 -= self.SplitPoints(ants2)
         for ant2 in ants2:
             for ant2State in self.antState(ant2):
                 if ant2.color == game.currentPlayer:
@@ -265,7 +265,7 @@ class Agent():
                 else:
                     dines2.append(ant2State)
         if splitvariant == True:
-            self.cleansim() ##
+            self.cleansim()
         Antstate2 = [mines2 + dines2, len(mines2), probofstate2, simul_reward2]
 
         return [Antstate1, Antstate2]
@@ -361,8 +361,8 @@ class Agent():
 
     def SplitPoints(self, ants):
         reward = 0
-        Squares = [['A8','D8'],['B8','E8']]
-        
+        Squares = [['A8', 'D8'], ['B8', 'E8']]
+
         if self.env.currentPlayer == self.env.player1:
             for square in Squares[0]:
                 for ant in ants:

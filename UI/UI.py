@@ -251,7 +251,7 @@ def addRect(game):
         base.homeSquares = homeSquares
 
 
-def drawBackground(fields=[], diceHolder=None, bases=[]):
+def drawBackground(fields=[], diceHolder=None, bases=[], env=None):
 
     pygame.init()
     size = (390 * scale, 390 * scale)
@@ -312,8 +312,9 @@ def drawBackground(fields=[], diceHolder=None, bases=[]):
     # https://fontmeme.com/
     win.blit(title, (30 * scale, 30 * scale))
 
-    for fruit in fruits:  # !Fruit
-        fruit.draw()     # !Fruit
+    if env.splitvariant:      # !Fruit
+        for fruit in fruits:  # !Fruit
+            fruit.draw()      # !Fruit
     pygame.time.delay(round(1000 / 10))
     pygame.display.update()
     pygame.image.save(win, "background.jpeg")
