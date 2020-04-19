@@ -178,18 +178,25 @@ class Agent():
 
     def distanceToSplits(self, ant):
         li = list(ant.position.dist_to_targets)
-        if ant.color == self.env.player2:
-            if li[0] < li[2]:
-                li[0], li[2] = li[2], li[0]
-            if li[1] < li[3]:
-                li[1], li[3] = li[3], li[1]
-        else:
+        Squares = [['A8', 'D8'], ['B8', 'E8']]
+        antsonsplits = [0, 0, 0, 0]
+        for i in range(len(Squares)):
+            for j in range(len(Squares[i])):
+                if self.env.fields[Squares[i][j]].ants != []:
+                    if self.env.fields[Squares[i][j]].ants[-1].color == ant.color:
+                        antsonsplits[i+2*j] += 1
+                    else:
+                        antsonsplits[i+2*j] -= 1
+        if ant.color == self.env.player1:
             li = li[::-1]
-            if li[0] < li[2]:
-                li[0], li[2] = li[2], li[0]
-            if li[1] < li[3]:
-                li[1], li[3] = li[3], li[1]
-        return li
+            antsonsplits = antsonsplits[::-1]
+        if li[0] < li[2]:
+            li[0], li[2] = li[2], li[0]
+            antsonsplits[0], antsonsplits[2] = antsonsplits[2], antsonsplits[0]
+        if li[1] < li[3]:
+            li[1], li[3] = li[3], li[1]
+            antsonsplits[1], antsonsplits[3] = antsonsplits[3], antsonsplits[1]
+        return li, antsonsplits
 
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
@@ -212,7 +219,7 @@ class Agent():
             (mine, dine) = self.getDistances(ant)
             carryEnimy = self.carrying_number_of_enemy_ants(ant)
             carryAlly = self.carrying_number_of_ally_ants(ant)
-            splitDistance = self.distanceToSplits(ant)
+            splitDistance, antsonsplits = self.distanceToSplits(ant)
             baseDistance = self.distanceToBases(ant)
             dice = self.dicer(ant)
             score = self.currentScore(ant)
@@ -229,7 +236,25 @@ class Agent():
                 L.append([antsUnderGlobal[i], disttoantsGlobal[i], GetProbabilityOfEat[i]])
             sorted(L, key=itemgetter(0))
             flat_list = [item for sublist in L for item in sublist]
-            yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
+
+            if self.env.splitvariant == True:
+                onsplit = self.onsplit(splitDistance)
+                #print(onsplit, ant.id)
+                #print(antsonsplits)
+                #print(splitDistance)
+                yield onsplit + antsonsplits + antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
+            else:
+                yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
+
+    def onsplit(self, splitDistance):
+        onsplit = [0, 0]
+        if splitDistance[0] == 0 or splitDistance[2] == 0:
+            onsplit[0] = 1
+        if splitDistance[1] == 0 or splitDistance[3] == 0:
+            onsplit[1] = 1  
+        return onsplit    
+            
+
 
     def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
@@ -361,23 +386,14 @@ class Agent():
 
     def SplitPoints(self, ants):
         reward = 0
-
         Squares = [['A8', 'D8'], ['B8', 'E8']]
-
-        if self.env.currentPlayer == self.env.player1:
-            for square in Squares[0]:
-                for ant in ants:
-                    if ant.isAlive == True and ant.color == self.env.player2 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
-                        reward -= 4
-                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
-                        break
-        else:
-            for square in Squares[1]:
-                for ant in ants:
-                    if ant.isAlive == True and ant.color == self.env.player1 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
-                        reward -= 4
-                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
-                        break
+        for ant in ants:
+            if ant.isAlive == True and ant.color != self.env.currentPlayer and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                reward -= 4
+                if ant.color == self.env.player1 and ant.position.id in Squares[1]:
+                    self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                elif ant.color == self.env.player2 and ant.position.id in Squares[0]:
+                    self.env.bases[self.env.player2].captured.append('SIMBONUS')         
         return reward
 
     def cleansim(self):
