@@ -18,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1, montecarlo=True):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -44,9 +44,9 @@ class MinMaxCalculate():
         actionss = fakegame.action_space()
         if self.montecarlo == False:
             limitedactions = min(self.TopNvalues, len(actionss))
-            number = 10
+            number = 8
         else:
-            number = 4
+            number = 3
             if cutOffdepth == self.cutOffdepth:
                 limitedactions = min(3, len(actionss))
             if self.cutOffdepth - cutOffdepth < 3:
