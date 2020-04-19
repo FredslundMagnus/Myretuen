@@ -239,9 +239,6 @@ class Agent():
 
             if self.env.splitvariant == True:
                 onsplit = self.onsplit(splitDistance)
-                #print(onsplit, ant.id)
-                #print(antsonsplits)
-                #print(splitDistance)
                 yield onsplit + antsonsplits + antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
             else:
                 yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
