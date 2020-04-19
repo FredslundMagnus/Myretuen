@@ -5,7 +5,7 @@ import os
 
 scale = 2
 animationSpeed = 0.5  # 0 er stillestående, 1 er lige med det samme
-fruitColors = {'A8': 2, 'B8': 1, 'D8': 2, 'E8': 1}  # !Fruit
+fruitColors = {'A8': 1, 'B8': 2, 'D8': 1, 'E8': 2}  # !Fruit
 
 colors = {'blueFade': (179, 180, 208), 'redFade': (
     215, 173, 175), 'greenFade': (176, 186, 134), 'yellowFade': (222, 202, 152),
@@ -46,6 +46,7 @@ class Fruit():  # !Fruit
     def __init__(self, field, scale: int, win):
         self.win = win
         self.color = fruitColors[field.id]
+        self.color = [color for field, color in fruitColors.items() if color != self.color][0]  # Swap placement
         self.x = field.x - 1
         self.y = field.y - 1
         self.scale = scale
