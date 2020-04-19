@@ -6,7 +6,7 @@ from field import Field, giveFieldsID, Give_dist_to_bases, Give_dist_to_target, 
 import numpy as np
 
 
-def setup(color1, color2):
+def setup(color1, color2, nAnts):
     fields = {
         'D1': Field(60, 320, special='Flag', rotation=90),
         'D2': Field(80, 320, special='Start', rotation=270),
@@ -90,7 +90,7 @@ def setup(color1, color2):
 
     Give_bases_dists(bases)
 
-    ants = generateAnts(10)
+    ants = generateAnts(nAnts)
 
     placeAntsOnBoard(ants, bases)
 
