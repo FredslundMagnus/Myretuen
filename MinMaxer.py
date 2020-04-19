@@ -16,9 +16,10 @@ def fastcopy(game):
 
 
 class MinMaxCalculate():
-    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo")
+    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1, montecarlo=True):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1, montecarlo=True, splitvariant=True):
+        self.splitvariant = splitvariant
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -300,24 +301,32 @@ class MinMaxCalculate():
         mines1, dines1, mines2, dines2 = [], [], [], []
         self.currentAnts = ants1
         self.antsUnder = self.antsUnderAnts()
+        if self.splitvariant == True:
+            simul_reward1 -= self.SplitPoints(ants1) ##
         for ant1 in ants1:
             for ant1State in self.antState(ant1):
                 if ant1.color == game.currentPlayer:
                     mines1.append(ant1State)
                 else:
                     dines1.append(ant1State)
+        if self.splitvariant == True:
+            self.cleansim() ##
         Antstate1 = [mines1 + dines1, len(mines1), probofstate1, simul_reward1]
 
         if action == None or ants2 == [None]:
             return [Antstate1]
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
+        if self.splitvariant == True:
+            simul_reward1 -= self.SplitPoints(ants2) ##
         for ant2 in ants2:
             for ant2State in self.antState(ant2):
                 if ant2.color == game.currentPlayer:
                     mines2.append(ant2State)
                 else:
                     dines2.append(ant2State)
+        if self.splitvariant == True:
+            self.cleansim() ##
         Antstate2 = [mines2 + dines2, len(mines2), probofstate2, simul_reward2]
 
         return [Antstate1, Antstate2]
@@ -399,3 +408,27 @@ class MinMaxCalculate():
     def softmax(self, x):
         e_x = np.exp(x - np.max(x))
         return e_x / e_x.sum()
+
+    def SplitPoints(self, ants):
+        reward = 0
+        Squares = [['A8','D8'],['B8','E8']]
+        
+        if self.env.currentPlayer == self.env.player1:
+            for square in Squares[0]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color == self.env.player2 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                        reward -= 4
+                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                        break
+        else:
+            for square in Squares[1]:
+                for ant in ants:
+                    if ant.isAlive == True and ant.color == self.env.player1 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                        reward -= 4
+                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                        break
+        return reward
+
+    def cleansim(self):
+        self.env.bases[self.env.player1].captured = [value for value in self.env.bases[self.env.player1].captured if value != 'SIMBONUS']
+        self.env.bases[self.env.player2].captured = [value for value in self.env.bases[self.env.player2].captured if value != 'SIMBONUS']
