@@ -39,10 +39,12 @@ class Agent():
                     state = self.state(self.env, action)
                     if len(state) == 1:
                         value = self.value(state[0]) + state[0][3]
+                        #print(state[0][3], action.start, action.end)
                     else:
                         if self.calcprobs == False:
                             state[0][2], state[1][2] = 0.5, 0.5
                         value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * state[1][2]
+                        #print(state[0][3], state[1][3], action.start, action.end)
                     if value > valueMax:
                         valueMax = value
                         bestAction = action
@@ -386,11 +388,12 @@ class Agent():
         Squares = [['A8', 'D8'], ['B8', 'E8']]
         for ant in ants:
             if ant.isAlive == True and ant.color != self.env.currentPlayer and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
-                reward -= 4
                 if ant.color == self.env.player1 and ant.position.id in Squares[1]:
                     self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                    reward -= 4
                 elif ant.color == self.env.player2 and ant.position.id in Squares[0]:
-                    self.env.bases[self.env.player2].captured.append('SIMBONUS')         
+                    self.env.bases[self.env.player2].captured.append('SIMBONUS')   
+                    reward -= 4      
         return reward
 
     def cleansim(self):
