@@ -25,7 +25,7 @@ class Move():
         self.reward += self.placeOnBoard(moving, oppesite, CalculateProb)
         self.reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
-        if self.game.splitvariant == True:
+        if self.game.splitvariant:
             self.reward += self.SplitPoints(self.game.ants)
         return self.reward
 

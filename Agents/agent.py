@@ -231,7 +231,7 @@ class Agent():
             flat_list = [item for sublist in L for item in sublist]
             yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
 
-    def state(self, game, action=None, splitvariant=True):
+    def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
         if action == None:
             ants1 = game.ants
@@ -240,7 +240,7 @@ class Agent():
         mines1, dines1, mines2, dines2 = [], [], [], []
         self.currentAnts = ants1
         self.antsUnder = self.antsUnderAnts()
-        if splitvariant == True:
+        if game.splitvariant:
             simul_reward1 += self.SplitPoints(ants1)
         for ant1 in ants1:
             for ant1State in self.antState(ant1):
@@ -251,10 +251,10 @@ class Agent():
         Antstate1 = [mines1 + dines1, len(mines1), probofstate1, simul_reward1]
 
         if action == None or ants2 == [None]:
-            if splitvariant == True:
+            if game.splitvariant:
                 self.cleansim()
             return [Antstate1]
-        if splitvariant == True:
+        if game.splitvariant:
             simul_reward2 += self.SplitPoints(ants2)
         self.currentAnts = ants2
         self.antsUnder = self.antsUnderAnts()
@@ -266,7 +266,7 @@ class Agent():
                     dines2.append(ant2State)
         Antstate2 = [mines2 + dines2, len(mines2), probofstate2, simul_reward2]
 
-        if splitvariant == True:
+        if game.splitvariant:
             self.cleansim()
         return [Antstate1, Antstate2]
 
