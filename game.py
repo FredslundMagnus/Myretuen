@@ -15,7 +15,7 @@ import random
 class Myretuen():  # gym.Env
     __slots__ = ("fields", "player1", "player2", "currentPlayer", "rolled", "winNumber", "maxRolls", "dicesThatHaveBeenRolled", "rolledSameDice", "nGamePlay", "totalScore", "wins", "Runningwinrate", "prob", "playerwithnomoves", "DeepsimWin", "bases", "diceHolder", "ants", "Eatreward", "basereward", "stepreward")
 
-    def __init__(self, winNumber=9, maxRolls=300, Eatreward=4, basereward=4, stepreward=0):
+    def __init__(self, winNumber=5, maxRolls=150, Eatreward=4, basereward=4, stepreward=0):
         self.fields, self.bases, self.ants, self.diceHolder = setup()
         self.player1 = self.ants[0].color
         self.player2 = self.ants[-1].color
@@ -65,7 +65,7 @@ class Myretuen():  # gym.Env
         done = self.gameHasEnded()
         info = {'PlayerSwapped': False}
         if done:
-            endReward = 2 * len(self.ants)
+            endReward = 2 * len(self.ants) + 60
             info = {player: (val * 2 - 1) * endReward for player, val in self.whoWonThisGame().items()}
             info['PlayerSwapped'] = False
         if len(self.rolled) == 0:

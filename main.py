@@ -28,7 +28,7 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen()
-    controller = Controller(env=env, agent1=Opponent([CleverRandom(calcprobs=True), NNAgent().loadModel('NNAgentrandomstate6'), NNAgent().loadModel('NNAgentrandomstate5'), NNAgent().loadModel('NNAgentrandomstate4')]), agent2=NNAgent(explore=True, K=2000, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10).loadModel('NNAgentrandomstate6'))
+    controller = Controller(env=env, agent1=Opponent(NNAgent(calcprobs=True, minmax=False, montecarlo=False, TopNvalues=3, cutOffdepth=3).loadModel('NNAgent15000-IMP-sample-length10-hist10')), agent2=NNAgent(calcprobs=True, minmax=True, montecarlo=False, TopNvalues=3, cutOffdepth=3).loadModel('NNAgent15000-IMP-sample-length10-hist10'))
     # controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=True, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02).loadModel('NNAgent2200'))
     # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, analyse=True).loadModel('NNAgentrandomstate6'))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=30)
@@ -49,14 +49,14 @@ plt.plot(controller.winrate)
 plt.ylim((0, 1))
 plot('TrainingCurve')
 
-try:
-    parameters = np.array(controller.agents['green'].parameters).T
-    plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
-    plot('Weights')
+# try:
+#     parameters = np.array(controller.agents['green'].parameters).T
+#     plt.imshow(parameters, cmap='seismic', interpolation='nearest', aspect=parameters.shape[1] / (parameters.shape[0] * 3))
+#     plot('Weights')
 
-    print(parameters[:, -1])
-except:
-    pass
+#     print(parameters[:, -1])
+# except:
+#     pass
 
 
 if debuggerMode:

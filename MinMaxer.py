@@ -16,9 +16,9 @@ def fastcopy(game):
 
 
 class MinMaxCalculate():
-    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow")
+    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=15, ProbabilityCutOff=0.02, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1):
+    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1, montecarlo=True):
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
         self.ValueCutOff = ValueCutOff
@@ -30,6 +30,8 @@ class MinMaxCalculate():
         self.calcprobs = calcprobs
         self.K = K
         self.ValueCutOffLow = ValueCutOffLow
+        self.montecarlo = montecarlo
+
 
     def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
@@ -38,14 +40,24 @@ class MinMaxCalculate():
         fakegame = fastcopy(self.game)
         return self.DeepLoop(1, fakegame, self.cutOffdepth, 0)
 
-    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True):
+    def DeepLoop(self, Proba, fakegame, cutOffdepth, rewardtrace, Realgame=True, montecarlo=True):
         actionss = fakegame.action_space()
-        limitedactions = min(self.TopNvalues, len(actionss))
+        if self.montecarlo == False:
+            limitedactions = min(self.TopNvalues, len(actionss))
+            number = 8
+        else:
+            number = 3
+            if cutOffdepth == self.cutOffdepth:
+                limitedactions = min(3, len(actionss))
+            if self.cutOffdepth - cutOffdepth < 3:
+                limitedactions = min(2, len(actionss))
+            else:
+                limitedactions = min(1, len(actionss))
         canditate_rewards, canditate_actions, candidate_values, canditate_probs = [[None, None]] * limitedactions, [None] * limitedactions, [-float('inf')] * limitedactions, [None] * limitedactions
         self.env = fakegame
 
         if self.explore == True and actionss != []:
-            temp = (4 * self.K*limitedactions) / (self.K + 4 * (self.gameNumber + 3000)) if self.K is not None else 1
+            temp = (4 * self.K*limitedactions) / (self.K + 4 * (self.gameNumber)) if self.K is not None else 1
             states = []
             values = []
             for action in actionss:
@@ -96,7 +108,7 @@ class MinMaxCalculate():
         if actionss == []:
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(None)
-            return Proba * (rewardtrace - 2 * len(self.game.ants) + 10) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 2 * len(self.game.ants) + 10)
+            return Proba * (rewardtrace - 2 * len(self.game.ants) + 60) if fakegame.currentPlayer == self.game.currentPlayer else Proba * (rewardtrace + 2 * len(self.game.ants) + 60)
         # for i in range(len(canditate_actions)):
         #     print(canditate_actions[i], end=' ')
         #     print(canditate_probs[i], end=' ')
@@ -132,7 +144,7 @@ class MinMaxCalculate():
             Endvalue = np.max(np.array(candidate_values)) + rewardtrace
         else:
             Endvalue = -np.max(np.array(candidate_values)) + rewardtrace
-        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue) or np.std(candidate_values) < 0.5) and (cutOffdepth < (self.cutOffdepth)):
+        if (self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue)) and (cutOffdepth < (self.cutOffdepth)):
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
             return Endvalue * Proba
@@ -155,8 +167,8 @@ class MinMaxCalculate():
                         for k in range(j, 7):
                             rolls.append([j,k])
                             chances.append(1/18) if j != k else chances.append(1/36)
-                    idx = np.random.choice(len(chances), 10, p=chances, replace=False)
-                    for n in range(10):
+                    idx = np.random.choice(len(chances), number, p=chances, replace=False)
+                    for n in range(number):
                         newfakegame2 = fastcopy(newfakegame)
                         newfakegame2.rolled = rolls[idx[n]]
                         if rolls[idx[n]][0] == rolls[idx[n]][1]:
@@ -187,8 +199,8 @@ class MinMaxCalculate():
                         for k in range(j, 7):
                             rolls.append([j,k])
                             chances.append(1/18) if j != k else chances.append(1/36)
-                    idx = np.random.choice(len(chances), 10, p=chances, replace=False)        
-                    for n in range(10):
+                    idx = np.random.choice(len(chances), number, p=chances, replace=False)        
+                    for n in range(number):
                         newfakegame2, newfakegameOp2 = fastcopy(newfakegame), fastcopy(newfakegame)
                         newfakegame2.rolled, newfakegameOp2.rolled = rolls[idx[n]], rolls[idx[n]]
                         if rolls[idx[n]][0] == rolls[idx[n]][1]:
