@@ -181,14 +181,14 @@ class Agent():
     def distanceToSplits(self, ant):
         li = list(ant.position.dist_to_targets)
         Squares = [['A8', 'D8'], ['B8', 'E8']]
-        antsonsplits = [0, 0, 0, 0]
+        antsonsplits = [[0, 0], [0, 0], [0, 0], [0, 0]]
         for i in range(len(Squares)):
             for j in range(len(Squares[i])):
                 if self.env.fields[Squares[i][j]].ants != []:
                     if self.env.fields[Squares[i][j]].ants[-1].color == ant.color:
-                        antsonsplits[i+2*j] += 1
+                        antsonsplits[i+2*j][0] = 1
                     else:
-                        antsonsplits[i+2*j] -= 1
+                        antsonsplits[i+2*j][1] = 1
         if ant.color == self.env.player1:
             li = li[::-1]
             antsonsplits = antsonsplits[::-1]
@@ -198,7 +198,8 @@ class Agent():
         if li[1] < li[3]:
             li[1], li[3] = li[3], li[1]
             antsonsplits[1], antsonsplits[3] = antsonsplits[3], antsonsplits[1]
-        return li, antsonsplits
+        AOS = [item for sublist in antsonsplits for item in sublist]
+        return li, AOS
 
     def distanceToBases(self, ant):
         return ant.position.distBases[ant.color]
