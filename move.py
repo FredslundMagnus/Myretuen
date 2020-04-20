@@ -17,7 +17,7 @@ class Move():
     def __str__(self):
         return f"Move using Dice({self.dice}) from {self.start} to {self.end}."
 
-    def execute(self, CalculateProb, oppesite=False, splitvariant=True):
+    def execute(self, CalculateProb, oppesite=False):
         self.reward = 0
         self.removeDice()
         moving = self.liftAnts()
@@ -25,7 +25,7 @@ class Move():
         self.reward += self.placeOnBoard(moving, oppesite, CalculateProb)
         self.reward += self.transforCaputuredToBase(myAnt)
         self.cleanAnts()
-        if self.game.splitvariant == True:
+        if self.game.splitvariant:
             self.reward += self.SplitPoints(self.game.ants)
         return self.reward
 

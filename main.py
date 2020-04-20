@@ -27,11 +27,11 @@ if debuggerMode:
     controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False), chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
-    env = Myretuen(color1='blue', color2='yellow', nAnts=10, fruits=False)
-    controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(minmax=True))
+    env = Myretuen(color1='blue', color2='yellow', nAnts=10, fruits=True)
+    controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=CleverRandom())
     # controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=False, calcprobs=True, minmax=True, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02).loadModel('NNAgent2200'))
     # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, analyse=True).loadModel('NNAgentrandomstate6'))
-    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=30)
+    controller.run(CalculateProbs=True, timeDelay=0, AddAgent=300)
 
 
 def plot(name, labels=False):
