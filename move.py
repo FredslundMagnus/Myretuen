@@ -196,7 +196,7 @@ class Move():
 
             enemies = [ant for ant in ants if ant.color == self.end.ants[-1].color]
             if all([not x.isAlive for x in enemies]):
-                sim_win_reward += 2 * len(ants) + 40
+                sim_win_reward += 2 * len(ants)
         else:
             probofstate = 1 - probofstate
             if probofstate != 1:
@@ -215,7 +215,7 @@ class Move():
 
             allies = [ant for ant in ants if ant.color == theAnt.color]
             if all([not x.isAlive for x in allies]):
-                sim_win_reward -= 2 * len(ants) + 40
+                sim_win_reward -= 2 * len(ants)
 
         self.game.prob.CalculateWinChance()
         self.giveantsprobabilities(self.game.prob.probmatrix, ants)
