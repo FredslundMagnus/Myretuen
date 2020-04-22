@@ -1,3 +1,6 @@
 import agentsplot
 import calcprobsplots
 import cleverrandomelo
+import lambdadiscountplots
+import chooserplot
+import trainfunction
