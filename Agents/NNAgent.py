@@ -8,7 +8,7 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=2500, dropout=0.0, alpha=None, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=2, cutOffdepth=5, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, historyLength=20, startAfterNgames=20, batchSize=200, sampleLenth=10, network=[50, 25, 10], analyse=False, montecarlo=True):
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=2500, dropout=0.0, alpha=None, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, historyLength=30, startAfterNgames=30, batchSize=100, sampleLenth=10, network=[50, 25, 10], analyse=False, montecarlo=False):
         self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse, montecarlo)
         self.optimizer = None
         self.optimise = True
@@ -32,7 +32,7 @@ class NNAgent(Agent):
     def train(self, reward, previousState, newState):
         Vst = self.value(previousState, return_float=False)
         Vstnext = self.value(newState, return_float=True)
-        label = torch.FloatTensor([reward + self.discount * Vstnext]) if abs(reward) != 81 else torch.FloatTensor([reward])
+        label = torch.FloatTensor([reward + self.discount * Vstnext]) if abs(reward) != 41 else torch.FloatTensor([reward])
         if self.lossf == 'Abs':
             criterion = nn.L1Loss()
         else:
