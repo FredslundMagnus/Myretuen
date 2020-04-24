@@ -23,5 +23,5 @@ class SimpleLinear(Agent):
         state = previousState[0]
         x = self.factor @ np.array(state).reshape(-1, self.Nfeature)
         Vstnext = self.value(newState)
-        self.trace = self.trace * self.lambd + x
+        self.trace = self.trace * self.lambd * self.discount + x
         self.phi += self.alpha * (reward + self.discount * Vstnext - Vst) * self.trace

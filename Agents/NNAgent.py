@@ -41,7 +41,7 @@ class NNAgent(Agent):
         loss.backward()
         self.optimizer.step()
         for f in self.phi.parameters():
-            f.grad *= self.lambd
+            f.grad *= self.lambd*self.discount
 
 
 class Net(nn.Module):
