@@ -4,7 +4,7 @@ from Agents.agent import Agent
 
 class SimpleLinear(Agent):
     def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=True, lossf=None, K=None, dropout=0, alpha=0.00001, discount=0.9, lambd=0.5, lr=None, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5, network=None, analyse=False, montecarlo=False):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, None, K, dropout, alpha, discount, lambd, None, 'SimpleLinear', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, None, analyse, montecarlo)
+        self.setup(explore, doTrain, impala, calcprobs, minmax, None, K, dropout, (1-lambd) * alpha, discount, lambd, None, 'SimpleLinear', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, None, analyse, montecarlo)
 
     def value(self, infostate):
         state, n = infostate[0], infostate[1]
@@ -23,5 +23,5 @@ class SimpleLinear(Agent):
         state = previousState[0]
         x = self.factor @ np.array(state).reshape(-1, self.Nfeature)
         Vstnext = self.value(newState)
-        self.trace = self.trace * self.lambd + x
+        self.trace = self.trace * self.lambd * self.discount + x
         self.phi += self.alpha * (reward + self.discount * Vstnext - Vst) * self.trace

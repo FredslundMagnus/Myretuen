@@ -58,7 +58,7 @@ class MinMaxCalculate():
         self.env = fakegame
 
         if self.explore == True and actionss != []:
-            temp = (4 * self.K * limitedactions) / (self.K + 4 * (self.gameNumber)) if self.K is not None else 1
+            temp = (8 * self.K * limitedactions) / (self.K + 8 * (self.gameNumber)) if self.K is not None else 1
             states = []
             values = []
             for action in actionss:
