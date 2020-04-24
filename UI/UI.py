@@ -374,8 +374,9 @@ def updateScreen(background, win, game=None, connection=None):
 
         if isHovering:
             isHoveringOn.draw(borderColor=(255, 255, 255))
-            if isHoveringOn.id in fruitColors:       # !Fruit
-                fruitColors[isHoveringOn.id].draw()  # !Fruit
+            if game.splitvariant:
+                if isHoveringOn.id in fruitColors:       # !Fruit
+                    fruitColors[isHoveringOn.id].draw()  # !Fruit
 
         connection.draw()
 
