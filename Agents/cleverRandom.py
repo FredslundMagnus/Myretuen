@@ -9,9 +9,9 @@ class CleverRandom(Agent):
 
     def resetGame(self):
         if self.calcprobs:
-            self.rating = 1475
+            self.rating = 1650
         else:
-            self.rating = 1230
+            self.rating = 1300
         if self.minimaxi == True:
             self.rating = 2000
         print(self.rating)

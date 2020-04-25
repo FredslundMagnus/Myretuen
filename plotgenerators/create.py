@@ -4,3 +4,4 @@ import cleverrandomelo
 import lambdadiscountplots
 import chooserplot
 import trainfunction
+import heatmapplot
