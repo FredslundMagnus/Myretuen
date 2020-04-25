@@ -36,19 +36,26 @@ for EloOverTime, name, agent, color in Data(files, elo=False):
         maxi = val if val > maxi else maxi
 
 
-labdas = np.array(list(sorted(lamds)))
-discounts = np.array(list(sorted(diss, reverse=True)))
+labdas = np.array(list(sorted(lamds, reverse=True)))
+discounts = np.array(list(sorted(diss)))
+print(labdas, discounts)
+
 
 for x, values in vs.items():
     heat = np.zeros((len(labdas), len(discounts)))
     for position, value in values.items():
         lambd_x, dis_y = position
         heat[lambd_x == labdas, dis_y == discounts] = value
-    ax = sns.heatmap(heat, vmin=mini, vmax=maxi, square=True)
-    ax.set_xticklabels(labdas)
-    ax.set_yticklabels(discounts)
-    ax.set_xlabel('Lambda')
-    ax.set_ylabel('Discount')
+    ax = sns.heatmap(heat, vmin=mini, vmax=maxi, square=False)
+    ax.set_xticklabels(labdas[::-1])
+    ax.set_yticklabels(discounts[::-1])
+    ax.set_xlabel('Discount')
+    ax.set_ylabel('Lambda')
     ax.set_title(f'Lambda and discount values after {x} games')
+    b, t = plt.ylim()  # discover the values for bottom and top
+    b += 0.5  # Add 0.5 to the bottom
+    t -= 0.5  # Subtract 0.5 from the top
+    plt.ylim(b, t)  # update the ylim(bottom, top) values
+    ax.set_aspect("equal")
     plt.savefig(f'GoodPlots/Heatmap-{x}.png')
     plt.clf()
