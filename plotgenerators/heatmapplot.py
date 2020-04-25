@@ -38,7 +38,6 @@ for EloOverTime, name, agent, color in Data(files, elo=False):
 
 labdas = np.array(list(sorted(lamds, reverse=True)))
 discounts = np.array(list(sorted(diss)))
-print(labdas, discounts)
 
 
 for x, values in vs.items():
