@@ -8,8 +8,8 @@ import torch.optim as optim
 
 
 class NNAgent(Agent):
-    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=2500, dropout=0.0, alpha=None, discount=0.95, lambd=0.9, lr=0.0001, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, historyLength=30, startAfterNgames=30, batchSize=100, sampleLenth=10, network=[50, 25, 10], analyse=False, montecarlo=False):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, (1-lambd) * lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse, montecarlo)
+    def __init__(self, explore=False, doTrain=False, impala=False, calcprobs=True, minmax=False, lossf='MME', K=2500, dropout=0.0, alpha=None, discount=0.95, lambd=0.9, lr=0.001, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, historyLength=30, startAfterNgames=30, batchSize=100, sampleLenth=10, network=[50, 25, 10], analyse=False, montecarlo=False):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, None, discount, lambd, (1 - 4 * lambd / 5) * (1 - 4 * discount / 5) * lr, 'NNAgent', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse, montecarlo)
         self.optimizer = None
         self.optimise = True
 

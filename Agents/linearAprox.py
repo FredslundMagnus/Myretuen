@@ -3,8 +3,8 @@ from Agents.agent import Agent
 
 
 class LinearAprox(Agent):
-    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False, lossf=None, K=None, dropout=0, alpha=0.000001, discount=0.8, lambd=0.9, lr=None, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5, network=None, analyse=False, montecarlo=False):
-        self.setup(explore, doTrain, impala, calcprobs, minmax, None, K, dropout, (1 - lambd) * alpha, discount, lambd, None, 'BigLinear', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, None, analyse, montecarlo)
+    def __init__(self, explore=True, doTrain=True, impala=True, calcprobs=True, minmax=False, lossf=None, K=None, dropout=0, alpha=0.0001, discount=0.8, lambd=0.9, lr=None, TopNvalues=6, cutOffdepth=1, ValueCutOff=5, ValueDiffCutOff=2, ProbabilityCutOff=0.03, historyLength=20, startAfterNgames=20, batchSize=20, sampleLenth=5, network=None, analyse=False, montecarlo=False):
+        self.setup(explore, doTrain, impala, calcprobs, minmax, None, K, dropout, (1 - 4 * lambd / 5) * (1 - 4 * discount / 5) * alpha, discount, lambd, None, 'BigLinear', TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, None, analyse, montecarlo)
 
     def value(self, infostate):
         state, n = infostate[0], infostate[1]
