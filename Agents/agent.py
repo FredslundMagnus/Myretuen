@@ -94,7 +94,7 @@ class Agent():
         return random.choice([0, 1])
 
     def setup(self, explore, doTrain, impala, calcprobs, minmax, lossf, K, dropout, alpha, discount, lambd, lr, name, TopNvalues, cutOffdepth, ValueCutOff, ValueDiffCutOff, ProbabilityCutOff, historyLength, startAfterNgames, batchSize, sampleLenth, network, analyse, montecarlo):
-        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection, self.montecarlo = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1400, None, montecarlo
+        self.calcprobs, self.newreward, self.all_state, self.all_reward, self.explore, self.doTrain, self.previousState, self.actionState, self.parameters, self.phi, self.rating, self.connection, self.montecarlo = calcprobs, 0, [], [], explore, doTrain, [], None, [], [], 1000, None, montecarlo
         self.ImpaleIsActivated = impala
         if self.ImpaleIsActivated:
             self.historyLength, self.startAfterNgames, self.batchSize, self.sampleLenth = int(historyLength), int(startAfterNgames), int(batchSize), int(sampleLenth)
@@ -186,9 +186,9 @@ class Agent():
             for j in range(len(Squares[i])):
                 if self.env.fields[Squares[i][j]].ants != []:
                     if self.env.fields[Squares[i][j]].ants[-1].color == ant.color:
-                        antsonsplits[i+2*j][0] = 1
+                        antsonsplits[i + 2 * j][0] = 1
                     else:
-                        antsonsplits[i+2*j][1] = 1
+                        antsonsplits[i + 2 * j][1] = 1
         if ant.color == self.env.player1:
             li = li[::-1]
             antsonsplits = antsonsplits[::-1]
@@ -252,10 +252,8 @@ class Agent():
         if splitDistance[0] == 0 or splitDistance[2] == 0:
             onsplit[0] = 1
         if splitDistance[1] == 0 or splitDistance[3] == 0:
-            onsplit[1] = 1  
-        return onsplit    
-            
-
+            onsplit[1] = 1
+        return onsplit
 
     def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
@@ -394,8 +392,8 @@ class Agent():
                     self.env.bases[self.env.player1].captured.append('SIMBONUS')
                     reward -= 4
                 elif ant.color == self.env.player2 and ant.position.id in Squares[0]:
-                    self.env.bases[self.env.player2].captured.append('SIMBONUS')   
-                    reward -= 4      
+                    self.env.bases[self.env.player2].captured.append('SIMBONUS')
+                    reward -= 4
         return reward
 
     def cleansim(self):
