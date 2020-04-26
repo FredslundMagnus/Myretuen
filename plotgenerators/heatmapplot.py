@@ -38,7 +38,6 @@ for EloOverTime, name, agent, color in Data(files, elo=False):
 
 labdas = np.array(list(sorted(lamds, reverse=True)))
 discounts = np.array(list(sorted(diss)))
-print(labdas, discounts)
 
 
 for x, values in vs.items():
@@ -52,10 +51,8 @@ for x, values in vs.items():
     ax.set_xlabel('Discount')
     ax.set_ylabel('Lambda')
     ax.set_title(f'Lambda and discount values after {x} games')
-    b, t = plt.ylim()  # discover the values for bottom and top
-    b += 0.5  # Add 0.5 to the bottom
-    t -= 0.5  # Subtract 0.5 from the top
-    plt.ylim(b, t)  # update the ylim(bottom, top) values
+    b, t = plt.ylim()
+    plt.ylim(b + 0.5, t - 0.5)
     ax.set_aspect("equal")
     plt.savefig(f'GoodPlots/Heatmap-{x}.png')
     plt.clf()
