@@ -49,6 +49,12 @@ controller.run()
 
 # Versions
 
+## version-0.6
+
+- New Fruit-mode
+- Monto Carlo Search
+- Bugs fixes and improvements
+
 ## version-0.5
 
 - Added Boltzmann Approach to the explorer
