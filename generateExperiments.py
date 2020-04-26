@@ -290,8 +290,8 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 # Gode Tests ################################
 #
 
-genExperiments('CleverRandomElo', 'CleverRandom', 4000, 100000, False, False, False, False, False, n=50)
-genExperiments('CleverRandomEloCalcProb', 'CleverRandom', 4000, 100000, False, False, False, True, False, n=50)
+####### genExperiments('CleverRandomElo', 'CleverRandom', 4000, 100000, False, False, False, False, False, n=50)
+####### genExperiments('CleverRandomEloCalcProb', 'CleverRandom', 4000, 100000, False, False, False, True, False, n=50)
 
 # genExperiments('4000-MME', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='MME', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
 # genExperiments('4000-Abs', 'NNAgent', 4000, 10, True, True, True, True, False, lossf='Abs', K=2000, discount=0.995, lambd=0.9, lr=0.0002)
