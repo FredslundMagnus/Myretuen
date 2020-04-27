@@ -49,6 +49,12 @@ controller.run()
 
 # Versions
 
+## version-0.6
+
+- New Fruit-mode
+- Monto Carlo Search
+- Bugs fixes and improvements
+
 ## version-0.5
 
 - Added Boltzmann Approach to the explorer
@@ -82,5 +88,7 @@ controller.run()
 # Attributions
 
 [Ants Vectors by Vecteezy](https://www.vecteezy.com/free-vector/ants "Vecteezy.com")
+
 [Foods Vectors by Vecteezy](https://www.vecteezy.com/free-vector/food "Vecteezy.com")
+
 [Fonts by Fontmeme](https://fontmeme.com/ "Fontmeme.com")
