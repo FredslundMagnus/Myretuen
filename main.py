@@ -24,7 +24,7 @@ if debuggerMode:
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen(winNumber=winNumber, maxRolls=maxRolls, Eatreward=Eatreward, basereward=basereward, stepreward=stepreward)
     mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr, TopNvalues=TopNvalues, cutOffdepth=cutOffdepth, ValueCutOff=ValueCutOff, ValueDiffCutOff=ValueDiffCutOff, ProbabilityCutOff=ProbabilityCutOff, historyLength=historyLength, startAfterNgames=startAfterNgames, batchSize=batchSize, sampleLenth=sampleLenth, network=network, analyse=True)
-    controller = Controller(env=env, agent1=Opponent(RandomAgent(minmax=False), chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
+    controller = Controller(env=env, agent1=Opponent([RandomAgent(minmax=False), CleverRandom(calcprobs=False, minmax=False), CleverRandom(calcprobs=True, minmax=False)], chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen(color1='red', color2='green', nAnts=10, fruits=False)

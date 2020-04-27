@@ -88,5 +88,7 @@ controller.run()
 # Attributions
 
 [Ants Vectors by Vecteezy](https://www.vecteezy.com/free-vector/ants "Vecteezy.com")
+
 [Foods Vectors by Vecteezy](https://www.vecteezy.com/free-vector/food "Vecteezy.com")
+
 [Fonts by Fontmeme](https://fontmeme.com/ "Fontmeme.com")
