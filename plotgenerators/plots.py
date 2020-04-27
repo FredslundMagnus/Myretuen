@@ -47,9 +47,9 @@ class EloPlot():
     def __exit__(self, types, value, traceback):
         if self.plt.doPrint:
             if self.CRP:
-                self.plt.axhline(y=1657, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
+                self.plt.axhline(y=1660.82, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
             if self.CR:
-                self.plt.axhline(y=1280, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
+                self.plt.axhline(y=1293.76, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
             if self.RA:
                 self.plt.axhline(y=1000, color='#F44336', lw=1, label='RandomAgent', zorder=1)
 
