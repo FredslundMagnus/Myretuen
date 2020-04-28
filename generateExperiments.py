@@ -24,13 +24,13 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 # genExperiments('SL-discount-0.75-NoTrain-alpha-0.001', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.001, discount=0.75, lambd=0)
 # genExperiments('SL-discount-0.95-NoTrain-alpha-0.001', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.001, discount=0.95, lambd=0)
 
-genExperiments('NN-discount-0.5-NoTrain-lr-0.0002', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.0002, discount=0.5, lambd=0, lossf='MSE')
-genExperiments('NN-discount-0.75-NoTrain-lr-0.0002', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.0002, discount=0.75, lambd=0, lossf='MSE')
-genExperiments('NN-discount-0.95-NoTrain-lr-0.0002', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.0002, discount=0.95, lambd=0, lossf='MSE')
+# genExperiments('NN-discount-0.5-NoTrain-lr-0.0002', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.0002, discount=0.5, lambd=0, lossf='MSE')
+# genExperiments('NN-discount-0.75-NoTrain-lr-0.0002', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.0002, discount=0.75, lambd=0, lossf='MSE')
+# genExperiments('NN-discount-0.95-NoTrain-lr-0.0002', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.0002, discount=0.95, lambd=0, lossf='MSE')
 
-genExperiments('NN-discount-0.5-NoTrain-lr-0.00001', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00001, discount=0.5, lambd=0, lossf='MSE')
-genExperiments('NN-discount-0.75-NoTrain-lr-0.00001', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00001, discount=0.75, lambd=0, lossf='MSE')
-genExperiments('NN-discount-0.95-NoTrain-lr-0.00001', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00001, discount=0.95, lambd=0, lossf='MSE')
+# genExperiments('NN-discount-0.5-NoTrain-lr-0.00001', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00001, discount=0.5, lambd=0, lossf='MSE')
+# genExperiments('NN-discount-0.75-NoTrain-lr-0.00001', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00001, discount=0.75, lambd=0, lossf='MSE')
+# genExperiments('NN-discount-0.95-NoTrain-lr-0.00001', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00001, discount=0.95, lambd=0, lossf='MSE')
 
 
 # genExperiments('LAMBDA-0.99_DISCOUNT-0.99', 'NNAgent', 4000, 20, True, False, True, True, False, lossf='MME', discount=0.99, lambd=0.99, lr=0.0001, dropout=0, K=2000, batchSize=100, historyLength=20, startAfterNgames=20, sampleLenth=10, chooserfunction='weightedChooser')
