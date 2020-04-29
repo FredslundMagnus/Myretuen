@@ -1,9 +1,8 @@
-from plots import Data, allDirs
+from plots import Data, allDirs, find_number
 from matplotlib import pyplot as plt
 import seaborn as sns
 sns.set()
 import numpy as np
-import re
 
 xs = [1000, 2000, 3000, 4000]
 l, d = 'LAMBDA-', '_DISCOUNT-'
@@ -14,10 +13,6 @@ for x in xs:
 for filename in allDirs():
     if l in filename and d in filename:
         files.append(filename)
-
-
-def find_number(text, c):
-    return float(re.findall(r'%s(\d*\.\d*)' % c, text)[0])
 
 
 def meanAround(data, x, width=10):

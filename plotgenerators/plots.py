@@ -138,3 +138,7 @@ def Data(directories, colors=None, elo=True, overTime=True):
                 yield EloOverTime, name, agent, color
             else:
                 yield name, agent, color
+
+
+def find_number(text, c):
+    return float(re.findall(r'%s(\d*\.\d*)' % c, text)[0])
