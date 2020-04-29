@@ -131,7 +131,7 @@ class Analyser():
             self.meanPrGame(carryAlly, antPredicate=lambda ant: not opponent(ant))
         ]], axis=1)
         print(prGame)
-        np.savetxt(position, prGame, fmt='%.5f', delimiter=',', header="GameN, gameLength, gameElo, minBase, dinBase")
+        np.savetxt(position, prGame, fmt='%.5f', delimiter=',', header="GameN, gameLength, gameElo, minBase, dinBase, meandistMine, meandistDine, isInFront, carryEnimy, carryAlly")
 
     def skabelon(self, analyseFunction, start=0, adder=lambda old, new: old + new, antPredicate=lambda ant: True, gamePredicate=lambda game: True, statePredicate=lambda state: True, stateEnd=lambda result: result, gameEnd=lambda result: result, finalClean=lambda result: result):
         result = start
