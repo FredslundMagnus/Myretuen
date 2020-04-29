@@ -32,9 +32,9 @@ genExperiments('LA-discount-0.5-NoTrain-alpha-0.000001', 'LinearAprox', 4000, 50
 genExperiments('LA-discount-0.75-NoTrain-alpha-0.000001', 'LinearAprox', 4000, 5000, False, True, False, False, False, alpha=0.000001, discount=0.75, lambd=0)
 genExperiments('LA-discount-0.95-NoTrain-alpha-0.000001', 'LinearAprox', 4000, 5000, False, True, False, False, False, alpha=0.000001, discount=0.95, lambd=0)
 
-genExperiments('SL-discount-0.5-NoTrain-alpha-0.000002', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.000002, discount=0.5, lambd=0)
-genExperiments('SL-discount-0.75-NoTrain-alpha-0.000002', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.000002, discount=0.75, lambd=0)
-genExperiments('SL-discount-0.95-NoTrain-alpha-0.000002', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.000002, discount=0.95, lambd=0)
+genExperiments('SL-discount-0.5-NoTrain-alpha-0.000003', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.000003, discount=0.5, lambd=0)
+genExperiments('SL-discount-0.75-NoTrain-alpha-0.000003', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.000003, discount=0.75, lambd=0)
+genExperiments('SL-discount-0.95-NoTrain-alpha-0.000003', 'SimpleLinear', 4000, 5000, False, True, False, False, False, alpha=0.000003, discount=0.95, lambd=0)
 
 genExperiments('NN-discount-0.5-NoTrain-lr-0.00005', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00005, discount=0.5, lambd=0, lossf='MSE')
 genExperiments('NN-discount-0.75-NoTrain-lr-0.00005', 'NNAgent', 4000, 5000, False, True, False, False, False, lr=0.00005, discount=0.75, lambd=0, lossf='MSE')
