@@ -223,3 +223,228 @@ Resource usage summary:
 
 The output (if any) is above this job summary.
 
+# Parameters for LA-discount-0.5-NoTrain-alpha-0.000001
+
+    Use the agent :             LinearAprox.
+
+    Play for :                  4000 games.
+      Add Agent every :         5000 game.
+      Game length :             300 rolls.
+      Win with :                9 ants.
+      Eatreward :               4.
+      Basereward :              4.
+      Stepreward :              0.
+
+      Features :                antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list.
+
+    Explore enabled :           False.
+      K :                       None.
+      Dropout :                 0.
+
+    DoTrain enabled :           True.
+      Lossfunction  :           None.
+      Value of alpha :          1e-06.
+      Value of discount :       0.5.
+      Value of lambda :         0.0.
+      Learningrate :            None.
+
+    Impala enabled :            False.
+      historyLength :           None.
+      startAfterNgames :        None.
+      batchSize :               None.
+      sampleLenth :             None.
+
+    Minimax enabled :           False.
+      TopNvalues :              None.
+      cutOffdepth :             None.
+      ValueCutOff :             None.
+      ValueDiffCutOff :         None.
+      ProbabilityCutOff :       None.
+
+    Calcprobs enabled :         False.
+
+    Chooserfunction :           randomChooser.
+
+    Minutes used :              526 minutes.
+    Hours used :                8 hours.
+
+# Profiling
+
+
+      23907366920 function calls (23567928343 primitive calls) in 31542.46 seconds
+
+##    Ordered by: cumulative time
+   List reduced from 185 to 100 due to restriction <100>
+
+           ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+                1    0.000    0.000 31609.762 31609.762 {built-in method builtins.exec}
+                1    0.000    0.000 31609.762 31609.762 <string>:1(<module>)
+                1    0.000    0.000 31609.762 31609.762 game.py:183(run)
+                1   19.609   19.609 31609.762 31609.762 gamecontroller.py:15(run)
+          1272997  241.555    0.000 29193.988    0.023 agent.py:15(choose)
+         22129125 1037.926    0.000 27455.184    0.001 agent.py:258(state)
+        807062189 5359.234    0.000 21153.360    0.000 agent.py:219(antState)
+           771119    3.178    0.000 10632.791    0.014 opponent.py:31(choose)
+         20084764   56.454    0.000 4541.065    0.000 move.py:258(simulate)
+          2124120   70.870    0.000 3624.185    0.002 move.py:154(simulateComplex)
+        343238489 3409.758    0.000 3409.758    0.000 agent.py:297(getDistances)
+          2201202  588.192    0.000 3073.876    0.001 Probability_function.py:206(CalculateWinChance)
+        343238489 2665.293    0.000 2696.730    0.000 agent.py:321(getDistancesToAnts)
+        343238489 2140.114    0.000 2535.066    0.000 agent.py:181(distanceToSplits)
+         14311801  378.074    0.000 2416.695    0.000 linearAprox.py:9(value)
+        221829784/26323388 1863.172    0.000 2214.017    0.000 Probability_function.py:196(Combinations)
+        343238489 1146.598    0.000 1917.838    0.000 agent.py:207(currentScore)
+         68493308 1910.222    0.000 1910.222    0.000 {built-in method numpy.array}
+          1542483   10.947    0.000 1201.101    0.001 agent.py:69(trainAgent)
+        463823700  812.039    0.000 1072.070    0.000 agent.py:345(ant_situation)
+        1705313789  823.154    0.000  935.084    0.000 {built-in method builtins.sum}
+        343254489  809.530    0.000  809.582    0.000 {built-in method builtins.sorted}
+        343245965  332.422    0.000  730.339    0.000 game.py:139(getCurrentScore)
+        343238489  583.250    0.000  705.569    0.000 agent.py:356(dicer)
+         23191185  364.259    0.000  682.059    0.000 agent.py:334(antsUnderAnts)
+         19022704  335.303    0.000  665.504    0.000 move.py:267(<listcomp>)
+        343238489  631.458    0.000  631.458    0.000 agent.py:241(<listcomp>)
+        343238489  387.879    0.000  623.260    0.000 agent.py:175(carrying_number_of_enemy_ants)
+             4000    0.097    0.000  492.394    0.123 game.py:159(reset)
+             4000    0.592    0.000  490.945    0.123 setups.py:9(setup)
+          2132804  417.633    0.000  476.580    0.000 Probability_function.py:140(fight)
+          1538483    8.060    0.000  428.026    0.000 game.py:56(action_space)
+          5600000    3.060    0.000  424.550    0.000 field.py:38(Nointersection)
+          5600000  150.537    0.000  421.490    0.000 field.py:39(<listcomp>)
+         25613103   60.076    0.000  419.966    0.000 game.py:46(actions)
+             4000   33.822    0.008  412.662    0.103 field.py:120(Give_dist_to_all)
+        3875925979  403.466    0.000  403.466    0.000 {method 'append' of 'list' objects}
+        4209506238  388.764    0.000  388.764    0.000 {built-in method builtins.len}
+        422936480  278.707    0.000  367.600    0.000 move.py:282(__init__)
+           767364   35.769    0.000  366.164    0.000 linearAprox.py:23(train)
+        854089649  256.215    0.000  351.015    0.000 field.py:23(__eq__)
+        343245965  291.579    0.000  349.509    0.000 game.py:140(<dictcomp>)
+        183923726/39991545  119.161    0.000  301.550    0.000 game.py:111(getAllPositionsAtDistance)
+        343238489  284.444    0.000  284.444    0.000 agent.py:201(<listcomp>)
+         14311802  281.357    0.000  281.357    0.000 {method 'rand' of 'numpy.random.mtrand.RandomState' objects}
+          1538483    5.246    0.000  254.238    0.000 game.py:59(step)
+        224901574  236.333    0.000  237.612    0.000 {built-in method builtins.any}
+        1614788151  220.309    0.000  220.309    0.000 {method 'items' of 'dict' objects}
+        170307327  109.666    0.000  182.388    0.000 game.py:119(goOneStep)
+        343238489  176.694    0.000  176.694    0.000 agent.py:176(<listcomp>)
+        343238489  164.915    0.000  164.915    0.000 agent.py:229(<listcomp>)
+          1538483    5.733    0.000  153.056    0.000 move.py:20(execute)
+          1538483    1.448    0.000  138.381    0.000 move.py:62(placeOnBoard)
+            77082    0.664    0.000  136.415    0.002 move.py:103(moveToOpponent)
+           767364   16.056    0.000  129.364    0.000 analyser.py:92(addData)
+         15547786   24.371    0.000  127.373    0.000 numeric.py:159(ones)
+         19022704   88.420    0.000  119.212    0.000 move.py:130(simulateSimple)
+          2201202  114.656    0.000  114.656    0.000 move.py:271(giveantsprobabilities)
+        720084708  111.931    0.000  111.931    0.000 agent.py:342(<genexpr>)
+        343238489  109.554    0.000  109.554    0.000 agent.py:204(distanceToBases)
+        216873703  104.781    0.000  104.781    0.000 agent.py:351(<listcomp>)
+        854089649   94.799    0.000   94.799    0.000 {built-in method builtins.isinstance}
+        343238489   94.759    0.000   94.759    0.000 agent.py:178(carrying_number_of_ally_ants)
+        535503030   94.727    0.000   94.727    0.000 {built-in method math.factorial}
+        240028236   89.946    0.000   89.946    0.000 agent.py:349(<listcomp>)
+        422936480   88.892    0.000   88.892    0.000 {method 'copy' of 'dict' objects}
+           771685    2.382    0.000   75.223    0.000 game.py:41(roll)
+           775685    8.245    0.000   73.088    0.000 holder.py:17(roll)
+         15547786   21.007    0.000   71.663    0.000 <__array_function__ internals>:2(copyto)
+         15079166   64.699    0.000   64.699    0.000 {built-in method numpy.zeros}
+          4467442   30.242    0.000   64.329    0.000 dice.py:9(roll)
+         17082514   56.861    0.000   56.861    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+             4000    3.263    0.001   40.123    0.010 field.py:43(Give_dist_to_bases)
+         26323388   30.071    0.000   39.202    0.000 Probability_function.py:133(Nointersection)
+          1062060   19.440    0.000   38.321    0.000 move.py:261(<listcomp>)
+          1062060   18.871    0.000   37.388    0.000 move.py:260(<listcomp>)
+         18447254   12.185    0.000   35.712    0.000 random.py:252(choice)
+         12643330   17.497    0.000   32.850    0.000 game.py:95(getAllStartConfigurations)
+         16613895   32.697    0.000   32.697    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+         15547786   31.339    0.000   31.339    0.000 {built-in method numpy.empty}
+             4000    2.457    0.001   30.541    0.008 field.py:90(Give_dist_to_target)
+         21146824    9.126    0.000   22.656    0.000 move.py:234(simulateClean)
+         18447254   15.276    0.000   21.852    0.000 random.py:222(_randbelow)
+          1538483   11.964    0.000   20.864    0.000 game.py:129(gameHasEnded)
+          8369751    7.958    0.000   18.782    0.000 cleverRandom.py:19(value)
+        205153479   18.400    0.000   18.400    0.000 {built-in method builtins.abs}
+         24074620   16.383    0.000   16.383    0.000 move.py:7(__init__)
+           698458    5.859    0.000   13.146    0.000 move.py:236(<listcomp>)
+          1534728    1.665    0.000   11.717    0.000 <__array_function__ internals>:2(concatenate)
+          9378646   11.686    0.000   11.686    0.000 game.py:101(getAllCurrentPlayersAnts)
+         61203451   11.489    0.000   11.489    0.000 agent.py:368(GetProbabilityOfEat)
+          8369751    8.771    0.000   10.825    0.000 random.py:366(uniform)
+         15449946   10.111    0.000   10.111    0.000 move.py:140(<setcomp>)
+          2096158    9.510    0.000    9.510    0.000 Probability_function.py:153(<listcomp>)
+         28886698    9.107    0.000    9.107    0.000 game.py:124(isLegalMove)
+          4248240    8.500    0.000    8.500    0.000 {method 'copy' of 'numpy.ndarray' objects}
+         11664000    5.869    0.000    8.074    0.000 field.py:135(<listcomp>)
+         14835467    7.092    0.000    7.092    0.000 {method 'pop' of 'list' objects}
+          1538483    2.393    0.000    6.799    0.000 gamecontroller.py:67(sleep)
+          1062060    4.617    0.000    4.617    0.000 move.py:197(<listcomp>)
+
+
+# Other prints
+
+[[   1.     81.   1000.      5.56   15.74]
+ [   2.    138.   1000.     10.66   11.41]
+ [   3.    152.    998.17   11.88   10.22]
+ ...
+ [3998.    300.   1828.44    2.44   18.98]
+ [3999.    252.   1828.54    2.19   19.06]
+ [4000.    154.   1829.1     1.91   19.35]]
+
+ <br /> 
+ <br /> 
+ <br /> 
+ <br />
+
+---------------------------------------------------------------------------------------------------------------------
+
+# HPC Stats
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n-62-21-101>
+Subject: Job 6401457: <LinearAprox6LA-discount-0.5-NoTrain-alpha-0.000001> in cluster <dcc> Done
+
+Job <LinearAprox6LA-discount-0.5-NoTrain-alpha-0.000001> was submitted from host <n-62-30-7> by user <s183914> in cluster <dcc> at Wed Apr 29 11:58:50 2020
+Job was executed on host(s) <n-62-21-101>, in queue <hpc>, as user <s183914> in cluster <dcc> at Wed Apr 29 11:58:50 2020
+</zhome/ea/9/137501> was used as the home directory.
+</zhome/ea/9/137501/Desktop/TheMyretuen/Myretuen> was used as the working directory.
+Started at Wed Apr 29 11:58:50 2020
+Terminated at Wed Apr 29 20:50:16 2020
+Results reported at Wed Apr 29 20:50:16 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q hpc
+#BSUB -n 1
+#BSUB -R "rusage[mem=10G]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 4320
+# end of BSUB options
+
+module -s load python3
+source ../myretuen-env/bin/activate
+
+python main.py $LSB_PROJECT_NAME
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   31879.36 sec.
+    Max Memory :                                 7051 MB
+    Average Memory :                             3364.24 MB
+    Total Requested Memory :                     10240.00 MB
+    Delta Memory :                               3189.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   31890 sec.
+    Turnaround time :                            31886 sec.
+
+The output (if any) is above this job summary.
+
