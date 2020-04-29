@@ -84,6 +84,20 @@ def dinBase(ant):
     return baseDistance(ant)[1]
 
 
+def meandistMine(ant):
+    ants = mine(ant)
+    return float(np.dot(np.arange(len(ants)) + 1, ants))
+
+
+def meandistDine(ant):
+    ants = dine(ant)
+    return float(np.dot(np.arange(len(ants)) + 1, ants))
+
+
+def isInFront(ant):
+    return (score(ant)[2] + 1) / 2
+
+
 class Analyser():
     def __init__(self):
         self.data = []
@@ -109,10 +123,15 @@ class Analyser():
             self.gameLength(),
             self.gameElo(),
             self.meanPrGame(minBase, antPredicate=lambda ant: not opponent(ant)),
-            self.meanPrGame(dinBase, antPredicate=lambda ant: not opponent(ant))
+            self.meanPrGame(dinBase, antPredicate=lambda ant: not opponent(ant)),
+            self.meanPrGame(meandistMine, antPredicate=lambda ant: not opponent(ant)),
+            self.meanPrGame(meandistDine, antPredicate=lambda ant: not opponent(ant)),
+            self.meanPrGame(isInFront, antPredicate=lambda ant: not opponent(ant)),
+            self.meanPrGame(carryEnimy, antPredicate=lambda ant: not opponent(ant)),
+            self.meanPrGame(carryAlly, antPredicate=lambda ant: not opponent(ant))
         ]], axis=1)
         print(prGame)
-        np.savetxt(position, prGame, fmt='%.1f', delimiter=',', header="GameN, gameLength, gameElo, minBase, dinBase")
+        np.savetxt(position, prGame, fmt='%.5f', delimiter=',', header="GameN, gameLength, gameElo, minBase, dinBase, meandistMine, meandistDine, isInFront, carryEnimy, carryAlly")
 
     def skabelon(self, analyseFunction, start=0, adder=lambda old, new: old + new, antPredicate=lambda ant: True, gamePredicate=lambda game: True, statePredicate=lambda state: True, stateEnd=lambda result: result, gameEnd=lambda result: result, finalClean=lambda result: result):
         result = start
