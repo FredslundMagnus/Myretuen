@@ -47,6 +47,8 @@ controller = Controller(env=env, agent1=agent1, agent2=agent2)
 controller.run()
 ```
 
+![](game.gif)
+
 # Versions
 
 ## version-0.6
