@@ -53,7 +53,7 @@ controller.run()
   <img align="center" src="game.gif" width="400" height="400" />
 </p>
 
- <p align="center"><a href="https://www.youtube.com/watch?v=NSDqPQURoyc&list=PLTj3aUqRD0-MPQeFJscACMaoKomZgW16P" title="YouTube.com">Videoes of game</a></p>
+ <p align="center"><a href="https://www.youtube.com/playlist?list=PLTj3aUqRD0-MPQeFJscACMaoKomZgW16P" title="YouTube.com">Videoes of game</a></p>
 
 # Versions
 
