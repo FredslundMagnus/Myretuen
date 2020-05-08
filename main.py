@@ -28,9 +28,9 @@ if debuggerMode:
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen(color1='red', color2='green', nAnts=10, fruits=False)
-    controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, impala=True))
+    # controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, impala=True))
     # controller = Controller(env=env, agent1=Opponent(NNAgent()), agent2=PlayerAgent())
-    # controller = Controller(env=env, agent1=Opponent(RandomAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, analyse=True).loadModel('NNAgentrandomstate6'))
+    controller = Controller(env=env, agent1=Opponent(PlayerAgent()), agent2=NNAgent(explore=False, doTrain=False, impala=True, minmax=False, discount=0.99, lambd=0.9, lr=0.00005, TopNvalues=3, cutOffdepth=2, ValueCutOff=25, ValueDiffCutOff=5, ProbabilityCutOff=0.02, historyLength=20, startAfterNgames=20, batchSize=300, sampleLenth=10, analyse=True).loadModel('NNagentGoodNew'))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
 
 
