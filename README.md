@@ -52,7 +52,6 @@ controller.run()
 <p align="center">
   <img align="center" src="game.gif" width="400" height="400" />
 </p>
-<div style="text-align:center;display:block;"><img align="center" src="game.gif" width="400" height="400" /></div>
 
 [Videoes of game](https://www.youtube.com/watch?v=NSDqPQURoyc&list=PLTj3aUqRD0-MPQeFJscACMaoKomZgW16P "YouTube.com")
 
