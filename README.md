@@ -47,7 +47,7 @@ controller = Controller(env=env, agent1=agent1, agent2=agent2)
 controller.run()
 ```
 
-<img src="game.gif" width="400" height="400" />
+<div style="text-align:center"><img src="game.gif" width="400" height="400" /></div>
 
 [Videoes of game](https://www.youtube.com/watch?v=NSDqPQURoyc&list=PLTj3aUqRD0-MPQeFJscACMaoKomZgW16P "YouTube.com")
 
