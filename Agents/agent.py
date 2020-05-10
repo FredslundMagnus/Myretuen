@@ -211,9 +211,8 @@ class Agent():
         if score[0] > score[1]:
             score[2] = 1
         elif score[0] < score[1]:
-            score[2] = -1
-        score[3] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**4
-        score[4] = self.env.winNumber
+            score[3] = 1
+        score[4] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**4
         return score
 
     def antState(self, ant):
@@ -228,6 +227,7 @@ class Agent():
             score = self.currentScore(ant)
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
+            turn = self.WhichTurn(ant)
             # ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
             if self.calcprobs == True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
@@ -245,7 +245,21 @@ class Agent():
                 # print(onsplit, antsonsplits, splitDistance, ant.id)
                 yield onsplit + antsonsplits + antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
             else:
-                yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
+                yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list + turn
+
+    def WhichTurn(self, ant):
+        if ant.color == self.env.currentPlayer:
+            if len(self.env.rolled) == 2 or self.env.rolledSameDice == True:
+                turn = [1, 0]
+            else:
+                turn = [0, 1]
+        else:
+            if len(self.env.rolled) == 2 or self.env.rolledSameDice == True:
+                turn = [0, 1]
+            else:
+                turn = [1, 0]
+        return turn
+
 
     def onsplit(self, splitDistance):
         onsplit = [0, 0]
@@ -358,11 +372,11 @@ class Agent():
         if ant.dieJustUsedInSimulation == 0:
             for d in self.env.rolled:
                 dice[d - 1] = 1
-            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2
+            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 * 6/5
         else:
             d = sum(self.env.rolled) - ant.dieJustUsedInSimulation
             dice[d - 1] = 1
-            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 - 1
+            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 * 6/5 - 1
         return dice
 
     def GetProbabilityOfEat(self, ant):
