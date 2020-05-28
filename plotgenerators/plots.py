@@ -142,3 +142,6 @@ def Data(directories, colors=None, elo=True, overTime=True):
 
 def find_number(text, c):
     return float(re.findall(r'%s(\d*\.\d*)' % c, text)[0])
+
+
+colors = ['#9C27B0', '#2196F3', '#4CAF50', '#673ab7', '#795548', '#ffeb3b', '#E91E63', '#9C27B0', '#F44336']
