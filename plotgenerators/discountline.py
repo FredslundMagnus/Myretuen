@@ -7,7 +7,6 @@ d = 'Discount-'
 discounts = np.arange(start=0.7, stop=0.99, step=0.01)
 means = np.arange(start=0.7, stop=0.99, step=0.01)
 var = np.arange(start=0.7, stop=0.99, step=0.01)
-1 / 0
 files, ms, ss = [], {x: np.arange(start=0.7, stop=0.99, step=0.01) for x in xs}, {x: np.arange(start=0.7, stop=0.99, step=0.01) for x in xs}
 
 for filename in allDirs():
