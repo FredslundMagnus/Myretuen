@@ -16,6 +16,8 @@ def DataFinder(directory):
     by_row_index = df_concat.groupby(df_concat.index)
     mean = by_row_index.mean()
     sd = by_row_index.std()
+    mean.columns = ['GameN', 'gameLength', 'gameElo', 'minBase', 'dinBase', 'meandistMine', 'meandistDine', 'isInFront', 'carryEnimy', 'carryAlly']
+    sd.columns = ['GameN', 'gameLength', 'gameElo', 'minBase', 'dinBase', 'meandistMine', 'meandistDine', 'isInFront', 'carryEnimy', 'carryAlly']
     return mean, sd
 
 
@@ -40,13 +42,20 @@ class AnalysePlot():
         self.plt.xlabel('Games')
         self.plt.ylabel(feature)
         self.savepos = savepos
+        self.plt.n = 0
 
-        def varPlot(self, mean, sd, name, color, meanVar=False):
+        def varPlot(self, mean, sd=None, name='Placeholder', color=None, meanVar=False, useSD=True, runningMean=1):
+            mean = np.convolve(mean, np.ones((runningMean,)) / runningMean, mode='valid')
+            sd = np.convolve(sd, np.ones((runningMean,)) / runningMean, mode='valid')
             x = np.arange(1, len(mean) + 1)
+            if color is None:
+                color = colors[self.n]
+                self.n += 1
             self.plot(x, mean, lw=1, label=name, color=color, zorder=2)
-            if meanVar:
-                sd = sd / np.sqrt(mean.shape[2])
-            # self.fill_between(x, mean + sd, mean - sd, facecolor=color, alpha=0.5, zorder=2)
+            if sd is not None and useSD is True:
+                if meanVar:
+                    sd = sd / np.sqrt(mean.shape[2])
+                self.fill_between(x, mean + sd, mean - sd, facecolor=color, alpha=0.5, zorder=2)
             self.doPrint = True
 
         self.plt.varPlot = varPlot
