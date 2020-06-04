@@ -62,7 +62,7 @@ class EloPlot():
             self.plt.axhline(y=2400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.legend(loc='upper left')
             for savepos in self.saves:
-                self.plt.savefig(savepos)
+                self.plt.savefig(savepos, bbox_inches='tight')
         self.plt.clf()
 
 
