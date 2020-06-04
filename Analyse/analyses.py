@@ -44,7 +44,7 @@ class AnalysePlot():
         self.savepos = savepos
         self.plt.n = 0
 
-        def varPlot(self, mean, sd=None, name='Placeholder', color=None, meanVar=False, useSD=True, runningMean=1):
+        def varPlot(self, mean, sd=None, name='Placeholder', color=None, useSD=True, runningMean=1):
             mean = np.convolve(mean, np.ones((runningMean,)) / runningMean, mode='valid')
             sd = np.convolve(sd, np.ones((runningMean,)) / runningMean, mode='valid')
             x = np.arange(1, len(mean) + 1)
@@ -53,8 +53,6 @@ class AnalysePlot():
                 self.n += 1
             self.plot(x, mean, lw=1, label=name, color=color, zorder=2)
             if sd is not None and useSD is True:
-                if meanVar:
-                    sd = sd / np.sqrt(mean.shape[2])
                 self.fill_between(x, mean + sd, mean - sd, facecolor=color, alpha=0.5, zorder=2)
             self.doPrint = True
 
