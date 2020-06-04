@@ -43,7 +43,7 @@ class AnalysePlot():
 
         def varPlot(self, mean, sd, name, color, meanVar=False):
             x = np.arange(1, len(mean) + 1)
-            self.plot(x, mean, lw=2, label=name, color=color, zorder=2)
+            self.plot(x, mean, lw=1, label=name, color=color, zorder=2)
             if meanVar:
                 sd = sd / np.sqrt(mean.shape[2])
             self.fill_between(x, mean + sd, mean - sd, facecolor=color, alpha=0.5, zorder=2)
