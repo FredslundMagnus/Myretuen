@@ -5,3 +5,4 @@ import lambdadiscountplots
 import chooserplot
 import trainfunction
 import heatmapplot
+import impalaplots
