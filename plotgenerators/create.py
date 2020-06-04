@@ -8,3 +8,4 @@ import heatmapplot
 import impalaplots
 import lambdaPlots
 import dropoutplots
+import discountline
