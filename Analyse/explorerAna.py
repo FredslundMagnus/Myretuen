@@ -7,4 +7,4 @@ for feature in ['gameLength', 'minBase', 'dinBase', 'meandistMine', 'meandistDin
     with AnalysePlot(feature=feature, title='Placeholder', savepos=f'Explorer-{feature}') as plt:
         for fil, name in agents:
             mean, sd = DataFinder(fil)
-            plt.varPlot(plt, mean[feature], sd=sd[feature], name=name, useSD=True, runningMean=100)
+            plt.varPlot(plt, mean[feature], sd=sd[feature], name=name, useSD=True, runningMean=10)
