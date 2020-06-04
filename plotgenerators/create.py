@@ -5,3 +5,7 @@ import lambdadiscountplots
 import chooserplot
 import trainfunction
 import heatmapplot
+import impalaplots
+import lambdaPlots
+import dropoutplots
+import discountline

@@ -49,5 +49,5 @@ for x, values in vs.items():
     b, t = plt.ylim()
     plt.ylim(b + 0.5, t - 0.5)
     ax.set_aspect("equal")
-    plt.savefig(f'GoodPlots/Heatmap-{x}.png')
+    plt.savefig(f'GoodPlots/Heatmap-{x}.png', bbox_inches='tight')
     plt.clf()
