@@ -18,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant", "VarianceCutOff")
 
-    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.1):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.3):
         self.VarianceCutOff = VarianceCutOff
         self.splitvariant = None
         self.TopNvalues = TopNvalues
@@ -263,9 +263,9 @@ class MinMaxCalculate():
             for j in range(len(Squares[i])):
                 if self.env.fields[Squares[i][j]].ants != []:
                     if self.env.fields[Squares[i][j]].ants[-1].color == ant.color:
-                        antsonsplits[i+2*j][0] = 1
+                        antsonsplits[i + 2 * j][0] = 1
                     else:
-                        antsonsplits[i+2*j][1] = 1
+                        antsonsplits[i + 2 * j][1] = 1
         if ant.color == self.env.player1:
             li = li[::-1]
             antsonsplits = antsonsplits[::-1]
@@ -288,10 +288,10 @@ class MinMaxCalculate():
         if score[0] > score[1]:
             score[2] = 1
         elif score[0] < score[1]:
-            score[2] = -1
-        score[3] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**4
-        score[4] = self.env.winNumber
+            score[3] = 1
+        score[4] = (self.env.dicesThatHaveBeenRolled / self.env.maxRolls)**4
         return score
+
 
     def antState(self, ant):
         antSituation = self.ant_situation(ant)
@@ -324,7 +324,7 @@ class MinMaxCalculate():
                 yield onsplit + antsonsplits + antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
             else:
                 yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list + turn
-    
+
     def WhichTurn(self, ant):
         if ant.color == self.env.currentPlayer:
             if len(self.env.rolled) == 2 or self.env.rolledSameDice == True:
@@ -345,8 +345,8 @@ class MinMaxCalculate():
         if splitDistance[0] == 0 or splitDistance[2] == 0:
             onsplit[0] = 1
         if splitDistance[1] == 0 or splitDistance[3] == 0:
-            onsplit[1] = 1  
-        return onsplit    
+            onsplit[1] = 1
+        return onsplit  
             
     def state(self, game, action=None):
         probofstate1, probofstate2, simul_reward1, simul_reward2 = 1, 0, 0, 0
@@ -451,11 +451,11 @@ class MinMaxCalculate():
         if ant.dieJustUsedInSimulation == 0:
             for d in self.env.rolled:
                 dice[d - 1] = 1
-            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2
+            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 * 6/5
         else:
             d = sum(self.env.rolled) - ant.dieJustUsedInSimulation
             dice[d - 1] = 1
-            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 - 1
+            dice[-1] = len(self.env.rolled) + int(self.env.rolledSameDice) * 2 * 6/5 - 1
         return dice
 
     def GetProbabilityOfEat(self, ant):
@@ -468,21 +468,14 @@ class MinMaxCalculate():
     def SplitPoints(self, ants):
         reward = 0
         Squares = [['A8', 'D8'], ['B8', 'E8']]
-
-        if self.env.currentPlayer == self.env.player1:
-            for square in Squares[0]:
-                for ant in ants:
-                    if ant.isAlive == True and ant.color == self.env.player2 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
-                        reward -= 4
-                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
-                        break
-        else:
-            for square in Squares[1]:
-                for ant in ants:
-                    if ant.isAlive == True and ant.color == self.env.player1 and ant.position.id in square and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
-                        reward -= 4
-                        self.env.bases[self.env.player1].captured.append('SIMBONUS')
-                        break
+        for ant in ants:
+            if ant.isAlive == True and ant.color != self.env.currentPlayer and len(self.env.rolled) == 1 and self.env.rolledSameDice == False:
+                if ant.color == self.env.player1 and ant.position.id in Squares[1]:
+                    self.env.bases[self.env.player1].captured.append('SIMBONUS')
+                    reward -= 4
+                elif ant.color == self.env.player2 and ant.position.id in Squares[0]:
+                    self.env.bases[self.env.player2].captured.append('SIMBONUS')
+                    reward -= 4
         return reward
 
     def cleansim(self):

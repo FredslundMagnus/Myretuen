@@ -30,7 +30,7 @@ else:
     env = Myretuen(color1='red', color2='green', nAnts=10, fruits=False)
     # controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, impala=True))
     # controller = Controller(env=env, agent1=Opponent(NNAgent()), agent2=PlayerAgent())
-    controller = Controller(env=env, agent1=Opponent(NNAgent(minmax=False).loadModel('NNAgent2400ELO')), agent2=NNAgent(minmax=True).loadModel('NNAgent2400ELO'))
+    controller = Controller(env=env, agent1=Opponent(NNAgent(minmax=True).loadModel('NNAgent2400ELO')), agent2=NNAgent(minmax=False).loadModel('NNAgent2400ELO'))
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=20)
 
 
