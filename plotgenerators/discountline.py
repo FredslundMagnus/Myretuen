@@ -24,9 +24,10 @@ def stdAround(data, x, width=10):
 
 for EloOverTime, name, agent, color in Data(files, elo=False):
     dis = find_number(name, d)
+    check = (discounts < dis + 0.002) & (discounts > dis - 0.002)
     for x in xs:
-        ms[x][discounts == dis] = meanAround(EloOverTime, x)
-        ss[x][discounts == dis] = stdAround(EloOverTime, x)
+        ms[x][check] = meanAround(EloOverTime, x)
+        ss[x][check] = stdAround(EloOverTime, x)
 
 
 for x, mean in ms.items():
