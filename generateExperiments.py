@@ -17,10 +17,10 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 
 
 # Magnus
-genExperiments('Best-2000', 'NNAgent', 11000, 40, True, False, True, True, False, n=20, lossf='MME', discount=0.85, lambd=0.5, lr=0.0001, dropout=0, K=2000, batchSize=100, historyLength=20, startAfterNgames=20, sampleLenth=10, chooserfunction='weightedChooser')
+genExperiments('Best-2000', 'NNAgent', 11000, 20, True, False, True, True, False, n=40, lossf='MME', discount=0.85, lambd=0.5, lr=0.0001, dropout=0, K=2000, batchSize=100, historyLength=20, startAfterNgames=20, sampleLenth=10, chooserfunction='weightedChooser')
 
 # Jakob
-# genExperiments('Best-4000', 'NNAgent', 11000, 40, True, False, True, True, False, n=20, lossf='MME', discount=0.85, lambd=0.5, lr=0.0001, dropout=0, K=4000, batchSize=100, historyLength=20, startAfterNgames=20, sampleLenth=10, chooserfunction='weightedChooser')
+# genExperiments('Best-4000', 'NNAgent', 11000, 20, True, False, True, True, False, n=40, lossf='MME', discount=0.85, lambd=0.5, lr=0.0001, dropout=0, K=4000, batchSize=100, historyLength=20, startAfterNgames=20, sampleLenth=10, chooserfunction='weightedChooser')
 
 # # Magnus
 # genExperiments('Discount-0.70', 'NNAgent', 4000, 20, True, False, True, True, False, lossf='MME', discount=0.70, lambd=0.5, lr=0.0001, dropout=0, K=2000, batchSize=100, historyLength=20, startAfterNgames=20, sampleLenth=10, chooserfunction='weightedChooser')
