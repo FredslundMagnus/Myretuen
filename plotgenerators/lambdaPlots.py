@@ -49,7 +49,7 @@ for x, values in vs.items():
     plt.xlabel('Discount')
     plt.ylabel('Elo')
     plt.legend(loc='upper left')
-    plt.savefig(f'GoodPlots/Lambda-{x}.png')
+    plt.savefig(f'GoodPlots/Lambda-{x}.png', bbox_inches='tight')
     plt.clf()
 
     for i, disk in enumerate(discounts[::-1]):
@@ -59,5 +59,5 @@ for x, values in vs.items():
     plt.xlabel('Lambda')
     plt.ylabel('Elo')
     plt.legend(loc='upper left')
-    plt.savefig(f'GoodPlots/Discount-{x}.png')
+    plt.savefig(f'GoodPlots/Discount-{x}.png', bbox_inches='tight')
     plt.clf()
