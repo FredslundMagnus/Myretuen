@@ -2,7 +2,7 @@ from plots import Data, allDirs, find_number, colors
 from matplotlib import pyplot as plt
 import numpy as np
 
-xs = [3000, 4000]  # [1000, 2000, 3000, 4000]
+xs = [1000, 2000, 3000, 4000]  # [1000, 2000, 3000, 4000]
 d = 'Discount-'
 discounts = np.arange(start=0.7, stop=0.99, step=0.01)
 means = np.arange(start=0.7, stop=0.99, step=0.01)
