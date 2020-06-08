@@ -18,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant")
 
-    def __init__(self, value, TopNvalues=4, cutOffdepth=2, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=1, montecarlo=True):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True):
         self.splitvariant = None
         self.TopNvalues = TopNvalues
         self.cutOffdepth = cutOffdepth
@@ -302,6 +302,7 @@ class MinMaxCalculate():
             score = self.currentScore(ant)
             antsUnderGlobal = [li for color, li in self.antsUnder.items() if color != ant.color][0]
             disttoantsGlobal = self.getDistancesToAnts(ant)
+            turn = self.WhichTurn(ant)
             # ratio = (np.array(antsUnderGlobal) + 1) / (carryEnimy + carryAlly + 1)
             if self.calcprobs == True:
                 GetProbabilityOfEat = list(self.GetProbabilityOfEat(ant))
@@ -316,12 +317,25 @@ class MinMaxCalculate():
 
             if self.env.splitvariant == True:
                 onsplit = self.onsplit(splitDistance)
-                #print(onsplit, ant.id)
-                #print(antsonsplits)
-                #print(splitDistance)
+                # print(onsplit, antsonsplits, splitDistance, ant.id)
                 yield onsplit + antsonsplits + antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
             else:
-                yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list
+                yield antSituation + [sum(mine)] + [sum(dine)] + mine[1:13] + dine[1:13] + splitDistance + baseDistance + [carryEnimy, carryAlly] + dice + score + flat_list + turn
+    
+    def WhichTurn(self, ant):
+        if ant.color == self.env.currentPlayer:
+            if len(self.env.rolled) == 2 or self.env.rolledSameDice == True:
+                turn = [1, 0]
+            else:
+                turn = [0, 1]
+        else:
+            if len(self.env.rolled) == 2 or self.env.rolledSameDice == True:
+                turn = [0, 1]
+            else:
+                turn = [1, 0]
+        return turn
+
+
 
     def onsplit(self, splitDistance):
         onsplit = [0, 0]
