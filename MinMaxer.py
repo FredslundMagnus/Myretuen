@@ -18,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant", "VarianceCutOff")
 
-    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.1):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.05):
         self.VarianceCutOff = VarianceCutOff
         self.splitvariant = None
         self.TopNvalues = TopNvalues
@@ -46,7 +46,7 @@ class MinMaxCalculate():
         actionss = fakegame.action_space()
         if self.montecarlo == False:
             limitedactions = min(self.TopNvalues, len(actionss))
-            number = 8
+            number = 10
         else:
             number = 3
             if cutOffdepth == self.cutOffdepth:
@@ -59,15 +59,19 @@ class MinMaxCalculate():
         self.env = fakegame
         AllValues = []
         if self.explore == True and actionss != []:
-            temp = (8 * self.K * limitedactions) / (self.K + 8 * (self.gameNumber)) if self.K is not None else 1
+            # temp = (8 * self.K * limitedactions) / (self.K + 8 * (self.gameNumber)) if self.K is not None else 1
+            temp = 0.25
             states = []
             values = []
             for action in actionss:
                 states.append(self.state(self.env, action))
                 if len(states[-1]) == 1:
-                    values.append(self.value(states[-1][0]) + states[-1][0][3])
+                    value = self.value(states[-1][0]) + states[-1][0][3]
+                    values.append(value)
                 else:
-                    values.append((self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2])
+                    value = (self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2]
+                    values.append(value)
+                AllValues.append(value)
             chances = self.softmax(np.array(values) / temp)
 
             replacer = np.random.choice(len(chances), limitedactions, p=chances, replace=False)
@@ -140,7 +144,6 @@ class MinMaxCalculate():
             self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
 
         # Check if any of the requirements are fulfilled.
-
         if candidate_values == []:
             return rewardtrace * Proba
         elif fakegame.currentPlayer == self.game.currentPlayer:
