@@ -30,7 +30,17 @@ else:
     env = Myretuen(color1='red', color2='green', nAnts=10, fruits=False)
     # controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, impala=True))
     # controller = Controller(env=env, agent1=Opponent(NNAgent()), agent2=PlayerAgent())
-    controller = Controller(env=env, agent1=Opponent(NNAgent(minmax=False).loadModel('2512ELO')), agent2=NNAgent(minmax=True, explore=True).loadModel('2512ELO'))
+    controller = Controller(env=env, agent1=Opponent(NNAgent(minmax=False).loadModel('2512ELO')), agent2=NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=10).loadModel('2512ELO'))
+    # NNAgent(minmax=False, explore=False).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=3, cutOffdepth=5).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=2, cutOffdepth=7).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=3, cutOffdepth=3).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=2, cutOffdepth=5).loadModel('2512ELO') # number = 3
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=3, cutOffdepth=5, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=2, cutOffdepth=7, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=3, cutOffdepth=3, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=2, cutOffdepth=5, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=200)
 
 
