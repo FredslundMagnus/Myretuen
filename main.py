@@ -24,13 +24,23 @@ if debuggerMode:
     sys.stdout = open(os.devnull, 'w')
     env = Myretuen(winNumber=winNumber, maxRolls=maxRolls, Eatreward=Eatreward, basereward=basereward, stepreward=stepreward, fruits=True)
     mainplayer = ourAgent(explore=explore, doTrain=doTrain, impala=impala, calcprobs=calcprobs, minmax=minmax, lossf=lossf, K=K, dropout=dropout, alpha=alpha, discount=discount, lambd=lambd, lr=lr, TopNvalues=TopNvalues, cutOffdepth=cutOffdepth, ValueCutOff=ValueCutOff, ValueDiffCutOff=ValueDiffCutOff, ProbabilityCutOff=ProbabilityCutOff, historyLength=historyLength, startAfterNgames=startAfterNgames, batchSize=batchSize, sampleLenth=sampleLenth, network=network, analyse=True)
-    controller = Controller(env=env, agent1=Opponent([RandomAgent(minmax=False), CleverRandom(calcprobs=False, minmax=False), CleverRandom(calcprobs=True, minmax=False)], chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)
+    controller = Controller(env=env, agent1=Opponent([RandomAgent(minmax=False, calcprobs=False)], chooser=chooserfunctions[chooserfunction]), agent2=mainplayer)  # CleverRandom(calcprobs=False, minmax=False), CleverRandom(calcprobs=True, minmax=False)
     debugger(nGames, addAgent, Thename, mainplayer, chooserfunction, env)
 else:
     env = Myretuen(color1='red', color2='green', nAnts=10, fruits=False)
     # controller = Controller(env=env, agent1=Opponent([RandomAgent(), CleverRandom(calcprobs=False), CleverRandom(calcprobs=True)]), agent2=NNAgent(explore=True, impala=True))
     # controller = Controller(env=env, agent1=Opponent(NNAgent()), agent2=PlayerAgent())
-    controller = Controller(env=env, agent1=Opponent(CleverRandom(calcprobs=True)), agent2=NNAgent(minmax=True).loadModel('NNAgent2400ELO'))
+    controller = Controller(env=env, agent1=Opponent(NNAgent(minmax=False).loadModel('2512ELO')), agent2=NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=3, cutOffdepth=3, ValueCutOff=25, ValueDiffCutOff=10).loadModel('2512ELO'))
+    # NNAgent(minmax=False, explore=False).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=3, cutOffdepth=5).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=2, cutOffdepth=7).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=3, cutOffdepth=3).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=2, cutOffdepth=5).loadModel('2512ELO') # number = 3
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=3, cutOffdepth=5, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=True, TopNvalues=2, cutOffdepth=7, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=3, cutOffdepth=3, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+    # NNAgent(minmax=True, explore=True, montecarlo=False, TopNvalues=2, cutOffdepth=5, ValueCutOff=10, ValueDiffCutOff=2, VarianceCutOff=0.1).loadModel('2512ELO')
+
     controller.run(CalculateProbs=True, timeDelay=0, AddAgent=200)
 
 
