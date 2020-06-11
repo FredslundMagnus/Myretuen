@@ -18,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant", "VarianceCutOff", "discount")
 
-    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.01, discount=0.85):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.0001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.05, discount=0.85):
         self.VarianceCutOff = VarianceCutOff
         self.splitvariant = None
         self.TopNvalues = TopNvalues
@@ -52,7 +52,7 @@ class MinMaxCalculate():
             number = 3
             if cutOffdepth == self.cutOffdepth:
                 limitedactions = min(self.TopNvalues, len(actionss))
-            elif self.cutOffdepth - cutOffdepth < 3:
+            elif self.cutOffdepth - cutOffdepth < 2:
                 limitedactions = min(2, len(actionss))
             else:
                 limitedactions = min(1, len(actionss))
@@ -63,7 +63,7 @@ class MinMaxCalculate():
         discounter = self.discount**depth
         if self.explore == True and actionss != []:
             # temp = (8 * self.K * limitedactions) / (self.K + 8 * (self.gameNumber)) if self.K is not None else 1
-            temp = 0.3
+            temp = 0.1
             states = []
             values = []
             for action in actionss:
@@ -72,7 +72,7 @@ class MinMaxCalculate():
                     value = self.value(states[-1][0]) + states[-1][0][3]
                     values.append(value)
                 else:
-                    value = (self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2]
+                    value = 1 + (self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2]
                     values.append(value)
                 AllValues.append(value)
             chances = self.softmax(np.array(values) / temp)
@@ -98,7 +98,7 @@ class MinMaxCalculate():
                 if len(state) == 1:
                     value = self.value(state[0]) * state[0][2] + state[0][3]
                 else:
-                    value = (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
+                    value = 1 + (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
                 AllValues.append(value)
                 if value > candidate_values[np.argmin(candidate_values)]:
                     replace = np.argmin(candidate_values)
@@ -159,10 +159,13 @@ class MinMaxCalculate():
         if (np.var(AllValues) < self.VarianceCutOff or self.ValueCutOff < abs(Endvalue) or Proba < self.ProbabilityCutOff or self.ValueCutOffLow > abs(Endvalue)) and (cutOffdepth < (self.cutOffdepth)):
             if cutOffdepth == self.cutOffdepth - 1 and Realgame == True:
                 self.nextmoves.append(canditate_actions[np.argmax(np.array(candidate_values))])
+            #print(rewardtrace, Proba, depth)
             return Endvalue * Proba
         if cutOffdepth < 1:
+            #print(rewardtrace, Proba, depth)
             return Endvalue * Proba
 
+        Proba /= len(candidate_values)
         sumvalue = [0] * len(candidate_values)
         # Loop over the remaining canditate moves
         for i in range(len(candidate_values)):
