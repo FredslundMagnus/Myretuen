@@ -3,7 +3,7 @@ import numpy as np
 
 l = [('Fruit-2000', 'Fruit - Explorer 2000', '#2196F3'), ('Fruit-5000', 'Fruit - Explorer 5000', '#4CAF50')]
 
-with EloPlot(title=f'The Fruit - Elo Rating', saves=[f'GoodPlots/BestFruit.png']) as plt:
+with EloPlot(title=f'The Fruit - Elo Rating', saves=[f'GoodPlots/BestFruit.png'], CR=False, CRP=False) as plt:
     for EloOverTime, name, agent, color in Data([f".\\outputs\\{a[0]}\\csv" for a in l], colors=[a[2] for a in l], elo=False):
         name = [a[1] for a in l if a[0] == name][0]
 
