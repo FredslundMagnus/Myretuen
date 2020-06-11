@@ -16,9 +16,9 @@ def fastcopy(game):
 
 
 class MinMaxCalculate():
-    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant", "VarianceCutOff", "discount")
+    __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant", "VarianceCutOff", "discount", "aggro")
 
-    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.0001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.05, discount=0.85):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.0001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.05, discount=0.85, aggro=0):
         self.VarianceCutOff = VarianceCutOff
         self.splitvariant = None
         self.TopNvalues = TopNvalues
@@ -34,6 +34,7 @@ class MinMaxCalculate():
         self.ValueCutOffLow = ValueCutOffLow
         self.montecarlo = montecarlo
         self.discount = 1
+        self.aggro = aggro
 
     def DeepSearch(self, game, gamenumber):
         self.gameNumber = gamenumber
@@ -72,7 +73,7 @@ class MinMaxCalculate():
                     value = self.value(states[-1][0]) + states[-1][0][3]
                     values.append(value)
                 else:
-                    value = 1 + (self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2]
+                    value = self.aggro + (self.value(states[-1][0]) + states[-1][0][3]) * states[-1][0][2] + (self.value(states[-1][1]) + states[-1][1][3]) * states[-1][1][2]
                     values.append(value)
                 AllValues.append(value)
             chances = self.softmax(np.array(values) / temp)
@@ -86,7 +87,7 @@ class MinMaxCalculate():
                     if len(states[replacer[i]]) == 1:
                         canditate_rewards[i] = [states[replacer[i]][0][3]*discounter, None]
                     else:
-                        canditate_rewards[i] = [(states[replacer[i]][0][3] + 1)*discounter, states[replacer[i]][1][3]*discounter]
+                        canditate_rewards[i] = [(states[replacer[i]][0][3] + self.aggro)*discounter, states[replacer[i]][1][3]*discounter]
                 else:
                     if len(states[replacer[i]]) == 1:
                         canditate_rewards[i] = [-states[replacer[i]][0][3]*discounter, None]
@@ -98,7 +99,7 @@ class MinMaxCalculate():
                 if len(state) == 1:
                     value = self.value(state[0]) * state[0][2] + state[0][3]
                 else:
-                    value = 1 + (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
+                    value = self.aggro + (self.value(state[0]) + state[0][3]) * state[0][2] + (self.value(state[1]) + state[1][3]) * (1 - state[0][2])
                 AllValues.append(value)
                 if value > candidate_values[np.argmin(candidate_values)]:
                     replace = np.argmin(candidate_values)
@@ -109,7 +110,7 @@ class MinMaxCalculate():
                         if len(state) == 1:
                             canditate_rewards[replace] = [state[0][3]*discounter, None]
                         else:
-                            canditate_rewards[replace] = [(state[0][3] + 1)*discounter, state[1][3]*discounter]
+                            canditate_rewards[replace] = [(state[0][3] + self.aggro)*discounter, state[1][3]*discounter]
                             # print(canditate_rewards[replace])
                     else:
                         if len(state) == 1:
