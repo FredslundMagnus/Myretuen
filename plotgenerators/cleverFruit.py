@@ -1,17 +1,15 @@
 from plots import EloPlot, Data
 import numpy as np
 
-l = [('Fruit-2000', 'Fruit - Explorer 2000', '#2196F3'), ('Fruit-5000', 'Fruit - Explorer 5000', '#4CAF50')]
+l = [('CleverRandomElo-fruit-CalcProb', 'CleverRandom+probs', '#E91E63'), ('CleverRandomElo-fruit', 'CleverRandom', '#9C27B0')]
 
-with EloPlot(title=f'The Fruit - Elo Rating', saves=[f'GoodPlots/BestFruit.png'], CR=False, CRP=False) as plt:
+with EloPlot(title=f'Clever Random - Fruit', saves=[f'GoodPlots/CleverRandomFruit.png'], CR=False, CRP=False) as plt:
     for EloOverTime, name, agent, color in Data([f".\\outputs\\{a[0]}\\csv" for a in l], colors=[a[2] for a in l], elo=False):
         name = [a[1] for a in l if a[0] == name][0]
 
-        theData = EloOverTime[0, 10000:, :]
+        theData = EloOverTime[0, 1000:, :]
         m = theData.mean()
         sd = theData.std() / np.sqrt(theData.size) * 1.96
         print(f'{name}: mean = {m:.6}    ,    95% = [{(m-sd):.6}, {(m+sd):.6}]      Calculated from {theData.shape[1]} samples.')
 
         plt.varPlot(plt, EloOverTime, name, color)
-    plt.axhline(y=1660.82, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
-    plt.axhline(y=1293.76, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
