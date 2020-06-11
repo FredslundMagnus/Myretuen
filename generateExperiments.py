@@ -17,10 +17,10 @@ def genExperiments(name, agent, gameLength, adAgent, explore, doTrain, impala, c
 
 
 # Magnus
-genExperiments('CleverRandomElo-fruit', 'CleverRandom', 4000, 100000, False, False, False, False, False, n=100)
+# genExperiments('CleverRandomElo-fruit', 'CleverRandom', 4000, 100000, False, False, False, False, False, n=100)
 
-# Jakob
-genExperiments('CleverRandomElo-fruit-CalcProb', 'CleverRandom', 4000, 100000, False, False, False, True, False, n=100)
+# # Jakob
+# genExperiments('CleverRandomElo-fruit-CalcProb', 'CleverRandom', 4000, 100000, False, False, False, True, False, n=100)
 
 
 # Magnus
