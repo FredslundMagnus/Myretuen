@@ -13,5 +13,5 @@ with EloPlot(title=f'The Fruit - Elo Rating', saves=[f'GoodPlots/BestFruit.png']
         print(f'{name}: mean = {m:.6}    ,    95% = [{(m-sd):.6}, {(m+sd):.6}]      Calculated from {theData.shape[1]} samples.')
 
         plt.varPlot(plt, EloOverTime, name, color)
-    plt.axhline(y=1660.82, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
-    plt.axhline(y=1293.76, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
+    plt.axhline(y=1480.4, color='#E91E63', lw=1, label='CleverRandom+probs', zorder=1)
+    plt.axhline(y=1289.0, color='#9C27B0', lw=1, label='CleverRandom', zorder=1)
