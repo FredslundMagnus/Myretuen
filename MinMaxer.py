@@ -18,7 +18,7 @@ def fastcopy(game):
 class MinMaxCalculate():
     __slots__ = ("TopNvalues", "cutOffdepth", "ValueCutOff", "ValueDiffCutOff", "ProbabilityCutOff", "Move", "value", "explore", "calcprobs", "K", "gameNumber", "nextmoves", "game", "env", "currentAnts", "antsUnder", "ValueCutOffLow", "montecarlo", "splitvariant", "VarianceCutOff", "discount", "aggro")
 
-    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.0001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.05, discount=0.85, aggro=0):
+    def __init__(self, value, TopNvalues=3, cutOffdepth=3, ValueCutOff=50, ValueDiffCutOff=15, ProbabilityCutOff=0.0001, explore=False, K=2000, calcprobs=True, ValueCutOffLow=0, montecarlo=True, VarianceCutOff=0.01, discount=0.85, aggro=0):
         self.VarianceCutOff = VarianceCutOff
         self.splitvariant = None
         self.TopNvalues = TopNvalues
@@ -37,6 +37,8 @@ class MinMaxCalculate():
         self.aggro = aggro
 
     def DeepSearch(self, game, gamenumber):
+        if game.splitvariant == True:
+            self.cutOffdepth = 3
         self.gameNumber = gamenumber
         self.nextmoves = []
         self.game = game
@@ -48,9 +50,12 @@ class MinMaxCalculate():
         actionss = fakegame.action_space()
         if self.montecarlo == False:
             limitedactions = min(self.TopNvalues, len(actionss))
-            number = 10
+            number = 8
         else:
-            number = 3
+            if self.splitvariant == True:
+                number = 8
+            else:
+                number = 3
             if cutOffdepth == self.cutOffdepth:
                 limitedactions = min(self.TopNvalues, len(actionss))
             elif self.cutOffdepth - cutOffdepth < 2:
@@ -64,7 +69,7 @@ class MinMaxCalculate():
         discounter = self.discount**depth
         if self.explore == True and actionss != []:
             # temp = (8 * self.K * limitedactions) / (self.K + 8 * (self.gameNumber)) if self.K is not None else 1
-            temp = 0.1
+            temp = 0.25
             states = []
             values = []
             for action in actionss:
