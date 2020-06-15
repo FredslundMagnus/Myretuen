@@ -17,7 +17,7 @@ def clean(data, GameN):
     Human, AI = int(numbers[2 - PlayerStarts]), int(numbers[1 + PlayerStarts])
 
     newScore = [int(v) for v in numbers[-3:]]
-    if sum(lastScore) > sum(newScore):
+    if sum(lastScore) >= sum(newScore):
         lastScore = [0, 0, 0]
     Score = sum([scores[i] * (newScore[i] - lastScore[i]) for i in range(3)])
     lastScore = newScore
