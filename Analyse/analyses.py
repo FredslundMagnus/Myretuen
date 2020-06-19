@@ -16,8 +16,8 @@ def DataFinder(directory):
     by_row_index = df_concat.groupby(df_concat.index)
     mean = by_row_index.mean()
     sd = by_row_index.std()
-    mean.columns = ['GameN', 'gameLength', 'gameElo', 'minBase', 'dinBase', 'meandistMine', 'meandistDine', 'isInFront', 'carryEnimy', 'carryAlly']
-    sd.columns = ['GameN', 'gameLength', 'gameElo', 'minBase', 'dinBase', 'meandistMine', 'meandistDine', 'isInFront', 'carryEnimy', 'carryAlly']
+    mean.columns = ['GameN', 'gameLength', 'gameElo', 'minBase', 'dinBase', 'meandistMine', 'meandistDine', 'isInFront', 'carryEnimy', 'carryAlly'][:len(list(mean.columns))]
+    sd.columns = ['GameN', 'gameLength', 'gameElo', 'minBase', 'dinBase', 'meandistMine', 'meandistDine', 'isInFront', 'carryEnimy', 'carryAlly'][:len(list(mean.columns))]
     return mean, sd
 
 
