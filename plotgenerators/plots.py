@@ -6,8 +6,9 @@ import os
 
 
 class EloPlot():
-    def __init__(self, xlabel='Games', title='Placeholder', saves=[], RA=True, CR=True, CRP=True):
+    def __init__(self, xlabel='Games', title='Placeholder', saves=[], RA=True, CR=True, CRP=True, loc='upper left'):
         self.plt = plt
+        self.loc = loc
         self.plt.ylim((900, 2500))
         self.plt.title(title)
         self.title = title
@@ -60,7 +61,7 @@ class EloPlot():
             self.plt.axhline(y=2000, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=2200, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
             self.plt.axhline(y=2400, color='#E0E0E0', linestyle='dashed', lw=1, zorder=1)
-            self.plt.legend(loc='upper left')
+            self.plt.legend(loc=self.loc)
             for savepos in self.saves:
                 self.plt.savefig(savepos, bbox_inches='tight')
         self.plt.clf()
