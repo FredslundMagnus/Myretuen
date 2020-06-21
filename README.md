@@ -57,6 +57,12 @@ controller.run()
 
 # Versions
 
+## version-1.0
+
+- Data from all runs used in report
+- Added battle and watch scripts to try the AI
+- Added more plotting functionality
+
 ## version-0.6
 
 - New Fruit-mode
